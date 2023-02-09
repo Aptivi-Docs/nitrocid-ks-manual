@@ -125,6 +125,7 @@
 
 ***
 
+* [🧱 Project Dependencies](project-dependencies.md)
 * [Report an issue](https://github.com/Aptivi/NitrocidKS/issues/new/choose)
 * [Source code](https://github.com/Aptivi/NitrocidKS)
 * [Our projects](https://github.com/Aptivi)
