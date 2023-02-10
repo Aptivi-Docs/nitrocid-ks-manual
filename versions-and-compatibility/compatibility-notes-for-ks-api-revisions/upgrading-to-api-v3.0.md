@@ -1131,3 +1131,20 @@ This module used to statically replace all the text placeholders found within th
 {% hint style="info" %}
 The function names and the module itself are unchanged, but we just need you to change the namespace import to the abovementioned namespace.
 {% endhint %}
+
+### Removed `KernelColorType.Gray`
+
+{% code title="ColorTools.vb" lineNumbers="true" %}
+```visual-basic
+''' <summary>
+''' Gray color (for special purposes)
+''' </summary>
+Gray
+```
+{% endcode %}
+
+This color type was used as a special color type intended to indicate that the element highlighted is colorless. Since we already have `ColorTools.GetGray()` to get the gray color according to the background color, and since this color type is just a wrapper to this function, we decided to remove this kernel color type.
+
+{% hint style="info" %}
+Instead of using `KernelColorType.Gray`, use the `ColorTools.GetGray()` function to get the gray color.
+{% endhint %}
