@@ -1117,3 +1117,17 @@ We used to implement the decisive writers to decide whether to use the normal co
 {% hint style="danger" %}
 We advice you to cease using this function.
 {% endhint %}
+
+### Moved `PlaceParse` to `KS.Misc.Probers.Placeholder`
+
+{% code title="PlaceParse.vb" lineNumbers="true" %}
+```visual-basic
+Public Module PlaceParse
+```
+{% endcode %}
+
+This module used to statically replace all the text placeholders found within the text with their values. It used to exist in the `KS.Misc.Probers` namespace, but we moved it to the `KS.Misc.Probers.Placeholder` namespace to align with the latest Nitrocid KS API design. It also earned a new way to dynamically parse the placeholders.
+
+{% hint style="info" %}
+The function names and the module itself are unchanged, but we just need you to change the namespace import to the abovementioned namespace.
+{% endhint %}
