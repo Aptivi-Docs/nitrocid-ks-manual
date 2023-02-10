@@ -27,4 +27,27 @@ In order for Nitrocid KS to work properly, it uses a bunch of libraries for its 
 | UnitsNet                       | [GitHub](https://github.com/angularsen/UnitsNet)            | [MIT No Attribution](https://github.com/angularsen/UnitsNet/blob/master/LICENSE) | © 2013 Andreas Gullberg Larsen                                 |
 | Wordament                      | [GitHub](https://github.com/Aptivi/Wordament/)              | [MIT](https://github.com/Aptivi/Wordament/blob/main/LICENSE)                     | © 2023 - Present Aptivi                                        |
 
+{% hint style="info" %}
 These dependencies can be used in your mods.
+{% endhint %}
+
+In addition to these, we're crediting the following people for their work, and Nitrocid KS won't be complete without them:
+
+| Credit            | For                                                                               |
+| ----------------- | --------------------------------------------------------------------------------- |
+| OpenWeatherMap    | [Weather API](https://openweathermap.org/api)                                     |
+| jonasjacek        | [Console color data](https://jonasjacek.github.io/colors/)                        |
+| dwyl              | [Word list](https://github.com/dwyl/english-words)                                |
+| ayu-theme         | [Ayu Theme](https://github.com/ayu-theme)                                         |
+| Ethan Schoonover  | [Solarized Theme](https://ethanschoonover.com/solarized/)                         |
+| Fabian Neuschmidt | [Breezy Theme](https://github.com/fneu/breezy)                                    |
+| TechRepublic      | [Articles RSS Feed URL](https://www.techrepublic.com/rssfeeds/articles/)          |
+| Aptivi            | [Name List](https://github.com/Aptivi/NamesList)                                  |
+| smashew           | [Name Database](https://github.com/smashew/NameDatabases)                         |
+| yavuz             | [RSS Feed List by Country](https://github.com/yavuz/news-feed-list-of-countries/) |
+| VIM theme makers  | [SpaceCamp](https://github.com/jaredgorski/SpaceCamp)                             |
+|                   | [Papercolor](https://github.com/NLKNguyen/papercolor-theme)                       |
+|                   | [Melange](https://github.com/savq/melange)                                        |
+|                   | [Darcula](https://github.com/doums/darcula)                                       |
+
+...and all contributors who helped us form Nitrocid KS!
