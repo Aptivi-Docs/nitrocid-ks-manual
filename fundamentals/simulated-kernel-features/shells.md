@@ -178,7 +178,7 @@ The main shell contains these commands that you can use below. The administrativ
   * A bug reporting prompt
 * `roulette`
   * Russian Roulette
-* `rss [feedlink]`
+* `rss [-m] [feedlink]`
   * Opens the RSS feed
 * `savescreen [saver]`
   * Saves your screen
@@ -234,7 +234,7 @@ The main shell contains these commands that you can use below. The administrativ
   * Verifies sanity of the file
 * `weather [-list] <CityID/CityName> [apikey]`
   * Shows weather info for specified city using OpenWeatherMap
-* `wordle`
+* `wordle [-orig]`
   * Starts the Wordle game
 * `wrap <command>`
   * Wraps the console output
