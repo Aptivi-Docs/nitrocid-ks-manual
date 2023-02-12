@@ -1148,3 +1148,17 @@ This color type was used as a special color type intended to indicate that the e
 {% hint style="info" %}
 Instead of using `KernelColorType.Gray`, use the `ColorTools.GetGray()` function to get the gray color.
 {% endhint %}
+
+### Replaced `GetVariables()` with `Variables` property
+
+{% code title="UESHVariables.vb" lineNumbers="true" %}
+```visual-basic
+Public Function GetVariables() As Dictionary(Of String, String)
+```
+{% endcode %}
+
+This function used to return a list of available UESH variables. It's been replaced with a property that does exactly the same thing. It's to make your mod code related to UESH variables easier to read.
+
+{% hint style="info" %}
+Replace all calls to `UESHVariables.GetVariables()` with `Variables`.
+{% endhint %}
