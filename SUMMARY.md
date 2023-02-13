@@ -119,13 +119,10 @@
   * [📡 Remote Procedure](advanced-and-power-users/inner-workings/remote-procedure.md)
 * [💿 GRILO Bootloader and KS](advanced-and-power-users/grilo-bootloader-and-ks.md)
 
-## Reference
-
-* [📖 API Reference](reference/api-reference.md)
-
 ***
 
 * [🧱 Project Dependencies](project-dependencies.md)
 * [Report an issue](https://github.com/Aptivi/NitrocidKS/issues/new/choose)
 * [Source code](https://github.com/Aptivi/NitrocidKS)
 * [Our projects](https://github.com/Aptivi)
+* [API Reference](https://aptivi.github.io/NitrocidKS/)

@@ -23,5 +23,5 @@ This kernel that is being simulated is planned for our future kernel made for pe
 To navigate the manual, select any page from the page list widget on the left of the screen.
 
 {% hint style="warning" %}
-The old DocFX-based wiki is now deprecated and will be removed at the end of the development cycle for the upcoming release, which is 0.1.0.
+The old DocFX-based wiki is now deprecated and will be removed at the end of the first development cycle for the upcoming release, which is 0.1.0.
 {% endhint %}
