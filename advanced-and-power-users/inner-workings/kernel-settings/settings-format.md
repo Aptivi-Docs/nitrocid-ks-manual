@@ -66,6 +66,8 @@ The variables that can be omitted are specified below:
   * The type of this variable is a **boolean**
 * `IsPathCurrentPath`: If the value takes a relative path, then `true` to neutralize the input path to the current path
   * The type of this variable is a **boolean**
+* `UnsupportedPlatforms`: The value is unsupported on one or more of the host platforms. The settings application won't display this value on an unsupported platform.
+  * The type of this variable is an array of strings that is one of `["windows", "unix", "macos"]`
 * `ValuePathType`: The path type to use for values. `IsPathCurrentPath` must be `false`.
   * The type of this variable is a **string**
 
@@ -240,7 +242,8 @@ The kernel makes a user configuration entry for each new user created either by 
     "anonymous": false,
     "disabled": false,
     "permissions": [],
-    "fullname": "name"
+    "fullname": "name",
+    "preferredlanguage": ""
   }
 ]
 ```
@@ -260,6 +263,8 @@ Let's explain each key one by one:
 * `permissions`: Stores the array of permissions found under [the permission list, `PermissionTypes`](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Users/Permissions/PermissionTypes.cs).
   * The type of this variable is an **array** of **string**
 * `fullname`: Stores the full name
+  * The type of this variable is a **string**
+* `preferredlanguage`: Stores the preferred user language in three-letter language name format. Can be left blank to use the kernel-wide language
   * The type of this variable is a **string**
 
 ## Alias configuration

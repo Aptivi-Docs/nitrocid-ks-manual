@@ -93,3 +93,9 @@ Before the translation process, the language manager needs to know what are the 
 The translation function, `Translate.DoTranslation()`, checks to see if the language exists by calling the above property and checking for the language key to see if it exists. If it's found, and the translation is needed (`eng` is not a current language), it calls the `LanguageInfo` version.
 
 Finally, the overloaded function checks to see if the string is found within the translated strings. If it found one, it returns the translated string. Else, it surrounds the string with the `((` and the `))` signs to indicate that the locale data for this string is missing.
+
+{% hint style="info" %}
+When the user is logged in, the kernel checks for preferred language value defined in the user configuration file.
+
+If `preferredlanguage` is not defined, it'll fallback to the kernel language. Else, it uses the user preferred language.
+{% endhint %}

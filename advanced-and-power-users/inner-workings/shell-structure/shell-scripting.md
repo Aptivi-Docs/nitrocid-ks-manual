@@ -136,3 +136,47 @@ You can call `ConditionSatisfied()` to test any built-in or custom condition. Gi
 {% hint style="warning" %}
 The `if` command in the UESH shell is a major contributor to the condition system, though it can be changed in the future.
 {% endhint %}
+
+### Conditional blocks and Loops
+
+The conditional blocks and loops are one of the most essential scripting features that control the script flow based on the conditions and conditional loops. These are currently supported:
+
+* `if <condition>`
+* `while <condition>`
+* `until <condition>`
+
+After the script parser detects one of these, it checks for the new block stack in the next line, like this:
+
+```
+if $test2 eq y
+|set $test3 n
+```
+
+{% hint style="danger" %}
+The new block stack must be defined with one extra `|` character directly after lines that start with one of the above conditional block statements. Otherwise, parsing will fail.
+{% endhint %}
+
+If defined correctly, the script parser walks through the commands defined in the new stack. However, if the condition is not satisfied, the whole block stack for the first conditional block that doesn't satisfy the condition will be skipped and the parser will continue executing commands that are defined in the current stack. For example, consider this:
+
+{% code lineNumbers="true" %}
+```
+choice -m $test2 y/n "Found any bugs?"
+if $test2 eq y
+|set $test3 n
+|until $test3 eq y
+||choice -m $test3 y/n "Exit?"
+||echo Current: $test3
+|echo out of until
+echo out of if
+```
+{% endcode %}
+
+This script first checks to see if the user has answered `y` in the first line. The following will happen:
+
+* If the user answered `y`, the script parser enters the new stack defined by the `if` condition in line 2.
+* If the user answered `n`, the script parser skips the new stack defined by the `if` condition and continues parsing the commands from line 8.
+
+`while` and `until` blocks require the new stack to be defined. In addition to this, the script parser checks to see if the condition is no longer satisfied after the stack that these blocks defined.
+
+* If the condition is satisfied, the commands after the `while` or `until` blocks get executed.
+* If the condition is not satisfied, the commands after the `while` or `until` blocks get skipped and the script parser continues parsing the commands.
