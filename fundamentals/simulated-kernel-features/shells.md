@@ -132,6 +132,8 @@ The main shell contains these commands that you can use below. The administrativ
   * Gets key information for a pressed key
 * `license`
   * Shows license information for the kernel
+* `lintscript <script>`
+  * Checks your UESH script for syntax errors
 * `list [-showdetails|-suppressmessages|-recursive] [directory]`
   * Lists either the current directory or a specified directory
 * `listunits <type>`
