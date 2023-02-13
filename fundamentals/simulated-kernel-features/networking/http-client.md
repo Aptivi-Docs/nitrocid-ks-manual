@@ -29,5 +29,7 @@ This HTTP shell provides you with these commands to choose how to interact with 
   * Gets the response from the HTTP server with the request
 * `getstring <request>`
   * Gets the stringified response from the HTTP server with the request
+* `putstring <request> <string>`
+  * Puts the string to the HTTP server with the request
 * `setsite <uri>`
   * Sets the target server to interact with
