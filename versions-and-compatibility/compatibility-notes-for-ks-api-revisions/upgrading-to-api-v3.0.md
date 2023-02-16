@@ -1162,3 +1162,18 @@ This function used to return a list of available UESH variables. It's been repla
 {% hint style="info" %}
 Replace all calls to `UESHVariables.GetVariables()` with `Variables`.
 {% endhint %}
+
+### Removed remote-debug-related argument from `ShowHelp()`
+
+{% code title="HelpSystem.vb" lineNumbers="true" %}
+```visual-basic
+Public Sub ShowHelp(command As String, CommandType As ShellType, Optional DebugDeviceSocket As StreamWriter = Nothing)
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```
+{% endcode %}
+
+Remote debug shell used to require the `DebugDeviceSocket` parameter to be passed to `ShowHelp` for `DecisiveWriter` to decide what type of console is going to be written to. Since `DecisiveWriter` got removed and the remote debug shell was re-implemented to be standalone, we decided to remove this parameter.
+
+{% hint style="info" %}
+There was no need to pass `DebugDeviceSocket` to this function anyways. If you really need to use it, make your own remote debug command with the help entry, and Nitrocid KS will take care of the rest.
+{% endhint %}
