@@ -4,7 +4,7 @@ description: Just started using Nitrocid KS? You've landed on the right place!
 
 # 👋 Welcome!
 
-<figure><img src="https://officialaptivi.files.wordpress.com/2022/08/ks24-1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 🎊 🎊 🎊
@@ -21,7 +21,3 @@ This kernel that is being simulated is planned for our future kernel made for pe
 ## This documentation
 
 To navigate the manual, select any page from the page list widget on the left of the screen.
-
-{% hint style="warning" %}
-The old DocFX-based wiki is now deprecated and will be removed at the end of the first development cycle for the upcoming release, which is 0.1.0.
-{% endhint %}

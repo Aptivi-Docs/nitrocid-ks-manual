@@ -4,7 +4,7 @@ description: What are accounts in the kernel?
 
 # 👤 Accounts
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Operating systems usually provide the user account functionality to allow more than one person to use the same computer. Each person has their own accounts on their computers to store their personal information and data, including their user profiles and their contents.
 
