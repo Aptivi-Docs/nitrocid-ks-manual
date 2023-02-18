@@ -1177,3 +1177,33 @@ Remote debug shell used to require the `DebugDeviceSocket` parameter to be passe
 {% hint style="info" %}
 There was no need to pass `DebugDeviceSocket` to this function anyways. If you really need to use it, make your own remote debug command with the help entry, and Nitrocid KS will take care of the rest.
 {% endhint %}
+
+### Renamed few classes
+
+{% code title="TimeDate.vb" lineNumbers="true" %}
+```visual-basic
+Namespace TimeDate
+    Public Module TimeDate
+```
+{% endcode %}
+
+{% code title="IScript.vb" lineNumbers="true" %}
+```visual-basic
+Namespace Modifications
+    Public Interface IScript
+```
+{% endcode %}
+
+`TimeDate` used to host all the time and date general properties and functions. However, its access required to reference the namespace and then the class, because both the namespace and the class have the same name. As a result, the `TimeDate` class is renamed to `TimeDateTools` for easier access.
+
+Also, `IScript` used to be the heart of the kernel modifications. It's renamed to `IMod` since it doesn't have to do with the UESH scripts.
+
+{% hint style="warning" %}
+Your mods should change the implementation interface name of the mod, `IScript`, to the new name, `IMod`, as it's more fitting. This will break all mods.
+
+For the time and date functions, use the new class name, `TimeDateTools`.
+{% endhint %}
+
+{% hint style="info" %}
+None of the methods and properties on the two above classes are changed.
+{% endhint %}
