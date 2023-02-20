@@ -116,6 +116,6 @@ Every single version of the kernel comes with many changes, including feature ad
 
 ## API v3.0 series
 
-{% content-ref url="v0.1.x.x-series.md" %}
-[v0.1.x.x-series.md](v0.1.x.x-series.md)
+{% content-ref url="v0.1.x.x-series/" %}
+[v0.1.x.x-series](v0.1.x.x-series/)
 {% endcontent-ref %}

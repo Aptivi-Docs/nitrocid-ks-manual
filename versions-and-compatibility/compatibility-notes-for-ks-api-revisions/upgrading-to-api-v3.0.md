@@ -14,8 +14,8 @@ As API v3.0 is still in development, the breaking changes get committed and land
 
 This version is a futuristic magic that brings in many feature additions and spectacular improvements in all fields, including cosmetic changes.
 
-{% content-ref url="../version-release-notes/v0.1.x.x-series.md" %}
-[v0.1.x.x-series.md](../version-release-notes/v0.1.x.x-series.md)
+{% content-ref url="../version-release-notes/v0.1.x.x-series/" %}
+[v0.1.x.x-series](../version-release-notes/v0.1.x.x-series/)
 {% endcontent-ref %}
 
 **Moved events to KS.Kernel.Events**
