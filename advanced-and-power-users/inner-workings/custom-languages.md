@@ -4,7 +4,11 @@ description: How to define your custom languages.
 
 # 🌐 Custom Languages
 
-When you extract the binary folder of Nitrocid KS, you may see a folder called CustomLanguages. Inside it, you can see the `Metadata.json` file that holds language metadata as described in the previous article. Before reading this, you must understand the multilingual kernel feature and how it works by clicking on the below link.
+When you extract the binary folder of Nitrocid KS, you may see a folder called `CustomLanguages`. Inside it, you can see the `Metadata.json` file that holds language metadata as described in the previous article. Before reading this, you must understand the multilingual kernel feature and how it works by clicking on the below link.
+
+{% content-ref url="multilingual-kernel-flow.md" %}
+[multilingual-kernel-flow.md](multilingual-kernel-flow.md)
+{% endcontent-ref %}
 
 Customized languages play an important role in being a building block for making your custom localization. This feature contains two separate folders:
 
