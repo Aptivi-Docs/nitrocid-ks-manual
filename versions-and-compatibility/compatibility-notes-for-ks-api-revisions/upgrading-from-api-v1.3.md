@@ -4,7 +4,7 @@ description: Follow the compatibility notes when upgrading your mods from API v1
 
 # 🔼 Upgrading from API v1.3
 
-When upgrading your modification from the target of the later version of Kernel Simulator that declares itself to be from the API v1.3, you must make necessary changes to be able to use your mod in a Kernel Simulator version which you use to test your mod. These changes will be listed starting from 0.0.16 to the last version in this API revision.
+When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v1.3, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod. These changes will be listed starting from 0.0.16 to the last version in this API revision.
 
 ## From 0.0.16
 
@@ -23,7 +23,7 @@ Public Sub ParseCurrentTheme()
 ```
 {% endcode %}
 
-One of the useful features added to this version series of Kernel Simulator is the dynamic theme support, which takes any theme information formatted in JSON format and parses it to the theme manager to set the necessary colors according to the color types.
+One of the useful features added to this version series of Nitrocid KS is the dynamic theme support, which takes any theme information formatted in JSON format and parses it to the theme manager to set the necessary colors according to the color types.
 
 This function was implemented to set the kernel colors from any theme name. However, the major caveat that affected this function was that themes depended on the supporting variables for each theme, which ultimately resulted in the API pollution that we had to clean up. Refining the theme feature caused us to remove this function and replace it with something saner.
 

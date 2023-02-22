@@ -12,6 +12,6 @@ It also performs its own tasks, such as handling hardware interrupts, managing h
 
 Kernel Simulator attempts to simulate how the kernel works and how the operating system interacts with the kernel. To deeply explain how, see the next page.
 
-{% content-ref url="what-is-kernel-simulator.md" %}
-[what-is-kernel-simulator.md](what-is-kernel-simulator.md)
+{% content-ref url="what-is-nitrocid-ks.md" %}
+[what-is-nitrocid-ks.md](what-is-nitrocid-ks.md)
 {% endcontent-ref %}

@@ -20,10 +20,10 @@ In-kernel debugging allows you to use its own built-in tools to debug the kernel
 
 ## Visual Studio
 
-This way of debugging is only available if you have Visual Studio installed. If you have the source code of the kernel cloned from our GitHub, you can attach the Kernel Simulator process to the debugger. Here's how, assuming that Kernel Simulator is already open:
+This way of debugging is only available if you have Visual Studio installed. If you have the source code of the kernel cloned from our GitHub, you can attach the Nitrocid KS process to the debugger. Here's how, assuming that Nitrocid KS is already open:
 
 1. Open Visual Studio to the empty project
 2. Right-click on `Debug` -> `Attach to Process`
-3. Find `Kernel Simulator.exe`
+3. Find `Nitrocid.exe`
 4. Click on `Attach`
-5. In case Visual Studio is asking for source files, point to a file within the Kernel Simulator source
+5. In case Visual Studio is asking for source files, point to a file within the Nitrocid KS source

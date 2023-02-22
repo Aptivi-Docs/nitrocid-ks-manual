@@ -6,7 +6,7 @@ description: This page describes how to test the kernel with various features
 
 <figure><img src="../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
 
-Another way to diagnose the kernel is through testing. It uses the facade system to allow you to test individual kernel features. It can be invoked by running Kernel Simulator with the `testInteractive` command-line argument.
+Another way to diagnose the kernel is through testing. It uses the facade system to allow you to test individual kernel features. It can be invoked by running Nitrocid KS with the `testInteractive` command-line argument.
 
 ## Controls
 

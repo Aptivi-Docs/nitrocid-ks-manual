@@ -25,7 +25,7 @@ This program generates the above JSON file for the built-in kernel languages and
 
 ### Metadata
 
-Each copy of Kernel Simulator provides you two placeholder folders, `CustomLanguages` and `Translations`. Each of these folders must contain the metadata JSON file, `Metadata.json`, which is detailed below: (The `codepage` variable can be omitted)
+Each copy of Nitrocid KS provides you two placeholder folders, `CustomLanguages` and `Translations`. Each of these folders must contain the metadata JSON file, `Metadata.json`, which is detailed below: (The `codepage` variable can be omitted)
 
 #### For normal languages
 

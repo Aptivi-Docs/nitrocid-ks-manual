@@ -20,7 +20,7 @@ In the real-world, if there is a new person willing to use your computer to stor
 
 <figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
-The same thing can be simulated in Kernel Simulator. To add a new user account, follow these steps:
+The same thing can be simulated in Nitrocid KS. To add a new user account, follow these steps:
 
 1. Log-in to the system account, root, or any of the administrators or users that has at least the user management permission
 2. Execute the `adduser` command to make a new user. The username is needed to be able to create your new user.

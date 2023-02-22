@@ -4,7 +4,7 @@ description: Follow the compatibility notes when upgrading your mods from API v2
 
 # 🔼 Upgrading from API v2.1
 
-When upgrading your modification from the target of the later version of Kernel Simulator that declares itself to be from the API v2.1, you must make necessary changes to be able to use your mod in a Kernel Simulator version which you use to test your mod.
+When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v2.1, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod.
 
 The following changes were listed sequentially as development went on.
 

@@ -286,7 +286,7 @@ The main shell contains these commands that you can use below. The administrativ
 * `reloadsaver <customsaver>`
   * Reloads a custom screensaver file
 * `rexec <address> [port] <command>`
-  * Remotely executes an RPC command to another computer running Kernel Simulator with RPC enabled
+  * Remotely executes an RPC command to another computer running Nitrocid KS with RPC enabled
 * `rdebug`
   * Enables or disables the remote debugging
 * `rmuser <Username>`

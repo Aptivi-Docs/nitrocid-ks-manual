@@ -1,18 +1,16 @@
 ---
-description: >-
-  This page lists all the unsupported Kernel Simulator version series and their
-  history.
+description: This page lists all the unsupported version series and their history.
 ---
 
 # 🕘 EOL Versions
 
-Like all the software in the entire world, Kernel Simulator has support periods for its versions, and versions that are listed below are no longer supported. If you're running one of these versions found in the table, consider upgrading your Kernel Simulator application and updating your mods to the version that supports the latest API.
+Like all the software in the entire world, Nitrocid KS has support periods for its versions, and versions that are listed below are no longer supported. If you're running one of these versions found in the table, consider upgrading your Nitrocid KS application and updating your mods to the version that supports the latest API.
 
 ## List of unsupported version series
 
 {% tabs %}
 {% tab title="API v1.3" %}
-This revision of the Kernel Simulator API is currently supported.
+This revision of the API is currently supported.
 
 | Version   | Release date | EOL date  |
 | --------- | ------------ | --------- |

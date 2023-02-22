@@ -14,7 +14,7 @@ For beta versions of this series, consult the below link.
 
 ### Version 0.0.6.0
 
-Kernel Simulator 0.0.6.0 was out on June 19, 2019 to finalize the initial version of the series with bug fixes. It was also the first version to have renewed the icon for the first time.
+Nitrocid KS 0.0.6.0 was out on June 19, 2019 to finalize the initial version of the series with bug fixes. It was also the first version to have renewed the icon for the first time.
 
 #### Additions
 
@@ -48,7 +48,7 @@ This version existed solely to prompt every user who needed to use currency conv
 
 ### Version 0.0.6.2
 
-0.0.6.2 was released on June 24, 2019, to add modding using C# codefiles for the first time to the kernel. This version was named for being the first sign of slowly bringing C# support to Kernel Simulator, to eventually being C# only in API v3.0 kernels and up.
+0.0.6.2 was released on June 24, 2019, to add modding using C# codefiles for the first time to the kernel. This version was named for being the first sign of slowly bringing C# support to Nitrocid KS, to eventually being C# only in API v3.0 kernels and up.
 
 It was out in several variants: the original version got released at June 24, 2019, the 0.0.6.2a version at the same date, and 0.0.6.2b version at June 25, 2019.
 

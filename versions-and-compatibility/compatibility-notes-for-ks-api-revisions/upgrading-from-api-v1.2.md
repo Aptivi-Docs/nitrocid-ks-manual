@@ -4,7 +4,7 @@ description: Follow the compatibility notes when upgrading your mods from API v1
 
 # 🔼 Upgrading from API v1.2
 
-When upgrading your modification from the target of the later version of Kernel Simulator that declares itself to be from the API v1.2, you must make necessary changes to be able to use your mod in a Kernel Simulator version which you use to test your mod. These changes will be listed starting from 0.0.12 to the last version in this API revision.
+When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v1.2, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod. These changes will be listed starting from 0.0.12 to the last version in this API revision.
 
 ## From 0.0.12
 
@@ -154,7 +154,7 @@ Public Function CheckSSE(ByVal SSEVer As Integer) As Boolean
 
 Finally, the above routines were used to check your processor for support of the Streaming SIMD Extensions (SSE) feature set.
 
-As Inxi.NET got released at the end of 2020, it was used by Kernel Simulator to separate these above routines to the library so the hardware querying functions were no longer dependent on Kernel Simulator.
+As Inxi.NET got released at the end of 2020, it was used by Nitrocid KS to separate these above routines to the library so the hardware querying functions were no longer dependent on Nitrocid KS.
 
 As a result, we removed all the above classes and routines.
 
@@ -176,7 +176,7 @@ Public Function DoCalc(ByVal Expression As String) As Dictionary(Of Double, Bool
 ```
 {% endcode %}
 
-The calculator wawas re-implementdd with the usage of the DataTable class to aid in solving the expression. This time, it only takes the expression and calculates it using the Compute() method from the abovementioned class. The expression had to follow the format of the DataTable expression that were described in the below link.
+The calculator was re-implemented with the usage of the DataTable class to aid in solving the expression. This time, it only takes the expression and calculates it using the Compute() method from the abovementioned class. The expression had to follow the format of the DataTable expression that were described in the below link.
 
 {% embed url="https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable.compute?view=net-6.0" %}
 

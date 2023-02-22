@@ -4,7 +4,7 @@ description: This page describes how to make your own kernel splash using Visual
 
 # 🪄 Your Splash
 
-You're looking to create a splash for Kernel Simulator! That's great! Make sure that you have Visual Studio installed. Follow the steps to create your first splash.
+You're looking to create a splash for Nitrocid KS! That's great! Make sure that you have Visual Studio installed. Follow the steps to create your first splash.
 
 1.  Press `Create a new project` on Visual Studio homepage
 
@@ -39,6 +39,6 @@ You're looking to create a splash for Kernel Simulator! That's great! Make sure 
 11. Navigate to the output directory and copy the `.dll` file to `KSSplashes` under the `%localappdata%/KS` folder.
 
     <figure><img src="../../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
-12. Open Kernel Simulator to go to `Settings` > `General` > `Splash name`. Ensure that your splash shows up.
+12. Open Nitrocid KS to go to `Settings` > `General` > `Splash name`. Ensure that your splash shows up.
 
     <figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>

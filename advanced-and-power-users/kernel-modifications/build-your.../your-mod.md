@@ -6,7 +6,7 @@ description: >-
 
 # 🧪 Your Mod
 
-You're looking to create a mod for Kernel Simulator! That's great! Make sure that you have Visual Studio installed. Follow the steps to create your first mod.
+You're looking to create a mod for Nitrocid KS! That's great! Make sure that you have Visual Studio installed. Follow the steps to create your first mod.
 
 1.  Press `Create a new project` on Visual Studio homepage
 
@@ -44,7 +44,7 @@ You're looking to create a mod for Kernel Simulator! That's great! Make sure tha
 12. Navigate to the output directory and copy the `.dll` file to `KSMods` under the `%localappdata%/KS` folder.
 
     <figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
-13. Open Kernel Simulator to test your mod. Ensure that `modman list` lists your mod.
+13. Open Nitrocid KS to test your mod. Ensure that `modman list` lists your mod.
 
     <figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
 

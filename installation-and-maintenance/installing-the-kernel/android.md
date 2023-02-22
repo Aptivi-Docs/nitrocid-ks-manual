@@ -1,14 +1,14 @@
 ---
-description: How to install Kernel Simulator on Android
+description: How to install Nitrocid KS on Android
 ---
 
 # 📱 Android
 
-The tricky part is getting Kernel Simulator to run on Android phones and tablets, especially those that run the latest version of Android.
+The tricky part is getting Nitrocid KS to run on Android phones and tablets, especially those that run the latest version of Android.
 
 ## Installation
 
-To install Kernel Simulator on your phone or tablet, install the following dependencies:
+To install Nitrocid KS on your phone or tablet, install the following dependencies:
 
 * [Termux](https://termux.dev/en/)
 * [Ubuntu PRoot](https://wiki.termux.com/wiki/PRoot#Installing\_Linux\_distributions)
@@ -19,23 +19,23 @@ Once you're done, follow the steps:
 
 1. Install Termux
 2. Install proot-distro using the following command:
-   * pkg install proot-distro
+   * `pkg install proot-distro`
 3. Install the Ubuntu proot
    * proot-distro install ubuntu
 4. Log in to the Ubuntu proot
-   * proot-distro login ubuntu
+   * `proot-distro login ubuntu`
 5. Ensure that you've updated the package cache
-   * apt update
-   * apt dist-upgrade
+   * `apt update`
+   * `apt dist-upgrade`
 6. Install the .NET 6.0 runtime
-   * apt install dotnet-runtime-6.0
-7. Install wget to download the latest release from [this page](https://github.com/Aptivi/Kernel-Simulator/releases). Be sure to get the URL for any .rar file ending with `-dotnet`, such as [this URL](https://github.com/Aptivi/Kernel-Simulator/releases/download/v0.0.24.4-beta/0.0.24.4-bin-dotnet.rar).
-   * apt install wget
-   * wget https://github.com/Aptivi/Kernel-Simulator/releases/download/v0.x.x.x-beta/0.x.x.x-bin-dotnet.rar
+   * `apt install dotnet-runtime-6.0`
+7. Install wget to download the latest release from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
+   * `apt install wget`
+   * `wget https://github.com/Aptivi/Kernel-Simulator/releases/download/v0.x.x.x-beta/0.x.x.x-bin.rar`
 8. Install unrar (from multiverse) to extract the files
-   * apt install unrar
-   * unrar 0.x.x.x-bin-dotnet.rar
-9. Execute `dotnet Kernel Simulator.dll`
+   * `apt install unrar`
+   * `unrar 0.x.x.x-bin.rar`
+9. Execute `dotnet Nitrocid.dll`
 
 ## Bleeding-edge
 
@@ -53,4 +53,4 @@ If you're a tester to such software, please follow the steps on your Windows mac
 7. Still in the home directory, install unzip to extract the files
    * apt install unzip
    * unzip ks-build.zip
-8. Execute `dotnet Kernel Simulator.dll`
+8. Execute `dotnet Nitrocid.dll`

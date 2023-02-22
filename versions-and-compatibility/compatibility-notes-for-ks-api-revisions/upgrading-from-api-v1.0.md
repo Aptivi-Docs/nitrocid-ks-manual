@@ -4,7 +4,7 @@ description: Follow the compatibility notes when upgrading your mods from API v1
 
 # 🔼 Upgrading from API v1.0
 
-When upgrading your modification from the target of the later version of Kernel Simulator that declares itself to be from the API v1.0, you must make necessary changes to be able to use your mod in a Kernel Simulator version which you use to test your mod. These changes will be listed starting from 0.0.4 to the last version in this API revision.
+When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v1.0, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod. These changes will be listed starting from 0.0.4 to the last version in this API revision.
 
 ## From 0.0.4
 
@@ -76,7 +76,7 @@ Sub ShowTimeQuiet()
 This function was created back in 0.0.2 to wrap the conditional execution of ShowTime(). This was generally a shortcut to checking to see if the kernel quiet mode is enabled. However, it was deemed unnecessary, and, thus, removed.
 
 {% hint style="danger" %}
-Latest generations of Kernel Simulator offer better quiet mode, which functions more dynamically than the implementation on the first-generation versions. We advice you to cease using this function.
+Latest generations of Nitrocid KS offer better quiet mode, which functions more dynamically than the implementation on the first-generation versions. We advice you to cease using this function.
 {% endhint %}
 
 ## From 0.0.5
@@ -99,10 +99,10 @@ Sub DiscoSystem(Optional ByVal BlackWhite As Boolean = False)
 ```
 {% endcode %}
 
-The very first screensaver ever implemented in the very first version of Kernel Simulator. However, it was implemented in the DiscoSystem() function which, unfortunately, situated in the GetCommand module, which was a wrong place to start with. It was removed in 0.0.5.
+The very first screensaver ever implemented in the very first version of Nitrocid KS. However, it was implemented in the DiscoSystem() function which, unfortunately, situated in the GetCommand module, which was a wrong place to start with. It was removed in 0.0.5.
 
 {% hint style="danger" %}
-This screensaver was later implemented in later versions of Kernel Simulator as one of the genuine screensavers under the name of Disco. We still advice you to stop using this function.
+This screensaver was later implemented in later versions of Nitrocid KS as one of the genuine screensavers under the name of Disco. We still advice you to stop using this function.
 {% endhint %}
 
 ### BeepFreq() and BeepSystem()
@@ -473,7 +473,7 @@ We no longer support currency conversions as part of the current state of the ec
 
 ## From 0.0.7
 
-This version series is the last version group for Kernel Simulator API v1.0, which incorporated many changes, such as the addition of languages. In contrast, the following APIs are removed:
+This version series is the last version group for Nitrocid KS API v1.0, which incorporated many changes, such as the addition of languages. In contrast, the following APIs are removed:
 
 {% content-ref url="../version-release-notes/v0.0.7.x-series/v0.0.7.0-beta-versions.md" %}
 [v0.0.7.0-beta-versions.md](../version-release-notes/v0.0.7.x-series/v0.0.7.0-beta-versions.md)
@@ -618,12 +618,12 @@ Private Sub WriteInfo(ByVal title As String)
 ```
 {% endcode %}
 
-The manual page for Kernel Simulator was first situated in the application itself using an in-house format known as the `.ksman` extension. It was the start of the actual product documentation, until several display issues on the manual API surfaced with the release, especially on Linux systems. We had to make several fixes before abandoning the entire viewer.
+The manual page for Nitrocid KS was first situated in the application itself using an in-house format known as the `.ksman` extension. It was the start of the actual product documentation, until several display issues on the manual API surfaced with the release, especially on Linux systems. We had to make several fixes before abandoning the entire viewer.
 
 The parser, however, works well. We recently had time issues with translating pretty much every manual page to the point that the manual page count was very high. We felt like that it was a very high volume, so we decided to remove them, and migrate the manual to GitHub Wiki.
 
 {% hint style="info" %}
-The manual page feature made its own return for 0.0.20, but it only works for mods and not the actual user guide for Kernel Simulator, which is what you're reading here.
+The manual page feature made its own return for 0.0.20, but it only works for mods and not the actual user guide for Nitrocid KS, which is what you're reading here.
 {% endhint %}
 
 ### ListLocal()

@@ -59,7 +59,7 @@
 ## Fundamentals
 
 * [🌽 What is the Kernel?](fundamentals/what-is-the-kernel.md)
-* [👾 What is Kernel Simulator?](fundamentals/what-is-kernel-simulator.md)
+* [👾 What is Nitrocid KS?](fundamentals/what-is-nitrocid-ks.md)
 * [🌟 Simulated Kernel Features](fundamentals/simulated-kernel-features/README.md)
   * [👤 Accounts](fundamentals/simulated-kernel-features/accounts/README.md)
     * [🔓 Permissions](fundamentals/simulated-kernel-features/accounts/permissions.md)

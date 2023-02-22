@@ -7,7 +7,7 @@ description: Follow the compatibility notes when upgrading your mods to API v3.0
 As API v3.0 is still in development, the breaking changes get committed and land here. They describe what broke and what should be used instead.
 
 {% hint style="danger" %}
-.NET Framework 4.8 is **no longer supported** as of 0.1.0 Beta 1. Please consider using .NET 6.0 instead to continue using Kernel Simulator. This is to improve multi-platform support without having to go to one environment (`dotnetfx` on Windows and `mono` on Linux and macOS) for each platform.
+.NET Framework 4.8 is **no longer supported** as of 0.1.0 Beta 1. Please consider using .NET 6.0 instead to continue using Nitrocid KS. This is to improve multi-platform support without having to go to one environment (`dotnetfx` on Windows and `mono` on Linux and macOS) for each platform.
 {% endhint %}
 
 ### To 0.1.0
@@ -69,7 +69,7 @@ Public Enum MessageType As Integer
 ```
 {% endcode %}
 
-MOTD and MAL parsers were unified since early versions of Kernel Simulator. However, it didn't occur to us that we need to separate them for a very long time. We took actions to separate them, effectively removing the `MessageType` enumeration.
+MOTD and MAL parsers were unified since early versions of Nitrocid KS. However, it didn't occur to us that we need to separate them for a very long time. We took actions to separate them, effectively removing the `MessageType` enumeration.
 
 {% hint style="info" %}
 * If you want to use the MOTD parser, use the `KS.Misc.Probers.Motd` namespace to use the `MotdParse` static class methods.
@@ -163,7 +163,7 @@ Sub InitPaths()
 ```
 {% endcode %}
 
-Now, we don't have to initialize paths every time we make an internal app that depends on Kernel Simulator's paths. The call to the function that gets the path, `GetKernelPath`, however won't be removed because it's widely used and is unaffected.
+Now, we don't have to initialize paths every time we make an internal app that depends on Nitrocid KS's paths. The call to the function that gets the path, `GetKernelPath`, however won't be removed because it's widely used and is unaffected.
 
 {% hint style="info" %}
 This function is not part of the public API. Reflection calls to this function will stop working. We advice you to use the `GetKernelPath` function since it's much faster.

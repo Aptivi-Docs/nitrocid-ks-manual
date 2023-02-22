@@ -144,7 +144,7 @@ This type allows lists to be made in kernel settings. It contains list of config
 
 #### Case 1
 
-The target list is always a parameterless function that always returns a list that is found under a Kernel Simulator type. The list type takes a string and splits it using the specified delimiter found in a variable.
+The target list is always a parameterless function that always returns a list that is found under a Nitrocid KS type. The list type takes a string and splits it using the specified delimiter found in a variable.
 
 * `SelectionFunctionName`: The function within the below specified type that returns the list. It must contain no arguments.
   * The type of this variable is a **string**
@@ -165,7 +165,7 @@ The format is as below:
 
 #### Case 2
 
-The target list is always a parameterless function that always returns a list that is found under a Kernel Simulator type. The list type takes a string and splits it using the specified delimiter.
+The target list is always a parameterless function that always returns a list that is found under a Nitrocid KS type. The list type takes a string and splits it using the specified delimiter.
 
 * `SelectionFunctionName`: The function within the below specified type that returns the list. It must contain no arguments.
   * The type of this variable is a **string**

@@ -6,7 +6,7 @@ description: >-
 
 # 🌌 Your Screensaver
 
-You're looking to create a screensaver for Kernel Simulator! That's great! Make sure that you have Visual Studio installed. Follow the steps to create your first screensaver.
+You're looking to create a screensaver for Nitrocid KS! That's great! Make sure that you have Visual Studio installed. Follow the steps to create your first screensaver.
 
 1.  Press `Create a new project` on Visual Studio homepage
 
@@ -44,7 +44,7 @@ You're looking to create a screensaver for Kernel Simulator! That's great! Make 
 12. Navigate to the output directory and copy the `.dll` file to `KSMods` under the `%localappdata%/KS` folder.
 
     <figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
-13. Open Kernel Simulator to test your mod. Ensure that `savescreen YourSaver` shows your own screensaver.
+13. Open Nitrocid KS to test your mod. Ensure that `savescreen YourSaver` shows your own screensaver.
 
     <figure><img src="../../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
 

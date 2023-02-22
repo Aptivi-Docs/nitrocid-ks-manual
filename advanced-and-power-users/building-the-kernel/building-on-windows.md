@@ -11,7 +11,7 @@ In Windows systems, you have two ways to build the simulator: one if you use Vis
 
 ### Visual Studio 2019+
 
-Before being able to build Kernel Simulator, please make sure that you have at least Visual Studio 2019 version 16.8 or later that supports building projects for .NET 6.0. You can get Visual Studio [here](https://visualstudio.microsoft.com/).
+Before being able to build Nitrocid KS, please make sure that you have at least Visual Studio 2019 version 16.8 or later that supports building projects for .NET 6.0. You can get Visual Studio [here](https://visualstudio.microsoft.com/).
 
 Once you have Visual Studio installed with at least the .NET 6.0 SDK and the .NET development workload, follow these steps:
 
@@ -32,7 +32,7 @@ Once you have Visual Studio installed with at least the .NET 6.0 SDK and the .NE
 
 ### Using the command-line
 
-If you are a hardcore command-line user or if you prefer using the command-line, follow these steps to build Kernel Simulator right from the command line:
+If you are a hardcore command-line user or if you prefer using the command-line, follow these steps to build Nitrocid KS right from the command line:
 
 1. Open `Git Bash` on your work directory
 2. Execute `git clone https://github.com/Aptivi/NitrocidKS.git`

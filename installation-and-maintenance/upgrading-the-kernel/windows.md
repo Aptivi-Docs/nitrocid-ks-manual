@@ -1,5 +1,5 @@
 ---
-description: How to upgrade Kernel Simulator on Windows
+description: How to upgrade Nitrocid KS on Windows
 ---
 
 # 💻 Windows
@@ -16,10 +16,10 @@ Any updates to the KS Chocolatey package can be done using a built-in Chocolatey
 
 ### Method 2: Manually unpacking
 
-Kernel Simulator can also be manually updated in case the automatic updater failed to update. To update the kernel, perform the same steps as in installing KS. Run the executable to upgrade your kernel configuration files to the latest.
+Nitrocid KS can also be manually updated in case the automatic updater failed to update. To update the kernel, perform the same steps as in installing KS. Run the executable to upgrade your kernel configuration files to the latest.
 
 1. Ensure that you have all the required software installed
 2. Download the latest release RAR file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases). Files that end with the `-dotnet` prefix means that it's for .NET 6.0.
 3. Unpack the RAR archive to any folder of your choice
-4. Open your favorite terminal emulator, like ConEmu, and change the working directory to a folder containing the Kernel Simulator executable
-5. Execute `ks` or `Kernel Simulator.exe` to start the kernel
+4. Open your favorite terminal emulator, like ConEmu, and change the working directory to a folder containing the Nitrocid KS executable
+5. Execute `ks` or `Nitrocid.exe` to start the kernel

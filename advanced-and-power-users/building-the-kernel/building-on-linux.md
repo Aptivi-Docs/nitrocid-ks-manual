@@ -4,7 +4,7 @@ description: Build the simulator on Linux!
 
 # 🐧 Building on Linux
 
-In Linux systems, you can comfortably build Kernel Simulator using the command line, since it's the most lightweight solution. However, you must have the prerequisites before being able to build KS.
+In Linux systems, you can comfortably build Nitrocid KS using the command line, since it's the most lightweight solution. However, you must have the prerequisites before being able to build KS.
 
 * [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
@@ -14,7 +14,7 @@ Ubuntu 22.04 LTS Jammy Jellyfish users or later can directly download .NET 6.0 S
 
 ### Using the command-line
 
-If you are a hardcore command-line user or if you prefer using the command-line, follow these steps to build Kernel Simulator right from the command line:
+If you are a hardcore command-line user or if you prefer using the command-line, follow these steps to build Nitrocid KS right from the command line:
 
 1. Open your terminal emulator on your work directory
 2. Execute `git clone https://github.com/Aptivi/NitrocidKS.git`

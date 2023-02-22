@@ -1,5 +1,5 @@
 ---
-description: How to upgrade Kernel Simulator on Linux
+description: How to upgrade Nitrocid KS on Linux
 ---
 
 # 🐧 Linux
@@ -13,8 +13,8 @@ If you'd like to manually update your kernel to the latest version or to the lat
 1. Ensure that you have all the required software installed
 2. Download the latest release RAR file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases). Files that end with the `-dotnet` prefix means that it's for .NET 6.0.
 3. Unpack the RAR archive to any folder of your choice
-4. Open your favorite terminal emulator, like Konsole, and change the working directory to a folder containing the Kernel Simulator executable
-5. Execute `mono Kernel Simulator.exe` for .NET Framework or `dotnet Kernel Simulator.dll` for .NET 6.0 to start the kernel
+4. Open your favorite terminal emulator, like Konsole, and change the working directory to a folder containing the Nitrocid KS executable
+5. Execute `dotnet Nitrocid.dll` to start the kernel
 
 ### Method 2: Ubuntu PPA
 
@@ -24,6 +24,6 @@ If you're running Ubuntu, you can update KS using the Ubuntu PPA. Just follow th
    * sudo apt update
 2. Install the `kernel-simulator` package
    * sudo apt install kernel-simulator
-3. Start `ks` or use your app drawer to find `Kernel Simulator`
+3. Start `ks` or use your app drawer to find `Nitrocid KS`
 
 Once you upgrade KS using this method, you can't use your package manager to downgrade the version, so update accordingly. If you really want to downgrade the package, the only safe way to downgrade is to unpack the kernel manually.
