@@ -10,10 +10,11 @@ There are no beta versions without any known issues discovered by either the dev
 
 During quality assurance, we're aware of the following issues:
 
-* FallingLines may experience visual artifacts upon fading out the lines
-* `langman reload <lang>` may fail to reload the custom language
-* Progress notifications may fail to show up properly after the normal notification
+* FallingLines may experience visual artifacts upon fading out the lines.
+* `langman reload <lang>` may fail to reload the custom language.
+* Progress notifications may fail to show up properly after the normal notification.
 * `dotnet` may fail to build Nitrocid KS 0.1.0 Beta 1 in the `Release` configuration if you're building against the `v0.1.0-b1` tag.
+* The kernel may fail to download debug data if the debugging symbol file is not found.
 
 ## Found an issue?
 
