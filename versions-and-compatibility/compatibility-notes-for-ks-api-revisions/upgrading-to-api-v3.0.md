@@ -1207,3 +1207,20 @@ For the time and date functions, use the new class name, `TimeDateTools`.
 {% hint style="info" %}
 None of the methods and properties on the two above classes are changed.
 {% endhint %}
+
+### From 0.1.0 Beta 1
+
+#### Employed `ColorPrint.Core` for color wheel
+
+{% code title="ColorWheelOpen.vb" lineNumbers="true" %}
+```visual-basic
+Namespace ConsoleBase.Colors
+    Public Module ColorWheelOpen
+```
+{% endcode %}
+
+The color wheel was implemented in the kernel to allow color selection. However, it lacked features such as the color blindness simulation, so we decided to make an entirely new library dedicated to this. As a result, we've replaced the kernel's implementation with `ColorPrint.Core`, which is more portable and easier to use.
+
+{% hint style="info" %}
+Merge your calls to the `ColorWheelOpen` class to `ColorPrint.Core` as it's easier to use and more portable than the former class.
+{% endhint %}

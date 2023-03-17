@@ -9,6 +9,7 @@ In order for Nitrocid KS to work properly, it uses a bunch of libraries for its 
 | Library                        | Source                                                      | License                                                                          | Copyright                                                      |
 | ------------------------------ | ----------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------- |
 | Addresstigator                 | [GitHub](https://github.com/Aptivi/Addresstigator/)         | [MIT](https://github.com/Aptivi/Addresstigator/blob/main/LICENSE.txt)            | © 2022 - Present Aptivi                                        |
+| ColorPrint                     | [GitHub](https://github.com/Aptivi/ColorPrint)              | [MIT](https://github.com/Aptivi/ColorPrint/blob/main/LICENSE.txt)                | © 2023 - Present Aptivi                                        |
 | CRC32.NET                      | [GitHub](https://github.com/force-net/CRC32.NET)            | [MIT](https://github.com/force-net/Crc32.NET/blob/develop/LICENSE)               | © 2017 force                                                   |
 | Extensification                | [GitHub](https://github.com/Aptivi/Extensification/)        | [GPL3+](https://github.com/Aptivi/Extensification/blob/master/LICENSE)           | © 2020 - Present Aptivi                                        |
 | Figgle                         | [GitHub](https://github.com/drewnoakes/figgle)              | [Apache 2.0](https://github.com/drewnoakes/figgle/blob/master/LICENSE)           | © 2017 - 2021 drewnoakes                                       |
@@ -25,6 +26,7 @@ In order for Nitrocid KS to work properly, it uses a bunch of libraries for its 
 | StringMath                     | [GitHub](https://github.com/miroiu/string-math)             | [MIT](https://github.com/miroiu/string-math/blob/dev/LICENSE)                    | © Miroiu Emanuel                                               |
 | TermRead                       | [GitHub](https://github.com/Aptivi/TermRead/)               | [MIT](https://github.com/Aptivi/TermRead/blob/master/LICENSE)                    | © 2022 - Present Aptivi                                        |
 | UnitsNet                       | [GitHub](https://github.com/angularsen/UnitsNet)            | [MIT No Attribution](https://github.com/angularsen/UnitsNet/blob/master/LICENSE) | © 2013 Andreas Gullberg Larsen                                 |
+| VisualCard                     | [GitHub](https://github.com/Aptivi/VisualCard)              | [MIT](https://github.com/Aptivi/VisualCard/blob/main/LICENSE.txt)                | © 2021 - Present Aptivi                                        |
 | Wordament                      | [GitHub](https://github.com/Aptivi/Wordament/)              | [MIT](https://github.com/Aptivi/Wordament/blob/main/LICENSE)                     | © 2023 - Present Aptivi                                        |
 
 {% hint style="info" %}
