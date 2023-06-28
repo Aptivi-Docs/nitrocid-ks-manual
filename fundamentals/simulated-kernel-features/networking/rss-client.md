@@ -34,7 +34,5 @@ These below commands allow you to interact with the RSS feed and its updated art
   * Opens the article link on your web browser
 * `search [-t|-d|-a|-cs] <phrase>`
   * Gets the article information for a specified article feed number
-* `selfeed`
-  * Opens the feed selector to select your feed by country
 * `unbookmark`
   * Removes the bookmark from the current feed
