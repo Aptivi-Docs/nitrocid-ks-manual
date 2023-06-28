@@ -543,7 +543,7 @@ This variable is now found under `KS.Misc.Text.CharManager`.
 This has to do with the user management namespace, so we moved it to that namespace.
 
 {% hint style="info" %}
-Change the namespace declaration to refer to this enumeration from `KS.Login` **** to `KS.Users.Login`.
+Change the namespace declaration to refer to this enumeration from `KS.Login` to `KS.Users.Login`.
 {% endhint %}
 
 **Moved Kernel\[Api]Version to KernelTools**
@@ -688,7 +688,7 @@ Public Module NetworkTools
 These classes are believed to be the base classes for the networking. These classes are used for general networking purposes.
 
 {% hint style="info" %}
-Change the namespace declaration to refer to this enumeration from `KS.Network` **** to `KS.Network.Base`.
+Change the namespace declaration to refer to this enumeration from `KS.Network` to `KS.Network.Base`.
 {% endhint %}
 
 **Condensed speed dial to KS.Network.SpeedDial**
@@ -738,7 +738,7 @@ Public Enum NetworkTransferType
 We've done that to the base network classes, so why not do the same to the network transfer functions?
 
 {% hint style="info" %}
-Change the namespace declaration to refer to this enumeration from `KS.Network.Transfer` **** to `KS.Network.Base.Transfer`.
+Change the namespace declaration to refer to this enumeration from `KS.Network.Transfer` to `KS.Network.Base.Transfer`.
 {% endhint %}
 
 **Kernel exception handling changed**
@@ -939,7 +939,7 @@ Public Module PageViewer
 These manual pages are used by mods to host documentation, so we moved it to `KS.Modifications.ManPages` to reflect its purpose.
 
 {% hint style="info" %}
-Change the namespace declaration to refer to this enumeration from `KS.ManPages` **** to `KS.Modifications.ManPages`.
+Change the namespace declaration to refer to this enumeration from `KS.ManPages` to `KS.Modifications.ManPages`.
 {% endhint %}
 
 **Changed Notifications to NotificationManager**
@@ -1223,4 +1223,18 @@ The color wheel was implemented in the kernel to allow color selection. However,
 
 {% hint style="info" %}
 Merge your calls to the `ColorWheelOpen` class to `ColorPrint.Core` as it's easier to use and more portable than the former class.
+{% endhint %}
+
+#### Removed the country-based RSS feed selector
+
+{% code title="RSSTools.cs" lineNumbers="true" %}
+```csharp
+public static void OpenFeedSelector()
+```
+{% endcode %}
+
+The feed selector used to prompt you for a country so that you can select a feed according to the minimal list of known RSS feeds operating from the selected country. Recently, we've discovered many broken links (404's) across many feeds, so we decided to remove it as the source was out of date.
+
+{% hint style="warning" %}
+Its functionality will be replaced with the bookmarked feed selector. Meanwhile, it's advisable to stop using this function on your mods.
 {% endhint %}
