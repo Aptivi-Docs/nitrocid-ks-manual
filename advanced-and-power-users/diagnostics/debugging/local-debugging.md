@@ -54,6 +54,16 @@ public static void WriteDebugConditional(bool Condition, DebugLevel Level, strin
 
 Found in the `DebugWriter` module under the `KS.Kernel.Debugging` namespace.
 
+### Privacy-aware Debugging
+
+Calling the debug function below will post your debug message to the kernel debugger normally. However, it also filters every variable you've selected to be censored in the debug log. For example, if you provide two variables (A, B) and B contains sensitive info, you may want to create an array of indexes which holds B's index (in this case, 1) when calling the below function.
+
+```csharp
+public static void WriteDebugPrivacy(DebugLevel Level, string text, int[] SecureVarIndexes, params object[] vars)
+```
+
+Found in the `DebugWriter` module under the `KS.Kernel.Debugging` namespace.
+
 ### Stack Trace Debugging
 
 Calling the debug function below will post the stack trace of an exception, including its inner exceptions, to the kernel debugger. There's a function for you to call below:
