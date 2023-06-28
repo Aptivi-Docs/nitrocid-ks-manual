@@ -9,7 +9,7 @@ description: Just started using Nitrocid KS? You've landed on the right place!
 {% hint style="success" %}
 🎊 🎊 🎊
 
-**Kernel Simulator is now Nitrocid KS! The 5-year anniversary of the kernel starts with the release of the first beta on February 22nd, 2023, so get ready!**
+**Recent Nightly builds of Nitrocid KS are now compatible with macOS. You can follow the instructions outlined in the Installing the Kernel > macOS page.**
 {% endhint %}
 
 Thank you for installing Nitrocid KS on your system! This application is designed to simulate our future-planned kernel in managed code! Yes, our crafted kernel is made with our imagination and our art of kernel design!

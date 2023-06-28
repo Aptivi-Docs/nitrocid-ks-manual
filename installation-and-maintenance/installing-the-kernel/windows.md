@@ -25,7 +25,7 @@ However, we recommend that your computer have the below software installed to ge
 ### KS v0.0.24.0 or lower
 
 {% hint style="warning" %}
-We support installing KS 0.0.24.0 or lower until **August 2, 2027**.
+We support installing KS 0.0.24.0 or lower until the full deprecation of .NET Framework.
 {% endhint %}
 
 To run Nitrocid KS in the absolute minimum requirements, your computer needs to have the following installed:
