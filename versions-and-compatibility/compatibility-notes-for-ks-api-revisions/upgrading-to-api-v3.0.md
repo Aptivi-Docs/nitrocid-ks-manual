@@ -1238,3 +1238,19 @@ The feed selector used to prompt you for a country so that you can select a feed
 {% hint style="warning" %}
 Its functionality will be replaced with the bookmarked feed selector. Meanwhile, it's advisable to stop using this function on your mods.
 {% endhint %}
+
+#### Removed `UseCtrlCAsInput` from `ReadLine()`'s
+
+{% code title="Input.cs" lineNumbers="true" %}
+```csharp
+public static string ReadLine(bool UseCtrlCAsInput)
+public static string ReadLine(string InputText, string DefaultValue, bool UseCtrlCAsInput)
+public static string ReadLineUnsafe(string InputText, string DefaultValue, bool UseCtrlCAsInput)
+```
+{% endcode %}
+
+`UseCtrlCAsInput` used to tell ReadLine.Reboot to treat `Ctrl + C` as input to try to aid in cancelling prompts. Apparently, that library was deprecated and replaced with TermRead. As a result, this feature is removed.
+
+{% hint style="danger" %}
+We advice you to cease using this variable in the above functions.
+{% endhint %}
