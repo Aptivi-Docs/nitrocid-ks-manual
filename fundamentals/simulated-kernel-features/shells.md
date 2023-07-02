@@ -215,6 +215,8 @@ The main shell contains these commands that you can use below. The administrativ
   * Starts the Solver game!
 * `speedpress [-e|-m|-h|-v|-c] [timeout]`
   * Starts the SpeedPress game!
+* `sql <dbfile>`
+  * Opens the SQL shell
 * `sshell <address:port> <username>`
   * Connects to an SSH server
 * `sshcmd <address:port> <username> "<command>"`
@@ -247,6 +249,7 @@ The main shell contains these commands that you can use below. The administrativ
   * Wraps the console output
 * `zip <zipfile> <path> [-fast|-nocomp|-nobasedir]`
   * Creates a ZIP archive
+    *
 
 ### Administrative commands
 
