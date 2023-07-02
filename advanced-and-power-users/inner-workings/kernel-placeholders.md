@@ -62,3 +62,4 @@ These are the placeholders and what possible values are going to replace them wh
 | `<f:color>`                       | Sets the foreground color (where `color` is either `0-255` or `0-255;0-255;0-255`) |
 | `<b:color>`                       | Sets the background color (where `color` is either `0-255` or `0-255;0-255;0-255`) |
 | `<$var>`                          | Uses the value of a UESH variable (where `var` is an initialized variable)         |
+| `<uptime>`                        | Shows the kernel uptime                                                            |

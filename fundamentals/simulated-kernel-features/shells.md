@@ -36,6 +36,7 @@ The main shell contains these commands that you can use below. The administrativ
 
 ### Normal commands
 
+*
 * `archive <archivefile>`
   * Opens the archive file to the archive shell
 * `beep`
@@ -124,6 +125,8 @@ The main shell contains these commands that you can use below. The administrativ
   * Interactive file manager
 * `input <$variable> <question>`
   * Allows user to enter input and save it to a specified UESH variable
+* `imaginary <real> <imaginary>`
+  * Real and imaginary number information viewer
 * `jsonbeautify <jsonfile> [output]`
   * Beautifies a JSON file
 * `jsonminify <jsonfile> [output]`
@@ -230,6 +233,8 @@ The main shell contains these commands that you can use below. The administrativ
   * Unit converter
 * `unzip <zipfile> [path] [-createdir]`
   * Extracts a ZIP archive
+* `uptime`
+  * Shows the kernel uptime
 * `usermanual`
   * Shows the two useful URLs for manual
 * `verify <MD5/SHA1/SHA256/SHA384/SHA512> <calculatedhash> <hashfile/expectedhash> <file>`
