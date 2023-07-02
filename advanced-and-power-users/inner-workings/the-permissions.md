@@ -35,3 +35,15 @@ if (!PermissionsTools.IsPermissionGranted(PermissionTypes.type))
   * Flag value is 2
 * `RunStrictCommands`: Allows the user to run strict commands
   * Flag value is 4
+* `ManageFilesystem`: Allows the user to perform the filesystem operations
+  * Flag value is 8
+* `ManipulateSettings`: Allows the user to manipulate with the kernel settings
+  * Flag value is 16
+* `ExecuteScripts`: Allows the user to execute UESH scripts
+  * Flag value is 32
+* `ExecuteProcesses`: Allows the user to execute processes
+  * Flag value is 64
+* `ManageUsers`: Allows the user to manage the users
+  * Flag value is 128
+* `ManageMods`: Allows the user to manage the kernel mods
+  * Flag value is 256

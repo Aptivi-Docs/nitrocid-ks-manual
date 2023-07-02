@@ -230,8 +230,8 @@ The main shell contains these commands that you can use below. The administrativ
   * Unit converter
 * `unzip <zipfile> [path] [-createdir]`
   * Extracts a ZIP archive
-* `usermanual [-modapi]`
-  * Opens this documentation website
+* `usermanual`
+  * Shows the two useful URLs for manual
 * `verify <MD5/SHA1/SHA256/SHA384/SHA512> <calculatedhash> <hashfile/expectedhash> <file>`
   * Verifies sanity of the file
 * `weather [-list] <CityID/CityName> [apikey]`
