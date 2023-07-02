@@ -84,6 +84,10 @@ No scripting is complete with conditions, which control the execution of the com
   * Usage: `<value> <value> fsane`
 * `finsane`: The file hash doesn't match the expected hash
   * Usage: `<value> <value> finsane`
+* `is`: The variable is of the appropriate type
+  * Usage: `<value> is <type>`
+* `isnot`: The variable is not of the appropriate type
+  * Usage: `<value> isnot <type>`
 
 The conditions all have their base condition class and their interface to be implemented like below:
 
@@ -180,3 +184,36 @@ This script first checks to see if the user has answered `y` in the first line. 
 
 * If the condition is satisfied, the commands after the `while` or `until` blocks get executed.
 * If the condition is not satisfied, the commands after the `while` or `until` blocks get skipped and the script parser continues parsing the commands.
+
+### Custom conditions
+
+Custom conditions are mod-defined conditions that customize the way that you define the conditions and how you want the condition to be satisfied. Your typical condition class file looks like this:
+
+{% code lineNumbers="true" %}
+```csharp
+using KS.Scripting.Conditions;
+
+public class MyCondition : BaseCondition, ICondition
+{
+    public override string ConditionName => "custom";
+    public override int ConditionPosition { get; } = 2;
+    public override int ConditionRequiredArguments { get; } = 3;
+
+    public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable)
+    {
+        // Your condition satisfying code here (for one or two variables)
+        // return true;
+    }
+    
+    public bool IsConditionSatisfied(string[] Variables)
+    {
+        // Your condition satisfying code here (for more than two variables, counting from zero)
+        // return true;
+    }
+}
+```
+{% endcode %}
+
+To register your condition, you must call `UESHConditional.RegisterCondition()` in your mod initialization code to add your condition with your needed code to the list of custom conditions. After that, the UESH script parser will be able to parse your custom condition.
+
+To unregister your condition, you must call `UESHConditional.UnregisterCondition()` in your mod cleanup code to remove your condition from the list of custom conditions. After that, you won't be able to use scripts that use your custom condition.

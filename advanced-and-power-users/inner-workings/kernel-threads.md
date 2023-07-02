@@ -81,3 +81,22 @@ The below information are shown:
   * The unmanaged thread priority level
 * `Task memory address`
   * A hexadecimal representation of the memory address for an unmanaged thread assigned by the operating system that points to the thread entry point (start) in this format: `0x00000000`
+
+### Child threads
+
+Child threads are the threads that run with the parent thread and follow the parent thread's lead to perform operations together. In your thread, to add a child thread, you must call the `AddChild()` function regardless of whether said child thread takes parameters or not on the parent thread instance to make a new child thread and connect it to the parent thread. For example, to spawn three child threads from the parent thread, you must call the `AddChild()` function like this:
+
+<pre class="language-csharp"><code class="lang-csharp">KernelThread thread = new("Test thread", true, KernelThreadTestData.WriteHello);
+<strong>thread.AddChild("Test child thread", true, KernelThreadTestData.WriteHello);
+</strong><strong>thread.AddChild("Test child thread #2", true, KernelThreadTestData.WriteHello);
+</strong><strong>thread.AddChild("Test child thread #3", true, KernelThreadTestData.WriteHello);
+</strong>thread.Start();
+Thread.Sleep(3000);
+thread.Stop();
+</code></pre>
+
+Starting the parent thread will start all the child threads simultaneously, and stopping the parent thread will stop all the child threads at once.
+
+{% hint style="warning" %}
+Currently, you're not allowed to add a new child thread once the parent thread has started. This is a current limitation of the child thread implementation, but we'll eventually remove this limitation at some point in the development.
+{% endhint %}
