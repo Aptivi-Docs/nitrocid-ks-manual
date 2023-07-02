@@ -1254,3 +1254,18 @@ public static string ReadLineUnsafe(string InputText, string DefaultValue, bool 
 {% hint style="danger" %}
 We advice you to cease using this variable in the above functions.
 {% endhint %}
+
+#### Removed `SaveCurrDir()`
+
+{% code title="CurrentDirectory.cs" lineNumbers="true" %}
+```csharp
+public static void SaveCurrDir()
+public static bool TrySaveCurrDir()
+```
+{% endcode %}
+
+This function used to save the current directory value to the kernel configuration file stored in the `%LOCALAPPDATA%/KS/KernelMainConfig.json` for Windows or the `$HOME/.config/ks/KernelMainConfig.json`. Following the recent improvements in the configuration system that took place two times during 0.1.0's development, the `SaveCurrDir()` function was effectively reduced to a single call to the `Config.CreateConfig()` function, which already deals with this kind of change, rendering this function useless. As a result, we decided to remove this function as it added no value and was just an extraneous wrapper function.
+
+{% hint style="warning" %}
+If you want to save the current directory value in the future, please use the kernel settings application to save the configuration. Programmatically, you'll have to call the `Config.CreateConfig()` function instead of the two above functions.
+{% endhint %}
