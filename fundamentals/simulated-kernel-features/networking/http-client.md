@@ -31,5 +31,11 @@ This HTTP shell provides you with these commands to choose how to interact with 
   * Gets the stringified response from the HTTP server with the request
 * `putstring <request> <string>`
   * Puts the string to the HTTP server with the request
+* `put <request> <file>`
+  * Puts the file to the HTTP server with the request
+* `poststring <request> <string>`
+  * Posts the string to the HTTP server with the request
+* `post <request> <file>`
+  * Posts the file to the HTTP server with the request
 * `setsite <uri>`
   * Sets the target server to interact with
