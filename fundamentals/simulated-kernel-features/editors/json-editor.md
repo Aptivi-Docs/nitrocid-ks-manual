@@ -30,3 +30,9 @@ These below commands can be used to manipulate with the JSON files:
   * Prints either the entire JSON file or a property
 * `save [-b|-m]`
   * Saves the JSON file. `-b` is for beautified JSON, and `-m` is for minified JSON
+* `addobjectindexed [-parentProperty=prop] <index> <valueInArray>`
+  * Adds a new object inside an object specified by index
+* `rmobject [-parentProperty=prop] <objectName>`
+  * Removes an object
+* `rmobjectindexed [-parentProperty=prop] <index>`
+  * Removes an object specified by index
