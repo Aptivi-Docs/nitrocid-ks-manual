@@ -18,17 +18,33 @@ Once you have Visual Studio installed with at least the .NET 6.0 SDK and the .NE
 1. Open Visual Studio and press `Clone Repository`
 2.  In the repository location field, write `https://github.com/Aptivi/NitrocidKS.git`
 
+    <div align="left">
+
     <figure><img src="../../.gitbook/assets/createrepo.png" alt=""><figcaption></figcaption></figure>
+
+    </div>
 3. Press `Clone`. The clone may need to take a few minutes depending on your Internet connection.
 4.  Press `Solution Explorer` » `Switch Views`
 
+    <div align="left">
+
     <figure><img src="../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+
+    </div>
 5.  Press `Start` or press `Build` » `Build Solution`
 
+    <div align="left">
+
     <figure><img src="../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+
+    </div>
 6.  Navigate to the build output folder, `KSBuild`, and start `Nitrocid.exe`
 
+    <div align="left">
+
     <figure><img src="../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+
+    </div>
 
 ### Using the command-line
 

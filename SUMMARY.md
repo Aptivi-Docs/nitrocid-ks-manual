@@ -74,6 +74,7 @@
   * [✏ Editors](fundamentals/simulated-kernel-features/editors/README.md)
     * [📝 Text Editor](fundamentals/simulated-kernel-features/editors/text-editor.md)
     * [🖊 JSON Editor](fundamentals/simulated-kernel-features/editors/json-editor.md)
+    * [🗄 SQL Editor](fundamentals/simulated-kernel-features/editors/sql-editor.md)
     * [💾 Hex Editor](fundamentals/simulated-kernel-features/editors/hex-editor.md)
   * [🇺🇸 Languages](fundamentals/simulated-kernel-features/languages.md)
   * [🌌 Screensavers](fundamentals/simulated-kernel-features/screensavers.md)
