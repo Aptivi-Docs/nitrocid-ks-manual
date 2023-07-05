@@ -1269,3 +1269,31 @@ This function used to save the current directory value to the kernel configurati
 {% hint style="warning" %}
 If you want to save the current directory value in the future, please use the kernel settings application to save the configuration. Programmatically, you'll have to call the `Config.CreateConfig()` function instead of the two above functions.
 {% endhint %}
+
+#### Group system and the User Management API
+
+{% code title="UserManagement.cs" lineNumbers="true" %}
+```csharp
+public static void LoadUserToken()
+public static JToken GetUserProperty(string User, UserProperty PropertyType)
+public static void SetUserProperty(string User, UserProperty PropertyType, JToken Value)
+public static void InitializeSystemAccount()
+```
+{% endcode %}
+
+We've added a real group system to the KS.Users namespace under Groups in order to group the users and give them shared permissions. In consequence, we had to rework the user management system, causing several API removals.
+
+The following functions were documented:
+
+* `LoadUserToken()`: Tries to manually deserialize the user configuration JSON file to be usable with all the user management functions.
+* `InitializeSystemAccount()`: Tries to initialize a root account with a defined password from the same user token.
+* `GetUserProperty()`: Gets a user property as a JSON token, JToken, which has to be manually cast to either a string, boolean, or array of strings.
+* `SetUserProperty()`: Sets a user property, taking an uncasted JSON token that represents either a string, boolean, or array of strings.
+
+The first two functions were removed, because they were deemed to be unnecessary for a long time. A re-work to the user management API made it reasonable to remove these functions.
+
+However, the last two functions were removed because it was found to be complicated for having to cast to their appropriate types manually. We also removed the ability to directly set a user's properties security-wise.
+
+{% hint style="danger" %}
+Because the user management API reached to a stage when it was re-written to simplify things, we advice you to cease using these functions.
+{% endhint %}
