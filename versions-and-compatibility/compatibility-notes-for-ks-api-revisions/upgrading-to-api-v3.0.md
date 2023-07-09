@@ -1415,3 +1415,19 @@ The following writers are also affected and are found to be using characters as 
 {% hint style="info" %}
 For mods that treat characters as strings and use one of the above classes and variables that hold only one character, you'll have to refactor the logic to treat these characters as chars. However, if you use char variables and convert them to string in either the writers or the char variables, such as `CustomLowerLeftCornerChar`, you'll no longer need to convert your char variables to strings.
 {% endhint %}
+
+#### Added finding files using regular expressions
+
+The following functions are added to the filesystem driver:
+
+{% code title="IFilesystemDriver.cs" lineNumbers="true" %}
+```csharp
+string[] GetFilesystemEntriesRegex(string Parent, string Pattern, bool Recursive = false);
+```
+{% endcode %}
+
+This function gets all the filesystem entries found under the specified parent directory, with the regular expression pattern. This uses the regular expression driver to handle the regex work.
+
+{% hint style="info" %}
+Mods that implement filesystem drivers now have to implement the above function to be able to use it. It's also advisable to use the regex driver in the function implementation.
+{% endhint %}

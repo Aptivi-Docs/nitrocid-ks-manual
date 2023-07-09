@@ -103,8 +103,10 @@ The main shell contains these commands that you can use below. The administrativ
   * Edits a file
 * `fileinfo <file>`
   * Provides information about a file
-* `find <file> [directory]`
+* `find [-recursive] <file> [directory]`
   * Finds a file in the specified directory or a current directory
+* `findreg [-recursive] <fileRegex> [directory]`
+  * Finds a file in the specified directory or a current directory using regular expressions
 * `ftp [server]`
   * Use an FTP shell to interact with the FTP server
 * `genname [-t] [namescount] [nameprefix] [namesuffix] [surnameprefix] [surnamesuffix]`
@@ -249,10 +251,11 @@ The main shell contains these commands that you can use below. The administrativ
   * Wraps the console output
 * `zip <zipfile> <path> [-fast|-nocomp|-nobasedir]`
   * Creates a ZIP archive
-    *
 
 ### Administrative commands
 
+* `find <file> [directory]`
+  * Finds a file in the specified directory or a current directory
 * `adduser <userName> [password] [confirm]`
   * Adds a new user to the kernel
 * `admin`
@@ -303,7 +306,7 @@ The main shell contains these commands that you can use below. The administrativ
   * Saves the current directory to the kernel configuration file
 * `setsaver <customsaver/builtinsaver>`
   * Sets the default screensaver to a built-in screensaver or a custom screensaver
-  * _This command is obsolete and should be avoided. This setting can be set using the `settings` command under `Screensaver Settings.`_
+  * _This command is obsolete and should be avoided. This setting can be set using the_ `settings` _command under_ `Screensaver Settings.`
 * `settings [-saver|-splash]`
   * Opens the settings application in either the normal mode, screensaver mode, or splash mode
 * `taskman`
