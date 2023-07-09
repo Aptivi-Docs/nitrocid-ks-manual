@@ -1379,3 +1379,39 @@ public static int WindowTop
 {% hint style="danger" %}
 We advice you to replace all instances of this function from `ConsoleWrapper` with `0`, and remove all implementations of this property from all your `Console` drivers.
 {% endhint %}
+
+#### Converted string char variables to chars
+
+{% code lineNumbers="true" %}
+```csharp
+public string CustomUpperLeftCornerChar { get; set; } = "╔";
+public string CustomUpperRightCornerChar { get; set; } = "╗";
+public string CustomLowerLeftCornerChar { get; set; } = "╚";
+(...)
+```
+{% endcode %}
+
+The above char variables used to hold only one character, but they were defined as strings instead of chars, so users made it possible to place more than one character to these variables. Usually, the handlers only take the first character from the string.
+
+Since the config entries defined these variables as configurable under the `SChar` type, the config app made enough checking to make sure that only one character can be input. This caused us to convert all these variables to strings, affecting the following classes:
+
+* `NotificationManager`
+* `Notification`
+* `BarRotSettings`
+* `IndeterminateSettings`
+* `ProgressClockSettings`
+* `RampSettings`
+* `BorderTools`
+* `ProgressTools`
+
+The following writers are also affected and are found to be using characters as strings before the change:
+
+* `WriteBorder`() and `WriteBorderPlain`()
+* `WriteBoxFrame`() and `WriteBoxFramePlain`()
+* `WriteInfoBox`() and `WriteInfoBoxPlain`()
+* `WriteProgress`() and `WriteProgressPlain`()
+* `WriteVerticalProgress`() and `WriteVerticalProgressPlain`()
+
+{% hint style="info" %}
+For mods that treat characters as strings and use one of the above classes and variables that hold only one character, you'll have to refactor the logic to treat these characters as chars. However, if you use char variables and convert them to string in either the writers or the char variables, such as `CustomLowerLeftCornerChar`, you'll no longer need to convert your char variables to strings.
+{% endhint %}
