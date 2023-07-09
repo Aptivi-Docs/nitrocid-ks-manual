@@ -1297,3 +1297,85 @@ However, the last two functions were removed because it was found to be complica
 {% hint style="danger" %}
 Because the user management API reached to a stage when it was re-written to simplify things, we advice you to cease using these functions.
 {% endhint %}
+
+#### Initial implementation of the TUI
+
+The following classes are affected:
+
+{% code lineNumbers="true" %}
+```csharp
+public static class ContactsManagerCli
+public static class TaskManagerCli
+public static class FileManagerCli
+```
+{% endcode %}
+
+The following functions are affected:
+
+{% code lineNumbers="true" %}
+```csharp
+public static void OpenMain()
+```
+{% endcode %}
+
+The three CLIs used to implement their own CLI based on data for contacts, kernel threads, and files respectively. Now, with the introduction of the `IInteractiveTui` interface and the `BaseInteractiveTui` class, we've made the three above classes implement both the classes, removing the `static` modifier from the three CLIs.
+
+As a result, we've removed the `OpenMain()` function from all of them. However, you can still open the CLI as follows:
+
+{% code lineNumbers="true" %}
+```csharp
+InteractiveTuiTools.OpenInteractiveTui(new ContactsManagerCli());
+InteractiveTuiTools.OpenInteractiveTui(new TaskManagerCli());
+InteractiveTuiTools.OpenInteractiveTui(new FileManagerCli());
+```
+{% endcode %}
+
+This removal was necessary to avoid code repetition, effectively making maintenance easier.
+
+{% hint style="info" %}
+If you want to open the three CLIs, refer to the above code snippet about the usage of `OpenInteractiveTui()`.
+{% endhint %}
+
+#### Added warning reports to the splash interface
+
+{% code title="ISplash.cs" lineNumbers="true" %}
+```csharp
+void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars);
+```
+{% endcode %}
+
+The splash reporter used to only report the progress and the error messages during the kernel startup. Now, we've added warnings to extend the possibility of accurately reporting warnings without having to rely on special conditions on the progress report.
+
+{% hint style="info" %}
+Mods that implement splashes now have to implement the above function to be able to report warnings.
+{% endhint %}
+
+#### Added `ReadToEndAndSeek()` to filesystem driver
+
+{% code title="IFilesystemDriver.cs" lineNumbers="true" %}
+```csharp
+string ReadToEndAndSeek(ref StreamReader stream);
+```
+{% endcode %}
+
+As part of the removal of Extensification dependency from Nitrocid KS as a result of its deprecation, we decided to adapt the kernel to remove all references to Extensification and re-implement things. The commit states:
+
+> Since this library is deprecated starting today, we've removed all references to Extensification by updating all libraries and making necessary changes to the API to restore the used Extensification functions to `TextTools`, `IntegerTools`, and `StreamRead`. Custom filesystem drivers in your mods will now have to implement `ReadToEndAndSeek()` to be compatible with this revision of N-KS, so we've increased the mod API version to `3.0.25.7`.
+
+{% hint style="info" %}
+Mods that implement filesystem drivers now have to implement the above function to be able to be installed on N-KS mod API 3.0.25.7 or later.
+{% endhint %}
+
+#### Removed `ConsoleWrapper.WindowTop`
+
+{% code title="ConsoleWrapper.cs" lineNumbers="true" %}
+```csharp
+public static int WindowTop
+```
+{% endcode %}
+
+`Console.WindowTop` is always 0 on both the Windows and the Unix operating systems, but you can set this value only on Windows systems, which kills the potential of cross-platform. This is deemed unnecessary for most of the things, which makes it redundant, so we've removed this function from both the `ConsoleWrapper` and the `Console` driver.
+
+{% hint style="danger" %}
+We advice you to replace all instances of this function from `ConsoleWrapper` with `0`, and remove all implementations of this property from all your `Console` drivers.
+{% endhint %}
