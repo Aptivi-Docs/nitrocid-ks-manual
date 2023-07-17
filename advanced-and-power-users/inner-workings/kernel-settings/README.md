@@ -27,14 +27,10 @@ When the kernel starts up, different configuration files are read for different 
   * Description: Stores all the users
   * Type: JSON
   * Location: `Paths.UsersPath` under the `KS.Files` namespace
-* FTP Speed Dial: `FTP_SpeedDial.json`
-  * Description: Stores all the saved FTP connections
+* Speed Dial: `SpeedDial.json`
+  * Description: Stores all the saved connections
   * Type: JSON
-  * Location: `Paths.FTPSpeedDialPath` under the `KS.Files` namespace
-* SFTP Speed Dial: `SFTP_SpeedDial.json`
-  * Description: Stores all the saved SFTP connections
-  * Type: JSON
-  * Location: `Paths.SFTPSpeedDialPath` under the `KS.Files` namespace
+  * Location: `Paths.SpeedDialPath` under the `KS.Files` namespace
 * Remote Debug Device Names: `DebugDevicesNames.json`
   * Description: Stores all the remote debug device names
   * Type: JSON
