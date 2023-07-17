@@ -236,36 +236,67 @@ The kernel makes a user configuration entry for each new user created either by 
 ```json
 [
   {
-    "username": "user",
-    "password": "passhash",
-    "admin": false,
-    "anonymous": false,
-    "disabled": false,
-    "permissions": [],
-    "fullname": "name",
-    "preferredlanguage": ""
+    "Username": "name",
+    "FullName": "Full Name",
+    "PreferredLanguage": "",
+    "Groups": [],
+    "Password": "encrypted password",
+    "Admin": false,
+    "Anonymous": false,
+    "Disabled": false,
+    "Permissions": [],
+    "CustomSettings": {
+      "key1": [
+        "value1"
+      ],
+      (...)
+    }
   }
 ]
 ```
 
 Let's explain each key one by one:
 
-* `username`: Stores the username
+* `Username`: Stores the username
   * The type of this variable is a **string**
-* `password`: Stores the password
-  * The type of this variable is a **string** encoded with the SHA256 hash
-* `admin`: If enabled, all the permissions are granted
-  * The type of this variable is a **boolean**
-* `anonymous`: The user won't be shown in the list if enabled
-  * The type of this variable is a **boolean**
-* `disabled`: The user can't be logged in to if true
-  * The type of this variable is a **boolean**
-* `permissions`: Stores the array of permissions found under [the permission list, `PermissionTypes`](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Users/Permissions/PermissionTypes.cs).
+* `FullName`: Stores the full name
+  * The type of this variable is a **string**
+* `PreferredLanguage`: Stores the preferred user language in three-letter language name format. Can be left blank to use the kernel-wide language
+  * The type of this variable is a **string**
+* `Groups`: What groups the user is in?
   * The type of this variable is an **array** of **string**
-* `fullname`: Stores the full name
+* `Password`: Stores the password
+  * The type of this variable is a **string** encoded with the SHA256 hash
+* `Admin`: If enabled, all the permissions are granted
+  * The type of this variable is a **boolean**
+* `Anonymous`: The user won't be shown in the list if enabled
+  * The type of this variable is a **boolean**
+* `Disabled`: The user can't be logged in to if true
+  * The type of this variable is a **boolean**
+* `Permissions`: Stores the array of permissions found under [the permission list, `PermissionTypes`](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Users/Permissions/PermissionTypes.cs).
+  * The type of this variable is an **array** of **string**
+* `CustomSettings`: Specifies the customized settings entries
+  * The type of this variable is an **array** of **properties that their values represent an array of strings**
+
+## Group configuration
+
+The kernel also supports user groups created either by the `addgroup` command or by the call of the `GroupManagement.AddGroup()` function in the `KS.Users.Groups` namespace under the name of `UserGroups.json` found in the kernel configuration directory. The format of the file looks like this:
+
+```json
+[
+  {
+    "GroupName": "testGroup",
+    "Permissions": []
+  }
+]
+```
+
+Let's explain each key one by one:
+
+* `GroupName`: The name of the group
   * The type of this variable is a **string**
-* `preferredlanguage`: Stores the preferred user language in three-letter language name format. Can be left blank to use the kernel-wide language
-  * The type of this variable is a **string**
+* `Permissions`: Stores the array of permissions found under [the permission list, `PermissionTypes`](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Users/Permissions/PermissionTypes.cs).
+  * The type of this variable is an **array** of **string**
 
 ## Alias configuration
 

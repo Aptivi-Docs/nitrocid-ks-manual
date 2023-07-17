@@ -44,9 +44,13 @@ When the kernel starts up, different configuration files are read for different 
   * Type: Text file
   * Location: `Paths.MALPath` under the `KS.Files` namespace
 * Custom Screensaver Settings: `CustomSaverSettings.json`
-  * Description: Stores the message of the day
+  * Description: Stores the custom screensaver settings
   * Type: JSON
   * Location: `Paths.CustomSaverSettingsPath` under the `KS.Files` namespace
+* User Groups: `UserGroups.json`
+  * Description: Stores the user groups
+  * Type: JSON
+  * Location: `Paths.UserGroupsPath` under the `KS.Files` namespace
 
 You can consult the files used by KS for available kernel settings [here](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Resources/Settings/SettingsEntries.json), the screensaver settings [here](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Resources/Settings/ScreensaverSettingsEntries.json), and the splash settings [here](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Resources/Settings/SplashSettingsEntries.json). These files also contain descriptions for each settings entry.
 
