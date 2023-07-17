@@ -1431,3 +1431,62 @@ This function gets all the filesystem entries found under the specified parent d
 {% hint style="info" %}
 Mods that implement filesystem drivers now have to implement the above function to be able to use it. It's also advisable to use the regex driver in the function implementation.
 {% endhint %}
+
+#### Removed configurable maintenance mode
+
+{% code title="Flags.cs" lineNumbers="true" %}
+```csharp
+public static bool Maintenance
+```
+{% endcode %}
+
+Long ago, we used to allow users to force the kernel to maintenance mode upon setting this value right from the configuration application. However, this can be abused, so we decided to remove it as a configuration entry, but the mode itself stays. You can still run the kernel in maintenance mode by passing `maintenance` as a command line argument to Nitrocid's entry point. Refer to the below page for more information:
+
+{% content-ref url="../../advanced-and-power-users/inner-workings/kernel-arguments.md" %}
+[kernel-arguments.md](../../advanced-and-power-users/inner-workings/kernel-arguments.md)
+{% endcontent-ref %}
+
+{% hint style="danger" %}
+We advice you to cease using this flag. Maintenance mode doesn't allow mods to load, anyways.
+{% endhint %}
+
+#### Migrated two speed dial types to one JSON file
+
+{% code title="Paths.cs" lineNumbers="true" %}
+```csharp
+public static string FTPSpeedDialPath
+public static string SFTPSpeedDialPath
+```
+{% endcode %}
+
+{% code title="PathType.cs" lineNumbers="true" %}
+```csharp
+/// <summary>
+/// FTP speed dial file.
+/// </summary>
+FTPSpeedDial,
+/// <summary>
+/// SFTP speed dial file.
+/// </summary>
+SFTPSpeedDial,
+```
+{% endcode %}
+
+{% code title="SpeedDialTools.cs" lineNumbers="true" %}
+```csharp
+public static KernelPathType GetPathTypeFromSpeedDialType(SpeedDialType SpeedDialType)
+public static JObject GetTokenFromSpeedDial(SpeedDialType SpeedDialType)
+public static Dictionary<string, JToken> ListSpeedDialEntries(SpeedDialType SpeedDialType)
+public static JToken GetQuickConnectInfo(SpeedDialType SpeedDialType)
+```
+{% endcode %}
+
+To migrate two different JSON files holding speed dial entries for FTP and SFTP servers, we decided to replace `FTPSpeedDial` and `SFTPSpeedDial` with `SpeedDial` and `FTPSpeedDialPath` and `SFTPSpeedDialPath` with `SpeedDialPath`, effectively removing a function from `SpeedDialTools`, `GetPathTypeFromSpeedDialType()`, and the remaining functions removing the `(SpeedDialType SpeedDialType)` signature, causing them not to take any speed dial type.
+
+The commit said:
+
+> This migration is necessary to efficiently put speed dials to one JSON file as we have the Type key already in speed dial properties.
+
+{% hint style="info" %}
+We advice you to replace all calls to type-specific enumerations and paths with a single speed dial enumeration value, `SpeedDial`, and path, `SpeedDialPath`, respectively. Also, we advice you to use the three functions that stay, but without the type, and cease using the `GetPathTypeFromSpeedDialType()` function.
+{% endhint %}

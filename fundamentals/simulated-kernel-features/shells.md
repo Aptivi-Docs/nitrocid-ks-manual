@@ -36,7 +36,6 @@ The main shell contains these commands that you can use below. The administrativ
 
 ### Normal commands
 
-*
 * `archive <archivefile>`
   * Opens the archive file to the archive shell
 * `beep`
@@ -69,6 +68,8 @@ The main shell contains these commands that you can use below. The administrativ
   * Changes the attribute of a file
 * `chdir <directory/..>`
   * Changes the directory to another directory
+* `chklock <file>`
+  * Checks to see if a specified file is locked
 * `choice [-o|-t|-m|-a] [-multiple|-single] <$variable> <answers> <input> [answertitle1] [answertitle2] ...`
   * Makes a choice amd sets it to a UESH variable
 * `clearfiredevents`
@@ -85,6 +86,8 @@ The main shell contains these commands that you can use below. The administrativ
   * Combines the strings
 * `combine <output> <input1> <input2> [input3] ...`
   * Combines the two or more text files to the output
+* `contacts`
+  * Manages your contacts
 * `convertlineendings <textfile> [-w|-u|-m]`
   * Converts the line endings to the current platform line ending or a specific line ending
 * `copy <source> <target>`
@@ -103,9 +106,9 @@ The main shell contains these commands that you can use below. The administrativ
   * Edits a file
 * `fileinfo <file>`
   * Provides information about a file
-* `find [-recursive] <file> [directory]`
+* `find [-recursive] [-exec=command] <file> [directory]`
   * Finds a file in the specified directory or a current directory
-* `findreg [-recursive] <fileRegex> [directory]`
+* `findreg [-recursive] [-exec=command] <fileRegex> [directory]`
   * Finds a file in the specified directory or a current directory using regular expressions
 * `ftp [server]`
   * Use an FTP shell to interact with the FTP server
@@ -125,10 +128,10 @@ The main shell contains these commands that you can use below. The administrativ
   * If the expression is satisfied, executes a command
 * `ifm`
   * Interactive file manager
-* `input <$variable> <question>`
-  * Allows user to enter input and save it to a specified UESH variable
 * `imaginary <real> <imaginary>`
   * Real and imaginary number information viewer
+* `input <$variable> <question>`
+  * Allows user to enter input and save it to a specified UESH variable
 * `jsonbeautify <jsonfile> [output]`
   * Beautifies a JSON file
 * `jsonminify <jsonfile> [output]`
@@ -167,6 +170,8 @@ The main shell contains these commands that you can use below. The administrativ
   * Moves a file or directory to the target
 * `open <URL>`
   * Opens a URL
+* `pathfind <fileName>`
+  * Finds a file name in path lookup directories
 * `ping [times] <Address1> <Address2> ...`
   * Pings an address
 * `playlyric <lyric.lrc>`
@@ -185,7 +190,7 @@ The main shell contains these commands that you can use below. The administrativ
   * A bug reporting prompt
 * `roulette`
   * Russian Roulette
-* `rss [-m] [feedlink]`
+* `rss [feedlink]`
   * Opens the RSS feed
 * `savescreen [saver]`
   * Saves your screen
@@ -229,6 +234,8 @@ The main shell contains these commands that you can use below. The administrativ
   * Calculates a file sum
 * `sumfiles [-relative] <MD5/SHA1/SHA256/SHA384/SHA512/all> <dir> [outputFile]`
   * Calculates sum of files
+* `taskman`
+  * Starts the task manager
 * `themesel [Theme]`
   * Selects a theme and sets it
 * `timer`
@@ -254,10 +261,12 @@ The main shell contains these commands that you can use below. The administrativ
 
 ### Administrative commands
 
-* `find <file> [directory]`
-  * Finds a file in the specified directory or a current directory
+* `addgroup <groupName>`
+  * Adds a new group to the kernel
 * `adduser <userName> [password] [confirm]`
   * Adds a new user to the kernel
+* `addusertogroup <userName> <group>`
+  * Adds a user to the group
 * `admin`
   * Opens the administrative shell
 * `alias <rem/add> <ShellType> <alias> <cmd>`
@@ -292,6 +301,8 @@ The main shell contains these commands that you can use below. The administrativ
   * Manages all the mods at once
 * `perm <userName> <allow/revoke> <perm>`
   * Manages the user permissions
+* `permgroup <groupName> <allow/revoke> <perm>`
+  * Manages the group permissions
 * `reloadconfig`
   * Reloads the configuration file (invoke if the config file is edited externally)
 * `reloadsaver <customsaver>`
@@ -302,6 +313,10 @@ The main shell contains these commands that you can use below. The administrativ
   * Enables or disables the remote debugging
 * `rmuser <Username>`
   * Removes a user
+* `rmgroup <group>`
+  * Removes a group
+* `rmuserfromgroup <Username> <Groupname>`
+  * Removes a user from a group
 * `savecurrdir`
   * Saves the current directory to the kernel configuration file
 * `setsaver <customsaver/builtinsaver>`
