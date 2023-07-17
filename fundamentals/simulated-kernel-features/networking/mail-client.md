@@ -27,6 +27,8 @@ You can interact with the messages found in your account with the below commands
 
 * `cd <folder>`
   * Changes the current mail directory
+* `detach`
+  * Detaches your client from your HTTP server
 * `lsdirs`
   * Lists all the mail directories associated with your e-mail address
 * `list [pagenum]`

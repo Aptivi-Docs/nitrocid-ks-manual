@@ -23,12 +23,22 @@ To be able to use the below commands that are listed in the below section, you h
 
 This HTTP shell provides you with these commands to choose how to interact with the HTTP server, like getting a string request from the server.
 
+* `addheader <key> <value>`
+  * Adds an HTTP header for future requests
+* `curragent`
+  * Gets current user agent
 * `delete <request>`
   * Deletes a resource from the HTTP server
+* `detach`
+  * Detaches your client from your HTTP server
+* `editheader <key> <value>`
+  * Edits an HTTP header for future requests
 * `get <request>`
   * Gets the response from the HTTP server with the request
 * `getstring <request>`
   * Gets the stringified response from the HTTP server with the request
+* `lsheader`
+  * Lists the request headers
 * `putstring <request> <string>`
   * Puts the string to the HTTP server with the request
 * `put <request> <file>`
@@ -37,5 +47,7 @@ This HTTP shell provides you with these commands to choose how to interact with 
   * Posts the string to the HTTP server with the request
 * `post <request> <file>`
   * Posts the file to the HTTP server with the request
-* `setsite <uri>`
-  * Sets the target server to interact with
+* `rmheader <key>`
+  * Removes a key from the header
+* `setagent <ua>`
+  * Sets the user agent

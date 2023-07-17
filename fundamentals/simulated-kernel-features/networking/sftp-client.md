@@ -41,8 +41,8 @@ These below commands are used to perform operations on your SFTP server, but the
   * Changes the local working directory. The folder should exist in your computer.
 * `cdr <directory>`
   * Changes the remote working directory. The folder should exist in your FTP server.
-* `disconnect [-f]`
-  * Disconnects your client from your SFTP server
+* `detach`
+  * Detaches your client from your SFTP server
 * `get <file> [output]`
   * Download a remote file from your SFTP server to the local directory
 * `lsl [-showdetails|-suppressmessages] [dir]`
@@ -53,8 +53,6 @@ These below commands are used to perform operations on your SFTP server, but the
   * Gets the current working local directory
 * `pwdr`
   * Gets the current working remote directory
-* `quickconnect`
-  * Opens the connection selection to connect to your FTP server quickly
 
 ### Administrative commands
 

@@ -45,8 +45,8 @@ These below commands are used to perform operations on your FTP server, but the 
   * Changes the local working directory. The folder should exist in your computer.
 * `cdr <directory>`
   * Changes the remote working directory. The folder should exist in your FTP server.
-* `disconnect [-f]`
-  * Disconnects your client from your FTP server
+* `detach`
+  * Detaches your client from your FTP server
 * `execute <command>`
   * Executes your custom FTP server query
 * `get <file> [output]`
@@ -63,8 +63,6 @@ These below commands are used to perform operations on your FTP server, but the 
   * Gets the current working local directory
 * `pwdr`
   * Gets the current working remote directory
-* `quickconnect`
-  * Opens the connection selection to connect to your FTP server quickly
 * `sumfile <file> <MD5/SHA1/SHA256/SHA512/CRC>`
   * Gets the hash sum of a remote file. Please note that it only works for FTP servers that support the hash sum calculation
 * `sumfiles <folder> <MD5/SHA1/SHA256/SHA512/CRC>`

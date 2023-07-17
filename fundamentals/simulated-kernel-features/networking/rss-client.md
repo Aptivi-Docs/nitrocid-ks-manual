@@ -22,8 +22,8 @@ These below commands allow you to interact with the RSS feed and its updated art
   * Gets the article information for a specified article feed number
 * `bookmark`
   * If the current feed is your favorite, you can use this command to bookmark your feed
-* `chfeed [-bookmark] <feedurl/bookmarknumber>`
-  * Changes your feed to a specified feed URL. If `-bookmark` is specified, the bookmark number is required
+* `detach`
+  * Detaches your RSS feed client from the server
 * `feedinfo`
   * Gets the RSS feed info
 * `list`
