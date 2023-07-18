@@ -9,8 +9,35 @@ Like all the software in the entire world, Nitrocid KS has support periods for i
 ## List of unsupported version series
 
 {% tabs %}
+{% tab title="API v2.0" %}
+This revision of the API is currently supported until 2/22/2027.
+
+| Version   | Release date | EOL date  | Security EOL date |
+| --------- | ------------ | --------- | ----------------- |
+| v0.0.21.0 | 4/28/2022    | 4/28/2023 | 4/28/2023         |
+| v0.0.21.1 | 5/1/2022     |           |                   |
+| v0.0.21.2 | 5/4/2022     |           |                   |
+| v0.0.21.3 | 5/8/2022     |           |                   |
+| v0.0.21.4 | 5/10/2022    |           |                   |
+| v0.0.21.5 | 5/16/2022    |           |                   |
+| v0.0.21.6 | 6/10/2022    |           |                   |
+| v0.0.21.7 | 7/8/2022     |           |                   |
+| v0.0.21.8 | 8/5/2022     |           |                   |
+| v0.0.22.0 | 6/12/2022    | 6/12/2023 | 6/12/2023         |
+| v0.0.22.1 | 6/12/2022    |           |                   |
+| v0.0.22.2 | 6/13/2022    |           |                   |
+| v0.0.22.3 | 6/15/2022    |           |                   |
+| v0.0.22.4 | 6/17/2022    |           |                   |
+| v0.0.22.5 | 7/8/2022     |           |                   |
+| v0.0.22.6 | 8/5/2022     |           |                   |
+| v0.0.23.0 | 7/12/2022    | 7/12/2023 | 7/12/2023         |
+| v0.0.23.1 | 7/12/2022    |           |                   |
+| v0.0.23.2 | 7/13/2022    |           |                   |
+| v0.0.23.3 | 8/5/2022     |           |                   |
+{% endtab %}
+
 {% tab title="API v1.3" %}
-This revision of the API is currently supported.
+This revision of the first-generation version is supported until 6/12/2031.
 
 | Version   | Release date | EOL date  |
 | --------- | ------------ | --------- |
