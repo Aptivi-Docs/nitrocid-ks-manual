@@ -47,3 +47,15 @@ Select a shell below to get started.
 {% content-ref url="mail-client.md" %}
 [mail-client.md](mail-client.md)
 {% endcontent-ref %}
+
+### Attaching and Detaching
+
+Every single client listed above support attachment to existing connections and detachment from the current connection. When you use one of the clients for the first time, it lets you create a new connection. From there, you have to specify some info about which server you're going to connect, the username, and the password, depending on the client.
+
+When you're connected to any server, you can detach the current connection, which causes you to go back to your shell when you're still connected. In order to attach back to your session, use the same command that you used to create a new connection to connect to the existing server or to create a second new connection.
+
+To detach, simply use the `detach` command to go back to your shell.
+
+{% hint style="warning" %}
+Current implementation of attaching and detaching network sessions may have bugs, so report them to our GitHub issues if you found one.
+{% endhint %}
