@@ -88,6 +88,7 @@
   * [🗓 Calendar](fundamentals/simulated-kernel-features/calendar.md)
   * [⏰ Stopwatch and Timer](fundamentals/simulated-kernel-features/stopwatch-and-timer.md)
   * [⚖ Calculator and Converter](fundamentals/simulated-kernel-features/calculator-and-converter.md)
+  * [👥 Contacts](fundamentals/simulated-kernel-features/contacts.md)
 
 ## Advanced and Power Users
 

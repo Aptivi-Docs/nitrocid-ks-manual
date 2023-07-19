@@ -17,7 +17,7 @@ You're looking to create a splash for Nitrocid KS! That's great! Make sure that 
     <figure><img src="../../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
 4.  Make sure that `.NET 6.0` is used. Press `Create`.
 
-    <figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
 5.  Right-click on `Dependencies` -> `Manage NuGet Packages`, find `KS`, and install it.
 
     <figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
