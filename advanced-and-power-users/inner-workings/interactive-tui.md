@@ -139,6 +139,10 @@ Additionally, you can make your TUI app refresh every set millisecond so that yo
 
 For example, to use the Namer library to make a single-paned TUI application that gathers random names to list 10 names in the info pane, you must add a NuGet package, Namer, to your mod's dependencies. To learn more about how to use this library, consult the below page:
 
+{% content-ref url="http://127.0.0.1:5000/s/gmP2CdmfwirIpCISUoX8/usage/how-to-use" %}
+[How to use](http://127.0.0.1:5000/s/gmP2CdmfwirIpCISUoX8/usage/how-to-use)
+{% endcontent-ref %}
+
 The code that would do this would look like this:
 
 {% code title="MyTui.cs" lineNumbers="true" %}
