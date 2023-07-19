@@ -136,7 +136,7 @@ This is where your commands get together by overriding the `Commands` variable w
 ```csharp
 public override Dictionary<string, CommandInfo> Commands => new()
 {
-    { "adduser", new CommandInfo("adduser", ShellType, "Adds users", new CommandArgumentInfo(new[] { "<userName> [password] [confirm]" }, true, 1), new AddUserCommand(), CommandFlags.Strict) },
+    { "adduser", new CommandInfo("adduser", ShellType, "Adds users", new CommandArgumentInfo(new[] { "userName", "password", "confirm" }, Array.Empty<SwitchInfo>(), true, 1), new AddUserCommand(), CommandFlags.Strict) },
     (...)
 };
 ```
@@ -188,15 +188,22 @@ where:
 To implement `CommandArgumentInfo`, call the constructor either with no parameters, which implies that there is no argument required to run this command, or with the following options listed below.
 
 ```csharp
-public CommandArgumentInfo(string[] HelpUsages, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
+public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
 ```
 
 where:
 
-* `HelpUsages`: Defines the command usages
+* `Arguments`: Defines the command arguments
+* `Switches`: Defines the command switches
 * `ArgumentsRequired`: Specifies whether the arguments are required
 * `MinimumArguments`: Specifies how many arguments are required to execute the command
 * `AutoCompleter`: **Optional.** Auto completer function that returns an array of suggestions
+
+For `SwitchInfo` instances, consult the below constructor to create an array of `SwitchInfo` instances when defining your commands:
+
+```csharp
+public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false)
+```
 
 The base command is required to be implemented, since it contains overridable command execution code. Your command must implement the command base class below:
 

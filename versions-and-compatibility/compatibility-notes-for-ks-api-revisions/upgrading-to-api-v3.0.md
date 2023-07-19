@@ -1490,3 +1490,75 @@ The commit said:
 {% hint style="info" %}
 We advice you to replace all calls to type-specific enumerations and paths with a single speed dial enumeration value, `SpeedDial`, and path, `SpeedDialPath`, respectively. Also, we advice you to use the three functions that stay, but without the type, and cease using the `GetPathTypeFromSpeedDialType()` function.
 {% endhint %}
+
+#### Added support for SwitchInfo
+
+{% code title="CommandArgumentInfo.cs" lineNumbers="true" %}
+```csharp
+public HelpUsage[] HelpUsages { get; private set; }
+public CommandArgumentInfo(string[] HelpUsages, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
+public CommandArgumentInfo(HelpUsage[] HelpUsages, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
+```
+{% endcode %}
+
+{% code title="HelpUsage.cs" lineNumbers="true" %}
+```csharp
+public class HelpUsage
+```
+{% endcode %}
+
+`CommandArgumentInfo` and the UESH shell used to hold `HelpUsage` classes to get info about help usages, but they didn't become aware of unknown switches, so we decided to split `HelpUsage` to a string of command arguments and command switches, using `SwitchInfo` as a class to hold help information for each switch, including the properties for each switch, like the requirement and the value requirement.
+
+This causes us to remove all help helpers that hold info about the supported switches, especially since the later commands that do support switches didn't have their help helpers that tell the users about the command switches.
+
+In consequence, `CommandArgumentInfo` has been changed to hold only one constructor that holds both array of arguments and array of switch information class instances.
+
+{% hint style="info" %}
+We advice you to use the below constructor to accommodate the above changes made:
+
+```csharp
+public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
+```
+{% endhint %}
+
+An example is provided below:
+
+{% code title="Snippet from UESHShellInfo.cs" lineNumbers="true" %}
+```csharp
+{ "find", new CommandInfo("find", ShellType, "Finds a file in the specified directory or in the current directory",
+    new CommandArgumentInfo(new[] { "file", "directory" }, new[] { new SwitchInfo("recursive", "Searches for a file recursively"), new SwitchInfo("exec", "Executes a command on a file", false, true) }, true, 1), new FindCommand()) },
+```
+{% endcode %}
+
+#### Migrated text tools
+
+{% code title="Deleted classes" lineNumbers="true" %}
+```csharp
+public static class StringManipulate
+public static class StringQuery
+```
+{% endcode %}
+
+As `TextTools` matured with different string tools, we decided to migrate the following functions from their respective classes to that class under the `KS.Misc.Text` namespace:
+
+* `FormatString(string Format, params object[] Vars)`
+* `IsStringNumeric(string Expression)`
+
+{% hint style="info" %}
+As a result, we advice you to use the `TextTools` class to execute the above two functions. Their signatures and behavior remains unchanged. This means removing any reference to the two classes found under the `KS.Misc.Reflection` namespace.
+{% endhint %}
+
+#### Moved `BannerFigletFont` to `WelcomeMessage`
+
+{% code title="KernelTools.cs" lineNumbers="true" %}
+```csharp
+public static string BannerFigletFont =>
+    Config.MainConfig.BannerFigletFont;
+```
+{% endcode %}
+
+As this property doesn't have to do with the kernel tools, we decided to move from the `KernelTools` class to the `WelcomeMessage` class found under the `KS.Misc.Writers.MiscWriters` namespace.
+
+{% hint style="info" %}
+If you want to continue using this property, we suggest that you change the `using KS.Kernel` line to replace the namespace with the `KS.Misc.Writers.MiscWriters` namespace in order to be able to reference `BannerFigletFont` under `WelcomeMessage`.
+{% endhint %}

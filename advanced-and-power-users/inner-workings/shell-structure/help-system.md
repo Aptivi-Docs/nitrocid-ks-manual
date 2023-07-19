@@ -21,4 +21,5 @@ If the user specified a command when calling the `help` command, the help system
 It extracts from these values found in the `CommandInfo` class:
 
 * `HelpDefinition`: The brief summary of what the command does
-* `CommandArgumentInfo.HelpUsages`: Defines the command usages
+* `CommandArgumentInfo.Arguments`: Defines the command arguments
+* `CommandArgumentInfo.Switches`: Defines the command switches
