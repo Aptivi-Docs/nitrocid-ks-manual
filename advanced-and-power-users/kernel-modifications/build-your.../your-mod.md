@@ -39,7 +39,7 @@ You're looking to create a mod for Nitrocid KS! That's great! Make sure that you
 
     <div align="left">
 
-    <figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
     </div>
 11. Once the solution is built, open the file explorer to the solution directory by right-clicking on the solution and selecting `Open Folder in File Explorer`.
@@ -51,7 +51,7 @@ You're looking to create a mod for Nitrocid KS! That's great! Make sure that you
     </div>
 12. Navigate to the output directory and copy the `.dll` file to `KSMods` under the `%localappdata%/KS` folder.
 
-    <figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
 13. Open Nitrocid KS to test your mod. Ensure that `modman list` lists your mod.
 
     <figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>

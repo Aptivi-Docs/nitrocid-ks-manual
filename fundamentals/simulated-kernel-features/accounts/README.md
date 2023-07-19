@@ -52,7 +52,7 @@ Note that your account must have either the administrative permissions enabled o
 
 If you want to rename your own user, or if you accidentally made a typo in someone else's username and you want to change it to the right name, you can use the user management portion of the operating system to rename the affected user.
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
 
 The simulated kernel simulates this functionality using the `chusrname` command. To use it, follow these steps:
 
@@ -69,7 +69,7 @@ Note that your account must have either the administrative permissions enabled o
 
 If the person or a user no longer wants to use your computer, or if they're migrating their data from your computer to their brand-new PC, you can remove their user and all their data associated with it.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 The simulated kernel simulates the user removal function. Follow these steps to remove a user from the kernel:
 

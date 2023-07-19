@@ -62,7 +62,7 @@ Be sure to execute the two above functions in the order specified above. Forgett
 
 ### Driver Configuration
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `settings` application now lets you set your system-wide kernel drivers up in a completely new section called `Kernel driver settings`. It lets you configure current drivers for each supported driver type.
 

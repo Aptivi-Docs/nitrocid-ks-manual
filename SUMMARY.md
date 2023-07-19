@@ -124,6 +124,7 @@
   * [📽 Presentation System](advanced-and-power-users/inner-workings/presentation-system.md)
   * [🎛 Kernel Arguments](advanced-and-power-users/inner-workings/kernel-arguments.md)
   * [📡 Remote Procedure](advanced-and-power-users/inner-workings/remote-procedure.md)
+  * [⌨ Interactive TUI](advanced-and-power-users/inner-workings/interactive-tui.md)
 * [💿 GRILO Bootloader and KS](advanced-and-power-users/grilo-bootloader-and-ks.md)
 
 ***

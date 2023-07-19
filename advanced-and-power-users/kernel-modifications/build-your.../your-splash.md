@@ -32,7 +32,7 @@ You're looking to create a splash for Nitrocid KS! That's great! Make sure that 
     <figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 9.  Once you're done, click on `Build Solution`.
 
-    <figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 10. Once the solution is built, open the file explorer to the solution directory by right-clicking on the solution and selecting `Open Folder in File Explorer`.
 
     <figure><img src="../../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
