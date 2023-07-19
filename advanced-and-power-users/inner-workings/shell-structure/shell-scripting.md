@@ -131,10 +131,6 @@ public override bool IsConditionSatisfied(string FirstVariable, string SecondVar
 public override bool IsConditionSatisfied(string[] Variables)
 ```
 
-{% hint style="warning" %}
-We currently don't support installing the custom condition, but we'll add support for it soon.
-{% endhint %}
-
 You can call `ConditionSatisfied()` to test any built-in or custom condition. Give it any expression and test it with `true`.
 
 {% hint style="warning" %}
@@ -217,3 +213,20 @@ public class MyCondition : BaseCondition, ICondition
 To register your condition, you must call `UESHConditional.RegisterCondition()` in your mod initialization code to add your condition with your needed code to the list of custom conditions. After that, the UESH script parser will be able to parse your custom condition.
 
 To unregister your condition, you must call `UESHConditional.UnregisterCondition()` in your mod cleanup code to remove your condition from the list of custom conditions. After that, you won't be able to use scripts that use your custom condition.
+
+### Error codes
+
+The error code variable, `UESHErrorCode`, holds information about the last process error code, whether it's a success (a zero value) or a failure (non-zero value). Currently, these values are supported:
+
+* `0`
+  * Indicates success
+* `-1`
+  * Indicates that the command is not found
+* `-2`
+  * Indicates that the command is not found and that the file is not found under any path lookup directories
+* `-3`
+  * Indicates that the command is attempting to be run in maintenance mode and the command forbids that
+* `-4`
+  * Indicates that the command is a strict command and the user doesn't have permissions to execute it
+
+Also, this variable can hold the `HRESULT` value of any exception that may happen upon executing any command. If the exception is a kernel exception, it holds the numeric value of `KernelExceptionType`.
