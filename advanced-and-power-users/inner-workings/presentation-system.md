@@ -44,6 +44,14 @@ To implement the page elements, make new instances of the elements. Base element
   * Masked input.
   * The first argument in the element `Arguments` is the action to which it generates the input string, for example, `TimeDateRenderers.Render()`.
   * Optionally, `InvokeActionInput` can be specified to take any action after the element is rendered by `IElement.Render()`. It is invoked with the written input as the first element in the object list array.
+* `ChoiceInputElement`
+  * Single choice input.
+  * The first argument in the element `Arguments` is the question, and the remaining arguments are either choice strings or an array of choice strings
+  * Optionally, `InvokeAction` can be specified to take any action after the element is rendered by `IElement.Render()`.
+* `MultipleChoiceInputElement`
+  * Multiple choice input.
+  * The first argument in the element `Arguments` is the question, and the remaining arguments are either choice strings or an array of choice strings
+  * Optionally, `InvokeAction` can be specified to take any action after the element is rendered by `IElement.Render()`.
 
 {% hint style="info" %}
 You can also make your custom `IElement` in your mod code, and no registration is needed.
