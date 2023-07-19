@@ -4,7 +4,7 @@ description: Transfer your files securely between your servers and your PC
 
 # 🔒 SFTP Client
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 This protocol is a modern file transfer protocol that is implemented as part of the Secure SHell (SSH) protocol version 2.0 engineered by the Internet Engineering Task Force (IETF). It allows secure file transfers from the client to the server and from the server to the client.
 
