@@ -34,6 +34,31 @@ The mod finalization phase gets executed as soon as the mod parser sees the file
 12. Checks to see if a command can be added to the shell command list and adds it.
 13. Checks the manual file `ModFile.manual` for existence and initializes it.
 
+### Mod Translations
+
+Your mods can now be translated! The mod parser within the kernel also looks for the localization files found under the `KSMods/Localization/Mod-FileVersion/` path. The format is in JSON, and the file name is the same as the three-letter language name. The format is the same as the regular Nitrocid KS localization files embedded as resources. For example, for the French language, the format would look like below:
+
+{% code title="fre.json" lineNumbers="true" %}
+```json
+{
+  "Name": "French",
+  "Transliterable": false,
+  "Localizations": {
+    "Invalid color template {0}": "Modèle de couleur non valide {0}",
+    (...)
+  }
+}
+```
+{% endcode %}
+
+{% hint style="warning" %}
+KSJsonifyLocales currently doesn't support this kind of localization, but we'll be working on it soon. Meanwhile, you'll manually have to create a JSON file with the above format.
+{% endhint %}
+
+In the Localizations property, it holds a group of keys and values. The key is an original string extracted from your mod (`"Invalid color template {0}"`) and the value is the translated string (`"Modèle de couleur non valide {0}"`).
+
+When Nitrocid KS detects your localization file, it tries to parse it and adds your translated strings to the `ModInfo` class, which is used by the `Translate` static class to translate your mod strings.
+
 ## Screensaver parsing
 
 If the screensavers parser started, `ParseCustomSavers` gets called, traversing through all the contents of the `KSScreensavers` directory. For each `.dll` file that got detected by this parser, `ParseCustomSaver` gets called, causing this to happen:

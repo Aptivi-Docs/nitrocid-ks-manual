@@ -121,3 +121,11 @@ To check that your language is installed, use `list <lang>` to verify that your 
 {% hint style="info" %}
 For mods that want to install or uninstall custom languages, you can use the API functions found within the `LanguageManager` module.
 {% endhint %}
+
+### Your Mods and Your Strings
+
+Your mods can now be translated! Nitrocid KS can now detect your language files from your mods. For more information, consult the "Mod Translations" section in the below link:
+
+{% content-ref url="../kernel-modifications/kernel-modification-management.md" %}
+[kernel-modification-management.md](../kernel-modifications/kernel-modification-management.md)
+{% endcontent-ref %}
