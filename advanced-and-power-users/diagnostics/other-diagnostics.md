@@ -58,3 +58,16 @@ public KernelException(KernelExceptionType exceptionType, string message, Except
 ```
 
 Typically, the message displays the exception type, the message, and the exception information. As always, if you believe that it's a bug, make an issue in our GitHub repository.
+
+## Debug shell
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+The debug shell allows you to diagnose the kernel in depth. Currently, these tools are supported:
+
+* `currentbt`
+  * Shows the current thread stack trace
+
+{% hint style="warning" %}
+This shell just silently exits in the release builds, due to how sophisticated its tools are.
+{% endhint %}
