@@ -76,4 +76,10 @@ This shell just silently exits in the release builds, due to how sophisticated i
 
 {% hint style="danger" %}
 If you're running on Windows 7, `threadsbt` is not going to work due to how it uses the [`PssCaptureSnapshot`](https://learn.microsoft.com/en-us/windows/win32/api/processsnapshot/nf-processsnapshot-psscapturesnapshot) Windows API function, which is first introduced on Windows 8.1, which makes this operating system a minimum requirement for using this command.
+
+Additionally, the same command will not work on Android devices and will fail with this error:
+
+```
+Microsoft.Diagnostics.NETCore.Client.ServerNotAvailableException: Process [pid] not running compatible .NET runtime.
+```
 {% endhint %}
