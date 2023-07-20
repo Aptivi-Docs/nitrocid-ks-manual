@@ -102,7 +102,7 @@ The main shell contains these commands that you can use below. The administrativ
   * Dismisses all notifications
 * `echo [text]`
   * Echoes a text
-* `edit <file>`
+* `edit [-hex|-json|-text] <file>`
   * Edits a file
 * `fileinfo <file>`
   * Provides information about a file

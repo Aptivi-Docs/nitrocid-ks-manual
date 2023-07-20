@@ -25,3 +25,11 @@ If you want to edit the binary file using the hex representation, and are carefu
 {% content-ref url="hex-editor.md" %}
 [hex-editor.md](hex-editor.md)
 {% endcontent-ref %}
+
+{% hint style="info" %}
+You can also force edit command to launch the editor in a specific type, which can be achieved by appending one of the switches outlined below:
+
+```
+edit [-hex|-json|-text] <file>
+```
+{% endhint %}
