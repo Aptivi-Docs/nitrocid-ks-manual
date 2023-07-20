@@ -44,7 +44,7 @@ In case of the third failure events, you can find the event in the Application E
 
 The kernel exceptions are just normal errors with a generic message intended to display extended information about the error the kernel is experiencing. The kernel exception types and their messages are typically found in this file:
 
-{% embed url="https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Kernel/Exceptions/KernelExceptionMessages.cs" %}
+{% @github-files/github-code-block url="https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Kernel/Exceptions/KernelExceptionMessages.cs" %}
 
 To make a kernel exception, throw a new instance of `KernelException` found in the `KS.Kernel.Exceptions` namespace in one of the forms:
 
@@ -67,7 +67,13 @@ The debug shell allows you to diagnose the kernel in depth. Currently, these too
 
 * `currentbt`
   * Shows the current thread stack trace
+* `threadsbt`
+  * Shows the stack trace for all kernel threads
 
 {% hint style="warning" %}
 This shell just silently exits in the release builds, due to how sophisticated its tools are.
+{% endhint %}
+
+{% hint style="danger" %}
+If you're running on Windows 7, `threadsbt` is not going to work due to how it uses the [`PssCaptureSnapshot`](https://learn.microsoft.com/en-us/windows/win32/api/processsnapshot/nf-processsnapshot-psscapturesnapshot) Windows API function, which is first introduced on Windows 8.1, which makes this operating system a minimum requirement for using this command.
 {% endhint %}
