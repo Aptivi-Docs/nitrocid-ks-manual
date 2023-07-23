@@ -49,10 +49,40 @@ However, the command executor checks for these:
 
 ## Switch Management
 
-There is a static class dedicated to managing the switches, called SwitchManager. It allows you to manage the switches with the values. There are two functions that specialize in getting the switch values: `GetSwitchValues` and `GetSwitchValue`.
+There is a static class dedicated to managing the switches, called SwitchManager. It allows you to manage the switches with the values. There are two functions that specialize in getting the switch values: `GetSwitchValues()` and `GetSwitchValue()`.
 
 The first function returns the list of switches with their values stored in a tuple, and the second function returns the switch value for a specified switch or a blank value if not found.
 
 {% hint style="info" %}
 You can always use these functions with the `SwitchesOnly` array found in the `Execute()` function in the `CommandBase` class.
+{% endhint %}
+
+The switches can be set to conflict with each other by passing an array of incompatible switches to the SwitchInfo constructor, specifically the last parameter, `conflictsWith`. However, each switch to be conflicted must set their `conflictsWith` arrays to the opposing switches.
+
+For example, if you want a command to have three switches (`-s`, `-t`, `-u`) that conflict with each other, you can specify three SwitchInfo instances with the following properties (assuming that you've already set the `HelpDefinition`, `IsRequired`, and `ArgumentsRequired` parameters):
+
+* `-s`
+  * Switch: `s`
+  * ConflictsWith: `new string[] { "t", "u" }`
+* `-t`
+  * Switch: `t`
+  * ConflictsWith: `new string[] { "s", "u" }`
+* `-u`
+  * Switch: `u`
+  * ConflictsWith: `new string[] { "s", "t" }`
+
+{% hint style="warning" %}
+You may only specify the switch names without the dash in the `Switch` argument and the `ConflictsWith` argument.
+{% endhint %}
+
+{% hint style="danger" %}
+Be sure that you put all the conflicts in the above form for each conflicting `SwitchInfo`. Failure to do this may cause the UESH shell to believe that they don't conflict, while they do. For example, we have an edit command that contains three conflicting switches (`-json`, `-hex`, and `-text`) that is implemented below:
+
+{% code title="UESHShellInfo.cs" lineNumbers="true" %}
+```csharp
+{ "edit", new CommandInfo("edit", ShellType, /* Localizable */ "Edits a file", 
+    new CommandArgumentInfo(new[] { "file" }, new[] { new SwitchInfo("text", /* Localizable */ "Forces text mode", false, false, new string[] { "hex", "json" }), new SwitchInfo("hex", /* Localizable */ "Forces hex mode", false, false, new string[] { "text", "json" }), new SwitchInfo("json", /* Localizable */ "Forces JSON mode", false, false, new string[] { "text", "hex" }) }, true, 1), new EditCommand()) },
+                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```
+{% endcode %}
 {% endhint %}
