@@ -47,6 +47,8 @@ However, the command executor checks for these:
 * If the command is an external program found in the shell lookup path, which is usually `$PATH`, the shell attempts to scan these directories for the program and execute it.
 * If the command is an internal command, it creates a separate thread for the command.
 
+The `ExecuteCommandWrapped()` function allows you to execute a command in wrapped mode from your mod commands. However, your mods must execute a command that has one of the flags, called `CommandFlags.Wrappable`, otherwise, this function prints the list of wrappable commands.
+
 ## Switch Management
 
 There is a static class dedicated to managing the switches, called SwitchManager. It allows you to manage the switches with the values. There are two functions that specialize in getting the switch values: `GetSwitchValues()` and `GetSwitchValue()`.
