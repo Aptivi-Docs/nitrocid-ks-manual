@@ -1562,3 +1562,55 @@ As this property doesn't have to do with the kernel tools, we decided to move fr
 {% hint style="info" %}
 If you want to continue using this property, we suggest that you change the `using KS.Kernel` line to replace the namespace with the `KS.Misc.Writers.MiscWriters` namespace in order to be able to reference `BannerFigletFont` under `WelcomeMessage`.
 {% endhint %}
+
+#### Easier way to render info into the second pane
+
+{% code title="IInteractiveTui.cs" lineNumbers="true" %}
+```csharp
+public string RenderInfoOnSecondPane(object item)
+```
+{% endcode %}
+
+When we first introduced the interactive TUI feature, we had to leave the entire "rendering to the second pane" logic to your interactive TUI instance. However, since this involves having to wrap the informational pane and to work out the text lengths and console positions yourself, we've placed these requirements so that it's up to the handler to handle printing the information, effectively replacing the function above with `GetInfoFromItem`.
+
+{% hint style="info" %}
+It's now easier to render the information pane using just your text! Just form your final informational text by implementing the `GetInfoFromItem` function to return said information. The function signature is found below:
+
+```csharp
+public string GetInfoFromItem(object item)
+```
+{% endhint %}
+
+#### Enhanced the screen locking feature
+
+{% code title="Login.cs" lineNumbers="true" %}
+```csharp
+public static void ShowPasswordPrompt(string usernamerequested)
+```
+{% endcode %}
+
+The screen locking feature was malfunctioning for a long time. Unfortunately, it went under the radar, so it wasn't looked at. We've finally managed to enhance the screen locking feature by checking our heuristics. Moreover, we had to separate the `ShowPasswordPrompt` function from trying to log the user in, as this was the requirement in enhancing the screen lock, since it was used by this feature.
+
+{% hint style="info" %}
+The `ShowPasswordPrompt` function now contains a return type of `bool`, which returns `true` if the password was valid or if the user database concluded that the password was empty, and `false` if the password was invalid. The new signature is now:
+
+{% code title="Login.cs" lineNumbers="true" %}
+```csharp
+public static bool ShowPasswordPrompt(string usernamerequested)
+```
+{% endcode %}
+{% endhint %}
+
+#### Moved journaling related classes to `KS.Kernel.Journaling`
+
+{% code title="JournalManager.cs, JournalStatus.cs" lineNumbers="true" %}
+```csharp
+namespace KS.Kernel.Administration.Journalling
+```
+{% endcode %}
+
+We used to place all the journaling-related classes and tools to the `KS.Kernel.Administration.Journalling` namespace, until we've found out that said namespace wasn't needed because we didn't have plans to add another namespace to the `Administration` namespace, so we decided to move journaling-related classes to the `KS.Kernel.Journaling` namespace.
+
+{% hint style="info" %}
+To continue using these journaling classes, you have to change the `using` statements to point to `KS.Kernel.Journaling`.
+{% endhint %}
