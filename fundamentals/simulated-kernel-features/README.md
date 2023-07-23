@@ -50,4 +50,12 @@ The buttons below lists some of the features that blow your mind.
 [calculator-and-converter.md](calculator-and-converter.md)
 {% endcontent-ref %}
 
+{% content-ref url="contacts.md" %}
+[contacts.md](contacts.md)
+{% endcontent-ref %}
+
+{% content-ref url="files-and-folders.md" %}
+[files-and-folders.md](files-and-folders.md)
+{% endcontent-ref %}
+
 As we develop more features, they'll get listed here.
