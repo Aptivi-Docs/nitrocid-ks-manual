@@ -57,7 +57,7 @@ Now, head to `Translations/eng.txt` and use it as a reference to translate all t
 Both `eng.txt` and your language text file **MUST** have the exact same line numbers!
 {% endhint %}
 
-After this is done, launch KSJsonifyLocales either by double-clicking the executable file (usually `KSJsonifyLocales.exe`) or by opening the terminal to the executable path and executing the `dotnet KSJsonifyLocales.dll` command.
+After this is done, launch KSJsonifyLocales either by double-clicking the executable file (usually `Nitrocid.LocaleGen.exe`) or by opening the terminal to the executable path and executing the `dotnet Nitrocid.LocaleGen.dll` command.
 
 {% hint style="info" %}
 You can also let this program generate only the custom locale information by passing the `--CustomOnly` argument to it.
@@ -65,7 +65,7 @@ You can also let this program generate only the custom locale information by pas
 
 ## Test your language
 
-After `KSJsonifyLocales` finishes compiling the JSON file containing your translation, you should be able to find the resulting file in the `<KSConfigPath>/KSLanguages` folder.
+After `Nitrocid.LocaleGen` finishes compiling the JSON file containing your translation, you should be able to find the resulting file in the `<KSConfigPath>/KSLanguages` folder.
 
 Open Nitrocid KS, and change your system language or your user language to your customized language.
 

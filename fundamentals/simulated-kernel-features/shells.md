@@ -258,6 +258,8 @@ The main shell contains these commands that you can use below. The administrativ
   * Wraps the console output
 * `zip <zipfile> <path> [-fast|-nocomp|-nobasedir]`
   * Creates a ZIP archive
+* `mklang <pathToTranslations>`
+  * Makes new language localization strings
 
 ### Administrative commands
 

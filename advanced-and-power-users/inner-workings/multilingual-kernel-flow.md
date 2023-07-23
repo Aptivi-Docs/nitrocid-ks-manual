@@ -17,7 +17,7 @@ The kernel languages use the JSON localization files that store the following in
 * `Localizations`: Contains translated strings
   * The type of this variable is an **object** containing **string key-value pairs**
 
-The source of the generated JSON files come from KSJsonifyLocales, a tool shipped with the kernel.
+The source of the generated JSON files come from `Nitrocid.LocaleGen`, a tool shipped with the kernel.
 
 ## Locale Generator
 
@@ -78,6 +78,7 @@ Optionally, the parameters can be specified below:
 * `--NormalOnly`: Generates normal languages only
 * `--All`: Generates all language
 * `--Singular`: Generates a single language. A language is required if this parameter is passed
+* `--Dry`: Generates languages, but without saving any changes
 * `--CopyToResources`: (for internal use only) Copies the generated files to the kernel resources
 
 ### Outputs

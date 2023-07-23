@@ -51,8 +51,8 @@ Your mods can now be translated! The mod parser within the kernel also looks for
 ```
 {% endcode %}
 
-{% hint style="warning" %}
-KSJsonifyLocales currently doesn't support this kind of localization, but we'll be working on it soon. Meanwhile, you'll manually have to create a JSON file with the above format.
+{% hint style="info" %}
+You must use the `mklang` command within Nitrocid, pointing to a directory that contains your language metadata and your `eng.txt` file containing all strings from your mod in order to be able to translate them within the app. When you're done, save your changes by choosing the `Save` option.
 {% endhint %}
 
 In the Localizations property, it holds a group of keys and values. The key is an original string extracted from your mod (`"Invalid color template {0}"`) and the value is the translated string (`"Modèle de couleur non valide {0}"`).
