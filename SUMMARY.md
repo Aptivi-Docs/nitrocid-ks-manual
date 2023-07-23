@@ -89,6 +89,7 @@
   * [⏰ Stopwatch and Timer](fundamentals/simulated-kernel-features/stopwatch-and-timer.md)
   * [⚖ Calculator and Converter](fundamentals/simulated-kernel-features/calculator-and-converter.md)
   * [👥 Contacts](fundamentals/simulated-kernel-features/contacts.md)
+  * [📂 Files and Folders](fundamentals/simulated-kernel-features/files-and-folders.md)
 
 ## Advanced and Power Users
 
@@ -125,6 +126,7 @@
   * [🎛 Kernel Arguments](advanced-and-power-users/inner-workings/kernel-arguments.md)
   * [📡 Remote Procedure](advanced-and-power-users/inner-workings/remote-procedure.md)
   * [⌨ Interactive TUI](advanced-and-power-users/inner-workings/interactive-tui.md)
+  * [🗃 Nitrocid Filesystem](advanced-and-power-users/inner-workings/nitrocid-filesystem.md)
 * [💿 GRILO Bootloader and KS](advanced-and-power-users/grilo-bootloader-and-ks.md)
 
 ***
