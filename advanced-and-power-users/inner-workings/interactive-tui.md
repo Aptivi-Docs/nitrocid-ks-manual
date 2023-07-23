@@ -193,3 +193,18 @@ internal class MyTui : BaseInteractiveTui, IInteractiveTui
 If everything goes well, you should see your TUI app refresh every 15 seconds:
 
 <figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption><p>Your timed TUI app in action</p></figcaption></figure>
+
+### Colors for the TUI
+
+You can also specify the colors for your TUI application, too! Currently, your interactive TUI uses the regular colors defined under `InteractiveTuiColors`, which gets its values from the kernel configuration that you can also customize.
+
+However, you can override the TUI colors by using the `new` keyword on all the `*Color` properties to assign it a new `Color` value. For example, the contacts manager gets its own colors from its own colors class, which is also configurable through the kernel settings, like below:
+
+{% code title="ContactsManagerCli.cs" lineNumbers="true" %}
+```csharp
+public static new Color BackgroundColor => ContactManagerCliColors.ContactsManagerBackgroundColor;
+public static new Color ForegroundColor => ContactManagerCliColors.ContactsManagerForegroundColor;
+public static new Color PaneBackgroundColor => ContactManagerCliColors.ContactsManagerPaneBackgroundColor;
+(...)
+```
+{% endcode %}
