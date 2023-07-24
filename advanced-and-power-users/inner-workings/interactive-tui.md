@@ -71,10 +71,6 @@ And if you press your key binding, you'll get this:
 
 <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Your keybinding in action</p></figcaption></figure>
 
-{% hint style="warning" %}
-Currently, there is no easy way to print info to the second pane if you're using a single-pane interactive TUI. You can override the `RenderInfoOnSecondPane()` function, but you'll have to work out the second pane position yourself, which is not easy. However, we're working on it very soon.
-{% endhint %}
-
 For multiple panes, you'll have to modify your class to take two data sources and adapt it to interact with the second pane, like below: (note the highlighted parts, they are added)
 
 <pre class="language-csharp" data-title="MyTui.cs" data-line-numbers><code class="lang-csharp">internal class MyTui : BaseInteractiveTui, IInteractiveTui
@@ -135,7 +131,7 @@ And if you try to execute your key binding on an item found in the second pane, 
 You **must** make a keybinding called `Switch` so that your users can choose items for the second pane in double-paned TUI applications, or they won't be able to switch to the second pane!
 {% endhint %}
 
-Additionally, you can make your TUI app refresh every set millisecond so that your app can update itself based on the **dynamic** data that you give it. Only static data for one pane in single-paned applications is useless for self-updating applications. For this, you need a data source that is dynamic and self-updating, like stopwatches, random data, or even self-updating data gathered from the Internet, assuming that you know how to process them correctly.
+Additionally, you can make your TUI app refresh every set millisecond so that your app can update itself based on the **selected** data, like weather for the selected city. For this, you need an information source that is dynamic and self-updating (from the `GetInfoFromItem()` function), like stopwatches, random data, or even self-updating data gathered from the Internet, based on the selected item in the first pane, assuming that you know how to process them correctly.
 
 For example, to use the Namer library to make a single-paned TUI application that gathers random names to list 10 names in the info pane, you must add a NuGet package, Namer, to your mod's dependencies. To learn more about how to use this library, consult the below page:
 
@@ -145,11 +141,9 @@ For example, to use the Namer library to make a single-paned TUI application tha
 
 The code that would do this would look like this:
 
-{% code title="MyTui.cs" lineNumbers="true" %}
-```csharp
-internal class MyTui : BaseInteractiveTui, IInteractiveTui
+<pre class="language-csharp" data-title="MyTui.cs" data-line-numbers><code class="lang-csharp">internal class MyTui : BaseInteractiveTui, IInteractiveTui
 {
-    public override List<InteractiveTuiBinding> Bindings { get; set; } = new();
+    public override List&#x3C;InteractiveTuiBinding> Bindings { get; set; } = new();
 
     public override int RefreshInterval => 15000;
 
@@ -167,28 +161,21 @@ internal class MyTui : BaseInteractiveTui, IInteractiveTui
         string currentItem = (string)item;
         return $" [{currentItem}]";
     }
-    public override string RenderInfoOnSecondPane(object item)
-    {
-        // Populate some positions
-        int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-        int SeparatorHalfConsoleWidthInterior = (ConsoleWrapper.WindowWidth / 2) - 2;
-        int SeparatorMinimumHeightInterior = 2;
-
-        var list = NameGenerator.GenerateNames(10);
-        for (int i = 0; i < list.Count; i++)
-        {
-            string name = list[i];
-            TextWriterWhereColor.WriteWhere(name + new string(' ', SeparatorHalfConsoleWidthInterior - name.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + i, ForegroundColor, PaneItemBackColor);
-        }
-
-        // Prepare the status
-        Status = Translate.DoTranslation("Ready");
-        string finalInfoRendered = $" {Status}";
-        return finalInfoRendered;
-    }
-}
-```
-{% endcode %}
+<strong>    public override string GetInfoFromItem(object item)
+</strong><strong>    {
+</strong><strong>        var namesBuilder = new StringBuilder();
+</strong><strong>
+</strong><strong>        var list = NameGenerator.GenerateNames(10);
+</strong><strong>        for (int i = 0; i &#x3C; list.Count; i++)
+</strong><strong>        {
+</strong><strong>            string name = list[i];
+</strong><strong>            namesBuilder.AppendLine(name);
+</strong><strong>        }
+</strong><strong>
+</strong><strong>        return namesBuilder.ToString();
+</strong><strong>    }
+</strong>}
+</code></pre>
 
 If everything goes well, you should see your TUI app refresh every 15 seconds:
 
