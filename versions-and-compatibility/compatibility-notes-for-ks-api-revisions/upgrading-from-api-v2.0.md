@@ -953,7 +953,7 @@ To further organize the codebase, we decided to namespace each one of them based
 * `KS.TimeDate`
 
 {% hint style="info" %}
-New namespaces get created each major release of the kernel, so the list above is only relevant at the time the change was committed. The API reference will always display all the available namespaces.
+New namespaces get created and/or changed each major release of the kernel, so the list above is only relevant at the time the change was committed. The API reference will always display all the available namespaces.
 {% endhint %}
 
 #### **Removed built-in string evaluators**

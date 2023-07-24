@@ -1614,3 +1614,28 @@ We used to place all the journaling-related classes and tools to the `KS.Kernel.
 {% hint style="info" %}
 To continue using these journaling classes, you have to change the `using` statements to point to `KS.Kernel.Journaling`.
 {% endhint %}
+
+#### Time and Date API enhancements
+
+{% code title="Old TimeDate namespace" lineNumbers="true" %}
+```csharp
+namespace KS.TimeDate
+```
+{% endcode %}
+
+The TimeDate API was left untouched for a long time, and its structure was a bit too old for the modern API system that Nitrocid KS uses to be usable for mods and general purpose, so we have decided to create the following namespaces:
+
+* `KS.Kernel.Time.Converters`
+* `KS.Kernel.Time.Renderers`
+* `KS.Kernel.Time.Timezones`
+* `KS.Kernel.Time`
+
+We have moved relevant functions according to their action to the above namespaces. For example, the `Render()` function was moved to `TimeDateRenderers` class in the `Renderers` namespace.
+
+We have also isolated the `FormatType` enumeration from the `TimeDateTools` class so that the mods don't have to reference the class name in order to access this enumeration.
+
+Also, some functions like `GetRemainingTimeFromNow()` have their return types changed from `string` to `TimeSpan`. To get a string, you must now use the `RenderRemainingTimeFromNow()` function to continue using strings to render the remaining time from the current date and time.
+
+{% hint style="info" %}
+To keep using these functions, you must now change the imports in relevant code files to `KS.Kernel.Time` and its ancestors to be able to use their classes. You may need to adjust your usage of the functions and/or classes so that the behavior you're expecting remains unchanged.
+{% endhint %}
