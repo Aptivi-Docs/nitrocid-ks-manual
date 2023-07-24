@@ -260,6 +260,8 @@ The main shell contains these commands that you can use below. The administrativ
   * Creates a ZIP archive
 * `mklang <pathToTranslations>`
   * Makes new language localization strings
+* `shipduet`
+  * Starts the ShipDuet game
 
 ### Administrative commands
 
