@@ -112,15 +112,14 @@ This is my mod documentation, which hosts the documentation and technical inform
 
 ## Manual page viewer
 
-The manual page viewer can be invoked with the `modmanual` command, which takes either an argument that contains the manual page title for a mod or a `-list` switch that lists all the available manual pages.
+The manual page viewer can be invoked with the `modmanual` command, which takes an argument that should be a valid kernel mod name.
 
-Invocation of the command starts with `ViewPage()` getting involved. It starts with printing the manual page information style to the bottom of the console. The text then gets rendered to the memory according to the console width.
-
-The viewer then prints the manual page line to the console with the VT sequence enabled with the help of the presentation system.
+When this command is executed, the manual page viewer TUI starts by listing all the available manual pages that the mod provides. Then, it shows you a brief description in the second pane, which will most likely tell you to press `Shift + I` to get access to more information.
 
 ### Controls
 
 The viewer supports these controls:
 
-* `ENTER`: Advances to the next page
+* `F1`: Info about the selected manual page
+* `Shift + I`: Opens the info box containing your mod manual
 * `ESC`: Exits the viewer

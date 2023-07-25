@@ -164,7 +164,7 @@ The main shell contains these commands that you can use below. The administrativ
   * Makes a normal file
 * `mktheme <themeName>`
   * Opens the theme studio to let you create a new theme
-* `modmanual [-list] <ManualTitle>`
+* `modmanual <modname>`
   * Opens the manual viewer for your mod manual
 * `move <source> <target>`
   * Moves a file or directory to the target

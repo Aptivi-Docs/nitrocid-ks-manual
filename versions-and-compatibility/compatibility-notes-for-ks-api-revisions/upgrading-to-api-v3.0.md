@@ -1639,3 +1639,39 @@ Also, some functions like `GetRemainingTimeFromNow()` have their return types ch
 {% hint style="info" %}
 To keep using these functions, you must now change the imports in relevant code files to `KS.Kernel.Time` and its ancestors to be able to use their classes. You may need to adjust your usage of the functions and/or classes so that the behavior you're expecting remains unchanged.
 {% endhint %}
+
+#### Manual page parsing now uses the interactive TUI
+
+The manual page viewer used to be so limited in features; you could only advance to the next pages of the manual and exit back to the shell. You had to specify the full manual page title after listing it with the `-list` switch.
+
+The migration of the viewer to the TUI required the following changes:
+
+{% code title="PageManager.cs" lineNumbers="true" %}
+```csharp
+public static Dictionary<string, Manual> ListAllPages()
+public static Dictionary<string, Manual> ListAllPages(string SearchTerm)
+```
+{% endcode %}
+
+The above functions have their return values changed to a `List<Manual>` type. It was done because we needed to store a kernel modification name inside the `Manual` instance, so we have done the below changes:
+
+{% code title="PageManager.cs and PageParser.cs" lineNumbers="true" %}
+```csharp
+public static void AddManualPage(string Name, Manual Page)
+public static void InitMan(string ManualFile)
+```
+{% endcode %}
+
+The two above functions have changed their signature so they they take a mod name (`string modName`) before every element.
+
+{% code title="PageManager.cs" lineNumbers="true" %}
+```csharp
+public static bool RemoveManualPage(string Name)
+```
+{% endcode %}
+
+The above function has its signature changed so that instead of the manual page name (title), it now takes an instance of the `Manual` class to remove a selected manual page.
+
+{% hint style="info" %}
+You should adjust the changes as necessary in order for your mod to continue working.
+{% endhint %}
