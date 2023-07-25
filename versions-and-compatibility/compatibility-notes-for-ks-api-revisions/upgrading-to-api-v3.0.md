@@ -1675,3 +1675,25 @@ The above function has its signature changed so that instead of the manual page 
 {% hint style="info" %}
 You should adjust the changes as necessary in order for your mod to continue working.
 {% endhint %}
+
+#### `ChoiceOutputType` is now standalone
+
+{% code title="ChoiceStyle.cs" lineNumbers="true" %}
+```csharp
+public enum ChoiceOutputType
+```
+{% endcode %}
+
+We have separated the `ChoiceOutputType` enumeration from the `ChoiceStyle` class so that we can simplify its access. Now, you can access this enumeration directly; you don't have to append `ChoiceStyle` before the enumeration so that it becomes easier for you to access.
+
+{% hint style="info" %}
+You need to remove the ChoiceStyle reference and make it only reference the ChoiceOutputType enumeration so that your mods keep working. For example:
+
+<pre class="language-csharp" data-line-numbers><code class="lang-csharp">// Before
+<strong>    var OutputType = ChoiceStyle.ChoiceOutputType.OneLine;
+</strong>                     XXXXXXXXXXX
+// After
+<strong>    var OutputType = ChoiceOutputType.OneLine;
+</strong>                     ^^^^^^^^^^^^^^^^
+</code></pre>
+{% endhint %}
