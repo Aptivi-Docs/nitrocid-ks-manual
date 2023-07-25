@@ -4,6 +4,8 @@ description: Did you plug the device in?
 
 # 🔌 v0.0.7.x series
 
+<figure><img src="https://officialaptivi.files.wordpress.com/2022/02/68747470733a2f2f692e696d6775722e636f6d2f776870656135482e706e67.png" alt=""><figcaption></figcaption></figure>
+
 This series marks the moment when the documentation moved to GitHub Wiki, which was an advancement for the documentation. However, this release wasn't as big as all the major first-gen releases.
 
 Out of all the version series that provided minor updates, this series is the only one that its first digit in the last version section denotes the feature pack and its second digit informs you about how many patches applied. This was because semantic versioning limits the version parts to four parts.
