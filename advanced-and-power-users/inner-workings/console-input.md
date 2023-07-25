@@ -6,9 +6,9 @@ description: When it comes to input, this is where the users provide their answe
 
 You might have come across a chapter in making a console application that tells you to enter your name as a simplest course. Well, that's what this chapter is talking about; console inputs!
 
-Nitrocid KS offers several ways of input. The simplest way is the `ReadLine()` function found in the Input class on the KS.ConsoleBase.Inputs namespace. It basically gives you a prompt and a chance to enter your input to the console, and the output will be returned by this function, which your mod uses.
+Nitrocid KS offers several ways of input. The simplest way is the `ReadLine()` function found in the Input class on the `KS.ConsoleBase.Inputs` namespace. It basically gives you a prompt and a chance to enter your input to the console, and the output will be returned by this function, which your mod uses.
 
-Various features of the kernel, like the shell, use this function to get the user input, such as the entered command, and process it according to the logic. For example, ShellManager.GetLine() gets the entered command and compares the written command to the list of commands under the current shell type. Deep explanation about this topic is clearly out of scope, so if you want to get more information about how the shell commands are being processed, click on the below page:
+Various features of the kernel, like the shell, use this function to get the user input, such as the entered command, and process it according to the logic. For example, `ShellManager.GetLine()` gets the entered command and compares the written command to the list of commands under the current shell type. Deep explanation about this topic is clearly out of scope, so if you want to get more information about how the shell commands are being processed, click on the below page:
 
 {% content-ref url="shell-structure/" %}
 [shell-structure](shell-structure/)

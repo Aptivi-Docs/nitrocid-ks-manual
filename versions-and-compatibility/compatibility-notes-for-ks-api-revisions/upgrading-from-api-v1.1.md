@@ -59,7 +59,7 @@ Sub DisconnectDbgDevCmd(ByVal IPAddr As String)
 ```
 {% endcode %}
 
-This fufunction was released to make a wrapper for the DisconnectDbgDev() function. However, as it was reserved for running in commands according to GetCommand.vb, it was removed for being a duplicate.
+This function was released to make a wrapper for the `DisconnectDbgDev()` function. However, as it was reserved for running in commands according to `GetCommand.vb`, it was removed for being a duplicate.
 
 {% hint style="info" %}
 Alternatively, you can use the same function in the latest kernel version. `DisconnectDbgDev()` in API 3.0 can handle these cases. The method signature is shown in the below code block.
