@@ -168,6 +168,35 @@ The `ShellType` variable found within the `BaseShellInfo` class is a wrapper for
 public string ShellType => ShellBase.ShellType;
 ```
 
+By default, your shells don't accept network connections. To make them accept network connections, you must override the `AcceptsNetworkConnection` so that it holds the value of `true` instead of `false`. This causes the network connection selector, especially `OpenConnectionForShell()` which can be invoked in your networked shell launch code in your command class, to be able to acknowledge your shell.
+
+```csharp
+public override bool AcceptsNetworkConnection => true;
+```
+
+You'll have to adapt your shell to take the first argument, `ShellArgs[0]`, as the network connection instance in your `Shell` instance. For example, we've done this to the FTP shell and shell info instances:
+
+<pre class="language-csharp" data-title="FTPShell.cs" data-line-numbers><code class="lang-csharp">public override void InitializeShell(params object[] ShellArgs)
+{
+    // Parse shell arguments
+<strong>    NetworkConnection ftpConnection = (NetworkConnection)ShellArgs[0];
+</strong><strong>    FtpClient clientFTP = (FtpClient)ftpConnection.ConnectionInstance;
+</strong>
+    // Finalize current connection
+    FTPShellCommon.clientConnection = ftpConnection;
+</code></pre>
+
+<pre class="language-csharp" data-title="FTPShellInfo.cs" data-line-numbers><code class="lang-csharp">internal class FTPShellInfo : BaseShellInfo, IShellInfo
+{
+    (...)
+<strong>    public override bool AcceptsNetworkConnection => true;
+</strong>}
+</code></pre>
+
+{% hint style="warning" %}
+The selector currently only knows about FTP, SFTP, Mail, HTTP, and RSS connection types. We'll support those types dynamically in the third beta version of Nitrocid 0.1.0.
+{% endhint %}
+
 ## Command Info
 
 Each command you define in your shell must provide a new instance of the `CommandInfo` class holding details about the specified command. The new instance of the class can be made using the constructor defined below:

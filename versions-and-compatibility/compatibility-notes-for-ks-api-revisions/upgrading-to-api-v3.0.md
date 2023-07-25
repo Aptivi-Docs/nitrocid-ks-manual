@@ -1697,3 +1697,23 @@ You need to remove the ChoiceStyle reference and make it only reference the Choi
 </strong>                     ^^^^^^^^^^^^^^^^
 </code></pre>
 {% endhint %}
+
+#### Breaking changes following the `OpenConnectionForShell()` implementation
+
+{% code title="IShellInfo.cs" lineNumbers="true" %}
+```csharp
+bool AcceptsNetworkConnection { get; }
+```
+{% endcode %}
+
+In order for `OpenConnectionForShell()` to be able to distinguish the shells that accept the network connections from the shells that don't, we needed to add the above property to the interface implementation of the `ShellInfo` class. The base class has been updated so that it implements the above property as false so that you don't have to override this property in the non-networked shells implemented either by Nitrocid or by your mods:
+
+{% code title="BaseShellInfo.cs" lineNumbers="true" %}
+```csharp
+public virtual bool AcceptsNetworkConnection => false;
+```
+{% endcode %}
+
+{% hint style="info" %}
+For most shells that don't connect to any network, you don't have to override the above property. Nitrocid KS 0.1.0 with API versions lower than 3.0.25.34 are unable to use `ShellInfo` instances implemented for such versions.
+{% endhint %}
