@@ -100,3 +100,28 @@ Starting the parent thread will start all the child threads simultaneously, and 
 {% hint style="warning" %}
 Currently, you're not allowed to add a new child thread once the parent thread has started. This is a current limitation of the child thread implementation, but we'll eventually remove this limitation at some point in the development.
 {% endhint %}
+
+### Looping until the thread stops
+
+If your thread consists of an infinite loop doing something useful, like updating the timer screen, the only viable way to implement such a loop within a `KernelThread` instance is to put a `while` clause, polling the condition of (`!MyThread.IsStopping`). Even better, you should catch a `ThreadInterruptedException` in case your thread does something that takes a long time. Here's an example of how it's used in the timer update thread (excluding the actual logic inside):
+
+{% code title="TimerScreen.cs" lineNumbers="true" %}
+```csharp
+private static void UpdateTimerElapsedDisplay()
+{
+    var FigletFont = FigletTools.GetFigletFont(TimerFigletFont);
+    while (!TimerUpdate.IsStopping)
+    {
+        (...)
+    }
+}
+```
+{% endcode %}
+
+{% hint style="danger" %}
+Never use the `IsAlive` property to implement such loops, or your kernel thread will deadlock 60 seconds after it's told to stop in case the `ThreadInterruptedException` isn't getting caught.
+
+If you want to use this property, be sure that you still check for `IsStopping` somewhere in your logic, or at the end of your logic so that you can break out of the infinite loop with polling for the `IsAlive` property.
+{% endhint %}
+
+As soon as `Stop()` is called on your kernel thread, `IsStopping` will be set to `true` to notify your kernel threads that it's stopping and that it should take appropriate action to stop. After the thread ends, it'll be reverted to `false`.
