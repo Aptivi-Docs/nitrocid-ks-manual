@@ -1731,5 +1731,40 @@ The shell management module used to have just `Shell` without the `Manager` suff
 However, this naming has introduced problems for us because we needed to write `Shell` twice before being able to write its function names for reference, which is messy. As a result, we had to rename this class to `ShellManager` so that its access is easier.
 
 {% hint style="info" %}
-We advice you to change the references to the Shell class to use the ShellManager class.
+We advice you to change the references to the `Shell` class to use the `ShellManager` class.
+{% endhint %}
+
+#### `ColorTools` class renamed to `KernelColorTools`
+
+{% code title="ColorTools.cs and ColorSetErrorReasons.cs" lineNumbers="true" %}
+```csharp
+public static class ColorTools
+public enum ColorSetErrorReasons
+```
+{% endcode %}
+
+The `ColorTools` class used to hold color tools which have to do directly with the kernel and its console driver so that it can manipulate with the colors, like setting the console color, setting the console background color, and so on.
+
+However, it has been recently concluded that there is a class under the same name from the ColorSeq library, which caused us to have to add an extra imports clause to rename the `ColorTools` class so that it doesn't conflict with ColorSeq's class.
+
+We were being fed up of this, so we decided to rename the entire class to `KernelColorTools`.
+
+{% hint style="info" %}
+You no longer have to add the imports clause that would rename the abovementioned class. The clause that is to be removed looks like this:
+
+```csharp
+using ColorTools = KS.ConsoleBase.Colors.ColorTools
+```
+{% endhint %}
+
+{% hint style="info" %}
+All calls to the kernel's `ColorTools` will now have to be called through the `KernelColorTools` class. Example below:
+
+<pre class="language-csharp" data-line-numbers><code class="lang-csharp">// Before
+<strong>internal static readonly Dictionary&#x3C;KernelColorType, Color> SelectedColors = ColorTools.PopulateColorsCurrent();
+</strong>                                                                             XXXXXXXXXX
+// After
+<strong>internal static readonly Dictionary&#x3C;KernelColorType, Color> SelectedColors = KernelColorTools.PopulateColorsCurrent();
+</strong>                                                                             ^^^^^^^^^^^^^^^^
+</code></pre>
 {% endhint %}
