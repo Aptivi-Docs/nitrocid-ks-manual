@@ -128,6 +128,7 @@
   * [📡 Remote Procedure](advanced-and-power-users/inner-workings/remote-procedure.md)
   * [⌨ Interactive TUI](advanced-and-power-users/inner-workings/interactive-tui.md)
   * [🗃 Nitrocid Filesystem](advanced-and-power-users/inner-workings/nitrocid-filesystem.md)
+  * [🖲 Console Input](advanced-and-power-users/inner-workings/console-input.md)
 * [💿 GRILO Bootloader and KS](advanced-and-power-users/grilo-bootloader-and-ks.md)
 
 ***
