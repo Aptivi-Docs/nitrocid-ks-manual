@@ -11,7 +11,7 @@ Kernel shells can be built by implementing two different interfaces and base cla
 
 ## Shell Handler
 
-The shell handler, `Shell`, uses the available shell list, which holds the `BaseShellInfo` abstract class, to manipulate with that shell. That class can be get, depending on the needed type, with the `Shell.GetShellInfo()` function in the ︎`KS.Shell` namespace.
+The shell handler, `ShellManager`, uses the available shell list, which holds the `BaseShellInfo` abstract class, to manipulate with that shell. That class can be get, depending on the needed type, with the `ShellManager.GetShellInfo()` function in the ︎`KS.Shell` namespace.
 
 The shell handler also contains two properties: `CurrentShellType` and `LastShellType`. The former property holds the current shell type, which can be used with the shell management functions. The latter property holds the last shell type, which is usually the shell that you exited. However, there are three cases:
 
@@ -41,12 +41,12 @@ public override void InitializeShell(params object[] ShellArgs)
 
 While it's waiting for this to happen, the shell does what it's programmed to do, but in two conditions:
 
-* All shells **must** call the `Shell.GetLine()` function, which usually is adaptive to your shell type. This is the below example code inside the shell initialization code to illustrate this:
+* All shells **must** call the `ShellManager.GetLine()` function, which usually is adaptive to your shell type. This is the below example code inside the shell initialization code to illustrate this:
 
 ```csharp
 while (!Bail)
 {
-    Shell.GetLine();
+    ShellManager.GetLine();
 }
 ```
 
@@ -57,7 +57,7 @@ while (!Bail)
 {
     try
     {
-        Shell.GetLine();
+        ShellManager.GetLine();
     }
     catch (ThreadInterruptedException)
     {
@@ -81,7 +81,7 @@ Be sure to unregister your shell using the `UnregisterShell()` function, or the 
 
 ## Shell Presets
 
-While `Shell.GetLine()` prompts for input, it decides which shell preset, `PromptPresetBase`, is used according to the list of presets, `ShellPresets`, that **should** make a new prompt preset class that you made for your shell.
+While `ShellManager.GetLine()` prompts for input, it decides which shell preset, `PromptPresetBase`, is used according to the list of presets, `ShellPresets`, that **should** make a new prompt preset class that you made for your shell.
 
 `CurrentPreset` specifies the current `PromptPresetBase` class, which is usually found in the `ShellPresets` list. It usually calls the `PromptPresetManager.CurrentPresets[ShellType]` variable.
 
@@ -231,7 +231,7 @@ where:
 For `SwitchInfo` instances, consult the below constructor to create an array of `SwitchInfo` instances when defining your commands:
 
 ```csharp
-public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false)
+public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[] conflictsWith = null)
 ```
 
 The base command is required to be implemented, since it contains overridable command execution code. Your command must implement the command base class below:

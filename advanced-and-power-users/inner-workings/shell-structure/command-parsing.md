@@ -4,7 +4,7 @@ description: How command parsing works
 
 # 🗜 Command Parsing
 
-Once the `GetLine()` function got your input, it attempts to split any command with the semicolon between them, like:
+Once the `GetLine()` function gets your input, it attempts to split any command with the semicolon between them, like:
 
 ```
 command1 arg1 arg2 ; command2 arg3 arg4
@@ -26,6 +26,8 @@ This class contains these variables:
 * `ArgumentsList`: Array of arguments without the switches
 * `SwitchesList`: Array of switches
 * `RequiredArgumentsProvided`: Checks to see if the arguments are provided or not
+* `RequiredSwitchesProvided`: Checks to see if the required switches are provided or not
+* `RequiredSwitchArgumentsProvided`: Checks to see if the required switch arguments are provided or not
 
 After the above class constructor is called, the shell attempts to execute a mod or alias command, if found. Else, the built-in command is going to be executed. It checks for these redirection flags:
 

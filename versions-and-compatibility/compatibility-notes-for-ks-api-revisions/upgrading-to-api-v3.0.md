@@ -1717,3 +1717,19 @@ public virtual bool AcceptsNetworkConnection => false;
 {% hint style="info" %}
 For most shells that don't connect to any network, you don't have to override the above property. Nitrocid KS 0.1.0 with API versions lower than 3.0.25.34 are unable to use `ShellInfo` instances implemented for such versions.
 {% endhint %}
+
+#### Renamed Shell to ShellManager
+
+{% code title="Shell.cs" lineNumbers="true" %}
+```csharp
+public static class Shell
+```
+{% endcode %}
+
+The shell management module used to have just `Shell` without the `Manager` suffix, because it was introduced on 0.0.1, which was the first version of Kernel Simulator as a whole that released on February 22nd, 2018. You can view the historical representation of the shell management class by clicking on [this link](https://github.com/Aptivi/NitrocidKS/blob/v0.0.1.x-servicing/src/Windows/0.0.1/Kernel%20Simulator/Shell.vb).
+
+However, this naming has introduced problems for us because we needed to write `Shell` twice before being able to write its function names for reference, which is messy. As a result, we had to rename this class to `ShellManager` so that its access is easier.
+
+{% hint style="info" %}
+We advice you to change the references to the Shell class to use the ShellManager class.
+{% endhint %}
