@@ -69,6 +69,8 @@ The debug shell allows you to diagnose the kernel in depth. Currently, these too
   * Shows the current thread stack trace
 * `threadsbt`
   * Shows the stack trace for all kernel threads
+* `keyinfo`
+  * Gets information about the pressed key
 
 {% hint style="warning" %}
 This shell just silently exits in the release builds, due to how sophisticated its tools are.

@@ -28,6 +28,25 @@ You can then start the thread using the `Start()` function for normal threads or
 You can't start the kernel thread once it's stopped by `Stop(false)` until it's regenerated either automatically by `Stop()` or manually by `Regen()`, and you can't call `Regen()` before calling the `Stop(false)` function.
 {% endhint %}
 
+A KernelThread has the following values:
+
+* `Name`
+  * Gets the name of the thread
+* `IsBackground`
+  * Checks to see if the thread is a background thread
+* `IsAlive`
+  * Checks to see if the kernel thread is alive
+* `IsReady`
+  * Checks to see if the kernel thread is ready
+* `IsCritical`
+  * Indicates that the kernel thread is critical, which means that it is essential for the kernel. Unkillable by the kernel task manager
+* `IsStopping`
+  * Checks to see whether the kernel thread is stopping
+* `ParentThread`
+  * If the thread is a child thread, this will return its parent. Else, it returns `null`.
+* `ThreadId`
+  * Managed kernel thread ID
+
 ## Task manager
 
 The task manager can be called by `taskman` in the normal shell. It allows you to list both the Nitrocid KS threads and the unmanaged operating system threads, and it provides you with their information.

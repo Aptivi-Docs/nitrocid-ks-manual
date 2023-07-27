@@ -136,8 +136,6 @@ The main shell contains these commands that you can use below. The administrativ
   * Beautifies a JSON file
 * `jsonminify <jsonfile> [output]`
   * Minifies a JSON file
-* `keyinfo`
-  * Gets key information for a pressed key
 * `license`
   * Shows license information for the kernel
 * `lintscript <script>`

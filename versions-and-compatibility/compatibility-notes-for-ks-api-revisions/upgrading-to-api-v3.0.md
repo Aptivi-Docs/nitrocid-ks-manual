@@ -1819,3 +1819,49 @@ These functions used to exist in their own namespace with their own classes that
 {% hint style="info" %}
 To continue using these functions, you'll now have to change the using clause to point to the `KS.Misc.Editors.JsonShell` namespace and the class to `JsonTools`.
 {% endhint %}
+
+#### Moved path lookup properties
+
+{% code title="ShellManager.cs" lineNumbers="true" %}
+```csharp
+public readonly static string PathLookupDelimiter
+public static string PathsToLookup
+```
+{% endcode %}
+
+These path lookup properties used to exist in the shell management code, which indicated that these variables were exclusive for the shell command parser. However, at the same time, `PathLookupTools` existed, and we thought that it would be more appropriate to move these into that class, so we decided to move them into said class.
+
+{% hint style="info" %}
+`PathLookupDelimiter` has become a property, because it was included in the public API.
+
+If you want to continue using these variables, we suggest you to change the class in all your references to them from `ShellManager` to `PathLookupTools`.
+{% endhint %}
+
+#### Removed the field manager
+
+{% code title="FieldManager.cs" lineNumbers="true" %}
+```csharp
+public static class FieldManager
+```
+{% endcode %}
+
+When this was implemented, we relied on it for kernel configuration to get the variable values by name from the kernel configuration declaration file (known as SettingsEntries.json and its ancestors for screensaver and splash settings).
+
+However, following several configuration system improvements that occurred two times:
+
+* We've started working on the Reflection-based configuration reader and writer back at very early development stages by the following commits (in chronological order):
+  * [a70787e](https://github.com/Aptivi/NitrocidKS/commit/a70787eafd44c32e7ab6ad7814c587dc03d62dc9): Implemented new config reader (experimental)
+  * [9d350f4](https://github.com/Aptivi/NitrocidKS/commit/9d350f4b15be6bb2f01d346785800bd949e098ff): Added new config writer
+  * [7d134f8](https://github.com/Aptivi/NitrocidKS/commit/7d134f853a516defb9c494c56f2c9f0f88bd8175): Finalized the new config writer
+  * [94d1789](https://github.com/Aptivi/NitrocidKS/commit/94d1789f05f76589d9d7eedd7b344ef67c6f12b8): Removed the old config reader/writer
+  * [ec3623f](https://github.com/Aptivi/NitrocidKS/commit/ec3623f332e74a67581c204d4791624af17aff86): Used expressions to try to speed up config read/write
+* We've removed the Reflection-based configuration as it was deemed to be very slow, and replaced its implementation with the serialization-based approach. The first commit has extensive information about the two config system merges. The following commits were done in the chronological order:
+  * [f6c1386](https://github.com/Aptivi/NitrocidKS/commit/f6c1386c0a93c946882ed989f8ac04436b18aab6): Merging to serialization-based config
+  * [5f15a29](https://github.com/Aptivi/NitrocidKS/commit/5f15a29f602d2ac0c07087228c4a502e6f4d389f): Finalized Settings for serialization-based config (pt.1)
+  * [e76cca2](https://github.com/Aptivi/NitrocidKS/commit/e76cca2ce18b5a79c9abf6553386e605039c7e69): Finalized Settings for serialization-based config (pt.2)
+
+With regards to the last breaking change, which was done by commit [b96a724](https://github.com/Aptivi/NitrocidKS/commit/b96a7240156fb24993680f28a189b515a5fdb04d), the last "delimiter string variable" was changed from it being a field to it being a property, causing us to remove the entire field manager from the `Reflection` namespace.
+
+{% hint style="danger" %}
+We advice you to cease using this class and its functions, especially since it's useless for public fields that will either get converted to properties or get removed (if any).
+{% endhint %}

@@ -13,3 +13,21 @@ To see how it works, consult the below page to take you to the inner workings of
 {% content-ref url="../../advanced-and-power-users/inner-workings/nitrocid-filesystem.md" %}
 [nitrocid-filesystem.md](../../advanced-and-power-users/inner-workings/nitrocid-filesystem.md)
 {% endcontent-ref %}
+
+### Interactive file manager
+
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+This interactive TUI is a powerful file manager that allows you to view what's inside the folders, as well as performing operations, like copying, moving, or deleting, on files and folders.
+
+It's an interactive TUI applicaation, so the controls are provided here:
+
+* `Enter`: Go to a folder
+* `F1`: Copy folder or file to the other pane's current working directory
+* `F2`: Move a folder or file to the other pane's current working directory
+* `F3`: Deletes a file or folder
+* `F4`: Goes one directory up
+* `F5`: Shows an information box containing file or directory information
+* `F6`: Allows you to enter a relative or absolute path to a local folder in the current pane
+* `Tab`: Switches panes
+* `Esc`: Exits the application
