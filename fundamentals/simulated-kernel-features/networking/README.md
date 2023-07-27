@@ -1,5 +1,5 @@
 ---
-description: Networking in general and its children
+description: Networking in general and its shells
 ---
 
 # 🌍 Networking
@@ -56,6 +56,12 @@ When you're connected to any server, you can detach the current connection, whic
 
 To detach, simply use the `detach` command to go back to your shell.
 
+#### Speed dial for networked shells
+
 {% hint style="warning" %}
-Current implementation of attaching and detaching network sessions may have bugs, so report them to our GitHub issues if you found one.
+Speed dial for networked shells works only for FTP and SFTP shells in Beta 2, but we'll try to add full support in Beta 3.
 {% endhint %}
+
+Speed dial allows you to quickly connect to servers with your username, your address, your port, and your custom network configuration. This will save time in having to enter address information manually each time you connect to the same server.
+
+When you invoke a command that launches your networked shell (FTP for example), a selection window shows up with the option to either select an established connection, an option to create a new connection manually, or connect to the saved networks using the speed dial functionality.

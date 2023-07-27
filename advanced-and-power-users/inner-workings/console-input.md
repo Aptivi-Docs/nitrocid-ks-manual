@@ -189,10 +189,10 @@ Like `ChoiceInput`, the selection style contains these variants of functions:
 
     {% code title="Input.cs" lineNumbers="true" %}
     ```csharp
-    public static int PromptSelection(string Question, string AnswersStr)
-    public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles)
-    public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr)
-    public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles)
+    public static int PromptSelection(string Question, string AnswersStr, bool kiosk = false)
+    public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, bool kiosk = false)
+    public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, bool kiosk = false)
+    public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, bool kiosk = false)
     ```
     {% endcode %}
 *   Another way to form a selection prompt is to use the variants of the `PromptSelection()` function which take an array of strings holding the answers.
@@ -201,10 +201,10 @@ Like `ChoiceInput`, the selection style contains these variants of functions:
 
     {% code title="Input.cs" lineNumbers="true" %}
     ```csharp
-    public static int PromptSelection(string Question, string[] Answers)
-    public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles)
-    public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers)
-    public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles)
+    public static int PromptSelection(string Question, string[] Answers, bool kiosk = false)
+    public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, bool kiosk = false)
+    public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, bool kiosk = false)
+    public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles, bool kiosk = false)
     ```
     {% endcode %}
 *   Yet another way to form a selection prompt is to use the `List<InputChoiceInfo>` version of the `PromptSelection()` functions, which are defined below:
@@ -213,8 +213,8 @@ Like `ChoiceInput`, the selection style contains these variants of functions:
 
     {% code title="Input.cs" lineNumbers="true" %}
     ```csharp
-    public static int PromptSelection(string Question, List<InputChoiceInfo> Answers)
-    public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers)
+    public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, bool kiosk = false)
+    public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, bool kiosk = false)
     ```
     {% endcode %}
 

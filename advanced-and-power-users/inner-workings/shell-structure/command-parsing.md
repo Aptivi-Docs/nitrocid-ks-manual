@@ -90,3 +90,21 @@ Be sure that you put all the conflicts in the above form for each conflicting `S
 ```
 {% endcode %}
 {% endhint %}
+
+As for the switches that cause some or all arguments to be omittable (optional), you can indicate so in the constructor of your switch. The `optionalizeLastRequiredArguments` argument in the constructor specifies how many arguments are going to be made optional starting from the last argument in the list.
+
+For example, if this parameter was set to 1 and you've defined three required arguments, which are named below:
+
+* `Arg1`
+* `Arg2`
+* `Arg3`
+
+Then, this will set `Arg3` to be omittable, which means that the user doesn't have to set the value for this argument in order for the command to execute.
+
+{% hint style="info" %}
+A real-world example is the `weather` command. It contains an switch, `-list`, which omits the last 2 arguments, which causes this command to be executable with just `weather -list`. Its `SwitchInfo` is defined below:
+
+```csharp
+new SwitchInfo("list", "Shows all the available cities", false, false, null, 2)
+```
+{% endhint %}

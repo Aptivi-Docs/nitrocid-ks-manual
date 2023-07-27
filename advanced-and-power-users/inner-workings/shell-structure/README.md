@@ -231,7 +231,7 @@ where:
 For `SwitchInfo` instances, consult the below constructor to create an array of `SwitchInfo` instances when defining your commands:
 
 ```csharp
-public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[] conflictsWith = null)
+public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[] conflictsWith = null, int optionalizeLastRequiredArguments = 0)
 ```
 
 The base command is required to be implemented, since it contains overridable command execution code. Your command must implement the command base class below:

@@ -1768,3 +1768,54 @@ All calls to the kernel's `ColorTools` will now have to be called through the `K
 </strong>                                                                             ^^^^^^^^^^^^^^^^
 </code></pre>
 {% endhint %}
+
+#### Namespace movements done on 7/25 and 7/26
+
+```csharp
+namespace KS.Misc.Execution
+namespace KS.Misc.Threading
+namespace KS.Misc.Writers
+namespace KS.Scripting
+namespace KS.Hardware
+```
+
+To better organize these namespaces, we decided to move them to more appropriate places outlined below:
+
+```csharp
+namespace KS.Shell.ShellBase.Commands.Execution
+namespace KS.Kernel.Threading
+namespace KS.ConsoleBase.Writers
+namespace KS.Shell.ShellBase.Scripting
+namespace KS.Kernel.Hardware
+```
+
+First, the `Execution` namespace had to do with executing processes, which was only being done by the shell and by the TMUX pane size detector. While it was referenced outside any shell code, we feel that it would be more appropriate to move it to the shell code.
+
+Second, the kernel threading functionality got so mature that it was moved to the kernel code, showing that it really had great importance.
+
+Third, all of the writers had to do with the console upon analyzing the namespace. As a result, we had to move them to the `ConsoleBase` namespace so that it reflects the purpose more appropriately namespace-wise.
+
+As for the scripting, the only code which was calling it was the UESH shell command parser, which was part of the shell. For this reason, we decided to move the namespace to better show that it was part of the shell code.
+
+FInally, for the hardware code, it went straight to the kernel namespace as it felt that it's really a part of the kernel. The hardware code gets called each time the kernel starts and as the `hwinfo` command gets executed.
+
+{% hint style="info" %}
+You'll have to adjust the namespaces as indicated in the second code block that shows the new namespaces for your mod to continue working.
+{% endhint %}
+
+#### Moved JSON beautifier and minifier functions to `JsonTools`
+
+{% code title="JsonBeautifier.cs and JsonMinifier.cs" lineNumbers="true" %}
+```csharp
+public static string BeautifyJson(string JsonFile)
+public static string BeautifyJsonText(string JsonText)
+public static string MinifyJson(string JsonFile)
+public static string MinifyJsonText(string JsonText)
+```
+{% endcode %}
+
+These functions used to exist in their own namespace with their own classes that are categorized based on the JSON formatting type on serialization. However, `JsonTools` looked like that it'd be the better place for them, so we've moved them into said class.
+
+{% hint style="info" %}
+To continue using these functions, you'll now have to change the using clause to point to the `KS.Misc.Editors.JsonShell` namespace and the class to `JsonTools`.
+{% endhint %}
