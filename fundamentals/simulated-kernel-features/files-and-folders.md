@@ -31,3 +31,9 @@ It's an interactive TUI applicaation, so the controls are provided here:
 * `F6`: Allows you to enter a relative or absolute path to a local folder in the current pane
 * `Tab`: Switches panes
 * `Esc`: Exits the application
+
+### Archive shell
+
+You can interact with the archive files by opening the archive shell to point to a file. This can be achieved using the `archive <path>` command.
+
+You can consult the available commands using the `help` command.
