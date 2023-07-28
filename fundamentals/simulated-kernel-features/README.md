@@ -58,4 +58,8 @@ The buttons below lists some of the features that blow your mind.
 [files-and-folders.md](files-and-folders.md)
 {% endcontent-ref %}
 
+{% content-ref url="bootable-simulation.md" %}
+[bootable-simulation.md](bootable-simulation.md)
+{% endcontent-ref %}
+
 As we develop more features, they'll get listed here.

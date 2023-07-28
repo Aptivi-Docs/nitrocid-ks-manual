@@ -91,6 +91,7 @@
   * [⚖ Calculator and Converter](fundamentals/simulated-kernel-features/calculator-and-converter.md)
   * [👥 Contacts](fundamentals/simulated-kernel-features/contacts.md)
   * [📂 Files and Folders](fundamentals/simulated-kernel-features/files-and-folders.md)
+  * [💿 Bootable Simulation](fundamentals/simulated-kernel-features/bootable-simulation.md)
 
 ## Advanced and Power Users
 
@@ -129,7 +130,6 @@
   * [⌨ Interactive TUI](advanced-and-power-users/inner-workings/interactive-tui.md)
   * [🗃 Nitrocid Filesystem](advanced-and-power-users/inner-workings/nitrocid-filesystem.md)
   * [🖲 Console Input](advanced-and-power-users/inner-workings/console-input.md)
-* [💿 GRILO Bootloader and KS](advanced-and-power-users/grilo-bootloader-and-ks.md)
 
 ***
 
