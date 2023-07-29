@@ -29,6 +29,14 @@ To run Nitrocid KS in the absolute minimum requirements, your computer needs to 
 | Supported distros | [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) | Konsole, GNOME Terminal, etc. |
 | Supported distros | [Mono 5.10+](https://www.mono-project.com/download/stable/)        | Konsole, GNOME Terminal, etc. |
 
+### Required packages
+
+You can consult the required dependencies here:
+
+{% content-ref url="../dependency-information.md" %}
+[dependency-information.md](../dependency-information.md)
+{% endcontent-ref %}
+
 ## Installation
 
 There are several ways to install Nitrocid KS on Linux systems.

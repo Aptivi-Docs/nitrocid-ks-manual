@@ -21,6 +21,14 @@ Ensure that your Android version is compatible with Termux. You need at least 8 
 To get a better experience with Nitrocid KS on your phone or your tablet, it's advisable to get a phone or a tablet that supports desktop mode ([Samsung DeX](https://insights.samsung.com/2022/08/12/the-beginners-guide-to-samsung-dex-11/) for example) and a Bluetooth mouse and keyboard.
 {% endhint %}
 
+### Required packages
+
+You can consult the required dependencies here:
+
+{% content-ref url="../dependency-information.md" %}
+[dependency-information.md](../dependency-information.md)
+{% endcontent-ref %}
+
 Once you're done, follow the steps:
 
 1. Install Termux

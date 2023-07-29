@@ -56,6 +56,7 @@
   * [💻 Windows](installation-and-maintenance/upgrading-the-kernel/windows.md)
   * [🐧 Linux](installation-and-maintenance/upgrading-the-kernel/linux.md)
   * [📱 Android](installation-and-maintenance/upgrading-the-kernel/android.md)
+* [📦 Dependency Information](installation-and-maintenance/dependency-information.md)
 
 ## Fundamentals
 
