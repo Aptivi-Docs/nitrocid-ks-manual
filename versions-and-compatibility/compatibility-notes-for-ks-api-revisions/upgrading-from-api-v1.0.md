@@ -343,10 +343,10 @@ Public Function ReadLineWithNewLine(ByVal reader As StreamReader) As String
 ```
 {% endcode %}
 
-This StreamReader extension used to read one line ending in the new line character from the file stream reader. It got removed as part of the migration to Extensification, which is our project dedicated to giving you additional extensions.
+This StreamReader extension used to read one line ending in the new line character from the file stream reader. It got removed as part of the migration to Extensification, which is our (obsolete) project dedicated to giving you additional extensions.
 
-{% hint style="info" %}
-To continue using this function, use Extensification in your mod. The modding guide shows you how.
+{% hint style="danger" %}
+We advice you to cease using this function. The codebase to implement this function is still found in the archived Extensification repository, but we advice you to re-implement this functionality yourself.
 {% endhint %}
 
 ### ReadyPath\_MOD()
