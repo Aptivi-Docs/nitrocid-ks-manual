@@ -12,14 +12,14 @@ Depending on your platform, the amount of disk space taken by KS and its runtime
 [windows.md](windows.md)
 {% endcontent-ref %}
 
+{% content-ref url="macos.md" %}
+[macos.md](macos.md)
+{% endcontent-ref %}
+
 {% content-ref url="linux.md" %}
 [linux.md](linux.md)
 {% endcontent-ref %}
 
 {% content-ref url="android.md" %}
 [android.md](android.md)
-{% endcontent-ref %}
-
-{% content-ref url="macos.md" %}
-[macos.md](macos.md)
 {% endcontent-ref %}

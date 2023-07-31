@@ -54,6 +54,7 @@
   * [📱 Android](installation-and-maintenance/installing-the-kernel/android.md)
 * [⏫ Upgrading the Kernel](installation-and-maintenance/upgrading-the-kernel/README.md)
   * [💻 Windows](installation-and-maintenance/upgrading-the-kernel/windows.md)
+  * [🍎 macOS](installation-and-maintenance/upgrading-the-kernel/macos.md)
   * [🐧 Linux](installation-and-maintenance/upgrading-the-kernel/linux.md)
   * [📱 Android](installation-and-maintenance/upgrading-the-kernel/android.md)
 * [📦 Dependency Information](installation-and-maintenance/dependency-information.md)

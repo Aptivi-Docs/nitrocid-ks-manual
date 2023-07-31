@@ -5,7 +5,7 @@ description: How to install Nitrocid KS on macOS
 # 🍎 macOS
 
 {% hint style="warning" %}
-This installation instructions is based on pre-release version of Nitrocid KS, and the system requirements may change during the development.
+The installation instructions is based on pre-release version of Nitrocid KS, and the system requirements may change during the development.
 {% endhint %}
 
 Installing Nitrocid KS on macOS is pretty easy. Before performing the installation, your macOS system must meet the following requirements:
@@ -28,7 +28,15 @@ The above requirements are applied to the 0.0.20.0 version series or lower. The 
 
 ## Installation
 
-There is one way to install Nitrocid KS on macOS systems.
+There is one way to install Nitrocid KS on macOS systems. Follow these steps to get started:
+
+1. Ensure that you have all the required software installed
+2. Download the latest release RAR file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).\
+   \
+   _For 0.0.24.0 or older, files that end with the `-dotnet` prefix means that it's for .NET 6.0._
+3. Unpack the RAR archive to any folder of your choice
+4. Open your favorite terminal emulator, like iTerm2, and change the working directory to a folder containing the Nitrocid KS executable
+5. Execute `dotnet Nitrocid.dll` to start the kernel
 
 ## Bleeding-edge
 

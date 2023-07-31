@@ -59,7 +59,9 @@ This step-by-step guide shows you how to install Nitrocid KS using the package m
 If you like to manually unpack the Nitrocid KS packages, follow these steps:
 
 1. Ensure that you have all the required software installed
-2. Download the latest release RAR file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases). Files that end with the `-dotnet` prefix means that it's for .NET 6.0.
+2. Download the latest release RAR file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).\
+   \
+   _For 0.0.24.0 or older, files that end with the `-dotnet` prefix means that it's for .NET 6.0._
 3. Unpack the RAR archive to any folder of your choice
 4. Open your favorite terminal emulator, like ConEmu, and change the working directory to a folder containing the Nitrocid KS executable
 5. Execute `ks` or `Nitrocid.exe` to start the kernel
