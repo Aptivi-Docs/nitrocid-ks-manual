@@ -14,7 +14,7 @@ This version brought many awesome changes, including the addition of screensaver
 [v0.0.8.x-series.md](../version-release-notes/v0.0.8.x-series.md)
 {% endcontent-ref %}
 
-### **CheckSSEs()**
+### **`CheckSSEs()`**
 
 {% code title="CPUFeatures.vb" lineNumbers="true" %}
 ```visual-basic
@@ -51,7 +51,7 @@ This release brings a vast amount of improvements, but there is one API removal 
 [v0.0.10.x-series.md](../version-release-notes/v0.0.10.x-series.md)
 {% endcontent-ref %}
 
-### DisconnectDbgDevCmd()
+### `DisconnectDbgDevCmd()`
 
 {% code title="RemoteDebugger.vb" lineNumbers="true" %}
 ```visual-basic
@@ -79,7 +79,7 @@ This kernel version series added new features, like the text editor.
 [v0.0.11.x-series.md](../version-release-notes/v0.0.11.x-series.md)
 {% endcontent-ref %}
 
-### InitFS()
+### `InitFS()`
 
 {% code title="Filesystem.vb" lineNumbers="true" %}
 ```visual-basic
@@ -93,7 +93,7 @@ This function used to call the filesystem structure population which was removed
 We advice you to cease using this function.
 {% endhint %}
 
-### FTPNotEnoughArgumentsException class
+### `FTPNotEnoughArgumentsException` class
 
 {% code title="EventsAndExceptions.vb" lineNumbers="true" %}
 ```visual-basic
@@ -107,7 +107,7 @@ This exception used to be thrown when the user didn't provide enough arguments f
 Since this exception got removed twice, we advice you to cease using this class.
 {% endhint %}
 
-### JsonNullException class
+### `JsonNullException` class
 
 {% code title="EventsAndExceptions.vb" lineNumbers="true" %}
 ```visual-basic
@@ -121,7 +121,7 @@ This function was thrown each time the currency converter, which was removed in 
 We advice you to cease using this class.
 {% endhint %}
 
-### TruncatedManpageException class
+### `TruncatedManpageException` class
 
 {% code title="EventsAndExceptions.vb" lineNumbers="true" %}
 ```visual-basic
@@ -135,7 +135,7 @@ This exception used to be thrown when the manual page handler detected that the 
 `InvalidManpage` returned after the manual page parser and viewer returned.
 {% endhint %}
 
-### Speak()
+### `Speak()`
 
 {% code title="VoiceManagement.vb" lineNumbers="true" %}
 ```visual-basic

@@ -14,7 +14,7 @@ This version added some of the interesting features, including the built-in kern
 [v0.0.12.x-series.md](../version-release-notes/v0.0.12.x-series.md)
 {% endcontent-ref %}
 
-### **ProbeHW()**
+### **`ProbeHW()`**
 
 {% code title="HardwareProbe.vb" lineNumbers="true" %}
 ```visual-basic
@@ -28,7 +28,7 @@ This function used to be a wrapper for hardware probing function which checked t
 We advice you to cease using this function, since hardware already gets probed at boot time.
 {% endhint %}
 
-### **PreFetchNetworks and PostFetchNetworks Events**
+### **`PreFetchNetworks` and `PostFetchNetworks` Events**
 
 {% code title="EventsAndExceptions.vb" lineNumbers="true" %}
 ```visual-basic
@@ -64,21 +64,21 @@ Public Function Truncate(ByVal str As String, ByVal threshold As Integer) As Str
 
 The three above string extensions were used across different parts of the kernel. We'll briefly summarize these functions one by one.
 
-* `ReplaceLastOccurrence` tries to replace only the last occurrence of the substring inside the target string with the text to be replaced.
-* `AllIndexesOf` gets all the indexes of the specified value from the string
-* `Truncate` tries to truncate the string after the specified threshold.
+* `ReplaceLastOccurrence()` tries to replace only the last occurrence of the substring inside the target string with the text to be replaced.
+* `AllIndexesOf()` gets all the indexes of the specified value from the string
+* `Truncate()` tries to truncate the string after the specified threshold.
 
-They were removed because Extensification was being made at that time, and they were included there.
+They were removed because Extensification was being made at that time, and they were included there. Furthermore, we've deprecated this library.
 
 {% hint style="info" %}
-To continue using these functions, use Extensification.
+To continue using these functions, we suggest that you re-implement these functions yourself.
 {% endhint %}
 
 ## Version 0.0.12.3
 
 This version brought minor improvements. However, there was an API removal.
 
-### ListenRPC()
+### `ListenRPC()`
 
 {% code title="RemoteProcedure.vb" lineNumbers="true" %}
 ```visual-basic
@@ -168,7 +168,7 @@ public static void ListHardware(string HardwareType)
 ```
 {% endcode %}
 
-### DoCalc()
+### `DoCalc()`
 
 {% code title="Calc.vb" lineNumbers="true" %}
 ```visual-basic
@@ -176,14 +176,14 @@ Public Function DoCalc(ByVal Expression As String) As Dictionary(Of Double, Bool
 ```
 {% endcode %}
 
-The calculator was re-implemented with the usage of the DataTable class to aid in solving the expression. This time, it only takes the expression and calculates it using the Compute() method from the abovementioned class. The expression had to follow the format of the DataTable expression that were described in the below link.
+The calculator was re-implemented with the usage of the DataTable class to aid in solving the expression. This time, it only takes the expression and calculates it using the `Compute()` method from the abovementioned class. The expression had to follow the format of the `DataTable` expression that were described in the below link.
 
 {% embed url="https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable.compute?view=net-6.0" %}
 
-It got removed again in favor of the string evaluator that was implemented in the StringEvaluators module.
+It got removed again in favor of the string evaluator that was implemented in the `StringEvaluators` module, which was removed as of 0.1.0.
 
 {% hint style="info" %}
-The calculator no longer uses the string evaluator, and now uses the StringMath library to calculate the expressions.
+The calculator no longer uses the string evaluator, and now uses the `StringMath` library to calculate the expressions.
 {% endhint %}
 
 ## From 0.0.15
@@ -194,7 +194,7 @@ This version was released as the last major version in the API v1.2 series.
 [v0.0.15.x-series.md](../version-release-notes/v0.0.15.x-series.md)
 {% endcontent-ref %}
 
-### PrintLog()
+### `PrintLog()`
 
 {% code title="DebugLogPrint.vb" lineNumbers="true" %}
 ```visual-basic
@@ -202,10 +202,10 @@ Sub PrintLog()
 ```
 {% endcode %}
 
-This function was used as a wrapper to the ReadContents() routine found in the Filesystem module. It got removed for being nothing but the wrapper for said method.
+This function was used as a wrapper to the `ReadContents()` routine found in the Filesystem module. It got removed for being nothing but the wrapper for said method.
 
 {% hint style="info" %}
-To simulate this function, use the ReadContents() function and the console writer to print the debug logs. Both of the methods have their own method signatures written below in the code block.
+To simulate this function, use the `ReadContents()` function and the console writer to print the debug logs. Both of the methods have their own method signatures written below in the code block.
 {% endhint %}
 
 {% code title="DebugLog.cs" lineNumbers="true" %}

@@ -14,7 +14,7 @@ This version refined the kernel in various aspects, including the enhancements o
 [v0.0.16.x-series.md](../version-release-notes/v0.0.16.x-series.md)
 {% endcontent-ref %}
 
-### TemplateSet() and ParseCurrentTheme()
+### `TemplateSet()` and `ParseCurrentTheme()`
 
 {% code title="Color.vb" lineNumbers="true" %}
 ```visual-basic
@@ -41,7 +41,7 @@ public static void SetColorsTheme(ThemeInfo ThemeInfo)
 ```
 {% endcode %}
 
-### ListDrivers()
+### `ListDrivers()`
 
 {% code title="HardwareProbe.vb" lineNumbers="true" %}
 ```visual-basic
@@ -61,7 +61,7 @@ public static void ListHardware(string HardwareType)
 ```
 {% endcode %}
 
-### NotEnoughArgumentsException class
+### `NotEnoughArgumentsException` class
 
 {% code title="EventsAndExceptions.vb" lineNumbers="true" %}
 ```visual-basic
@@ -99,7 +99,7 @@ As a result, the entire synth system was removed.
 This function was deemed not to work on systems that aren't using Windows. If you want to continue using the synth system, compile the mod example that holds the source code of the system from source. If you want your mod to work in Linux, either implement your own wrapper to the beep system for your Linux kernel version, or stop using this function and start implementing visual alerts.
 {% endhint %}
 
-### GetCultureFromLang()
+### `GetCultureFromLang()`
 
 {% code title="Translate.vb" lineNumbers="true" %}
 ```visual-basic
@@ -115,7 +115,11 @@ The same functionality made a return, but, this time, we used variables.
 
 {% code title="CultureManager.cs" lineNumbers="true" %}
 ```csharp
+public static string CurrentCultStr
 public static CultureInfo CurrentCult
+public static List<CultureInfo> GetCulturesFromLang(string Language)
+public static List<string> GetCultureNamesFromCurrentLang()
+public static List<string> GetCultureNamesFromLang(string Language)
 ```
 {% endcode %}
 
@@ -164,6 +168,8 @@ The last routine, however, converts the kernel configuration file created by API
 
 {% hint style="danger" %}
 All of the functions were removed as a result of the deprecation of the converter tool that last shipped with API v2.1 kernels.
+
+Furthermore, as of 0.1.0 Beta 1, the configuration was improved to the point that it witnessed performance improvements.
 {% endhint %}
 
 ### True color writers
@@ -190,7 +196,7 @@ These functions used the ancient RGB class implemented by the kernel itself to s
 You can still use `Write()` and their siblings using the Color class.
 {% endhint %}
 
-### ParseMods()
+### `ParseMods()`
 
 {% code title="ModParser.vb" lineNumbers="true" %}
 ```visual-basic
@@ -213,7 +219,7 @@ public static void StopMod(string ModFilename)
 ```
 {% endcode %}
 
-### SFTPPromptForPassword()
+### `SFTPPromptForPassword()`
 
 {% code title="SFTPTools.vb" lineNumbers="true" %}
 ```visual-basic
@@ -221,7 +227,7 @@ Public Sub SFTPPromptForPassword(ByVal user As String, ByVal Address As String, 
 ```
 {% endcode %}
 
-This function was used to prompt the user for the SFTP password for the specified address. As GetConnectionInfo() got implemented, we've removed this function.
+This function was used to prompt the user for the SFTP password for the specified address. As `GetConnectionInfo()` got implemented, we've removed this function.
 
 {% hint style="danger" %}
 We advice you to cease using this function.
@@ -235,7 +241,7 @@ This version was released as a small update to add minor features and general im
 [v0.0.17.x-series.md](../version-release-notes/v0.0.17.x-series.md)
 {% endcontent-ref %}
 
-### InitTimesInZones()
+### `InitTimesInZones()`
 
 {% code title="TimeZones.vb" lineNumbers="true" %}
 ```visual-basic
@@ -249,7 +255,7 @@ This function used to populate all the available time zones from your computer t
 We advice you to cease using this function.
 {% endhint %}
 
-### ShowTimesInZones()
+### `ShowTimesInZones()`
 
 {% code title="TimeZones.vb" lineNumbers="true" %}
 ```visual-basic
@@ -261,6 +267,8 @@ This routine was used to show information about all or selected time zone, inclu
 
 {% hint style="info" %}
 To use this function in the latest API revision, use these three functions listed in the below code block.
+
+Beware that you need to have **`tzdata`** package installed on your Linux system!
 {% endhint %}
 
 {% code title="TimeZones.cs" lineNumbers="true" %}
@@ -297,5 +305,5 @@ Public Sub TextEdit_UpdateHelp()
 These functions were used to populate help information for all shells. However, their functions have been moved to the help list field initializers, marking these routines as null and void.
 
 {% hint style="danger" %}
-These functions were never meant to be available to the public API in the first place. We advice you to cease using this function to update built-in help entries. The enhanced help system introduced in recent API series adapts to such changes.
+These functions were never meant to be available to the public API in the first place. We advice you to cease using this function. The enhanced help system introduced in recent API series adapts to such changes.
 {% endhint %}
