@@ -184,8 +184,6 @@ The main shell contains these commands that you can use below. The administrativ
   * Starts the Retro Kernel Simulator
 * `rm <directory/file>`
   * Removes a directory or file
-* `reportbug`
-  * A bug reporting prompt
 * `roulette`
   * Russian Roulette
 * `rss [feedlink]`
