@@ -321,7 +321,6 @@ The main shell contains these commands that you can use below. The administrativ
   * Saves the current directory to the kernel configuration file
 * `setsaver <customsaver/builtinsaver>`
   * Sets the default screensaver to a built-in screensaver or a custom screensaver
-  * _This command is obsolete and should be avoided. This setting can be set using the_ `settings` _command under_ `Screensaver Settings.`
 * `settings [-saver|-splash]`
   * Opens the settings application in either the normal mode, screensaver mode, or splash mode
 * `taskman`
