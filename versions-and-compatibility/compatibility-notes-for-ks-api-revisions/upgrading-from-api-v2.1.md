@@ -8,7 +8,7 @@ When upgrading your modification from the target of the later version of Nitroci
 
 The following changes were listed sequentially as development went on.
 
-### From 0.0.24.0
+## From 0.0.24.0
 
 This version was released to make groundbreaking additions and improvements.
 
@@ -16,7 +16,7 @@ This version was released to make groundbreaking additions and improvements.
 [v0.0.24.x-series.md](../version-release-notes/v0.0.24.x-series.md)
 {% endcontent-ref %}
 
-#### **Removed support for ICustomSaver**
+### **Removed support for `ICustomSaver`**
 
 {% code title="ICustomSaver.vb" lineNumbers="true" %}
 ```visual-basic
@@ -31,12 +31,12 @@ Public Sub CompileCustom(file As String)
 ```
 {% endcode %}
 
-Custom screensavers used to implement the ICustomSaver interface to implement the screensaver logic. Now, it has been removed in favor of the new screensaver class implementing the newer IScreensaver interface, BaseScreensaver.
+Custom screensavers used to implement the `ICustomSaver` interface to implement the screensaver logic. Now, it has been removed in favor of the new screensaver class implementing the newer `IScreensaver` interface, `BaseScreensaver`.
 
-This breaks all the existing screensavers that still use the old ICustomSaver interface. This has also resulted in the removal of the CustomCustom() function and reimplementation as ParseCustomSaver.
+This breaks all the existing screensavers that still use the old `ICustomSaver` interface. This has also resulted in the removal of the `Custom()` function and reimplementation as `ParseCustomSaver`.
 
 {% hint style="info" %}
-All new screensavers should use the BaseScreensaver class. All existing screensavers should migrate from ICustomSaver to BaseScreensaver.
+All new screensavers should use the `BaseScreensaver` class. All existing screensavers should migrate from `ICustomSaver` to `BaseScreensaver`.
 
 As for the parser, it has been reimplemented to take only the screensaver DLL files.
 {% endhint %}
@@ -47,7 +47,7 @@ public static void ParseCustomSaver(string file)
 ```
 {% endcode %}
 
-#### **Removed support for PerformCmd()**
+### **Removed support for `PerformCmd()`**
 
 {% code title="IScript.vb" lineNumbers="true" %}
 ```visual-basic
@@ -55,10 +55,10 @@ Sub PerformCmd(Command As CommandInfo, Optional Args As String = "")
 ```
 {% endcode %}
 
-CommandBase.Execute() was implemented to replace the above function, so we decided to remove the function as it only supported one command at a time, and you had to make a switch case statement for each command executed.
+`CommandBase.Execute()` was implemented to replace the above function, so we decided to remove the function as it only supported one command at a time, and you had to make a switch case statement for each command executed.
 
 {% hint style="info" %}
-BaseCommand.Execute can be overridden in the below method signature:
+`BaseCommand.Execute()` can be overridden in the below method signature:
 {% endhint %}
 
 {% code title="BaseCommand.cs" lineNumbers="true" %}
@@ -67,9 +67,9 @@ public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] L
 ```
 {% endcode %}
 
-#### **Restructured the filesystem API**
+### **Restructured the filesystem API**
 
-Filesystem module was a `god class`, so we decided to consolidate it to their own separate files to accomodate with the upcoming changes. However, you need to use their own namespace (for example, if you want to copy a file, import `KS.Files.Operations`) to be able to use them.
+Filesystem module was a _**god class**_, so we decided to consolidate it to their own separate files to accomodate with the upcoming changes. However, you need to use their own namespace (for example, if you want to copy a file, import `KS.Files.Operations`) to be able to use them.
 
 {% code title="Filesystem.vb" lineNumbers="true" %}
 ```visual-basic
@@ -99,7 +99,7 @@ The base `Filesystem` module will stay so that path neutralization and invalid p
 Choose one of the above namespaces to select the kind of filesystem operation you're going to do. However, these namespaces were written at the time of the change commit date, so the API documentation always gets up-to-date.
 {% endhint %}
 
-#### **Separated ConsoleColors enumeration**
+### **Separated `ConsoleColors` enumeration**
 
 {% code title="Color255.vb" lineNumbers="true" %}
 ```visual-basic
@@ -107,13 +107,13 @@ Public Enum ConsoleColors As Integer
 ```
 {% endcode %}
 
-This enumeration used to hold all the 255 console colors and their names for easier selection. It was just separated from the Color255 module to put it directly to the KS.ConsoleBase namespace
+This enumeration used to hold all the 255 console colors and their names for easier selection. It was just separated from the `Color255` module to put it directly to the `KS.ConsoleBase` namespace
 
 {% hint style="info" %}
-You can still use this enumeration in the ColorSeq library.
+You can still use this enumeration in the Terminaux library.
 {% endhint %}
 
-#### **Removed KS.Misc.Dictionary to substitute with Dictify**
+### **Removed `KS.Misc.Dictionary` to substitute with Dictify**
 
 {% code title="DictionaryManager.vb" lineNumbers="true" %}
 ```visual-basic
@@ -133,19 +133,15 @@ As Dictify got released, we decided to remove these functions and use them from 
 You can still use these functions using the Dictify library.
 {% endhint %}
 
-#### **Moved network transfer APIs to its own namespace**
+### **Moved APIs to their own namespace**
 
-We have moved all network transfer APIs to `KS.Network.Transfer` to further organize the network APIs.
+We have moved the below APIs to the below namespaces as they keep getting expanded:
 
-#### **Moved color-related console APIs to its own namespace**
+* Network transfer APIs -> `KS.Network.Transfer`
+* Color console APIs -> `KS.ConsoleBase.Themes`
+* Input console APIs -> `KS.ConsoleBase.Inputs`
 
-We have moved all color-related console APIs to `KS.ConsoleBase.Themes` as it keeps getting expanded.
-
-#### **Moved input-related console APIs to its own namespace**
-
-We have moved all input-related console APIs to `KS.ConsoleBase.Inputs` as it keeps getting expanded.
-
-#### **Removed the progress and its report positions from SplashInfo**
+### **Removed the progress and its report positions from `SplashInfo`**
 
 {% code title="SplashInfo.vb" lineNumbers="true" %}
 ```visual-basic
@@ -162,7 +158,7 @@ These four progress position variables were used to indicate where the splash ma
 We advice you to assign these variables in your splash code instead of using these fields.
 {% endhint %}
 
-#### **Replaced `CommandPromptWrite()`**
+### **Replaced `CommandPromptWrite()`**
 
 {% code title="UESHShell.vb" lineNumbers="true" %}
 ```visual-basic
@@ -173,7 +169,7 @@ Public Sub CommandPromptWrite()
 `CommandPromptWrite()` used to be the helper for UESH to write its own prompt, but it's eventually replaced by the more powerful `WriteShellPrompt()` to accommodate all possible cases, like custom variables, and so on.
 
 {% hint style="info" %}
-Your shell should use the PromptPresetBase class to define your own shell prompts.
+Your shell should use the `PromptPresetBase` class to define your own shell prompts.
 {% endhint %}
 
 {% code title="PromptPresetManager.cs" lineNumbers="true" %}
@@ -183,7 +179,7 @@ public static void WriteShellPrompt(string ShellType)
 ```
 {% endcode %}
 
-#### **Organized the ShellBase namespaces**
+### **Organized the `ShellBase` namespaces**
 
 The shell base has been divided to three types:
 
@@ -195,7 +191,7 @@ The shell base has been divided to three types:
 Use the above namespaces if you want to perform operations in your own custom shell.
 {% endhint %}
 
-#### **Changed progress bar writer module name**
+### **Changed progress bar writer module name**
 
 {% code title="ProgressColor.vb" lineNumbers="true" %}
 ```visual-basic

@@ -8,7 +8,7 @@ When upgrading your modification from the target of the later version of Nitroci
 
 The following changes were listed sequentially as development went on.
 
-### From 0.0.20.0
+## From 0.0.20.0
 
 This version was released to make groundbreaking additions and improvements.
 
@@ -16,7 +16,7 @@ This version was released to make groundbreaking additions and improvements.
 [v0.0.20.x-series.md](../version-release-notes/v0.0.20.x-series.md)
 {% endcontent-ref %}
 
-#### **Unified help system to support every shell**
+### **Unified help system to support every shell**
 
 {% code lineNumbers="true" %}
 ```visual-basic
@@ -44,12 +44,12 @@ You can use the `ShowHelp()` function to utilize the feature. The below method s
 public static void ShowHelp()
 public static void ShowHelp(ShellType CommandType)
 public static void ShowHelp(string command)
-public static void ShowHelp(string command, ShellType CommandType, StreamWriter DebugDeviceSocket = null)
-public static void ShowHelp(string command, string CommandType, StreamWriter DebugDeviceSocket = null)
+public static void ShowHelp(string command, ShellType CommandType)
+public static void ShowHelp(string command, string CommandType)
 ```
 {% endcode %}
 
-#### **Improved naming of injected commands**
+### **Improved naming of injected commands**
 
 {% code title="ArgumentParse.vb" lineNumbers="true" %}
 ```visual-basic
@@ -64,7 +64,7 @@ The kernel argument parser used to host these two variables; the first one was t
 The kernel arguments were later removed, leaving only the command-line arguments. We suggest you to cease using this function.
 {% endhint %}
 
-#### Prefixed the FTP shell variables with "Ftp"
+### Prefixed the FTP shell variables with "Ftp"
 
 {% code title="FTPShell.vb" lineNumbers="true" %}
 ```visual-basic
@@ -94,7 +94,7 @@ Each of these variables were given the `Ftp` prefix.
 The variables were moved to `FtpShellCommon` module.
 {% endhint %}
 
-#### Relocated Client(S)FTP to their Shell.vb files
+### Relocated `Client(S)FTP` to their `Shell.vb` files
 
 {% code lineNumbers="true" %}
 ```visual-basic
@@ -109,20 +109,20 @@ Public ClientSFTP As SftpClient
 These variables were used to host the FTP and SFTP clients to perform operations related to the client. However, they're moved to their shell code.
 
 {% hint style="info" %}
-These variables are still accessible, though they're now properties.
+These variables are still accessible, though they're now properties. To get the actual client from `NetworkConnection`, you need to cast the `ConnectionInstance` of the two below properties to their respective types: `FtpClient`, `SftpClient`.
 {% endhint %}
 
 {% code lineNumbers="true" %}
 ```csharp
 // FTP client on FTPShellCommon.cs
-public static FtpClient ClientFTP
+public static NetworkConnection ClientFTP
 
 // SFTP client on SFTPShellCommon.cs
-public static SftpClient ClientSFTP
+public static NetworkConnection ClientSFTP
 ```
 {% endcode %}
 
-#### **Reworked on how to create notifications**
+### **Reworked on how to create notifications**
 
 {% code title="Notifications.vb" lineNumbers="true" %}
 ```visual-basic
@@ -143,7 +143,7 @@ public Notification(string Title, string Desc, NotificationManager.NotifPriority
 ```
 {% endcode %}
 
-#### Made getting kernel paths more secure
+### Made getting kernel paths more secure
 
 {% code title="KernelTools.vb" lineNumbers="true" %}
 ```visual-basic
@@ -163,7 +163,7 @@ public static string GetKernelPath(KernelPathType PathType)
 ```
 {% endcode %}
 
-#### **Debug now uses the DebugLevel enumerator**
+### **Debug now uses the `DebugLevel` enumerator**
 
 {% code title="DebugWriters.vb" lineNumbers="true" %}
 ```csharp
@@ -187,7 +187,7 @@ public static void WriteDebugDevicesOnly(DebugLevel Level, string text, params o
 ```
 {% endcode %}
 
-#### Rewritten the command handler
+### Rewritten the command handler
 
 {% code lineNumbers="true" %}
 ```visual-basic
@@ -226,11 +226,11 @@ public static void GetLine()
 public static void GetLine(string FullCommand)
 public static void GetLine(string FullCommand, string OutputPath = "")
 public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell)
-public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell")
+public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true)
 ```
 {% endcode %}
 
-#### Moved platform detection methods to PlatformDetector
+### Moved platform detection methods to PlatformDetector
 
 {% code title="Kernel.vb" lineNumbers="true" %}
 ```visual-basic
@@ -246,7 +246,7 @@ These functions were used to detect the platform configuration. For easier acces
 You can still access these functions, though they're now moved to `KernelPlatform`.
 {% endhint %}
 
-#### **Split ICustomSaver to separate codefile**
+### **Split `ICustomSaver` to separate codefile**
 
 {% code title="Screensaver.vb" lineNumbers="true" %}
 ```visual-basic
@@ -266,7 +266,7 @@ public interface IScreensaver
 ```
 {% endcode %}
 
-#### **Renamed variables in public API**
+### **Renamed variables in public API**
 
 {% code lineNumbers="true" %}
 ```visual-basic
@@ -355,7 +355,7 @@ These variables were used for different purposes. They've been renamed to the fo
 Some of these flags were remade to properties in the latest kernel API, and some of them were removed.
 {% endhint %}
 
-#### **Made some cleanups regarding MOTD parser**
+### **Made some cleanups regarding MOTD parser**
 
 {% code title="MOTDParse.vb" lineNumbers="true" %}
 ```visual-basic
@@ -379,7 +379,7 @@ public static void ReadMotd()
 public static void ReadMal()
 ```
 
-#### Split GetConnectionInfo
+### Split `GetConnectionInfo`
 
 {% code title="SSH.vb" lineNumbers="true" %}
 ```visual-basic
@@ -387,7 +387,7 @@ Public Function GetConnectionInfo(ByVal Address As String, ByVal Port As Integer
 ```
 {% endcode %}
 
-This function used to host both the connection info constructor and the prompt for the SSH client. It has been split to two functions: `GetConnectionInfo` and `PromptConnectionInfo` to add the AuthMethods argument in the former function.
+This function used to host both the connection info constructor and the prompt for the SSH client. It has been split to two functions: `GetConnectionInfo` and `PromptConnectionInfo` to add the `AuthMethods` argument in the former function.
 
 {% hint style="info" %}
 These functions can be used to construct SSH connection information.
@@ -400,7 +400,7 @@ public static ConnectionInfo PromptConnectionInfo(string Address, int Port, stri
 ```
 {% endcode %}
 
-#### **Changed how mail listing works**
+### **Changed how mail listing works**
 
 {% code title="MailManager.vb" lineNumbers="true" %}
 ```visual-basic
@@ -408,7 +408,7 @@ Public Function MailListMessages(ByVal PageNum As Integer) As String
 ```
 {% endcode %}
 
-This function used to construct a string containing a list of messages according to the page number. It used StringBuilder to build such a string. However, this has proven to be unreliable, so we decided to change how it works by directly printing the list to the console.
+This function used to construct a string containing a list of messages according to the page number. It used `StringBuilder` to build such a string. However, this has proven to be unreliable, so we decided to change how it works by directly printing the list to the console.
 
 {% hint style="info" %}
 This function is still available. They can be used with these method signatures.
@@ -421,7 +421,7 @@ public static void MailListMessages(int PageNum, int MessagesInPage)
 ```
 {% endcode %}
 
-#### **Changed how reading contents API works**
+### **Changed how reading contents API works**
 
 {% code title="Filesystem.vb" lineNumbers="true" %}
 ```visual-basic
@@ -444,7 +444,7 @@ public static void DisplayInHex(long StartByte, long EndByte, byte[] FileByte)
 ```
 {% endcode %}
 
-#### Removed NotifyCreate()
+### Removed `NotifyCreate()`
 
 {% code title="Notifications.vb" lineNumbers="true" %}
 ```visual-basic
@@ -464,7 +464,7 @@ public Notification(string Title, string Desc, NotificationManager.NotifPriority
 ```
 {% endcode %}
 
-#### **Split the theme-related tools from ColorTools**
+### **Split the theme-related tools from `ColorTools`**
 
 {% code title="ColorTools.vb" lineNumbers="true" %}
 ```visual-basic
@@ -491,7 +491,7 @@ public static void SetColorsTheme(ThemeInfo ThemeInfo)
 ```
 {% endcode %}
 
-#### **Implemented help helpers for commands and arguments**
+### **Implemented help helpers for commands and arguments**
 
 {% code title="CommandInfo.vb" lineNumbers="true" %}
 ```visual-basic
@@ -518,7 +518,7 @@ public virtual void HelpHelper()
 ```
 {% endcode %}
 
-#### **Enumerized the reasons for the three events**
+### **Enumerized the reasons for the three events**
 
 {% code title="Events.vb" lineNumbers="true" %}
 ```visual-basic
@@ -544,7 +544,7 @@ public static void FireEvent(EventType Event, params object[] Params)
 ```
 {% endcode %}
 
-#### **Split the custom screensaver code**
+### **Split the custom screensaver code**
 
 {% code title="Screensaver.vb" lineNumbers="true" %}
 ```visual-basic
@@ -572,7 +572,7 @@ The custom screensaver compilation functions were remade as we've migrated to DL
 public static void ParseCustomSaver(string file)
 ```
 
-#### **Moved few variables regarding mods**
+### **Moved few variables regarding mods**
 
 {% code lineNumbers="true" %}
 ```visual-basic
@@ -595,7 +595,7 @@ These variables were used to manage your mods. However, the following changes oc
 The variables were remade so they're now secure. The `IScript` interface is essential for your mods.
 {% endhint %}
 
-#### **Cleaned some flags up**
+### **Cleaned some flags up**
 
 {% code title="Flags.vb" lineNumbers="true" %}
 ```visual-basic
@@ -606,9 +606,9 @@ Public instanceChecked As Boolean
 
 These variables were accidentally exposed to the public API, so we decided to make them internally available so mods can't assign values to them.
 
-#### **Unified the overloads for writing functions**
+### **Unified the overloads for writing functions**
 
-The W function, their C and C16 siblings, and their sister functions (such as `WriteSlowlyC`, etc.) were made to separate the overloads for color level support. However, they've been unified to one master function containing overloads for each color level.
+The `W()` function, their `C` and `C16` siblings, and their sister functions (such as `WriteSlowlyC()`, etc.) were made to separate the overloads for color level support. However, they've been unified to one master function containing overloads for each color level.
 
 Also, these functions had their one-letter functions changed to Write so that the one-letter function names were no longer confusing, though we had to choose that because the codebase was using Visual Basic that imported the `Microsoft.VisualBasic.FileSystem` module that contained the Write function. Their documentation are still available below:
 
@@ -619,14 +619,14 @@ Also, these functions had their one-letter functions changed to Write so that th
 These caused many problems to the point that we needed to edit many source files to try to bypass the `FileSystem` module.
 
 {% hint style="warning" %}
-Your mods might break if any of them uses the console writing functions from KS, so change all the `W()` instances to `Write()` and remove any "C" or "C16" suffixes.
+Your mods might break if any of them uses the console writing functions from KS, so change all the `W()` instances to `Write()` and remove any "`C`" or "`C16`" suffixes.
 {% endhint %}
 
 {% hint style="warning" %}
 When writing such functions, you'll discover that the arguments parsing is stricter than the previous, due to how we've implemented the message argument. Make explicit casts to get the same behavior as the previous versions.
 {% endhint %}
 
-#### **Actually removed AliasType**
+### **Actually removed `AliasType`**
 
 {% code title="AliasManager.vb" lineNumbers="true" %}
 ```visual-basic
@@ -634,13 +634,13 @@ Public Enum AliasType
 ```
 {% endcode %}
 
-This enumeration used to host all the shell types, but it was later found out that ShellCommandType came earlier, and it was basically a carbon-copy of the enumeration, so we decided to remove it.
+This enumeration used to host all the shell types, but it was later found out that `ShellCommandType` came earlier, and it was basically a carbon-copy of the enumeration, so we decided to remove it.
 
 {% hint style="danger" %}
 We advice you to cease using this function.
 {% endhint %}
 
-#### **Reworked on the fetch kernel update API**
+### **Reworked on the fetch kernel update API**
 
 {% code title="KernelTools.vb" lineNumbers="true" %}
 ```visual-basic
@@ -651,7 +651,7 @@ Public Function FetchKernelUpdates() As List(Of String)
 This function used to return a list of kernel updates, but it was later found out that securing it with a class that holds the kernel update information was better, so we changed the return type of the function to KernelUpdate.
 
 {% hint style="info" %}
-The FetchKernelUpdates is still available as a usable method that mods can use by referring to the method signature below:
+The `FetchKernelUpdates` is still available as a usable method that mods can use by referring to the method signature below:
 {% endhint %}
 
 {% code title="UpdateManager.cs" lineNumbers="true" %}
@@ -660,7 +660,7 @@ public static KernelUpdate FetchKernelUpdates()
 ```
 {% endcode %}
 
-#### **Removed the RGB class**
+### **Removed the RGB class**
 
 {% code title="RGB.vb" lineNumbers="true" %}
 ```visual-basic
@@ -668,13 +668,13 @@ Public Class RGB
 ```
 {% endcode %}
 
-This class used to hold the red, green, and blue variables, but it was later found out that the Color class provides the same functionality, so we decided to remove the class.
+This class used to hold the red, green, and blue variables, but it was later found out that the `Color` class provides the same functionality, so we decided to remove the class.
 
 {% hint style="info" %}
-The Color class is available in the ColorSeq library that KS uses.
+The `Color` class is available in the Terminaux library that Nitrocid KS uses.
 {% endhint %}
 
-#### **Increased security of the "scripts" variable**
+### **Increased security of the "scripts" variable**
 
 {% code title="ModParser.vb" lineNumbers="true" %}
 ```visual-basic
@@ -695,7 +695,7 @@ public static Dictionary<string, ModInfo> ListMods(string SearchTerm)
 ```
 {% endcode %}
 
-#### **\[G|S]etConfig\* functions and subs are now obsolete**
+### **`[G|S]etConfig*` functions and subs are now obsolete**
 
 {% code title="" lineNumbers="true" %}
 ```visual-basic
@@ -707,10 +707,10 @@ Public Function GetConfigValue(ByVal Variable As String) As Object
 These functions were exclusively used by the settings applications to set and get the configuration values. They were derivatives of the already existing `SetValue`, `GetValue`, and `GetPropertyValueInVariable` functions with slight changes, so we removed the two above functions to avoid code duplicates.
 
 {% hint style="info" %}
-The three functions still exist, but relocated in the FieldManager and PropertyManager classes.
+The three functions still exist, but relocated in the `FieldManager` and `PropertyManager` classes.
 {% endhint %}
 
-#### **Made IShell and shell stacks to handle shells**
+### **Made `IShell` and shell stacks to handle shells**
 
 {% code lineNumbers="true" %}
 ```visual-basic
@@ -732,7 +732,7 @@ As part of the shell rewrite, we decided to make `IShell` and shell stacks to ha
 To implement your shell in your mod, use the `IShell` interface.
 {% endhint %}
 
-#### **Cleaned up GetLine() so strcommand is first**
+### **Cleaned up `GetLine()` so strcommand is first**
 
 {% code title="Shell.vb" lineNumbers="true" %}
 ```visual-basic
@@ -752,11 +752,11 @@ public static void GetLine()
 public static void GetLine(string FullCommand)
 public static void GetLine(string FullCommand, string OutputPath = "")
 public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell)
-public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell")
+public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true)
 ```
 {% endcode %}
 
-#### **Renamed ShellCommandType to ShellType**
+### **Renamed `ShellCommandType` to `ShellType`**
 
 {% code title="CommandInfo.vb" lineNumbers="true" %}
 ```visual-basic
@@ -767,7 +767,7 @@ Public Enum ShellCommandType
 This enumeration was used to indicate the shell type to perform the operation related to shell. The enumeration was used for shell purposes other than the commands, so we decided to rename it to ShellType for easier writing.
 
 {% hint style="info" %}
-For built-in shells, you can use the ShellType enumeration in functions that take it. However, when defining custom shells, be sure to register your shell with ShellTypeManager using the RegisterShell function to tell KS that there is a new shell coming. Custom shells can't be used with the ShellType enumeration.
+For built-in shells, you can use the `ShellType` enumeration in functions that take it. However, when defining custom shells, be sure to register your shell with `ShellTypeManager` using the `RegisterShell()` function to tell KS that there is a new shell coming. Custom shells can't be used with the `ShellType` enumeration.
 {% endhint %}
 
 {% code title="ShellType.cs" lineNumbers="true" %}
@@ -782,7 +782,7 @@ public static void RegisterShell(string ShellType, BaseShellInfo ShellTypeInfo)
 ```
 {% endcode %}
 
-#### **Moved all the GetLine() functions for all shells to the master GetLine()**
+### **Moved all the `GetLine()` functions for all shells to the master `GetLine()`**
 
 {% code lineNumbers="true" %}
 ```visual-basic
@@ -794,7 +794,7 @@ Public Sub FTPGetLine()
 All the `GetLine()` functions were moved to the master GetLine as it has witnessed functional and cosmetic improvements. It now supports different shells.
 
 {% hint style="info" %}
-`GetLine` has been massively changed so that it actually gets the input and executes a given command in your shell. You can use this function in your shell to listen for commands. The method signatures show the ways of how you can use this routine.
+`GetLine()` has been massively changed so that it actually gets the input and executes a given command in your shell. You can use this function in your shell to listen for commands. The method signatures show the ways of how you can use this routine.
 {% endhint %}
 
 {% code title="Shell.cs" lineNumbers="true" %}
@@ -803,11 +803,11 @@ public static void GetLine()
 public static void GetLine(string FullCommand)
 public static void GetLine(string FullCommand, string OutputPath = "")
 public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell)
-public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell")
+public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true)
 ```
 {% endcode %}
 
-#### **Moved GetTerminalEmulator() to ConsoleExtensions**
+### **Moved `GetTerminalEmulator()` to `ConsoleExtensions`**
 
 {% code title="KernelTools.vb" lineNumbers="true" %}
 ```visual-basic
@@ -815,10 +815,10 @@ Public Function GetTerminalEmulator() As String
 ```
 {% endcode %}
 
-This function was used to check the sanity of the terminal emulator for Linux systems. It was later found out that it could have been relocated to ConsoleExtensions for easier calling.
+This function was used to check the sanity of the terminal emulator for Linux systems. It was later found out that it could have been relocated to `ConsoleExtensions` for easier calling.
 
 {% hint style="info" %}
-KernelPlatform now hosts this function, but the method signature is the same.
+`KernelPlatform` now hosts this function, but the method signature is the same.
 {% endhint %}
 
 {% code title="KernelPlatform.cs" lineNumbers="true" %}
@@ -827,7 +827,7 @@ public static string GetTerminalEmulator()
 ```
 {% endcode %}
 
-#### **Split the exceptions to separate codefiles**
+### **Split the exceptions to separate codefiles**
 
 {% code title="Exceptions.vb" lineNumbers="true" %}
 ```visual-basic
@@ -841,7 +841,7 @@ Public Class Exceptions
 These exceptions used to be hosted on the Exceptions masterclass, but they were separated for easier access.
 
 {% hint style="info" %}
-The kernel exception system had a massive rewrite to the point where every single kernel exception was given an enumeration value and their own message. You can throw these exceptions using the KernelException masterclass.
+The kernel exception system had a massive rewrite to the point where every single kernel exception was given an enumeration value and their own message. You can throw these exceptions using the `KernelException` masterclass.
 {% endhint %}
 
 {% code title="KernelException.cs" lineNumbers="true" %}
@@ -855,7 +855,7 @@ public KernelException(KernelExceptionType exceptionType, string message, Except
 ```
 {% endcode %}
 
-#### **Renamed new line field to NewLine from vbNewLine**
+### **Renamed new line field to `NewLine` from `vbNewLine`**
 
 {% code title="Kernel.vb" lineNumbers="true" %}
 ```visual-basic
@@ -863,9 +863,9 @@ Public ReadOnly vbNewLine As String
 ```
 {% endcode %}
 
-`vbNewLine` sounded like it came from Visual Basic 6.0 (not .NET), a COM-based Windows-only language which we'll never support, and because of the below namespace changes that causes Microsoft.VisualBasic namespace to break things related to vbNewLine, we decided to change it to just `NewLine`.
+`vbNewLine` sounded like it came from Visual Basic 6.0 (not .NET), a COM-based Windows-only language which we'll never support, and because of the below namespace changes that causes `Microsoft.VisualBasic` namespace to break things related to `vbNewLine`, we decided to change it to just `NewLine`.
 
-#### **Namespaced the entire codebase**
+### **Namespaced the entire codebase**
 
 To further organize the codebase, we decided to namespace each one of them based on the folders in the source code. This way, we'd have the following namespaces:
 
@@ -956,7 +956,7 @@ To further organize the codebase, we decided to namespace each one of them based
 New namespaces get created and/or changed each major release of the kernel, so the list above is only relevant at the time the change was committed. The API reference will always display all the available namespaces.
 {% endhint %}
 
-#### **Removed built-in string evaluators**
+### **Removed built-in string evaluators**
 
 {% code title="StringEvaluators.vb" lineNumbers="true" %}
 ```visual-basic
@@ -971,7 +971,7 @@ The built-in string evaluators were used for the calculator functionality in the
 We advice you to cease using this function.
 {% endhint %}
 
-### From 0.0.21.0
+## From 0.0.21.0
 
 This version was a minor update to 0.0.20.0.
 
@@ -979,7 +979,7 @@ This version was a minor update to 0.0.20.0.
 [v0.0.21.x-series.md](../version-release-notes/v0.0.21.x-series.md)
 {% endcontent-ref %}
 
-#### **Consolidated the obsolete functions**
+### **Consolidated the obsolete functions**
 
 {% code title="SettingsApp.vb" lineNumbers="true" %}
 ```visual-basic
@@ -1006,7 +1006,7 @@ These obsolete functions were used by the settings app to do the following:
 They're removed as a result of the migration of these functions.
 
 {% hint style="info" %}
-FindSetting was moved to ConfigTools, and it was improved. You can see the method signature below.
+`FindSetting()` was moved to `ConfigTools`, and it was improved. You can see the method signature below.
 {% endhint %}
 
 {% code title="ConfigTools.cs" lineNumbers="true" %}
@@ -1015,7 +1015,7 @@ public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsT
 ```
 {% endcode %}
 
-### From 0.0.22.0
+## From 0.0.22.0
 
 This version was a great update to the API v2.0 series, because it added Android support to KS!
 
@@ -1023,7 +1023,7 @@ This version was a great update to the API v2.0 series, because it added Android
 [v0.0.22.x-series.md](../version-release-notes/v0.0.22.x-series.md)
 {% endcontent-ref %}
 
-#### **Separated properties code to PropertyManager**
+### **Separated properties code to `PropertyManager`**
 
 {% code title="FieldManager.vb" lineNumbers="true" %}
 ```visual-basic
@@ -1049,13 +1049,13 @@ public static Dictionary<string, Type> GetPropertiesNoEvaluation(Type VariableTy
 ```
 {% endcode %}
 
-#### **Events and reminders format**
+### **Events and reminders format**
 
-Events and reminders file formats have been changed from binary file to XML files as BinarySerializer was being deprecated because of it being vulnerable to attacks as describes in the below documentation link:
+Events and reminders file formats have been changed from binary file to XML files as `BinarySerializer` was being deprecated because of it being vulnerable to attacks as describes in the below documentation link:
 
 {% embed url="https://learn.microsoft.com/en-us/dotnet/standard/serialization/binaryformatter-security-guide#binaryformatter-security-vulnerabilities" %}
 
-**Deprecation of `IScript.PerformCmd()`**
+### **Deprecation of `IScript.PerformCmd()`**
 
 {% code title="IScript.vb" lineNumbers="true" %}
 ```visual-basic
@@ -1066,7 +1066,7 @@ Sub PerformCmd(Command As CommandInfo, Optional Args As String = "")
 As we implemented the fully-fledged `CommandBase.Execute()` function which does the same thing as `IScript.PerformCmd()`, we've deprecated the function in the interface to take advantage of the `CommandBase.Execute()` routine.
 
 {% hint style="info" %}
-BaseCommand.Execute can be overridden in the below method signature:
+`BaseCommand.Execute()` can be overridden in the below method signature:
 {% endhint %}
 
 {% code title="BaseCommand.cs" lineNumbers="true" %}
@@ -1075,7 +1075,7 @@ public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] L
 ```
 {% endcode %}
 
-#### **Removed `ReadLineLong()`**
+### **Removed `ReadLineLong()`**
 
 {% code title="Input.vb" lineNumbers="true" %}
 ```visual-basic
@@ -1086,7 +1086,7 @@ Public Function ReadLineLong() As String
 This function was implemented to take advantage of the long input support in the built-in .NET console reader. As ReadLine.Reboot was used, this function has been removed.
 
 {% hint style="info" %}
-Long inputs are supported by the Input.ReadLine function that has several method signatures shown below:
+Long inputs are supported by the `Input.ReadLine` function that has several method signatures shown below:
 {% endhint %}
 
 {% code title="Input.cs" lineNumbers="true" %}
@@ -1098,7 +1098,7 @@ public static string ReadLine(string InputText, string DefaultValue, bool UseCtr
 ```
 {% endcode %}
 
-### From 0.0.23.0
+## From 0.0.23.0
 
 This version was the last version from the API v2.0 series.
 
@@ -1106,10 +1106,10 @@ This version was the last version from the API v2.0 series.
 [v0.0.23.x-series.md](../version-release-notes/v0.0.23.x-series.md)
 {% endcontent-ref %}
 
-**Deprecation of ICustomSaver**
+### **Deprecation of `ICustomSaver`**
 
 As we've implemented `BaseScreensaver` to better handle screensavers, we decided to deprecate `ICustomSaver` in favor of the new screensaver model. This would merge all kernel threads of individual screensavers to one master screensaver thread.
 
 {% hint style="info" %}
-All new screensavers should use the BaseScreensaver class. All existing screensavers should migrate from ICustomSaver to BaseScreensaver.
+All new screensavers should use the `BaseScreensaver` class. All existing screensavers should migrate from `ICustomSaver` to `BaseScreensaver`.
 {% endhint %}
