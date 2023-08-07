@@ -168,7 +168,7 @@ The main shell contains these commands that you can use below. The administrativ
   * Moves a file or directory to the target
 * `pathfind <fileName>`
   * Finds a file name in path lookup directories
-* `ping [times] <Address1> <Address2> ...`
+* `ping [-times=<number>] <Address1> [Address2 ...]`
   * Pings an address
 * `playlyric <lyric.lrc>`
   * Plays a lyric file
