@@ -166,8 +166,6 @@ The main shell contains these commands that you can use below. The administrativ
   * Opens the manual viewer for your mod manual
 * `move <source> <target>`
   * Moves a file or directory to the target
-* `open <URL>`
-  * Opens a URL
 * `pathfind <fileName>`
   * Finds a file name in path lookup directories
 * `ping [times] <Address1> <Address2> ...`
