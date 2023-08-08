@@ -180,6 +180,7 @@ The main shell contains these commands that you can use below. The administrativ
   * Restarts the simulated kernel
 * `retroks`
   * Starts the Retro Kernel Simulator
+  * _**This command is obsolete due to lack of optimization for the latest developments of Nitrocid. It'll be removed in Beta 3.**_
 * `rm <directory/file>`
   * Removes a directory or file
 * `roulette`
