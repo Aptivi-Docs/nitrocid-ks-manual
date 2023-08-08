@@ -4,8 +4,6 @@ description: Stopwatch for your favorite races, and timer to time yourself in so
 
 # ⏰ Stopwatch and Timer
 
-<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
-
 The stopwatch is a timepiece that measures the elapsed time between the activation time and the current time. Generally, they're used to measure how much time did doing a specific thing take. The most famous example of a stopwatch is the stop clock, which is used in sports to measure the time between the start of the game and the current time.
 
 Additionally, some stopwatches provide the laps system, which is useful for sports game that contains the laps, like racing or running.
@@ -16,7 +14,7 @@ The simulated kernel attempts to simulate the two features, which can be invoked
 
 ### Timer
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
 
 The simulated kernel powers the timer feature that, by default, sets the remaining time to just one minute. The controls are:
 
@@ -28,7 +26,7 @@ You can start the application up with the `timer` command.
 
 ### Stopwatch
 
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
 The simulated kernel also simulates the stopwatch functionality with the ability to set the laps. You can also reset the stopwatch. The controls are:
 

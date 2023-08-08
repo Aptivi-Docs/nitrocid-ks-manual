@@ -4,7 +4,7 @@ description: Lists your contacts
 
 # 👥 Contacts
 
-<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 The contacts application lets you list your contacts that are imported from the contacts folder found under the `KSContactsImport` folder. It shows you basic information about your contacts. The contacts application is usually found in your computer under the form of a feature in your favorite mail client or under the form of a standalone application. It's also found in your smartphone in which you can make phone calls and send SMS messages.
 

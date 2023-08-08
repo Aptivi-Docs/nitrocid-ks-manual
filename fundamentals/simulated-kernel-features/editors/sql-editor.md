@@ -4,7 +4,7 @@ description: Your database, here.
 
 # 🗄 SQL Editor
 
-<figure><img src="../../../.gitbook/assets/sql.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 The SQL Shell allows you to execute any SQL command to a connected database file. It supports databases which are created by SQLite, MySQL, and their derivatives.
 

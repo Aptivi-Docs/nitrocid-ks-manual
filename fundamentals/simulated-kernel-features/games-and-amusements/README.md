@@ -4,7 +4,7 @@ description: Bored already? Try playing games!
 
 # 🎮 Games and Amusements
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 Every single operating system contain either the built-in games, such as Windows which used to provide you the games that came shipped with it, or the installable games. The games and amusements were provided to you in the simulated kernel for entertainment purposes.
 

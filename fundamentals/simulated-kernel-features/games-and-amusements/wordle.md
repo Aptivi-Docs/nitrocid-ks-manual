@@ -4,7 +4,7 @@ description: Master your words!
 
 # 🔠 Wordle
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 You can start the game with the `wordle` command. It gives you 8 tries to guess the right word based on the amount of characters within the random word. The game does the following:
 

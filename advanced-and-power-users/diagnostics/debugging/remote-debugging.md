@@ -18,7 +18,7 @@ Once the remote debugger starts, you can connect to it using the raw TCP connect
 
 ### Windows
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (1).png" alt=""><figcaption></figcaption></figure>
 
 You can establish a connection to the remote debugger using [PuTTY](https://putty.org/) or an equivalent software. Once you install this, fill the below forms to make a connection:
 

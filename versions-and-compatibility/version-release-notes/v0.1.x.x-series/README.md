@@ -4,6 +4,8 @@ description: Futuristic magic!
 
 # 🔮 v0.1.x.x series
 
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 This kernel series is the first kernel series that actually – and finally – showed seriousness about the beta version of the simulator as outlined in the ancient product documentation dating back to the first ever release, 0.0.1. It added a staggering amount of features that you can't even count! It also brought in massive amounts of improvements to the point that it has been re-imagined like never before!
 
 It also has renewed the look in several ways, including the modern logon screen. It holds under API v3.0, which means that mods that depend on API v2.1 or lower won't work with this version or higher.

@@ -4,7 +4,7 @@ description: Handles all your RSS feeds
 
 # 📰 RSS Client
 
-<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 RDF Site Summary or Really Simple Syndication (RSS) is a web feed that allows users and applications to get updates from the web sites that support RSS feeds. It consists of elements that contain information about the latest feeds and their summary, date published, title, and so on. It was hugely popular between 2005 and 2006.
 

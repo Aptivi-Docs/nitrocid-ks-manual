@@ -4,7 +4,7 @@ description: Transfer your files securely between your servers and your PC
 
 # 🔒 SFTP Client
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 This protocol is a modern file transfer protocol that is implemented as part of the Secure SHell (SSH) protocol version 2.0 engineered by the Internet Engineering Task Force (IETF). It allows secure file transfers from the client to the server and from the server to the client.
 
@@ -31,7 +31,7 @@ To connect to your SFTP server inside the SFTP shell, please follow the steps:
 
 ## Commands
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
 These below commands are used to perform operations on your SFTP server, but the commands found in the bottom of the list are administrative commands. Such commands need an authenticated account with the permissions for performing the operations committed by these commands.
 

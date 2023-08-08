@@ -4,7 +4,7 @@ description: Screensavers and their usage
 
 # 🌌 Screensavers
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
 The screensavers were touted to be a solution against screen burn-ins in cathode ray-tube (CRT) or plasma displays. They fill the screens with either the blank screen or moving image or parts across the entire screen. They also are placed as a security measure so that when screensavers exit, the user will be required to input the password to be able to use your computer again.
 
@@ -14,7 +14,7 @@ The simulated kernel attempts to simulate this functionality in its complete sta
 
 ### Setting the screensaver
 
-<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
 To set the screensaver to your favorite screensaver, use the `setsaver` command. Since this command is an administrative command, you either need to use an administrator account or use an account that has been granted the administrative command permissions.
 

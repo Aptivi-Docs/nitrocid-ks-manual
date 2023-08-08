@@ -16,6 +16,10 @@ The Settings application uses the embedded JSON file inside the kernel to provid
 
 The format of all the settings can be found in the below link.
 
+{% content-ref url="settings-format.md" %}
+[settings-format.md](settings-format.md)
+{% endcontent-ref %}
+
 Here's how the settings application works:
 
 1. When the settings application is loaded, it loads one of these files to the cached settings entry object to be used. The application then tries to list all the sections passed to it.

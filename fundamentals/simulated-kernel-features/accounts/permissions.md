@@ -10,11 +10,11 @@ In the simulated system, it only simulates the permission types that can be gran
 
 For example, the below screenshot shows that the first normal user, `johnSaunders`, can't manipulate the permissions because they don't have the permission management granted.
 
-<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 The below screenshot also shows the second non-administrative user, `sarahSantos`, being granted the permission manipulation authority, so they can use the `perm` command to edit permissions for any user.
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 To use this utility, choose what you want to do with the target user's permissions and follow the steps below. You can consult the permissions list under the `Advanced and Power Users` category by clicking on the below link.
 
@@ -24,7 +24,7 @@ To use this utility, choose what you want to do with the target user's permissio
 
 ### Grant permissions
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 You're looking to grant a user permissions. Follow these steps:
 
@@ -37,7 +37,7 @@ Note that your account must have either the administrative permissions enabled o
 
 ### Revoke permissions
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 If you no longer want a user to be granted a specific permission, follow these steps:
 

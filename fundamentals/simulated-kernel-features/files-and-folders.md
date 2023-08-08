@@ -16,11 +16,11 @@ To see how it works, consult the below page to take you to the inner workings of
 
 ### Interactive file manager
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
 This interactive TUI is a powerful file manager that allows you to view what's inside the folders, as well as performing operations, like copying, moving, or deleting, on files and folders.
 
-It's an interactive TUI applicaation, so the controls are provided here:
+It's an interactive TUI application, so the controls are provided here:
 
 * `Enter`: Go to a folder
 * `F1`: Copy folder or file to the other pane's current working directory

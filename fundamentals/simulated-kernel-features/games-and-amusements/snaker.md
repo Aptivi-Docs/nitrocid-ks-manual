@@ -4,7 +4,7 @@ description: The snake game!
 
 # 🐍 Snaker
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 This type of game is common which you have to let the snake be oversized while avoiding the walls and your snake tail. The apple, represented by the plus sign, increases your snake mass by one unit.
 

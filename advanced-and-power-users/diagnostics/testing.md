@@ -4,7 +4,7 @@ description: This page describes how to test the kernel with various features
 
 # 🧪 Testing
 
-<figure><img src="../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
 Another way to diagnose the kernel is through testing. It uses the facade system to allow you to test individual kernel features. It can be invoked by running Nitrocid KS with the `testInteractive` command-line argument.
 
@@ -14,7 +14,6 @@ In the main screen, it shows you all the available test facades, with the four b
 
 * `Test All`: Tests all the facades
 * `Stats`: Shows how many tests are run and how many tests are yet to run, including failed tests
-* `Exit`: Exits the test environment and starts the kernel
 * `Shutdown`: ︎Exits the test environment and shuts the kernel down
 
 Pressing ENTER will run a test facade and gives you an option to see whether the test succeeded or failed at the end of the test. These options are given to you, as per your judgment:

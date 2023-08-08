@@ -4,7 +4,7 @@ description: What are accounts in the kernel?
 
 # 👤 Accounts
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 Operating systems usually provide the user account functionality to allow more than one person to use the same computer. Each person has their own accounts on their computers to store their personal information and data, including their user profiles and their contents.
 
@@ -16,9 +16,9 @@ The operations can be performed on the users to manage them. Scroll down to the 
 
 ### Add user accounts
 
-In the real-world, if there is a new person willing to use your computer to store their personal documents and information, you can add such user to the computer. This can be done by going to your system's settings to add the user.
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+In the real-world, if there is a new person willing to use your computer to store their personal documents and information, you can add such user to the computer. This can be done by going to your system's settings to add the user.
 
 The same thing can be simulated in Nitrocid KS. To add a new user account, follow these steps:
 
@@ -33,9 +33,9 @@ Note that your account must have either the administrative permissions enabled o
 
 ### Change your password
 
-In case you need to change your password to something more secure, or you need to add your password, you'll go to the user account section of the system settings to add or change your password.
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+In case you need to change your password to something more secure, or you need to add your password, you'll go to the user account section of the system settings to add or change your password.
 
 In the simulated kernel, there is a command dedicated to changing the user password. You can use this command to perform this operation.
 
@@ -50,9 +50,9 @@ Note that your account must have either the administrative permissions enabled o
 
 ### Rename your user
 
-If you want to rename your own user, or if you accidentally made a typo in someone else's username and you want to change it to the right name, you can use the user management portion of the operating system to rename the affected user.
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
+If you want to rename your own user, or if you accidentally made a typo in someone else's username and you want to change it to the right name, you can use the user management portion of the operating system to rename the affected user.
 
 The simulated kernel simulates this functionality using the `chusrname` command. To use it, follow these steps:
 
@@ -67,9 +67,9 @@ Note that your account must have either the administrative permissions enabled o
 
 ### Remove a user
 
-If the person or a user no longer wants to use your computer, or if they're migrating their data from your computer to their brand-new PC, you can remove their user and all their data associated with it.
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+If the person or a user no longer wants to use your computer, or if they're migrating their data from your computer to their brand-new PC, you can remove their user and all their data associated with it.
 
 The simulated kernel simulates the user removal function. Follow these steps to remove a user from the kernel:
 
@@ -84,7 +84,7 @@ Note that your account must have either the administrative permissions enabled o
 
 ### List existing users
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 If you want to get a list of available usernames that the kernel recognized, you can no longer have to log out of your account to see the list. In the real-world systems, you can get a list of accounts by going to the users section of the system settings. Follow these steps to get the list:
 

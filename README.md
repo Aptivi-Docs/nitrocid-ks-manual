@@ -4,12 +4,16 @@ description: Just started using Nitrocid KS? You've landed on the right place!
 
 # 👋 Welcome!
 
-<figure><img src=".gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 🎊 🎊 🎊
 
 **Recent Nightly builds of Nitrocid KS are now compatible with macOS. You can follow the instructions outlined in the Installing the Kernel > macOS page.**
+{% endhint %}
+
+{% hint style="warning" %}
+This is the documentation for the second beta version of Nitrocid KS. There might be features that may not come to the final release. Use this beta version at your own discretion.
 {% endhint %}
 
 Thank you for installing Nitrocid KS on your system! This application is designed to simulate our future-planned kernel in managed code! Yes, our crafted kernel is made with our imagination and our art of kernel design!

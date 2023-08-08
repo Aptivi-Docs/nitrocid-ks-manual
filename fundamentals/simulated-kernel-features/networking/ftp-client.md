@@ -4,6 +4,8 @@ description: How to use your FTP client
 
 # 🗃 FTP Client
 
+<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+
 File Transfer Protocol (FTP) was a standard network protocol used to transfer files from computer to another computer in the network. It used the client-server architecture to manage data and control connections between the source and the target. It normally uses the plain text usernames and passwords to authenticate to the FTP server, but if the server was configured for guest authentication, the client could log in to the server without the username and the password. It first appeared on April 16, 1971.
 
 Various computer applications for both the connection to the FTP server and the hosting service for the protocol have appeared for multiple platforms, like Windows and Linux. The simulated kernel contains the FTP shell which allows you to perform FTP operations on a remote server.

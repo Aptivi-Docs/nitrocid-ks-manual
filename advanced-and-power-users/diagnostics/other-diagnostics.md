@@ -23,7 +23,7 @@ This method is internally called by the debug writer. If you really want to crea
 
 ## Kernel dump files
 
-<figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (44) (1).png" alt=""><figcaption></figcaption></figure>
 
 In the event that the kernel reported a kernel panic in all of the types, whether continuable or uncontinuable, the kernel dump file will be generated under the name of `dmp_date_time.txt` in the kernel configuration directory. These files assist us in debugging the severe kernel crashes in case the bug involves this event.
 
@@ -44,7 +44,7 @@ In case of the third failure events, you can find the event in the Application E
 
 The kernel exceptions are just normal errors with a generic message intended to display extended information about the error the kernel is experiencing. The kernel exception types and their messages are typically found in this file:
 
-{% @github-files/github-code-block url="https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Kernel/Exceptions/KernelExceptionMessages.cs" %}
+{% @github-files/github-code-block url="https://github.com/Aptivi/NitrocidKS/blob/main/public/Nitrocid/Kernel/Exceptions/KernelExceptionMessages.cs" %}
 
 To make a kernel exception, throw a new instance of `KernelException` found in the `KS.Kernel.Exceptions` namespace in one of the forms:
 
@@ -61,7 +61,7 @@ Typically, the message displays the exception type, the message, and the excepti
 
 ## Debug shell
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
 
 The debug shell allows you to diagnose the kernel in depth. Currently, these tools are supported:
 

@@ -1,6 +1,6 @@
 # ✏ Editors
 
-<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 Editors are made to make editing your own files easier. In the modern world, many text editors, like Visual Studio Code, are found to provide nice text editing features, such as the auto-completion which allows you to quickly write any text, the hex editor that allows you to view and edit the contents of a binary file seamlessly, and easier editing using the color coded string tokens to differentiate the string from integers, and much more.
 
@@ -24,6 +24,12 @@ If you want to edit the binary file using the hex representation, and are carefu
 
 {% content-ref url="hex-editor.md" %}
 [hex-editor.md](hex-editor.md)
+{% endcontent-ref %}
+
+If you want to edit an SQL file, choose the below option.
+
+{% content-ref url="sql-editor.md" %}
+[sql-editor.md](sql-editor.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}
