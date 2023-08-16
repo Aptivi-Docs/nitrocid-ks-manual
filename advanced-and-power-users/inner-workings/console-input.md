@@ -25,6 +25,7 @@ The simplest way to get an input from the user is to call the `ReadLine()` funct
 public static string ReadLine()
 public static string ReadLine(string InputText)
 public static string ReadLine(string InputText, string DefaultValue)
+public static string ReadLine(string InputText, string DefaultValue, TermReaderSettings settings)
 ```
 {% endcode %}
 
@@ -35,13 +36,14 @@ If you want the input to be wrapped into just one line, you can use the `ReadLin
 public static string ReadLineWrapped()
 public static string ReadLineWrapped(string InputText)
 public static string ReadLineWrapped(string InputText, string DefaultValue)
+public static string ReadLineWrapped(string InputText, string DefaultValue, TermReaderSettings settings)
 ```
 {% endcode %}
 
 There is also an unsafe variant, called `ReadLineUnsafe()`, that allows you to get the console input straight from the user without waiting for the screensaver lock mode to exit.
 
 ```csharp
-public static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false)
+public static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings settings = null)
 ```
 
 {% hint style="warning" %}
@@ -58,6 +60,7 @@ For passwords or any other sensitive data, you can make use of the `ReadLineNoIn
 ```csharp
 public static string ReadLineNoInput()
 public static string ReadLineNoInput(char MaskChar)
+public static string ReadLineNoInput(char MaskChar, TermReaderSettings settings)
 ```
 {% endcode %}
 
@@ -67,6 +70,8 @@ There is also an unsafe variant, called ReadLineNoInputUnsafe(), that doesn't wa
 ```csharp
 public static string ReadLineNoInputUnsafe()
 public static string ReadLineNoInputUnsafe(char MaskChar)
+public static string ReadLineNoInputUnsafe(TermReaderSettings settings)
+public static string ReadLineNoInputUnsafe(char MaskChar, TermReaderSettings settings)
 ```
 {% endcode %}
 
