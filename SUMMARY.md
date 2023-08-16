@@ -132,6 +132,7 @@
   * [⌨ Interactive TUI](advanced-and-power-users/inner-workings/interactive-tui.md)
   * [🗃 Nitrocid Filesystem](advanced-and-power-users/inner-workings/nitrocid-filesystem.md)
   * [🖲 Console Input](advanced-and-power-users/inner-workings/console-input.md)
+  * [🌃 Screensaver Internals](advanced-and-power-users/inner-workings/screensaver-internals.md)
 
 ***
 
