@@ -23,9 +23,20 @@ This method is internally called by the debug writer. If you really want to crea
 
 ## Kernel dump files
 
-<figure><img src="../../.gitbook/assets/image (44) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/002-improved-stacktrace-after.png" alt=""><figcaption></figcaption></figure>
 
 In the event that the kernel reported a kernel panic in all of the types, whether continuable or uncontinuable, the kernel dump file will be generated under the name of `dmp_date_time.txt` in the kernel configuration directory. These files assist us in debugging the severe kernel crashes in case the bug involves this event.
+
+This file includes the following information:
+
+* Kernel error code
+* Error description
+* In-depth analysis of the error
+* Stack trace
+* Nitrocid kernel threads
+* OS threads spawned by Nitrocid
+* Threads' backtraces
+* Version information
 
 The kernel error codes are listed below from the least severe to the most severe:
 
