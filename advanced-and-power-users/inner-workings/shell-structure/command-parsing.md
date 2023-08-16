@@ -17,7 +17,7 @@ Any command that starts with either a space or a hashtag will be ignored as a co
 #comment
 ```
 
-The first word is a command, and all words following it in a single command text are the series of arguments. These words then get split to arguments (without the switch indicator `-switch`) and switches (arguments that come after the dash) using the `ProvidedCommandArgumentsInfo` class, though it does much more than that.
+The first word is a command, and all words following it in a single command text are the series of arguments. These words then get split to arguments (without the switch indicator `-switch`) and switches (arguments that come after the dash) using the `ProvidedArgumentsInfo` class, though it does much more than that.
 
 This class contains these variables:
 

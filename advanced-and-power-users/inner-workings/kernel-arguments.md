@@ -23,4 +23,10 @@ Each argument is provided the `ArgumentInfo` class that defines the argument and
 It's been theorized that we can actually define the argument parameters using `CommandArgumentInfo`. As of Beta 1, there is one kernel argument that actually uses parameters, but you have to surround said argument with the double quotation marks `""`.
 {% endhint %}
 
-The arguments are parsed each time the kernel starts up or gets rebooted. If there are any switches or argument parameters, they'll get parsed using the `ProvidedArgumentArgumentsInfo` class.
+The arguments are parsed each time the kernel starts up or gets rebooted. If there are any switches or argument parameters, they'll get parsed using the `ProvidedArgumentsInfo` class.
+
+{% hint style="info" %}
+To learn more about `ProvidedArgumentsInfo`, click on the below link:
+
+[command-parsing.md](shell-structure/command-parsing.md "mention")
+{% endhint %}
