@@ -26,46 +26,46 @@ To learn more about how Unified Extensible SHell (UESH) works, click on the belo
 
 The kernel placeholders are described below.
 
-{% content-ref url="kernel-placeholders.md" %}
-[kernel-placeholders.md](kernel-placeholders.md)
+{% content-ref url="inner-essentials/kernel-placeholders.md" %}
+[kernel-placeholders.md](inner-essentials/kernel-placeholders.md)
 {% endcontent-ref %}
 
 ## Permissions
 
 User permissions are a thing. Consult the below page for more info.
 
-{% content-ref url="the-permissions.md" %}
-[the-permissions.md](the-permissions.md)
+{% content-ref url="inner-essentials/the-permissions.md" %}
+[the-permissions.md](inner-essentials/the-permissions.md)
 {% endcontent-ref %}
 
 ## Drivers
 
 Kernel drivers are a great thing! Plug your interface in to the kernel and play!
 
-{% content-ref url="kernel-drivers.md" %}
-[kernel-drivers.md](kernel-drivers.md)
+{% content-ref url="inner-essentials/kernel-drivers.md" %}
+[kernel-drivers.md](inner-essentials/kernel-drivers.md)
 {% endcontent-ref %}
 
 ## Languages
 
 Do you want to know how the kernel translates languages? Click below!
 
-{% content-ref url="multilingual-kernel-flow.md" %}
-[multilingual-kernel-flow.md](multilingual-kernel-flow.md)
+{% content-ref url="inner-essentials/multilingual-kernel-flow/" %}
+[multilingual-kernel-flow](inner-essentials/multilingual-kernel-flow/)
 {% endcontent-ref %}
 
 ## Arguments
 
 Command-line arguments control the executable in different ways.
 
-{% content-ref url="kernel-arguments.md" %}
-[kernel-arguments.md](kernel-arguments.md)
+{% content-ref url="inner-essentials/kernel-arguments.md" %}
+[kernel-arguments.md](inner-essentials/kernel-arguments.md)
 {% endcontent-ref %}
 
 ## Remote Controlling
 
 Do you want to remotely control the kernel? Consult the below page to learn how!
 
-{% content-ref url="remote-procedure.md" %}
-[remote-procedure.md](remote-procedure.md)
+{% content-ref url="inner-essentials/remote-procedure.md" %}
+[remote-procedure.md](inner-essentials/remote-procedure.md)
 {% endcontent-ref %}

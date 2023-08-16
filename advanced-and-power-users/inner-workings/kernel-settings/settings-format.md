@@ -389,8 +389,8 @@ Let's explain each key one by one found under the root class, ReminderInfo:
 
 The configuration files for the message of the day before login (MOTD) and after login (MAL) are found under the kernel configuration directory. They are just plain-text files with the kernel placeholder support found in the below page linked to you below:
 
-{% content-ref url="../kernel-placeholders.md" %}
-[kernel-placeholders.md](../kernel-placeholders.md)
+{% content-ref url="../inner-essentials/kernel-placeholders.md" %}
+[kernel-placeholders.md](../inner-essentials/kernel-placeholders.md)
 {% endcontent-ref %}
 
 Both of these files are read every time the kernel log-in handler starts. The functions that are responsible for loading such info are both the `ReadMotd()` and the `ReadMal()` functions found under their respective namespaces `KS.Misc.Probers.Motd` and `KS.Misc.Probers.Mal`.

@@ -1442,8 +1442,8 @@ public static bool Maintenance
 
 Long ago, we used to allow users to force the kernel to maintenance mode upon setting this value right from the configuration application. However, this can be abused, so we decided to remove it as a configuration entry, but the mode itself stays. You can still run the kernel in maintenance mode by passing `maintenance` as a command line argument to Nitrocid's entry point. Refer to the below page for more information:
 
-{% content-ref url="../../advanced-and-power-users/inner-workings/kernel-arguments.md" %}
-[kernel-arguments.md](../../advanced-and-power-users/inner-workings/kernel-arguments.md)
+{% content-ref url="../../advanced-and-power-users/inner-workings/inner-essentials/kernel-arguments.md" %}
+[kernel-arguments.md](../../advanced-and-power-users/inner-workings/inner-essentials/kernel-arguments.md)
 {% endcontent-ref %}
 
 {% hint style="danger" %}

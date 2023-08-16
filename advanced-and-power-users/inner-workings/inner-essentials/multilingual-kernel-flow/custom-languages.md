@@ -6,8 +6,8 @@ description: How to define your custom languages.
 
 When you extract the binary folder of Nitrocid KS, you may see a folder called `CustomLanguages`. Inside it, you can see the `Metadata.json` file that holds language metadata as described in the previous article. Before reading this, you must understand the multilingual kernel feature and how it works by clicking on the below link.
 
-{% content-ref url="multilingual-kernel-flow.md" %}
-[multilingual-kernel-flow.md](multilingual-kernel-flow.md)
+{% content-ref url="./" %}
+[.](./)
 {% endcontent-ref %}
 
 Customized languages play an important role in being a building block for making your custom localization. This feature contains two separate folders:
@@ -126,6 +126,6 @@ For mods that want to install or uninstall custom languages, you can use the API
 
 Your mods can now be translated! Nitrocid KS can now detect your language files from your mods. For more information, consult the "Mod Translations" section in the below link:
 
-{% content-ref url="../kernel-modifications/kernel-modification-management.md" %}
-[kernel-modification-management.md](../kernel-modifications/kernel-modification-management.md)
+{% content-ref url="../../../kernel-modifications/kernel-modification-management.md" %}
+[kernel-modification-management.md](../../../kernel-modifications/kernel-modification-management.md)
 {% endcontent-ref %}

@@ -100,3 +100,9 @@ When the user is logged in, the kernel checks for preferred language value defin
 
 If `preferredlanguage` is not defined, it'll fallback to the kernel language. Else, it uses the user preferred language.
 {% endhint %}
+
+To learn more about custom languages and how they work, click on the button below:
+
+{% content-ref url="custom-languages.md" %}
+[custom-languages.md](custom-languages.md)
+{% endcontent-ref %}

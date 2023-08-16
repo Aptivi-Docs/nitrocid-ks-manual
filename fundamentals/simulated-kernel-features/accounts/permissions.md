@@ -18,8 +18,8 @@ The below screenshot also shows the second non-administrative user, `sarahSantos
 
 To use this utility, choose what you want to do with the target user's permissions and follow the steps below. You can consult the permissions list under the `Advanced and Power Users` category by clicking on the below link.
 
-{% content-ref url="../../../advanced-and-power-users/inner-workings/the-permissions.md" %}
-[the-permissions.md](../../../advanced-and-power-users/inner-workings/the-permissions.md)
+{% content-ref url="../../../advanced-and-power-users/inner-workings/inner-essentials/the-permissions.md" %}
+[the-permissions.md](../../../advanced-and-power-users/inner-workings/inner-essentials/the-permissions.md)
 {% endcontent-ref %}
 
 ### Grant permissions

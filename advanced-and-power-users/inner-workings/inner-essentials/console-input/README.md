@@ -10,9 +10,11 @@ Nitrocid KS offers several ways of input. The simplest way is the `ReadLine()` f
 
 Various features of the kernel, like the shell, use this function to get the user input, such as the entered command, and process it according to the logic. For example, `ShellManager.GetLine()` gets the entered command and compares the written command to the list of commands under the current shell type. Deep explanation about this topic is clearly out of scope, so if you want to get more information about how the shell commands are being processed, click on the below page:
 
-{% content-ref url="shell-structure/" %}
-[shell-structure](shell-structure/)
+{% content-ref url="../../shell-structure/" %}
+[shell-structure](../../shell-structure/)
 {% endcontent-ref %}
+
+## Normal inputs
 
 We'll cover the four types of input.
 
@@ -240,3 +242,21 @@ In the selection style, these are the available controls:
 * `Enter`: Selects the highlighted answer
 * `Escape`: Exits the selection and returns choice `-1`
 * `Tab`: Opens an info box containing more information about the highlighted answer. This is useful if the information pane in the bottom didn't fit.
+
+## Other types
+
+If you want to explore the other types, click on the below links:
+
+{% content-ref url="interactive-tui.md" %}
+[interactive-tui.md](interactive-tui.md)
+{% endcontent-ref %}
+
+{% content-ref url="presentation-system.md" %}
+[presentation-system.md](presentation-system.md)
+{% endcontent-ref %}
+
+Additionally, you can consult the Terminaux library documentation for more info:
+
+{% content-ref url="http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/" %}
+[Terminaux - Manual](http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/)
+{% endcontent-ref %}
