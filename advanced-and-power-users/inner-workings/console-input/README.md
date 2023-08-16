@@ -10,8 +10,8 @@ Nitrocid KS offers several ways of input. The simplest way is the `ReadLine()` f
 
 Various features of the kernel, like the shell, use this function to get the user input, such as the entered command, and process it according to the logic. For example, `ShellManager.GetLine()` gets the entered command and compares the written command to the list of commands under the current shell type. Deep explanation about this topic is clearly out of scope, so if you want to get more information about how the shell commands are being processed, click on the below page:
 
-{% content-ref url="../../shell-structure/" %}
-[shell-structure](../../shell-structure/)
+{% content-ref url="../shell-structure/" %}
+[shell-structure](../shell-structure/)
 {% endcontent-ref %}
 
 ## Normal inputs

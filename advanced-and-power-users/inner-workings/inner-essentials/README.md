@@ -6,12 +6,12 @@ description: Lists all inner workings
 
 Nitrocid KS offers a rich API that is open for any mod created for the current API series of Nitrocid. In order to get started, click on the buttons below to explore:
 
-{% content-ref url="multilingual-kernel-flow/" %}
-[multilingual-kernel-flow](multilingual-kernel-flow/)
+{% content-ref url="../multilingual-kernel/" %}
+[multilingual-kernel](../multilingual-kernel/)
 {% endcontent-ref %}
 
-{% content-ref url="console-input/" %}
-[console-input](console-input/)
+{% content-ref url="../console-input/" %}
+[console-input](../console-input/)
 {% endcontent-ref %}
 
 {% content-ref url="kernel-placeholders.md" %}
@@ -44,4 +44,8 @@ Nitrocid KS offers a rich API that is open for any mod created for the current A
 
 {% content-ref url="screensaver-internals.md" %}
 [screensaver-internals.md](screensaver-internals.md)
+{% endcontent-ref %}
+
+{% content-ref url="kernel-platform.md" %}
+[kernel-platform.md](kernel-platform.md)
 {% endcontent-ref %}

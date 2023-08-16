@@ -120,12 +120,12 @@
     * [❔ Help System](advanced-and-power-users/inner-workings/shell-structure/help-system.md)
     * [🗜 Command Parsing](advanced-and-power-users/inner-workings/shell-structure/command-parsing.md)
     * [📜 Shell Scripting](advanced-and-power-users/inner-workings/shell-structure/shell-scripting.md)
+  * [⚙ Multilingual Kernel](advanced-and-power-users/inner-workings/multilingual-kernel/README.md)
+    * [🌐 Custom Languages](advanced-and-power-users/inner-workings/multilingual-kernel/custom-languages.md)
+  * [🖲 Console Input](advanced-and-power-users/inner-workings/console-input/README.md)
+    * [⌨ Interactive TUI](advanced-and-power-users/inner-workings/console-input/interactive-tui.md)
+    * [📽 Presentation System](advanced-and-power-users/inner-workings/console-input/presentation-system.md)
   * [♦ Inner Essentials](advanced-and-power-users/inner-workings/inner-essentials/README.md)
-    * [⚙ Multilingual Kernel Flow](advanced-and-power-users/inner-workings/inner-essentials/multilingual-kernel-flow/README.md)
-      * [🌐 Custom Languages](advanced-and-power-users/inner-workings/inner-essentials/multilingual-kernel-flow/custom-languages.md)
-    * [🖲 Console Input](advanced-and-power-users/inner-workings/inner-essentials/console-input/README.md)
-      * [⌨ Interactive TUI](advanced-and-power-users/inner-workings/inner-essentials/console-input/interactive-tui.md)
-      * [📽 Presentation System](advanced-and-power-users/inner-workings/inner-essentials/console-input/presentation-system.md)
     * [🪧 Kernel Placeholders](advanced-and-power-users/inner-workings/inner-essentials/kernel-placeholders.md)
     * [🔐 The Permissions](advanced-and-power-users/inner-workings/inner-essentials/the-permissions.md)
     * [📞 Kernel Threads](advanced-and-power-users/inner-workings/inner-essentials/kernel-threads.md)
@@ -134,6 +134,7 @@
     * [📡 Remote Procedure](advanced-and-power-users/inner-workings/inner-essentials/remote-procedure.md)
     * [🗃 Nitrocid Filesystem](advanced-and-power-users/inner-workings/inner-essentials/nitrocid-filesystem.md)
     * [🌃 Screensaver Internals](advanced-and-power-users/inner-workings/inner-essentials/screensaver-internals.md)
+    * [🖥 Kernel Platform](advanced-and-power-users/inner-workings/inner-essentials/kernel-platform.md)
 
 ***
 

@@ -50,8 +50,8 @@ Kernel drivers are a great thing! Plug your interface in to the kernel and play!
 
 Do you want to know how the kernel translates languages? Click below!
 
-{% content-ref url="inner-essentials/multilingual-kernel-flow/" %}
-[multilingual-kernel-flow](inner-essentials/multilingual-kernel-flow/)
+{% content-ref url="multilingual-kernel/" %}
+[multilingual-kernel](multilingual-kernel/)
 {% endcontent-ref %}
 
 ## Arguments
