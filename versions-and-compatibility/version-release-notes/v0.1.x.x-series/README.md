@@ -16,6 +16,12 @@ This version is still work in progress, although you can now test the version in
 
 We promise that we'll implement several amazing features during the beta periods. If you found any issues or suggestions, report them on GitHub, and we'll consider responding to your requests within the next 24 hours.
 
+Available manuals for below beta versions:
+
+{% content-ref url="http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/RoaqpM3GSf9vXxRAagbV/" %}
+[Nitrocid KS v0.1.0 Beta 2 - Manual](http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/RoaqpM3GSf9vXxRAagbV/)
+{% endcontent-ref %}
+
 For list of known issues for 0.1.0 beta versions, consult the below page:
 
 {% content-ref url="known-issues-for-0.1.0-beta.md" %}
