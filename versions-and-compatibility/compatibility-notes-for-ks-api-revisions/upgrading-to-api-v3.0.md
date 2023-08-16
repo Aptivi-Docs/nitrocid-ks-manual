@@ -1865,3 +1865,97 @@ With regards to the last breaking change, which was done by commit [b96a724](htt
 {% hint style="danger" %}
 We advice you to cease using this class and its functions, especially since it's useless for public fields that will either get converted to properties or get removed (if any).
 {% endhint %}
+
+## From 0.1.0 Beta 2
+
+### Migrated to `ProvidedArgumentsInfo`
+
+```csharp
+public class ProvidedCommandArgumentsInfo
+public class ProvidedArgumentArgumentsInfo
+```
+
+The first class provided information about the command arguments. It held information about user input, and it indicated whether the user input was correct or not. It worked on the UESH shell and its sub-shells either implemented by ourselves or by a custom mod. The second class, `ProvidedArgumentArgumentsInfo`, did exactly the same thing, but with one difference: it worked with kernel arguments.
+
+However, this was considered code repetition as 95% of the parts were repeated with differences in names, so we decided to refactor these two classes to a single `ProvidedArgumentsInfo` with the following public functions found in `ArgumentsParser`:
+
+* `ParseShellCommandArguments()`
+* `ParseArgumentArguments()`
+
+{% hint style="info" %}
+We advice you to replace all calls to `Provided*ArgumentsInfo` constructors and start using the `Parse*Arguments()` function found in `ArgumentsParser`, which does the very job of parsing commands and kernel arguments.
+{% endhint %}
+
+### Migrated TUI apps' colors to `TuiColors`
+
+We used to provide users options to change each built-in TUI application's colors, like the file manager, the contacts manager, and the task manager. Sadly, we had to migrate all these configuration entries to a single configurable TUI color class, `TuiColors`.
+
+{% hint style="info" %}
+Currently, there is no plan that proposes restoring this.
+{% endhint %}
+
+### Moved `KernelErrorLevel` to `Kernel.Exceptions`
+
+```csharp
+public enum KernelErrorLevel
+```
+
+`KernelErrorLevel` was used by the kernel panic module, a group of functions that get executed when there was a kernel error, depending on the severity of the error and the state of the kernel.
+
+Looking at the structure, we saw that it was left alone in the process of migrating all kernel error-related to the Kernel.Exceptions namespace, so we decided to finish the merge process by relocating `KernelErrorLevel` to `Kernel.Exceptions`.
+
+{% hint style="warning" %}
+Although the KernelErrorLevel enumeration is public, the kernel error functions are internal, so we may remove visibility from the public API at some point during the Beta 3 development.
+{% endhint %}
+
+### Aliases and usability problems
+
+```csharp
+public static bool AddAlias(string SourceAlias, string Destination, string Type)
+public static bool AddAlias(string SourceAlias, string Destination, ShellType Type)
+```
+
+Aliases were first implemented as hard-coded aliases back on 0.0.1, but it got evolved into user-configurable aliases and went well with no problems.
+
+However, what we haven't noticed during the custom shell type implementation is that the `ShellType` version of `AddAlias()` tends to repeat itself, causing the stack to overflow and Nitrocid KS to crash on every function that called it. This affected all the versions that implemented the custom shell types; all the way to 0.1.0 Beta 2.
+
+However, we've noticed that the alias creation logic treats the source (a command that will be aliased to) as a target, and the target (an alias name) as a source, so we've decided to make some breaking changes to correct this confusion.
+
+{% hint style="warning" %}
+We can't document these APIs as a result of this confusion until we rewrite them with care. This re-write will reduce confusion between the source and the target, and ensure that aliases are added properly and that the tests are reporting success.
+{% endhint %}
+
+### Screensaver probing changed
+
+```csharp
+public class CustomSaverInfo
+public static class CustomSaverParser
+public static void InitializeCustomSaverSettings()
+public static void SaveCustomSaverSettings()
+public static void AddCustomSaverToSettings()
+public static void RemoveCustomSaverFromSettings()
+public static object GetCustomSaverSettings()
+public static bool SetCustomSaverSettings()
+Dictionary<string, object> ScreensaverSettings { get; set; }
+```
+
+Screensavers used to be found in their own path, called `KSScreensavers`, usually found in your user's local app data folder. However, this was implemented at a time that mods were still one-line C# and Visual Basic code files and didn't support dependencies.
+
+When we started improving the mod parsing code, we've made these improvements starting from a version that implemented kernel modding until now, and these improvements were still getting committed.
+
+This caused us to ditch the following features:
+
+* Custom screensaver settings, as they have never been tested with the latest version of Nitrocid. The only time that we've tested this feature was when we were implementing this feature, and that was a long time ago.
+* Custom screensaver parser that worked exactly like mod parsing code was removed and replaced with the register and unregister logics, since they were better in various degrees. This was done as a result of recent improvements to the modding system.
+* `CustomSaverInfo` was removed, as none of its properties, except the base screensaver, looked like it had any use anywhere in the entire screensaver management and kernel mod management functions.
+* `ReloadSaver` was removed from the list of available commands as a result of this breaking change. You can now use the kernel mod manager to load an updated version of any mod, which may register screensavers on boot.
+* Paths to custom screensaver and its settings were removed from the available kernel path list as a result of all the above removals.
+
+{% hint style="info" %}
+In order to be able to use a screensaver provided by your mods, they must now call the following functions from `CustomSaverTools`:
+
+* When the mod starts up (`StartMod()`), they must call the `RegisterCustomScreensaver()` function, pointing it to your new instance of your base screensaver class.
+* When the mod shuts down (`StopMod()`), they must call the `UnregisterCustomScreensaver()` function, pointing it to the name of the screensaver that you want to unregister.
+
+You can check to see if your screensaver is initialized by calling the `IsScreensaverRegistered()` function.
+{% endhint %}
