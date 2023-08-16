@@ -13,7 +13,7 @@ description: Just started using Nitrocid KS? You've landed on the right place!
 {% endhint %}
 
 {% hint style="warning" %}
-This is the documentation for the second beta version of Nitrocid KS. There might be features that may not come to the final release. Use this beta version at your own discretion.
+Recent Nightly builds of Nitrocid KS contains a version for .NET 7.0 runtime. This is a temporary targeting and will stay that way until December of this year, when we evaluate .NET 8.0 in our testing.
 {% endhint %}
 
 Thank you for installing Nitrocid KS on your system! This application is designed to simulate our future-planned kernel in managed code! Yes, our crafted kernel is made with our imagination and our art of kernel design!
