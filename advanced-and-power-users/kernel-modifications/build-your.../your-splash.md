@@ -24,7 +24,7 @@ You're looking to create a splash for Nitrocid KS! That's great! Make sure that 
 6.  Once the package is installed, go to the `Class1.cs` source file
 
     <figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
-7.  In your class, implement `ISplash`, ensuring that `KS.Misc.Splash` is imported. Then, implement all the members and properties of the interface.
+7.  In your class, implement `ISplash` and `BaseSplash`, ensuring that `KS.Misc.Splash` is imported. Then, implement all the members and properties of the interface.
 
     <figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
 8.  Once you're done implementing all the required methods and properties, remove all references to `NotImplementedException`. It should look like below:
