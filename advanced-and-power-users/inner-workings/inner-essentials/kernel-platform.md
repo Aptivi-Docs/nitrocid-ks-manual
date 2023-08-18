@@ -44,7 +44,7 @@ This class provides the following environment-related functions:
 
 This class provides the following CoreCLR-related functions:
 
-* GetCurrentRid(): Gets the current runtime identifier.
+* `GetCurrentRid()`: Gets the current runtime identifier.
 
 {% hint style="warning" %}
 [As of .NET 8.0](https://learn.microsoft.com/en-us/dotnet/core/compatibility/deployment/8.0/rid-asset-list), the above function will return generic runtime identifiers, like win-x64, linux-x64, and so on.
