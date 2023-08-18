@@ -136,7 +136,12 @@ This is where your commands get together by overriding the `Commands` variable w
 ```csharp
 public override Dictionary<string, CommandInfo> Commands => new()
 {
-    { "adduser", new CommandInfo("adduser", ShellType, "Adds users", new CommandArgumentInfo(new[] { "userName", "password", "confirm" }, Array.Empty<SwitchInfo>(), true, 1), new AddUserCommand(), CommandFlags.Strict) },
+    { "adduser",
+        new CommandInfo("adduser", ShellType, /* Localizable */ "Adds users",
+            new[] {
+                new CommandArgumentInfo(new[] { "userName", "password", "confirm" }, Array.Empty<SwitchInfo>(), true, 1)
+            }, new AddUserCommand(), CommandFlags.Strict)
+    },
     (...)
 };
 ```
@@ -193,16 +198,12 @@ You'll have to adapt your shell to take the first argument, `ShellArgs[0]`, as t
 </strong>}
 </code></pre>
 
-{% hint style="warning" %}
-The selector currently only knows about FTP, SFTP, Mail, HTTP, and RSS connection types. We'll support those types dynamically in the third beta version of Nitrocid 0.1.0.
-{% endhint %}
-
 ## Command Info
 
 Each command you define in your shell must provide a new instance of the `CommandInfo` class holding details about the specified command. The new instance of the class can be made using the constructor defined below:
 
 ```csharp
-public CommandInfo(string Command, string Type, string HelpDefinition, CommandArgumentInfo CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
+public CommandInfo(string Command, string Type, string HelpDefinition, CommandArgumentInfo[] CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
 ```
 
 where:
@@ -210,7 +211,7 @@ where:
 * `Command`: The command
 * `Type`: Your shell type
 * `HelpDefinition`: The brief summary of what the command does
-* `CommandArgumentInfo`: Argument information about your command
+* `CommandArgumentInfo`: Array of argument information about your command
 * `CommandBase`: An instance of the `BaseCommand` containing command execution information
 * `CommandFlags`: All command flags
 

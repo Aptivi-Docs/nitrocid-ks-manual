@@ -1991,3 +1991,58 @@ As a result of merging to C# on Milestone 2 of 0.1.0, we've decided to make fina
 {% hint style="info" %}
 We recommend that you change all references to `SSHTools` when migrating from 0.1.0 Beta 2 or lower.
 {% endhint %}
+
+### Speed Dials and Network Connections
+
+{% code lineNumbers="true" %}
+```csharp
+// FTPTools.cs and SFTPTools.cs
+public static void QuickConnect()
+public static void SFTPQuickConnect()
+
+// SpeedDialTools.cs
+public static void AddEntryToSpeedDial(string Address, int Port, SpeedDialType SpeedDialType, bool ThrowException = true, params object[] arguments)
+public static bool TryAddEntryToSpeedDial(string Address, int Port, SpeedDialType SpeedDialType, bool ThrowException = true, params object[] arguments)
+
+// SpeedDialType.cs
+public enum SpeedDialType
+```
+{% endcode %}
+
+When network connections were introduced in Beta 2, we didn't have an opportunity to make speed dials interact properly with network connections.
+
+After Beta 2 was released, we finally took action to remove `SpeedDialType` so that `NetworkConnectionType` can be used instead. As a result, `QuickConnect()` functions in the FTP and SFTP tools code were gone and `AddEntryToSpeedDial()` and its `Try` function had its speed dial type argument replaced with `NetworkConnectionType`.
+
+{% hint style="info" %}
+Replace all calls to `SpeedDialType` with `NetworkConnectionType`. For custom network connection types, you can use new overloads of the two `Add` functions, which take a string representation of your custom network connection type.
+{% endhint %}
+
+### Handling multiple `CommandArgumentInfo` instances
+
+```csharp
+// For arguments
+public ArgumentInfo(string Argument, string HelpDefinition, CommandArgumentInfo ArgArgumentInfo, ArgumentExecutor ArgumentBase, bool Obsolete = false, Action AdditionalHelpAction = null)
+
+// For commands
+public CommandInfo(string Command, ShellType Type, string HelpDefinition, CommandArgumentInfo CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
+public CommandInfo(string Command, string Type, string HelpDefinition, CommandArgumentInfo CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
+```
+
+To add support for multiple `CommandArgumentInfo` instances in one `CommandInfo` or `ArgumentInfo`, we now had to replace all single `CommandArgumentInfo` parameters in the above constructors with an array argument of the same class.
+
+This resulted in us having to adjust the entire shell system to adapt to this kind of change.
+
+{% hint style="info" %}
+Your mods must now follow the new pattern of how to define new `CommandInfo` instances in the `Commands` property in your shell class, provided that you've committed the below changes. The page below explains in depth about how to define these instances.
+
+[shell-structure](../../advanced-and-power-users/inner-workings/shell-structure/ "mention")
+
+The following parameters were changed:
+
+* `CommandInfo`
+  * Before: `CommandArgumentInfo CommandArgumentInfo`
+  * After: `CommandArgumentInfo[] CommandArgumentInfo`
+* `ArgumentInfo`
+  * Before: `CommandArgumentInfo ArgArgumentInfo`
+  * After: `CommandArgumentInfo[] ArgArgumentInfo`
+{% endhint %}

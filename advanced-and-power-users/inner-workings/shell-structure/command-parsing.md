@@ -84,9 +84,16 @@ Be sure that you put all the conflicts in the above form for each conflicting `S
 
 {% code title="UESHShellInfo.cs" lineNumbers="true" %}
 ```csharp
-{ "edit", new CommandInfo("edit", ShellType, /* Localizable */ "Edits a file", 
-    new CommandArgumentInfo(new[] { "file" }, new[] { new SwitchInfo("text", /* Localizable */ "Forces text mode", false, false, new string[] { "hex", "json" }), new SwitchInfo("hex", /* Localizable */ "Forces hex mode", false, false, new string[] { "text", "json" }), new SwitchInfo("json", /* Localizable */ "Forces JSON mode", false, false, new string[] { "text", "hex" }) }, true, 1), new EditCommand()) },
-                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+{ "edit",
+    new CommandInfo("edit", ShellType, /* Localizable */ "Edits a file",
+        new[] {
+            new CommandArgumentInfo(new[] { "file" }, new[] {
+                new SwitchInfo("text", /* Localizable */ "Forces text mode", false, false, new string[] { "hex", "json" }),
+                new SwitchInfo("hex", /* Localizable */ "Forces hex mode", false, false, new string[] { "text", "json" }),
+                new SwitchInfo("json", /* Localizable */ "Forces JSON mode", false, false, new string[] { "text", "hex" })
+            }, true, 1)
+        }, new EditCommand())
+},
 ```
 {% endcode %}
 {% endhint %}
