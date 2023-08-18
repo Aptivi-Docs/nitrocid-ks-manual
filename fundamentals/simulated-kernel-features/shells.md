@@ -92,6 +92,8 @@ The main shell contains these commands that you can use below. The administrativ
   * Converts the line endings to the current platform line ending or a specific line ending
 * `copy <source> <target>`
   * Creates another copy of a source file under the target
+* `date [-date|-time|-full] [-utc]`
+  * Shows the date and/or the time
 * `dict <word>`
   * Defines a word
 * `dirinfo <directory>`
