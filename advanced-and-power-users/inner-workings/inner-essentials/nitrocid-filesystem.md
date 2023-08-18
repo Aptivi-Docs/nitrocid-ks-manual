@@ -23,7 +23,7 @@ Your mods can access this, too! However, we'll walk you through the Nitrocid fil
 * `KS.Files.LineEndings`
   * This is the namespace responsible for the management of the line endings for text files.
 * `KS.Files.Operations`
-  * This is the namespace which houses common filesystem operations, such as making, copying, or deleting files and folders.
+  * This is the namespace which houses common filesystem operations, such as making, copying, opening, or deleting files and folders.
 * `KS.Files.PathLookup`
   * This is the namespace that is responsible for the management of the path lookup directories for us with the UESH shell.
 * `KS.Files.Print`

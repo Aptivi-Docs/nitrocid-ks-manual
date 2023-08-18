@@ -29,8 +29,16 @@ It's an interactive TUI application, so the controls are provided here:
 * `F4`: Goes one directory up
 * `F5`: Shows an information box containing file or directory information
 * `F6`: Allows you to enter a relative or absolute path to a local folder in the current pane
+* `F7`: Allows you to enter a directory to copy the selected file to
+* `F8`: Allows you to enter a directory to move the selected file to
+* `F9`: Allows you to rename a selected file or folder to another name
+* `F10`: Allows you to make a new folder
 * `Tab`: Switches panes
 * `Esc`: Exits the application
+
+{% hint style="info" %}
+You can turn on/off the file size display on the status in the kernel settings.
+{% endhint %}
 
 ### Archive shell
 

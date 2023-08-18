@@ -8,14 +8,15 @@ The kernel drivers allows your kernel to provide interfaces for different purpos
 
 The kernel drivers can be called using either the properties that point to the current driver of each driver type or the `DriverHandler.GetDriver<TResult>()` function found under the `KS.Drivers` namespace. These two will return an appropriate driver interface that actually allows you to call their functions that each driver of the same type implements. The types of kernel drivers are listed below:
 
-| Driver     | Interface           | Base                   | Description                     |
-| ---------- | ------------------- | ---------------------- | ------------------------------- |
-| Random     | `IRandomDriver`     | `BaseRandomDriver`     | Random number generator drivers |
-| Console    | `IConsoleDriver`    | `BaseConsoleDriver`    | Console drivers                 |
-| Network    | `INetworkDriver`    | `BaseNetworkDriver`    | Network drivers                 |
-| Filesystem | `IFilesystemDriver` | `BaseFilesystemDriver` | Filesystem drivers              |
-| Encryption | `IEncryptionDriver` | `BaseEncryptionDriver` | Encryption drivers              |
-| Regexp     | `IRegexpDriver`     | `BaseRegexpDriver`     | Regular expression drivers      |
+| Driver      | Interface            | Base                    | Description                     |
+| ----------- | -------------------- | ----------------------- | ------------------------------- |
+| Random      | `IRandomDriver`      | `BaseRandomDriver`      | Random number generator drivers |
+| Console     | `IConsoleDriver`     | `BaseConsoleDriver`     | Console drivers                 |
+| Network     | `INetworkDriver`     | `BaseNetworkDriver`     | Network drivers                 |
+| Filesystem  | `IFilesystemDriver`  | `BaseFilesystemDriver`  | Filesystem drivers              |
+| Encryption  | `IEncryptionDriver`  | `BaseEncryptionDriver`  | Encryption drivers              |
+| Regexp      | `IRegexpDriver`      | `BaseRegexpDriver`      | Regular expression drivers      |
+| DebugLogger | `IDebugLoggerDriver` | `BaseDebugLoggerDriver` | Debug logger drivers            |
 
 ### Mods and Drivers
 
