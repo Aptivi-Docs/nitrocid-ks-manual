@@ -10,6 +10,8 @@ Since Beta 3, your mods can now control whether to register or to unregister you
 
 Kernel mods can register their screensaver if they have one or more screensaver classes and have created a new instance of such classes using a function that we'll highlight later. However, before registering and/or unregistering, you may want to check the screensaver for existence.
 
+Screensaver management functions are available on the `ScreensaverManager` class.
+
 ### Checking for Existence
 
 ```csharp

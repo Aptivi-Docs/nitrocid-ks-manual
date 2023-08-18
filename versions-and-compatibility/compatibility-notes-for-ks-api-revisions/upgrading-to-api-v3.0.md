@@ -1959,3 +1959,35 @@ In order to be able to use a screensaver provided by your mods, they must now ca
 
 You can check to see if your screensaver is initialized by calling the `IsScreensaverRegistered()` function.
 {% endhint %}
+
+### Screensaver management class renamed
+
+{% code title="Screensaver.cs" lineNumbers="true" %}
+```csharp
+public static class Screensaver
+```
+{% endcode %}
+
+When we first implemented the screensavers, we used to call the class that was responsible for the management of the screensavers, `Screensaver`. However, it was done when Visual Basic was the dominant language for the whole simulator.
+
+As a result of merging to C# on Milestone 2 of 0.1.0, we've decided to make final migration changes by renaming the screensaver management class to `ScreensaverManager`.
+
+{% hint style="info" %}
+We recommend that you change all references to `ScreensaverManager` when migrating from 0.1.0 Beta 2 or lower.
+{% endhint %}
+
+### SSH class renamed
+
+{% code title="SSH.cs" lineNumbers="true" %}
+```csharp
+public static class SSH
+```
+{% endcode %}
+
+When we first implemented the SSH shell, we used to call the class that was responsible for launching the SSH shell, `SSH`. However, it was done when Visual Basic was the dominant language for the whole simulator.
+
+As a result of merging to C# on Milestone 2 of 0.1.0, we've decided to make final migration changes by renaming this class to `SSHTools`.
+
+{% hint style="info" %}
+We recommend that you change all references to `SSHTools` when migrating from 0.1.0 Beta 2 or lower.
+{% endhint %}
