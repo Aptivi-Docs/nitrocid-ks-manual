@@ -118,7 +118,7 @@ The main shell contains these commands that you can use below. The administrativ
   * Name and surname generator
 * `gettimeinfo <date>`
   * Gets the date and time information
-* `get <URL>`
+* `get <URL> [-outputpath=<path>]`
   * Downloads a file to the current working directory
 * `hangman`
   * Starts the Hangman game
