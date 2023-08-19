@@ -134,6 +134,7 @@
     * [📡 Remote Procedure](advanced-and-power-users/inner-workings/inner-essentials/remote-procedure.md)
     * [🗃 Nitrocid Filesystem](advanced-and-power-users/inner-workings/inner-essentials/nitrocid-filesystem.md)
     * [🌃 Screensaver Internals](advanced-and-power-users/inner-workings/inner-essentials/screensaver-internals.md)
+    * [💦 Splash Internals](advanced-and-power-users/inner-workings/inner-essentials/splash-internals.md)
     * [🖥 Kernel Platform](advanced-and-power-users/inner-workings/inner-essentials/kernel-platform.md)
 
 ***

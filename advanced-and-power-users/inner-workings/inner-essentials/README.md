@@ -46,6 +46,10 @@ Nitrocid KS offers a rich API that is open for any mod created for the current A
 [screensaver-internals.md](screensaver-internals.md)
 {% endcontent-ref %}
 
+{% content-ref url="splash-internals.md" %}
+[splash-internals.md](splash-internals.md)
+{% endcontent-ref %}
+
 {% content-ref url="kernel-platform.md" %}
 [kernel-platform.md](kernel-platform.md)
 {% endcontent-ref %}
