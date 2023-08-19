@@ -253,5 +253,5 @@ The error code variable, `UESHErrorCode`, holds information about the last proce
   * Indicates that either the real or the imaginary number is not valid (`imaginary` command)
 * `3`
   * Indicates that the unit type is not found (`unitconv` command)
-* 4
+* `4`
   * Indicates that the hashes don't match (`verify` command)
