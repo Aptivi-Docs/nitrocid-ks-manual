@@ -48,3 +48,50 @@ This function checks to see if the requested screensaver is is already registere
 {% hint style="info" %}
 Trying to unregister a screensaver that doesn't exist causes an exception to be thrown.
 {% endhint %}
+
+## Screensaver Management
+
+The screensaver feature of the kernel features two classes: `ScreensaverManager` and `ScreensaverDisplayer`. The former class, which is considered high-level, handles screensaver management and display, while the latter class handles screensaver displaying to save the screen or to lock the screen using low-level functions, which are only available internally.
+
+`ScreensaverManager` can be found on the API reference documentation, which is found in the bottom of the left pane. Here are the top three features:
+
+### Saving your screen
+
+The screensaver management class contains a function with two overloads dedicated to saving your screen:
+
+{% code title="ScreensaverManager.cs" lineNumbers="true" %}
+```csharp
+public static void ShowSavers()
+public static void ShowSavers(string saver)
+```
+{% endcode %}
+
+When this function is called, it first checks to see if the screensaver exists, according to the conditions highlighted in the beginning of the page.
+
+If the provided screensaver is `random`, the screensaver manager will select a random screensaver from the list and show it. Otherwise, it'll check both the built-in screensaver list and the custom screensaver list.
+
+{% hint style="info" %}
+This is also triggered by the screensaver timeout handler, which is started when the kernel boots. This handler waits for a specified number of milliseconds until the limit is reached. If there is no interaction with the console, the screensaver will activate.
+{% endhint %}
+
+### Locking your screen
+
+{% code title="ScreensaverManager.cs" lineNumbers="true" %}
+```csharp
+public static void LockScreen()
+```
+{% endcode %}
+
+If you want your mod to lock your screen, call the above function to initiate locking. This function calls `ShowSavers()`, which saves your screen.
+
+Once you press any key, this function checks to see if you have password requirement after locking enabled. If it's enabled, the login handler will check to see if your password is empty. If it's not empty, it'll prompt for your password before unlocking.
+
+### Setting default screensaver
+
+{% code title="ScreensaverManager.cs" lineNumbers="true" %}
+```csharp
+public static void SetDefaultScreensaver(string saver)
+```
+{% endcode %}
+
+This function allows your mod to set a default screensaver. Once done, it saves the new screensaver name to the appropriate key, `DefaultSaverName`, in the main configuration instance. As soon as it's saved, the configuration is saved.
