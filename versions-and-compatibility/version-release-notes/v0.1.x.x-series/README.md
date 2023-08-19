@@ -12,7 +12,7 @@ It also has renewed the look in several ways, including the modern logon screen.
 
 ### Version 0.1.0
 
-This version is still work in progress, although you can now test the version in beta versions. The below changes will be populated once the beta ends.
+This version is still work in progress, although you can now test the versions by downloading them from either [GitHub Releases](https://github.com/Aptivi/NitrocidKS/releases) or from [Launchpad PPA](https://launchpad.net/\~eofla/+archive/ubuntu/kernel-sim). The below changes will be populated once the beta ends.
 
 We promise that we'll implement several amazing features during the beta periods. If you found any issues or suggestions, report them on GitHub, and we'll consider responding to your requests within the next 24 hours.
 
