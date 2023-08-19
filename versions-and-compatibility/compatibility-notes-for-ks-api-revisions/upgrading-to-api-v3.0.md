@@ -2046,3 +2046,20 @@ The following parameters were changed:
   * Before: `CommandArgumentInfo ArgArgumentInfo`
   * After: `CommandArgumentInfo[] ArgArgumentInfo`
 {% endhint %}
+
+### Screensaver displayer class is no longer public
+
+{% code title="ScreensaverDisplayer.cs" lineNumbers="true" %}
+```csharp
+public static class ScreensaverDisplayer
+public static void DisplayScreensaver(BaseScreensaver Screensaver)
+```
+{% endcode %}
+
+ScreensaverDisplayer was created as a way to show screensavers efficiently when called with `ShowSavers()`. Upon further inspection, `DisplayScreensaver()` behaves exactly the same as the `ShowSavers()` function, but with more relaxed flagging and checking.
+
+This function was used as a thread handler, but it looks like that it can be called from any mod, so we decided to demote the class and the method shown above so that mods can't use them.
+
+{% hint style="danger" %}
+It's recommended to cease using the above class and start using `ShowSavers()` as the only suitable alternative.
+{% endhint %}
