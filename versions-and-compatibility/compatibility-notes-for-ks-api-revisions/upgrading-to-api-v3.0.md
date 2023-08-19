@@ -2063,3 +2063,30 @@ This function was used as a thread handler, but it looks like that it can be cal
 {% hint style="danger" %}
 It's recommended to cease using the above class and start using `ShowSavers()` as the only suitable alternative.
 {% endhint %}
+
+### Error codes and `-set` unified switch
+
+{% code title="BaseCommand.cs" lineNumbers="true" %}
+```csharp
+public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+```
+{% endcode %}
+
+Initially, on Beta 2, it had a very basic error code support that set a UESH variable called `UESHErrorCode`. It didn't support errors which came from the commands itself; only from the command processor, `GetLine()`.
+
+However, we decided to implement the following features:
+
+* Improved error codes: UESH scripts can now rely on error codes more reliably, because error codes can now be get straight from the base command implementation, `Execute()` to be specific.
+* \-set unified switch: For commands that set their output to a specific UESH variable, this switch will set that variable to the generated output, provided that the command already sets the output value, which is `ref string variableValue`.
+
+As a result, this massive breaking change had to be done in order to implement the two abovementioned features.
+
+{% hint style="info" %}
+Please note that there are no built-in commands which make use of the second feature, but your mods could implement them in their own commands.
+
+Your mods and its commands, however, will have to adapt to the first feature by changing the signature shown at the top of this section to the below signature:
+
+```csharp
+public virtual int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+```
+{% endhint %}

@@ -34,6 +34,10 @@ For scripting, consult the below page.
 
 The main shell contains these commands that you can use below. The administrative commands are listed in the bottom of the list to differentiate from the normal commands.
 
+{% hint style="info" %}
+Currently, none of the commands in the entire kernel support the `-set` switch. The -set switch will be documented as soon as we add some commands to this switch's whitelist.
+{% endhint %}
+
 ### Normal commands
 
 * `archive <archivefile>`

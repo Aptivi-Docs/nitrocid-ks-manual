@@ -244,7 +244,7 @@ class YourCommand : BaseCommand, ICommand
 The only function that you need to override is `Execute()`, which you can override like below:
 
 ```csharp
-public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
 ```
 
 Additionally, you can override the extra help function, `HelpHelper()`, like this:

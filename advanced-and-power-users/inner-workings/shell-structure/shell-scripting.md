@@ -218,6 +218,8 @@ To unregister your condition, you must call `UESHConditional.UnregisterCondition
 
 The error code variable, `UESHErrorCode`, holds information about the last process error code, whether it's a success (a zero value) or a failure (non-zero value). Currently, these values are supported:
 
+#### Error codes that come from the parser
+
 * `0`
   * Indicates success
 * `-1`
@@ -229,4 +231,27 @@ The error code variable, `UESHErrorCode`, holds information about the last proce
 * `-4`
   * Indicates that the command is a strict command and the user doesn't have permissions to execute it
 
-Also, this variable can hold the `HRESULT` value of any exception that may happen upon executing any command. If the exception is a kernel exception, it holds the numeric value of `KernelExceptionType`.
+#### Error codes that come from the commands
+
+* `0`
+  * Indicates success
+* `-5`
+  * Indicates that the command is interrupted unexpectedly
+* `-6`
+  * Indicates that the user didn't provide required arguments
+* `Exception.GetHashCode()`
+  * Some commands throw this value from any exception. Indicates that the command failed to perform its operation.
+* `10000 + KernelExceptionType`
+  * Some commands throw this value from any KernelException that is thrown by the command executor. Indicates that the command failed to perform its operation, but the kernel already knows about it.
+  * Example: If `KernelExceptionType.Config` is thrown from the command executor, and the command knows how to return this exception as an error code, then it'll return the sum of `10000 + 7`, which is `10007`.
+
+#### Command-specific error codes
+
+* `1`
+  * Indicates that the command answered `n` to the confirmation (FTP and SFTP's `del` command)
+* `2`
+  * Indicates that either the real or the imaginary number is not valid (`imaginary` command)
+* `3`
+  * Indicates that the unit type is not found (`unitconv` command)
+* 4
+  * Indicates that the hashes don't match (`verify` command)
