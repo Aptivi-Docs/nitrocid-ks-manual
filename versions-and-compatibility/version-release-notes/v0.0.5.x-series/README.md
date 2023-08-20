@@ -120,3 +120,9 @@ This release was declared to be the last release supporting Windows XP systems w
 
 * The kernel no longer beeps when rebooting and shutting down
 * Beep command no longer exists
+
+## Known bugs
+
+Initial documentation for these versions have mentioned the following known bugs in the "`troubleshooting`" document: _(original wording preserved for brevity - only covers pre-2021 releases)_
+
+<table><thead><tr><th width="101">Found</th><th width="94">Fixed</th><th>Description</th></tr></thead><tbody><tr><td>0.0.5.6</td><td>0.0.5.7</td><td><ol><li>[Unix] Any error messages that is handled will crash the handler with a continuable kernel error. Investigation found that something ambiguous is going on.</li></ol></td></tr></tbody></table>

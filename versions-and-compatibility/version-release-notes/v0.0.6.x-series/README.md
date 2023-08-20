@@ -121,3 +121,9 @@ We now know that the removal was reasonable following the recent inflation, as w
 #### Removals
 
 * Removed the currency converter
+
+## Known bugs
+
+Initial documentation for these versions have mentioned the following known bugs in the "`troubleshooting`" document: _(original wording preserved for brevity - only covers pre-2021 releases)_
+
+<table><thead><tr><th width="111">Found</th><th width="93">Fixed</th><th>Description</th></tr></thead><tbody><tr><td>0.0.6.x</td><td>0.0.7.0</td><td><ol><li>The viewer is not displayed correctly</li><li>Some words might print on the last line where it shows you information on the manual page viewer</li></ol></td></tr></tbody></table>
