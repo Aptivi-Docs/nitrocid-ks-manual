@@ -10,13 +10,13 @@ Nitrocid KS simulates this component with the help of kernel drivers using your 
 
 To see how it works, consult the below page to take you to the inner workings of the Nitrocid kernel filesystem.
 
-{% content-ref url="../../advanced-and-power-users/inner-workings/inner-essentials/nitrocid-filesystem.md" %}
-[nitrocid-filesystem.md](../../advanced-and-power-users/inner-workings/inner-essentials/nitrocid-filesystem.md)
+{% content-ref url="../../../advanced-and-power-users/inner-workings/inner-essentials/nitrocid-filesystem.md" %}
+[nitrocid-filesystem.md](../../../advanced-and-power-users/inner-workings/inner-essentials/nitrocid-filesystem.md)
 {% endcontent-ref %}
 
 ### Interactive file manager
 
-<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
 This interactive TUI is a powerful file manager that allows you to view what's inside the folders, as well as performing operations, like copying, moving, or deleting, on files and folders.
 

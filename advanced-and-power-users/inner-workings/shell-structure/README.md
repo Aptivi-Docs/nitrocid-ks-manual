@@ -218,6 +218,8 @@ where:
 To implement `CommandArgumentInfo`, call the constructor either with no parameters, which implies that there is no argument required to run this command, or with the following options listed below.
 
 ```csharp
+public CommandArgumentInfo()
+public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches)
 public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
 ```
 

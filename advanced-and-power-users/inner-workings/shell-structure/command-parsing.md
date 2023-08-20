@@ -63,6 +63,8 @@ You can always use these functions with the `SwitchesOnly` array found in the `E
 
 The switches can be set to conflict with each other by passing an array of incompatible switches to the SwitchInfo constructor, specifically the last parameter, `conflictsWith`. However, each switch to be conflicted must set their `conflictsWith` arrays to the opposing switches.
 
+The switches can also be set not to accept any value by setting the `AcceptsValues` argument to `false`. It will cause parsing to fail once the value in such switches are encountered, stating that such switches don't accept any value.
+
 For example, if you want a command to have three switches (`-s`, `-t`, `-u`) that conflict with each other, you can specify three SwitchInfo instances with the following properties (assuming that you've already set the `HelpDefinition`, `IsRequired`, and `ArgumentsRequired` parameters):
 
 * `-s`
@@ -88,9 +90,9 @@ Be sure that you put all the conflicts in the above form for each conflicting `S
     new CommandInfo("edit", ShellType, /* Localizable */ "Edits a file",
         new[] {
             new CommandArgumentInfo(new[] { "file" }, new[] {
-                new SwitchInfo("text", /* Localizable */ "Forces text mode", false, false, new string[] { "hex", "json" }),
-                new SwitchInfo("hex", /* Localizable */ "Forces hex mode", false, false, new string[] { "text", "json" }),
-                new SwitchInfo("json", /* Localizable */ "Forces JSON mode", false, false, new string[] { "text", "hex" })
+                new SwitchInfo("text", /* Localizable */ "Forces text mode", false, false, new string[] { "hex", "json" }, 0, false),
+                new SwitchInfo("hex", /* Localizable */ "Forces hex mode", false, false, new string[] { "text", "json" }, 0, false),
+                new SwitchInfo("json", /* Localizable */ "Forces JSON mode", false, false, new string[] { "text", "hex" }, 0, false)
             }, true, 1)
         }, new EditCommand())
 },
@@ -112,6 +114,6 @@ Then, this will set `Arg3` to be omittable, which means that the user doesn't ha
 A real-world example is the `weather` command. It contains an switch, `-list`, which omits the last 2 arguments, which causes this command to be executable with just `weather -list`. Its `SwitchInfo` is defined below:
 
 ```csharp
-new SwitchInfo("list", "Shows all the available cities", false, false, null, 2)
+new SwitchInfo("list", "Shows all the available cities", false, false, null, 2, false)
 ```
 {% endhint %}
