@@ -255,6 +255,22 @@ Additionally, you can override the extra help function, `HelpHelper()`, like thi
 public override void HelpHelper()
 ```
 
+There is a special switch called `set` that allows your command to set the final variable value to any value. For example, if you run `calc` with the `-set` switch to a variable called `result`, that variable will be set to an output value (in this case an arithmetic result) using the `variableValue` argument.
+
+To take advantage of the feature, just write the following code at the end of `Execute()`:
+
+```csharp
+variableValue = myValue;
+```
+
+...where `myValue` is a string representation of the resulting value that the command produces. A real-world example of this is provided (from the `echo` command code):
+
+```csharp
+string result = PlaceParse.ProbePlaces(StringArgs);
+TextWriterColor.Write(result);
+variableValue = result;
+```
+
 Finally, the command flags (`CommandFlags`) can be defined. One or more of the command flags can be defined using the OR (`|`) operator when defining the command flags. These flags are available:
 
 * `Strict`: The command is strict, meaning that it's only available for administrators.

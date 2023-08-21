@@ -34,9 +34,15 @@ For scripting, consult the below page.
 
 The main shell contains these commands that you can use below. The administrative commands are listed in the bottom of the list to differentiate from the normal commands.
 
-{% hint style="info" %}
-Currently, none of the commands in the entire kernel support the `-set` switch. The -set switch will be documented as soon as we add some commands to this switch's whitelist.
-{% endhint %}
+### Preface for the `-set` switch
+
+Some of the commands support the `-set` switch. This means that such commands can set a UESH variable to any value that the command sets without any interference.
+
+Your custom mods can also use this feature to set the variable. To learn more, please visit the below link:
+
+{% content-ref url="../../advanced-and-power-users/inner-workings/shell-structure/" %}
+[shell-structure](../../advanced-and-power-users/inner-workings/shell-structure/)
+{% endcontent-ref %}
 
 ### Normal commands
 
@@ -46,7 +52,7 @@ Currently, none of the commands in the entire kernel support the `-set` switch. 
   * Makes a beep from the console
 * `bulkrename <targetdir> <pattern> <newname>`
   * Renames the files massively satisfying the pattern to the new name
-* `calc <expression>`
+* `calc [-set=variable] <expression>`
   * Calculates the expression
 * `calendar <show> [year] [month]`
   * Shows the calendar
@@ -80,13 +86,13 @@ Currently, none of the commands in the entire kernel support the `-set` switch. 
   * Clears the fired events
 * `cls`
   * Clears the screen
-* `colorhextorgb <#RRGGBB>`
+* `colorhextorgb [-set=variable] <#RRGGBB>`
   * Converts the hexadecimal representation of the color to RGB numbers
-* `colorhextorgbks <#RRGGBB>`
+* `colorhextorgbks [-set=variable] <#RRGGBB>`
   * Converts the hexadecimal representation of the color to RGB numbers in KS format
-* `colorrgbtohex <R> <G> <B>`
+* `colorrgbtohex [-set=variable] <R> <G> <B>`
   * Converts the color RGB numbers to a hexadecimal representation
-* `combinestr <input1> <input2> [input3] ...`
+* `combinestr [-set=variable] <input1> <input2> [input3] ...`
   * Combines the strings
 * `combine <output> <input1> <input2> [input3] ...`
   * Combines the two or more text files to the output
@@ -96,7 +102,7 @@ Currently, none of the commands in the entire kernel support the `-set` switch. 
   * Converts the line endings to the current platform line ending or a specific line ending
 * `copy <source> <target>`
   * Creates another copy of a source file under the target
-* `date [-date|-time|-full] [-utc]`
+* `date [-set=variable] [-date|-time|-full] [-utc]`
   * Shows the date and/or the time
 * `dict <word>`
   * Defines a word
@@ -106,19 +112,19 @@ Currently, none of the commands in the entire kernel support the `-set` switch. 
   * Dismisses a notification
 * `dismissnotifs`
   * Dismisses all notifications
-* `echo [text]`
+* `echo [-set=variable] [text]`
   * Echoes a text
 * `edit [-hex|-json|-text] <file>`
   * Edits a file
 * `fileinfo <file>`
   * Provides information about a file
-* `find [-recursive] [-exec=command] <file> [directory]`
+* `find [-set=variable] [-recursive] [-exec=command] <file> [directory]`
   * Finds a file in the specified directory or a current directory
-* `findreg [-recursive] [-exec=command] <fileRegex> [directory]`
+* `findreg [-set=variable] [-recursive] [-exec=command] <fileRegex> [directory]`
   * Finds a file in the specified directory or a current directory using regular expressions
 * `ftp [server]`
   * Use an FTP shell to interact with the FTP server
-* `genname [-t] [namescount] [nameprefix] [namesuffix] [surnameprefix] [surnamesuffix]`
+* `genname [-set=variable] [-t] [namescount] [nameprefix] [namesuffix] [surnameprefix] [surnamesuffix]`
   * Name and surname generator
 * `gettimeinfo <date>`
   * Gets the date and time information
@@ -136,15 +142,15 @@ Currently, none of the commands in the entire kernel support the `-set` switch. 
   * Interactive file manager
 * `imaginary <real> <imaginary>`
   * Real and imaginary number information viewer
-* `input <$variable> <question>`
+* `input [-set=variable] <$variable> <question>`
   * Allows user to enter input and save it to a specified UESH variable
-* `jsonbeautify <jsonfile> [output]`
+* `jsonbeautify [-set=variable] <jsonfile> [output]`
   * Beautifies a JSON file
-* `jsonminify <jsonfile> [output]`
+* `jsonminify [-set=variable] <jsonfile> [output]`
   * Minifies a JSON file
 * `license`
   * Shows license information for the kernel
-* `lintscript <script>`
+* `lintscript [-set=variable] <script>`
   * Checks your UESH script for syntax errors
 * `list [-showdetails|-suppressmessages|-recursive] [directory]`
   * Lists either the current directory or a specified directory
@@ -154,17 +160,17 @@ Currently, none of the commands in the entire kernel support the `-set` switch. 
   * Locks your screen
 * `logout`
   * Logs you out
-* `lsusers`
+* `lsusers [-set=variable]`
   * Lists the users
 * `lsvars`
   * Lists the set UESH variables
 * `mail [emailAddress]`
   * Opens the mail client
-* `md <directory>`
+* `md [-set=variable] <directory>`
   * Creates a directory
 * `meteor`
   * You are a spaceship and the meteors are coming to destroy you. Can you save it?
-* `mkfile <file>`
+* `mkfile [-set=variable] <file>`
   * Makes a normal file
 * `mktheme <themeName>`
   * Opens the theme studio to let you create a new theme
@@ -172,7 +178,7 @@ Currently, none of the commands in the entire kernel support the `-set` switch. 
   * Opens the manual viewer for your mod manual
 * `move <source> <target>`
   * Moves a file or directory to the target
-* `pathfind <fileName>`
+* `pathfind [-set=variable] <fileName>`
   * Finds a file name in path lookup directories
 * `ping [-times=<number>] <Address1> [Address2 ...]`
   * Pings an address
@@ -182,6 +188,8 @@ Currently, none of the commands in the entire kernel support the `-set` switch. 
   * Previews a splash
 * `put <FileName> <URL>`
   * Uploads a file to specified website
+* `quote`
+  * Gets a random quote
 * `reboot [ip] [port]`
   * Restarts the simulated kernel
 * `retroks`
@@ -245,7 +253,7 @@ Currently, none of the commands in the entire kernel support the `-set` switch. 
   * Unit converter
 * `unzip <zipfile> [path] [-createdir]`
   * Extracts a ZIP archive
-* `uptime`
+* `uptime [-set=variable]`
   * Shows the kernel uptime
 * `usermanual`
   * Shows the two useful URLs for manual
