@@ -271,6 +271,8 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Makes new language localization strings
 * `shipduet`
   * Starts the ShipDuet game
+* `backrace`
+  * Starts the BackRace game
 
 ### Administrative commands
 

@@ -79,6 +79,7 @@
     * [💾 Hex Editor](fundamentals/simulated-kernel-features/editors/hex-editor.md)
   * [🎮 Games and Amusements](fundamentals/simulated-kernel-features/games-and-amusements/README.md)
     * [🔤 Hangman](fundamentals/simulated-kernel-features/games-and-amusements/hangman.md)
+    * [🏇 BackRace](fundamentals/simulated-kernel-features/games-and-amusements/backrace.md)
     * [☄ Meteor](fundamentals/simulated-kernel-features/games-and-amusements/meteor.md)
     * [☄ ShipDuet](fundamentals/simulated-kernel-features/games-and-amusements/shipduet.md)
     * [🐍 Snaker](fundamentals/simulated-kernel-features/games-and-amusements/snaker.md)
