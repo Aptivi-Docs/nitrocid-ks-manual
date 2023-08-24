@@ -2090,3 +2090,21 @@ Your mods and its commands, however, will have to adapt to the first feature by 
 public virtual int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
 ```
 {% endhint %}
+
+### Moved notification priority and type enumerations
+
+{% code title="NotificationManager.cs" lineNumbers="true" %}
+```csharp
+public enum NotifPriority
+public enum NotifType
+```
+{% endcode %}
+
+We've moved the two above enumerations, `NotifPriority` and `NotifType`, and renamed them to their extended names in their own code files. This is to make referencing both of them easier when creating notification instances and managing them.
+
+{% hint style="info" %}
+You no longer have to reference NotificationManager before one of the two above enumerations. However, you'll have to retry referencing them under the new names:
+
+* `NotifPriority` -> `NotificationPriority`
+* `NotifType` -> `NotificationType`
+{% endhint %}
