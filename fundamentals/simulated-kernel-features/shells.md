@@ -273,6 +273,14 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Starts the ShipDuet game
 * `backrace`
   * Starts the BackRace game
+* `unset <$variable> [-justwipe]`
+  * Unsets a UESH variable
+* `host [-set=$variable]`
+  * Gets the current host name
+* `version [-set=$variable] [-m|-k]`
+  * Gets the current version
+* `whoami [-set=$variable]`
+  * Gets the current user name
 
 ### Administrative commands
 
