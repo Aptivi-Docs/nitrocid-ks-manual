@@ -281,6 +281,10 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Gets the current version
 * `whoami [-set=$variable]`
   * Gets the current user name
+* `platform [-set=$variable] [-n|-v|-b|-c|-r]`
+  * Gets the current platform
+* `cdir [-set=$variable]`
+  * Gets the current directory
 
 ### Administrative commands
 
