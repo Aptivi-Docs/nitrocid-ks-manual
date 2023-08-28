@@ -28,7 +28,7 @@ You can then start the thread using the `Start()` function for normal threads or
 You can't start the kernel thread once it's stopped by `Stop(false)` until it's regenerated either automatically by `Stop()` or manually by `Regen()`, and you can't call `Regen()` before calling the `Stop(false)` function.
 {% endhint %}
 
-A KernelThread has the following values:
+A `KernelThread` has the following values:
 
 * `Name`
   * Gets the name of the thread
@@ -116,9 +116,20 @@ thread.Stop();
 
 Starting the parent thread will start all the child threads simultaneously, and stopping the parent thread will stop all the child threads at once.
 
-{% hint style="warning" %}
-Currently, you're not allowed to add a new child thread once the parent thread has started. This is a current limitation of the child thread implementation, but we'll eventually remove this limitation at some point in the development.
-{% endhint %}
+You can also add extra child threads to the parent thread that's already running using the same function. Example code is provided below:
+
+<pre class="language-csharp"><code class="lang-csharp">thread = new KernelThread("Unit test thread #5", true, KernelThreadTestHelper.WriteHelloWithAppendingChild);
+thread.AddChild("Unit test child thread #1 for parent thread #5", true, KernelThreadTestHelper.WriteHelloFromAppendingChild);
+thread.AddChild("Unit test child thread #2 for parent thread #5", true, KernelThreadTestHelper.WriteHelloFromAppendingChild);
+thread.AddChild("Unit test child thread #3 for parent thread #5", true, KernelThreadTestHelper.WriteHelloFromAppendingChild);
+thread.Start();
+Thread.Sleep(1000);
+<strong>thread.AddChild("Unit test additional child thread #4 for parent thread #5", true, KernelThreadTestHelper.WriteHelloFromAppendingChild);
+</strong><strong>thread.AddChild("Unit test additional child thread #5 for parent thread #5", true, KernelThreadTestHelper.WriteHelloFromAppendingChild);
+</strong><strong>thread.AddChild("Unit test additional child thread #6 for parent thread #5", true, KernelThreadTestHelper.WriteHelloFromAppendingChild);
+</strong>Thread.Sleep(3000);
+thread.Stop();
+</code></pre>
 
 ### Looping until the thread stops
 
@@ -139,6 +150,8 @@ private static void UpdateTimerElapsedDisplay()
 
 {% hint style="danger" %}
 Never use the `IsAlive` property to implement such loops, or your kernel thread will deadlock 60 seconds after it's told to stop in case the `ThreadInterruptedException` isn't getting caught.
+
+Be sure to use the correct thread in which you're checking for `IsStopping`.
 
 If you want to use this property, be sure that you still check for `IsStopping` somewhere in your logic, or at the end of your logic so that you can break out of the infinite loop with polling for the `IsAlive` property.
 {% endhint %}
