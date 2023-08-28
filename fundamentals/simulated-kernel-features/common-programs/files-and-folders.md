@@ -33,6 +33,8 @@ It's an interactive TUI application, so the controls are provided here:
 * `F8`: Allows you to enter a directory to move the selected file to
 * `F9`: Allows you to rename a selected file or folder to another name
 * `F10`: Allows you to make a new folder
+* `F11`: Gets the file checksum
+* `F12`: Verifies the selected file
 * `Tab`: Switches panes
 * `Esc`: Exits the application
 
