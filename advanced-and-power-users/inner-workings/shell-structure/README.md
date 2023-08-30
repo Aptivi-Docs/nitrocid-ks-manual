@@ -255,6 +255,37 @@ Additionally, you can override the extra help function, `HelpHelper()`, like thi
 public override void HelpHelper()
 ```
 
+{% hint style="info" %}
+If you want to support redirection or wrapping, you must either take dumb console support into account on the `Execute()` function by not calling any of the below console wrappers, or you must override the below function to be compatible with the dumb consoles:
+
+```csharp
+public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+```
+
+The following wrappers should not be called (explicitly and implicitly) on dumb-aware command executors:
+
+* `Out`
+* `CursorLeft` (set)
+* `CursorTop` (set)
+* `ForegroundColor`
+* `BackgroundColor`
+* `CursorVisible`
+* `OutputEncoding`
+* `InputEncoding`
+* `KeyAvailable`
+* `Beep()`
+* `Clear()`
+* `OpenStandardError()`
+* `OpenStandardInput()`
+* `OpenStandardOutput()`
+* `ReadKey()`
+* `ResetColor()`
+* `SetCursorPosition()`
+* `SetOut()`
+{% endhint %}
+
+### Setting command values
+
 There is a special switch called `set` that allows your command to set the final variable value to any value. For example, if you run `calc` with the `-set` switch to a variable called `result`, that variable will be set to an output value (in this case an arithmetic result) using the `variableValue` argument.
 
 To take advantage of the feature, just write the following code at the end of `Execute()`:
@@ -270,6 +301,8 @@ string result = PlaceParse.ProbePlaces(StringArgs);
 TextWriterColor.Write(result);
 variableValue = result;
 ```
+
+### Command flags
 
 Finally, the command flags (`CommandFlags`) can be defined. One or more of the command flags can be defined using the OR (`|`) operator when defining the command flags. These flags are available:
 

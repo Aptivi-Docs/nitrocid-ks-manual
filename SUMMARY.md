@@ -111,6 +111,7 @@
     * [🪄 Your Splash](advanced-and-power-users/kernel-modifications/build-your.../your-splash.md)
   * [📈 Analyzer Diagnostics](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/README.md)
     * [📉 Text - NKS0001](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0001.md)
+    * [📉 ConsoleBase - NKS0002](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0002.md)
   * [🔧 Kernel Modification Management](advanced-and-power-users/kernel-modifications/kernel-modification-management.md)
 * [🦠 Diagnostics](advanced-and-power-users/diagnostics/README.md)
   * [🔬 Debugging](advanced-and-power-users/diagnostics/debugging/README.md)
@@ -142,6 +143,7 @@
     * [🌃 Screensaver Internals](advanced-and-power-users/inner-workings/inner-essentials/screensaver-internals.md)
     * [💦 Splash Internals](advanced-and-power-users/inner-workings/inner-essentials/splash-internals.md)
     * [🖥 Kernel Platform](advanced-and-power-users/inner-workings/inner-essentials/kernel-platform.md)
+    * [🎨 Theme Internals](advanced-and-power-users/inner-workings/inner-essentials/theme-internals.md)
 
 ***
 

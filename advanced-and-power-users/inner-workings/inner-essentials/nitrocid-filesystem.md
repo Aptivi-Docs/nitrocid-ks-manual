@@ -43,7 +43,7 @@ To learn more about all the available API functions regarding the filesystem, cl
 
 ### Path Checks and Lock Checks
 
-Every filesystem operation committed within the KS.Files namespace and its functions get their paths checked with the path neutralizer to make a unified version of the path to point to the file relative to either the current path according to the filesystem routine or to the absolute path provided to the neutralizer. This neutralizer is called `Filesystem.NeutralizePath()`.
+Every filesystem operation committed within the `KS.Files` namespace and its functions get their paths checked with the path neutralizer to make a unified version of the path to point to the file relative to either the current path according to the filesystem routine or to the absolute path provided to the neutralizer. This neutralizer is called `Filesystem.NeutralizePath()`.
 
 However, the neutralizer also checks for the validity of the path as a mitigation to the Windows 10 NTFS corruption and forced BSOD bugs by calling the `ThrowOnInvalidPath()` function.
 
@@ -56,14 +56,26 @@ If the conditions were met:
 The checker will throw a `KernelException` with the `KernelExcceptionType` of `Filesystem` stating that the attempt of accessing these paths is invalid.
 {% endhint %}
 
-Optionally, the functions also make use of the file lock checking mechanisms by invoking one of these functions:
+Optionally, the functions also make use of the file and folder lock checking mechanisms by invoking one of these functions:
 
 * `IsFileLocked()`
+* `IsFolderLocked()`
+* `IsLocked()`
 * `WaitForLockRelease()`
 * `WaitForLockReleaseIndefinite()`
 
 Consult the above link to the API reference for more info about how to use these functions to check the lock on your target file.
 
-{% hint style="danger" %}
-We currently don't support checking the directory for locking, but we'll implement that soon.
+### Filesystem Entries
+
+`FileSystemEntry` contains necessary information about your file or folder, like checking to see if it exists, determining the type of the entry, and so on.
+
+You can create a new instance of this class, assuming that you've imported the `KS.Files.Instances` namespace, by simply calling the constructor like below:
+
+```csharp
+var entry = new FileSystemEntry(pathToFile);
+```
+
+{% hint style="info" %}
+You don't need to neutralize the path before making a new instance of this class; it'll neutralize your path and you can access both the original and the neutralized paths.
 {% endhint %}

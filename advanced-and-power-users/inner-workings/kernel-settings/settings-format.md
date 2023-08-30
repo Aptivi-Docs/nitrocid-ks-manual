@@ -84,6 +84,7 @@ In special cases, each type might require different variables to be set before t
 * `SDouble`
 * `SPreset`
 * `SLang`
+* `SFiglet`
 
 Only the types that require additional configuration are listed below. The below variables must be set to work with these types:
 

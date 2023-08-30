@@ -2172,3 +2172,88 @@ However, `KernelUpdateInfo` was proving its redundancy regarding its functionali
 {% hint style="info" %}
 We advice you to use `KernelUpdate` instead of `KernelUpdateInfo`.
 {% endhint %}
+
+### Added `FileSystemEntry`
+
+{% code title="BaseFilesystemDriver.cs (implements IFilesystemDriver)" lineNumbers="true" %}
+```csharp
+public virtual List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false)
+public virtual void PrintDirectoryInfo(FileSystemInfo DirectoryInfo)
+public virtual void PrintDirectoryInfo(FileSystemInfo DirectoryInfo, bool ShowDirectoryDetails)
+public virtual void PrintFileInfo(FileSystemInfo FileInfo)
+public virtual void PrintFileInfo(FileSystemInfo FileInfo, bool ShowFileDetails)
+public virtual string SortSelector(FileSystemInfo FileSystemEntry, int MaxLength)
+```
+{% endcode %}
+
+{% code title="Listing.cs" lineNumbers="true" %}
+```csharp
+public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false)
+```
+{% endcode %}
+
+{% code title="DirectoryInfoPrinter.cs" lineNumbers="true" %}
+```csharp
+public static void PrintDirectoryInfo(FileSystemInfo DirectoryInfo)
+public static void PrintDirectoryInfo(FileSystemInfo DirectoryInfo, bool ShowDirectoryDetails)
+```
+{% endcode %}
+
+{% code title="FileInfoPrinter.cs" lineNumbers="true" %}
+```csharp
+public static void PrintFileInfo(FileSystemInfo FileInfo)
+public static void PrintFileInfo(FileSystemInfo FileInfo, bool ShowFileDetails)
+```
+{% endcode %}
+
+We used to rely on `FileSystemInfo` to get basic information about any file or folder. However, we needed to extend this class to include more functions to it, so we've implemented `FileSystemEntry`.
+
+As a result, we've replaced every `FileSystemInfo` instances with FileSystemEntry. You can still access this instance through the `BaseEntry` property.
+
+{% hint style="info" %}
+We suggest that you change how you call the above functions so that you can use an instance of `FileSystemEntry`. You can create an instance of it using the constructor.
+{% endhint %}
+
+### New way of getting a list of themes
+
+{% code title="ThemeTools.cs" lineNumbers="true" %}
+```csharp
+public readonly static Dictionary<string, ThemeInfo> Themes = new()
+```
+{% endcode %}
+
+We used to resort to using the above field to get a list of available themes and getting an instance of the selected theme. However, the current approach was reachable to all the kernel mods and can be manipulated with.
+
+Also, we didn't want to add a single theme to three different places, so we decided to just let the kernel populate the themes itself by splitting one massive resources file into three different resource files:
+
+* LanguagesResources
+* SettingsResources
+* ThemesResources
+
+We then make the above field private, but you can get a copy of it using the `GetInstalledThemes()` function. We've also changed the resource name of the default theme from `_Default` to `Default` as we're no longer in the Visual Basic land.
+
+{% hint style="info" %}
+You can get a list of themes using this function, which has the below signature:
+
+```csharp
+public static Dictionary<string, ThemeInfo> GetInstalledThemes()
+```
+{% endhint %}
+
+### Added themes support for interactive TUI colors
+
+{% code title="InteractiveTuiColors.cs" lineNumbers="true" %}
+```csharp
+public static class InteractiveTuiColors
+```
+{% endcode %}
+
+When migration of interactive TUI colors was done, the end result was that `InteractiveTuiColors` was made to store all the interactive TUI colors for each element, like the pane background color, selected pane box border color, and so on.
+
+However, we needed to reduce the number of reboots to set these colors, so we decided to remove this class, add these colors to the kernel color type enumeration, and update all themes to use this new feature.
+
+This caused the interactive TUI to maintain color consistency with the rest of the Nitrocid colors.
+
+{% hint style="info" %}
+You usually don't have to do anything. You can still access these base colors using the `Config.MainConfig` class. No names are changed.
+{% endhint %}
