@@ -2257,3 +2257,23 @@ This caused the interactive TUI to maintain color consistency with the rest of t
 {% hint style="info" %}
 You usually don't have to do anything. You can still access these base colors using the `Config.MainConfig` class. No names are changed.
 {% endhint %}
+
+### Added connection options from speed dial
+
+{% code title="NetworkConnectionTools.cs" lineNumbers="true" %}
+```csharp
+public static void OpenConnectionForShell(ShellType shellType, Func<string, NetworkConnection> establisher, string address = "")
+public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection> establisher, string address = "")
+```
+{% endcode %}
+
+The network connections didn't support speed dial options, so we decided to add support for it. As a consequence, we've had to change its signature so that it would hold both the normal connection establisher and the speed-dial-based connection establisher.
+
+{% hint style="info" %}
+You must adjust your calls to the two above functions so that they also hold the speed-dial-based connection establisher, as indicated in the signatures below:
+
+```csharp
+public static void OpenConnectionForShell(ShellType shellType, Func<string, NetworkConnection> establisher, Func<string, JToken, NetworkConnection> speedEstablisher, string address = "")
+public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection> establisher, Func<string, JToken, NetworkConnection> speedEstablisher, string address = "")
+```
+{% endhint %}

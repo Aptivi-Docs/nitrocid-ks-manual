@@ -112,7 +112,7 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Dismisses a notification
 * `dismissnotifs`
   * Dismisses all notifications
-* `echo [-set=variable] [text]`
+* `echo [-set=variable] [-noparse] [text]`
   * Echoes a text
 * `edit [-hex|-json|-text] <file>`
   * Edits a file
