@@ -17,7 +17,8 @@ Themes for the kernel consist of color information for each kernel color type. T
         "StartMonth": 2,
         "StartDay": 1,
         "EndMonth": 2,
-        "EndDay": 22
+        "EndDay": 22,
+        "Localizable": true
     },
     "InputColor": "15",
     "LicenseColor": "15",
@@ -35,6 +36,7 @@ We'll explain things one by one. The `Metadata` key consists of some basic infor
 * `StartDay`: The day in which the event starts
 * `EndMonth`: The month in which the event ends
 * `EndDay`: The day in which the event ends
+* `Localizable`: Whether the description is localizable (internal)
 
 What follows the metadata is a list of available kernel color types and their color representations using Terminaux's supported color formats, which are linked in the below page:
 
