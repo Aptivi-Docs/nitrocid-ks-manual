@@ -2277,3 +2277,90 @@ public static void OpenConnectionForShell(ShellType shellType, Func<string, Netw
 public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection> establisher, Func<string, JToken, NetworkConnection> speedEstablisher, string address = "")
 ```
 {% endhint %}
+
+### Changed how event handler registration works
+
+{% code title="IMod.cs" lineNumbers="true" %}
+```csharp
+void InitEvents(EventType Event);
+void InitEvents(EventType Event, params object[] Args);
+```
+{% endcode %}
+
+InitEvents can be huge because there are too many event types to handle, so we decided to go the easier and the cleaner way and switch the handler from `InitEvents()` to the delegate-based handler.
+
+{% hint style="info" %}
+We recommend merging away from `InitEvents()` to use both of the register and unregister functions that are outlined below.
+
+```csharp
+public static void RegisterEventHandler(EventType eventType, Action<object[]> eventAction)
+public static void UnregisterEventHandler(EventType eventType, Action<object[]> eventAction)
+```
+
+Although your mod can contain the `InitEvents()` code because Nitrocid doesn't error out, we still advice you to follow the recommendation for your event handler code to continue working, as well as storing a list of event handlers (at least a `List<Action<object[]>>`) to be able to register and unregister them.
+{% endhint %}
+
+### Removed "background trigger"
+
+{% code title="KernelColorTools.cs" lineNumbers="true" %}
+```csharp
+public static void LoadBack(Color ColorSequence, bool Force = false)
+public static void SetConsoleColor(KernelColorType colorType, bool Background, bool ForceSet = false)
+public static void SetConsoleColor(Color ColorSequence, bool Background = false, bool ForceSet = false)
+```
+{% endcode %}
+
+{% code title="Flags.cs" lineNumbers="true" %}
+```csharp
+public static bool SetBackground =>
+    Config.MainConfig.SetBackground;
+```
+{% endcode %}
+
+This feature was implemented in the early stages of development for the API 3.0 kernel series. However, this wasn't tested for a long time ever since Milestone X was out, so we decided to remove this configuration.
+
+As a result, we've removed the `Force` and the `ForceSet` variables.
+
+{% hint style="danger" %}
+We advice you to cease using this function.
+{% endhint %}
+
+### Custom command addition changed
+
+{% code title="IMod.cs" lineNumbers="true" %}
+```csharp
+Dictionary<string, CommandInfo> Commands { get; set; }
+```
+{% endcode %}
+
+Nitrocid used to use the `Commands` dictionary to register all of the commands during the mod startup. However, this was found to be unnecessary because `StartMod()` was also an entry point code for each mod. Also, this breaking change was made with respect to the recent UESH shell improvements regarding the command handling logic.
+
+So, we decided to remove this key from the interface, making it redundant for general purposes. However, you may choose to keep the `Commands` list, given that you're going to use the command registration functions added with this change and that the commands in the `CommandInfo` instances are the same as the command dictionary keys.
+
+Historically, the `Commands` list was originated when there was no meaningful way to customize the shell and when the command handler was not using the base command classes for each of them.
+
+The below link shows how to use the register/unregister functions.
+
+{% content-ref url="../../advanced-and-power-users/inner-workings/shell-structure/" %}
+[shell-structure](../../advanced-and-power-users/inner-workings/shell-structure/)
+{% endcontent-ref %}
+
+{% hint style="info" %}
+Mods that expect commands to be added automatically must now use the `RegisterCustomCommand*` functions on mod start and `UnregisterCustomCommand*` functions on mod shutdown. This allows you to dynamically add commands to the shells without affecting the base shell command list.
+
+However, if you want a simple migration way, don't remove the `Commands` dictionary as it's unused; just use it to get its keys (strings) and values (`CommandInfo` instances) to use `UnregisterCustomCommands()` and `RegisterCustomCommands()` in the shutdown (`StopMod()`) and the startup code (`StartMod()`), respectively.
+{% endhint %}
+
+### Added theme addons
+
+{% code title="ThemeInfo.cs" lineNumbers="true" %}
+```csharp
+public ThemeInfo(string ThemeResourceName)
+```
+{% endcode %}
+
+The above `ThemeInfo` constructor was made obsolete due to all the themes migrating to the theme addons. This was done to try to reduce the overall size of the main Nitrocid binary.
+
+{% hint style="info" %}
+We recommend that you use the output of the `GetInstalledThemes()` function and query a theme info instance from the theme name instead.
+{% endhint %}

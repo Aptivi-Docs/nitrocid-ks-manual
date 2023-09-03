@@ -284,6 +284,41 @@ The following wrappers should not be called (explicitly and implicitly) on dumb-
 * `SetOut()`
 {% endhint %}
 
+### Registering your command
+
+In order for your command to be usable, your mods are now required to register the commands manually using a function that helps doing this. That function is defined in the `CommandManager` class.
+
+{% code title="CommandManager.cs" lineNumbers="true" %}
+```csharp
+public static void RegisterCustomCommand(ShellType ShellType, CommandInfo commandBase)
+public static void RegisterCustomCommand(string ShellType, CommandInfo commandBase)
+public static void RegisterCustomCommands(ShellType ShellType, CommandInfo[] commandBases)
+public static void RegisterCustomCommands(string ShellType, CommandInfo[] commandBases)
+```
+{% endcode %}
+
+Similarly, if your mod is going to stop, you must unregister all your mod commands, including those that it created in the middle of the kernel uptime. You can use the following functions:
+
+{% code title="CommandManager.cs" lineNumbers="true" %}
+```csharp
+public static void UnregisterCustomCommand(ShellType ShellType, string commandName)
+public static void UnregisterCustomCommand(string ShellType, string commandName)
+public static void UnregisterCustomCommands(ShellType ShellType, string[] commandNames)
+public static void UnregisterCustomCommands(string ShellType, string[] commandNames)
+```
+{% endcode %}
+
+If you've registered your commands correctly, the `help` command list should list your mod command that you've registered using one of the `RegisterCustomCommand` functions.
+
+{% hint style="info" %}
+If you're migrating your mods, your mod code can still contain the old `Commands` list, but you must use the following properties:
+
+* `Commands.Keys` (command names for unregistration)
+* `Commands.Values` (command info instances for registration)
+
+Since Nitrocid no longer uses this list, we recommend that you use it as a mutable list of commands just for your mods, since you could be generating commands and registering them.
+{% endhint %}
+
 ### Setting command values
 
 There is a special switch called `set` that allows your command to set the final variable value to any value. For example, if you run `calc` with the `-set` switch to a variable called `result`, that variable will be set to an output value (in this case an arithmetic result) using the `variableValue` argument.

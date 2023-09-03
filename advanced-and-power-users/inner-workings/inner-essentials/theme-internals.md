@@ -27,6 +27,10 @@ Themes for the kernel consist of color information for each kernel color type. T
 }
 ```
 
+{% hint style="info" %}
+`ThemeInfo()` constructor with theme names is now deprecated in favor of the theme packs. Please use the `GetInstalledThemes()` output and get the theme info instance from there instead.
+{% endhint %}
+
 We'll explain things one by one. The `Metadata` key consists of some basic information about the theme, like the name and the description. Themes can also be event-based by setting the appropriate property.
 
 * `Name`: Display name of the theme

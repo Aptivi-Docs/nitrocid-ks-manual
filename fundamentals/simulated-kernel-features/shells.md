@@ -116,12 +116,16 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Echoes a text
 * `edit [-hex|-json|-text] <file>`
   * Edits a file
+* `exec <process> [arguments]`
+  * Executes an external process
 * `fileinfo <file>`
   * Provides information about a file
 * `find [-set=variable] [-recursive] [-exec=command] <file> [directory]`
   * Finds a file in the specified directory or a current directory
 * `findreg [-set=variable] [-recursive] [-exec=command] <fileRegex> [directory]`
   * Finds a file in the specified directory or a current directory using regular expressions
+* `fork`
+  * Creates a copy of the UESH shell session
 * `ftp [server]`
   * Use an FTP shell to interact with the FTP server
 * `genname [-set=variable] [-t] [namescount] [nameprefix] [namesuffix] [surnameprefix] [surnamesuffix]`
@@ -194,7 +198,6 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Restarts the simulated kernel
 * `retroks`
   * Starts the Retro Kernel Simulator
-  * _**This command is obsolete due to lack of optimization for the latest developments of Nitrocid. It'll be removed in Beta 3.**_
 * `rm <directory/file>`
   * Removes a directory or file
 * `roulette`
@@ -239,6 +242,8 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Connects to an SSH server to execute a command
 * `stopwatch`
   * A simple stopwatch
+* `sudo <command>`
+  * Runs a program as the root user (from the kernel)
 * `sumfile [-relative] <MD5/SHA1/SHA256/SHA384/SHA512/all> <file> [outputFile]`
   * Calculates a file sum
 * `sumfiles [-relative] <MD5/SHA1/SHA256/SHA384/SHA512/all> <dir> [outputFile]`

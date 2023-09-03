@@ -14,14 +14,6 @@ If you want to build kernel modifications that let you extend the kernel to your
 [your-mod.md](your-mod.md)
 {% endcontent-ref %}
 
-## Screensavers
-
-If you want to build screensavers and unleash your console art, choose the below button.
-
-{% content-ref url="your-screensaver.md" %}
-[your-screensaver.md](your-screensaver.md)
-{% endcontent-ref %}
-
 ## Splashes
 
 If you want to build kernel splash screens, choose the below button.
