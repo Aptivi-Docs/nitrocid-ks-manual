@@ -2403,3 +2403,31 @@ With regards to `PurgeAliases()`, once any alias is removed, they're automatical
 
 With regards to `DoesAliasExistLocal()`, you can substitute calls to that function with the `DoesAliasExist()`, making changes as necessary.
 {% endhint %}
+
+### Added the signing key (a.k.a. strong name)
+
+Nitrocid KS launched without any signing key. Originally, it was planned to come signed by us, but it didn't work. However, we used the strong naming tool to give Nitrocid KS a unique identity to avoid dependency hell.
+
+{% hint style="info" %}
+It's not necessary to strong name your mods, but we recommend you to do so using the strong naming utility (`sn.exe`) that comes with Visual Studio.
+
+Most of the time, you don't have to do anything to your mods, since the signing key change doesn't break any API functions. If you found that your mods no longer worked, try to update to the latest version of Nitrocid, or contact the mod vendor.
+{% endhint %}
+
+### Interactive TUI is now part of `ConsoleBase`
+
+{% code title="*InteractiveTui*.cs" lineNumbers="true" %}
+```csharp
+namespace KS.Misc.Interactive
+```
+{% endcode %}
+
+The interactive TUI started off as part of the `Misc` namespace found under `KS`. However, it became almost stable and ready for the prime time, so we decided to move it to `ConsoleBase` in preparation for the upcoming release of Terminaux, which brings performance-related improvements.
+
+{% hint style="info" %}
+Because this is a namespace move, you'll have to update the imports that point to the above namespace to point to the new namespace below:
+
+```csharp
+namespace KS.ConsoleBase.Interactive
+```
+{% endhint %}

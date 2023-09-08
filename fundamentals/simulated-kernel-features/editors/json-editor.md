@@ -26,6 +26,8 @@ These below commands can be used to manipulate with the JSON files:
   * Removes a property from the JSON file
 * `exitnosave`
   * Exits the JSON shell without saving the changes
+* `findproperty [-parentProperty=prop] <propertyName>`
+  * Finds a property
 * `jsoninfo`
   * Shows information about the JSON file, including properties for individual JSON objects contained within the file
 * `print [property]`
