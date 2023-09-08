@@ -138,6 +138,7 @@
     * [📞 Kernel Threads](advanced-and-power-users/inner-workings/inner-essentials/kernel-threads.md)
     * [🔌 Kernel Drivers](advanced-and-power-users/inner-workings/inner-essentials/kernel-drivers.md)
     * [🎛 Kernel Arguments](advanced-and-power-users/inner-workings/inner-essentials/kernel-arguments.md)
+    * [📒 Kernel Journaling](advanced-and-power-users/inner-workings/inner-essentials/kernel-journaling.md)
     * [📡 Remote Procedure](advanced-and-power-users/inner-workings/inner-essentials/remote-procedure.md)
     * [🗃 Nitrocid Filesystem](advanced-and-power-users/inner-workings/inner-essentials/nitrocid-filesystem.md)
     * [🌃 Screensaver Internals](advanced-and-power-users/inner-workings/inner-essentials/screensaver-internals.md)

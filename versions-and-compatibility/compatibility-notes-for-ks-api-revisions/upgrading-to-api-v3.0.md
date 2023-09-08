@@ -2364,3 +2364,42 @@ The above `ThemeInfo` constructor was made obsolete due to all the themes migrat
 {% hint style="info" %}
 We recommend that you use the output of the `GetInstalledThemes()` function and query a theme info instance from the theme name instead.
 {% endhint %}
+
+### Improved the query API for text editor
+
+{% code title="TextEditTools.cs" lineNumbers="true" %}
+```csharp
+public static Dictionary<int, Dictionary<int, string>> TextEdit_QueryChar(char Char)
+public static Dictionary<int, string> TextEdit_QueryChar(char Char, int LineNumber)
+public static Dictionary<int, Dictionary<int, string>> TextEdit_QueryWord(string Word)
+public static Dictionary<int, string> TextEdit_QueryWord(string Word, int LineNumber)
+public static Dictionary<int, Dictionary<int, string>> TextEdit_QueryWordRegex(string Word)
+public static Dictionary<int, string> TextEdit_QueryWordRegex(string Word, int LineNumber)
+```
+{% endcode %}
+
+The query API for the text editor has been simplified as a result of having simpler ways of expressing the results. This was also done, because we needed to highlight the results found using one of the query commands in the text editor.
+
+{% hint style="info" %}
+The signatures have been changed. You can refer to the API documentation for the updated information.
+{% endhint %}
+
+### Aliases reworked
+
+{% code title="AliasInfo.cs" lineNumbers="true" %}
+```csharp
+public static void PurgeAliases()
+public static bool DoesAliasExistLocal(string TargetAlias, ShellType Type)
+public static bool DoesAliasExistLocal(string TargetAlias, string Type)
+```
+{% endcode %}
+
+The aliases system was a mess since a long ago, because it was first implemented using a single CSV file containing information about aliased commands.
+
+We realized how this was going to affect its maintainability, so we decided to refresh it by switching to a JSON-based serialization and deserialization method, eliminating the 3 above functions.
+
+{% hint style="info" %}
+With regards to `PurgeAliases()`, once any alias is removed, they're automatically purged.
+
+With regards to `DoesAliasExistLocal()`, you can substitute calls to that function with the `DoesAliasExist()`, making changes as necessary.
+{% endhint %}

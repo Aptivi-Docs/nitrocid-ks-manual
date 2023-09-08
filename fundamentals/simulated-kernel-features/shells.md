@@ -108,6 +108,8 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Defines a word
 * `dirinfo <directory>`
   * Provides information about a directory
+* `diskinfo <diskNum>`
+  * Gets a disk information
 * `dismissnotif <notificationNumber>`
   * Dismisses a notification
 * `dismissnotifs`
@@ -164,6 +166,10 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Locks your screen
 * `logout`
   * Logs you out
+* `lsdiskparts [-set=variable] <diskNum>`
+  * Lists the partitions on a disk
+* `lsdisks [-set=variable]`
+  * Lists the disks
 * `lsusers [-set=variable]`
   * Lists the users
 * `lsvars`
@@ -182,6 +188,8 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Opens the manual viewer for your mod manual
 * `move <source> <target>`
   * Moves a file or directory to the target
+* `partinfo <diskNum> <partNum>`
+  * Gets information about a selected partition found in a selected disk
 * `pathfind [-set=variable] <fileName>`
   * Finds a file name in path lookup directories
 * `ping [-times=<number>] <Address1> [Address2 ...]`
@@ -206,6 +214,8 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Opens the RSS feed
 * `savescreen [saver]`
   * Saves your screen
+* `saveconfig`
+  * Saves your configuration
 * `search <Regexp> <File>`
   * Searches for specified file using the regular expression
 * `searchword <StringEnclosedInDoubleQuotes> <File>`
@@ -361,3 +371,7 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Unblocks a debug device
 * `update`
   * Checks for updates of the kernel and downloads the update if available
+
+### Add-on commands
+
+Additionally, the kernel provides add-ons that add commands to provide extra functionality to the base version of Nitrocid KS. However, the add-ons have a dedicated page, which we're going to make shortly.

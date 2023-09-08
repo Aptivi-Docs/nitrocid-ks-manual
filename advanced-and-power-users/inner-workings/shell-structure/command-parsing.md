@@ -117,3 +117,17 @@ A real-world example is the `weather` command. It contains an switch, `-list`, w
 new SwitchInfo("list", "Shows all the available cities", false, false, null, 2, false)
 ```
 {% endhint %}
+
+### Local Variables and Commands
+
+Occasionally, you may run into conditions where you may have to set an environment variable locally before running a command. For example, on your Linux system, if you run a VNC server running on display `:1` and you want to show a GUI application there from the terminal emulator, you'll have to run the command like this:
+
+```shell-session
+$ DISPLAY=:1 x_gui_app
+```
+
+The same thing can be done for local shell commands on Nitrocid, but the syntax is slightly different. You can assign local environment variables before running the command either by using the `set` command, which affects both the current and the future command runs, or you can limit it to just the command that you're going to run using the below syntax:
+
+```
+($env=value $env2="value with space") my_mod_command
+```
