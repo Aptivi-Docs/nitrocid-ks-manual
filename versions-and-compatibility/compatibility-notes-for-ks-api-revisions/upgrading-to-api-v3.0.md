@@ -2524,3 +2524,74 @@ As a result, custom remote debug command classes must now change the signature t
 void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDeviceInfo Address);
 ```
 {% endhint %}
+
+### Speed dial configuration changes
+
+{% code title="NetworkConnectionTools.cs" lineNumbers="true" %}
+```csharp
+public static void OpenConnectionForShell(ShellType shellType, Func<string, NetworkConnection> establisher, Func<string, JToken, NetworkConnection> speedEstablisher, string address = "")
+public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection> establisher, Func<string, JToken, NetworkConnection> speedEstablisher, string address = "")
+```
+{% endcode %}
+
+{% code title="SpeedDialTools.cs" lineNumbers="true" %}
+```csharp
+// Removed
+public static JObject GetTokenFromSpeedDial()
+public static JToken GetQuickConnectInfo()
+
+// Modified
+public static Dictionary<string, JToken> ListSpeedDialEntries()
+public static Dictionary<string, JToken> ListSpeedDialEntriesByType(NetworkConnectionType SpeedDialType)
+public static Dictionary<string, JToken> ListSpeedDialEntriesByType(string SpeedDialType)
+```
+{% endcode %}
+
+The speed dial handler has undergone significant changes related to how it handles speed dial configuration, because we needed a less convoluted way of obtaining speed dial properties and setting them, so we decided to make the following changes as stated in the comments of the above snippet.
+
+{% hint style="info" %}
+Because `SpeedDialEntry` is implemented, you need to use the new overloads and functions from the SpeedDialTools class when migrating from the old `JToken` approach.
+{% endhint %}
+
+### Breaking changes caused by migration to addons
+
+There are breaking changes that are caused by the migration of some of the optional kernel features to the addons system so that they don't bloat the base kernel up. The following applications are affected:
+
+* To-do list
+* Forecast
+* Contacts
+* Calendar
+
+{% hint style="warning" %}
+Your mods will no longer be able to use their APIs, due to how these addons are isolated from the base kernel.
+{% endhint %}
+
+### Removed Figgle-related tools and writers
+
+{% code title="Deleted classes" lineNumbers="true" %}
+```csharp
+public static class CenteredFigletTextColorLegacy
+public static class FigletColorLegacy
+public static class FigletWhereColorLegacy
+```
+{% endcode %}
+
+Because Terminaux got updated in a way that it separated Figgle-related tools and writers from the Figletize-based implementation, we've decided to remove all Figgle-related tools and writers from the Nitrocid KS codebase.
+
+{% hint style="info" %}
+You must migrate from Figgle to Figletize in order to be able to use the new functions. The signatures are the same, but using the `FigletizeFont` instance instead of `FiggleFont`.
+
+Terminaux's documentation will cover the ways of migration.
+{% endhint %}
+
+### Moved `ShellManager` to `ShellBase.Shells`
+
+```csharp
+public static class ShellManager
+```
+
+`ShellManager` used to be found on a loose `KS.Shell` namespace. However, we needed to enforce better organization of the shell management code, so we moved this class to the `ShellBase.Shells` namespace inside `KS.Shell`.
+
+{% hint style="info" %}
+None of the functions are affected by this change. However, you need to change the imports to point to the `ShellBase.Shells` namespace.
+{% endhint %}

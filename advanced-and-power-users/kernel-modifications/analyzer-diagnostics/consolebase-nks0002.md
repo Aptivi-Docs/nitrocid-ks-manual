@@ -10,7 +10,7 @@ This analyzer provides the following strings:
 
 ### Extended Description
 
-This code analyzer detects the usage of the standard `Console` class found in the `System` namespace. However, this class is a sealed class, so it's rendered unextensible, causing you to have to make its abstraction class to wrap its functions if you want to add extra code, like checking for VT sequences.
+This code analyzer detects the usage of the standard `Console` class found in the `System` namespace. However, this class is a sealed class, so it's rendered inextensible, causing you to have to make its abstraction class to wrap its functions if you want to add extra code, like checking for VT sequences.
 
 Fortunately, Nitrocid KS has its own console wrapper, `ConsoleWrapper`, that makes use of the current local console driver that contains the necessary checks, like checking the console for its fullness (positioning and any other functions other than plain writing).
 

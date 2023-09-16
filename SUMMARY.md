@@ -112,6 +112,7 @@
   * [📈 Analyzer Diagnostics](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/README.md)
     * [📉 Text - NKS0001](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0001.md)
     * [📉 ConsoleBase - NKS0002](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0002.md)
+    * [📉 ConsoleBase - NKS0003](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0003.md)
   * [🔧 Kernel Modification Management](advanced-and-power-users/kernel-modifications/kernel-modification-management.md)
 * [🦠 Diagnostics](advanced-and-power-users/diagnostics/README.md)
   * [🔬 Debugging](advanced-and-power-users/diagnostics/debugging/README.md)

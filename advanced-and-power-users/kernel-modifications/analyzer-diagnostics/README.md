@@ -18,7 +18,7 @@ Currently, there are no analyzers which generate errors yet. However, we'll plan
 {% tab title="Warnings" %}
 The following analyzers generate warnings:
 
-<table><thead><tr><th width="132">Diag. ID</th><th width="106">Section</th><th data-type="content-ref">Page</th></tr></thead><tbody><tr><td><code>NKS0001</code></td><td>Text</td><td><a href="text-nks0001.md">text-nks0001.md</a></td></tr></tbody></table>
+<table><thead><tr><th width="153">Diag. ID</th><th width="153">Section</th><th data-type="content-ref">Page</th></tr></thead><tbody><tr><td><code>NKS0001</code></td><td>Text</td><td><a href="text-nks0001.md">text-nks0001.md</a></td></tr><tr><td><code>NKS0002</code></td><td>ConsoleBase</td><td><a href="consolebase-nks0002.md">consolebase-nks0002.md</a></td></tr><tr><td><code>NKS0003</code></td><td>ConsoleBase</td><td><a href="consolebase-nks0003.md">consolebase-nks0003.md</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Suggestions" %}

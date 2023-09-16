@@ -19,6 +19,14 @@ The shell handler also contains two properties: `CurrentShellType` and `LastShel
 * If there is only one shell in the stack, it returns the current shell as the last one
 * If there are two or more shells in the stack, it returns the last shell type
 
+Additionally, when `GetLine()` is called, it sets Terminaux's reader history to point to the shell's history list. After it's done getting the input, it reverts back to the `General` history buffer. They are loaded on boot and saved on shutdown or reboot.
+
+{% hint style="info" %}
+You can force a reload on the history by using the `loadhistories` command across all the shells.
+
+You can manually save the history list for all the shells using the `savehistories` command.
+{% endhint %}
+
 ## Base Shell
 
 The `BaseShell` abstract class, which your shell must override, contains the shell type name (`ShellType`), the flag to bail from the shell (`Bail`), and the shell initialization code with the shell arguments (`InitializeShell()`).

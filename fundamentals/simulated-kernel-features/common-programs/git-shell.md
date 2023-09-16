@@ -42,10 +42,22 @@ Git shell provides you with a list of available commands below:
   * Gets the current repository status by comparing the current state of the repository with the head version (usually `HEAD`).
 * `checkout <branch>`
   * Checks out the repository branch (switches to target branch)
+* `commit <message>`
+  * Makes a commit on your local copy that's ready to push to the remote
+* `fetch [remote]`
+  * Fetches all changes from the current or specified remote
 * `lsbranches`
   * Lists all branches
+* `lscommits`
+  * Lists all commits
 * `lsremotes`
   * Lists all remotes
+* `pull`
+  * Updates your repository with the latest changes fetched from the remote
+* `push`
+  * Pushes all your local commits to the remote
+* `setid <email> <username>`
+  * Identifies yourself with your e-mail and your username
 * `stageall`
   * Stages all unstaged changes
 * `stage <unstagedfile>`

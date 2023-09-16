@@ -4,9 +4,11 @@ description: Your checkbook
 
 # ☑ To-do List
 
-This program serves as your checkbook to track your tasks. They help you organize your everyday tasks and plans, like plans for the next release of your project, grocery lists, and so on.
+{% hint style="info" %}
+Nitrocid KS provides this feature as an addon.
+{% endhint %}
 
-Nitrocid KS provides a built-in to-do list to attempt to simulate this feature.
+This program serves as your checkbook to track your tasks. They help you organize your everyday tasks and plans, like plans for the next release of your project, grocery lists, and so on.
 
 ## Basics
 

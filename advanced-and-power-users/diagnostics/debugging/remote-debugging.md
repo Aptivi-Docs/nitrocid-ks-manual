@@ -44,3 +44,7 @@ The chatting feature was added to the remote debugger to allow chatting with the
 Every device connected to the remote debugger using the provided connection information will have their entries added to the remote debug device configuration file. They'll be told to register their device with a name before they can chat.
 
 Pressing ENTER will post a message to the kernel debugger, causing everyone who connected to the debugger to see the message live.
+
+{% hint style="info" %}
+If you want to just see people chatting without the kernel debug logs obstructing your conversation view, use the `/mutelogs` command.
+{% endhint %}

@@ -4,6 +4,10 @@ description: Calendars, events, and reminders
 
 # 🗓 Calendar
 
+{% hint style="info" %}
+Nitrocid KS provides this feature as an addon.
+{% endhint %}
+
 The calendar shows you days, weeks, and months within the selected year. It not only shows how many days in a month, but it also shows the weekends in a special color or formatting and the business days in the normal color. A calendar can handle events in either a single day or within a day range. Modern calendars get synced with the latest holidays in your country.
 
 The simulated kernel provides you with the calendar management application that attempts to simulate the above functionality. Choose a function to get started. In summary, these usages are found within the `calendar` command.
