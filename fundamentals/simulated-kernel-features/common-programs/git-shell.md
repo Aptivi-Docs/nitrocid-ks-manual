@@ -31,7 +31,7 @@ Once it's done, it checks for the following known default branch names:
 * `trunk`
 
 {% hint style="info" %}
-You can check out a specific branch using the `checkout` command (TBD).
+You can check out a specific branch using the `checkout` command.
 {% endhint %}
 
 ### Available commands
@@ -40,3 +40,17 @@ Git shell provides you with a list of available commands below:
 
 * `status`
   * Gets the current repository status by comparing the current state of the repository with the head version (usually `HEAD`).
+* `checkout <branch>`
+  * Checks out the repository branch (switches to target branch)
+* `lsbranches`
+  * Lists all branches
+* `lsremotes`
+  * Lists all remotes
+* `stageall`
+  * Stages all unstaged changes
+* `stage <unstagedfile>`
+  * Stages a specified unstaged file
+* `unstageall`
+  * Unstages all staged changes
+* `unstage <stagedfile>`
+  * Unstages a specified staged file

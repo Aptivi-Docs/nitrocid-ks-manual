@@ -89,11 +89,15 @@ Be sure that you put all the conflicts in the above form for each conflicting `S
 { "edit",
     new CommandInfo("edit", ShellType, /* Localizable */ "Edits a file",
         new[] {
-            new CommandArgumentInfo(new[] { "file" }, new[] {
-                new SwitchInfo("text", /* Localizable */ "Forces text mode", false, false, new string[] { "hex", "json" }, 0, false),
-                new SwitchInfo("hex", /* Localizable */ "Forces hex mode", false, false, new string[] { "text", "json" }, 0, false),
-                new SwitchInfo("json", /* Localizable */ "Forces JSON mode", false, false, new string[] { "text", "hex" }, 0, false)
-            }, true, 1)
+            new CommandArgumentInfo(new[]
+            {
+               new CommandArgumentPart(true, "file"),
+            }, new[] {
+                new SwitchInfo("text", /* Localizable */ "Forces text mode", false, false, new string[] { "hex", "json", "sql" }, 0, false),
+                new SwitchInfo("hex", /* Localizable */ "Forces hex mode", false, false, new string[] { "text", "json", "sql" }, 0, false),
+                new SwitchInfo("json", /* Localizable */ "Forces JSON mode", false, false, new string[] { "text", "hex", "sql" }, 0, false),
+                new SwitchInfo("sql", /* Localizable */ "Forces SQL mode", false, false, new string[] { "text", "hex", "json" }, 0, false),
+            })
         }, new EditCommand())
 },
 ```

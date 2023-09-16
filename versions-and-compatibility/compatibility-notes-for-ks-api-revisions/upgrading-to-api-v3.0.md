@@ -2431,3 +2431,96 @@ Because this is a namespace move, you'll have to update the imports that point t
 namespace KS.ConsoleBase.Interactive
 ```
 {% endhint %}
+
+### Used Figletize
+
+{% code title="CenteredFigletTextColor.cs" lineNumbers="true" %}
+```csharp
+public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, params object[] Vars)
+public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars)
+public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
+public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, ConsoleColors Color, params object[] Vars)
+public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars)
+public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, Color Color, params object[] Vars)
+public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, params object[] Vars)
+public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars)
+public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
+public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, ConsoleColors Color, params object[] Vars)
+public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars)
+public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, Color Color, params object[] Vars)
+public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+```
+{% endcode %}
+
+This change also applies to `FigletColor` and `FigletWhereColor`.
+
+Figgle didn't see any recent development for a long time, so we decided to tweak it a bit in our own fork, Figletize, prior to releasing it as version 0.6.0.
+
+We decided to take out legacy support in both Nitrocid KS and Terminaux as Figgle wasn't signed using a signing key.
+
+{% hint style="info" %}
+You must migrate from Figgle to Figletize in order to be able to use the new functions. The signatures are the same, but using the `FigletizeFont` instance instead of `FiggleFont`.
+
+Terminaux's documentation will cover the ways of migration.
+{% endhint %}
+
+### Added `CommandArgumentPart`
+
+```csharp
+public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches)
+public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool ArgumentsRequired, int MinimumArguments, bool AcceptsSet = false, Func<string, int, char[], string[]> AutoCompleter = null)
+```
+
+`CommandArgumentInfo` used to use strings and few support variables for arguments. However, there are cases where mods need more control over the argument parts, especially the auto completion part.
+
+`CommandArgumentPart` is made for this purpose, so we've changed the above constructors in `CommandArgumentInfo` to be able to specify arguments using the brand new class.
+
+{% hint style="info" %}
+You must change all `CommandArgumentInfo` instance creation to satisfy this new format. For example, `exec`'s `CommandArgumentInfo` is defined like this:
+
+```csharp
+new CommandArgumentInfo(new[]
+{
+    new CommandArgumentPart(true, "process"),
+    new CommandArgumentPart(false, "args")
+}, Array.Empty<SwitchInfo>())
+```
+{% endhint %}
+
+### Remote debug configuration handler changes
+
+{% code title="IRemoteDebugCommand.cs" lineNumbers="true" %}
+```csharp
+void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, string Address);
+```
+{% endcode %}
+
+{% code title="RemoteDebugTools.cs" lineNumbers="true" %}
+```csharp
+// Removed
+public enum DeviceProperty
+public static object GetDeviceProperty(string DeviceIP, DeviceProperty DeviceProperty)
+public static void SetDeviceProperty(string DeviceIP, DeviceProperty DeviceProperty, object Value)
+public static bool TrySetDeviceProperty(string DeviceIP, DeviceProperty DeviceProperty, object Value)
+public static void AddDeviceToJson(string DeviceIP, bool ThrowException = true)
+public static bool TryAddDeviceToJson(string DeviceIP, bool ThrowException = true)
+public static void RemoveDeviceFromJson(string DeviceIP)
+public static bool TryRemoveDeviceFromJson(string DeviceIP)
+
+// Modified
+public static void DisconnectDbgDev(string IPAddr)
+public static void AddToBlockList(string IP)
+public static string[] ListDevices()
+```
+{% endcode %}
+
+The remote debug device handler has undergone significant changes related to how it handles remote device configuration, because we needed a less convoluted way of obtaining device properties and setting them, so we decided to make the following changes as stated in the comments of the above snippet.
+
+{% hint style="info" %}
+As a result, custom remote debug command classes must now change the signature to match the below signature definition:
+
+```csharp
+void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDeviceInfo Address);
+```
+{% endhint %}

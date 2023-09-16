@@ -139,7 +139,12 @@ public override Dictionary<string, CommandInfo> Commands => new()
     { "adduser",
         new CommandInfo("adduser", ShellType, /* Localizable */ "Adds users",
             new[] {
-                new CommandArgumentInfo(new[] { "userName", "password", "confirm" }, Array.Empty<SwitchInfo>(), true, 1)
+                new CommandArgumentInfo(new[]
+                {
+                    new CommandArgumentPart(true, "username"),
+                    new CommandArgumentPart(false, "password"),
+                    new CommandArgumentPart(false, "confirm"),
+                }, Array.Empty<SwitchInfo>())
             }, new AddUserCommand(), CommandFlags.Strict)
     },
     (...)
@@ -219,17 +224,27 @@ To implement `CommandArgumentInfo`, call the constructor either with no paramete
 
 ```csharp
 public CommandArgumentInfo()
-public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches)
-public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
+public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches)
+public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet = false)
 ```
 
 where:
 
 * `Arguments`: Defines the command arguments
 * `Switches`: Defines the command switches
-* `ArgumentsRequired`: Specifies whether the arguments are required
-* `MinimumArguments`: Specifies how many arguments are required to execute the command
-* `AutoCompleter`: **Optional.** Auto completer function that returns an array of suggestions
+* `AcceptsSet`: Whether to accept the `-set` switch
+
+For `CommandArgumentPart` instances, consult the below constructor to create an array of `CommandArgumentPart` instances when defining your commands:
+
+```csharp
+public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string, int, char[], string[]> autoCompleter = null)
+```
+
+where:
+
+* `argumentRequired`: Is this argument part required?
+* `argumentExpression`: Command argument expression
+* `autoCompleter`: Auto completion function delegate
 
 For `SwitchInfo` instances, consult the below constructor to create an array of `SwitchInfo` instances when defining your commands:
 

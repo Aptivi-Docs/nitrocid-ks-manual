@@ -166,6 +166,8 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Locks your screen
 * `logout`
   * Logs you out
+* `lsconnections`
+  * Lists all open connections
 * `lsdiskparts [-set=variable] <diskNum>`
   * Lists the partitions on a disk
 * `lsdisks [-set=variable]`
