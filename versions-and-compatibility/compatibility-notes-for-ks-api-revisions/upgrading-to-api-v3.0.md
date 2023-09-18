@@ -2561,6 +2561,14 @@ There are breaking changes that are caused by the migration of some of the optio
 * Forecast
 * Contacts
 * Calendar
+* Archive Shell
+* Games and Amusements
+* Timers
+* Dictionary
+* Name generation
+* Unit conversion
+* Lyrics
+* Calculators
 
 {% hint style="warning" %}
 Your mods will no longer be able to use their APIs, due to how these addons are isolated from the base kernel.
@@ -2594,4 +2602,101 @@ public static class ShellManager
 
 {% hint style="info" %}
 None of the functions are affected by this change. However, you need to change the imports to point to the `ShellBase.Shells` namespace.
+{% endhint %}
+
+### Moved `Editors` to `Files`
+
+{% code title="Affected editors" lineNumbers="true" %}
+```csharp
+namespace KS.Misc.Editors.HexEdit
+namespace KS.Misc.Editors.JsonShell
+namespace KS.Misc.Editors.SqlEdit
+namespace KS.Misc.Editors.TextEdit
+```
+{% endcode %}
+
+The following editors have been moved from `Misc` to `Files` as a result of their APIs being mature:
+
+* Hex editor
+* JSON shell
+* SQL editor
+* Text editor
+
+This is to acknowledge that these editors are indeed part of the filesystem editing process.
+
+{% hint style="info" %}
+None of the functions are affected, but you must change the namespace imports to the following:
+
+```csharp
+namespace KS.Files.Editors.HexEdit
+namespace KS.Files.Editors.JsonShell
+namespace KS.Files.Editors.SqlEdit
+namespace KS.Files.Editors.TextEdit
+```
+{% endhint %}
+
+### Updated `LocaleGen.Core` namespaces
+
+```csharp
+namespace Nitrocid.LocaleGen.Serializer
+```
+
+`LocaleGen.Core` is a library that generates final translation files for each built-in and custom language for Nitrocid KS to be able to use.
+
+To clear up the organization, we've decided to update the above namespace to match the library name.
+
+{% hint style="info" %}
+The new namespace for the `LocaleGen.Core` functions is:
+
+```csharp
+namespace Nitrocid.LocaleGen.Core.Serializer
+```
+{% endhint %}
+
+### Promoted Settings to `Kernel.Configuration`
+
+{% code title="SettingsApp.cs, SettingsKeyType.cs" lineNumbers="true" %}
+```csharp
+namespace KS.Misc.Settings
+```
+{% endcode %}
+
+Interactive settings was initially implemented as a Windows Forms application independent of the main application. It was moved to Nitrocid starting from 0.0.12.0.
+
+The "Settings" application was meant to be a core part of the kernel, so we've moved all the Settings classes to the `KS.Kernel.Configuration.Settings` namespace.
+
+{% hint style="info" %}
+None of the classes are affected, but you should update your namespace imports to the below namespace:
+
+```csharp
+namespace KS.Kernel.Configuration.Settings
+```
+{% endhint %}
+
+### Corrected the name of `Journaling` enum entry
+
+{% code title="KernelPathType.cs" lineNumbers="true" %}
+```csharp
+public enum KernelPathType
+{
+    (...)
+    Journalling,
+    (...)
+}
+```
+{% endcode %}
+
+{% code title="Paths.cs" lineNumbers="true" %}
+```csharp
+public static string JournallingPath =>
+    Filesystem.NeutralizePath(AppDataPath + "/KSJournal.json");
+```
+{% endcode %}
+
+When kernel journaling was first released, it was initially implemented under the name of "Journalling," but we found out that it wasn't a correct spelling for the word.
+
+We've decided to correct that by renaming the enumeration value and the property.
+
+{% hint style="info" %}
+If you use any of the two affected objects mentioned above, change your references so that it says `Journaling`.
 {% endhint %}

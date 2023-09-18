@@ -254,11 +254,39 @@ where:
 * `argumentExpression`: Command argument expression
 * `autoCompleter`: Auto completion function delegate
 
+{% hint style="info" %}
+When it comes to auto-completion, if you press TAB on any of the argument positions, the shell will select the following completers as appropriate:
+
+* If the auto completer is specified, then, regardless of whether the expression represents the selection (expressions containing the slash `/` character) or not, the auto completer specified in the constructor will be called.
+* If the auto completer is not specified, then it will go through the following completers:
+  * The shell goes through the list of known completion expressions according to the argument expression, which are the following:
+    * `user`, `username`: List of usernames
+    * `group`, `groupname`: List of groups
+    * `modname`: List of kernel mods
+    * `splashname`: List of splashes
+    * `saver`: List of screensavers
+    * `theme`: List of themes
+    * `$variable`: List of UESH variables
+    * `perm`: List of permission types
+    * `cmd`, `command`: List of all available commands
+  * If the expression is not listed in any of the known expressions list, it'll check for the selection indicator characters (the slash `/` key).
+    * For example, the `true/false` expression will generate an autocompleter that completes the two words: `true` and `false`.
+  * In case there is none, the shell will use the default auto completer, which fetches possible files and folders on your current working directory.
+{% endhint %}
+
+{% hint style="success" %}
+Usually, there is no need for you to cut the string to the required position; the shell does it to every single autocomplete result that is given.
+{% endhint %}
+
+## Switch Info
+
 For `SwitchInfo` instances, consult the below constructor to create an array of `SwitchInfo` instances when defining your commands:
 
 ```csharp
 public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[] conflictsWith = null, int optionalizeLastRequiredArguments = 0)
 ```
+
+## Base Command
 
 The base command is required to be implemented, since it contains overridable command execution code. Your command must implement the command base class below:
 

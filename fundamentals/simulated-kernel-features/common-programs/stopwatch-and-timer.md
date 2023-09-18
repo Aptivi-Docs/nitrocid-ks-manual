@@ -4,6 +4,10 @@ description: Stopwatch for your favorite races, and timer to time yourself in so
 
 # ⏰ Stopwatch and Timer
 
+{% hint style="info" %}
+As of 0.1.0, this feature has been moved to the kernel addons.
+{% endhint %}
+
 The stopwatch is a timepiece that measures the elapsed time between the activation time and the current time. Generally, they're used to measure how much time did doing a specific thing take. The most famous example of a stopwatch is the stop clock, which is used in sports to measure the time between the start of the game and the current time.
 
 Additionally, some stopwatches provide the laps system, which is useful for sports game that contains the laps, like racing or running.

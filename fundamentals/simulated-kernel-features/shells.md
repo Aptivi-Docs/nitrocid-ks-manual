@@ -48,6 +48,8 @@ Your custom mods can also use this feature to set the variable. To learn more, p
 
 * `archive <archivefile>`
   * Opens the archive file to the archive shell
+* `altdate <culture>`
+  * Shows date and time in a specified culture
 * `beep`
   * Makes a beep from the console
 * `bulkrename <targetdir> <pattern> <newname>`

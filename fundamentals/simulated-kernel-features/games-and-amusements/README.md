@@ -6,6 +6,10 @@ description: Bored already? Try playing games!
 
 <figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
+As of 0.1.0, all games have been moved to the kernel addons.
+{% endhint %}
+
 Every single operating system contain either the built-in games, such as Windows which used to provide you the games that came shipped with it, or the installable games. The games and amusements were provided to you in the simulated kernel for entertainment purposes.
 
 The simulated kernel provides you the below games. Select a game to get the complete guide.
