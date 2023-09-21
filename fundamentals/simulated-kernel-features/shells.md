@@ -82,6 +82,8 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Changes the directory to another directory
 * `chklock <file>`
   * Checks to see if a specified file is locked
+* `chlang [-usesyslang] <language>`
+  * Changes the kernel language
 * `choice [-o|-t|-m|-a] [-multiple|-single] <$variable> <answers> <input> [answertitle1] [answertitle2] ...`
   * Makes a choice amd sets it to a UESH variable
 * `clearfiredevents`
@@ -134,7 +136,7 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Use an FTP shell to interact with the FTP server
 * `genname [-set=variable] [-t] [namescount] [nameprefix] [namesuffix] [surnameprefix] [surnamesuffix]`
   * Name and surname generator
-* `gettimeinfo <date>`
+* `gettimeinfo [-now] <date>`
   * Gets the date and time information
 * `get <URL> [-outputpath=<path>]`
   * Downloads a file to the current working directory
@@ -264,6 +266,8 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Calculates sum of files
 * `taskman`
   * Starts the task manager
+* `themeprev [theme]`
+  * Selects a theme and previews it
 * `themesel [Theme]`
   * Selects a theme and sets it
 * `timer`

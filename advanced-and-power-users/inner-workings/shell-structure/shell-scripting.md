@@ -88,6 +88,57 @@ No scripting is complete with conditions, which control the execution of the com
   * Usage: `<value> is <type>`
 * `isnot`: The variable is not of the appropriate type
   * Usage: `<value> isnot <type>`
+* `isplat`: The host is running a selected platform
+  * Usage: `isplat <platform>`
+* `isnotplat`: The host is not running a selected platform
+  * Usage: `isnotplat <platform>`
+
+{% hint style="info" %}
+`<type>` can be one of the following:
+
+* `null`
+* `string`
+* `fullstring`
+* `numeric`
+* `byte`
+* `i8`
+* `ubyte`
+* `u8`
+* `int16`
+* `short`
+* `i16`
+* `int32`
+* `integer`
+* `i32`
+* `int64`
+* `long`
+* `i64`
+* `uint16`
+* `ushort`
+* `u16`
+* `uint32`
+* `uinteger`
+* `u32`
+* `uint64`
+* `ulong`
+* `u64`
+* `decimal`
+* `float`
+* `f32`
+* `double`
+* `f64`
+* `bool`
+* `regex`
+
+`<platform>` can be one of the following:
+
+* `win`: Windows platforms (Windows 10, 11, ...)
+* `mac`: Macintosh platforms (macOS Catalina, Big Sur, ...)
+* `unix`: Unix flavors (Linux, ...)
+* `android`: Android phones and tablets (Android 13, 14, ...)
+{% endhint %}
+
+### Implementation
 
 The conditions all have their base condition class and their interface to be implemented like below:
 

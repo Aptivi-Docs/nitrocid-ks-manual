@@ -56,6 +56,8 @@ Git shell provides you with a list of available commands below:
   * Updates your repository with the latest changes fetched from the remote
 * `push`
   * Pushes all your local commits to the remote
+* `reset [-soft|-mixed|-hard]`
+  * Resets your local Git repository
 * `setid <email> <username>`
   * Identifies yourself with your e-mail and your username
 * `stageall`

@@ -18,6 +18,14 @@ This version is a futuristic magic that brings in many feature additions and spe
 [v0.1.x.x-series](../version-release-notes/v0.1.x.x-series/)
 {% endcontent-ref %}
 
+{% hint style="info" %}
+## **Important notice**
+
+**A breaking change has been made so that every mod that need to work with API version 3.0.25.123 or higher should satisfy the following conditions for their versions:**
+
+* **Mod versions should satisfy the SemVer v2.0 specification. Mod parsing will fail if an invalid version expression is entered.**
+{% endhint %}
+
 ### **Moved events to `KS.Kernel.Events`**
 
 {% code title="Events.vb" lineNumbers="true" %}
@@ -2569,6 +2577,8 @@ There are breaking changes that are caused by the migration of some of the optio
 * Unit conversion
 * Lyrics
 * Calculators
+* Theme and Language studios
+* Color conversion commands
 
 {% hint style="warning" %}
 Your mods will no longer be able to use their APIs, due to how these addons are isolated from the base kernel.
@@ -2699,4 +2709,88 @@ We've decided to correct that by renaming the enumeration value and the property
 
 {% hint style="info" %}
 If you use any of the two affected objects mentioned above, change your references so that it says `Journaling`.
+{% endhint %}
+
+### Moved presentation system to `ConsoleBase`
+
+{% code title="Affected namespaces" lineNumbers="true" %}
+```csharp
+namespace KS.Misc.Presentation
+namespace KS.Misc.Presentation.Elements
+```
+{% endcode %}
+
+The presentation system used to be found in the Misc section of the kernel. However, it has been moved to a completely different section as it has to do more with printing things to the console.
+
+{% hint style="info" %}
+None of the classes are affected, but you should update your namespace imports to the below namespace:
+
+```csharp
+namespace KS.ConsoleBase.Presentation
+namespace KS.ConsoleBase.Presentation.Elements
+```
+{% endhint %}
+
+### Renamed `Flags` to `KernelFlags`
+
+{% code title="Flags.cs" lineNumbers="true" %}
+```csharp
+namespace KS.Kernel
+    public static class Flags
+```
+{% endcode %}
+
+In order to maintain consistency for the naming scheme that we use for our base classes, we've renamed `Flags` to `KernelFlags`.
+
+{% hint style="info" %}
+None of the flags are affected. However, the following changes are made:
+
+* Changed the class name to `KernelFlags`
+* Changed the namespace to `KS.Kernel.Configuration`
+{% endhint %}
+
+### Moved argument and switch management
+
+{% code lineNumbers="true" %}
+```csharp
+// Migrated to KS.Shell.ShellBase.Switches
+public class SwitchInfo
+public static class SwitchManager
+
+// Migrated to KS.Shell.ShellBase.Commands
+public static class ProcessExecutor
+
+// Migrated to KS.Shell.ShellBase.Arguments
+public static class ArgumentsParser
+public class CommandArgumentInfo
+public class CommandArgumentPart
+public static class CommandAutoCompletionList
+public class ProvidedArgumentsInfo
+```
+{% endcode %}
+
+The `KS.Shell.ShellBase.Commands` namespace kept getting bigger with each new feature UESH receives from time to time, so we've decided to clear the confusion and move the above classes to their respective namespaces:
+
+* `KS.Shell.ShellBase.Switches`
+* `KS.Shell.ShellBase.Commands`
+* `KS.Shell.ShellBase.Arguments`
+
+{% hint style="info" %}
+None of the functions are affected, but you must adjust the namespace imports to the above namespaces.
+{% endhint %}
+
+### `HelpDefinition`'s setter is private
+
+{% code title="SwitchInfo.cs" lineNumbers="true" %}
+```csharp
+public string HelpDefinition { get; set; }
+```
+{% endcode %}
+
+When `HelpDefinition` was first implemented, its setter was open, under the assumption that mods can adjust their help definitions when they define their commands.
+
+However, with the improved shell and its command handling code, especially the inception of `CommandArgumentInfo` and its siblings, we've decided to finally make the setter private.
+
+{% hint style="info" %}
+You can no longer use the HelpDefinition property to directly set your command description. Instead, define your command description when making your own `CommandInfo` and its associated `CommandArgumentInfo` and `SwitchInfo` instances, if any.
 {% endhint %}

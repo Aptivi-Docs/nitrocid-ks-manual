@@ -27,3 +27,7 @@ To change the simulated kernel language, follow these steps:
 {% hint style="info" %}
 Note that your account must have either the administrative permissions enabled or the settings management permission granted to be able to use this command.
 {% endhint %}
+
+{% hint style="info" %}
+Additionally, you can change the language using the `chlang` command.
+{% endhint %}

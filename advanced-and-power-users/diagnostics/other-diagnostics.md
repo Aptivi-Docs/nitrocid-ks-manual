@@ -84,6 +84,10 @@ The debug shell allows you to diagnose the kernel in depth. Currently, these too
   * Gets information about the pressed key
 * `lsshells`
   * Lists all the registered shells
+* `lsaddons`
+  * Lists all the loaded kernel addons
+* `debuglog <sessionnum>`
+  * Prints the debug log based on the session number
 
 {% hint style="warning" %}
 This shell just silently exits in the release builds, due to how sophisticated its tools are.

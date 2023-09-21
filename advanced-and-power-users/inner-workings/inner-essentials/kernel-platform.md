@@ -21,6 +21,7 @@ This class provides the following OS-related functions:
 * `IsOnWindows()`: Checks to see if Nitrocid KS is running on Windows.
 * `IsOnUnix()`: Checks to see if Nitrocid KS is running on Unix and its derivatives, such as Linux, macOS, etc.
 * `IsOnMacOS()`: Checks to see if Nitrocid KS is running on Darwin Kernel, the kernel behind macOS.
+* `IsOnAndroid()`: Checks to see if Nitrocid KS is running on Android phones and tablets within Termux.
 
 ## Terminals
 

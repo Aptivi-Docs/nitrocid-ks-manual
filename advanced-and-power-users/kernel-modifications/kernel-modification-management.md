@@ -34,6 +34,14 @@ The mod finalization phase gets executed as soon as the mod parser sees the file
 12. Checks to see if a command can be added to the shell command list and adds it.
 13. Checks the manual file `ModFile.manual` for existence and initializes it.
 
+{% hint style="info" %}
+The mod system will automatically unload the target mod's directory for assembly lookup. If, for some reason, this fails, you can manually unload their paths from the lookup using the below function:
+
+```csharp
+RemovePathFromAssemblySearchPath(Path);
+```
+{% endhint %}
+
 ### Mod Translations
 
 Your mods can now be translated! The mod parser within the kernel also looks for the localization files found under the `KSMods/Localization/Mod-FileVersion/` path. The format is in JSON, and the file name is the same as the three-letter language name. The format is the same as the regular Nitrocid KS localization files embedded as resources. For example, for the French language, the format would look like below:
@@ -58,6 +66,38 @@ You must use the `mklang` command within Nitrocid, pointing to a directory that 
 In the Localizations property, it holds a group of keys and values. The key is an original string extracted from your mod (`"Invalid color template {0}"`) and the value is the translated string (`"Modèle de couleur non valide {0}"`).
 
 When Nitrocid KS detects your localization file, it tries to parse it and adds your translated strings to the `ModInfo` class, which is used by the `Translate` static class to translate your mod strings.
+
+### Mod-to-Mod Dependencies
+
+If you want mods to depend on other mods, you can create a JSON file, called the dependency list file, that holds information about the mod name and the required mod version. The format for the dependency list file should be:
+
+{% code title="Mod-moddeps.json" lineNumbers="true" %}
+```json
+[
+    {
+        "name": "Mod2",
+        "version": "1.0.0"
+    }
+]
+```
+{% endcode %}
+
+The dependencies list file should be saved as the name which satisfies this format: `ModName-moddeps.json`. For example, if your mod, called `ProjectVision`, depends on another mod, called `NitroBoost`, you must create that file called `ProjectVision-moddeps.json` that contains the following contents:
+
+{% code title="ProjectVision-moddeps.json" lineNumbers="true" %}
+```json
+[
+    {
+        "name": "NitroBoost",
+        "version": "1.2.4"
+    }
+]
+```
+{% endcode %}
+
+{% hint style="danger" %}
+If one of the mod dependencies failed to load, the mod parser will report a failure for that mod.
+{% endhint %}
 
 ## Screensaver parsing
 
