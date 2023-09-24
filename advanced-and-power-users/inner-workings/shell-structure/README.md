@@ -305,7 +305,13 @@ class YourCommand : BaseCommand, ICommand
 The only function that you need to override is `Execute()`, which you can override like below:
 
 ```csharp
-public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+```
+
+To support dumb consoles that don't support positioning or complex console functions, you can override `ExecuteDumb()`:
+
+```csharp
+public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
 ```
 
 Additionally, you can override the extra help function, `HelpHelper()`, like this:

@@ -63,3 +63,7 @@ These are the placeholders and what possible values are going to replace them wh
 | `<b:color>`                       | Sets the background color (where `color` is either `0-255` or `0-255;0-255;0-255`) |
 | `<$var>`                          | Uses the value of a UESH variable (where `var` is an initialized variable)         |
 | `<uptime>`                        | Shows the kernel uptime                                                            |
+| `<rid>`                           | Gets the specific RID for your operating system from .NET                          |
+| `<ridgeneric>`                    | Gets the non-specific RID for your operating system                                |
+| `<termemu>`                       | Terminal emulator used (empty on Windows)                                          |
+| `<termtype>`                      | Terminal type used (empty on Windows)                                              |

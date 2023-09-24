@@ -2794,3 +2794,77 @@ However, with the improved shell and its command handling code, especially the i
 {% hint style="info" %}
 You can no longer use the HelpDefinition property to directly set your command description. Instead, define your command description when making your own `CommandInfo` and its associated `CommandArgumentInfo` and `SwitchInfo` instances, if any.
 {% endhint %}
+
+### Implemented original argument string and list
+
+{% code title="BaseCommand.cs" lineNumbers="true" %}
+```csharp
+public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+```
+{% endcode %}
+
+You only had a text of arguments and its list version, which were processed. However, we've considered cases where the unprocessed version might be more appropriate.
+
+So, we've decided to implement the first two variables again, but, this time, the unprocessed version. That means no removal of any content in the text.
+
+{% hint style="info" %}
+The signature for these two functions has changed. You must change your override to match the new signature, like below:
+
+```csharp
+public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+```
+{% endhint %}
+
+### Moved parsers to the `Text` namespace
+
+{% code title="Affected namespaces" lineNumbers="true" %}
+```csharp
+namespace KS.Misc.Probers.Motd
+namespace KS.Misc.Probers.Placeholder
+namespace KS.Misc.Probers.Regexp
+```
+{% endcode %}
+
+These probers used to be loosely located on the `Probers` section of the `Misc` namespace. In order to improve organization, we've relocated these namespaces to the `Text` section of the `Probers` namespace.
+
+{% hint style="info" %}
+These namespaces have been located to the new location. They can be respectively found on:
+
+```csharp
+namespace KS.Misc.Text.Probers.Motd
+namespace KS.Misc.Text.Probers.Placeholder
+namespace KS.Misc.Text.Probers.Regexp
+```
+{% endhint %}
+
+### Remove leftover namespace, `UserProperty`
+
+{% code title="UserManagement.cs" lineNumbers="true" %}
+```csharp
+public enum UserProperty
+```
+{% endcode %}
+
+`UserProperty` was first implemented on 0.0.16.0 as a result of converting the users configuration file to the JSON format from the old CSV format known to have flaws.
+
+Over time, it was populated with the following properties:
+
+* Username
+* Password
+* Admin
+* Anonymous
+* Disabled
+* Permissions
+* FullName
+* PreferredLanguage
+* Groups
+
+However, we've made a third refinement to the login configuration logic, this time, using the JSON serialization and deserialization techniques to reduce the complexity.
+
+As a result, `UserProperty` was rendered useless.
+
+{% hint style="danger" %}
+We advice you to cease using this enumeration. It's neccessary that you use more appropriate ways to get and set user properties to ensure that the mod code transition from Beta 2 or lower to Beta 3 goes smoothly.
+{% endhint %}
