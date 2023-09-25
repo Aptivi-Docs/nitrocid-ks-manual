@@ -88,6 +88,8 @@ The debug shell allows you to diagnose the kernel in depth. Currently, these too
   * Lists all the loaded kernel addons
 * `debuglog <sessionnum>`
   * Prints the debug log based on the session number
+* `excinfo <excNum>`
+  * Gets exception information, including its message
 
 {% hint style="warning" %}
 This shell just silently exits in the release builds, due to how sophisticated its tools are.

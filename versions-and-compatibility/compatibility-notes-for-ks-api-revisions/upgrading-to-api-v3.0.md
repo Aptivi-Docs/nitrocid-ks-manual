@@ -2579,6 +2579,7 @@ There are breaking changes that are caused by the migration of some of the optio
 * Calculators
 * Theme and Language studios
 * Color conversion commands
+* Time information commands
 
 {% hint style="warning" %}
 Your mods will no longer be able to use their APIs, due to how these addons are isolated from the base kernel.
@@ -2867,4 +2868,36 @@ As a result, `UserProperty` was rendered useless.
 
 {% hint style="danger" %}
 We advice you to cease using this enumeration. It's neccessary that you use more appropriate ways to get and set user properties to ensure that the mod code transition from Beta 2 or lower to Beta 3 goes smoothly.
+{% endhint %}
+
+### Moved argument tools
+
+```csharp
+namespace KS.Arguments.ArgumentBase
+```
+
+We've moved the argument tools from `ArgumentBase` to reduce the complexity. Now, the argument tools are no longer one namespace level deep.
+
+{% hint style="info" %}
+The argument tools are moved to the new namespace:
+
+```csharp
+namespace KS.Arguments
+```
+{% endhint %}
+
+### Removed `UserProperty`
+
+{% code title="UserManagement.cs" lineNumbers="true" %}
+```csharp
+public enum UserProperty
+```
+{% endcode %}
+
+`UserProperty` was first implemented as individual flags, into which were turned into this enum somewhere during the development of the most anticipated version, 0.0.16.0. However, it has become increasingly complex to the point that we've made major changes to the configuration reader and writer in two stages during the development of 0.1.0.
+
+As a result, this enum was rendered useless.
+
+{% hint style="danger" %}
+We advice you to cease using this enumeration. Make appropriate changes with the functions that `UserManagement` provides.
 {% endhint %}
