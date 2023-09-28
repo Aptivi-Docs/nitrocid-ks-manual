@@ -12,3 +12,9 @@ The famous Hangman game! It lets you guess what characters are in a word. You ha
 
 * `Any key`: Submits a letter
 * `ESC`: Forfeits from the game
+
+## Difficulties
+
+* Normal (`hangman`): Six attempts max
+* Hardcore (`hangman -hardcore`): One attempt max
+* Practive (`hangman -practice`): Unlimited attempts

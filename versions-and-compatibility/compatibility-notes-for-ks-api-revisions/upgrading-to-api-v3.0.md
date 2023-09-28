@@ -2901,3 +2901,97 @@ As a result, this enum was rendered useless.
 {% hint style="danger" %}
 We advice you to cease using this enumeration. Make appropriate changes with the functions that `UserManagement` provides.
 {% endhint %}
+
+### Remote debugger provides `WriteDebugDeviceOnly()`
+
+{% code title="IRemoteDebugCommand.cs" lineNumbers="true" %}
+```csharp
+void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDeviceInfo Address);
+```
+{% endcode %}
+
+Because we've implemented `RemoteDebugDeviceInfo` and `RemoteDebugDevice` to simplify the process of getting a device information from the list of remote debug devices, we've provided you with a handy function that allows you to write to one debug device, `WriteDebugDeviceOnly()`.
+
+In consequence, we've had to change the Address parameter from `RemoteDebugDeviceInfo` to `RemoteDebugDevice` to allow easier access to this added function.
+
+{% hint style="info" %}
+The `Execute()` function has been changed, so you have to change the signature so that it becomes:
+
+```csharp
+void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device);
+```
+{% endhint %}
+
+### `PromptForSetLang()` removed
+
+{% code title="LanguageManager.cs" lineNumbers="true" %}
+```csharp
+public static void PromptForSetLang(string lang, bool Force = false, bool AlwaysTransliterated = false, bool AlwaysTranslated = false)
+```
+{% endcode %}
+
+In the language manager, `PromptForSetLang()` was used for prompting the user to set the language. However, it wasn't used since `ChLang` was removed several milestones back. `ChLang` was brought back much later, but without the usage of this function. As a result, we've removed this function.
+
+{% hint style="danger" %}
+It's advisable to cease using this function.
+{% endhint %}
+
+### Moved custom screensaver tools
+
+{% code title="CustomSaverTools.cs" lineNumbers="true" %}
+```csharp
+public static class CustomSaverTools
+```
+{% endcode %}
+
+The customized screensaver tools have been moved to the screensaver management class, because we saw that there was absolutely no need for a specialized class for such tools. This allows easier access to the registration and unregistration functions.
+
+{% hint style="info" %}
+You must change your reference to all the tools found inside the above class to the `ScreensaverManager` class if you're using one of these:
+
+* `RegisterCustomScreensaver()`
+* `UnregisterCustomScreensaver()`
+{% endhint %}
+
+### `AutoCompleter` only requires an array
+
+{% code title="CommandAutoCompletionList.cs" lineNumbers="true" %}
+```csharp
+public static Func<string, int, char[], string[]> GetCompletionFunction(string expression)
+```
+{% endcode %}
+
+{% code title="CommandArgumentPart.cs" lineNumbers="true" %}
+```csharp
+public Func<string, int, char[], string[]> AutoCompleter { get; private set; }
+public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string, int, char[], string[]> autoCompleter = null)
+```
+{% endcode %}
+
+Previously, when we used the deprecated ReadLine.Reboot library to handle autocompletion, we used to pass in the three parameters. Now that Nitrocid KS's auto completion handler automatically chops the string to only return the completion of the argument (file name, user name, etc.), these three parameters are no longer needed.
+
+{% hint style="info" %}
+If you're not using these three parameters, the transition is easy. However, if you are using one of them, you'll need to refactor your command info code so that it matches the requirements.
+{% endhint %}
+
+### Added `CommandParameters`
+
+{% code title="ICommand.cs" lineNumbers="true" %}
+```csharp
+int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue);
+int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue);
+```
+{% endcode %}
+
+The base command's Execute function used to only host two parameters, which were the first two arguments in the above function. Since then, many things were added, like original argument string and list, variable setting, and list of switches.
+
+This caused us to introduce the CommandParameters class to allow us to introduce further changes (further additions or improvements) without breaking the whole signature of the above function.
+
+{% hint style="info" %}
+You must change all your command classes to have the below signatures:
+
+```csharp
+int Execute(CommandParameters parameters, ref string variableValue);
+int ExecuteDumb(CommandParameters parameters, ref string variableValue);
+```
+{% endhint %}

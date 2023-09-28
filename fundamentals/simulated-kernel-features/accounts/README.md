@@ -88,8 +88,21 @@ Note that your account must have either the administrative permissions enabled o
 
 If you want to get a list of available usernames that the kernel recognized, you can no longer have to log out of your account to see the list. In the real-world systems, you can get a list of accounts by going to the users section of the system settings. Follow these steps to get the list:
 
-1. Log-in to any available account
-2. Execute the `lsusers` command
+1. Log-in to any administrator account
+2. Open the administration shell by executing the `admin` command
+3. Execute the `lsusers` command
+
+{% hint style="warning" %}
+Note that your account must have either the administrative permissions enabled or the user management permission granted to be able to use this command.
+{% endhint %}
+
+### Get user information
+
+If you want to get information about a user without having to open the user settings file found in your kernel configuration file, follow the steps:
+
+1. Log-in to any administrator account
+2. Open the administration shell by executing the `admin` command
+3. Execute the `userinfo [user]` command
 
 ## Permissions
 

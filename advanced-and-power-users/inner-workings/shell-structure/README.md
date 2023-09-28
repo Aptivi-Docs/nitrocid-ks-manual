@@ -245,7 +245,7 @@ where:
 For `CommandArgumentPart` instances, consult the below constructor to create an array of `CommandArgumentPart` instances when defining your commands:
 
 ```csharp
-public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string, int, char[], string[]> autoCompleter = null)
+public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[]> autoCompleter = null)
 ```
 
 where:

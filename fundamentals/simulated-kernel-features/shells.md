@@ -82,7 +82,7 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Changes the directory to another directory
 * `chklock <file>`
   * Checks to see if a specified file is locked
-* `chlang [-usesyslang] <language>`
+* `chlang [-usesyslang|-user] <language>`
   * Changes the kernel language
 * `choice [-o|-t|-m|-a] [-multiple|-single] <$variable> <answers> <input> [answertitle1] [answertitle2] ...`
   * Makes a choice amd sets it to a UESH variable

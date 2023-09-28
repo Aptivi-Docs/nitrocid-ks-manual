@@ -29,5 +29,7 @@ Note that your account must have either the administrative permissions enabled o
 {% endhint %}
 
 {% hint style="info" %}
-Additionally, you can change the language using the `chlang` command.
+Additionally, you can change the language using the `chlang` command with the ability to change your preferred user language using the `-user` switch.
+
+You can also use this command with the `-usesyslang` switch to change your kernel language to a language that Nitrocid detects based on your UI language set by your operating system.
 {% endhint %}
