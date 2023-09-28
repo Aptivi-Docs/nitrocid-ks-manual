@@ -305,13 +305,13 @@ class YourCommand : BaseCommand, ICommand
 The only function that you need to override is `Execute()`, which you can override like below:
 
 ```csharp
-public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+public override int Execute(CommandParameters parameters, ref string variableValue)
 ```
 
 To support dumb consoles that don't support positioning or complex console functions, you can override `ExecuteDumb()`:
 
 ```csharp
-public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
 ```
 
 Additionally, you can override the extra help function, `HelpHelper()`, like this:
@@ -321,13 +321,9 @@ public override void HelpHelper()
 ```
 
 {% hint style="info" %}
-If you want to support redirection or wrapping, you must either take dumb console support into account on the `Execute()` function by not calling any of the below console wrappers, or you must override the below function to be compatible with the dumb consoles:
+If you want to support redirection or wrapping, you must either take dumb console support into account on the `Execute()` function by not calling any of the below console wrappers, or you must override the `ExecuteDumb()` function shown above to be compatible with the dumb consoles.
 
-```csharp
-public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
-```
-
-The following wrappers should not be called (explicitly and implicitly) on dumb-aware command executors:
+The following wrappers should not be called (explicitly and implicitly) on that function:
 
 * `Out`
 * `CursorLeft` (set)
