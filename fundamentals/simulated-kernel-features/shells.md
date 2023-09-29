@@ -50,6 +50,8 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Opens the archive file to the archive shell
 * `altdate <culture>`
   * Shows date and time in a specified culture
+* `assistant`
+  * Experimental AI Assistant
 * `beep`
   * Makes a beep from the console
 * `bulkrename <targetdir> <pattern> <newname>`

@@ -2995,3 +2995,36 @@ int Execute(CommandParameters parameters, ref string variableValue);
 int ExecuteDumb(CommandParameters parameters, ref string variableValue);
 ```
 {% endhint %}
+
+### Customizable settings entries
+
+This breaking change is divided to the below parts, from the oldest to the newest:
+
+#### Initial migration of settings entries
+
+{% code title="ConfigTools.cs" lineNumbers="true" %}
+```csharp
+public static object GetValueFromEntry(JToken Setting, ConfigType SettingsType)
+public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsToken, ConfigType SettingsType)
+```
+{% endcode %}
+
+{% code title="SettingsApp.cs" lineNumbers="true" %}
+```csharp
+public static void OpenSection(string Section, JToken SettingsToken, ConfigType SettingsType)
+public static void OpenKey(string Section, int KeyNumber, JToken SettingsToken, ConfigType SettingsType)
+public static void VariableFinder(JToken SettingsToken, ConfigType SettingsType)
+private static JToken OpenSettingsResource(ConfigType SettingsType)
+```
+{% endcode %}
+
+Currently, the maintenance of the settings application is complex, because the settings application contained three `Open*` functions that basically did everything.
+
+We've decided to take the first steps by converting the settings entry list embedded JSON files to arrays of classes containing the entry information. Basically, it created two classes dedicated to that:
+
+* `SettingsEntry`: Represents a section
+* `SettingsKey`: Represents a settings key with its options
+
+{% hint style="warning" %}
+Currently, it's not possible to use the above functions anymore with the built-in Nitrocid settings entries, because it relies on a private function that gives you the necessary infromation.
+{% endhint %}
