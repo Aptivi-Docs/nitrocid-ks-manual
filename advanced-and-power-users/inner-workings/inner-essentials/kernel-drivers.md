@@ -17,6 +17,7 @@ The kernel drivers can be called using either the properties that point to the c
 | Encryption  | `IEncryptionDriver`  | `BaseEncryptionDriver`  | Encryption drivers              |
 | Regexp      | `IRegexpDriver`      | `BaseRegexpDriver`      | Regular expression drivers      |
 | DebugLogger | `IDebugLoggerDriver` | `BaseDebugLoggerDriver` | Debug logger drivers            |
+| Encoding    | `IEncodingDriver`    | `BaseEncodingDriver`    | Encoding drivers                |
 
 ### Mods and Drivers
 

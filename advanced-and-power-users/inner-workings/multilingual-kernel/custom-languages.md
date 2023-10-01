@@ -28,23 +28,26 @@ Cool! So, you want to build your language? First, open the `Metadata.json`︎ fi
     "lng": {
         "name": "My Language",
         "transliterable": false,
-        "codepage": 932
+        "codepage": 932,
+        "culture": "en-GB"
     }
 }
 ```
 
-Again, the codepage parameter is optional. If you want your language to be able to be transliterated, make two metadata information about your target language, but append the `-T` postfix to one of the metadata information name, for example:
+Again, the `codepage` parameter and the `culture` parameter is optional. If you want your language to be able to be transliterated, make two metadata information about your target language, but append the `-T` postfix to one of the metadata information name, for example:
 
 ```json
 }
     "lng": {
         "name": "My Language",
-        "transliterable": true
+        "transliterable": true,
+        "culture": "en-GB"
     },
     "lng-T": {
         "name": "My Language",
         "transliterable": true,
-        "codepage": 932
+        "codepage": 932,
+        "culture": "en-GB"
     }
 }
 ```

@@ -43,10 +43,6 @@ When the kernel starts up, different configuration files are read for different 
   * Description: Stores the message of the day after login
   * Type: Text file
   * Location: `Paths.MALPath` under the `KS.Files` namespace
-* Custom Screensaver Settings: `CustomSaverSettings.json`
-  * Description: Stores the custom screensaver settings
-  * Type: JSON
-  * Location: `Paths.CustomSaverSettingsPath` under the `KS.Files` namespace
 * User Groups: `UserGroups.json`
   * Description: Stores the user groups
   * Type: JSON

@@ -2,7 +2,7 @@
 description: Describes about the inner workings of the kernel language feature
 ---
 
-# ⚙ Multilingual Kernel Flow
+# ⚙ Multilingual Kernel
 
 The languages were introduced to the kernel to allow users who don't natively speak English or prefer their native language to use the kernel. This page explains the inner workings of the multilingual kernel.
 
@@ -15,7 +15,7 @@ The kernel languages use the JSON localization files that store the following in
 * `Transliterable`: Whether the language contains the `-T` variant or not (transliterated vs. translated)
   * The type of this variable is a **boolean**
 * `Localizations`: Contains translated strings
-  * The type of this variable is an **object** containing **string key-value pairs**
+  * The type of this variable is an **array** of **strings**
 
 The source of the generated JSON files come from `Nitrocid.LocaleGen`, a tool shipped with the kernel.
 
@@ -34,7 +34,8 @@ Each copy of Nitrocid KS provides you two placeholder folders, `CustomLanguages`
     "lang": {
         "name": "Language",
         "transliterable": false,
-        "codepage": 65001
+        "codepage": 65001,
+        "culture": "en-GB"
     }
 }
 ```
@@ -48,12 +49,14 @@ Both the language entries are required.
     "lang": {
         "name": "Language",
         "transliterable": true,
-        "codepage": 65001
+        "codepage": 65001,
+        "culture": "en-GB"
     },
     "lang-T": {
         "name": "Language",
         "transliterable": true,
-        "codepage": 65001
+        "codepage": 65001,
+        "culture": "en-GB"
     }
 }
 ```
@@ -69,6 +72,8 @@ The variables are shown below:
     * The type of this variable is a **boolean**
   * `codepage`: The codepage to use (Windows only)
     * The type of this variable is an **integer**
+  * `culture`: The culture to use
+    * The type of this variable is a **string**
 
 ### Program parameters
 
@@ -85,7 +90,20 @@ Optionally, the parameters can be specified below:
 
 Once the JSON files are generated in the memory, the program attempts to save them to a path defined in the `Paths.CustomLanguagesPath` variable, which usually resolves to `KSLanguages` under the kernel configuration directory.
 
-For the normal languages, they either get saved to `Translations/Output` in the same path as the kernel executable or to the kernel resources folder if `--CopyToResources` is passed to the program.
+For normal languages, they either get saved to `Translations/Output` in the same path as the kernel executable or to the kernel resources folder if `--CopyToResources` is passed to the program.
+
+The output files are in the following format:
+
+```json
+{
+  "Name": "English (UK)",
+  "Transliterable": false,
+  "Localizations": [
+    "Text here",
+    (...)
+  ]
+}
+```
 
 ## Translation
 

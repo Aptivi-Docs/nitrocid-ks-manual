@@ -11,8 +11,9 @@ This page specifies all the possible configuration formats.
 The most basic pseudo-representation of the settings entry file is printed below to illustrate the concept:
 
 ```json
-{
-    "SectionName": {
+[
+    {
+        "Name": "SectionName",
         "Desc": "Description of the section, usually a short one.",
         "Path": "SectionName",
         "DisplayAs": "Section name to be displayed in the app",
@@ -25,11 +26,13 @@ The most basic pseudo-representation of the settings entry file is printed below
             }
         ]
     }
-}
+]
 ```
 
-Basically, all of the settings entry file start with an object containing one or more of the sections under the selected name for reference. Each section contains these necessary entries:
+Basically, all of the settings entry file start with an array containing one or more of the sections under the selected name for reference. Each section contains these necessary entries:
 
+* `Name`: This variable holds the short section name.
+  * The type of this variable is a **string**
 * `Desc`: This variable holds the description of the section to be displayed in the bottom of the application.
   * The type of this variable is a **string**
   * The string is **localizable**
@@ -67,7 +70,7 @@ The variables that can be omitted are specified below:
 * `IsPathCurrentPath`: If the value takes a relative path, then `true` to neutralize the input path to the current path
   * The type of this variable is a **boolean**
 * `UnsupportedPlatforms`: The value is unsupported on one or more of the host platforms. The settings application won't display this value on an unsupported platform.
-  * The type of this variable is an array of strings that is one of `["windows", "unix", "macos"]`
+  * The type of this variable is an **array** of **strings**, and the possible values are: `["windows", "unix", "macos"]`
 * `ValuePathType`: The path type to use for values. `IsPathCurrentPath` must be `false`.
   * The type of this variable is a **string**
 
@@ -242,9 +245,7 @@ The kernel makes a user configuration entry for each new user created either by 
     "PreferredLanguage": "",
     "Groups": [],
     "Password": "encrypted password",
-    "Admin": false,
-    "Anonymous": false,
-    "Disabled": false,
+    "Flags": 1,
     "Permissions": [],
     "CustomSettings": {
       "key1": [
@@ -268,12 +269,11 @@ Let's explain each key one by one:
   * The type of this variable is an **array** of **string**
 * `Password`: Stores the password
   * The type of this variable is a **string** encoded with the SHA256 hash
-* `Admin`: If enabled, all the permissions are granted
-  * The type of this variable is a **boolean**
-* `Anonymous`: The user won't be shown in the list if enabled
-  * The type of this variable is a **boolean**
-* `Disabled`: The user can't be logged in to if true
-  * The type of this variable is a **boolean**
+* `Flags`: Specifies a number representing the flags
+  * The type of this variable is an **integer** that can be a sum of the following flags:
+    * `1`: Administrator
+    * `2`: Anonymous
+    * `4`: Disabled
 * `Permissions`: Stores the array of permissions found under [the permission list, `PermissionTypes`](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Users/Permissions/PermissionTypes.cs).
   * The type of this variable is an **array** of **string**
 * `CustomSettings`: Specifies the customized settings entries
@@ -297,7 +297,7 @@ Let's explain each key one by one:
 * `GroupName`: The name of the group
   * The type of this variable is a **string**
 * `Permissions`: Stores the array of permissions found under [the permission list, `PermissionTypes`](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Users/Permissions/PermissionTypes.cs).
-  * The type of this variable is an **array** of **string**
+  * The type of this variable is an **array** of **strings**
 
 ## Alias configuration
 
@@ -329,8 +329,10 @@ The kernel makes a debug device configuration entry for each new device connecte
 ```json
 [
   {
+    "Address": "192.168.1.100",
     "Name": "device",
     "Blocked": false,
+    "MuteLogs": false,
     "ChatHistory": []
   }
 ]
@@ -338,9 +340,13 @@ The kernel makes a debug device configuration entry for each new device connecte
 
 Let's explain each key one by one:
 
+* `Address`: Stores the device address
+  * The type of this variable is a **string**
 * `Name`: Stores the name of the remote debug device
   * The type of this variable is a **string**
 * `Blocked`: Whether the device is banned or not
+  * The type of this variable is a **boolean**
+* `MuteLogs`: Whether to mute the kernel debug logs or not. Useful for conversations.
   * The type of this variable is a **boolean**
 * `ChatHistory`: Recent chat history
   * The type of this variable is an **array** of **strings**.
