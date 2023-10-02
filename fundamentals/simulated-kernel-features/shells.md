@@ -110,7 +110,7 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Creates another copy of a source file under the target
 * `date [-set=variable] [-date|-time|-full] [-utc]`
   * Shows the date and/or the time
-* `decodetext [-key=value] [-iv=value] <algorithm> <encodedstring>`
+* `decodetext [-key=value] [-iv=value] <encodedstring> [algorithm]`
   * Decodes the text using the encoded string that represents the byte values each padded to three digits
 * `dict <word>`
   * Defines a word
@@ -126,7 +126,7 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Echoes a text
 * `edit [-hex|-json|-text] <file>`
   * Edits a file
-* `encodetext [-key=value] [-iv=value] <algorithm> <string>`
+* `encodetext [-key=value] [-iv=value] <string> [algorithm]`
   * Encodes a text and gives you the byte values each padded to three digits that represent an encoded text, the key used, and the initialization vector used.
 * `exec <process> [arguments]`
   * Executes an external process
@@ -142,6 +142,8 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Use an FTP shell to interact with the FTP server
 * `genname [-set=variable] [-t] [namescount] [nameprefix] [namesuffix] [surnameprefix] [surnamesuffix]`
   * Name and surname generator
+* `getkeyiv [-set=variable] [algorithm]`
+  * Gets the symmetrical key and initialization vector
 * `gettimeinfo [-now] <date>`
   * Gets the date and time information
 * `get <URL> [-outputpath=<path>]`

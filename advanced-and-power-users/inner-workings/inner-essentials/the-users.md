@@ -41,12 +41,20 @@ Login handlers are login interfaces in which Nitrocid summons in order to commen
   * This is the final stage in which the handler should ask the password for any selected user. For security reasons, we've chosen not to allow auto-logins for passwordless users, except the modern logon handler provided by Nitrocid.
 
 {% hint style="danger" %}
-Be honest when dealing with the return values for both `UserSelector` and `PasswordHandler`. Make sure that you use the correct values for both of them. `PasswordHandler` returns either `true` or `false` in the follwoing conditions:
+Be honest when dealing with the return values for both `UserSelector` and `PasswordHandler`. Make sure that you use the correct values for both of them. `PasswordHandler` returns either `true` or `false` in the following conditions:
 
 * `true`: if the password is valid
 * `false`: if the password is invalid
 {% endhint %}
 
-{% hint style="warning" %}
-Currently, we don't support registering and unregistering your own login handler. Until improvements are made to the login system, we suggest that you don't create one.
+### Registering handlers
+
+You can now add or remove your custom login handlers to make your kernel use your login screen. To add your handler, you can use the `RegisterHandler()` function to add it to the list of available handlers. This allows you to customize your login screen to the one that you made.
+
+Similarly, if you want to unregister your login handler, you can do so by using the `UnregisterHandler()` function.
+
+After that, you should be able to find your login handler when trying to change your login screen using the `settings` command.
+
+{% hint style="info" %}
+If you want your mod to automatically populate your custom login handler on startup, you may use the `RegisterHandler()` function, but make sure to unregister it using the `UnregisterHandler()` function when your mod is being unloaded.
 {% endhint %}

@@ -21,7 +21,7 @@ This version is a futuristic magic that brings in many feature additions and spe
 {% hint style="info" %}
 ## **Important notice**
 
-**A breaking change has been made so that every mod that need to work with API version 3.0.25.123 or higher should satisfy the following conditions for their versions:**
+**A breaking change has been made so that every mod that need to work with API version `3.0.25.123` or higher should satisfy the following conditions for their versions:**
 
 * **Mod versions should satisfy the SemVer v2.0 specification. Mod parsing will fail if an invalid version expression is entered.**
 {% endhint %}
@@ -3027,4 +3027,27 @@ We've decided to take the first steps by converting the settings entry list embe
 
 {% hint style="warning" %}
 Currently, it's not possible to use the above functions anymore with the built-in Nitrocid settings entries, because it relies on a private function that gives you the necessary infromation.
+{% endhint %}
+
+#### Initial support for custom settings
+
+{% code title="ConfigTools.cs" lineNumbers="true" %}
+```csharp
+public static object GetValueFromEntry(SettingsKey Setting, ConfigType SettingsType)
+public static List<InputChoiceInfo> FindSetting(string Pattern, SettingsEntry[] SettingsEntries, ConfigType SettingsType)
+```
+{% endcode %}
+
+{% code title="SettingsApp.cs" lineNumbers="true" %}
+```csharp
+public static void OpenSection(string Section, SettingsEntry SettingsSection, ConfigType SettingsType)
+public static void OpenKey(int KeyNumber, SettingsEntry SettingsSection, ConfigType SettingsType)
+public static void VariableFinder(SettingsEntry[] SettingsEntries, ConfigType SettingsType)
+```
+{% endcode %}
+
+Custom settings are implemented to increase the flexibility of the kernel configuration so that your mods can now have their own settings entry list file. This means that your mods are now configurable in a way that Nitrocid's settings application can handle all your settings.
+
+{% hint style="warning" %}
+Note that settings registration and unregistration feature is not done yet, so the settings app might not be able to deal with your custom settings yet.
 {% endhint %}

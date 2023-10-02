@@ -76,3 +76,7 @@ The settings format is out of scope for this page, so click the below link to le
 {% content-ref url="settings-format.md" %}
 [settings-format.md](settings-format.md)
 {% endcontent-ref %}
+
+## Custom settings
+
+The customized settings feature has been implemented initially, but we didn't verify that it works with the settings command, so we didn't document this feature. However, documentation for this feature is coming soon.
