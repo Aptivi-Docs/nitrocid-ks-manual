@@ -16,6 +16,10 @@ The simulated kernel attempts to simulate this functionality in its complete sta
 
 <figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
+Extra screensavers are bundled as a screensaver pack addon.
+{% endhint %}
+
 To set the screensaver to your favorite screensaver, use the `setsaver` command. Since this command is an administrative command, you either need to use an administrator account or use an account that has been granted the administrative command permissions.
 
 1. Log-in to the system account, root, or any of the administrators or users that has at least the strict command running permissions

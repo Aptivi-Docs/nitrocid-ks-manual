@@ -10,6 +10,10 @@ Installing Nitrocid KS on Linux is straightforward, but we recommend installing 
 
 Before performing the installation, your Linux system must meet the following requirements:
 
+{% hint style="info" %}
+Extra kernel add-ons may require additional hardware on your computer to work. For example, the BassBoom addon requires that you have audio drivers installed on your computer.
+{% endhint %}
+
 ### KS v0.1.0 or later
 
 To run Nitrocid KS in the absolute minimum requirements, your computer needs to have the following installed:
@@ -48,12 +52,14 @@ There are several ways to install Nitrocid KS on Linux systems.
 If you like to manually unpack the Nitrocid KS packages, follow these steps:
 
 1. Ensure that you have all the required software installed
-2. Download the latest release RAR file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).\
-   \
-   _For 0.0.24.x or older, files that end with the `-dotnet` prefix means that it's for .NET 6.0._
+2. Download the latest release RAR file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
 3. Unpack the RAR archive to any folder of your choice
 4. Open your favorite terminal emulator, like Konsole, and change the working directory to a folder containing the Nitrocid KS executable
 5. Execute `dotnet Nitrocid.dll` to start the kernel
+
+{% hint style="info" %}
+For 0.0.24.x or older, files that end with the `-dotnet` prefix means that it's for .NET 6.0.
+{% endhint %}
 
 ### Method 2: Ubuntu PPA
 

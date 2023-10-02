@@ -38,24 +38,8 @@ The buttons below lists some of the features that blow your mind.
 [games-and-amusements](games-and-amusements/)
 {% endcontent-ref %}
 
-{% content-ref url="common-programs/calendar.md" %}
-[calendar.md](common-programs/calendar.md)
-{% endcontent-ref %}
-
-{% content-ref url="common-programs/stopwatch-and-timer.md" %}
-[stopwatch-and-timer.md](common-programs/stopwatch-and-timer.md)
-{% endcontent-ref %}
-
-{% content-ref url="common-programs/calculator.md" %}
-[calculator.md](common-programs/calculator.md)
-{% endcontent-ref %}
-
-{% content-ref url="common-programs/contacts.md" %}
-[contacts.md](common-programs/contacts.md)
-{% endcontent-ref %}
-
-{% content-ref url="common-programs/files-and-folders.md" %}
-[files-and-folders.md](common-programs/files-and-folders.md)
+{% content-ref url="common-programs/" %}
+[common-programs](common-programs/)
 {% endcontent-ref %}
 
 {% content-ref url="bootable-simulation.md" %}

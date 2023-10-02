@@ -36,6 +36,8 @@ However, for Linux and Android systems, you must also install the following depe
 
 {% hint style="info" %}
 Depending on a distribution and the amount of packages installed in the current system, the download size will be from 30 to 100 MB.
+
+For addons, extra dependencies might be needed to work. For example, the BassBoom addon might need PulseAudio or ALSA working.
 {% endhint %}
 
 Dependency information for each package installed in your target system:

@@ -7,31 +7,30 @@ description: This page describes how to manage your kernel mods
 Kernel modification files are stored in the following directories that are found under the kernel configuration directory:
 
 * `KSMods`: Stores all the modifications under the `.dll` extension
-* `KSScreensavers`: Stores all the custom screensavers under the `.dll` extension
 * `KSSplashes`: Stores all the kernel splashes under the `.dll` extension
 
 Custom splashes get loaded before the configuration files load, so people who use custom splashes in their kernel configuration will actually see their custom splashes when the kernel starts up.
 
-However, for mods and screensavers, they get loaded late, so they can load properly. This loading is done by scanning the `KSMods` and the `KSScreensavers` directory and querying every `.DLL` file with `ParseMod()` and `ParseCustomSavers()`.
+However, for mods and screensavers, they get loaded late, so they can load properly. This loading is done by scanning the `KSMods` directory and querying every `.DLL` file with `ParseMod()`.
 
 ## Mod parsing
 
-The mod finalization phase gets executed as soon as the mod parser sees the file as a mod (a `.dll` assembly that implements `IScript`), with a call to the `FinalizeMods()` function. Here's what it does:
+The mod finalization phase gets executed as soon as the mod parser sees the file as a mod (a `.dll` assembly that implements `IMod`), with a call to the `FinalizeMods()` function. Here's what it does:
 
-1. If it sees the script as an instance of `IScript`, it fires the `ModParsed` event
+1. If it sees the script as an instance of `IMod`, it fires the `ModParsed` event
 2. Adds mod dependency path to the assembly lookup path (`KSMods/Deps/Mod-FileVersion/`)
 3. Checks the expected mod API minimum version with the kernel API version to see if there is a mismatch
    * If the checker found that the mod needs a higher API version, the mod parsing fails with the appropriate message
    * If the checker couldn't determine the minimum API version required by the kernel mod, it goes ahead, but with a warning that the mod may fail to start.
-4. Calls the `script.StartMod()` function in your script
+4. Checks the mod localization file from the path: `KSMods/Localization/Mod-FileVersion/`
 5. Checks for the mod part name. **If there is no name, the mod parsing fails.**
-6. Checks for the mod commands. **If there is a command info entry with an empty command, the mod parsing fails.**
-7. If the mod has no name, the mod will be given the name using the file name.
-8. Checks for conflicts of the mod part names.
+6. If the mod has no name, the mod will be given the name using the file name.
+7. Checks for conflicts of the mod part names.
+8. Checks the mod for the version and its SemVer 2.0 compliance. **If the version is not a SemVer 2.0 compliant, mod parsing fails.**
 9. Adds the mod part to the parts list with the mod part instance
-10. Checks the mod for the version.
-11. Checks the mod commands for any conflict with the existing shell commands and resolves it.
-12. Checks to see if a command can be added to the shell command list and adds it.
+10. Satisfies the mod dependencies by loading them as appropriate.
+11. Calls the `script.StartMod()` function in your script
+12. Adds the mod to the mod manager
 13. Checks the manual file `ModFile.manual` for existence and initializes it.
 
 {% hint style="info" %}

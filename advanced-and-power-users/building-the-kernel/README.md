@@ -4,7 +4,7 @@ description: Let's build it!
 
 # ⚒ Building the Kernel
 
-Building the entire kernel simulator on your computer is great, since this software is already open-source under the [GNU GPL v3.0](https://github.com/Aptivi/Kernel-Simulator/blob/master/LICENSE) license. To be able to build the kernel simulator, choose your platform below.
+Building Nitrocid on your computer is great, since this software is already open-source under the [GNU GPL v3.0](https://github.com/Aptivi/Kernel-Simulator/blob/master/LICENSE) license. To be able to build Nitrocid, choose your platform below.
 
 {% content-ref url="building-on-windows.md" %}
 [building-on-windows.md](building-on-windows.md)

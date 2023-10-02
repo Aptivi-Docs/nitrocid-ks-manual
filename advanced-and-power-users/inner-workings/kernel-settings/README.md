@@ -48,8 +48,6 @@ When the kernel starts up, different configuration files are read for different 
   * Type: JSON
   * Location: `Paths.UserGroupsPath` under the `KS.Files` namespace
 
-You can consult the files used by KS for available kernel settings [here](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Resources/Settings/SettingsEntries.json), the screensaver settings [here](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Resources/Settings/ScreensaverSettingsEntries.json), and the splash settings [here](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Resources/Settings/SplashSettingsEntries.json). These files also contain descriptions for each settings entry.
-
 ## Settings
 
 <figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>

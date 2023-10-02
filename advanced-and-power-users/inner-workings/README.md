@@ -22,30 +22,6 @@ To learn more about how Unified Extensible SHell (UESH) works, click on the belo
 [shell-structure](shell-structure/)
 {% endcontent-ref %}
 
-## Placeholders
-
-The kernel placeholders are described below.
-
-{% content-ref url="inner-essentials/kernel-placeholders.md" %}
-[kernel-placeholders.md](inner-essentials/kernel-placeholders.md)
-{% endcontent-ref %}
-
-## Permissions
-
-User permissions are a thing. Consult the below page for more info.
-
-{% content-ref url="inner-essentials/the-permissions.md" %}
-[the-permissions.md](inner-essentials/the-permissions.md)
-{% endcontent-ref %}
-
-## Drivers
-
-Kernel drivers are a great thing! Plug your interface in to the kernel and play!
-
-{% content-ref url="inner-essentials/kernel-drivers.md" %}
-[kernel-drivers.md](inner-essentials/kernel-drivers.md)
-{% endcontent-ref %}
-
 ## Languages
 
 Do you want to know how the kernel translates languages? Click below!
@@ -54,18 +30,18 @@ Do you want to know how the kernel translates languages? Click below!
 [multilingual-kernel](multilingual-kernel/)
 {% endcontent-ref %}
 
-## Arguments
+## Console Input
 
-Command-line arguments control the executable in different ways.
+Nitrocid KS provides console input functions, but is a test point for future Terminaux releases for development versions of Nitrocid.
 
-{% content-ref url="inner-essentials/kernel-arguments.md" %}
-[kernel-arguments.md](inner-essentials/kernel-arguments.md)
+{% content-ref url="console-input/" %}
+[console-input](console-input/)
 {% endcontent-ref %}
 
-## Remote Controlling
+## Inner Essentials
 
-Do you want to remotely control the kernel? Consult the below page to learn how!
+For other internal workings, consult the below page to get started.
 
-{% content-ref url="inner-essentials/remote-procedure.md" %}
-[remote-procedure.md](inner-essentials/remote-procedure.md)
+{% content-ref url="inner-essentials/" %}
+[inner-essentials](inner-essentials/)
 {% endcontent-ref %}

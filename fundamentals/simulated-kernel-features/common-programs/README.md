@@ -29,3 +29,11 @@ Nitrocid KS contains some of the common programs that have their own documentati
 {% content-ref url="unit-converter.md" %}
 [unit-converter.md](unit-converter.md)
 {% endcontent-ref %}
+
+{% content-ref url="git-shell.md" %}
+[git-shell.md](git-shell.md)
+{% endcontent-ref %}
+
+{% content-ref url="to-do-list.md" %}
+[to-do-list.md](to-do-list.md)
+{% endcontent-ref %}

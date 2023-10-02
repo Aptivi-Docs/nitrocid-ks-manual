@@ -43,16 +43,17 @@ Once you're done, follow the steps:
    * `apt dist-upgrade`
 6. Install the .NET 6.0 runtime
    * `apt install dotnet-runtime-6.0`
-7.  Install wget to download the latest release from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
-
-    * `apt install wget`
-    * `wget https://github.com/Aptivi/Kernel-Simulator/releases/download/v0.x.x.x-beta/0.x.x.x-bin.rar`
-
-    _For 0.0.24.x or older, files that end with the `-dotnet` prefix means that it's for .NET 6.0._
+7. Install wget to download the latest release from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
+   * `apt install wget`
+   * `wget https://github.com/Aptivi/Kernel-Simulator/releases/download/v0.x.x.x-beta/0.x.x.x-bin.rar`
 8. Install unrar (from multiverse) to extract the files
    * `apt install unrar`
    * `unrar 0.x.x.x-bin.rar`
 9. Execute `dotnet Nitrocid.dll`
+
+{% hint style="info" %}
+For 0.0.24.x or older, files that end with the `-dotnet` prefix means that it's for .NET 6.0.
+{% endhint %}
 
 ## Bleeding-edge
 
