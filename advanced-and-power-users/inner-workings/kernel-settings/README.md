@@ -56,6 +56,8 @@ The kernel provides an easy-to-use tool to seamlessly configure the kernel setti
 
 * `-saver`: Lets you configure the screensavers
 * `-splash`: Lets you configure the splashes
+* `-addonsaver`: Lets you configure the screensavers from the Extra Screensavers addon
+* `-type=configType`: Lets you configure a custom section of the kernel settings, including your mod-defined ones.
 
 Selecting a section leads to the settings application listing all the available configuration options, which you can then set their individual options. It even allows you to save the settings if you like the current configuration, load the user settings, and find a settings entry for easier access.
 
@@ -77,4 +79,8 @@ The settings format is out of scope for this page, so click the below link to le
 
 ## Custom settings
 
-The customized settings feature has been implemented initially, but we didn't verify that it works with the settings command, so we didn't document this feature. However, documentation for this feature is coming soon.
+The custom settings and its relationship with your mods is out of scope for this page, so click the below link to learn more.
+
+{% content-ref url="custom-settings.md" %}
+[custom-settings.md](custom-settings.md)
+{% endcontent-ref %}

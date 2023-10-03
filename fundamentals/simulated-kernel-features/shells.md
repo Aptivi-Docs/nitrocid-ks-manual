@@ -222,6 +222,8 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Starts the Retro Kernel Simulator
 * `rm <directory/file>`
   * Removes a directory or file
+* `rmsec <directory/file>`
+  * Removes a directory or file securely
 * `roulette`
   * Russian Roulette
 * `rss [feedlink]`
@@ -379,7 +381,7 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Saves the current directory to the kernel configuration file
 * `setsaver <customsaver/builtinsaver>`
   * Sets the default screensaver to a built-in screensaver or a custom screensaver
-* `settings [-saver|-splash]`
+* `settings [-saver|-splash|-addonsaver|-type=settingstype]`
   * Opens the settings application in either the normal mode, screensaver mode, or splash mode
 * `taskman`
   * Task management

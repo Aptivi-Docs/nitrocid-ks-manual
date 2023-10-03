@@ -15,7 +15,6 @@ The most basic pseudo-representation of the settings entry file is printed below
     {
         "Name": "SectionName",
         "Desc": "Description of the section, usually a short one.",
-        "Path": "SectionName",
         "DisplayAs": "Section name to be displayed in the app",
         "Keys": [
             {
@@ -36,8 +35,6 @@ Basically, all of the settings entry file start with an array containing one or 
 * `Desc`: This variable holds the description of the section to be displayed in the bottom of the application.
   * The type of this variable is a **string**
   * The string is **localizable**
-* `Path`: This variable holds the start of the JSON path to be filled by the application for each settings entry.
-  * The type of this variable is a **string**
 * `DisplayAs`: This variable holds the text to display in the settings application.
   * The type of this variable is a **string**
   * The string is **localizable**

@@ -24,6 +24,10 @@ This version is a futuristic magic that brings in many feature additions and spe
 **A breaking change has been made so that every mod that need to work with API version `3.0.25.123` or higher should satisfy the following conditions for their versions:**
 
 * **Mod versions should satisfy the SemVer v2.0 specification. Mod parsing will fail if an invalid version expression is entered.**
+
+**Additionally, a breaking change has been made starting from API version `3.0.25.154` that will make the mod loader fail if:**
+
+* **the mod is not strongly signed using any strong naming key and loading untrusted mods is disabled.**
 {% endhint %}
 
 ### **Moved events to `KS.Kernel.Events`**
@@ -3048,6 +3052,34 @@ public static void VariableFinder(SettingsEntry[] SettingsEntries, ConfigType Se
 
 Custom settings are implemented to increase the flexibility of the kernel configuration so that your mods can now have their own settings entry list file. This means that your mods are now configurable in a way that Nitrocid's settings application can handle all your settings.
 
-{% hint style="warning" %}
-Note that settings registration and unregistration feature is not done yet, so the settings app might not be able to deal with your custom settings yet.
-{% endhint %}
+#### Finalization of the custom settings
+
+<pre class="language-csharp" data-title="KernelPathType.cs" data-line-numbers><code class="lang-csharp">public enum KernelPathType
+{
+    (...)
+<strong>    /// &#x3C;summary>
+</strong><strong>    /// Splash configuration file.
+</strong><strong>    /// &#x3C;/summary>
+</strong><strong>    SplashConfiguration,
+</strong>    (...)
+}
+</code></pre>
+
+{% code title="Config.cs" lineNumbers="true" %}
+```csharp
+public static KernelSplashConfig SplashConfig
+```
+{% endcode %}
+
+<pre class="language-csharp" data-title="ConfigType.cs" data-line-numbers><code class="lang-csharp">public enum ConfigType
+{
+<strong>    /// &#x3C;summary>
+</strong><strong>    /// Splash configuration
+</strong><strong>    /// &#x3C;/summary>
+</strong><strong>    Splash
+</strong>}
+</code></pre>
+
+The custom settings feature has been finalized to the point that it's reached the stable stage, so we've decided to move almost all the screensaver and splash entries (from their addons) from the base Nitrocid configuration entry JSON files to their appropriate entries.
+
+As a result, we're in the process of removing the leftovers entirely so that consistency is achieved.

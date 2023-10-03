@@ -12,6 +12,13 @@ The kernel modifications also let you call the kernel functions and userspace fu
 You can also use Visual Basic in your mod code, but we recommend that you avoid using it if possible as we no longer support that language.
 {% endhint %}
 
+{% hint style="info" %}
+When building mods, you have to do the following:
+
+* Make sure that your mod has a version that is SemVer v2.0 compliant. You can learn more about how to assign that version in the next few pages.
+* Make sure that your mod is strongly signed using your own strong name key.
+{% endhint %}
+
 ## Management
 
 Deep explanation of the kernel modification management can be found in the below page:
