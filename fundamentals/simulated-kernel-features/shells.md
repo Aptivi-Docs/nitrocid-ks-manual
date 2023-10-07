@@ -112,6 +112,8 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Shows the date and/or the time
 * `decodetext [-key=value] [-iv=value] <encodedstring> [algorithm]`
   * Decodes the text using the encoded string that represents the byte values each padded to three digits
+* `decodefile [-key=value] [-iv=value] <encodedFile> [algorithm]`
+  * Decodes the file
 * `dict <word>`
   * Defines a word
 * `dirinfo <directory>`
@@ -128,6 +130,8 @@ Your custom mods can also use this feature to set the variable. To learn more, p
   * Edits a file
 * `encodetext [-key=value] [-iv=value] <string> [algorithm]`
   * Encodes a text and gives you the byte values each padded to three digits that represent an encoded text, the key used, and the initialization vector used.
+* `encodefile [-key=value] [-iv=value] <file> [algorithm]`
+  * Encodes the file
 * `exec <process> [arguments]`
   * Executes an external process
 * `fileinfo <file>`

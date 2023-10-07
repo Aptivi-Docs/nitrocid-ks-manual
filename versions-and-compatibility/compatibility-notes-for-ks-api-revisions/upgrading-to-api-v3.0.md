@@ -3082,4 +3082,79 @@ public static KernelSplashConfig SplashConfig
 
 The custom settings feature has been finalized to the point that it's reached the stable stage, so we've decided to move almost all the screensaver and splash entries (from their addons) from the base Nitrocid configuration entry JSON files to their appropriate entries.
 
-As a result, we're in the process of removing the leftovers entirely so that consistency is achieved.
+#### Removed the `ConfigType` enumeration
+
+{% code title="Config.cs" lineNumbers="true" %}
+```csharp
+public static BaseKernelConfig GetKernelConfig(ConfigType type)
+public static void CreateConfig(ConfigType type, string ConfigPath)
+public static bool TryCreateConfig(ConfigType type, string ConfigPath)
+public static void ReadConfig(ConfigType type)
+public static void ReadConfig(ConfigType type, string ConfigPath)
+public static bool TryReadConfig(ConfigType type)
+public static bool TryReadConfig(ConfigType type, string ConfigPath)
+```
+{% endcode %}
+
+{% code title="ConfigTools.cs" lineNumbers="true" %}
+```csharp
+public static SettingsEntry[] OpenSettingsResource(ConfigType SettingsType)
+public static string TranslateBuiltinConfigType(ConfigType SettingsType)
+```
+{% endcode %}
+
+{% code title="ConfigType.cs" lineNumbers="true" %}
+```csharp
+public enum ConfigType
+```
+{% endcode %}
+
+{% code title="SettingsApp.cs" lineNumbers="true" %}
+```csharp
+public static void OpenMainPage(ConfigType SettingsType)
+```
+{% endcode %}
+
+This is the final part of the configuration system customizability. This change removes the `ConfigType` enumeration to increase consistency across the custom settings functionality, thus removing several of the above functions.
+
+{% hint style="info" %}
+This configuration system overhaul is massive, so we recommend that you:
+
+* Stop using the removed functions,
+* Adjust your code to align with the new configuration system, and
+* Migrate your "custom settings app" for your mods (if implemented) to use Nitrocid's settings handler by registering and unregistering your settings classes as per guidance.
+{% endhint %}
+
+### Help system refactors
+
+{% code title="HelpSystem.cs" lineNumbers="true" %}
+```csharp
+public static class HelpSystem
+```
+{% endcode %}
+
+The help system code has been moved to its own namespace, because it has nothing to do with command management or execution, although it displays the usage of the commands. This is to ensure consistent organization of the UESH shell portion of the simulated system, backed by the Nitrocid kernel.
+
+{% hint style="info" %}
+This class has been moved to the `HelpPrint` class in the `KS.Shell.ShellBase.Help` namespace.
+{% endhint %}
+
+### Moved several filesystem classes
+
+```csharp
+namespace KS.Files.Print
+namespace KS.Files.Querying
+namespace KS.Files.Read
+```
+
+Several of the filesystem classes were moved to more appropriate places so that we can ensure better organization related to the filesystem namespace.
+
+{% hint style="info" %}
+All classes which were located on the Print namespace were mvoed to `KS.Files.Operations.Printing`.
+
+Similarly, all querying classes, such as `Checking` and `Parsing`, were moved to `KS.Files.Operations.Querying`.
+
+Also, the reading class name was changed to `Reading` and its namespace changed to `KS.Files.Operations`.
+
+Additionally, the `ReadToEndAndSeek()` function was moved to the Reading class, causing the `StreamRead` class to be removed.
+{% endhint %}
