@@ -3158,3 +3158,36 @@ Also, the reading class name was changed to `Reading` and its namespace changed 
 
 Additionally, the `ReadToEndAndSeek()` function was moved to the Reading class, causing the `StreamRead` class to be removed.
 {% endhint %}
+
+### Conflicting write overloads reduced
+
+{% code title="TextWriterColor.cs and all similar writers" lineNumbers="true" %}
+```csharp
+public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorType, params object[] vars)
+public static void Write(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+public static void Write(string Text, bool Line, ConsoleColors color, params object[] vars)
+public static void Write(string Text, bool Line, bool Highlight, ConsoleColors color, params object[] vars)
+public static void Write(string Text, bool Line, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
+public static void Write(string Text, bool Line, bool Highlight, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
+public static void Write(string Text, bool Line, Color color, params object[] vars)
+public static void Write(string Text, bool Line, bool Highlight, Color color, params object[] vars)
+public static void Write(string Text, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars)
+public static void Write(string Text, bool Line, bool Highlight, Color ForegroundColor, Color BackgroundColor, params object[] vars)
+```
+{% endcode %}
+
+Ever since Terminaux was released to the public, the `Color` class had an implicit operator which would take either an integer, a string, or a `ConsoleColors` value and create a new `Color` class based on these values. This caused us to have to fix every function call that contain strings as their first parameters, since they were mistaken for creating a new color, causing graphical artifacts.
+
+We've recommended mod developers who suffer from this ambiguity issue append a `vars:` prefix in its appropriate place and write `new object[] { args }`, but this is a big overhead.
+
+So, we've decided to rename function names that take colors to these variants:
+
+* `Write()`: for plain writing in default colors
+* `WriteColor()`: for writing with custom foreground colors
+* `WriteColorBack()`: for writing with custom foreground and background colors
+* `WriteKernelColor()`: for writing with kernel-defined color types
+
+{% hint style="info" %}
+You no longer need to override the vars value using the above method. Instead, you can replace these calls with one of the above functions, based on the color type.
+{% endhint %}

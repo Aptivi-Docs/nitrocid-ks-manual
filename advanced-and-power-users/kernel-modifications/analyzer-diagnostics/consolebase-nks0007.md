@@ -38,22 +38,6 @@ To get a brief insight about how this analyzer works, compare the two code block
 </strong>}
 </code></pre>
 
-{% hint style="warning" %}
-You may need to confirm which overload of Write is used by hovering over the Write function in your Visual Studio and confirming that the overload is:
-
-```csharp
-public static void Write(string Text, bool Line, params object[] vars)
-```
-
-If, instead, you're seeing the third parameter related to `Color`, you may need to explicitly add the `vars:` prefix prior to the list of formattable types, like this:
-
-```csharp
-TextWriterColor.Write("Hi! I'm {0}!", false, vars: new object[] { "Sarah" });
-```
-
-Currently, this is the limitation of the `TextWriterColor` due to changes introduced to Terminaux, but we're working on resolving this limitation very soon.
-{% endhint %}
-
 ### Suppression
 
 You can suppress this suggestion by including it in the appropriate place, whichever is convenient.
