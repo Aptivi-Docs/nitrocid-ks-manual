@@ -27,6 +27,14 @@ Deep explanation of the kernel modification management can be found in the below
 [kernel-modification-management.md](kernel-modification-management.md)
 {% endcontent-ref %}
 
+## Communication
+
+Deep explanation of the inter-mod communication can be found in the below page:
+
+{% content-ref url="inter-mod-communication.md" %}
+[inter-mod-communication.md](inter-mod-communication.md)
+{% endcontent-ref %}
+
 ## Build...
 
 If you'd like to build your own modifications, great! Click on the master page below to select what you want to build!

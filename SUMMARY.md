@@ -119,6 +119,7 @@
     * [📉 ConsoleBase - NKS0007](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0007.md)
     * [📉 ConsoleBase - NKS0008](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0008.md)
   * [🔧 Kernel Modification Management](advanced-and-power-users/kernel-modifications/kernel-modification-management.md)
+  * [📞 Inter-Mod Communication](advanced-and-power-users/kernel-modifications/inter-mod-communication.md)
 * [🦠 Diagnostics](advanced-and-power-users/diagnostics/README.md)
   * [🔬 Debugging](advanced-and-power-users/diagnostics/debugging/README.md)
     * [🧬 Local Debugging](advanced-and-power-users/diagnostics/debugging/local-debugging.md)
