@@ -47,3 +47,11 @@ if (!PermissionsTools.IsPermissionGranted(PermissionTypes.type))
   * Flag value is 128
 * `ManageMods`: Allows the user to manage the kernel mods
   * Flag value is 256
+* `ManageGroups`: Allows the user to manage the user groups
+  * Flag value is 512
+* `IntermodCommunication`: Allows the user to run mod commands that depend on inter-mod communication
+  * Flag value is 1024
+* `OpenAdminShell`: Allows the user to open an administrative shell
+  * Flag value is 2048
+* `OpenDebugShell`: Allows the user to open a debug shell
+  * Flag value is 4096

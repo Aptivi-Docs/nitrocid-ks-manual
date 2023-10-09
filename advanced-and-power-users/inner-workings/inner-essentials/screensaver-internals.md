@@ -97,3 +97,25 @@ public static void SetDefaultScreensaver(string saver)
 {% endcode %}
 
 This function allows your mod to set a default screensaver. Once done, it saves the new screensaver name to the appropriate key, `DefaultSaverName`, in the main configuration instance. As soon as it's saved, the configuration is saved.
+
+## Display Control
+
+Interactive applications might need to listen to the re-render requests so that they can check to see if they need a re-draw. In order to force re-rendering, you can check for the `ScreenRefreshRequired` property in the `ScreensaverManager` class.
+
+For instance, applications that use Nitrocid's Interactive TUI usually respect this request by listening for the refresh request here:
+
+{% code title="InteractiveTuiTools.cs" lineNumbers="true" %}
+```csharp
+if (ScreensaverManager.ScreenRefreshRequired || BaseInteractiveTui.RedrawRequired)
+{
+    _refreshSelection = true;
+    DebugWriter.WriteDebug(DebugLevel.I, "We're redrawing.");
+    KernelColorTools.LoadBack(BaseInteractiveTui.BackgroundColor);
+    (...)
+}
+```
+{% endcode %}
+
+{% hint style="warning" %}
+This property returns `true` if the screensaver has been entered. However, if you need to get the value of this property, you must do so once, because it gets reset to `false` once it's called.
+{% endhint %}

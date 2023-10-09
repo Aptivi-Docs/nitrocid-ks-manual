@@ -23,10 +23,12 @@ Issues that are highlighted in italic are fixed in the below beta version.
 During quality assurance, we're aware of the following issues:
 
 * `langman reload <lang>` may fail to reload the custom language.
-* Progress notifications may fail to show up properly after the normal notification.
+* _Progress notifications may fail to show up properly after the normal notification._
 * The kernel may fail to download debug data if the debugging symbol file is not found.
-* Letting the screen lock after timeout may cause no prompt to show.
+* _Letting the screen lock after timeout may cause no prompt to show._
 * Download command doesn't support downloading more than 2 GB.
+
+Issues that are highlighted in italic are fixed in the upcoming beta version.
 
 ## Found an issue?
 

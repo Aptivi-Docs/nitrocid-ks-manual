@@ -14,7 +14,9 @@ Nitrocid defines these permissions to require your consent before continuing the
   * An application or mod tries to write to a file
 
 {% hint style="info" %}
-Please note that your consent is required only for above accesses that are done through the Nitrocid API. If you're a mod developer and care about privacy of your users, use the Nitrocid API where checks are done to ensure that users have consented to the above operations.
+Please note that your consent is required only for above accesses that are done through the Nitrocid API for each user.
+
+If you're a mod developer and care about privacy of your users, use the Nitrocid API where checks are done to ensure that users have consented to the above operations.
 
 If the user declines the consent, an exception will be thrown to the caller, depending on how a particular Nitrocid API function is coded.
 {% endhint %}
