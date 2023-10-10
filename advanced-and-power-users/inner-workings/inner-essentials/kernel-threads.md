@@ -157,3 +157,18 @@ If you want to use this property, be sure that you still check for `IsStopping` 
 {% endhint %}
 
 As soon as `Stop()` is called on your kernel thread, `IsStopping` will be set to `true` to notify your kernel threads that it's stopping and that it should take appropriate action to stop. After the thread ends, it'll be reverted to `false`.
+
+### Sleeping
+
+Kernel threads can now delay operations by using one of the following `Sleep()` functions:
+
+* `SleepUntilInput()`
+  * The thread suspends all operations until the input is detected
+* `SleepUntilInput(long Time)`
+  * The thread suspends all operations until either the input is detected or the timeout is reached
+* `SleepNoBlock(long Time)`
+  * Sleeps until either the time specified, or the current thread is no longer alive.
+* `SleepNoBlock(long Time, Thread ThreadWork)`
+  * Sleeps until either the time specified, or the specified non-Nitrocid thread is no longer alive.
+* `SleepNoBlock(long Time, KernelThread ThreadWork)`
+  * Sleeps until either the time specified, or the specified Nitrocid thread is no longer alive.
