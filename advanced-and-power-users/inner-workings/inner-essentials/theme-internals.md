@@ -55,3 +55,27 @@ Due to limitations in the theme parser, it's crucial that you provide color valu
 {% hint style="warning" %}
 Make sure that the event start month and day is earlier than the end month and day. The theme parser will swap these values if it detects that the start date is later than the end date (i.e. events can't end before they start).
 {% endhint %}
+
+### Color conversion
+
+Your theme files can also support any specifier, as long as the specifier is supported by Terminaux. For a quick reminder, Terminaux supports the three true-color specifiers, alongside the color name or the color number, if you intend to use another color model to select colors:
+
+* RGB: Red, Green, and Blue.
+  * `<RRR>;<GGG>;<BBB>`
+  * where the three variables can be from 0 to 255.
+* CMYK: Cyan, Magenta, and Yellow with the Black Key.
+  * `cmyk:<CCC>;<MMM>;<YYY>;<KKK>`
+  * where these variables can be from 0 to 100.
+* HSL: Hue, Saturation, and Luminance (or Lightness).
+  * `hsl:<HHH>;<SSS>;<LLL>`
+  * where the Hue can be from 0 to 360 _**degrees**_ and _**not radians**_.
+  * where the Saturation and the Luminance can be from 0 to 100.
+
+The commands provided by the color conversion Extras addon help you convert from a color model, such as RGB, to another color model, such as CMYK.
+
+`KernelColorConversionTools` provides you all possible conversion methods to convert a color model to another color model to generate appropriate color specifiers converted to the target unit to create new `Color` instances for your mod's appearance.
+
+For example, if you have Cyan, Magenta, and Yellow values and you want a hex code of it, you can use one of the following function overloads of `ConvertFromCmykToHex()`:
+
+* `ConvertFromCmykToHex(int C, int M, int Y, int K)`
+* `ConvertFromCmykToHex(string CMYKSequence)`

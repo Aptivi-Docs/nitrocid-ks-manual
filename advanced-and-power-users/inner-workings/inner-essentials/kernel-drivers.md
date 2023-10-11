@@ -63,6 +63,19 @@ The `BeginLocalDriver<T>()` function can be used, but doesn't prevent you from u
 Be sure to execute the two above functions in the order specified above. Forgetting to call `EndLocalDriver<T>()` after you're done with the driver can cause the kernel to think that the mod is going to use your local driver forever.
 {% endhint %}
 
+### Fallback drivers
+
+Additionally, the driver management API provides you an easy way to get the default driver that the kernel declares. You can use the below functions:
+
+* `DriverHandler.GetFallbackDriver<TDriverInterfaceType>()`
+  * This returns an instance of the default driver that the kernel initialized before drivers get set by the config reader.
+* `DriverHandler.GetFallbackDriverName<TDriverInterfaceType>()`
+  * This returns the actual driver name grabbed from the dictionary.
+
+{% hint style="warning" %}
+Don't confuse the name given by the `GetDriverName()` and its siblings with the name from the driver instance.
+{% endhint %}
+
 ### Driver Configuration
 
 <figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>

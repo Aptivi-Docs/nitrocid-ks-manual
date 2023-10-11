@@ -3189,5 +3189,34 @@ So, we've decided to rename function names that take colors to these variants:
 * `WriteKernelColor()`: for writing with kernel-defined color types
 
 {% hint style="info" %}
-You no longer need to override the vars value using the above method. Instead, you can replace these calls with one of the above functions, based on the color type.
+You no longer need to override the `vars` value using the above method. Instead, you can replace these calls with one of the above functions, based on the color type.
+{% endhint %}
+
+### Moved hardware probe tools to the driver
+
+{% code title="Config and Flags" lineNumbers="true" %}
+```csharp
+// KernelMainConfig.cs
+public bool FullHardwareProbe { get; set; }
+
+// KernelFlags.cs
+public static bool FullHardwareProbe
+```
+{% endcode %}
+
+{% code title="Probe tools" lineNumbers="true" %}
+```csharp
+public static void ListHardware(string HardwareType)
+// where HardwareType is a type other than the supported types by the hardware prober driver
+```
+{% endcode %}
+
+The hardware prober used to be a wrapper for a single hardware specification library, Inxi.NET, that probed everything, including the RAM, the CPU, and the GPU. Over time, Inxi.NET faced lots of JSON management problems, including a recent change to the JSON output back on a version that was released between late 2020 and April 2021.
+
+As a result, we're slowly migrating to the completely new hardware probing library that will be hopefully faster than Inxi.NET.
+
+Unfortunately, full hardware probing has been removed.
+
+{% hint style="info" %}
+`ListHardware`'s behavior has changed so that it only gets information about supported hardware types.
 {% endhint %}

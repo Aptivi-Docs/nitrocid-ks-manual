@@ -72,12 +72,17 @@ In your mod start code, please use one of the following `ReportProgress()` funct
 
 {% code title="SplashReport.cs" lineNumbers="true" %}
 ```csharp
+public static void ReportProgress(string Text, params object[] Vars)
 public static void ReportProgress(string Text, int Progress, params object[] Vars)
 public static void ReportProgress(string Text, int Progress, bool force = false, ISplash splash = null, params object[] Vars)
 ```
 {% endcode %}
 
 The above functions let you report progress to the splash displayer when the kernel is booting. These messages are passed to the normal progress writer found in the current splash instance, which decides how to display it.
+
+{% hint style="info" %}
+The first function overload for reporting normal progress doesn't increment the progress; it only reports the message to the splash screen for it to display it or to ignore it, depending on the splash.
+{% endhint %}
 
 ### Reporting warnings
 
@@ -134,3 +139,7 @@ public static string[] LogBuffer =>
     logBuffer.ToArray();
 ```
 {% endcode %}
+
+{% hint style="info" %}
+Even if the splash doesn't display any progress messages, they are still saved to the boot log buffers for reference.
+{% endhint %}
