@@ -3220,3 +3220,20 @@ Unfortunately, full hardware probing has been removed.
 {% hint style="info" %}
 `ListHardware`'s behavior has changed so that it only gets information about supported hardware types.
 {% endhint %}
+
+### New `ThemeInfo` by theme name removed
+
+{% code title="ThemeInfo.cs" lineNumbers="true" %}
+```csharp
+[Obsolete("Theme addons can't use this. It's only useful for getting the default theme.")]
+public ThemeInfo(string ThemeResourceName)
+```
+{% endcode %}
+
+Ever since themes were moved to their own separate place, called Theme Packs, we've decided to remove this obsolete constructor, because it was rendered useless and can only search for the default theme.
+
+Additionally, it can't handle addon themes, because Nitrocid isn't supposed to access other addon's resources, so we've decided to make a final decision to remove the above constructior.
+
+{% hint style="info" %}
+We advice you not to use this constructor to create new `ThemeInfo` instances.
+{% endhint %}

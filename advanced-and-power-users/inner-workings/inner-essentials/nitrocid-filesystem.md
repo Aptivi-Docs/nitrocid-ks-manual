@@ -146,6 +146,9 @@ You can decode and encode files using the below commands:
 
 Encoded files using the default encoding algorithm are saved to `<file>.encoded`, and the decoded files are saved to the original file name without the `.encoded` prefix.
 
-{% hint style="danger" %}
-Please note that this feature is not extensively tested and might cause data loss. Use with caution until this problem is rectified.
-{% endhint %}
+### File content printing
+
+When you print file contents to the console or render it as a string for preview, you may need to use one of the `FileContentPrinter` functions. However, it depends on your goal:
+
+* If you want to print the file content to the console deterministically, use the `Display*()` functions.
+* If you just want to synthesize a string of how it would appear as previewed for different purposes, like previewing a file in an informational box, use the `Render*()` functions.

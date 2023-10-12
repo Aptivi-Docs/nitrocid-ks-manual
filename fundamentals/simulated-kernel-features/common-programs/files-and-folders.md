@@ -35,6 +35,7 @@ It's an interactive TUI application, so the controls are provided here:
 * `F10`: Allows you to make a new folder
 * `F11`: Gets the file checksum
 * `F12`: Verifies the selected file
+* `P`: Previews a file in a non-modal informational box
 * `Tab`: Switches panes
 * `Esc`: Exits the application
 
