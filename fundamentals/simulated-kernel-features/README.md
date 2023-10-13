@@ -14,8 +14,8 @@ The buttons below lists some of the features that blow your mind.
 [accounts](accounts/)
 {% endcontent-ref %}
 
-{% content-ref url="shells.md" %}
-[shells.md](shells.md)
+{% content-ref url="shells/" %}
+[shells](shells/)
 {% endcontent-ref %}
 
 {% content-ref url="networking/" %}

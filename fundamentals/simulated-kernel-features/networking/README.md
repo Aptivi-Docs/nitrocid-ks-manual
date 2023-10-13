@@ -2,7 +2,7 @@
 description: Networking in general and its shells
 ---
 
-# 🌍 Networking
+# 🌎 Networking
 
 Networking in general allows your device to connect to other devices in either your local network – that allows you to make a connection to other systems that are found in the same network – and across the Internet – that allows you to connect to all the other systems found world-wide – to actually access resources found on these systems and, across the LAN, save time trying to go back and forth to the target system to pull and push data.
 

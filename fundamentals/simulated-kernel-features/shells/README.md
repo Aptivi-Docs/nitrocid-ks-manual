@@ -4,7 +4,7 @@ description: What are the shells?
 
 # 🐚 Shells
 
-<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 Operating systems contain their shells that listen to user input and execute any command – either built-in or custom – to perform operations that the users plan or need to do. Shells usually contain the prompt indicator to tell the user where is the current working directory, the user name, the host name, or anything that is set up to show.
 
@@ -20,19 +20,23 @@ This program is part of the core kernel that is programmed to not only be a stan
 
 For more information about its inner workings and how you can build your own commands and shells, consult the below page.
 
-{% content-ref url="../../advanced-and-power-users/inner-workings/shell-structure/" %}
-[shell-structure](../../advanced-and-power-users/inner-workings/shell-structure/)
+{% content-ref url="../../../advanced-and-power-users/inner-workings/shell-structure/" %}
+[shell-structure](../../../advanced-and-power-users/inner-workings/shell-structure/)
 {% endcontent-ref %}
 
 For scripting, consult the below page.
 
-{% content-ref url="../../advanced-and-power-users/inner-workings/shell-structure/shell-scripting.md" %}
-[shell-scripting.md](../../advanced-and-power-users/inner-workings/shell-structure/shell-scripting.md)
+{% content-ref url="../../../advanced-and-power-users/inner-workings/shell-structure/shell-scripting.md" %}
+[shell-scripting.md](../../../advanced-and-power-users/inner-workings/shell-structure/shell-scripting.md)
 {% endcontent-ref %}
 
 ## Commands
 
-The main shell contains these commands that you can use below. The administrative commands are listed in the bottom of the list to differentiate from the normal commands.
+All of the shells contain their own commands that you can review on either the help command list (depending on the mode used, such as -addon for addon commands) or the below page (just for Nitrocid shells, base shell, and Addon commands):
+
+{% content-ref url="commands-list.md" %}
+[commands-list.md](commands-list.md)
+{% endcontent-ref %}
 
 ### Preface for the `-set` switch
 
@@ -40,8 +44,8 @@ Some of the commands support the `-set` switch. This means that such commands ca
 
 Your custom mods can also use this feature to set the variable. To learn more, please visit the below link:
 
-{% content-ref url="../../advanced-and-power-users/inner-workings/shell-structure/" %}
-[shell-structure](../../advanced-and-power-users/inner-workings/shell-structure/)
+{% content-ref url="../../../advanced-and-power-users/inner-workings/shell-structure/" %}
+[shell-structure](../../../advanced-and-power-users/inner-workings/shell-structure/)
 {% endcontent-ref %}
 
 ### Normal commands

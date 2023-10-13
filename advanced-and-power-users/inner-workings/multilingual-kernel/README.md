@@ -2,7 +2,7 @@
 description: Describes about the inner workings of the kernel language feature
 ---
 
-# ⚙ Multilingual Kernel
+# 🌍 Multilingual Kernel
 
 The languages were introduced to the kernel to allow users who don't natively speak English or prefer their native language to use the kernel. This page explains the inner workings of the multilingual kernel.
 
