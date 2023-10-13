@@ -10,31 +10,8 @@ You're looking for an `ed`-like JSON editing experience which allows you to view
 
 ## Commands
 
-These below commands can be used to manipulate with the JSON files:
+You can consult the below page for the list of JSON editor commands.
 
-* `addarray [-parentProperty=prop] <propertyName> <propertyValue1> [propertyValue2] [propertyValue3]...`
-  * Adds the array containing the values
-* `addproperty [-parentProperty=prop] <propertyName> <propertyValue>`
-  * Adds the property containing the value
-* `addobject [-parentProperty=prop] <arrayName> <valueInArray>`
-  * Adds the object containing the value inside the array
-* `addobjectindexed [-parentProperty=prop] <index> <valueInArray>`
-  * Adds a new object inside an object specified by index
-* `clear`
-  * Clears the JSON file
-* `delproperty <propertyName>`
-  * Removes a property from the JSON file
-* `exitnosave`
-  * Exits the JSON shell without saving the changes
-* `findproperty [-parentProperty=prop] <propertyName>`
-  * Finds a property
-* `jsoninfo`
-  * Shows information about the JSON file, including properties for individual JSON objects contained within the file
-* `print [property]`
-  * Prints either the entire JSON file or a property
-* `rmobject [-parentProperty=prop] <objectName>`
-  * Removes an object
-* `rmobjectindexed [-parentProperty=prop] <index>`
-  * Removes an object specified by index
-* `save [-b|-m]`
-  * Saves the JSON file. `-b` is for beautified JSON, and `-m` is for minified JSON
+{% content-ref url="../shells/commands-list.md" %}
+[commands-list.md](../shells/commands-list.md)
+{% endcontent-ref %}

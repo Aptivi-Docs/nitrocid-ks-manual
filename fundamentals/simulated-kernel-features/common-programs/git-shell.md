@@ -6,7 +6,7 @@ description: Git Shell in your hands
 
 Git is a version controlling system that allows you to manage your project source code with ease. Changes to the source code are done in batches, known as commits, which store the file changes, including their content, whether they're moved; copied; deleted; or created, their attributes, and more.
 
-Nitrocid KS provides an add-on that allows you to use the Git shell. This is so that you can experience the Git version control system as a shell. Additionally, if you have Git installed on your system, you can run `git` in the UESH shell.
+Nitrocid KS provides an add-on that allows you to use the Git shell. This is so that you can experience the Git version control system as a shell. Additionally, if you have Git installed on your system, you can run `git` or `exec git` in the UESH shell.
 
 {% hint style="info" %}
 If you have Extras.GitShell installed, you can launch the shell using the `gitsh` command.
@@ -20,7 +20,7 @@ gitsh <pathToRepositoryFolder>
 
 ### How it works
 
-When gitsh is executed, it first verifies that the `.git` folder found inside the repository folder exists. Then, it creates a new repository instance that allows all of the Git operations to be done.
+When `gitsh` is executed, it first verifies that the `.git` folder found inside the repository folder exists. Then, it creates a new repository instance that allows all of the Git operations to be done.
 
 Once it's done, it checks for the following known default branch names:
 
@@ -36,35 +36,8 @@ You can check out a specific branch using the `checkout` command.
 
 ### Available commands
 
-Git shell provides you with a list of available commands below:
+You can consult the below page for the list of available commands.
 
-* `status`
-  * Gets the current repository status by comparing the current state of the repository with the head version (usually `HEAD`).
-* `checkout <branch>`
-  * Checks out the repository branch (switches to target branch)
-* `commit <message>`
-  * Makes a commit on your local copy that's ready to push to the remote
-* `fetch [remote]`
-  * Fetches all changes from the current or specified remote
-* `lsbranches`
-  * Lists all branches
-* `lscommits`
-  * Lists all commits
-* `lsremotes`
-  * Lists all remotes
-* `pull`
-  * Updates your repository with the latest changes fetched from the remote
-* `push`
-  * Pushes all your local commits to the remote
-* `reset [-soft|-mixed|-hard]`
-  * Resets your local Git repository
-* `setid <email> <username>`
-  * Identifies yourself with your e-mail and your username
-* `stageall`
-  * Stages all unstaged changes
-* `stage <unstagedfile>`
-  * Stages a specified unstaged file
-* `unstageall`
-  * Unstages all staged changes
-* `unstage <stagedfile>`
-  * Unstages a specified staged file
+{% content-ref url="../shells/commands-list.md" %}
+[commands-list.md](../shells/commands-list.md)
+{% endcontent-ref %}

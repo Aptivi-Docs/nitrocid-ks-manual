@@ -14,25 +14,8 @@ Unless you know what you're doing with the binary file, editing such file in thi
 
 ## Commands
 
-These below commands can be used to host the hex editing tools to edit your hex files:
+You can consult the below page for the list of hex editor commands.
 
-* `addbyte <byte>`
-  * Adds a byte at the end of the file
-* `addbytes`
-  * Adds the bytes at the end of the file
-* `clear`
-  * Clears the entire binary file
-* `delbyte <bytenumber>`
-  * Deletes a byte using the byte number
-* `delbytes <startbyte> [endbyte]`
-  * Deletes the range of bytes from the first byte number to the second byte number or to the end of the file
-* `exitnosave`
-  * Exits the hex editor without saving changes
-* `print [startbyte] [endbyte]`
-  * Prints either the entire file, from the first byte number to the end, or from the first byte number to the second one
-* `querybyte <byte> [startbyte] [endbyte]`
-  * Queries a byte from either the entire file, from the first byte number to the end, or from the first byte number to the second one
-* `replace <byte> <replacedbyte>`
-  * Replaces a byte with another byte
-* `save`
-  * Saves the binary file
+{% content-ref url="../shells/commands-list.md" %}
+[commands-list.md](../shells/commands-list.md)
+{% endcontent-ref %}
