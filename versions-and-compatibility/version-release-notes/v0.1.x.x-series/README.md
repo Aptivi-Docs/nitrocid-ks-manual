@@ -22,6 +22,10 @@ Available manuals for below beta versions:
 [Nitrocid KS v0.1.0 Beta 2 - Manual](http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/RoaqpM3GSf9vXxRAagbV/)
 {% endcontent-ref %}
 
+{% content-ref url="http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/Ad5vIFTQSlbQ4N2BpB8m/" %}
+[Nitrocid KS v0.1.0 Beta 1 - Manual](http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/Ad5vIFTQSlbQ4N2BpB8m/)
+{% endcontent-ref %}
+
 For list of known issues for 0.1.0 beta versions, consult the below page:
 
 {% content-ref url="known-issues-for-0.1.0-beta.md" %}
