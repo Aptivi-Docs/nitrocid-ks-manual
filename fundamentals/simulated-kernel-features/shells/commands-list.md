@@ -150,6 +150,7 @@ The below commands are available to all the shells, either built-in or your cust
 | `help`          | `[-general\|-mod\|-alias\|-addon\|-unified\|-all] [command]` |
 | `loadhistories` |                                                              |
 | `presets`       |                                                              |
+| `repeat`        | `<times> [command]`                                          |
 | `savehistories` |                                                              |
 | `tip`           |                                                              |
 | `wrap`          | `<command>`                                                  |

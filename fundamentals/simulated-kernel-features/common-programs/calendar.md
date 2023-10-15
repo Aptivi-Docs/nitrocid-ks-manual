@@ -64,3 +64,9 @@ If you would like to be reminded about something in the future, you can use this
   * This command lets you list all the reminders and their IDs
 * `calendar <reminder> <saveall>`
   * This command lets you save all the reminders to your kernel configuration directory. The reminders will get loaded upon startup.
+
+## Calendar management API
+
+In addition to providing the calendar command in the addon, the base Nitrocid API provides some of the calendar management APIs to make access to them easier than before. You can now get the calendar straight from the calendar type using the `GetCalendar()` function from the `CalendarTools` class.
+
+Additionally, the time and date renderers can be used with the base calendar class instance obtained from the above function.

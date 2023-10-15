@@ -18,6 +18,7 @@ Themes for the kernel consist of color information for each kernel color type. T
         "StartDay": 1,
         "EndMonth": 2,
         "EndDay": 22,
+        "Calendar": "Gregorian",
         "Localizable": true
     },
     "InputColor": "15",
@@ -35,12 +36,13 @@ We'll explain things one by one. The `Metadata` key consists of some basic infor
 
 * `Name`: Display name of the theme
 * `Description`: Short and concise description of the theme
-* `IsEvent`: Indicates whether the theme is for a specific event (holidays, celebrations, etc.)
-* `StartMonth`: The month in which the event starts
-* `StartDay`: The day in which the event starts
-* `EndMonth`: The month in which the event ends
-* `EndDay`: The day in which the event ends
-* `Localizable`: Whether the description is localizable (internal)
+* `IsEvent`: Indicates whether the theme is for a specific event (holidays, celebrations, etc.) **\[optional]**
+* `StartMonth`: The month in which the event starts **\[optional]**
+* `StartDay`: The day in which the event starts **\[optional]**
+* `EndMonth`: The month in which the event ends **\[optional]**
+* `EndDay`: The day in which the event ends **\[optional]**
+* `Calendar`: The calendar to use, such as Hijri, Chinese, etc. **\[optional]**
+* `Localizable`: Whether the description is localizable **\[internal, optional]**
 
 What follows the metadata is a list of available kernel color types and their color representations using Terminaux's supported color formats, which are linked in the below page:
 
@@ -53,7 +55,7 @@ Due to limitations in the theme parser, it's crucial that you provide color valu
 {% endhint %}
 
 {% hint style="warning" %}
-Make sure that the event start month and day is earlier than the end month and day. The theme parser will swap these values if it detects that the start date is later than the end date (i.e. events can't end before they start).
+Make sure that the event start month and day is earlier than the end month and day. The theme parser will swap the day values and will add a year (end month is bigger than the start) if it detects that the start date is later than the end date (i.e. events can't end before they start).
 {% endhint %}
 
 ### Color conversion
@@ -79,3 +81,11 @@ For example, if you have Cyan, Magenta, and Yellow values and you want a hex cod
 
 * `ConvertFromCmykToHex(int C, int M, int Y, int K)`
 * `ConvertFromCmykToHex(string CMYKSequence)`
+
+### Color wheel
+
+The new color wheel documentation is coming soon, so stay tuned for updates on the Terminaux documentation:
+
+{% content-ref url="http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/color-wheel" %}
+[Color Wheel](http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/color-wheel)
+{% endcontent-ref %}
