@@ -81,7 +81,7 @@ This revision of the first-generation version is supported until 6/12/2031.
 {% endtab %}
 
 {% tab title="API v1.2" %}
-This revision of the first-generation version is supported until 11/5/2023.
+This revision of the first-generation version is supported until 11/6/2023.
 
 | Version    | Release date | EOL date  |
 | ---------- | ------------ | --------- |

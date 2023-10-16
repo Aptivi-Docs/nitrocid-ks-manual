@@ -6,6 +6,10 @@ description: These are your common programs
 
 Nitrocid KS contains some of the common programs that have their own documentation. Select a program below to get started.
 
+{% content-ref url="archive.md" %}
+[archive.md](archive.md)
+{% endcontent-ref %}
+
 {% content-ref url="calendar.md" %}
 [calendar.md](calendar.md)
 {% endcontent-ref %}

@@ -87,6 +87,7 @@
     * [⌨ SpeedPress](fundamentals/simulated-kernel-features/games-and-amusements/speedpress.md)
     * [🔠 Wordle](fundamentals/simulated-kernel-features/games-and-amusements/wordle.md)
   * [🧰 Common Programs](fundamentals/simulated-kernel-features/common-programs/README.md)
+    * [📦 Archive](fundamentals/simulated-kernel-features/common-programs/archive.md)
     * [🗓 Calendar](fundamentals/simulated-kernel-features/common-programs/calendar.md)
     * [🔢 Calculator](fundamentals/simulated-kernel-features/common-programs/calculator.md)
     * [👥 Contacts](fundamentals/simulated-kernel-features/common-programs/contacts.md)
