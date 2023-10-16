@@ -108,6 +108,17 @@ public static void ReportProgressError(string Text, bool force = false, ISplash 
 
 The above functions let you report errors to the splash displayer when the kernel is booting. These messages are passed to the error progress writer found in the current splash instance, which decides how to display it.
 
+### Resetting progress report
+
+{% code title="SplashReport.cs" lineNumbers="true" %}
+```csharp
+public static void ResetProgressReportArea()
+public static void ResetProgressReportArea(ISplash splash = null)
+```
+{% endcode %}
+
+The above functions reset the progress report so that it says "Loading," so these functions don't actually clear out the progress report. If you have nothing else to report in the splash, you can use these functions.
+
 ### Important messages
 
 {% code title="SplashManager.cs" lineNumbers="true" %}
