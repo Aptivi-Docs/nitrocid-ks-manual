@@ -429,7 +429,7 @@ This addon allows you access to the calendar functions. You can use the below co
 | Commands   | Arguments and Switches                   |
 | ---------- | ---------------------------------------- |
 | `altdate`  | `[-date\|-time\|-full] [-utc] <culture>` |
-| `calendar` | `<show> [year] [month]`                  |
+| `calendar` | `<show> [-calendar=type] [year] [month]` |
 |            | `<event> <add> <date> <title>`           |
 |            | `<event> <remove> <eventid>`             |
 |            | `<event> <list>`                         |
@@ -531,9 +531,11 @@ You can use the following commands to build your own language:
 
 You can generate names by using the following commands:
 
-| Commands  | Arguments and Switches                                                        |
-| --------- | ----------------------------------------------------------------------------- |
-| `genname` | `[-t] <namescount> [nameprefix] [namesuffix] [surnameprefix] [surnamesuffix]` |
+| Commands      | Arguments and Switches                                                        |
+| ------------- | ----------------------------------------------------------------------------- |
+| findfirstname | `[-t] [nameprefix] [namesuffix]`                                              |
+| findsurname   | `[surnameprefix] [surnamesuffix]`                                             |
+| `genname`     | `[-t] <namescount> [nameprefix] [namesuffix] [surnameprefix] [surnamesuffix]` |
 
 ### Notes
 

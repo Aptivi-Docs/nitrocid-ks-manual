@@ -245,7 +245,7 @@ where:
 For `CommandArgumentPart` instances, consult the below constructor to create an array of `CommandArgumentPart` instances when defining your commands:
 
 ```csharp
-public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[]> autoCompleter = null)
+public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[]> autoCompleter = null, string exactWording = null)
 ```
 
 where:
@@ -253,6 +253,7 @@ where:
 * `argumentRequired`: Is this argument part required?
 * `argumentExpression`: Command argument expression
 * `autoCompleter`: Auto completion function delegate
+* `exactWording`: If not empty, the user must write this wording for this argument to be satisfied
 
 {% hint style="info" %}
 When it comes to auto-completion, if you press TAB on any of the argument positions, the shell will select the following completers as appropriate:

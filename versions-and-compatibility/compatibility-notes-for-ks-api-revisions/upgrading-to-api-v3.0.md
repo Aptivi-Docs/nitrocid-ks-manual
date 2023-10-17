@@ -3237,3 +3237,41 @@ Additionally, it can't handle addon themes, because Nitrocid isn't supposed to a
 {% hint style="info" %}
 We advice you not to use this constructor to create new `ThemeInfo` instances.
 {% endhint %}
+
+### Improved support for multiple `ArgInfos`
+
+{% code title="ArgumentsParser.cs" lineNumbers="true" %}
+```csharp
+public static ProvidedArgumentsInfo ParseShellCommandArguments(string CommandText, ShellType CommandType)
+public static ProvidedArgumentsInfo ParseShellCommandArguments(string CommandText, string CommandType)
+public static ProvidedArgumentsInfo ParseArgumentArguments(string ArgumentText)
+```
+{% endcode %}
+
+Multiple argument info instances were supported in one of the Nitrocid KS 0.1.0 pre-release versions, including milestones, but they were not given enough testing for edge cases, such as calendar. As a result of the recent changes that were made to the shell, it no longer worked properly.
+
+We've decided to improve support for multiple argument information instances by refactoring the code base in a way that makes UESH recognize this edge case.
+
+{% hint style="info" %}
+For the most part, you don't need to call these functions, unless you're explicitly using them for some reason; `CommandParameters parameters` is more than enough.
+{% endhint %}
+
+### Initial configuration for presets
+
+{% code title="PromptPresetManager.cs" lineNumbers="true" %}
+```csharp
+public static void SetPresetDry(string PresetName, ShellType ShellType, bool ThrowOnNotFound = true)
+public static void SetPresetDry(string PresetName, string ShellType, bool ThrowOnNotFound = true)
+public static void PromptForPresets()
+public static void PromptForPresets(ShellType shellType)
+public static void PromptForPresets(string shellType)
+```
+{% endcode %}
+
+We're in the process of changing how setting the presets up works in a way that it would deal with custom shell presets, such as those that were installed by the addons.
+
+Earlier, the preset manager would only save changes for the built-in Nitrocid shells, but we wanted to extend this ability to save your preset selection to your custom shells.
+
+{% hint style="info" %}
+The `SPreset` settings has changed so that it would align with the set preset. `SetPresetDry()` has been removed, because we've made `SetPreset()` dry.
+{% endhint %}

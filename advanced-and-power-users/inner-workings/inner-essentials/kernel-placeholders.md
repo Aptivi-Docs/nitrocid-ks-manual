@@ -67,3 +67,30 @@ These are the placeholders and what possible values are going to replace them wh
 | `<ridgeneric>`                    | Gets the non-specific RID for your operating system                                |
 | `<termemu>`                       | Terminal emulator used (empty on Windows)                                          |
 | `<termtype>`                      | Terminal type used (empty on Windows)                                              |
+
+## Custom placeholders
+
+You can make your own placeholders, too, with a simple one-line function that allows you to create your custom placeholders for commands and text that use the placeholders feature, with the dynamic content represented in text that you want.
+
+However, you need to register a placeholder before you can use it. Luckily, the registration is easy, unlike all the other components:
+
+{% code title="Somewhere in your mod code" lineNumbers="true" %}
+```csharp
+PlaceParse.RegisterCustomPlaceholder("<placeholder>", () => "MyDynamicText");
+```
+{% endcode %}
+
+You can verify that your placeholder is registered by calling the below function:
+
+{% code title="Verification" lineNumbers="true" %}
+```csharp
+bool regged = PlaceParse.IsPlaceholderRegistered("<placeholder>");
+// regged should be true
+```
+{% endcode %}
+
+If you no longer want a custom placeholder, you can remove it using the `UnregisterCustomPlaceholder()` function using the same placeholder name.
+
+{% hint style="warning" %}
+Please note that you need to surround your placeholder name with the `<` and the `>` marks so that the prober can recognize your placeholder. It throws an exception if it's not surrounded.
+{% endhint %}

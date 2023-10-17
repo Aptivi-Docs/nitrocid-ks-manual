@@ -12,7 +12,7 @@ The calendar shows you days, weeks, and months within the selected year. It not 
 
 The simulated kernel provides you with the calendar management application that attempts to simulate the above functionality. Choose a function to get started. In summary, these usages are found within the `calendar` command.
 
-* `calendar <show> [year] [month]`
+* `calendar [-calendar=type] <show> [year] [month]`
 * `calendar <event> <add> <date> <title>`
 * `calendar <event> <remove> <eventid>`
 * `calendar <event> <list>`
@@ -28,11 +28,11 @@ The simulated kernel provides you with the calendar management application that 
 
 The calendar can be shown to show you either the current month or the selected year in the current month or the selected year and month. To utilize the functionality, use the following command.
 
-* `calendar <show>`
+* `calendar [-calendar=type] <show>`
   * Shows you the calendar in the current year and month
-* `calendar <show> [year]`
+* `calendar [-calendar=type] <show> [year]`
   * Shows you the calendar in the selected year in the current month
-* `calendar <show> [year] [month]`
+* `calendar [-calendar=type] <show> [year] [month]`
   * Shows you the calendar in the selected year and month
 
 ### Events
@@ -76,3 +76,5 @@ Additionally, the time and date renderers can be used with the base calendar cla
 Nitrocid API provides date conversion tools that allow you to change how the date and the time are being represented. For instance, you can translate the date and the time to UNIX time and vice versa.
 
 As for the calendars, you can use the `GetDateFromCalendar()` function, provided that you have a calendar instance from the `GetCalendar()` function.
+
+Alternatively, you can use the `GetDateFromCalendarNoCulture()` function for calendars with overridden `Calendar` property.
