@@ -533,8 +533,8 @@ You can generate names by using the following commands:
 
 | Commands      | Arguments and Switches                                                        |
 | ------------- | ----------------------------------------------------------------------------- |
-| findfirstname | `[-t] [nameprefix] [namesuffix]`                                              |
-| findsurname   | `[surnameprefix] [surnamesuffix]`                                             |
+| findfirstname | `[-t] [term] [nameprefix] [namesuffix]`                                       |
+| findsurname   | `[term] [surnameprefix] [surnamesuffix]`                                      |
 | `genname`     | `[-t] <namescount> [nameprefix] [namesuffix] [surnameprefix] [surnamesuffix]` |
 
 ### Notes

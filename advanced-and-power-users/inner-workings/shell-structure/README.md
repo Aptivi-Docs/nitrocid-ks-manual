@@ -116,8 +116,8 @@ public override string PresetName { get; } = "Default";
 * `PresetPrompt`: **Read-only property.** Usually calls the overridable internal function `PresetPromptBuilder()`. If it's simple, overriding it with a string is enough.
 
 ```csharp
-public override string PresetPrompt => PresetPromptBuilder();
-
+public override string PresetPrompt =>
+    PresetPromptBuilder();
 internal override string PresetPromptBuilder()
 ```
 
@@ -126,10 +126,32 @@ Optionally, these variables can be overridden:
 * `PresetPromptCompletion`: **Read-only property.** Usually calls the overridable internal function `PresetPromptCompletionBuilder()`. If it's simple, overriding it with a string is enough.
 
 ```csharp
-public override string PresetPromptCompletion => PresetPromptCompletionBuilder();
-
-internal override string PresetPromptConpletionBuilder()
+public override string PresetPromptCompletion =>
+    PresetPromptCompletionBuilder();
+internal override string PresetPromptCompletionBuilder()
 ```
+
+* `PresetPromptShowcase`: **Read-only property.** Usually calls the overridable internal function `PresetPromptBuilderShowcase()`. If it's simple, overriding it with a string is enough.
+
+```csharp
+public override string PresetPromptShowcase =>
+    PresetPromptBuilderShowcase();
+internal override string PresetPromptBuilderShowcase()
+```
+
+* `PresetPromptCompletionShowcase`: **Read-only property.** Usually calls the overridable internal function `PresetPromptCompletionBuilderShowcase()`. If it's simple, overriding it with a string is enough.
+
+```csharp
+public override string PresetPromptCompletionShowcase =>
+    PresetPromptCompletionBuilderShowcase();
+internal override string PresetPromptCompletionBuilderShowcase()
+```
+
+{% hint style="warning" %}
+Since the `Showcase` versions of the properties are meant to simulate how the preset would look in the real-world, you shouldn't try to access any external asset, especially those that the non-showcase properties use.
+
+The easiest way to avoid using these assets is to make up things, such as `database.sqlite` for the SQL shell.
+{% endhint %}
 
 ## Shell Information
 

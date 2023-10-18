@@ -34,6 +34,10 @@ The final driver class implementation must implement both the base driver-specif
 internal class Terminal : BaseConsoleDriver, IConsoleDriver
 ```
 
+{% hint style="info" %}
+`IsBuiltin()` only returns true if the driver is found in the built-in driver list. `IsRegistered()`, however, returns true if the driver is either built-in or found in the custom drivers list.
+{% endhint %}
+
 If you have a kernel driver that you wish to register, you'll have to register the kernel driver, passing it the `IDriver` interface for your driver and the appropriate type. You can use the `DriverHandler.RegisterDriver()` function to perform this operation, but you should set the current driver to your driver for the target wrappers, like the methods found in the `KS.Files` namespace that call the current filesystem driver, using the `SetDriverSafe<T>()` function.
 
 {% hint style="warning" %}

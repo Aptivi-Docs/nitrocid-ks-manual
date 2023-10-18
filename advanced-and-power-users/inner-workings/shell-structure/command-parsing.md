@@ -135,3 +135,15 @@ The same thing can be done for local shell commands on Nitrocid, but the syntax 
 ```
 ($env=value $env2="value with space") my_mod_command
 ```
+
+### Special characters
+
+If a command, such as `wrap`, is set to use the arguments string, you can escape special characters that are defined by either the base Nitrocid regular expression driver, or by your custom regex driver. For example, if you want to pass a switch to a wrapped command, you can use the `wrap` command like this:
+
+```
+wrap help \-addon
+```
+
+{% hint style="info" %}
+Unknown characters will stay escaped, but that depends on the behavior of the regular expression driver.
+{% endhint %}
