@@ -28,3 +28,9 @@ string humanized = bytes.SizeString();
 {% hint style="warning" %}
 You can't use this function for enormous sizes, like 1 zettabytes, because of the limitation of the long integers. However, you shouldn't worry about this situation, since this is used generally for file sizes, and a single file in the world hasn't reached this size yet.
 {% endhint %}
+
+## Time zones
+
+Nitrocid KS provides a built-in timezone API that allows you to get information about a timezone and convert the time to the equivalent time using the specific timezone.
+
+This API is found in the `TimeZones` class.

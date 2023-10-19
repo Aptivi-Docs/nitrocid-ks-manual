@@ -3275,3 +3275,44 @@ Earlier, the preset manager would only save changes for the built-in Nitrocid sh
 {% hint style="info" %}
 The `SPreset` settings has changed so that it would align with the set preset. `SetPresetDry()` has been removed, because we've made `SetPreset()` dry.
 {% endhint %}
+
+### KernelFlags removed
+
+{% code title="KernelFlags.cs" lineNumbers="true" %}
+```csharp
+public class KernelFlags
+```
+{% endcode %}
+
+The central KernelFlags class used to hold all the read-only flags that mods could access. Since it has shown a need for an unnecessary reference to a Configuration namespace of the kernel, we've decided to remove the KernelFlags class completely.
+
+The flags themselves, however, are moved to their respective classes, depending on which feature uses the flag. Here are the three examples:
+
+* `ConsoleSupportsTrueColor`: Moved to `ConsoleExtensions`
+* `KernelShutdown`: Moved to `PowerManager`
+* `QuietKernel`: Moved to `KernelEntry`
+
+{% hint style="info" %}
+The full list is being populated soon, due to current network-wide problems that prevent us from filling this list.
+
+Once the full list is populated, follow this list to be able to migrate from `KernelFlags`.
+{% endhint %}
+
+### Changes to the time zone API
+
+{% code title="TimeZones.cs" lineNumbers="true" %}
+```csharp
+public static Dictionary<string, DateTime> GetTimeZones()
+```
+{% endcode %}
+
+We've made changes to the time zone API so that we could add new features to the API. However, this API had an outstanding problem with GetTimeZones() that did one thing too much: getting the current date and time with the time zone.
+
+So, we've decided to split this function to two functions:
+
+* `GetTimeZoneNames()`: Gets the time zone names
+* `GetTimeZoneTimes()`: Gets the time zone times using the current date and time
+
+{% hint style="info" %}
+We advice you to use one of these functions, depending on whether you want time zone names or current times.
+{% endhint %}

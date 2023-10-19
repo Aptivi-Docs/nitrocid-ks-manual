@@ -23,3 +23,11 @@ It extracts from these values found in the `CommandInfo` class:
 * `HelpDefinition`: The brief summary of what the command does
 * `CommandArgumentInfo.Arguments`: Defines the command arguments
 * `CommandArgumentInfo.Switches`: Defines the command switches
+* `CommandArgumentInfo.RenderedUsage`: Defines the rendered usage to be printed for a command
+
+The rendered usage has the following characteristics:
+
+* For required switches, they're surrounded with the `<` and the `>` marks. Switches that are not required are surrounded with the `[` and the `]` marks instead.
+* Switches that require values don't have the `[` and the `]` marks surrounding the `=value` part, indicating that the switch needs a value.
+* For required arguments, they're surrounded with the `<` and the `>` marks. Arguments that are not required are surrounded with the `[` and the `]` marks instead.
+* For numeric arguments, a marker is shown indicating that it only accepts numbers.
