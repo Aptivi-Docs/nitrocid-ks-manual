@@ -3316,3 +3316,28 @@ So, we've decided to split this function to two functions:
 {% hint style="info" %}
 We advice you to use one of these functions, depending on whether you want time zone names or current times.
 {% endhint %}
+
+### Renamed two classes
+
+{% code title="Presentation.cs" lineNumbers="true" %}
+```csharp
+public class Presentation
+```
+{% endcode %}
+
+{% code title="Filesystem.cs" lineNumbers="true" %}
+```csharp
+public static class Filesystem
+```
+{% endcode %}
+
+The two classes have been reported to use the same name as the namespace, so we've decided to rename the two above classes to avoid ambiguity.
+
+You no longer have to fully qualify these two classes anytime you need access to these classes.
+
+{% hint style="info" %}
+The below classes have been renamed:
+
+* `Presentation` -> `Slideshow`
+* `Filesystem` -> `FilesystemTools`
+{% endhint %}
