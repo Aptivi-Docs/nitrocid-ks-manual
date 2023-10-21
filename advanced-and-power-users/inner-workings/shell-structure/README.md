@@ -254,8 +254,13 @@ To implement `CommandArgumentInfo`, call the constructor either with no paramete
 
 ```csharp
 public CommandArgumentInfo()
+public CommandArgumentInfo(bool AcceptsSet)
+public CommandArgumentInfo(CommandArgumentPart[] Arguments)
+public CommandArgumentInfo(CommandArgumentPart[] Arguments, bool AcceptsSet)
+public CommandArgumentInfo(SwitchInfo[] Switches)
+public CommandArgumentInfo(SwitchInfo[] Switches, bool AcceptsSet)
 public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches)
-public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet = false)
+public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet)
 ```
 
 where:

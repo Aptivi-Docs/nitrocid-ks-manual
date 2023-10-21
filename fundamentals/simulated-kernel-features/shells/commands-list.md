@@ -165,6 +165,7 @@ This shell provides you administrative tools. The following commands are availab
 
 | Commands           | Arguments and Switches                           |
 | ------------------ | ------------------------------------------------ |
+| `arghelp`          | `[argument]`                                     |
 | `bootlog`          |                                                  |
 | `cdbglog`          |                                                  |
 | `clearfiredevents` |                                                  |

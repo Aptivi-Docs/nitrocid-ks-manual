@@ -94,6 +94,8 @@ Handling extensions consists of a class, called `ExtensionHandler`, that contain
   * MIME type of the extension
 * `Handler`
   * A function to execute with the full path to the requested file as the first argument
+* `InfoHandler`
+  * A function get information from a file and render said information to a string instance
 
 You can register your custom handler using the `RegisterHandler()` function found in the `ExtensionHandlerTools` class. This way, next time IFM opens up a file with an extension that contains your handler, it will execute your own custom handler.
 

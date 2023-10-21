@@ -3341,3 +3341,55 @@ The below classes have been renamed:
 * `Presentation` -> `Slideshow`
 * `Filesystem` -> `FilesystemTools`
 {% endhint %}
+
+### Used separate settings entry for default figlet font
+
+{% code title="WelcomeMessage.cs" lineNumbers="true" %}
+```csharp
+public static string BannerFigletFont
+```
+{% endcode %}
+
+{% code title="KernelMainConfig.cs" lineNumbers="true" %}
+```csharp
+public string BannerFigletFont
+```
+{% endcode %}
+
+BannerFigletFont was used by literally one feature, which is an old feature. However, we wanted to increase the customizability of this feature, so we've decided to implement a new settings entry for the default figlet font to replace the two above properties.
+
+{% hint style="info" %}
+This settings entry still represents the name, so you just need to change from `BannerFigletFont` to `TextTools.DefaultFigletFontName`
+{% endhint %}
+
+### Refactored the arguments help system
+
+{% code title="ArgumentHelpSystem.cs" lineNumbers="true" %}
+```csharp
+public static class ArgumentHelpSystem
+```
+{% endcode %}
+
+The arguments help system has been refactored exactly as we've done earlier to the UESH help system in an attempt to increase consistency and maintainability.
+
+The printing tools, however, stay internal until Beta 3 gets released after enough tests have been made.
+
+{% hint style="info" %}
+None of the functions found inside the class have been affected. It's just that you have to update the class name to `ArgumentHelpPrint` and the imports to `KS.Arguments.Help`.
+{% endhint %}
+
+### Refactored the remote debug help system
+
+{% code title="RemoteDebugHelpSystem.cs" lineNumbers="true" %}
+```csharp
+public static class RemoteDebugHelpSystem
+```
+{% endcode %}
+
+The remote debug help system has been refactored exactly as we've done earlier to the UESH help system in an attempt to increase consistency and maintainability.
+
+The printing tools, however, stay internal until Beta 3 gets released after enough tests have been made.
+
+{% hint style="info" %}
+None of the functions found inside the class have been affected. It's just that you have to update the class name to `RemoteDebugHelpPrint` and the imports to `KS.Kernel.Debugging.RemoteDebug.Command.Help`.
+{% endhint %}
