@@ -46,6 +46,12 @@ A `KernelThread` has the following values:
   * If the thread is a child thread, this will return its parent. Else, it returns `null`.
 * `ThreadId`
   * Managed kernel thread ID
+* `NativeThreadId`
+  * Native thread ID that the OS assigned
+
+{% hint style="danger" %}
+`NativeThreadId` property may return inaccurate numbers and can only represent the current PID of the Nitrocid process. Don't use this function unless absolutely necessary.
+{% endhint %}
 
 ## Task manager
 

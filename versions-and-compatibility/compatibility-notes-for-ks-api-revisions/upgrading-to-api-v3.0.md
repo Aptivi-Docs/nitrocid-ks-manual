@@ -3393,3 +3393,15 @@ The printing tools, however, stay internal until Beta 3 gets released after enou
 {% hint style="info" %}
 None of the functions found inside the class have been affected. It's just that you have to update the class name to `RemoteDebugHelpPrint` and the imports to `KS.Kernel.Debugging.RemoteDebug.Command.Help`.
 {% endhint %}
+
+### No prefixing for editor functions
+
+When text and file editors were implemented, we had to prefix every command and function with the editor type prefix, separated by the underscore character and the actual function name, such as `JsonShell_OpenJsonFile()`.
+
+However, this was a requirement as we had been using Visual Basic as the langauge when we first developed the first version of Nitrocid KS and every component had a single namespace at the time, which is `KS` before the migration.
+
+Since we've moved to using namespaces and to using C# as the language used for the development of 0.1.0, we've decided to remove the prefixing from the editor functions and all the shell commands to show that namespaces are useful.
+
+{% hint style="info" %}
+You can invoke the editor functions by removing the prefix, such as `JsonShell_OpenJsonFile()` being just `OpenJsonFile()` from `JsonTools`.
+{% endhint %}

@@ -80,6 +80,17 @@ Additionally, the driver management API provides you an easy way to get the defa
 Don't confuse the name given by the `GetDriverName()` and its siblings with the name from the driver instance.
 {% endhint %}
 
+### Current drivers
+
+If you have a driver interface type or the driver type from the `DriverTypes` enumeration, you can request for a current driver either from the available properties or from the `GetCurrentDriver()` and `GetCurrentDriverLocal()` functions.
+
+```csharp
+var currentDriver = DriverHandler.GetCurrentDriver(driverType);
+```
+
+* GetCurrentDriver() returns the current driver that's used by the kernel
+* GetCurrentDriverLocal() returns the current local driver set by `BeginLocalDriver<T>()` or its safe sibling function.
+
 ### Driver Configuration
 
 <figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
