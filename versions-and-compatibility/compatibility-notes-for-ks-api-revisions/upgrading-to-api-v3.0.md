@@ -3405,3 +3405,18 @@ Since we've moved to using namespaces and to using C# as the language used for t
 {% hint style="info" %}
 You can invoke the editor functions by removing the prefix, such as `JsonShell_OpenJsonFile()` being just `OpenJsonFile()` from `JsonTools`.
 {% endhint %}
+
+### Moved `ShellStart` and `ShellTypeManager` functions
+
+{% code title="ShellStart.cs" lineNumbers="true" %}
+```csharp
+public static class ShellStart
+public static class ShellTypeManager
+```
+{% endcode %}
+
+We're aiming for simplicity and stability across the Nitrocid API, so we've moved all the functions found in the two above classes to ShellManager, making them easier to access.
+
+{% hint style="info" %}
+None of the functions or their signatures are changed. Update all the references to `ShellStart` and `ShellTypeManager` to `ShellManager`.
+{% endhint %}

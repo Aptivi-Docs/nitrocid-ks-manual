@@ -137,6 +137,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `verify`             | `<algorithm> <calculatedhash> <hashfile/expectedhash> <file>`                    |
 | `version`            | `[-m\|-k]`                                                                       |
 | `whoami`             |                                                                                  |
+| `winelevate`         |                                                                                  |
 | `zip`                | `[-fast\|-nocomp] [-nobasedir] <zipfile> <path>`                                 |
 
 ## Unified commands
@@ -504,12 +505,18 @@ Once you enter the Git shell with the provided repo path, you can access the bel
 
 | Commands     | Arguments and Switches   |
 | ------------ | ------------------------ |
+| `blame`      |                          |
 | `checkout`   | `<branch>`               |
 | `commit`     | `<summary>`              |
+| `describe`   | `<commitsha>`            |
 | `fetch`      | `[remote]`               |
+| `filestatus` | `<file>`                 |
+| `info`       |                          |
 | `lsbranches` |                          |
 | `lscommits`  |                          |
 | `lsremotes`  |                          |
+| `lstags`     |                          |
+| `maketag`    | `<tagname> [message]`    |
 | `pull`       |                          |
 | `push`       |                          |
 | `reset`      | `[-soft\|-hard\|-mixed]` |

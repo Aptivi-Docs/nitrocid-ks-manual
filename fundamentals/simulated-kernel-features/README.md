@@ -8,6 +8,12 @@ description: Ordered list of simulated kernel flow
 
 Within the simulated kernel, there are big amounts of features that actually excites you. As new versions get released, new and spectacular features get added.
 
+{% hint style="warning" %}
+Some features of the kernel, such as the usage of SpecProbe driver, may need elevated privileges. To get access to these elevated privileges on Windows, use the `winelevate` command.
+
+We advice that you don't restart Nitrocid as an elevated application unless absolutely necessary.
+{% endhint %}
+
 The buttons below lists some of the features that blow your mind.
 
 {% content-ref url="accounts/" %}
