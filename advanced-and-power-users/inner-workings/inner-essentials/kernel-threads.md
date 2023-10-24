@@ -63,11 +63,14 @@ The left pane of the task manager shows you a list of threads, and the right pan
 
 * `F1`
   * Kills a Nitrocid KS thread and regenerates it
-  * This can't be used on unmanaged OS threads
 * `Tab`
   * Switches between the Nitrocid KS thread listing and the unmanaged OS thread listing
 * `ESC`
   * Exits the program
+
+{% hint style="info" %}
+The `F1` command to kill a selected thread can't be used to kill unmanaged OS threads.
+{% endhint %}
 
 ### Thread information
 
@@ -178,3 +181,13 @@ Kernel threads can now delay operations by using one of the following `Sleep()` 
   * Sleeps until either the time specified, or the specified non-Nitrocid thread is no longer alive.
 * `SleepNoBlock(long Time, KernelThread ThreadWork)`
   * Sleeps until either the time specified, or the specified Nitrocid thread is no longer alive.
+
+#### Determining the precise sleep duration
+
+The thread manager contains these functions designed to get the total elapsed ticks, milliseconds, or time span to sleep for a specified milliseconds:
+
+* `GetActualMilliseconds()`
+* `GetActualTicks()`
+* `GetActualTimeSpan()`
+
+When called, they contain valuable information about the time information, depending on the function used, including the amount of nanoseconds taken to sleep for the specified time in milliseconds.

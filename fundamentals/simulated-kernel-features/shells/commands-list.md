@@ -76,6 +76,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `lsdbgdev`           |                                                                                  |
 | `lsdiskparts`        | `<disknum>`                                                                      |
 | `lsdisks`            |                                                                                  |
+| `lsexthandlers`      |                                                                                  |
 | `lsnet`              |                                                                                  |
 | `lsvars`             |                                                                                  |
 | `mail`               | `[address]`                                                                      |
@@ -138,6 +139,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `version`            | `[-m\|-k]`                                                                       |
 | `whoami`             |                                                                                  |
 | `winelevate`         |                                                                                  |
+| `wraptext`           | `[-columns=num] <file>`                                                          |
 | `zip`                | `[-fast\|-nocomp] [-nobasedir] <zipfile> <path>`                                 |
 
 ## Unified commands
@@ -146,7 +148,7 @@ The below commands are available to all the shells, either built-in or your cust
 
 | Commands        | Arguments and Switches                                       |
 | --------------- | ------------------------------------------------------------ |
-| `exec`          | `<process> [args]`                                           |
+| `exec`          | `[-forked] <process> [args]`                                 |
 | `exit`          |                                                              |
 | `help`          | `[-general\|-mod\|-alias\|-addon\|-unified\|-all] [command]` |
 | `loadhistories` |                                                              |

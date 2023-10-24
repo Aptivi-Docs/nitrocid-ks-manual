@@ -3420,3 +3420,25 @@ We're aiming for simplicity and stability across the Nitrocid API, so we've move
 {% hint style="info" %}
 None of the functions or their signatures are changed. Update all the references to `ShellStart` and `ShellTypeManager` to `ShellManager`.
 {% endhint %}
+
+### Help helpers are now turned to methods in argument info
+
+{% code title="ArgumentInfo.cs" lineNumbers="true" %}
+```csharp
+public Action AdditionalHelpAction { get; private set; }
+public ArgumentInfo(string Argument, string HelpDefinition, CommandArgumentInfo[] ArgArgumentInfo, ArgumentExecutor ArgumentBase, bool Obsolete = false, Action AdditionalHelpAction = null)
+```
+{% endcode %}
+
+Earlier, we used to have a property in `ArgumentInfo`, called `AdditionalHelpAction`, that contains a function telling you about tips for using a specified command when the help system is being requested to display the usage information to the user, similar to how it worked for the UESH shell.
+
+Because we've implemented the `arghelp` command to the administrative shell, and we wanted to stay consistent in terms of performance, we've decided to replace the `AdditionalHelpAction` property with the `HelpHelper()` function that is overridable from the base argument executor class, `ArgumentExecutor`.
+
+{% hint style="info" %}
+If you want additional help to be displayed, move the additional help action code to the HelpHelper() block, assuming that you've overridden it like below:
+
+```csharp
+public override void HelpHelper() =>
+    TextWriterColor.Write("Your additional help here");
+```
+{% endhint %}

@@ -92,6 +92,8 @@ Handling extensions consists of a class, called `ExtensionHandler`, that contain
   * File extension that is being handled
 * `MimeType`
   * MIME type of the extension
+* `Implementer`
+  * The extension handler implementer name (can also be used as a codename for the handler)
 * `Handler`
   * A function to execute with the full path to the requested file as the first argument
 * `InfoHandler`
@@ -105,9 +107,7 @@ Additionally, any mod that uses `OpenDeterministically()` on a file will trigger
 Make sure that you unregister all your handlers when unloading your mod. `RegisterHandler()` throws if it discovers that your handler that handles your specific extension is already added to the list of handlers.
 {% endhint %}
 
-{% hint style="warning" %}
-Currently, we only support one handler per extension, but we're working on removing that limitation soon.
-{% endhint %}
+For the list of default handlers, they get saved to the `ExtensionHandlers.json` file. These handlers get used everytime a request to `GetExtensionHandler(string extension)` function is made.
 
 ### Filesystem read and write
 

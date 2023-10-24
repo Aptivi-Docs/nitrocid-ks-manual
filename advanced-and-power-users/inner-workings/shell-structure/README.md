@@ -272,7 +272,7 @@ where:
 For `CommandArgumentPart` instances, consult the below constructor to create an array of `CommandArgumentPart` instances when defining your commands:
 
 ```csharp
-public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[]> autoCompleter = null, string exactWording = null)
+public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[]> autoCompleter = null, bool isNumeric = false, string exactWording = null)
 ```
 
 where:
@@ -280,6 +280,7 @@ where:
 * `argumentRequired`: Is this argument part required?
 * `argumentExpression`: Command argument expression
 * `autoCompleter`: Auto completion function delegate
+* `isNumeric`: Whether this argument part accepts numeric values only
 * `exactWording`: If not empty, the user must write this wording for this argument to be satisfied
 
 {% hint style="info" %}
@@ -305,6 +306,14 @@ When it comes to auto-completion, if you press TAB on any of the argument positi
 {% hint style="success" %}
 Usually, there is no need for you to cut the string to the required position; the shell does it to every single autocomplete result that is given.
 {% endhint %}
+
+### Command argument part with options
+
+In case you want to expressively specify the options without having to use default values for all parameters to set a certain parameter, you can use the `CommandArgumentPartOptions` overload:
+
+```csharp
+public CommandArgumentPart(bool argumentRequired, string argumentExpression, CommandArgumentPartOptions options)
+```
 
 ## Switch Info
 
