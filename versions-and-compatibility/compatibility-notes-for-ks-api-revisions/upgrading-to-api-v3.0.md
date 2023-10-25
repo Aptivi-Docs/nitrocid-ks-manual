@@ -3442,3 +3442,19 @@ public override void HelpHelper() =>
     TextWriterColor.Write("Your additional help here");
 ```
 {% endhint %}
+
+### Implemented `NotificationProgressState`
+
+{% code title="Notification.cs" lineNumbers="true" %}
+```csharp
+public bool ProgressFailed { get; set; }
+```
+{% endcode %}
+
+`ProgressFailed` was implemented as a way to indicate that the progress has failed. Back then, the progress being 100% meant that the progress notification indicates that the progress is complete. However, we wanted a more accurate way to have the basic progress statistics.
+
+As a result, we need to implement the `NotificationProgressState` enumeration to more accurately represent the progress state for a single progress notification, determinate or not.
+
+{% hint style="info" %}
+If you want the progress notification to indicate failure, you'll have to set the `ProgressState` property value to `NotificationProgressState.Failure`.
+{% endhint %}

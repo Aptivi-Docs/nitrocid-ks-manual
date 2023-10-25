@@ -10,137 +10,142 @@ This page is a reference that serves as a list of available commands, including 
 
 Nitrocid KS currently provides the following commands (you can see their definitions in the help command list):
 
-| Commands             | Arguments and Switches                                                           |
-| -------------------- | -------------------------------------------------------------------------------- |
-| `addgroup`           | `<groupname>`                                                                    |
-| `adduser`            | `<username> [password]`                                                          |
-| `addusertogroup`     | `<username> <group>`                                                             |
-| `admin`              |                                                                                  |
-| `alias`              | `<rem/add> <shelltype> <alias> [cmd]`                                            |
-| `beep`               |                                                                                  |
-| `blockdbgdev`        | `<ipaddress>`                                                                    |
-| `bulkrename`         | `<targetdir> <pattern> [newname]`                                                |
-| `cat`                | `[-lines\|-nolines\|-plain] <file>`                                              |
-| `cdir`               |                                                                                  |
-| `chattr`             | `<file> <add/rem> <attr>`                                                        |
-| `chdir`              | `<directory/..>`                                                                 |
-| `chhostname`         | `<hostname>`                                                                     |
-| `chklock`            | `[-waitforunlock] <file>`                                                        |
-| `chlang`             | `[-usesyslang\|-user] <language>`                                                |
-| `chmal`              | `[message]`                                                                      |
-| `chmotd`             | `[message]`                                                                      |
-| `choice`             | `[-o\|-t\|-m\|-a] [-single\|-multiple] <answers> <input> [title] [title2] [...]` |
-| `chpwd`              | `<username> <pass> <newpass> <newpass>`                                          |
-| `chusrname`          | `<oldusername> <newusername>`                                                    |
-| `cls`                |                                                                                  |
-| `combinestr`         | `<input> <input2> [input3] [...]`                                                |
-| `combine`            | `<output> <input> <input2> [input3] [...]`                                       |
-| `convertlineendings` | `[-w\|-u\|-m] [-force] <text>`                                                   |
-| `copy`               | `<source> <target>`                                                              |
-| `date`               | `[-date\|-time\|-full] [-utc]`                                                   |
-| `debugshell`         |                                                                                  |
-| `decodefile`         | `[-key] [-iv] <file> [algorithm]`                                                |
-| `decodetext`         | `[-key] [-iv] <text> [algorithm]`                                                |
-| `dirinfo`            | `<directory>`                                                                    |
-| `disconndbgdev`      | `<ip>`                                                                           |
-| `diskinfo`           | `<disknum>`                                                                      |
-| `dismissnotif`       | `<num>`                                                                          |
-| `dismissnotifs`      |                                                                                  |
-| `echo`               | `[-noparse] <text>`                                                              |
-| `edit`               | `[-text\|-sql\|-json\|-hex] <file>`                                              |
-| `encodefile`         | `[-key] [-iv] <file> [algorithm]`                                                |
-| `encodetext`         | `[-key] [-iv] <text> [algorithm]`                                                |
-| `fileinfo`           | `<file>`                                                                         |
-| `find`               | `[-recursive] [-exec] <file> <directory>`                                        |
-| `findreg`            | `[-recursive] [-exec] <fileRegex> <directory>`                                   |
-| `fork`               |                                                                                  |
-| `ftp`                | `[server]`                                                                       |
-| `get`                | `[-outputpath] <url>`                                                            |
-| `getkeyiv`           | `[algorithm]`                                                                    |
-| `host`               |                                                                                  |
-| `http`               |                                                                                  |
-| `hwinfo`             | `<type>`                                                                         |
-| `if`                 | `<expression> <command>`                                                         |
-| `ifm`                |                                                                                  |
-| `input`              | `<question>`                                                                     |
-| `jsonbeautify`       | `<jsonfile> <output>`                                                            |
-| `jsonminify`         | `<jsonfile> <output>`                                                            |
-| `langman`            | `<reload/load/unload> <customlangname>`                                          |
-|                      | `<list/reloadall>`                                                               |
-| `license`            |                                                                                  |
-| `lintscript`         | `<script>`                                                                       |
-| `list`               | `[-showdetails\|-suppressmessages\|-recursive] [directory]`                      |
-| `lockscreen`         |                                                                                  |
-| `logout`             |                                                                                  |
-| `lsconnections`      |                                                                                  |
-| `lsdbgdev`           |                                                                                  |
-| `lsdiskparts`        | `<disknum>`                                                                      |
-| `lsdisks`            |                                                                                  |
-| `lsexthandlers`      |                                                                                  |
-| `lsnet`              |                                                                                  |
-| `lsvars`             |                                                                                  |
-| `mail`               | `[address]`                                                                      |
-| `md`                 | `<directory>`                                                                    |
-| `mkfile`             | `<file>`                                                                         |
-| `modman`             | `<start/stop/info/reload/install/uninstall> <modfilename>`                       |
-|                      | `<list/listparts> <modname>`                                                     |
-|                      | `<reloadall/stopall/startall>`                                                   |
-| `modmanual`          | `<modname>`                                                                      |
-| `move`               | `<source> <target>`                                                              |
-| `partinfo`           | `<disknum> <partnum>`                                                            |
-| `pathfind`           | `<filename>`                                                                     |
-| `perm`               | `<username> <allow/revoke> <perm>`                                               |
-| `permgroup`          | `<groupname> <allow/revoke> <perm>`                                              |
-| `ping`               | `[-times] <address1> [address2] [...]`                                           |
-| `platform`           | `[-r\|-v\|-b\|-c\|-n]`                                                           |
-| `previewsplash`      | `[-splashout] [-context] <splashname>`                                           |
-| `put`                | `<filename> <url>`                                                               |
-| `rdebug`             |                                                                                  |
-| `reboot`             | `[ip] [port]`                                                                    |
-| `reloadconfig`       |                                                                                  |
-| `retroks`            |                                                                                  |
-| `rexec`              | `<address> <port> <command>`                                                     |
-| `rm`                 | `<target>`                                                                       |
-| `rmsec`              | `<target>`                                                                       |
-| `rmuser`             | `<username>`                                                                     |
-| `rmgroup`            | `<groupname>`                                                                    |
-| `rmuserfromgroup`    | `<username> <groupname>`                                                         |
-| `rss`                | `[feedlink]`                                                                     |
-| `saveconfig`         |                                                                                  |
-| `savescreen`         | `[saver]`                                                                        |
-| `search`             | `<regex> <file>`                                                                 |
-| `searchword`         | `<phrase> <file>`                                                                |
-| `select`             | `<answers> <input> [title] [title2] [...]`                                       |
-| `setsaver`           | `<saver>`                                                                        |
-| `settings`           | `[-saver\|-addonsaver\|-splash\|-type]`                                          |
-| `set`                | `<value>`                                                                        |
-| `setrange`           | `<value> [value2] [value3] [...]`                                                |
-| `sftp`               | `[server]`                                                                       |
-| `shownotifs`         |                                                                                  |
-| `showtd`             |                                                                                  |
-| `showtdzone`         | `[-all] <timezone>`                                                              |
-| `shutdown`           | `[ip] [port]`                                                                    |
-| `sleep`              | `<ms>`                                                                           |
-| `sshell`             | `<address:port> <username>`                                                      |
-| `sshcmd`             | `<address:port> <username> <command>`                                            |
-| `sudo`               | `<command>`                                                                      |
-| `sumfile`            | `[-relative] <algorithm/all> <file> [output]`                                    |
-| `sumfiles`           | `[-relative] <algorithm/all> <dir> [output]`                                     |
-| `taskman`            |                                                                                  |
-| `themeprev`          | `[theme]`                                                                        |
-| `themeset`           | `[theme]`                                                                        |
-| `unblockdbgdev`      | `<address>`                                                                      |
-| `unset`              | `[-justwipe] <$variable>`                                                        |
-| `unzip`              | `[-createdir] <zipfile> [path]`                                                  |
-| update               |                                                                                  |
-| uptime               |                                                                                  |
-| usermanual           |                                                                                  |
-| `verify`             | `<algorithm> <calculatedhash> <hashfile/expectedhash> <file>`                    |
-| `version`            | `[-m\|-k]`                                                                       |
-| `whoami`             |                                                                                  |
-| `winelevate`         |                                                                                  |
-| `wraptext`           | `[-columns=num] <file>`                                                          |
-| `zip`                | `[-fast\|-nocomp] [-nobasedir] <zipfile> <path>`                                 |
+| Commands                | Arguments and Switches                                                           |
+| ----------------------- | -------------------------------------------------------------------------------- |
+| `addgroup`              | `<groupname>`                                                                    |
+| `adduser`               | `<username> [password]`                                                          |
+| `addusertogroup`        | `<username> <group>`                                                             |
+| `admin`                 |                                                                                  |
+| `alias`                 | `<rem/add> <shelltype> <alias> [cmd]`                                            |
+| `beep`                  |                                                                                  |
+| `blockdbgdev`           | `<ipaddress>`                                                                    |
+| `bulkrename`            | `<targetdir> <pattern> [newname]`                                                |
+| `cat`                   | `[-lines\|-nolines\|-plain] <file>`                                              |
+| `cdir`                  |                                                                                  |
+| `chattr`                | `<file> <add/rem> <attr>`                                                        |
+| `chdir`                 | `<directory/..>`                                                                 |
+| `chhostname`            | `<hostname>`                                                                     |
+| `chklock`               | `[-waitforunlock] <file>`                                                        |
+| `chlang`                | `[-usesyslang\|-user] <language>`                                                |
+| `chmal`                 | `[message]`                                                                      |
+| `chmotd`                | `[message]`                                                                      |
+| `choice`                | `[-o\|-t\|-m\|-a] [-single\|-multiple] <answers> <input> [title] [title2] [...]` |
+| `chpwd`                 | `<username> <pass> <newpass> <newpass>`                                          |
+| `chusrname`             | `<oldusername> <newusername>`                                                    |
+| `cls`                   |                                                                                  |
+| `combinestr`            | `<input> <input2> [input3] [...]`                                                |
+| `combine`               | `<output> <input> <input2> [input3] [...]`                                       |
+| `convertlineendings`    | `[-w\|-u\|-m] [-force] <text>`                                                   |
+| `copy`                  | `<source> <target>`                                                              |
+| `date`                  | `[-date\|-time\|-full] [-utc]`                                                   |
+| `debugshell`            |                                                                                  |
+| `decodefile`            | `[-key] [-iv] <file> [algorithm]`                                                |
+| `decodetext`            | `[-key] [-iv] <text> [algorithm]`                                                |
+| `dirinfo`               | `<directory>`                                                                    |
+| `disconndbgdev`         | `<ip>`                                                                           |
+| `diskinfo`              | `<disknum>`                                                                      |
+| `dismissnotif`          | `<num>`                                                                          |
+| `dismissnotifs`         |                                                                                  |
+| `echo`                  | `[-noparse] <text>`                                                              |
+| `edit`                  | `[-text\|-sql\|-json\|-hex] <file>`                                              |
+| `encodefile`            | `[-key] [-iv] <file> [algorithm]`                                                |
+| `encodetext`            | `[-key] [-iv] <text> [algorithm]`                                                |
+| `fileinfo`              | `<file>`                                                                         |
+| `find`                  | `[-recursive] [-exec] <file> <directory>`                                        |
+| `findreg`               | `[-recursive] [-exec] <fileRegex> <directory>`                                   |
+| `fork`                  |                                                                                  |
+| `ftp`                   | `[server]`                                                                       |
+| `get`                   | `[-outputpath] <url>`                                                            |
+| `getallexthandlers`     |                                                                                  |
+| `getdefaultexthandler`  | `<extension>`                                                                    |
+| `getdefaultexthandlers` |                                                                                  |
+| `getexthandlers`        | `<extension>`                                                                    |
+| `getkeyiv`              | `[algorithm]`                                                                    |
+| `host`                  |                                                                                  |
+| `http`                  |                                                                                  |
+| `hwinfo`                | `<type>`                                                                         |
+| `if`                    | `<expression> <command>`                                                         |
+| `ifm`                   |                                                                                  |
+| `input`                 | `<question>`                                                                     |
+| `jsonbeautify`          | `<jsonfile> <output>`                                                            |
+| `jsonminify`            | `<jsonfile> <output>`                                                            |
+| `langman`               | `<reload/load/unload> <customlangname>`                                          |
+|                         | `<list/reloadall>`                                                               |
+| `license`               |                                                                                  |
+| `lintscript`            | `<script>`                                                                       |
+| `list`                  | `[-showdetails\|-suppressmessages\|-recursive] [directory]`                      |
+| `lockscreen`            |                                                                                  |
+| `logout`                |                                                                                  |
+| `lsconnections`         |                                                                                  |
+| `lsdbgdev`              |                                                                                  |
+| `lsdiskparts`           | `<disknum>`                                                                      |
+| `lsdisks`               |                                                                                  |
+| `lsexthandlers`         |                                                                                  |
+| `lsnet`                 |                                                                                  |
+| `lsvars`                |                                                                                  |
+| `mail`                  | `[address]`                                                                      |
+| `md`                    | `<directory>`                                                                    |
+| `mkfile`                | `<file>`                                                                         |
+| `modman`                | `<start/stop/info/reload/install/uninstall> <modfilename>`                       |
+|                         | `<list/listparts> <modname>`                                                     |
+|                         | `<reloadall/stopall/startall>`                                                   |
+| `modmanual`             | `<modname>`                                                                      |
+| `move`                  | `<source> <target>`                                                              |
+| `partinfo`              | `<disknum> <partnum>`                                                            |
+| `pathfind`              | `<filename>`                                                                     |
+| `perm`                  | `<username> <allow/revoke> <perm>`                                               |
+| `permgroup`             | `<groupname> <allow/revoke> <perm>`                                              |
+| `ping`                  | `[-times] <address1> [address2] [...]`                                           |
+| `platform`              | `[-r\|-v\|-b\|-c\|-n]`                                                           |
+| `previewsplash`         | `[-splashout] [-context] <splashname>`                                           |
+| `put`                   | `<filename> <url>`                                                               |
+| `rdebug`                |                                                                                  |
+| `reboot`                | `[ip] [port]`                                                                    |
+| `reloadconfig`          |                                                                                  |
+| `retroks`               |                                                                                  |
+| `rexec`                 | `<address> <port> <command>`                                                     |
+| `rm`                    | `<target>`                                                                       |
+| `rmsec`                 | `<target>`                                                                       |
+| `rmuser`                | `<username>`                                                                     |
+| `rmgroup`               | `<groupname>`                                                                    |
+| `rmuserfromgroup`       | `<username> <groupname>`                                                         |
+| `rss`                   | `[feedlink]`                                                                     |
+| `saveconfig`            |                                                                                  |
+| `savescreen`            | `[saver]`                                                                        |
+| `search`                | `<regex> <file>`                                                                 |
+| `searchword`            | `<phrase> <file>`                                                                |
+| `select`                | `<answers> <input> [title] [title2] [...]`                                       |
+| `setexthandler`         | `<extension> <implementer>`                                                      |
+| `setsaver`              | `<saver>`                                                                        |
+| `settings`              | `[-saver\|-addonsaver\|-splash\|-type]`                                          |
+| `set`                   | `<value>`                                                                        |
+| `setrange`              | `<value> [value2] [value3] [...]`                                                |
+| `sftp`                  | `[server]`                                                                       |
+| `shownotifs`            |                                                                                  |
+| `showtd`                |                                                                                  |
+| `showtdzone`            | `[-all] <timezone>`                                                              |
+| `shutdown`              | `[ip] [port]`                                                                    |
+| `sleep`                 | `<ms>`                                                                           |
+| `sshell`                | `<address:port> <username>`                                                      |
+| `sshcmd`                | `<address:port> <username> <command>`                                            |
+| `sudo`                  | `<command>`                                                                      |
+| `sumfile`               | `[-relative] <algorithm/all> <file> [output]`                                    |
+| `sumfiles`              | `[-relative] <algorithm/all> <dir> [output]`                                     |
+| `taskman`               |                                                                                  |
+| `themeprev`             | `[theme]`                                                                        |
+| `themeset`              | `[theme]`                                                                        |
+| `unblockdbgdev`         | `<address>`                                                                      |
+| `unset`                 | `[-justwipe] <$variable>`                                                        |
+| `unzip`                 | `[-createdir] <zipfile> [path]`                                                  |
+| update                  |                                                                                  |
+| uptime                  |                                                                                  |
+| usermanual              |                                                                                  |
+| `verify`                | `<algorithm> <calculatedhash> <hashfile/expectedhash> <file>`                    |
+| `version`               | `[-m\|-k]`                                                                       |
+| `whoami`                |                                                                                  |
+| `winelevate`            |                                                                                  |
+| `wraptext`              | `[-columns=num] <file>`                                                          |
+| `zip`                   | `[-fast\|-nocomp] [-nobasedir] <zipfile> <path>`                                 |
 
 ## Unified commands
 

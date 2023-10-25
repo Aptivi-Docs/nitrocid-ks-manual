@@ -157,6 +157,8 @@
     * [🖥 Kernel Platform](advanced-and-power-users/inner-workings/inner-essentials/kernel-platform.md)
     * [🎨 Theme Internals](advanced-and-power-users/inner-workings/inner-essentials/theme-internals.md)
     * [🔏 Privacy Consents](advanced-and-power-users/inner-workings/inner-essentials/privacy-consents.md)
+    * [🔔 System Notifications](advanced-and-power-users/inner-workings/inner-essentials/system-notifications.md)
+    * [✉ MAL and MOTD](advanced-and-power-users/inner-workings/inner-essentials/mal-and-motd.md)
   * [🌀 Miscellaneous APIs](advanced-and-power-users/inner-workings/miscellaneous-apis.md)
 
 ***

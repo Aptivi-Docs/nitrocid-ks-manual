@@ -28,10 +28,6 @@ Themes for the kernel consist of color information for each kernel color type. T
 }
 ```
 
-{% hint style="info" %}
-`ThemeInfo()` constructor with theme names is now deprecated in favor of the theme packs. Please use the `GetInstalledThemes()` output and get the theme info instance from there instead.
-{% endhint %}
-
 We'll explain things one by one. The `Metadata` key consists of some basic information about the theme, like the name and the description. Themes can also be event-based by setting the appropriate property.
 
 * `Name`: Display name of the theme
@@ -50,12 +46,23 @@ What follows the metadata is a list of available kernel color types and their co
 [Color Sequences](http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/color-sequences)
 {% endcontent-ref %}
 
-{% hint style="danger" %}
-Due to limitations in the theme parser, it's crucial that you provide color values for all the kernel color types without any exception. Otherwise, it'll throw errors.
-{% endhint %}
-
 {% hint style="warning" %}
 Make sure that the event start month and day is earlier than the end month and day. The theme parser will swap the day values and will add a year (end month is bigger than the start) if it detects that the start date is later than the end date (i.e. events can't end before they start).
+{% endhint %}
+
+### Using `ThemeInfo` to get theme information
+
+To get theme information for a specific theme, you need to use the `ThemeInfo` constructor. The below constructors can be used:
+
+* `ThemeInfo()`
+  * This gives you a new instance of `ThemeInfo` with the default theme parameters
+* `ThemeInfo(themePath)`
+  * This gives you a new instance of `ThemeInfo` with the theme parameters from the given theme JSON file
+* `ThemeInfo(ThemeFileStream)`
+  * This gives you a new instance of `ThemeInfo` with the theme parameters from the given stream containing the theme JSON contents
+
+{% hint style="warning" %}
+`ThemeInfo()` constructor with theme names is now deprecated in favor of the theme packs. Please use the `GetInstalledThemes()` output and get the theme info instance from there instead.
 {% endhint %}
 
 ### Color conversion

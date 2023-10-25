@@ -53,3 +53,11 @@ Nitrocid KS offers a rich API that is open for any mod created for the current A
 {% content-ref url="kernel-platform.md" %}
 [kernel-platform.md](kernel-platform.md)
 {% endcontent-ref %}
+
+{% content-ref url="system-notifications.md" %}
+[system-notifications.md](system-notifications.md)
+{% endcontent-ref %}
+
+{% content-ref url="mal-and-motd.md" %}
+[mal-and-motd.md](mal-and-motd.md)
+{% endcontent-ref %}
