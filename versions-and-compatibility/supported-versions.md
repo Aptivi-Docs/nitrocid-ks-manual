@@ -22,16 +22,19 @@ This revision of the third generation API is currently under development.
 {% tab title="API v2.1" %}
 This revision of the API is currently supported.
 
-| Version   | Release date | EOL date                         | Security EOL date                |
-| --------- | ------------ | -------------------------------- | -------------------------------- |
-| v0.0.24.0 | 8/2/2022     | Until .NET Framework deprecation | Until .NET Framework deprecation |
-| v0.0.24.1 | 8/3/2022     |                                  |                                  |
-| v0.0.24.2 | 8/5/2022     |                                  |                                  |
-| v0.0.24.3 | 8/9/2022     |                                  |                                  |
-| v0.0.24.4 | 8/10/2022    |                                  |                                  |
-| v0.0.24.5 | 8/4/2023     |                                  |                                  |
-| v0.0.24.6 | 8/11/2023    |                                  |                                  |
-| v0.0.24.7 | 8/18/2023    |                                  |                                  |
+| Version    | Release date | EOL date                         | Security EOL date                |
+| ---------- | ------------ | -------------------------------- | -------------------------------- |
+| v0.0.24.0  | 8/2/2022     | Until .NET Framework deprecation | Until .NET Framework deprecation |
+| v0.0.24.1  | 8/3/2022     |                                  |                                  |
+| v0.0.24.2  | 8/5/2022     |                                  |                                  |
+| v0.0.24.3  | 8/9/2022     |                                  |                                  |
+| v0.0.24.4  | 8/10/2022    |                                  |                                  |
+| v0.0.24.5  | 8/4/2023     |                                  |                                  |
+| v0.0.24.6  | 8/11/2023    |                                  |                                  |
+| v0.0.24.7  | 8/18/2023    |                                  |                                  |
+| v0.0.24.8  | 8/25/2023    |                                  |                                  |
+| v0.0.24.9  | 10/24/2023   |                                  |                                  |
+| v0.0.24.10 | 10/26/2023   |                                  |                                  |
 {% endtab %}
 
 {% tab title="API v2.0" %}
@@ -52,6 +55,8 @@ This revision of the API is currently supported until 2/22/2027.
 | v0.0.20.10 | 8/4/2023     |           |                   |
 | v0.0.20.11 | 8/11/2023    |           |                   |
 | v0.0.20.12 | 8/18/2023    |           |                   |
+| v0.0.20.13 | 8/25/2023    |           |                   |
+| v0.0.20.14 | 10/24/2023   |           |                   |
 {% endtab %}
 
 {% tab title="API v1.3" %}
@@ -78,6 +83,8 @@ This revision of the first-generation version is supported until 6/12/2031.
 | v0.0.16.17 | 8/4/2023     |           |              |
 | v0.0.16.18 | 8/11/2023    |           |              |
 | v0.0.16.19 | 8/18/2023    |           |              |
+| v0.0.16.20 | 8/25/2023    |           |              |
+| v0.0.16.21 | 10/24/2023   |           |              |
 {% endtab %}
 
 {% tab title="API v1.2" %}
@@ -100,6 +107,7 @@ This revision of the first-generation version is supported until 11/6/2023.
 | v0.0.12.12 | 8/4/2023     |           |
 | v0.0.12.13 | 8/11/2023    |           |
 | v0.0.12.14 | 8/18/2023    |           |
+| v0.0.12.15 | 8/25/2023    |           |
 {% endtab %}
 {% endtabs %}
 
