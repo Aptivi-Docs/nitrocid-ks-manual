@@ -272,7 +272,7 @@ where:
 For `CommandArgumentPart` instances, consult the below constructor to create an array of `CommandArgumentPart` instances when defining your commands:
 
 ```csharp
-public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[]> autoCompleter = null, bool isNumeric = false, string exactWording = null)
+public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[], string[]> autoCompleter = null, bool isNumeric = false, string exactWording = null)
 ```
 
 where:
@@ -280,6 +280,8 @@ where:
 * `argumentRequired`: Is this argument part required?
 * `argumentExpression`: Command argument expression
 * `autoCompleter`: Auto completion function delegate
+  * The first `string[]` denotes the list of last passed arguments
+  * The second `string[]` (output) denotes the suggestions returned
 * `isNumeric`: Whether this argument part accepts numeric values only
 * `exactWording`: If not empty, the user must write this wording for this argument to be satisfied
 

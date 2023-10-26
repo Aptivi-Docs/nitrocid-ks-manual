@@ -3458,3 +3458,52 @@ As a result, we need to implement the `NotificationProgressState` enumeration to
 {% hint style="info" %}
 If you want the progress notification to indicate failure, you'll have to set the `ProgressState` property value to `NotificationProgressState.Failure`.
 {% endhint %}
+
+### Auto completer gains access to the list of last arguments
+
+{% code title="CommandArgumentPart.cs" lineNumbers="true" %}
+```csharp
+public Func<string[]> AutoCompleter { get; private set; }
+public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[]> autoCompleter = null, bool isNumeric = false, string exactWording = null)
+```
+{% endcode %}
+
+{% code title="CommandArgumentPartOptions.cs" lineNumbers="true" %}
+```csharp
+public Func<string[]> AutoCompleter { get; set; }
+```
+{% endcode %}
+
+The auto completer now has access to the list of last passed arguments. This means that the auto completer function can now adapt to the passed arguments, such as listing all extension handlers for the specific extension.
+
+We had to change the auto completer part to `Func<string[], string[]>` in order to accommodate this change.
+
+{% hint style="info" %}
+Change the auto completer definitions in your `CommandArgumentPart` instances to hold the new function signature. This new function signature holds information about the last passed arguments.
+{% endhint %}
+
+### Process execution moved
+
+{% code title="ProcessExecutor.cs" lineNumbers="true" %}
+```csharp
+public static class ProcessExecutor
+```
+{% endcode %}
+
+The `ProcessExecutor` was located in the following namespace:
+
+{% code title="ProcessExecutor.cs" lineNumbers="true" %}
+```csharp
+namespace KS.Shell.ShellBase.Commands
+```
+{% endcode %}
+
+This namespace was normally reserved for built-in shell commands. However, the process execution has nothing to do with the built-in UESH commands, although the shell considers these as commands. They're just external processes that can be executed right from the shell.
+
+As a result, we've moved the `ProcessExecutor` class to the `ProcessExecution` part of the above namespace.
+
+{% hint style="info" %}
+The `ProcessExecutor` class can now be called by importing the below namespace:
+
+* `KS.Shell.ShellBase.Commands.ProcessExecution`
+{% endhint %}
