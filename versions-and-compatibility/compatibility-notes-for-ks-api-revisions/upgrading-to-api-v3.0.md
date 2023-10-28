@@ -3507,3 +3507,19 @@ The `ProcessExecutor` class can now be called by importing the below namespace:
 
 * `KS.Shell.ShellBase.Commands.ProcessExecution`
 {% endhint %}
+
+### Moved `KernelTools`' properties to `KernelMain`
+
+{% code title="KernelTools.cs" lineNumbers="true" %}
+```csharp
+public static class KernelTools
+```
+{% endcode %}
+
+The kernel entry point used to have the name of Kernel since the inception of Nitrocid KS (Kernel Simulator back then) on 2018. Over time, the kernel got improved to the point that it's now become a massive operating system simulator that contains many useful tools.
+
+As a result, we've moved the `KernelVersion` and the `KernelApiVersion` properties to the `KernelMain` class, which hosts the entry point of the simulator, and removed the `KernelTools` class.
+
+{% hint style="info" %}
+You can still access the two properties, though they're now re-located to the `KernelMain` class in the `KS.Kernel` namespace.
+{% endhint %}

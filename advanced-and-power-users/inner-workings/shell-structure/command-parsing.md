@@ -122,6 +122,16 @@ new SwitchInfo("list", "Shows all the available cities", false, false, null, 2, 
 ```
 {% endhint %}
 
+In addition to these features, you can now also check the specific switch value to see if that value is numeric or not. That means it's checking to see if it's a number (as in either positive numbers or negative numbers) or a number with decimals (as in numbers that have decimals, separated by a dot).
+
+The function to perform this check on a specific switch is `IsSwitchValueNumeric()`, which you can call using the following signature:
+
+{% code title="SwitchManager.cs" lineNumbers="true" %}
+```csharp
+public static bool IsSwitchValueNumeric(string[] switches, string switchKey)
+```
+{% endcode %}
+
 ### Local Variables and Commands
 
 Occasionally, you may run into conditions where you may have to set an environment variable locally before running a command. For example, on your Linux system, if you run a VNC server running on display `:1` and you want to show a GUI application there from the terminal emulator, you'll have to run the command like this:

@@ -506,7 +506,7 @@ This addon includes a Git shell which lets you practice version controlling. On 
 
 | Commands | Arguments and Switches |
 | -------- | ---------------------- |
-| gitsh    | \<repopath>            |
+| `gitsh`  | `<repopath>`           |
 
 Once you enter the Git shell with the provided repo path, you can access the below archive shell commands:
 
@@ -534,6 +534,14 @@ Once you enter the Git shell with the provided repo path, you can access the bel
 | `unstage`    | `<stagedfile>`           |
 | `unstageall` |                          |
 
+### Internet Radio
+
+You can use the following commands to get information about your Internet radio station:
+
+| Commands    | Arguments and Switches        |
+| ----------- | ----------------------------- |
+| `netfminfo` | `[-secure] <hostname> <port>` |
+
 ### Language Studio
 
 You can use the following commands to build your own language:
@@ -546,11 +554,11 @@ You can use the following commands to build your own language:
 
 You can generate names by using the following commands:
 
-| Commands      | Arguments and Switches                                                        |
-| ------------- | ----------------------------------------------------------------------------- |
-| findfirstname | `[-t] [term] [nameprefix] [namesuffix]`                                       |
-| findsurname   | `[term] [surnameprefix] [surnamesuffix]`                                      |
-| `genname`     | `[-t] <namescount> [nameprefix] [namesuffix] [surnameprefix] [surnamesuffix]` |
+| Commands        | Arguments and Switches                                                        |
+| --------------- | ----------------------------------------------------------------------------- |
+| `findfirstname` | `[-t] [term] [nameprefix] [namesuffix]`                                       |
+| `findsurname`   | `[term] [surnameprefix] [surnamesuffix]`                                      |
+| `genname`       | `[-t] <namescount> [nameprefix] [namesuffix] [surnameprefix] [surnamesuffix]` |
 
 ### Notes
 
@@ -569,9 +577,9 @@ You can jot down notes by using the following commands:
 
 You can make your own precious and epic themes by using the following commands:
 
-| Commands | Arguments and Switches |
-| -------- | ---------------------- |
-| mktheme  | \<themename>           |
+| Commands  | Arguments and Switches |
+| --------- | ---------------------- |
+| `mktheme` | `<themename>`          |
 
 ### Time info
 
