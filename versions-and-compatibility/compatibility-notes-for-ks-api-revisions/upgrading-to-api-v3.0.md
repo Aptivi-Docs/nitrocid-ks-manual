@@ -3523,3 +3523,21 @@ As a result, we've moved the `KernelVersion` and the `KernelApiVersion` properti
 {% hint style="info" %}
 You can still access the two properties, though they're now re-located to the `KernelMain` class in the `KS.Kernel` namespace.
 {% endhint %}
+
+### `Out` Property Removed
+
+{% code title="ConsoleWrapper.cs" lineNumbers="true" %}
+```csharp
+public static TextWriter Out
+```
+{% endcode %}
+
+This property was added as part of the console wrapper class and as part of the console driver. It was added back when the shell had to manipulate with this property to nullify any output coming from the cancellation handler.
+
+The thing is that this property was made under the assumption that it can be used to write output to the console and that it can be set, despite it being only useful for low-level scenarios, which are extremely rare.
+
+As a result, for safety, we've decided to remove this property. The next breaking change is going to be about opening the input, the output, and the error output stream.
+
+{% hint style="danger" %}
+We advice you to stop using this property.
+{% endhint %}
