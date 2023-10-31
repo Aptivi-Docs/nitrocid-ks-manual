@@ -3541,3 +3541,64 @@ As a result, for safety, we've decided to remove this property. The next breakin
 {% hint style="danger" %}
 We advice you to stop using this property.
 {% endhint %}
+
+### Moved `SpeedDial` to Network Base
+
+{% code title="SpeedDial*.cs" lineNumbers="true" %}
+```csharp
+namespace KS.Network.SpeedDial
+```
+{% endcode %}
+
+This speed dial namespace menioned above was moved to the network base namespace, `KS.Network.Base.SpeedDial`. The reason for this migration is that because the speed dial functionality is integrated with the base network features.
+
+{% hint style="info" %}
+None of the speed dial classes (or any of their associated functions) have been changed. It's just that you have to update your usings so that it points to the `KS.Network.Base.SpeedDial` namespace.
+{% endhint %}
+
+### Events and reminders config changes
+
+When it comes to the events and the reminders feature in the Calendars addon, you may notice that their configuration file formats have changed from the XML representation of said events or reminders to the JSON representation.
+
+As a result, you'll have to manually change your configuration files related to such events and reminders to follow this suit:
+
+* File extension is renamed from `.ksevent` or `.ksreminder` to `.json`
+* Contents changed from XML to JSON
+
+{% hint style="info" %}
+Until tests are done, there are no clear instructions as to how to convert these configuration files. Be patient as they'll come soon.
+{% endhint %}
+
+### Removed command type from `CommandInfo`
+
+{% code title="CommandInfo.cs" lineNumbers="true" %}
+```csharp
+public string Type { get; private set; }
+public CommandInfo(string Command, ShellType Type, string HelpDefinition, CommandArgumentInfo[] CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
+public CommandInfo(string Command, string Type, string HelpDefinition, CommandArgumentInfo[] CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
+```
+{% endcode %}
+
+The command type used to be required when defining `CommandInfo` instances back when the shell didn't have a straightforward way in defining shell commands across different shells. This was proven difficult when defining custom mod commands, essentially making the mod developers either use `Shell` as a workaround, which is essentially clumsy, or make a custom shell for just their commands, which is ugly.
+
+So, amidst the recent changes made to the core of the UESH, we've decided that the shell type argument is redundant, especially when `RegisterCustomCommand()` and its siblings appeared. As a result of this function appearing, we've decided to finally nerf this requirement out of the definition of the `CommandInfo`, essentially making it easier to use.
+
+This was planned a long time ago, but it didn't really occur to us that such a change required tons of core changes to the UESH shell handling facility to get rid of extraneous arguments that are required.
+
+{% hint style="info" %}
+Just remove all references to the shell type in the second argument in your `CommandInfo` definitions, and you're good to go. Then, use `RegisterCustomCommand()` or its siblings to register them to your custom shell or one of the Nitrocid shells, such as `Shell`.
+{% endhint %}
+
+### Removed `ListModsStartingWith()`
+
+{% code title="ModManager.cs" lineNumbers="true" %}
+```csharp
+public static Dictionary<string, ModInfo> ListModsStartingWith(string SearchTerm)
+```
+{% endcode %}
+
+We've removed this function, because it was made only to help the UESH auto completer find all your mods.
+
+{% hint style="info" %}
+If you really want this function, you can re-implement it using [this link](https://github.com/Aptivi/NitrocidKS/commit/a79faa58481e72a92cb46ca67bd1a6551853c909) as a reference.
+{% endhint %}

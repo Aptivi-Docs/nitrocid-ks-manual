@@ -67,9 +67,13 @@ If you would like to be reminded about something in the future, you can use this
 
 ## Calendar management API
 
-In addition to providing the calendar command in the addon, the base Nitrocid API provides some of the calendar management APIs to make access to them easier than before. You can now get the calendar straight from the calendar type using the `GetCalendar()` function from the `CalendarTools` class.
+In addition to providing the calendar command in the addon, the base Nitrocid API provides some of the calendar management APIs to make access to them easier than before. You can now get the calendar straight from the calendar type or its name using the `GetCalendar()` function from the `CalendarTools` class.
 
 Additionally, the time and date renderers can be used with the base calendar class instance obtained from the above function.
+
+{% hint style="warning" %}
+While the events can be configured to be a yearly event, such as the Nitrocid KS release anniversary, such events have to be created by hand until the event commands are updated.
+{% endhint %}
 
 ## Date conversion API
 

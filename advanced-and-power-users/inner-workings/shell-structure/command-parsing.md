@@ -63,8 +63,6 @@ You can always use these functions with the `SwitchesOnly` array found in the `E
 
 The switches can be set to conflict with each other by passing an array of incompatible switches to the SwitchInfo constructor, specifically the last parameter, `conflictsWith`. However, each switch to be conflicted must set their `conflictsWith` arrays to the opposing switches.
 
-The switches can also be set not to accept any value by setting the `AcceptsValues` argument to `false`. It will cause parsing to fail once the value in such switches are encountered, stating that such switches don't accept any value.
-
 For example, if you want a command to have three switches (`-s`, `-t`, `-u`) that conflict with each other, you can specify three SwitchInfo instances with the following properties (assuming that you've already set the `HelpDefinition`, `IsRequired`, and `ArgumentsRequired` parameters):
 
 * `-s`
@@ -87,7 +85,7 @@ Be sure that you put all the conflicts in the above form for each conflicting `S
 {% code title="UESHShellInfo.cs" lineNumbers="true" %}
 ```csharp
 { "edit",
-    new CommandInfo("edit", ShellType, /* Localizable */ "Edits a file",
+    new CommandInfo("edit", /* Localizable */ "Edits a file",
         new[] {
             new CommandArgumentInfo(new[]
             {
@@ -103,6 +101,8 @@ Be sure that you put all the conflicts in the above form for each conflicting `S
 ```
 {% endcode %}
 {% endhint %}
+
+The switches can also be set not to accept any value by setting the `AcceptsValues` argument to `false`. It will cause parsing to fail once the value in such switches are encountered, stating that such switches don't accept any value.
 
 As for the switches that cause some or all arguments to be omittable (optional), you can indicate so in the constructor of your switch. The `optionalizeLastRequiredArguments` argument in the constructor specifies how many arguments are going to be made optional starting from the last argument in the list.
 
@@ -121,6 +121,15 @@ A real-world example is the `weather` command. It contains an switch, `-list`, w
 new SwitchInfo("list", "Shows all the available cities", false, false, null, 2, false)
 ```
 {% endhint %}
+
+Additionally, you can set your switches to only accept numeric values as the switch value when executing commands that contain such switches. When the shell detects that the non-numeric value is provided to such switches, the shell will print an error message. This is how you can define such switch:
+
+<pre class="language-csharp"><code class="lang-csharp">new SwitchInfo("columns", /* Localizable */ "Specifies the columns per line", new SwitchOptions()
+{
+    ArgumentsRequired = true,
+<strong>    IsNumeric = true
+</strong>})
+</code></pre>
 
 In addition to these features, you can now also check the specific switch value to see if that value is numeric or not. That means it's checking to see if it's a number (as in either positive numbers or negative numbers) or a number with decimals (as in numbers that have decimals, separated by a dot).
 

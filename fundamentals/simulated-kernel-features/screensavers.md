@@ -39,6 +39,10 @@ To save your screen using your default screensaver or any other screensaver, you
 
 To lock your screen in the simulated kernel, you need to use the `lockscreen` command to launch the screensaver. Once you press any key, you need to enter your user password before you're able to access the shell again.
 
+{% hint style="info" %}
+As of 0.1.0 Beta 3, you can enable or disable automatic screen locking by going to the kernel settings > Screensaver and enabling or disabling the `Enable Screensaver Timeout` setting.
+{% endhint %}
+
 ### Reloading your custom screensaver
 
 To reload your custom screensaver, just pass in your custom screensaver name to the `reloadsaver` command. This is useful in upgrades to the new version of the screensaver to make minor patches to it. Since this command is an administrative command, you either need to use an administrator account or use an account that has been granted the administrative command permissions.

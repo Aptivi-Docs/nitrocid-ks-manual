@@ -65,6 +65,10 @@ To get theme information for a specific theme, you need to use the `ThemeInfo` c
 `ThemeInfo()` constructor with theme names is now deprecated in favor of the theme packs. Please use the `GetInstalledThemes()` output and get the theme info instance from there instead.
 {% endhint %}
 
+### Checking to see if a theme exists
+
+There is a function that lets you check to see if a built-in or an addon theme exists. `IsThemeFound()` is usable for such themes and can be provided a name of the theme.
+
 ### Color conversion
 
 Your theme files can also support any specifier, as long as the specifier is supported by Terminaux. For a quick reminder, Terminaux supports the three true-color specifiers, alongside the color name or the color number, if you intend to use another color model to select colors:

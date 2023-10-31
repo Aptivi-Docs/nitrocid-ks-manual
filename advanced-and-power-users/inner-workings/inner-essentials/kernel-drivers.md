@@ -19,6 +19,7 @@ The kernel drivers can be called using either the properties that point to the c
 | DebugLogger    | `IDebugLoggerDriver`    | `BaseDebugLoggerDriver`    | Debug logger drivers            |
 | Encoding       | `IEncodingDriver`       | `BaseEncodingDriver`       | Encoding drivers                |
 | HardwareProber | `IHardwareProberDriver` | `BaseHardwareProberDriver` | Hardware probing drivers        |
+| Sorting        | ISortingDriver          | BaseSortingDriver          | Integer sorting drivers         |
 
 ### Mods and Drivers
 

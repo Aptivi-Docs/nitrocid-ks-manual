@@ -18,6 +18,7 @@ Splashes also contain a context to tell the splash screen that it's in a specifi
 * `Showcase`: This is used to showcase your splash screen and how well it works. Used by the `PreviewSplash()` functions for best experience.
 * `StartingUp`: Used by the kernel to indicate that the kernel is starting up.
 * `ShuttingDown`: Used by the kernel to indicate that the kernel is shutting down.
+* `Preboot`: Used by the kernel to indicate that the kernel is currently on the pre-boot stage before configuration is loaded.
 
 ## Splash Management
 

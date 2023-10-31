@@ -167,7 +167,7 @@ This is where your commands get together by overriding the `Commands` variable w
 public override Dictionary<string, CommandInfo> Commands => new()
 {
     { "adduser",
-        new CommandInfo("adduser", ShellType, /* Localizable */ "Adds users",
+        new CommandInfo("adduser", /* Localizable */ "Adds users",
             new[] {
                 new CommandArgumentInfo(new[]
                 {
@@ -238,13 +238,12 @@ You'll have to adapt your shell to take the first argument, `ShellArgs[0]`, as t
 Each command you define in your shell must provide a new instance of the `CommandInfo` class holding details about the specified command. The new instance of the class can be made using the constructor defined below:
 
 ```csharp
-public CommandInfo(string Command, string Type, string HelpDefinition, CommandArgumentInfo[] CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
+public CommandInfo(string Command, string HelpDefinition, CommandArgumentInfo[] CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
 ```
 
 where:
 
 * `Command`: The command
-* `Type`: Your shell type
 * `HelpDefinition`: The brief summary of what the command does
 * `CommandArgumentInfo`: Array of argument information about your command
 * `CommandBase`: An instance of the `BaseCommand` containing command execution information
@@ -364,7 +363,6 @@ If you want to support redirection or wrapping, you must either take dumb consol
 
 The following wrappers should not be called (explicitly and implicitly) on that function:
 
-* `Out`
 * `CursorLeft` (set)
 * `CursorTop` (set)
 * `ForegroundColor`
