@@ -21,13 +21,13 @@ This version is a futuristic magic that brings in many feature additions and spe
 {% hint style="info" %}
 ## **Important notice**
 
-**A breaking change has been made so that every mod that need to work with API version `3.0.25.123` or higher should satisfy the following conditions for their versions:**
+A breaking change has been made so that every mod that need to work with API version `3.0.25.123` or higher should satisfy the following conditions for their versions:
 
-* **Mod versions should satisfy the SemVer v2.0 specification. Mod parsing will fail if an invalid version expression is entered.**
+* Mod versions should satisfy the SemVer v2.0 specification. Mod parsing will fail if an invalid version expression is entered.
 
-**Additionally, a breaking change has been made starting from API version `3.0.25.154` that will make the mod loader fail if:**
+Additionally, a breaking change has been made starting from API version `3.0.25.154` that will make the mod loader fail if:
 
-* **the mod is not strongly signed using any strong naming key and loading untrusted mods is disabled.**
+* the mod is not strongly signed using any strong naming key and loading untrusted mods is disabled.
 {% endhint %}
 
-**This will be populated as soon as we reach the release candidate stage of 0.1.0 to maintain consistency.**
+This will be populated as soon as we reach the release candidate stage of 0.1.0 to maintain consistency.
