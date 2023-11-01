@@ -50,6 +50,6 @@ If there is a new API revision, we'll link the last API revision here.
 
 The current breaking changes for the current revision, which is v3.0, are listed in the page below:
 
-{% content-ref url="upgrading-to-api-v3.0.md" %}
-[upgrading-to-api-v3.0.md](upgrading-to-api-v3.0.md)
+{% content-ref url="upgrading-to-api-v3.0/" %}
+[upgrading-to-api-v3.0](upgrading-to-api-v3.0/)
 {% endcontent-ref %}

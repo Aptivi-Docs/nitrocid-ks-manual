@@ -43,7 +43,10 @@
   * [🔼 Upgrading from API v1.3](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-from-api-v1.3.md)
   * [🔼 Upgrading from API v2.0](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-from-api-v2.0.md)
   * [🔼 Upgrading from API v2.1](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-from-api-v2.1.md)
-  * [🔼 Upgrading to API v3.0](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v3.0.md)
+  * [🔼 Upgrading to API v3.0](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v3.0/README.md)
+    * [⬆ From 0.0.24.x to 0.1.0 Beta 1](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v3.0/from-0.0.24.x-to-0.1.0-beta-1.md)
+    * [⬆ From 0.1.0 Beta 1 to 0.1.0 Beta 2](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v3.0/from-0.1.0-beta-1-to-0.1.0-beta-2.md)
+    * [⬆ From 0.1.0 Beta 2 to 0.1.0 Beta 3](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v3.0/from-0.1.0-beta-2-to-0.1.0-beta-3.md)
 
 ## Installation and Maintenance
 
