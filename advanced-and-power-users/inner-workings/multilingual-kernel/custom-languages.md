@@ -24,32 +24,35 @@ When the kernel starts up, it attempts to install all the custom languages found
 Cool! So, you want to build your language? First, open the `Metadata.json`︎ file found in the `CustomLanguages` folder. Write details about your language in their appropriate places. For quick reference, here's an excerpt from the metadata JSON prototype:
 
 ```json
-}
-    "lng": {
+]
+    {
+        "three": "lng",
         "name": "My Language",
         "transliterable": false,
         "codepage": 932,
         "culture": "en-GB"
     }
-}
+[
 ```
 
 Again, the `codepage` parameter and the `culture` parameter is optional. If you want your language to be able to be transliterated, make two metadata information about your target language, but append the `-T` postfix to one of the metadata information name, for example:
 
 ```json
-}
-    "lng": {
+]
+    {
+        "three": "lng",
         "name": "My Language",
         "transliterable": true,
         "culture": "en-GB"
     },
-    "lng-T": {
+    {
+        "three": "lng-T",
         "name": "My Language",
         "transliterable": true,
         "codepage": 932,
         "culture": "en-GB"
     }
-}
+[
 ```
 
 After you filled in the metadata information about languages you want to create, make a text file with the name of the short language name (`lng` and not `My Language`) for each language with the `.txt` extension, like this: `lng.txt`

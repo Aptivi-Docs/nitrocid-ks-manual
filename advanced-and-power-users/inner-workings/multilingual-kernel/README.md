@@ -30,14 +30,16 @@ Each copy of Nitrocid KS provides you two placeholder folders, `CustomLanguages`
 #### For normal languages
 
 ```json
-{
-    "lang": {
+[
+    {
+        "three": "lng",
         "name": "Language",
         "transliterable": false,
         "codepage": 65001,
-        "culture": "en-GB"
+        "culture": "en-GB",
+        "country": "United Kingdom"
     }
-}
+]
 ```
 
 #### For transliterable languages
@@ -45,35 +47,42 @@ Each copy of Nitrocid KS provides you two placeholder folders, `CustomLanguages`
 Both the language entries are required.
 
 ```json
-{
-    "lang": {
+[
+    {
+        "three": "lng",
         "name": "Language",
         "transliterable": true,
         "codepage": 65001,
-        "culture": "en-GB"
+        "culture": "en-GB",
+        "country": "United Kingdom"
     },
-    "lang-T": {
+    {
+        "three": "lng-T",
         "name": "Language",
         "transliterable": true,
         "codepage": 65001,
-        "culture": "en-GB"
+        "culture": "en-GB",
+        "country": "United Kingdom"
     }
-}
+]
 ```
 
 ### Metadata values
 
 The variables are shown below:
 
-* Object name: The short name of the language
-  * `name`: The name of the language
-    * The type of this variable is a **string**
-  * `transliterable`: Whether the language is transliterable
-    * The type of this variable is a **boolean**
-  * `codepage`: The codepage to use (Windows only)
-    * The type of this variable is an **integer**
-  * `culture`: The culture to use
-    * The type of this variable is a **string**
+* `lng`: The short name of the language
+  * The type of this variable is a **string**
+* `name`: The name of the language
+  * The type of this variable is a **string**
+* `transliterable`: Whether the language is transliterable
+  * The type of this variable is a **boolean**
+* `codepage`: The codepage to use (Windows only)
+  * The type of this variable is an **integer**
+* `culture`: The culture to use
+  * The type of this variable is a **string**
+* `country`: The country in which the language is being used
+  * The type of this variable is a **string**
 
 ### Program parameters
 

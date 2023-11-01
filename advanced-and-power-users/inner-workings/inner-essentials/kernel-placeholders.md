@@ -57,8 +57,8 @@ These are the placeholders and what possible values are going to replace them wh
 | `<dollar>`                        | User administrative indicator                                                      |
 | `<randomfile>`                    | Random file path                                                                   |
 | `<randomfolder>`                  | Random directory path                                                              |
-| `<f:reset>`                       | Reset the foreground color                                                         |
-| `<b:reset>`                       | Reset the background color                                                         |
+| `<fgreset>`                       | Reset the foreground color                                                         |
+| `<bgreset>`                       | Reset the background color                                                         |
 | `<f:color>`                       | Sets the foreground color (where `color` is either `0-255` or `0-255;0-255;0-255`) |
 | `<b:color>`                       | Sets the background color (where `color` is either `0-255` or `0-255;0-255;0-255`) |
 | `<$var>`                          | Uses the value of a UESH variable (where `var` is an initialized variable)         |
@@ -76,9 +76,17 @@ However, you need to register a placeholder before you can use it. Luckily, the 
 
 {% code title="Somewhere in your mod code" lineNumbers="true" %}
 ```csharp
-PlaceParse.RegisterCustomPlaceholder("<placeholder>", () => "MyDynamicText");
+PlaceParse.RegisterCustomPlaceholder("placeholder", (_) => "MyDynamicText");
 ```
 {% endcode %}
+
+{% hint style="info" %}
+Additionally, you can pass the first argument to the function that takes a string argument so that your placeholder behaves according to the argument provided. For example, colors are defined like this:
+
+```csharp
+PlaceParse.RegisterCustomPlaceholder("colorfgtrue", (c) => new Color(c).VTSequenceForegroundTrueColor);
+```
+{% endhint %}
 
 You can verify that your placeholder is registered by calling the below function:
 
@@ -92,5 +100,5 @@ bool regged = PlaceParse.IsPlaceholderRegistered("<placeholder>");
 If you no longer want a custom placeholder, you can remove it using the `UnregisterCustomPlaceholder()` function using the same placeholder name.
 
 {% hint style="warning" %}
-Please note that you need to surround your placeholder name with the `<` and the `>` marks so that the prober can recognize your placeholder. It throws an exception if it's not surrounded.
+Please note that you need to surround your placeholder name with the `<` and the `>` marks, except for `RegisterCustomPlaceholder()`, so that the prober can recognize your placeholder. It throws an exception if it's not surrounded.
 {% endhint %}

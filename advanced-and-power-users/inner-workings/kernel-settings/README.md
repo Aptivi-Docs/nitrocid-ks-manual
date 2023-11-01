@@ -69,6 +69,14 @@ You can find more information about the mechanics of the settings application by
 [mechanics-of-settings-app.md](mechanics-of-settings-app.md)
 {% endcontent-ref %}
 
+## Settings on your Shell
+
+Additionally, you can change the kernel settings and list them using the following available commands:
+
+* `lsconfigs`: This command allows you to list all configurations and their entries.
+
+This feature is useful for your UESH scripts and for your quick shortcut to change your settings.
+
 ## Settings format
 
 The settings format is out of scope for this page, so click the below link to learn more.

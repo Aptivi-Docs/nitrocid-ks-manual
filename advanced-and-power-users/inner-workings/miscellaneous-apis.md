@@ -34,3 +34,11 @@ You can't use this function for enormous sizes, like 1 zettabytes, because of th
 Nitrocid KS provides a built-in timezone API that allows you to get information about a timezone and convert the time to the equivalent time using the specific timezone.
 
 This API is found in the `TimeZones` class.
+
+## Properties and Fields
+
+The `Reflection` part of the Nitrocid API provides you with options to access public properties and fields that are declared in the public classes dynamically.
+
+* `PropertyManager` manages properties, such as getting and setting property values.
+* `FieldManager` manages fields, such as getting and setting field values.
+

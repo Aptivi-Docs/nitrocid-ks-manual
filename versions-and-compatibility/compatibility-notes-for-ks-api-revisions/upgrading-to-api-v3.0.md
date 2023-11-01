@@ -3602,3 +3602,52 @@ We've removed this function, because it was made only to help the UESH auto comp
 {% hint style="info" %}
 If you really want this function, you can re-implement it using [this link](https://github.com/Aptivi/NitrocidKS/commit/a79faa58481e72a92cb46ca67bd1a6551853c909) as a reference.
 {% endhint %}
+
+### Placeholder management handles arguments
+
+{% code title="PlaceParse.cs" lineNumbers="true" %}
+```csharp
+public static void RegisterCustomPlaceholder(string placeholder, Func<string> placeholderAction)
+```
+{% endcode %}
+
+The placeholder management used to be rigid when it came to parsing advanced placeholders with arguments separated by the first colon. We wanted to extend this functionality to be able to register placeholders that are able to behave according to the argument passed to it, so we've decided to introduce a new class, `PlaceInfo`, and change the placeholder action to hold the argument as the first argument.
+
+{% hint style="info" %}
+You must change your code so that the placeholder actions pass the first argument, if necessary. Example is provided in the placeholders page.
+
+```csharp
+public static void RegisterCustomPlaceholder(string placeholder, Func<string, string> placeholderAction)
+```
+{% endhint %}
+
+### Language information class overhauled
+
+{% code title="CultureManager.cs" lineNumbers="true" %}
+```csharp
+public static List<CultureInfo> GetCulturesFromCurrentLang()
+public static List<CultureInfo> GetCulturesFromLang(string Language)
+```
+{% endcode %}
+
+{% code title="LanguageInfo.cs" lineNumbers="true" %}
+```csharp
+public readonly string ThreeLetterLanguageName;
+public readonly string FullLanguageName;
+public readonly int Codepage;
+public readonly string CultureCode;
+public readonly string Country;
+public readonly bool Transliterable;
+public readonly bool Custom;
+public readonly Dictionary<string, string> Strings;
+public readonly List<CultureInfo> Cultures;
+```
+{% endcode %}
+
+While we were converting all the classes to use properties in the middle of the 0.1.0 development cycle, we came across LanguageInfo still using read-only fields, like Codepage and Transliterable, that we completely forgot to update.
+
+We've recently converted these read-only fields to properties so that consistency was achieved. As a consequence, two functions from the language manager have to be changed.
+
+{% hint style="info" %}
+The return value for these functions have changed to `CultureInfo[]`, so you need to make necessary changes.
+{% endhint %}

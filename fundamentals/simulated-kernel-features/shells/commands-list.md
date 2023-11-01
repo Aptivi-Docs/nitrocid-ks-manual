@@ -76,6 +76,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `list`                  | `[-showdetails\|-suppressmessages\|-recursive] [directory]`                      |
 | `lockscreen`            |                                                                                  |
 | `logout`                |                                                                                  |
+| `lsconfigs`             | `-deep`                                                                          |
 | `lsconnections`         |                                                                                  |
 | `lsdbgdev`              |                                                                                  |
 | `lsdiskparts`           | `<disknum>`                                                                      |
@@ -123,7 +124,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `sftp`                  | `[server]`                                                                       |
 | `shownotifs`            |                                                                                  |
 | `showtd`                |                                                                                  |
-| `showtdzone`            | `[-all] <timezone>`                                                              |
+| `showtdzone`            | `[-all] [-selection] <timezone>`                                                 |
 | `shutdown`              | `[ip] [port]`                                                                    |
 | `sleep`                 | `<ms>`                                                                           |
 | `sshell`                | `<address:port> <username>`                                                      |
@@ -133,13 +134,13 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `sumfiles`              | `[-relative] <algorithm/all> <dir> [output]`                                     |
 | `taskman`               |                                                                                  |
 | `themeprev`             | `[theme]`                                                                        |
-| `themeset`              | `[theme]`                                                                        |
+| `themeset`              | `[-y] [theme]`                                                                   |
 | `unblockdbgdev`         | `<address>`                                                                      |
 | `unset`                 | `[-justwipe] <$variable>`                                                        |
 | `unzip`                 | `[-createdir] <zipfile> [path]`                                                  |
-| update                  |                                                                                  |
-| uptime                  |                                                                                  |
-| usermanual              |                                                                                  |
+| `update`                |                                                                                  |
+| `uptime`                |                                                                                  |
+| `usermanual`            |                                                                                  |
 | `verify`                | `<algorithm> <calculatedhash> <hashfile/expectedhash> <file>`                    |
 | `version`               | `[-m\|-k]`                                                                       |
 | `whoami`                |                                                                                  |
@@ -417,10 +418,19 @@ Once you enter the archive shell with the provided archive file path, you can ac
 
 This addon allows you to get access to the BassBoom utility features. Please note that playing sound is not implemented yet until the migration to .NET 8.0 is done. You can use the following commands:
 
-| Commands    | Arguments and Switches |
-| ----------- | ---------------------- |
-| `playlyric` | `<lyric.lrc>`          |
-| `playsound` | `<musicfile>`          |
+| Commands     | Arguments and Switches |
+| ------------ | ---------------------- |
+| `lyriclines` | `<lyric.lrc>`          |
+| `playlyric`  | `<lyric.lrc>`          |
+| `playsound`  | `<musicfile>`          |
+
+### Caffeine Addon
+
+This addon lets you be alarmed when your cup of tea or coffee is ready. You can use the following commands:
+
+| Commands   | Arguments and Switches |
+| ---------- | ---------------------- |
+| `caffeine` | `<seconds>`            |
 
 ### Calculators Addon
 

@@ -19,6 +19,7 @@ Themes for the kernel consist of color information for each kernel color type. T
         "EndMonth": 2,
         "EndDay": 22,
         "Calendar": "Gregorian",
+        "Category": "Exciting",
         "Localizable": true
     },
     "InputColor": "15",
@@ -38,7 +39,19 @@ We'll explain things one by one. The `Metadata` key consists of some basic infor
 * `EndMonth`: The month in which the event ends **\[optional]**
 * `EndDay`: The day in which the event ends **\[optional]**
 * `Calendar`: The calendar to use, such as Hijri, Chinese, etc. **\[optional]**
+* `Category`: The category to use, such as Mesmerizing, Exciting, etc. **\[optional]**
 * `Localizable`: Whether the description is localizable **\[internal, optional]**
+
+{% hint style="info" %}
+The following color categories are supported:
+
+* `Miscellaneous`: Themes that don't fit in the available categories
+* `Aesthetic`: Aesthetically beautiful themes
+* `Chinese`: Themes that are based on the Chinese culture
+* `Exciting`: Themes that make you excited
+* `Mesmerizing`: Mesmerizing and relaxing themes
+* `Standard`: Standard themes (usually housing the first themes ever released)
+{% endhint %}
 
 What follows the metadata is a list of available kernel color types and their color representations using Terminaux's supported color formats, which are linked in the below page:
 
@@ -79,8 +92,15 @@ Your theme files can also support any specifier, as long as the specifier is sup
 * CMYK: Cyan, Magenta, and Yellow with the Black Key.
   * `cmyk:<CCC>;<MMM>;<YYY>;<KKK>`
   * where these variables can be from 0 to 100.
+* CMY: Cyan, Magenta, and Yellow.
+  * `cmy:<CCC>;<MMM>;<YYY>`
+  * where these variables can be from 0 to 100.
 * HSL: Hue, Saturation, and Luminance (or Lightness).
   * `hsl:<HHH>;<SSS>;<LLL>`
+  * where the Hue can be from 0 to 360 _**degrees**_ and _**not radians**_.
+  * where the Saturation and the Luminance can be from 0 to 100.
+* HSV: Hue, Saturation, and Value.
+  * `hsv:<HHH>;<SSS>;<VVV>`
   * where the Hue can be from 0 to 360 _**degrees**_ and _**not radians**_.
   * where the Saturation and the Luminance can be from 0 to 100.
 
