@@ -24,7 +24,7 @@ During quality assurance, we're aware of the following issues:
 
 * `langman reload <lang>` may fail to reload the custom language.
 * _Progress notifications may fail to show up properly after the normal notification._
-* The kernel may fail to download debug data if the debugging symbol file is not found.
+* _The kernel may fail to download debug data if the debugging symbol file is not found._
 * _Letting the screen lock after timeout may cause no prompt to show._
 * Download command doesn't support downloading more than 2 GB.
 
