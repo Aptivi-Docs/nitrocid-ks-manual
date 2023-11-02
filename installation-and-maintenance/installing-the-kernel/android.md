@@ -45,10 +45,10 @@ Once you're done, follow the steps:
    * `apt install dotnet-runtime-6.0`
 7. Install wget to download the latest release from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
    * `apt install wget`
-   * `wget https://github.com/Aptivi/Kernel-Simulator/releases/download/v0.x.x.x-beta/0.x.x.x-bin.rar`
-8. Install unrar (from multiverse) to extract the files
-   * `apt install unrar`
-   * `unrar 0.x.x.x-bin.rar`
+   * `wget https://github.com/Aptivi/Kernel-Simulator/releases/download/v0.x.x.x-beta/0.x.x.x-bin.zip`
+8. Install unzip to extract the files
+   * `apt install unzip`
+   * `unzip 0.x.x.x-bin.zip`
 9. Execute `dotnet Nitrocid.dll`
 
 {% hint style="info" %}

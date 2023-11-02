@@ -11,8 +11,8 @@ Upgrading the kernel on Linux is simple, depending on the way you've installed t
 If you'd like to manually update your kernel to the latest version or to the latest bleeding-edge version, follow these steps:
 
 1. Ensure that you have all the required software installed
-2. Download the latest release RAR file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
-3. Unpack the RAR archive to any folder of your choice
+2. Download the latest release ZIP file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
+3. Unpack the ZIP archive to any folder of your choice
 4. Open your favorite terminal emulator, like Konsole, and change the working directory to a folder containing the Nitrocid KS executable
 5. Execute `dotnet Nitrocid.dll` to start the kernel
 

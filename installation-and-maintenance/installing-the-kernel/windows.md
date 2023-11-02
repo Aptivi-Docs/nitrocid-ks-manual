@@ -65,8 +65,8 @@ This step-by-step guide shows you how to install Nitrocid KS using the package m
 If you like to manually unpack the Nitrocid KS packages, follow these steps:
 
 1. Ensure that you have all the required software installed
-2. Download the latest release RAR file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
-3. Unpack the RAR archive to any folder of your choice
+2. Download the latest release ZIP file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
+3. Unpack the ZIP archive to any folder of your choice using [7-Zip](https://7-zip.org/)
 4. Open your favorite terminal emulator, like ConEmu, and change the working directory to a folder containing the Nitrocid KS executable
 5. Execute `ks` or `Nitrocid.exe` to start the kernel
 

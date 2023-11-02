@@ -52,8 +52,8 @@ There are several ways to install Nitrocid KS on Linux systems.
 If you like to manually unpack the Nitrocid KS packages, follow these steps:
 
 1. Ensure that you have all the required software installed
-2. Download the latest release RAR file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
-3. Unpack the RAR archive to any folder of your choice
+2. Download the latest release ZIP file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
+3. Unpack the ZIP archive to any folder of your choice
 4. Open your favorite terminal emulator, like Konsole, and change the working directory to a folder containing the Nitrocid KS executable
 5. Execute `dotnet Nitrocid.dll` to start the kernel
 
@@ -81,6 +81,6 @@ If you're a tester to such software, please follow the steps on your Windows mac
 1. Open [this page](https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-linux.yml)
 2. Select the most recent build
 3. Scroll down to Artifacts and click on the `ks-build` button to download the ZIP file
-4. Extract the file. Be sure that you have the latest version of 7-Zip or your favorite archive manager installed
+4. Extract the file. Be sure that you have the latest version of your favorite archive manager installed
 5. Open your favorite terminal emulator, like Konsole, and change the working directory to a folder containing the Nitrocid KS executable
 6. Execute `dotnet Nitrocid.dll` to start the kernel
