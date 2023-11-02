@@ -6,6 +6,10 @@ description: Make your HTTP requests
 
 <figure><img src="../../../.gitbook/assets/HTTPClient.png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
+As of 0.1.0, this feature has been moved to the kernel addons.
+{% endhint %}
+
 Hypertext Transfer Protocol (HTTP) is an application layer protocol in the Internet protocol suite model for distributed, collaborative, and hypermedia information systems. HTTP is the foundation of data communication for the World Wide Web, where hypertext documents include hyperlinks to other resources that the user can easily access, for example by a mouse click or by tapping the screen in a web browser.
 
 The simulated kernel attempts to provide the request functionalities for the entire HTTP protocol by giving you the HTTP client, which is just a shell with HTTP request commands.
@@ -21,33 +25,8 @@ To be able to use the below commands that are listed in the below section, you h
 
 ## Commands
 
-This HTTP shell provides you with these commands to choose how to interact with the HTTP server, like getting a string request from the server.
+To get access to the list of commands, consult the below page:
 
-* `addheader <key> <value>`
-  * Adds an HTTP header for future requests
-* `curragent`
-  * Gets current user agent
-* `delete <request>`
-  * Deletes a resource from the HTTP server
-* `detach`
-  * Detaches your client from your HTTP server
-* `editheader <key> <value>`
-  * Edits an HTTP header for future requests
-* `get <request>`
-  * Gets the response from the HTTP server with the request
-* `getstring <request>`
-  * Gets the stringified response from the HTTP server with the request
-* `lsheader`
-  * Lists the request headers
-* `putstring <request> <string>`
-  * Puts the string to the HTTP server with the request
-* `put <request> <file>`
-  * Puts the file to the HTTP server with the request
-* `poststring <request> <string>`
-  * Posts the string to the HTTP server with the request
-* `post <request> <file>`
-  * Posts the file to the HTTP server with the request
-* `rmheader <key>`
-  * Removes a key from the header
-* `setagent <ua>`
-  * Sets the user agent
+{% content-ref url="../shells/commands-list.md" %}
+[commands-list.md](../shells/commands-list.md)
+{% endcontent-ref %}

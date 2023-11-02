@@ -33,3 +33,15 @@ The simulated kernel provides you the below games. Select a game to get the comp
 {% content-ref url="speedpress.md" %}
 [speedpress.md](speedpress.md)
 {% endcontent-ref %}
+
+{% content-ref url="shipduet.md" %}
+[shipduet.md](shipduet.md)
+{% endcontent-ref %}
+
+{% content-ref url="backrace.md" %}
+[backrace.md](backrace.md)
+{% endcontent-ref %}
+
+{% content-ref url="wordle.md" %}
+[wordle.md](wordle.md)
+{% endcontent-ref %}

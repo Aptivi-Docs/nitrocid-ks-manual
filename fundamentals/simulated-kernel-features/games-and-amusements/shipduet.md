@@ -6,6 +6,10 @@ description: Two spaceships fight with each other. Who will survive?
 
 <figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
+As of 0.1.0, this feature has been moved to the kernel addons.
+{% endhint %}
+
 ShipDuet is a local two-player game that fight with each other in a space setting. ShipDuet starts with two players trying to fight each other until one of them destroys the opponent's spaceship.
 
 The game rules are:

@@ -4,6 +4,10 @@ description: Do you pick the right horse to win?
 
 # 🏇 BackRace
 
+{% hint style="info" %}
+As of 0.1.0, this feature has been moved to the kernel addons.
+{% endhint %}
+
 BackRace is a game that lets you choose which horse do you think it's going to the finish line first. It doesn't have points or anything; just a simple win and loss game.
 
 ### Game Rules

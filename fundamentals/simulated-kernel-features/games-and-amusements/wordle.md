@@ -6,6 +6,10 @@ description: Master your words!
 
 <figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
+As of 0.1.0, this feature has been moved to the kernel addons.
+{% endhint %}
+
 You can start the game with the `wordle` command. It gives you 8 tries to guess the right word based on the amount of characters within the random word. The game does the following:
 
 * If the written character has no match in the entire word, the box is not highlighted by any color.

@@ -83,3 +83,13 @@ public static void WriteDebugStackTraceConditional(bool Condition, Exception Ex)
 ```
 
 Found in the `DebugWriter` module under the `KS.Kernel.Debugging` namespace.
+
+## Debug quotas
+
+If you want to rotate logs each `n`th message, such as the 10000th message, you can enable this feature by going to the kernel settings and enabling it there. You can also set the number of messages before the log rotation occurs.
+
+If this session's debug quota is exceeded, the new debug file is created with the increasing number. For example, if `kernelDbg-0.log` exceeds 10000 messages, the debugger creates the `kernelDbg-1.log` and writes further messages there, and so on.
+
+{% hint style="info" %}
+You'll need to restart the kernel to make use of this feature.
+{% endhint %}

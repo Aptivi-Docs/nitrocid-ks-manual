@@ -77,6 +77,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `lockscreen`            |                                                                                  |
 | `logout`                |                                                                                  |
 | `lsconfigs`             | `-deep`                                                                          |
+| `lsconfigvalues`        | `<config>`                                                                       |
 | `lsconnections`         |                                                                                  |
 | `lsdbgdev`              |                                                                                  |
 | `lsdiskparts`           | `<disknum>`                                                                      |

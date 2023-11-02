@@ -20,6 +20,10 @@ Themes for the kernel consist of color information for each kernel color type. T
         "EndDay": 22,
         "Calendar": "Gregorian",
         "Category": "Exciting",
+        "UseAccentTypes": [
+            "LicenseColor",
+            (...)
+        ],
         "Localizable": true
     },
     "InputColor": "15",
@@ -40,6 +44,7 @@ We'll explain things one by one. The `Metadata` key consists of some basic infor
 * `EndDay`: The day in which the event ends **\[optional]**
 * `Calendar`: The calendar to use, such as Hijri, Chinese, etc. **\[optional]**
 * `Category`: The category to use, such as Mesmerizing, Exciting, etc. **\[optional]**
+* `UseAccentTypes`: The color types which the theme management will switch their values with the accent color configurable by the user from the kernel settings **\[optional]**
 * `Localizable`: Whether the description is localizable **\[internal, optional]**
 
 {% hint style="info" %}
@@ -61,6 +66,10 @@ What follows the metadata is a list of available kernel color types and their co
 
 {% hint style="warning" %}
 Make sure that the event start month and day is earlier than the end month and day. The theme parser will swap the day values and will add a year (end month is bigger than the start) if it detects that the start date is later than the end date (i.e. events can't end before they start).
+{% endhint %}
+
+{% hint style="info" %}
+For themes with accent colors, you have to re-apply the theme using `themeset` after setting the accent color.
 {% endhint %}
 
 ### Using `ThemeInfo` to get theme information

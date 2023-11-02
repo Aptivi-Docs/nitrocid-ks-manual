@@ -6,7 +6,11 @@ description: The snake game!
 
 <figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
-This type of game is common which you have to let the snake be oversized while avoiding the walls and your snake tail. The apple, represented by the plus sign, increases your snake mass by one unit.
+{% hint style="info" %}
+As of 0.1.0, this feature has been moved to the kernel addons.
+{% endhint %}
+
+This type of game is common. This is a game in which you have to let the snake be oversized while avoiding the walls and your snake tail. The apple, represented by the plus sign, increases your snake mass by one unit.
 
 ## Controls
 
