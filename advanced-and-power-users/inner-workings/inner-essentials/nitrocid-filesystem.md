@@ -154,3 +154,13 @@ When you print file contents to the console or render it as a string for preview
 
 * If you want to print the file content to the console deterministically, use the `Display*()` functions.
 * If you just want to synthesize a string of how it would appear as previewed for different purposes, like previewing a file in an informational box, use the `Render*()` functions.
+
+### MIME Metadata
+
+Additionally, the `Extensions` part of the filesystem feature contains a mechanism that allows you to manipulate with the MIME metadata.
+
+* You can get the MIME type from an extension using the `GetMimeType()` function.
+
+{% hint style="info" %}
+The supported MIME types are available [here](https://github.com/Aptivi/NitrocidKS/commit/c4a52ae47ebc870adb72d11b6a2a641db95684d7#diff-4591e343dac43550e94f94b4cfe0f51e2189301ea58219ef5f3efc05caab0cc7R31).
+{% endhint %}
