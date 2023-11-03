@@ -35,6 +35,10 @@ Nitrocid KS provides a built-in timezone API that allows you to get information 
 
 This API is found in the `TimeZones` class.
 
+{% hint style="info" %}
+If the kernel-wide time zone is enabled, the current kernel time and date changes, depending on your selected kernel-wide time zone. Otherwise, the kernel uses the operating system time and date.
+{% endhint %}
+
 ## Properties and Fields
 
 The `Reflection` part of the Nitrocid API provides you with options to access public properties and fields that are declared in the public classes dynamically.

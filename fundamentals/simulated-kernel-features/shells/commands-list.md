@@ -57,6 +57,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `ftp`                   | `[server]`                                                                       |
 | `get`                   | `[-outputpath] <url>`                                                            |
 | `getallexthandlers`     |                                                                                  |
+| `getconfigvalue`        | `[-set=variable] <config> <variable>`                                            |
 | `getdefaultexthandler`  | `<extension>`                                                                    |
 | `getdefaultexthandlers` |                                                                                  |
 | `getexthandlers`        | `<extension>`                                                                    |

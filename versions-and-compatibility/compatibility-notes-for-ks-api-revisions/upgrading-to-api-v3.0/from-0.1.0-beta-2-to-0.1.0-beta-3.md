@@ -1791,6 +1791,8 @@ Now, in addition to these features, the following networked shells got moved:
 * FTP Shell
 * HTTP Shell
 * Mail Shell
+* RSS Shell
+* SFTP Shell
 
 This means that your mods can't directly access them, their settings, and their tools anymore.
 
