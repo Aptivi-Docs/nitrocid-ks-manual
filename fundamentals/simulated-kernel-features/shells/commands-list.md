@@ -201,40 +201,6 @@ This shell provides debug information. Here are the currently supported commands
 | `lsshells`  |                        |
 | `threadsbt` |                        |
 
-### FTP Shell
-
-This shell provides you a client to the FTP servers. Here is a list of supported commands:
-
-| Commands    | Arguments and Switches                   |
-| ----------- | ---------------------------------------- |
-| `cat`       | `<file>`                                 |
-| `cdl`       | `<directory>`                            |
-| `cdr`       | `<directory>`                            |
-| `cp`        | `<source> <target>`                      |
-| `del`       | `<file>`                                 |
-| `detach`    |                                          |
-| `execute`   | `<command>`                              |
-| `get`       | `<file> [where]`                         |
-| `getfolder` | `<folder> [where]`                       |
-| `info`      |                                          |
-| `lsl`       | `[-showdetails\|suppressmessages] [dir]` |
-| `lsr`       | `[-showdetails] [dir]`                   |
-| `mv`        | `<source> <target>`                      |
-| `put`       | `<file> [output]`                        |
-| `putfolder` | `<folder> [output]`                      |
-| `pwdl`      |                                          |
-| `pwdr`      |                                          |
-| `perm`      | `<file> <permnum>`                       |
-| `sumfile`   | `<file> <algorithm>`                     |
-| `sumfiles`  | `<directory> <algorithm>`                |
-| `type`      | `<a/b>`                                  |
-
-### HTTP Shell
-
-The HTTP shell allows you to interact with an HTTP server, like sending requests to it. You can use the below commands:
-
-<table><thead><tr><th width="269">Commands</th><th>Arguments and Switches</th></tr></thead><tbody><tr><td><code>addheader</code></td><td><code>&#x3C;key> &#x3C;value></code></td></tr><tr><td><code>curragent</code></td><td></td></tr><tr><td><code>delete</code></td><td><code>&#x3C;request></code></td></tr><tr><td><code>detach</code></td><td></td></tr><tr><td><code>editheader</code></td><td><code>&#x3C;key> &#x3C;value></code></td></tr><tr><td><code>get</code></td><td><code>&#x3C;request></code></td></tr><tr><td><code>getstring</code></td><td><code>&#x3C;request></code></td></tr><tr><td><code>lsheader</code></td><td></td></tr><tr><td><code>put</code></td><td><code>&#x3C;request> &#x3C;pathtofile></code></td></tr><tr><td><code>putstring</code></td><td><code>&#x3C;request> &#x3C;string></code></td></tr><tr><td><code>post</code></td><td><code>&#x3C;request> &#x3C;pathtofile></code></td></tr><tr><td><code>poststring</code></td><td><code>&#x3C;request> &#x3C;string></code></td></tr><tr><td><code>rmheader</code></td><td><code>&#x3C;key></code></td></tr><tr><td><code>setagent</code></td><td><code>&#x3C;useragent></code></td></tr></tbody></table>
-
 ### Hex Shell
 
 The hex shell allows you to edit files byte by byte. You can use the following commands:
@@ -271,62 +237,6 @@ The JSON shell allows you to easily edit JSON files. You can use the below comma
 | `rmobject`         | `[-parentproperty] <objname>`                                |
 | `rmobjectindexed`  | `[-parentproperty] <objidx>`                                 |
 | `save`             | `[-b\|-m]`                                                   |
-
-### Mail Shell
-
-This shell allows you to check your e-mails and send them. You can use the following commands:
-
-| Commands  | Arguments and Switches            |
-| --------- | --------------------------------- |
-| `cd`      | `<folder>`                        |
-| `detach`  |                                   |
-| `lsdirs`  |                                   |
-| `list`    | `[pagenum]`                       |
-| `mkdir`   | `<foldername>`                    |
-| `mv`      | `<mailid> <targetfolder>`         |
-| `mvall`   | `<sendername> <targetfolder>`     |
-| `read`    | `<mailid>`                        |
-| `readenc` | `<mailid>`                        |
-| `ren`     | `<oldfoldername> <newfoldername>` |
-| `rm`      | `<mailid>`                        |
-| `rmall`   | `<sendername>`                    |
-| `rmdir`   | `<foldername>`                    |
-| `send`    |                                   |
-| `sendenc` |                                   |
-
-### RSS Shell
-
-You can use this shell to read your RSS feeds. You can use the below commands:
-
-| Commands       | Arguments and Switches       |
-| -------------- | ---------------------------- |
-| `articleinfo`  | `<feednum>`                  |
-| `bookmark`     |                              |
-| `detach`       |                              |
-| `feedinfo`     |                              |
-| `list`         |                              |
-| `listbookmark` |                              |
-| `read`         | `<feednum>`                  |
-| `search`       | `[-t\|-d\|-a\|-cs] <phrase>` |
-| `unbookmark`   |                              |
-
-### SFTP Shell
-
-SFTP shell allows you to interact with the SFTP servers.
-
-| Commands | Arguments and Switches                    |
-| -------- | ----------------------------------------- |
-| `cat`    | `<file>`                                  |
-| `cdl`    | `<dir>`                                   |
-| `cdr`    | `<dir>`                                   |
-| `del`    | `<file>`                                  |
-| `detach` |                                           |
-| `get`    | `<file>`                                  |
-| `lsl`    | `[-showdetails\|-suppressmessages] [dir]` |
-| `lsr`    | `[-showdetails] [dir]`                    |
-| `put`    | `<file>`                                  |
-| `pwdl`   |                                           |
-| `pwdr`   |                                           |
 
 ### SQL Shell
 
@@ -497,7 +407,33 @@ The forecast addon allows you to take a look at the current forecast across the 
 | --------- | ------------------------------------ |
 | `weather` | `[-list] <cityid/cityname> [apikey]` |
 
-###
+### FTP Shell
+
+This shell provides you a client to the FTP servers. Here is a list of supported commands:
+
+| Commands    | Arguments and Switches                   |
+| ----------- | ---------------------------------------- |
+| `cat`       | `<file>`                                 |
+| `cdl`       | `<directory>`                            |
+| `cdr`       | `<directory>`                            |
+| `cp`        | `<source> <target>`                      |
+| `del`       | `<file>`                                 |
+| `detach`    |                                          |
+| `execute`   | `<command>`                              |
+| `get`       | `<file> [where]`                         |
+| `getfolder` | `<folder> [where]`                       |
+| `info`      |                                          |
+| `lsl`       | `[-showdetails\|suppressmessages] [dir]` |
+| `lsr`       | `[-showdetails] [dir]`                   |
+| `mv`        | `<source> <target>`                      |
+| `put`       | `<file> [output]`                        |
+| `putfolder` | `<folder> [output]`                      |
+| `pwdl`      |                                          |
+| `pwdr`      |                                          |
+| `perm`      | `<file> <permnum>`                       |
+| `sumfile`   | `<file> <algorithm>`                     |
+| `sumfiles`  | `<directory> <algorithm>`                |
+| `type`      | `<a/b>`                                  |
 
 ### Git Shell
 
@@ -533,6 +469,27 @@ Once you enter the Git shell with the provided repo path, you can access the bel
 | `unstage`    | `<stagedfile>`           |
 | `unstageall` |                          |
 
+### HTTP Shell
+
+The HTTP shell allows you to interact with an HTTP server, like sending requests to it. You can use the below commands:
+
+| Commands     | Arguments and Switches   |
+| ------------ | ------------------------ |
+| `addheader`  | `<key> <value>`          |
+| `curragent`  |                          |
+| `delete`     | `<request>`              |
+| `detach`     |                          |
+| `editheader` | `<key> <value>`          |
+| `get`        | `<request>`              |
+| `getstring`  | `<request>`              |
+| `lsheader`   |                          |
+| `put`        | `<request> <pathtofile>` |
+| `putstring`  | `<request> <string>`     |
+| `post`       | `<request> <pathtofile>` |
+| `poststring` | `<request> <string>`     |
+| `rmheader`   | `<key>`                  |
+| `setagent`   | `<useragent>`            |
+
 ### Internet Radio
 
 You can use the following commands to get information about your Internet radio station:
@@ -558,6 +515,62 @@ You can generate names by using the following commands:
 | `findfirstname` | `[-t] [term] [nameprefix] [namesuffix]`                                       |
 | `findsurname`   | `[term] [surnameprefix] [surnamesuffix]`                                      |
 | `genname`       | `[-t] <namescount> [nameprefix] [namesuffix] [surnameprefix] [surnamesuffix]` |
+
+### Mail Shell
+
+This shell allows you to check your e-mails and send them. You can use the following commands:
+
+| Commands  | Arguments and Switches            |
+| --------- | --------------------------------- |
+| `cd`      | `<folder>`                        |
+| `detach`  |                                   |
+| `lsdirs`  |                                   |
+| `list`    | `[pagenum]`                       |
+| `mkdir`   | `<foldername>`                    |
+| `mv`      | `<mailid> <targetfolder>`         |
+| `mvall`   | `<sendername> <targetfolder>`     |
+| `read`    | `<mailid>`                        |
+| `readenc` | `<mailid>`                        |
+| `ren`     | `<oldfoldername> <newfoldername>` |
+| `rm`      | `<mailid>`                        |
+| `rmall`   | `<sendername>`                    |
+| `rmdir`   | `<foldername>`                    |
+| `send`    |                                   |
+| `sendenc` |                                   |
+
+### RSS Shell
+
+You can use this shell to read your RSS feeds. You can use the below commands:
+
+| Commands       | Arguments and Switches       |
+| -------------- | ---------------------------- |
+| `articleinfo`  | `<feednum>`                  |
+| `bookmark`     |                              |
+| `detach`       |                              |
+| `feedinfo`     |                              |
+| `list`         |                              |
+| `listbookmark` |                              |
+| `read`         | `<feednum>`                  |
+| `search`       | `[-t\|-d\|-a\|-cs] <phrase>` |
+| `unbookmark`   |                              |
+
+### SFTP Shell
+
+SFTP shell allows you to interact with the SFTP servers.
+
+| Commands | Arguments and Switches                    |
+| -------- | ----------------------------------------- |
+| `cat`    | `<file>`                                  |
+| `cdl`    | `<dir>`                                   |
+| `cdr`    | `<dir>`                                   |
+| `del`    | `<file>`                                  |
+| `detach` |                                           |
+| `get`    | `<file>`                                  |
+| `lsl`    | `[-showdetails\|-suppressmessages] [dir]` |
+| `lsr`    | `[-showdetails] [dir]`                    |
+| `put`    | `<file>`                                  |
+| `pwdl`   |                                           |
+| `pwdr`   |                                           |
 
 ### Notes
 
