@@ -76,8 +76,13 @@ Additionally, you can change the kernel settings and list them using the followi
 * `lsconfigs`: This command allows you to list all configurations and their entries.
 * `lsconfigvalues`: This command allows you to list all configuration keys and their values
 * `getconfigvalue`: This command allows you to get a config value by the variable name
+* `setconfigvalue`: This command allows you to set a config value by the variable name to the specified value
 
 This feature is useful for your UESH scripts and for your quick shortcut to change your settings.
+
+{% hint style="warning" %}
+Currently, setconfigvalue can't change the settings value to any variable that don't use strings. We're working on this very soon.
+{% endhint %}
 
 ## Settings format
 

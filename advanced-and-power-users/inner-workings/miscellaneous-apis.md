@@ -39,6 +39,12 @@ This API is found in the `TimeZones` class.
 If the kernel-wide time zone is enabled, the current kernel time and date changes, depending on your selected kernel-wide time zone. Otherwise, the kernel uses the operating system time and date.
 {% endhint %}
 
+One of the functions that the above class implements is `GetZoneTimeString()` and its sibling functions, `GetZoneTimeTimeString()` and `GetZoneTimeDateString()`.
+
+* The first function returns the full date and time using the specified time zone.
+* The second function returns the time using the specified time zone.
+* The third function returns the date using the specified time zone.
+
 ## Properties and Fields
 
 The `Reflection` part of the Nitrocid API provides you with options to access public properties and fields that are declared in the public classes dynamically.

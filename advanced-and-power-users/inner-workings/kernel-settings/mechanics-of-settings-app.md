@@ -8,11 +8,13 @@ The Settings application displays all the available sections on the first page a
 
 The Settings application uses the embedded JSON file inside the kernel to provide it the available configuration options inside each section. Reading these files are done by the Settings app upon starting it up using the `settings` command, which:
 
-| Settings type | Switch    | JSON                            | File link                                                                                                                                   |
-| ------------- | --------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| Normal        |           | SettingsEntries.json            | [File](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Resources/Settings/SettingsEntries.json)            |
-| Screensaver   | `-saver`  | ScreensaverSettingsEntries.json | [File](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Resources/Settings/ScreensaverSettingsEntries.json) |
-| Splash        | `-splash` | SplashSettingsEntries.json      | [File](https://github.com/Aptivi/Kernel-Simulator/blob/master/public/Kernel%20Simulator/Resources/Settings/SplashSettingsEntries.json)      |
+| Settings type        | Switch               |
+| -------------------- | -------------------- |
+| Normal               |                      |
+| Screensaver          | `-saver`             |
+| Splash               | `-splash`            |
+| Extra screensavers   | `-addonsaver`        |
+| Other settings types | `-type=settingstype` |
 
 The format of all the settings can be found in the below link.
 
@@ -27,4 +29,6 @@ Here's how the settings application works:
 3. When the user changes a value in the selected entry, the settings application determines what to do based on the type and gives the user an option to input the new value. The next page actually explains what to do based on the type.
 4. When the user sets a new value, the app attempts to set a value by delegating the `PropertyManager.SetPropertyValue()` function in the `KS.Misc.Reflection` namespace.
 
-When the user is done configuring the kernel to their needs, they'll save the kernel configuration. The app invokes the `Config.CreateConfig()` function to save the changes to the configuration file. It will also attempt to save the custom screensaver settings using the `CustomSaverTools.SaveCustomSaverSettings()` in the `KS.Misc.Screensaver.Customized` namespace.
+When the user is done configuring the kernel to their needs, they'll save the kernel configuration. The app invokes the `Config.CreateConfig()` function to save the changes to the configuration file.
+
+The CLI version of the settings, which hosts the four commands as explained in the Kernel Settings page, uses a bunch of settings tools, including `GetSettingsKey()` that allows you to quickly get a settings key containing settings key information for a specified variable. This key is usable for useful functions, like setting a variable to a specified value that `setconfigvalue` is doing.
