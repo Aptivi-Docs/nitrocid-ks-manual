@@ -1799,3 +1799,20 @@ This means that your mods can't directly access them, their settings, and their 
 {% hint style="info" %}
 The base network is not going to be moved to the addons, but expect its namespace to be updated soon.
 {% endhint %}
+
+### Inter-mod communication updates
+
+{% code title="ModManager.cs" lineNumbers="true" %}
+```csharp
+public static object ExecuteCustomModFunction(string modName, string functionName)
+public static object ExecuteCustomModFunction(string modName, string functionName, params object[] parameters)
+```
+{% endcode %}
+
+The inter-mod communication facility was expanded to include support for properties and fields. As a result, a separate class was needed to avoid bloating the kernel modification management class.
+
+The creation of the `InterModTools` class is to organize all the inter-mod communication-related functions.
+
+{% hint style="info" %}
+To continue using `ExecuteCustomModFunction()`, change the reference from `ModManager` to `InterModTools`.
+{% endhint %}

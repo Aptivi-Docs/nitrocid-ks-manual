@@ -54,7 +54,6 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `find`                  | `[-recursive] [-exec] <file> <directory>`                                        |
 | `findreg`               | `[-recursive] [-exec] <fileRegex> <directory>`                                   |
 | `fork`                  |                                                                                  |
-| `ftp`                   | `[server]`                                                                       |
 | `get`                   | `[-outputpath] <url>`                                                            |
 | `getallexthandlers`     |                                                                                  |
 | `getconfigvalue`        | `[-set=variable] <config> <variable>`                                            |
@@ -63,7 +62,6 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `getexthandlers`        | `<extension>`                                                                    |
 | `getkeyiv`              | `[algorithm]`                                                                    |
 | `host`                  |                                                                                  |
-| `http`                  |                                                                                  |
 | `hwinfo`                | `<type>`                                                                         |
 | `if`                    | `<expression> <command>`                                                         |
 | `ifm`                   |                                                                                  |
@@ -86,7 +84,6 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `lsexthandlers`         |                                                                                  |
 | `lsnet`                 |                                                                                  |
 | `lsvars`                |                                                                                  |
-| `mail`                  | `[address]`                                                                      |
 | `md`                    | `<directory>`                                                                    |
 | `mkfile`                | `<file>`                                                                         |
 | `modman`                | `<start/stop/info/reload/install/uninstall> <modfilename>`                       |
@@ -112,7 +109,6 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `rmuser`                | `<username>`                                                                     |
 | `rmgroup`               | `<groupname>`                                                                    |
 | `rmuserfromgroup`       | `<username> <groupname>`                                                         |
-| `rss`                   | `[feedlink]`                                                                     |
 | `saveconfig`            |                                                                                  |
 | `savescreen`            | `[saver]`                                                                        |
 | `search`                | `<regex> <file>`                                                                 |
@@ -123,14 +119,11 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `settings`              | `[-saver\|-addonsaver\|-splash\|-type]`                                          |
 | `set`                   | `<value>`                                                                        |
 | `setrange`              | `<value> [value2] [value3] [...]`                                                |
-| `sftp`                  | `[server]`                                                                       |
 | `shownotifs`            |                                                                                  |
 | `showtd`                |                                                                                  |
 | `showtdzone`            | `[-all] [-selection] <timezone>`                                                 |
 | `shutdown`              | `[ip] [port]`                                                                    |
 | `sleep`                 | `<ms>`                                                                           |
-| `sshell`                | `<address:port> <username>`                                                      |
-| `sshcmd`                | `<address:port> <username> <command>`                                            |
 | `sudo`                  | `<command>`                                                                      |
 | `sumfile`               | `[-relative] <algorithm/all> <file> [output]`                                    |
 | `sumfiles`              | `[-relative] <algorithm/all> <dir> [output]`                                     |
@@ -191,15 +184,17 @@ This shell provides you administrative tools. The following commands are availab
 
 This shell provides debug information. Here are the currently supported commands:
 
-| Commands    | Arguments and Switches |
-| ----------- | ---------------------- |
-| `currentbt` |                        |
-| `debuglog`  | `<sessionnum>`         |
-| `excinfo`   | `<excnum>`             |
-| `keyinfo`   |                        |
-| `lsaddons`  |                        |
-| `lsshells`  |                        |
-| `threadsbt` |                        |
+| Commands       | Arguments and Switches |
+| -------------- | ---------------------- |
+| `currentbt`    |                        |
+| `debuglog`     | `<sessionnum>`         |
+| `excinfo`      | `<excnum>`             |
+| `keyinfo`      |                        |
+| `lsaddons`     |                        |
+| `lsfields`     | `[-suppress]`          |
+| `lsproperties` | `[-suppress]`          |
+| `lsshells`     |                        |
+| `threadsbt`    |                        |
 
 ### Hex Shell
 
@@ -540,7 +535,7 @@ This shell allows you to check your e-mails and send them. You can use the follo
 
 ### RSS Shell
 
-You can use this shell to read your RSS feeds. You can use the below commands:
+You can use this shell to read your RSS feeds using the `rss` command. You can use the below commands:
 
 | Commands       | Arguments and Switches       |
 | -------------- | ---------------------------- |

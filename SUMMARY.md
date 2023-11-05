@@ -162,6 +162,7 @@
     * [🔏 Privacy Consents](advanced-and-power-users/inner-workings/inner-essentials/privacy-consents.md)
     * [🔔 System Notifications](advanced-and-power-users/inner-workings/inner-essentials/system-notifications.md)
     * [✉ MAL and MOTD](advanced-and-power-users/inner-workings/inner-essentials/mal-and-motd.md)
+    * [⌛ Progress Handlers](advanced-and-power-users/inner-workings/inner-essentials/progress-handlers.md)
   * [🌀 Miscellaneous APIs](advanced-and-power-users/inner-workings/miscellaneous-apis.md)
 
 ***

@@ -74,22 +74,11 @@ Typically, the message displays the exception type, the message, and the excepti
 
 <figure><img src="../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
 
-The debug shell allows you to diagnose the kernel in depth. Currently, these tools are supported:
+The debug shell allows you to diagnose the kernel in depth. The following commands are available in the below page:
 
-* `currentbt`
-  * Shows the current thread stack trace
-* `threadsbt`
-  * Shows the stack trace for all kernel threads
-* `keyinfo`
-  * Gets information about the pressed key
-* `lsshells`
-  * Lists all the registered shells
-* `lsaddons`
-  * Lists all the loaded kernel addons
-* `debuglog <sessionnum>`
-  * Prints the debug log based on the session number
-* `excinfo <excNum>`
-  * Gets exception information, including its message
+{% content-ref url="../../fundamentals/simulated-kernel-features/shells/commands-list.md" %}
+[commands-list.md](../../fundamentals/simulated-kernel-features/shells/commands-list.md)
+{% endcontent-ref %}
 
 {% hint style="warning" %}
 This shell just silently exits in the release builds, due to how sophisticated its tools are.

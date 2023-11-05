@@ -16,7 +16,13 @@ The simulated kernel contains the RSS client which gets updates from any RSS fee
 
 ## Connecting to a feed
 
-To connect to any RSS feed, get any RSS feed URL and execute the `rss` command with the URL. The usage of this command is `rss <feed>`.
+To connect to any RSS feed, get any RSS feed URL and execute the `rss` command with the URL. The usage of this command is `rss [-tui] <feed>`.
+
+If you passed the `-tui` switch, it'll open the interactive TUI to your favorite RSS feed URL listing all your articles. Here are the controls:
+
+* `F1`: Shows you more information about the article that you're reading
+* `F2`: Opens your web browser to the article
+* `F3`: Refreshes the list of articles for new updates
 
 ## Commands
 

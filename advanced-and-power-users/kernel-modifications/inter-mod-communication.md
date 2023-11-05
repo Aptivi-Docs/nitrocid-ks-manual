@@ -6,10 +6,6 @@ description: Two or more than two mods talking to each other in Nitrocid
 
 Inter-Mod Communication allows your mods to execute the publicly-available functions of another mod. It allows you to connect two or more than two mods with each other in a mechanism that doesn't interfere with the other mod's operations.
 
-{% hint style="warning" %}
-Currently, this feature only supports communications by function delegates, but we'll add support for more communication methods to make mod connection easier.
-{% endhint %}
-
 ### How to make a function publicly accessible?
 
 You can make a function publicly accessible in one mod by implementing the `PubliclyAvailableFunctions` with a read-only dictionary that contains all your publicly-available functions in your main mod entry point.
@@ -37,4 +33,41 @@ You must specify the main mod name in the above function, since it uses that nam
 * There are no functions in all the mod parts from your mod.
 * There is no function that goes by the name of the specified function name that you plan to execute.
 * There is a function, but the delegate is unspecified.
+{% endhint %}
+
+### How can I make a property or a field publicly accessible?
+
+In your mod, you can make a property or a field publicly accessible by implementing the `PubliclyAvailableProperties` property with a read-only dictionary that contains all your publicly-available properties in your main mod entry point. Similarly, you can add a field to its own dedicated dictionary, `PubliclyAvailableFields`.
+
+{% code title="Interface declaration" %}
+```csharp
+ReadOnlyDictionary<string, PropertyInfo> PubliclyAvailableProperties { get; }
+ReadOnlyDictionary<string, FieldInfo> PubliclyAvailableFields { get; }
+```
+{% endcode %}
+
+The key is the property or the field name that the mod manager uses to search for a property or a field to get or set its value.
+
+To get a property value or a field value from a mod, you can call the following functions:
+
+```csharp
+public static object GetCustomModPropertyValue(string modName, string propertyName)
+public static object GetCustomModFieldValue(string modName, string fieldName)
+```
+
+Similarly, to set a property value or a field value declared publicly by a mod, you can call the following functions:
+
+```csharp
+public static void SetCustomModPropertyValue(string modName, string propertyName, object value)
+public static void SetCustomModFieldValue(string modName, string fieldName, object value)
+```
+
+{% hint style="info" %}
+You must specify the main mod name in the above functions, since they use that name to fetch all mod parts and query them for available fields or properties.
+
+`GetCustomModPropertyValue()` and `GetCustomModFieldValue()` return `null` under the following conditions:
+
+* There are no properties or fields in all the mod parts from your mod.
+* There is no property or field that goes by the name of the specified name that you plan to execute.
+* There is a property or a field, but that item is not static
 {% endhint %}

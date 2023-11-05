@@ -26,7 +26,7 @@ You can establish a connection to the remote debugger using [PuTTY](https://putt
 * Port: `3014` (configurable)
 * Type: `Raw`
 
-Click on Connect and you should be able to see debugging messages from the remote host.
+Click on `Connect` or `Open` and you should be able to see debugging messages from the remote host.
 
 ### Linux
 
@@ -43,8 +43,30 @@ The chatting feature was added to the remote debugger to allow chatting with the
 
 Every device connected to the remote debugger using the provided connection information will have their entries added to the remote debug device configuration file. They'll be told to register their device with a name before they can chat.
 
-Pressing ENTER will post a message to the kernel debugger, causing everyone who connected to the debugger to see the message live.
+The remote debug chat is started along with the remote debugger for nice chatting experience:
 
-{% hint style="info" %}
-If you want to just see people chatting without the kernel debug logs obstructing your conversation view, use the `/mutelogs` command.
-{% endhint %}
+* Socket: TCP
+* Port: `3015` (configurable)
+* Transfer: Inbound and Outbound
+
+Pressing ENTER on the chat connection will post a message to the kernel debugger if chat recording is enabled, causing everyone who connected to the remote chat part of the remote debugger to see the message live.
+
+## Device-only debugging
+
+The debug writer class provides you functions that allow you to write your debugging messages to the devices that are connected to the remote debug session. There are two types of the functions:
+
+### Write to the remote debug
+
+```csharp
+public static bool WriteDebugDeviceOnly(DebugLevel Level, string text, bool force, RemoteDebugDevice device, params object[] vars)
+```
+
+`WriteDebugDeviceOnly()` writes your debugging message to the devices that are connected to the remote debug facility.
+
+### Write to the remote debug chat
+
+```csharp
+public static void WriteDebugChatsOnly(DebugLevel Level, string text, bool force, params object[] vars)
+```
+
+`WriteDebugChatsOnly()` writes your debugging message to the devices that are connected to the remote debug chat.

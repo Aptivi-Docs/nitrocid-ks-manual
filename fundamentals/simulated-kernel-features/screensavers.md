@@ -12,6 +12,16 @@ The first screensaver that blanked the screen after three minutes of inactivity 
 
 The simulated kernel attempts to simulate this functionality in its complete state. You can even customize most built-in screensavers using the built-in `settings` application found in the kernel, though you have to pass the `-saver` switch to it.
 
+{% hint style="danger" %}
+Some of the screensavers bundled with the addons, such as ExcaliBeats and KSX 2, and some of your custom screensavers may contain fast-paced animations and flashing colors, which may cause seizures for the photosensitive.
+
+Before attempting to set your kernel screensaver default to such screensaver, if you are allergic to such animations, you must seek professional medical specialists found in your local region for guidance.
+
+If you don't want to be warned of this everytime you run such screensaver, you can turn this warning off by opening the kernel settings and turning on the `Acknowledge the photosensitive seizure warning` option from the `Screensaver settings` section.
+
+**Please note that the random screensaver will not emit this warning, despite having this option turned off.**
+{% endhint %}
+
 ### Setting the screensaver
 
 <figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
