@@ -52,3 +52,17 @@ The `Reflection` part of the Nitrocid API provides you with options to access pu
 * `PropertyManager` manages properties, such as getting and setting property values.
 * `FieldManager` manages fields, such as getting and setting field values.
 
+In addition to the functions available in the above two classes, you can get all fields and properties defined in all the kernel types using the following functions:
+
+* `GetAllFields()`
+* `GetAllFieldsNoEvaluation()`
+* `GetAllProperties()`
+* `GetAllPropertiesNoEvaluation()`
+
+## Kernel version information
+
+You can get the kernel version information using the following properties from the `KernelMain` class:
+
+* `Version`: Gets the kernel version without the build specifiers
+* `VersionFull`: Gets the kernel version with the build specifiers (essentially the same as the GitHub tag for the release)
+* `ApiVersion`: Gets the kernel API version.

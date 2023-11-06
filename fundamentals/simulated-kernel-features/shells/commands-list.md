@@ -55,6 +55,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `findreg`               | `[-recursive] [-exec] <fileRegex> <directory>`                                   |
 | `fork`                  |                                                                                  |
 | `get`                   | `[-outputpath] <url>`                                                            |
+| `getaddons`             | `[-reinstall]`                                                                   |
 | `getallexthandlers`     |                                                                                  |
 | `getconfigvalue`        | `[-set=variable] <config> <variable>`                                            |
 | `getdefaultexthandler`  | `<extension>`                                                                    |
@@ -184,17 +185,19 @@ This shell provides you administrative tools. The following commands are availab
 
 This shell provides debug information. Here are the currently supported commands:
 
-| Commands       | Arguments and Switches |
-| -------------- | ---------------------- |
-| `currentbt`    |                        |
-| `debuglog`     | `<sessionnum>`         |
-| `excinfo`      | `<excnum>`             |
-| `keyinfo`      |                        |
-| `lsaddons`     |                        |
-| `lsfields`     | `[-suppress]`          |
-| `lsproperties` | `[-suppress]`          |
-| `lsshells`     |                        |
-| `threadsbt`    |                        |
+| Commands           | Arguments and Switches |
+| ------------------ | ---------------------- |
+| `currentbt`        |                        |
+| `debuglog`         | `<sessionnum>`         |
+| `excinfo`          | `<excnum>`             |
+| `getfieldvalue`    | `<field>`              |
+| `getpropertyvalue` | `<property>`           |
+| `keyinfo`          |                        |
+| `lsaddons`         |                        |
+| `lsfields`         | `[-suppress]`          |
+| `lsproperties`     | `[-suppress]`          |
+| `lsshells`         |                        |
+| `threadsbt`        |                        |
 
 ### Hex Shell
 
