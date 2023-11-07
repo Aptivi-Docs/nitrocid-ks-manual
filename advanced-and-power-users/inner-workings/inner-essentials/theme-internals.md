@@ -98,6 +98,9 @@ Your theme files can also support any specifier, as long as the specifier is sup
 * RGB: Red, Green, and Blue.
   * `<RRR>;<GGG>;<BBB>`
   * where the three variables can be from 0 to 255.
+* RYB: Red, Yellow, and Blue.
+  * `ryb:<RRR>;<YYY>;<BBB>`
+  * where the three variables can be from 0 to 255.
 * CMYK: Cyan, Magenta, and Yellow with the Black Key.
   * `cmyk:<CCC>;<MMM>;<YYY>;<KKK>`
   * where these variables can be from 0 to 100.

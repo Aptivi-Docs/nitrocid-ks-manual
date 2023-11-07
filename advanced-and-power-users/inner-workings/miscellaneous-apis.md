@@ -14,6 +14,13 @@ The following APIs can be used in your mods:
 
 The `Reflection` part of the kernel contains a class, `IntegerTools`, that consists of useful integer tools, like converting literal file sizes in bytes to their human formats.
 
+In addition to that, we've also placed useful extensions, such as converting the number of all kinds, short or long, to different number bases as strings, such as:
+
+* `ToBinary()`
+* `ToOctal()`
+* `ToNumber()`
+* `ToHex()`
+
 ### File size conversion
 
 `SizeString()` extension functions can be used when importing the `Reflection` namespace. This allows you to easily convert the file sizes from bytes to their human-readable format.

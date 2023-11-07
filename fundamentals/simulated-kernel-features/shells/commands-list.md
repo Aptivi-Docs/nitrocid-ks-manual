@@ -207,6 +207,7 @@ The hex shell allows you to edit files byte by byte. You can use the following c
 | ------------ | ------------------------------ |
 | `addbyte`    | `<byte>`                       |
 | `addbytes`   |                                |
+| `addbyteto`  | `<byte> <pos>`                 |
 | `clear`      |                                |
 | `delbyte`    | `<bytenumber>`                 |
 | `delbytes`   | `<startbyte> [endbyte]`        |
@@ -215,6 +216,7 @@ The hex shell allows you to edit files byte by byte. You can use the following c
 | `querybyte`  | `<byte> [startbyte] [endbyte]` |
 | `replace`    | `<byte> <replacedbyte>`        |
 | `save`       |                                |
+| `tui`        |                                |
 
 ### JSON Shell
 

@@ -1816,3 +1816,32 @@ The creation of the `InterModTools` class is to organize all the inter-mod commu
 {% hint style="info" %}
 To continue using `ExecuteCustomModFunction()`, change the reference from `ModManager` to `InterModTools`.
 {% endhint %}
+
+### Separated the input info box to its own class
+
+{% code title="InfoBoxColor.cs" lineNumbers="true" %}
+```csharp
+public static string WriteInfoBoxPlainInput(string text, params object[] vars)
+public static string WriteInfoBoxPlainInput(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
+public static string WriteInfoBoxInput(string text, params object[] vars)
+public static string WriteInfoBoxInputKernelColor(string text, KernelColorType InfoBoxColor, params object[] vars)
+public static string WriteInfoBoxInputKernelColor(string text, KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars)
+public static string WriteInfoBoxInputColor(string text, ConsoleColors InfoBoxColor, params object[] vars)
+public static string WriteInfoBoxInputColorBack(string text, ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars)
+public static string WriteInfoBoxInputColor(string text, Color InfoBoxColor, params object[] vars)
+public static string WriteInfoBoxInputColorBack(string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars)
+public static string WriteInfoBoxInput(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
+public static string WriteInfoBoxInputKernelColor(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, KernelColorType InfoBoxColor, params object[] vars)
+public static string WriteInfoBoxInputKernelColor(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars)
+public static string WriteInfoBoxInputColor(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, Color InfoBoxColor, params object[] vars)
+public static string WriteInfoBoxInputColorBack(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, Color InfoBoxColor, Color BackgroundColor, params object[] vars)
+public static string WriteInfoBoxInputColor(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, ConsoleColors InfoBoxColor, params object[] vars)
+public static string WriteInfoBoxInputColorBack(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars)
+```
+{% endcode %}
+
+The input version of the informational box used to reside on the same class as the normal modal and non-modal informational boxes. However, over time, we've discovered that we didn't need to bloat the class with input-related infoboxes. We've moved all the above functions to their own separate class, `InfoBoxInputColor`.
+
+{% hint style="info" %}
+None of the functions were altered during the move. You must change the reference to `InfoBoxColor` so that it points to `InfoBoxInputColor` instead.
+{% endhint %}
