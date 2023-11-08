@@ -87,73 +87,7 @@ The shell registration is required once you're done implementing the shell and a
 Be sure to unregister your shell using the `UnregisterShell()` function, or the shell registry function will not update your `BaseShellInfo` class in the available shell lists!
 {% endhint %}
 
-## Shell Presets
-
-While `ShellManager.GetLine()` prompts for input, it decides which shell preset, `PromptPresetBase`, is used according to the list of presets, `ShellPresets`, that **should** make a new prompt preset class that you made for your shell.
-
-`CurrentPreset` specifies the current `PromptPresetBase` class, which is usually found in the `ShellPresets` list. It usually calls the `PromptPresetManager.CurrentPresets[ShellType]` variable.
-
-{% hint style="warning" %}
-The first preset **should** implement a preset called `Default` in the `ShellPresets` dictionary.
-{% endhint %}
-
-`PromptPresetManager.SetPreset()` queries both the shell pre-defined presets, `ShellPresets`, and the custom presets, `CustomShellPresets`. After that, it sets the preset to the specified preset in the internal `CurrentPresets`.
-
-Every preset must implement a base class, `PromptPresetBase` and `IPromptPreset`, as in below:
-
-```csharp
-public class YourDefaultPreset : PromptPresetBase, IPromptPreset
-```
-
-The only essential values that you **must** override in your shell preset class are:
-
-* `PresetName`: **Read-only property.** The shell preset name. If this preset is your first preset, it must be `Default`.
-
-```csharp
-public override string PresetName { get; } = "Default";
-```
-
-* `PresetPrompt`: **Read-only property.** Usually calls the overridable internal function `PresetPromptBuilder()`. If it's simple, overriding it with a string is enough.
-
-```csharp
-public override string PresetPrompt =>
-    PresetPromptBuilder();
-internal override string PresetPromptBuilder()
-```
-
-Optionally, these variables can be overridden:
-
-* `PresetPromptCompletion`: **Read-only property.** Usually calls the overridable internal function `PresetPromptCompletionBuilder()`. If it's simple, overriding it with a string is enough.
-
-```csharp
-public override string PresetPromptCompletion =>
-    PresetPromptCompletionBuilder();
-internal override string PresetPromptCompletionBuilder()
-```
-
-* `PresetPromptShowcase`: **Read-only property.** Usually calls the overridable internal function `PresetPromptBuilderShowcase()`. If it's simple, overriding it with a string is enough.
-
-```csharp
-public override string PresetPromptShowcase =>
-    PresetPromptBuilderShowcase();
-internal override string PresetPromptBuilderShowcase()
-```
-
-* `PresetPromptCompletionShowcase`: **Read-only property.** Usually calls the overridable internal function `PresetPromptCompletionBuilderShowcase()`. If it's simple, overriding it with a string is enough.
-
-```csharp
-public override string PresetPromptCompletionShowcase =>
-    PresetPromptCompletionBuilderShowcase();
-internal override string PresetPromptCompletionBuilderShowcase()
-```
-
-{% hint style="warning" %}
-Since the `Showcase` versions of the properties are meant to simulate how the preset would look in the real-world, you shouldn't try to access any external asset, especially those that the non-showcase properties use.
-
-The easiest way to avoid using these assets is to make up things, such as `database.sqlite` for the SQL shell.
-{% endhint %}
-
-## Shell Information
+### Shell Information
 
 Every `BaseShell` class you create must accompany it with a separate class that implements the `BaseShellInfo` and `IShellInfo` classes, as in below:
 
@@ -232,105 +166,6 @@ You'll have to adapt your shell to take the first argument, `ShellArgs[0]`, as t
 <strong>    public override bool AcceptsNetworkConnection => true;
 </strong>}
 </code></pre>
-
-## Command Info
-
-Each command you define in your shell must provide a new instance of the `CommandInfo` class holding details about the specified command. The new instance of the class can be made using the constructor defined below:
-
-```csharp
-public CommandInfo(string Command, string HelpDefinition, CommandArgumentInfo[] CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
-```
-
-where:
-
-* `Command`: The command
-* `HelpDefinition`: The brief summary of what the command does
-* `CommandArgumentInfo`: Array of argument information about your command
-* `CommandBase`: An instance of the `BaseCommand` containing command execution information
-* `CommandFlags`: All command flags
-
-To implement `CommandArgumentInfo`, call the constructor either with no parameters, which implies that there is no argument required to run this command, or with the following options listed below.
-
-```csharp
-public CommandArgumentInfo()
-public CommandArgumentInfo(bool AcceptsSet)
-public CommandArgumentInfo(CommandArgumentPart[] Arguments)
-public CommandArgumentInfo(CommandArgumentPart[] Arguments, bool AcceptsSet)
-public CommandArgumentInfo(SwitchInfo[] Switches)
-public CommandArgumentInfo(SwitchInfo[] Switches, bool AcceptsSet)
-public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches)
-public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet)
-```
-
-where:
-
-* `Arguments`: Defines the command arguments
-* `Switches`: Defines the command switches
-* `AcceptsSet`: Whether to accept the `-set` switch
-
-For `CommandArgumentPart` instances, consult the below constructor to create an array of `CommandArgumentPart` instances when defining your commands:
-
-```csharp
-public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[], string[]> autoCompleter = null, bool isNumeric = false, string exactWording = null)
-```
-
-where:
-
-* `argumentRequired`: Is this argument part required?
-* `argumentExpression`: Command argument expression
-* `autoCompleter`: Auto completion function delegate
-  * The first `string[]` denotes the list of last passed arguments
-  * The second `string[]` (output) denotes the suggestions returned
-* `isNumeric`: Whether this argument part accepts numeric values only
-* `exactWording`: If not empty, the user must write this wording for this argument to be satisfied
-
-{% hint style="info" %}
-When it comes to auto-completion, if you press TAB on any of the argument positions, the shell will select the following completers as appropriate:
-
-* If the auto completer is specified, then, regardless of whether the expression represents the selection (expressions containing the slash `/` character) or not, the auto completer specified in the constructor will be called.
-* If the auto completer is not specified, then it will go through the following completers:
-  * The shell goes through the list of known completion expressions according to the argument expression, which are the following:
-    * `user`, `username`: List of usernames
-    * `group`, `groupname`: List of groups
-    * `modname`: List of kernel mods
-    * `splashname`: List of splashes
-    * `saver`: List of screensavers
-    * `theme`: List of themes
-    * `$variable`: List of UESH variables
-    * `perm`: List of permission types
-    * `cmd`, `command`: List of all available commands
-  * If the expression is not listed in any of the known expressions list, it'll check for the selection indicator characters (the slash `/` key).
-    * For example, the `true/false` expression will generate an autocompleter that completes the two words: `true` and `false`.
-  * In case there is none, the shell will use the default auto completer, which fetches possible files and folders on your current working directory.
-{% endhint %}
-
-{% hint style="success" %}
-Usually, there is no need for you to cut the string to the required position; the shell does it to every single autocomplete result that is given.
-{% endhint %}
-
-### Command argument part with options
-
-In case you want to expressively specify the options without having to use default values for all parameters to set a certain parameter, you can use the `CommandArgumentPartOptions` overload:
-
-```csharp
-public CommandArgumentPart(bool argumentRequired, string argumentExpression, CommandArgumentPartOptions options)
-```
-
-## Switch Info
-
-For `SwitchInfo` instances, consult the below constructors to create an array of `SwitchInfo` instances when defining your commands:
-
-```csharp
-public SwitchInfo(string Switch, string HelpDefinition)
-public SwitchInfo(string Switch, string HelpDefinition, SwitchOptions options)
-public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[] conflictsWith = null, int optionalizeLastRequiredArguments = 0)
-```
-
-{% hint style="info" %}
-You can access the switch options using the `Options` property. The existing properties, like `IsRequired`, are proxies to that property, but are to stay for compatibility.
-
-Try to use the second overload if you want to specify the options, if possible. This allows you to be more expressive in your mod command definition code, making it more readable.
-{% endhint %}
 
 ## Base Command
 
@@ -460,6 +295,18 @@ Finally, the command flags (`CommandFlags`) can be defined. One or more of the c
 
 ## More?
 
+For guidance on how to define your command, click the below button:
+
+{% content-ref url="command-information.md" %}
+[command-information.md](command-information.md)
+{% endcontent-ref %}
+
+For guidance on how to define your command's switches, click the below button:
+
+{% content-ref url="command-switch-information.md" %}
+[command-switch-information.md](command-switch-information.md)
+{% endcontent-ref %}
+
 For information about the help system and how it works, consult the below page:
 
 {% content-ref url="help-system.md" %}
@@ -476,4 +323,10 @@ For shell scripting, click the below button:
 
 {% content-ref url="shell-scripting.md" %}
 [shell-scripting.md](shell-scripting.md)
+{% endcontent-ref %}
+
+For shell presets, click the below button:
+
+{% content-ref url="shell-presets.md" %}
+[shell-presets.md](shell-presets.md)
 {% endcontent-ref %}
