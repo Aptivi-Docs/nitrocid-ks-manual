@@ -14,6 +14,24 @@ The interactive TUI allows you to make your apps interactive if they provide one
 You can exit out of any interactive TUI application by pressing the `ESC` key on your keyboard.
 {% endhint %}
 
+These are some of the controls, alongside the custom defined controls for a specific TUI, that you can use:
+
+| Key          | Action                                                              |
+| ------------ | ------------------------------------------------------------------- |
+| `Up Arrow`   | Moves up one element in the current pane                            |
+| `Down Arrow` | Moves down one element in the current pane                          |
+| `Home`       | Moves to the first element                                          |
+| `End`        | Moves to the last element                                           |
+| `Page Up`    | One page backward                                                   |
+| `Page Down`  | One page forward                                                    |
+| `I`          | Gives you more information about a selected element if there is one |
+| `K`          | Shows you a list of available bindings                              |
+| `ESC`        | Exits the interactive TUI app                                       |
+
+{% hint style="info" %}
+This feature is also available on Terminaux. Some of the features here might not get backported to Terminaux until the next version surfaces there.
+{% endhint %}
+
 ## Can I make one, too?
 
 Yes! You can make your own interactive TUI application. Depending on your requirements, you may want to make a plan as to how would your interactive TUI application be.

@@ -8,6 +8,10 @@ You might have come across a chapter in making a console application that tells 
 
 Nitrocid KS offers several ways of input. The simplest way is the `ReadLine()` function found in the Input class on the `KS.ConsoleBase.Inputs` namespace. It basically gives you a prompt and a chance to enter your input to the console, and the output will be returned by this function, which your mod uses.
 
+{% hint style="info" %}
+This feature is also available on Terminaux. Some of the features here might not get backported to Terminaux until the next version surfaces there.
+{% endhint %}
+
 Various features of the kernel, like the shell, use this function to get the user input, such as the entered command, and process it according to the logic. For example, `ShellManager.GetLine()` gets the entered command and compares the written command to the list of commands under the current shell type. Deep explanation about this topic is clearly out of scope, so if you want to get more information about how the shell commands are being processed, click on the below page:
 
 {% content-ref url="../shell-structure/" %}
@@ -180,6 +184,12 @@ Of course, there are types of the choice output, which allows you to change how 
 * `ChoiceOutputType.Modern`
 * `ChoiceOutputType.Table`
 
+{% hint style="info" %}
+You can also use the infobox as a choice selection list. Use a desirable function from the `InfoBoxSelectionColor` class.
+
+For choices that are three or less, you can use the `InfoBoxButtonsColor` class.
+{% endhint %}
+
 ### Selection input
 
 This kind of input is useful for those who prefer for the users to select any choice listed from the list of answers. This is useful for situations where we don't want the users to write down the choice number or title, or the choice list is too long.
@@ -240,8 +250,14 @@ In the selection style, these are the available controls:
 * `Page Up`: Advances to the previous page
 * `Page Down`: Advances to the next page
 * `Enter`: Selects the highlighted answer
-* `Escape`: Exits the selection and returns choice `-1`
+* `Escape`: Exits the selection and returns `-1`
 * `Tab`: Opens an info box containing more information about the highlighted answer. This is useful if the information pane in the bottom didn't fit.
+
+{% hint style="info" %}
+You can also use the infobox as a choice selection list. Use a desirable function from the `InfoBoxSelectionColor` class.
+
+For choices that are three or less, you can use the `InfoBoxButtonsColor` class.
+{% endhint %}
 
 ## Other types
 
