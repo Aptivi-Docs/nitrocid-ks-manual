@@ -452,6 +452,7 @@ Once you enter the Git shell with the provided repo path, you can access the bel
 | `checkout`   | `<branch>`               |
 | `commit`     | `<summary>`              |
 | `describe`   | `<commitsha>`            |
+| `diff`       | `[-tree\|-patch\|-all]`  |
 | `fetch`      | `[remote]`               |
 | `filestatus` | `<file>`                 |
 | `info`       |                          |

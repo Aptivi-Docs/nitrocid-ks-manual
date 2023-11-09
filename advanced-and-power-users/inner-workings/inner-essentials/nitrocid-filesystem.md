@@ -164,3 +164,12 @@ Additionally, the `Extensions` part of the filesystem feature contains a mechani
 {% hint style="info" %}
 The supported MIME types are available [here](https://github.com/Aptivi/NitrocidKS/commit/c4a52ae47ebc870adb72d11b6a2a641db95684d7#diff-4591e343dac43550e94f94b4cfe0f51e2189301ea58219ef5f3efc05caab0cc7R31).
 {% endhint %}
+
+### Symbolic Links (a.k.a. Shortcuts)
+
+Symbolic links are shortcuts to a single file or directory that simplify the path to the target file or folder. They are useful for many purposes.
+
+To make a symbolic link, you can use the `MakeSymlink()` function and its `Try` counterpart from the `Making` class from the `Operations` namespace. This function takes two arguments:
+
+* The link name specifies a path to the symbolic link. This name must not exist.
+* The link target specifies a path to an existent file or folder.

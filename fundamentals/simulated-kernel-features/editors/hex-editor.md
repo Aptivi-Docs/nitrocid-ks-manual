@@ -26,8 +26,8 @@ In addition to the hex editor being a shell, you can switch to an alternative mo
 
 The interactive hex editor works like any other interactive hex editor. However, it's just that it's different in terms of how it operates.
 
-* To exit, press ESC.
-* To get a list of available keybindings, press K.
+* To exit, press `ESC`.
+* To get a list of available keybindings, press `K`.
 
 The currently selected byte is highlighted with the green color, depending on your kernel theme. Here are some of the common controls:
 

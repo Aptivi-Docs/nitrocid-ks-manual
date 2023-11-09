@@ -1845,3 +1845,52 @@ The input version of the informational box used to reside on the same class as t
 {% hint style="info" %}
 None of the functions were altered during the move. You must change the reference to `InfoBoxColor` so that it points to `InfoBoxInputColor` instead.
 {% endhint %}
+
+### Kernel no longer caches background and foreground colors
+
+{% code title="KernelColorTools.cs" lineNumbers="true" %}
+```csharp
+public static Color CurrentForegroundColor
+public static Color CurrentBackgroundColor
+```
+{% endcode %}
+
+{% code title="ConsoleWrapper.cs" lineNumbers="true" %}
+```csharp
+public static ConsoleColor ForegroundColor
+public static ConsoleColor BackgroundColor
+```
+{% endcode %}
+
+{% code title="IConsoleDriver.cs" lineNumbers="true" %}
+```csharp
+ConsoleColor ForegroundColor { get; set; }
+ConsoleColor BackgroundColor { get; set; }
+```
+{% endcode %}
+
+The color caching was used as a way to speed up the color querying. However, as performance improvements to different areas of the kernel were witnessed during the third beta development, we've decided to scrap the color caching feature, resulting in the removal of both the `CurrentForegroundColor` and `CurrentBackgroundColor` properties.
+
+Also, to promote the usage of the modern ways to set the background and the foreground color using `ConsoleColor` as a result of Terminaux's `Color` fully supporting `ConsoleColor`, we've decided to remove all the console wrappers for setting the background and the foreground colors.
+
+{% hint style="info" %}
+You must replace both wrappers with `SetConsoleColor()` prior to writing text plainly. Otherwise, usage of the built-in console writers is more appropriate and easier.
+{% endhint %}
+
+### Number sorting tools moved
+
+{% code title="SortingDriver.cs" lineNumbers="true" %}
+```csharp
+public static class SortingDriver
+```
+{% endcode %}
+
+{% hint style="info" %}
+Although this driver didn't appear on Beta 2, we've added this in case your mod supports a particular development version of Beta 3 by targeting mod API `3.0.25.282` or lower.
+{% endhint %}
+
+We've created `ArrayTools` to put all the useful functions for arrays in one class. As a result, we've had to move all the functions inside `SortingDriver` to that class.
+
+{% hint style="info" %}
+None of the functions are changed. You must change the `ArrayTools` references to point to `SortingDriver` instead.
+{% endhint %}
