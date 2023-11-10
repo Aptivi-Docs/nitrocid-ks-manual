@@ -26,6 +26,7 @@ These are some of the controls, alongside the custom defined controls for a spec
 | `Page Down`  | One page forward                                                    |
 | `I`          | Gives you more information about a selected element if there is one |
 | `K`          | Shows you a list of available bindings                              |
+| `Tab`        | Switches the sides                                                  |
 | `ESC`        | Exits the interactive TUI app                                       |
 
 {% hint style="info" %}
@@ -89,14 +90,21 @@ And if you press your key binding, you'll get this:
 
 <figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
+When defining the interactive TUI binding, you can now set the required modifier keys by setting the `bindingKeyModifiers` value. Here is a constructor that supports this property:
+
+```csharp
+public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, ConsoleModifiers bindingKeyModifiers, Action<object, int> bindingAction)
+```
+{% endhint %}
+
 For multiple panes, you'll have to modify your class to take two data sources and adapt it to interact with the second pane, like below: (note the highlighted parts, they are added)
 
 <pre class="language-csharp" data-title="MyTui.cs" data-line-numbers><code class="lang-csharp">internal class MyTui : BaseInteractiveTui, IInteractiveTui
 {
     public override List&#x3C;InteractiveTuiBinding> Bindings { get; set; } = new()
     {
-<strong>        new InteractiveTuiBinding("Switch", ConsoleKey.Tab, (_, _) => SwitchPanes()),
-</strong>        new InteractiveTuiBinding("Action", ConsoleKey.F1, (data, _) => Proceed(data)),
+        new InteractiveTuiBinding("Action", ConsoleKey.F1, (data, _) => Proceed(data)),
     };
 
 <strong>    public override bool SecondPaneInteractable =>
@@ -126,15 +134,7 @@ For multiple panes, you'll have to modify your class to take two data sources an
         InfoBoxColor.WriteInfoBox(currentItem);
         RedrawRequired = true;
     }
-
-<strong>    private static void SwitchPanes()
-</strong><strong>    {
-</strong><strong>        CurrentPane++;
-</strong><strong>        if (CurrentPane > 2)
-</strong><strong>            CurrentPane = 1;
-</strong><strong>        RedrawRequired = true;
-</strong><strong>    }
-</strong>}
+}
 </code></pre>
 
 If everything goes well, you should be able to switch to the second pane, causing you to be able to select items from the second pane:
@@ -145,8 +145,8 @@ And if you try to execute your key binding on an item found in the second pane, 
 
 <figure><img src="../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="danger" %}
-You **must** make a keybinding called `Switch` so that your users can choose items for the second pane in double-paned TUI applications, or they won't be able to switch to the second pane!
+{% hint style="info" %}
+As of 0.1.0 Beta 3, you don't have to manually implement the switch function, since it's already implemented for double-pane interactive TUIs.
 {% endhint %}
 
 Additionally, you can make your TUI app refresh every set millisecond so that your app can update itself based on the **selected** data, like weather for the selected city. For this, you need an information source that is dynamic and self-updating (from the `GetInfoFromItem()` function), like stopwatches, random data, or even self-updating data gathered from the Internet, based on the selected item in the first pane, assuming that you know how to process them correctly.
