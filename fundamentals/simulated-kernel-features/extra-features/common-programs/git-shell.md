@@ -38,6 +38,6 @@ You can check out a specific branch using the `checkout` command.
 
 You can consult the below page for the list of available commands.
 
-{% content-ref url="../shells/commands-list.md" %}
-[commands-list.md](../shells/commands-list.md)
+{% content-ref url="../../shells/commands-list.md" %}
+[commands-list.md](../../shells/commands-list.md)
 {% endcontent-ref %}

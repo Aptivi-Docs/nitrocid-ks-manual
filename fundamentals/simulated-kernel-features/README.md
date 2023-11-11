@@ -2,11 +2,11 @@
 description: Ordered list of simulated kernel flow
 ---
 
-# 🌟 Simulated Kernel Features
+# ⭐ Simulated Kernel Features
 
 <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-Within the simulated kernel, there are big amounts of features that actually excites you. As new versions get released, new and spectacular features get added.
+Within the simulated kernel, there are big amounts of features that actually excite you. As new versions get released, new and spectacular features get added.
 
 {% hint style="warning" %}
 Some features of the kernel, such as the usage of SpecProbe driver, may need elevated privileges. To get access to these elevated privileges on Windows, use the `winelevate` command.
@@ -20,16 +20,20 @@ The buttons below lists some of the features that blow your mind.
 [accounts](accounts/)
 {% endcontent-ref %}
 
+{% content-ref url="editors/" %}
+[editors](editors/)
+{% endcontent-ref %}
+
 {% content-ref url="shells/" %}
 [shells](shells/)
 {% endcontent-ref %}
 
-{% content-ref url="networking/" %}
-[networking](networking/)
+{% content-ref url="files-and-folders.md" %}
+[files-and-folders.md](files-and-folders.md)
 {% endcontent-ref %}
 
-{% content-ref url="editors/" %}
-[editors](editors/)
+{% content-ref url="networking.md" %}
+[networking.md](networking.md)
 {% endcontent-ref %}
 
 {% content-ref url="languages.md" %}
@@ -40,16 +44,14 @@ The buttons below lists some of the features that blow your mind.
 [screensavers.md](screensavers.md)
 {% endcontent-ref %}
 
-{% content-ref url="games-and-amusements/" %}
-[games-and-amusements](games-and-amusements/)
-{% endcontent-ref %}
-
-{% content-ref url="common-programs/" %}
-[common-programs](common-programs/)
-{% endcontent-ref %}
-
 {% content-ref url="bootable-simulation.md" %}
 [bootable-simulation.md](bootable-simulation.md)
+{% endcontent-ref %}
+
+In addition to the above features, consult the below page to get some of the extra features:
+
+{% content-ref url="extra-features/" %}
+[extra-features](extra-features/)
 {% endcontent-ref %}
 
 As we develop more features, they'll get listed here.

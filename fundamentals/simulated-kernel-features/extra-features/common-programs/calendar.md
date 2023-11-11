@@ -24,7 +24,7 @@ The simulated kernel provides you with the calendar management application that 
 
 ### Showing the Calendar
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 The calendar can be shown to show you either the current month or the selected year in the current month or the selected year and month. To utilize the functionality, use the following command.
 
@@ -37,7 +37,7 @@ The calendar can be shown to show you either the current month or the selected y
 
 ### Events
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
 If there is a particular event that will happen in the future, you can use this subcommand to manage your events.
 
@@ -52,7 +52,7 @@ If there is a particular event that will happen in the future, you can use this 
 
 ### Reminders
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 If you would like to be reminded about something in the future, you can use this subcommand to manage your reminders.
 

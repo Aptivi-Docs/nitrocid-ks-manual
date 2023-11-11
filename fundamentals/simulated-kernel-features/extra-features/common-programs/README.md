@@ -26,10 +26,6 @@ Nitrocid KS contains some of the common programs that have their own documentati
 [stopwatch-and-timer.md](stopwatch-and-timer.md)
 {% endcontent-ref %}
 
-{% content-ref url="files-and-folders.md" %}
-[files-and-folders.md](files-and-folders.md)
-{% endcontent-ref %}
-
 {% content-ref url="unit-converter.md" %}
 [unit-converter.md](unit-converter.md)
 {% endcontent-ref %}

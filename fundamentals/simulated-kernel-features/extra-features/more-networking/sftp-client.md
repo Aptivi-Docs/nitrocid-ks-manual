@@ -4,7 +4,7 @@ description: Transfer your files securely between your servers and your PC
 
 # 🔒 SFTP Client
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.
@@ -35,10 +35,10 @@ To connect to your SFTP server inside the SFTP shell, please follow the steps:
 
 ## Commands
 
-<figure><img src="../../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
 To see the available commands provided by this shell, consult this page below:
 
-{% content-ref url="../shells/commands-list.md" %}
-[commands-list.md](../shells/commands-list.md)
+{% content-ref url="../../shells/commands-list.md" %}
+[commands-list.md](../../shells/commands-list.md)
 {% endcontent-ref %}

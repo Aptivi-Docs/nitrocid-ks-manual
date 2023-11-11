@@ -10,7 +10,7 @@ As of 0.1.0, this feature has been moved to the kernel addons.
 
 ## CLI version
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 The unit converter is used to easily convert the source units to different units, like centimeters to meters. It's powered by the UnitsNet library. You can consult the list of units UnitsNet supports here:
 
@@ -23,7 +23,7 @@ To use both the programs, refer to the command usages and individual explanation
 * `unitconv <unittype> <quantity> <sourceunit> <targetunit>`
   * Converts the unit by quantity and type from the source unit to the target unit
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 You can use the `listunits` command to get all the available units by type.
 

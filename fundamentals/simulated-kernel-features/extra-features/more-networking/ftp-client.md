@@ -4,7 +4,7 @@ description: How to use your FTP client
 
 # 🗃 FTP Client
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.
@@ -45,6 +45,6 @@ To connect to your FTP server inside the FTP shell, please follow the steps:
 
 For the list of available commands, head to the page below:
 
-{% content-ref url="../shells/commands-list.md" %}
-[commands-list.md](../shells/commands-list.md)
+{% content-ref url="../../shells/commands-list.md" %}
+[commands-list.md](../../shells/commands-list.md)
 {% endcontent-ref %}

@@ -4,7 +4,7 @@ description: Manage your messages with this mail client
 
 # 📧 Mail Client
 
-<figure><img src="../../../.gitbook/assets/testmail (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/testmail (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.
@@ -33,6 +33,6 @@ To use the encrypted mail, you need to have both your private key and your recip
 
 To get a list of available mail commands, consult the page below:
 
-{% content-ref url="../shells/commands-list.md" %}
-[commands-list.md](../shells/commands-list.md)
+{% content-ref url="../../shells/commands-list.md" %}
+[commands-list.md](../../shells/commands-list.md)
 {% endcontent-ref %}

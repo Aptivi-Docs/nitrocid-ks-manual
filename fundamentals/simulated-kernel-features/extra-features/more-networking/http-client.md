@@ -4,7 +4,7 @@ description: Make your HTTP requests
 
 # 🌐 HTTP Client
 
-<figure><img src="../../../.gitbook/assets/HTTPClient.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/HTTPClient.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.
@@ -27,6 +27,6 @@ To be able to use the below commands that are listed in the below section, you h
 
 To get access to the list of commands, consult the below page:
 
-{% content-ref url="../shells/commands-list.md" %}
-[commands-list.md](../shells/commands-list.md)
+{% content-ref url="../../shells/commands-list.md" %}
+[commands-list.md](../../shells/commands-list.md)
 {% endcontent-ref %}

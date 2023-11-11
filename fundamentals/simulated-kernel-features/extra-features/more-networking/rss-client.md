@@ -4,7 +4,7 @@ description: Handles all your RSS feeds
 
 # 📰 RSS Client
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.
@@ -28,6 +28,6 @@ If you passed the `-tui` switch, it'll open the interactive TUI to your favorite
 
 These below commands can be found by consulting the below page:
 
-{% content-ref url="../shells/commands-list.md" %}
-[commands-list.md](../shells/commands-list.md)
+{% content-ref url="../../shells/commands-list.md" %}
+[commands-list.md](../../shells/commands-list.md)
 {% endcontent-ref %}
