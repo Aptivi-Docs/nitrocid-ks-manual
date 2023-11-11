@@ -1894,3 +1894,20 @@ We've created `ArrayTools` to put all the useful functions for arrays in one cla
 {% hint style="info" %}
 None of the functions are changed. You must change the `ArrayTools` references to point to `SortingDriver` instead.
 {% endhint %}
+
+### New ways of manipulating objects in the JSON shell
+
+{% code title="JsonTools.cs" lineNumbers="true" %}
+```csharp
+public static JToken GetProperty(string Property)
+public static JToken GetPropertySafe(string ParentProperty, string Property)
+```
+{% endcode %}
+
+The `Add()` and `Remove()` functions for each object type had been troublesome for a very long time and were error-prone, because of how they were coded. This was a problem with the JSON shell that's absolutely affecting its maintenance.
+
+The solution was to implement brand new functions, `Add()`, `Set()`, and `Remove()`, that allow you to add objects, arrays, or properties to your JSON file at any location you choose.
+
+{% hint style="warning" %}
+The old `Add()` and `Remove()` functions were made obsolete as a result of the malleability of the three new functions. It's recommended to use the new functions.
+{% endhint %}

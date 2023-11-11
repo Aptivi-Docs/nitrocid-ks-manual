@@ -148,6 +148,30 @@ By default, your shells don't accept network connections. To make them accept ne
 public override bool AcceptsNetworkConnection => true;
 ```
 
+By default, all the shells provide you a multi-line prompt, but if you want your input to be in one line wrapped mode, you can override the below property:
+
+```csharp
+public override bool OneLineWrap => false;
+```
+
+If your shell meets the following conditions:
+
+* You need to handle written text in a way, and
+* You need to use your commands with a slash character, just like the remote debugger,
+
+Then, you need to override the two properties in order for your special non-slash handler to execute:
+
+```csharp
+public override bool SlashCommand => true;
+public override CommandInfo NonSlashCommandInfo => new CommandInfo(...);
+```
+
+{% hint style="info" %}
+If you need to know how to define a command information class, consult the below link:
+
+[command-information.md](command-information.md "mention")
+{% endhint %}
+
 You'll have to adapt your shell to take the first argument, `ShellArgs[0]`, as the network connection instance in your `Shell` instance. For example, we've done this to the FTP shell and shell info instances:
 
 <pre class="language-csharp" data-title="FTPShell.cs" data-line-numbers><code class="lang-csharp">public override void InitializeShell(params object[] ShellArgs)

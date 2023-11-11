@@ -15,3 +15,11 @@ You can consult the below page for the list of JSON editor commands.
 {% content-ref url="../shells/commands-list.md" %}
 [commands-list.md](../shells/commands-list.md)
 {% endcontent-ref %}
+
+## Interactive TUI
+
+You can also interactively edit JSON files using the powerful interactive TUI for text editing. You can consult the below page for more information about how to use it:
+
+{% content-ref url="text-editor.md" %}
+[text-editor.md](text-editor.md)
+{% endcontent-ref %}

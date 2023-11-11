@@ -70,7 +70,15 @@ Consult the above link to the API reference for more info about how to use these
 
 ### Filesystem Entries
 
-`FileSystemEntry` contains necessary information about your file or folder, like checking to see if it exists, determining the type of the entry, and so on.
+`FileSystemEntry` contains necessary information about your file or folder, like checking to see if it exists, determining the type of the entry, and so on. These are the information currently available, but you can obtain more information using the `BaseEntry` property:
+
+* `Exists`: Checks to see if the file or directory exists
+* `Type`: The type of the filesystem entry. This is only populated once.
+* `OriginalFilePath`: The original file path that was passed to the constructor
+* `FilePath`: The neutralized file path
+* `FileSize`: The file size. This property's value is -1 if the entry is a directory or non-existent
+* `BaseEntryUnprocessed`: The base entry from the unprocessed file path
+* `BaseEntry`: The base entry from the neutralized file path
 
 You can create a new instance of this class, assuming that you've imported the `KS.Files.Instances` namespace, by simply calling the constructor like below:
 
