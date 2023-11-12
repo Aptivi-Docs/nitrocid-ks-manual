@@ -1911,3 +1911,19 @@ The solution was to implement brand new functions, `Add()`, `Set()`, and `Remove
 {% hint style="warning" %}
 The old `Add()` and `Remove()` functions were made obsolete as a result of the malleability of the three new functions. It's recommended to use the new functions.
 {% endhint %}
+
+### Infobox classes moved to `Inputs`
+
+{% code title="InfoBox*.cs" lineNumbers="true" %}
+```csharp
+namespace KS.ConsoleBase.Writers.FancyWriters
+```
+{% endcode %}
+
+The informational box classes used to reside in the FancyWriters part of the console writer. However, when we added several input methods to the information box class, we've discovered that this feature was not actually one of the writers, but one of the input methods.
+
+To clear up the confusion, we've decided to move all the info box classes to the `Inputs.Styles` namespace.
+
+{% hint style="info" %}
+None of the classes and their functions were affected, but you must change the imports clause to point to the new namespace, `KS.ConsoleBase.Inputs.Styles`.
+{% endhint %}

@@ -92,6 +92,7 @@
       * [⏰ Stopwatch and Timer](fundamentals/simulated-kernel-features/extra-features/common-programs/stopwatch-and-timer.md)
       * [☑ To-do List](fundamentals/simulated-kernel-features/extra-features/common-programs/to-do-list.md)
       * [⚖ Unit Converter](fundamentals/simulated-kernel-features/extra-features/common-programs/unit-converter.md)
+    * [🪄 ChatGPT Client](fundamentals/simulated-kernel-features/extra-features/chatgpt-client.md)
   * [👤 Accounts](fundamentals/simulated-kernel-features/accounts/README.md)
     * [🔓 Permissions](fundamentals/simulated-kernel-features/accounts/permissions.md)
   * [✏ Editors](fundamentals/simulated-kernel-features/editors/README.md)

@@ -101,7 +101,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `previewsplash`         | `[-splashout] [-context] <splashname>`                                           |
 | `put`                   | `<filename> <url>`                                                               |
 | `rdebug`                |                                                                                  |
-| `reboot`                | `[ip] [port]`                                                                    |
+| `reboot`                | `[ip/safe/maintenance/debug] [port]`                                             |
 | `reloadconfig`          |                                                                                  |
 | `retroks`               |                                                                                  |
 | `rexec`                 | `<address> <port> <command>`                                                     |
@@ -111,7 +111,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `rmgroup`               | `<groupname>`                                                                    |
 | `rmuserfromgroup`       | `<username> <groupname>`                                                         |
 | `saveconfig`            |                                                                                  |
-| `savescreen`            | `[saver]`                                                                        |
+| `savescreen`            | `[-select] [saver]`                                                              |
 | `search`                | `<regex> <file>`                                                                 |
 | `searchword`            | `<phrase> <file>`                                                                |
 | `select`                | `<answers> <input> [title] [title2] [...]`                                       |

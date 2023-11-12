@@ -73,3 +73,19 @@ You can get the kernel version information using the following properties from t
 * `Version`: Gets the kernel version without the build specifiers
 * `VersionFull`: Gets the kernel version with the build specifiers (essentially the same as the GitHub tag for the release)
 * `ApiVersion`: Gets the kernel API version.
+
+## Writing to the console
+
+The Writers part of the ConsoleBase provides you classes that allow you to render and write content to the console, ranging from simple text writing to Figlet writing to box borders.
+
+You can either use the `Write*()` functions to write the rendered result directly to the console, or you can use the `Render*()` functions to get a string that can be used with the plain writer of the `TextWriterColor`, `WritePlain()`.
+
+{% hint style="info" %}
+If you want colorless printing, you can use the `Write*Plain()` functions found in the writer classes.
+{% endhint %}
+
+This feature is also available for Terminaux, so consult its guide for more information:
+
+{% content-ref url="http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/console-writers" %}
+[Console Writers](http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/console-writers)
+{% endcontent-ref %}

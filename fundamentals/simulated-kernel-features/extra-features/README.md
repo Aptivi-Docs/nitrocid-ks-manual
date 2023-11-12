@@ -20,6 +20,10 @@ Select a page below to go to a feature:
 [common-programs](common-programs/)
 {% endcontent-ref %}
 
+{% content-ref url="chatgpt-client.md" %}
+[chatgpt-client.md](chatgpt-client.md)
+{% endcontent-ref %}
+
 ## How do I get these programs?
 
 You can get these extra features, including extra languages, splashes, and screensavers, by either downloading the addons ZIP file from the releases page of the Nitrocid project at GitHub, or by using the `getaddons` command.
