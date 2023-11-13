@@ -1927,3 +1927,38 @@ To clear up the confusion, we've decided to move all the info box classes to the
 {% hint style="info" %}
 None of the classes and their functions were affected, but you must change the imports clause to point to the new namespace, `KS.ConsoleBase.Inputs.Styles`.
 {% endhint %}
+
+### Removal of delta-based refresh in the interactive TUI
+
+{% code title="BaseInteractiveTui.cs" lineNumbers="true" %}
+```csharp
+public static bool RedrawRequired { get; set; } = true;
+public virtual bool FastRefresh => true;
+```
+{% endcode %}
+
+{% code title="IInteractiveTui.cs" lineNumbers="true" %}
+```csharp
+public bool FastRefresh { get; }
+```
+{% endcode %}
+
+{% code title="InteractiveTuiTools.cs" lineNumbers="true" %}
+```csharp
+public static void ForceRefreshSelection()
+```
+{% endcode %}
+
+The interactive TUI came with the built-in refresh mode that was, at the time, slow on Linux systems. We've attempted to rectify this by implementing the delta-based refresh, but recent improvements have caused slowdowns.
+
+The interactive TUI now uses the Screen feature that's available starting from 0.1.0 Beta 3, which means that the delta-based search has to be eliminated in favor of the speed improvements that the Screen feature brings, along with the malleability regarding the console resizes.
+
+To learn more about the Screen feature, visit the link below:
+
+{% content-ref url="../../../advanced-and-power-users/inner-workings/console-input/console-screen.md" %}
+[console-screen.md](../../../advanced-and-power-users/inner-workings/console-input/console-screen.md)
+{% endcontent-ref %}
+
+{% hint style="warning" %}
+Remove all calls and overrides to the above removed functions, because they no longer exist. The interactive TUI now internally uses the Screen feature, which means that it has not only become faster, but it has become more resilient when it comes to console resizes.
+{% endhint %}

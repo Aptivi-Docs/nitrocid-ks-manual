@@ -150,6 +150,7 @@
     * [🌐 Custom Languages](advanced-and-power-users/inner-workings/multilingual-kernel/custom-languages.md)
   * [🖲 Console Input](advanced-and-power-users/inner-workings/console-input/README.md)
     * [⌨ Interactive TUI](advanced-and-power-users/inner-workings/console-input/interactive-tui.md)
+    * [🖥 Console Screen](advanced-and-power-users/inner-workings/console-input/console-screen.md)
     * [📽 Presentation System](advanced-and-power-users/inner-workings/console-input/presentation-system.md)
   * [♦ Inner Essentials](advanced-and-power-users/inner-workings/inner-essentials/README.md)
     * [🪧 Kernel Placeholders](advanced-and-power-users/inner-workings/inner-essentials/kernel-placeholders.md)
