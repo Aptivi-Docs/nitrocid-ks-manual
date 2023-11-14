@@ -1962,3 +1962,69 @@ To learn more about the Screen feature, visit the link below:
 {% hint style="warning" %}
 Remove all calls and overrides to the above removed functions, because they no longer exist. The interactive TUI now internally uses the Screen feature, which means that it has not only become faster, but it has become more resilient when it comes to console resizes.
 {% endhint %}
+
+### Adaptive hex and text editor TUIs
+
+{% code title="HexEditorBinding.cs" lineNumbers="true" %}
+```csharp
+public Action Action { get; }
+```
+{% endcode %}
+
+{% code title="TextEditorBinding.cs" lineNumbers="true" %}
+```csharp
+public Action Action { get; }
+```
+{% endcode %}
+
+{% hint style="info" %}
+Although this feature is not introduced in the second beta version of Nitrocid KS 0.1.0, we've added this change for beta testers who produce mods that work on development trunk versions.
+{% endhint %}
+
+The hex and the text editor interactive TUIs have recently undergone an improvement regarding the flexibility of opening any file other than their respective shells, causing this breaking change to break all mods that target `3.0.25.304` or lower.
+
+{% hint style="info" %}
+The `Action`s have changed to take a function delegate with the array of bytes or strings as input and as output.
+
+```csharp
+// Hex
+public Func<byte[], byte[]> Action { get; }
+
+// Text
+public Func<List<string>, List<string>> Action { get; }
+```
+{% endhint %}
+
+### Renamed `CloseTextFile()` in `JsonTools`
+
+{% code title="JsonTools.cs" lineNumbers="true" %}
+```csharp
+public static bool CloseTextFile()
+```
+{% endcode %}
+
+This was a development overlook when we were implementing the JSON shell tools. Now that we've finally spotted the mistake in naming, we've changed its name to `CloseJsonFile()` to clear up confusion.
+
+{% hint style="info" %}
+This function's name has changed to the above name. Its behavior is not changed. You should update all references to the `CloseTextFile()` function to point to the new name.
+{% endhint %}
+
+### Remote chat tools renamed
+
+{% code title="RemoteChat.cs" lineNumbers="true" %}
+```csharp
+namespace KS.Kernel.Debugging.RemoteDebug
+{
+    public static class RemoteChat
+```
+{% endcode %}
+
+{% hint style="info" %}
+Although this feature is not introduced in the second beta version of Nitrocid KS 0.1.0, we've added this change for beta testers who produce mods that work on development trunk versions.
+{% endhint %}
+
+Its namespace needed updating, but the problem was that the class was named in the same name as the namespace in which we're going to update, so we've renamed this class to `RemoteChatTools`.
+
+{% hint style="info" %}
+This change breaks all mods that target version `3.0.25.307` or lower. You need to update the namespace imports to `KS.Kernel.Debugging.RemoteDebug.RemoteChat` and the class references to `RemoteChatTools`.
+{% endhint %}
