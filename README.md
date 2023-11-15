@@ -9,11 +9,7 @@ description: Just started using Nitrocid KS? You've landed on the right place!
 {% hint style="success" %}
 🎊 🎊 🎊
 
-**Recent Nightly builds of Nitrocid KS are now compatible with macOS. You can follow the instructions outlined in the Installing the Kernel > macOS page.**
-{% endhint %}
-
-{% hint style="warning" %}
-Recent Nightly builds of Nitrocid KS contains a version for .NET 7.0 runtime. This is a temporary targeting and will stay that way until December of this year, when we evaluate .NET 8.0 in our testing.
+**Recent Nightly builds of Nitrocid KS are now using** [**.NET 8.0**](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)**! You can follow the instructions outlined in the Installing the Kernel > macOS page.**
 {% endhint %}
 
 Thank you for installing Nitrocid KS on your system! This application is designed to simulate our future-planned kernel in managed code! Yes, our crafted kernel is made with our imagination and our art of kernel design!

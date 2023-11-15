@@ -20,13 +20,13 @@ To run Nitrocid KS in the absolute minimum requirements, your computer needs to 
 
 | System     | Framework                                                          | Terminal                                                  |
 | ---------- | ------------------------------------------------------------------ | --------------------------------------------------------- |
-| Windows 7+ | [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) | [ConEmu](https://conemu.github.io/) or Windows 10 cmd.exe |
+| Windows 7+ | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | [ConEmu](https://conemu.github.io/) or Windows 10 cmd.exe |
 
 However, we recommend that you have the below software installed on your computer to get the best out of the kernel:
 
 | System      | Framework                                                          | Terminal           |
 | ----------- | ------------------------------------------------------------------ | ------------------ |
-| Windows 10+ | [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) | Windows 10 cmd.exe |
+| Windows 10+ | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | Windows 10 cmd.exe |
 
 ### KS v0.0.24.0 or lower
 

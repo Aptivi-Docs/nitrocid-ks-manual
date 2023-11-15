@@ -20,7 +20,7 @@ To run Nitrocid KS in the absolute minimum requirements, your computer needs to 
 
 | System                   | Framework                                                          | Terminal                                       |
 | ------------------------ | ------------------------------------------------------------------ | ---------------------------------------------- |
-| macOS Catalina or higher | [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) | [iTerm 2.0](https://iterm2.com/downloads.html) |
+| macOS Catalina or higher | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | [iTerm 2.0](https://iterm2.com/downloads.html) |
 
 ### KS v0.0.20.0 or lower
 

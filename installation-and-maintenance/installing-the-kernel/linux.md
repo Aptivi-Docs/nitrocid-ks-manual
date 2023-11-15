@@ -20,7 +20,7 @@ To run Nitrocid KS in the absolute minimum requirements, your computer needs to 
 
 | System            | Framework                                                          | Terminal                      |
 | ----------------- | ------------------------------------------------------------------ | ----------------------------- |
-| Supported distros | [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) | Konsole, GNOME Terminal, etc. |
+| Supported distros | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | Konsole, GNOME Terminal, etc. |
 
 ### KS v0.0.24.0 or lower
 
