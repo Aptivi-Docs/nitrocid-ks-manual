@@ -4,7 +4,7 @@ description: Features that are available only in the kernel addons
 
 # 🌟 Extra Features
 
-In addition to the base kernel features that are highlighted in the list of simulated kernel features after this master page, the kernel also provides extra features if their associated addons are installed to the kernel.
+In addition to the base kernel features that are highlighted in the list of simulated kernel features after this master page, the kernel also provides extra features, like an unofficial ChatGPT client, if their associated addons are installed to the kernel.
 
 Select a page below to go to a feature:
 

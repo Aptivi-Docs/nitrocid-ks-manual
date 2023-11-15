@@ -12,7 +12,7 @@ The following APIs can be used in your mods:
 
 ## Integer tools
 
-The `Reflection` part of the kernel contains a class, `IntegerTools`, that consists of useful integer tools, like converting literal file sizes in bytes to their human formats.
+The `Reflection` part of the kernel contains a class, `IntegerTools`, that consists of useful integer tools from short numbers to 128-bit integer numbers to double-precision numbers, like converting literal file sizes in bytes to their human formats.
 
 In addition to that, we've also placed useful extensions, such as converting the number of all kinds, short or long, to different number bases as strings, such as:
 

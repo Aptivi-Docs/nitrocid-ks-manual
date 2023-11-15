@@ -319,13 +319,14 @@ Once you enter the archive shell with the provided archive file path, you can ac
 
 ### BassBoom Addon
 
-This addon allows you to get access to the BassBoom utility features. Please note that playing sound is not implemented yet until the migration to .NET 8.0 is done. You can use the following commands:
+This addon allows you to get access to the BassBoom utility features. You can use the following commands:
 
-| Commands     | Arguments and Switches |
-| ------------ | ---------------------- |
-| `lyriclines` | `<lyric.lrc>`          |
-| `playlyric`  | `<lyric.lrc>`          |
-| `playsound`  | `<musicfile>`          |
+| Commands      | Arguments and Switches |
+| ------------- | ---------------------- |
+| `lyriclines`  | `<lyric.lrc>`          |
+| `playlyric`   | `<lyric.lrc>`          |
+| `playsound`   | `<musicfile>`          |
+| `musicplayer` | `[musicfile]`          |
 
 ### Caffeine Addon
 

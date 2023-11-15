@@ -2028,3 +2028,19 @@ Its namespace needed updating, but the problem was that the class was named in t
 {% hint style="info" %}
 This change breaks all mods that target version `3.0.25.307` or lower. You need to update the namespace imports to `KS.Kernel.Debugging.RemoteDebug.RemoteChat` and the class references to `RemoteChatTools`.
 {% endhint %}
+
+### JSON and SQL shell became separate addons!
+
+{% code title="JsonTools.cs" lineNumbers="true" %}
+```csharp
+public static class JsonTools
+```
+{% endcode %}
+
+As part of the JSON and SQL shell being addons, we've decided to make adjustments to some of the JSON shell tools so that the ones that are relevant to the JSON shell are put to its own tools, while the beautification and the minification of the JSON files stayed in Nitrocid's JSON tools.
+
+However, we felt that this class needed a movement because of the separation, so we've moved this class to the `KS.Misc.Text` namespace.
+
+{% hint style="info" %}
+You can still use the JSON beautification and minification tools if you update the imports to point to the `KS.Misc.Text` namespace.
+{% endhint %}
