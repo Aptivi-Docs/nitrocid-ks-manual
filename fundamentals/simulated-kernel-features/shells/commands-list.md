@@ -194,6 +194,9 @@ This shell provides debug information. Here are the currently supported commands
 | `getfieldvalue`    | `<field>`              |
 | `getpropertyvalue` | `<property>`           |
 | `keyinfo`          |                        |
+| `lsaddonfields`    | `<addon>`              |
+| `lsaddonfuncs`     | `<addon>`              |
+| `lsaddonprops`     | `<addon>`              |
 | `lsaddons`         |                        |
 | `lsfields`         | `[-suppress]`          |
 | `lsproperties`     | `[-suppress]`          |

@@ -71,3 +71,23 @@ You must specify the main mod name in the above functions, since they use that n
 * There is no property or field that goes by the name of the specified name that you plan to execute.
 * There is a property or a field, but that item is not static
 {% endhint %}
+
+### Listing functions, properties, and fields
+
+You can now list all the available functions, properties, and fields from a specific mod using one of the following functions:
+
+{% code title="InterAddonTools.cs" lineNumbers="true" %}
+```csharp
+public static string[] ListAvailableFunctions(string addonName)
+public static string[] ListAvailableProperties(string addonName)
+public static string[] ListAvailableFields(string addonName)
+```
+{% endcode %}
+
+{% hint style="info" %}
+You must specify the main mod name in the above functions, since they use that name to fetch all mod parts and query them for available functions, fields, or properties.
+
+The three functions return an empty array under the following conditions:
+
+* There are no properties or fields in all the mod parts from your mod.
+{% endhint %}

@@ -1771,7 +1771,7 @@ We've recently converted these read-only fields to properties so that consistenc
 The return value for these functions have changed to `CultureInfo[]`, so you need to make necessary changes.
 {% endhint %}
 
-### Moved networked shells to their own individual addons
+### Moved some shells to their own individual addons
 
 {% code title="ShellType.cs" lineNumbers="true" %}
 ```csharp
@@ -1780,19 +1780,25 @@ public enum ShellType
     FTPShell,
     MailShell,
     HTTPShell,
+    RSSShell,
+    SFTPShell,
+    JsonShell,
+    SqlShell,
 }
 ```
 {% endcode %}
 
-The networked shells used to be defined directly by the base kernel for easy access. Since the introduction of addons, many features that didn't directly have to do with the core kernel got moved.
+Some shells used to be defined directly by the base kernel for easy access. Since the introduction of addons, many features that didn't directly have to do with the core kernel got moved.
 
-Now, in addition to these features, the following networked shells got moved:
+Now, in addition to these features, the following shells got moved:
 
-* FTP Shell
-* HTTP Shell
-* Mail Shell
-* RSS Shell
-* SFTP Shell
+* FTP Shell (networked)
+* HTTP Shell (networked)
+* Mail Shell (networked)
+* RSS Shell (networked)
+* SFTP Shell (networked)
+* JSON Shell (non-networked)
+* SQL Shell (non-networked)
 
 This means that your mods can't directly access them, their settings, and their tools anymore.
 

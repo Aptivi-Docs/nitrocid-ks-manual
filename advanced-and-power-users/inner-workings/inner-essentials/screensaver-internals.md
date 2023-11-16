@@ -88,6 +88,24 @@ If you want your mod to lock your screen, call the above function to initiate lo
 
 Once you press any key, this function checks to see if you have password requirement after locking enabled. If it's enabled, the login handler will check to see if your password is empty. If it's not empty, it'll prompt for your password before unlocking.
 
+#### Lock prevention
+
+Your mod can prevent screen locking by calling the below function:
+
+{% code title="ScreensaverManager.cs" lineNumbers="true" %}
+```csharp
+public static void PreventLock()
+```
+{% endcode %}
+
+Once the lock prevention is enabled, the kernel screensaver timeout thread will stop and no screen locking attempt will be made when the timeout reaches. To revert back to the original behavior, you can call the below function:
+
+{% code title="ScreensaverManager.cs" lineNumbers="true" %}
+```csharp
+public static void AllowLock()
+```
+{% endcode %}
+
 ### Setting default screensaver
 
 {% code title="ScreensaverManager.cs" lineNumbers="true" %}
