@@ -222,40 +222,6 @@ The hex shell allows you to edit files byte by byte. You can use the following c
 | `save`       |                                |
 | `tui`        |                                |
 
-### JSON Shell
-
-The JSON shell allows you to easily edit JSON files. You can use the below commands:
-
-| Commands           | Arguments and Switches                                            |
-| ------------------ | ----------------------------------------------------------------- |
-| `add`              | `<-type=value> [-parentPath=value] [-propName=value] <jsonValue>` |
-| `addarray`         | `[-parentproperty] <propname> <propvalue1> [propvalue2] [...]`    |
-| `addproperty`      | `[-parentproperty] <propname> <propvalue>`                        |
-| `addobject`        | `[-parentproperty] <arrname> <arrvalue>`                          |
-| `addobjectindexed` | `[-parentproperty] <idx> <arrvalue>`                              |
-| `clear`            |                                                                   |
-| `delproperty`      | `<propname>`                                                      |
-| `exitnosave`       |                                                                   |
-| `findproperty`     | `[-parentproperty] <propname>`                                    |
-| `jsoninfo`         | `[-simplified] [-showvals]`                                       |
-| `print`            | `[propname]`                                                      |
-| `rm`               | `<objectPath>`                                                    |
-| `rmobject`         | `[-parentproperty] <objname>`                                     |
-| `rmobjectindexed`  | `[-parentproperty] <objidx>`                                      |
-| `save`             | `[-b\|-m]`                                                        |
-| `set`              | `<-type=value> [-parentPath=value] [-propName=value] <jsonValue>` |
-| `tui`              |                                                                   |
-
-### SQL Shell
-
-This shell allows you to execute commands from the connected SQLite database file. You can use the below commands:
-
-| Commands | Arguments and Switches |
-| -------- | ---------------------- |
-| `cmd`    | `<query>`              |
-| `dbinfo` |                        |
-| `tui`    |                        |
-
 ### Text Shell
 
 The text editor shell allows you to easily manipulate with the text files. You can use the below commands:
@@ -509,6 +475,30 @@ You can use the following commands to get information about your Internet radio 
 | ----------- | ----------------------------- |
 | `netfminfo` | `[-secure] <hostname> <port>` |
 
+### JSON Shell
+
+The JSON shell allows you to easily edit JSON files. You can use the below commands:
+
+| Commands           | Arguments and Switches                                            |
+| ------------------ | ----------------------------------------------------------------- |
+| `add`              | `<-type=value> [-parentPath=value] [-propName=value] <jsonValue>` |
+| `addarray`         | `[-parentproperty] <propname> <propvalue1> [propvalue2] [...]`    |
+| `addproperty`      | `[-parentproperty] <propname> <propvalue>`                        |
+| `addobject`        | `[-parentproperty] <arrname> <arrvalue>`                          |
+| `addobjectindexed` | `[-parentproperty] <idx> <arrvalue>`                              |
+| `clear`            |                                                                   |
+| `delproperty`      | `<propname>`                                                      |
+| `exitnosave`       |                                                                   |
+| `findproperty`     | `[-parentproperty] <propname>`                                    |
+| `jsoninfo`         | `[-simplified] [-showvals]`                                       |
+| `print`            | `[propname]`                                                      |
+| `rm`               | `<objectPath>`                                                    |
+| `rmobject`         | `[-parentproperty] <objname>`                                     |
+| `rmobjectindexed`  | `[-parentproperty] <objidx>`                                      |
+| `save`             | `[-b\|-m]`                                                        |
+| `set`              | `<-type=value> [-parentPath=value] [-propName=value] <jsonValue>` |
+| `tui`              |                                                                   |
+
 ### Language Studio
 
 You can use the following commands to build your own language:
@@ -595,6 +585,16 @@ You can jot down notes by using the following commands:
 | `removenote`  | `<notenum>`            |
 | `removenotes` |                        |
 | `savenotes`   |                        |
+
+### SQL Shell
+
+This shell allows you to execute commands from the connected SQLite database file. You can use the below commands:
+
+| Commands | Arguments and Switches |
+| -------- | ---------------------- |
+| `cmd`    | `<query>`              |
+| `dbinfo` |                        |
+| `tui`    |                        |
 
 ### Theme Studio
 
