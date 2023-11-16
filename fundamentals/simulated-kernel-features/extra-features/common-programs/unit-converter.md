@@ -5,7 +5,7 @@ description: Calculate your mathematical expressions and convert units
 # ⚖ Unit Converter
 
 {% hint style="info" %}
-As of 0.1.0, this feature has been moved to the kernel addons.
+Nitrocid KS provides this feature as an addon.
 {% endhint %}
 
 ## CLI version

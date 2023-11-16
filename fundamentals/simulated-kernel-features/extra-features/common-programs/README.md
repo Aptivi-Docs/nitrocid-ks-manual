@@ -37,3 +37,7 @@ Nitrocid KS contains some of the common programs that have their own documentati
 {% content-ref url="to-do-list.md" %}
 [to-do-list.md](to-do-list.md)
 {% endcontent-ref %}
+
+{% content-ref url="music-player.md" %}
+[music-player.md](music-player.md)
+{% endcontent-ref %}

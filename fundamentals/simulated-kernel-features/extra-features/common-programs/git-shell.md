@@ -4,12 +4,16 @@ description: Git Shell in your hands
 
 # 👩💻 Git Shell
 
+{% hint style="info" %}
+Nitrocid KS provides this feature as an addon.
+{% endhint %}
+
 Git is a version controlling system that allows you to manage your project source code with ease. Changes to the source code are done in batches, known as commits, which store the file changes, including their content, whether they're moved; copied; deleted; or created, their attributes, and more.
 
 Nitrocid KS provides an add-on that allows you to use the Git shell. This is so that you can experience the Git version control system as a shell. Additionally, if you have Git installed on your system, you can run `git` or `exec git` in the UESH shell.
 
 {% hint style="info" %}
-If you have Extras.GitShell installed, you can launch the shell using the `gitsh` command.
+If you have `Extras.GitShell` installed, you can launch the shell using the `gitsh` command.
 
 Command usage:
 

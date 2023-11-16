@@ -2044,3 +2044,46 @@ However, we felt that this class needed a movement because of the separation, so
 {% hint style="info" %}
 You can still use the JSON beautification and minification tools if you update the imports to point to the `KS.Misc.Text` namespace.
 {% endhint %}
+
+### Screen and Splashes
+
+{% code title="ISplash.cs" lineNumbers="true" %}
+```csharp
+void Opening(SplashContext context);
+void Display(SplashContext context);
+void Closing(SplashContext context);
+void Report(int Progress, string ProgressReport, params object[] Vars);
+void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars);
+void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars);
+```
+{% endcode %}
+
+{% code title="BaseSplash.cs" lineNumbers="true" %}
+```csharp
+public virtual void Opening(SplashContext context)
+public virtual void Display(SplashContext context)
+public virtual void Closing(SplashContext context)
+public virtual void Report(int Progress, string ProgressReport, params object[] Vars)
+public virtual void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
+public virtual void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
+```
+{% endcode %}
+
+The splashes were unresponsive to the console resize, except when written to respond to such events, making most of them naturally unresizable.
+
+The screen feature that was introduced in Nitrocid KS 0.1.0 Beta 3 allowed us to implement naturally resizable splash screens that refresh themselves upon resize.
+
+{% hint style="info" %}
+The splash code must update their overrides to use the new signatures:
+
+```csharp
+public virtual string Opening(SplashContext context)
+public virtual string Display(SplashContext context)
+public virtual string Closing(SplashContext context, out bool delayRequired)
+public virtual string Report(int Progress, string ProgressReport, params object[] Vars)
+public virtual string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
+public virtual string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
+```
+
+Afterwards, you must update the code in all of the overrides (if any) so that it builds a string full of VT sequences and text to print to the console. For example, the [Welcome splash screen](https://github.com/Aptivi/NitrocidKS/commit/6e05dcf86e3706265afaf4220b1a28d991c9df05#diff-bf50d9b8737e56449d43e3d0a56e42174f24e498bd0cbc6b7c2e6eca2578dbad) has been adjusted to use this feature.
+{% endhint %}

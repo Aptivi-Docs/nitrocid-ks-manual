@@ -6,6 +6,10 @@ description: You can manipulate with the archive files!
 
 <figure><img src="../../../../.gitbook/assets/ArchiveShowcase.png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
+Nitrocid KS provides this feature as an addon.
+{% endhint %}
+
 The archive shell allows you to manipulate with many archive files supported by the backend library that the archive shell relies on. You can edit archive files to pack or extract files and folders to/from the archive from/to your local directory.
 
 You can interact with the archive files by opening the archive shell to point to a file. This can be achieved using the `archive <path>` command.

@@ -89,6 +89,7 @@
       * [🔢 Calculator](fundamentals/simulated-kernel-features/extra-features/common-programs/calculator.md)
       * [👥 Contacts](fundamentals/simulated-kernel-features/extra-features/common-programs/contacts.md)
       * [👩💻 Git Shell](fundamentals/simulated-kernel-features/extra-features/common-programs/git-shell.md)
+      * [🎧 Music Player](fundamentals/simulated-kernel-features/extra-features/common-programs/music-player.md)
       * [⏰ Stopwatch and Timer](fundamentals/simulated-kernel-features/extra-features/common-programs/stopwatch-and-timer.md)
       * [☑ To-do List](fundamentals/simulated-kernel-features/extra-features/common-programs/to-do-list.md)
       * [⚖ Unit Converter](fundamentals/simulated-kernel-features/extra-features/common-programs/unit-converter.md)
