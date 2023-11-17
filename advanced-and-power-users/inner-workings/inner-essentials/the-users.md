@@ -51,7 +51,15 @@ Be honest when dealing with the return values for both `UserSelector` and `Passw
 
 You can now add or remove your custom login handlers to make your kernel use your login screen. To add your handler, you can use the `RegisterHandler()` function to add it to the list of available handlers. This allows you to customize your login screen to the one that you made.
 
+```csharp
+public static void RegisterHandler(string name, BaseLoginHandler handler)
+```
+
 Similarly, if you want to unregister your login handler, you can do so by using the `UnregisterHandler()` function.
+
+```csharp
+public static void UnregisterHandler(string name)
+```
 
 After that, you should be able to find your login handler when trying to change your login screen using the `settings` command.
 

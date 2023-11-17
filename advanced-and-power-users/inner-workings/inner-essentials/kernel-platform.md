@@ -40,15 +40,10 @@ This class provides the following environment-related functions:
 
 * `IsRunningFromGrilo()`: Checks to see whether Nitrocid KS is run from GRILO
 * `IsRunningFromTmux()`: Checks to see whether Nitrocid KS is run on TMUX
+* IsRunningFromScreen(): Checks to see whether Nitrocid KS is run on GNU Screen
 
 ## CoreCLR
 
 This class provides the following CoreCLR-related functions:
 
 * `GetCurrentRid()`: Gets the current runtime identifier.
-
-{% hint style="warning" %}
-[As of .NET 8.0](https://learn.microsoft.com/en-us/dotnet/core/compatibility/deployment/8.0/rid-asset-list), the above function will return generic runtime identifiers, like win-x64, linux-x64, and so on.
-
-We advice you that you don't rely on it in your mods until we migrate to .NET 8.0. Just use this value for informational purposes only.
-{% endhint %}

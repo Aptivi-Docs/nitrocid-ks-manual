@@ -27,5 +27,5 @@ Historically, 0.0.8 used to host a simple sound player and a TTS synthesizer usi
 
 Additionally, this feature was shipped as an addon, meaning that the [native VLC libraries](https://www.nuget.org/packages/VideoLAN.LibVLC.Windows) and its .NET wrapper are unsuitable for use in such configuration.
 
-Furthermore, the 0.0.8.6 version removed VLC player support.
+Furthermore, the 0.0.8.6 version and the 0.0.11.x versions have removed the VLC player support.
 {% endhint %}

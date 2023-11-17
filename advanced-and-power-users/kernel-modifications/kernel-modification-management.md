@@ -98,16 +98,6 @@ The dependencies list file should be saved as the name which satisfies this form
 If one of the mod dependencies failed to load, the mod parser will report a failure for that mod.
 {% endhint %}
 
-## Screensaver parsing
-
-If the screensavers parser started, `ParseCustomSavers` gets called, traversing through all the contents of the `KSScreensavers` directory. For each `.dll` file that got detected by this parser, `ParseCustomSaver` gets called, causing this to happen:
-
-1. Tries to get the screensaver instance, `IScreensaver`, from the assembly
-2. If the screensaver is valid, it gets information about the screensaver from the instance
-3. It adds the screensaver to the custom screensaver list
-
-Once this is successfully done, the screensaver management tools will be able to see the custom screensaver.
-
 ## Splash parsing
 
 The splashes are different, since they get loaded at early stages of the kernel so the configuration system can set the custom splash as the default splash. The kernel basically calls the `LoadSplashes()` function to query all the splash `.dll` files from the `KSSplashes` directory.

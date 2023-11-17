@@ -6,7 +6,7 @@ description: Threading at its best!
 
 Threads are a great way to asynchronously do things in your mod! They play a huge role on preventing the block from happening on the main thread. Single-threaded aplications usually get blocked by long operations, but threads solve this problem.
 
-Nitrocid KS manages the threads that are created by the `KernelThread` instances. It allows the kernel to manipulate with these threads more efficiently, and they stop each time the kernel is requested to shut down or restart by any power management functions, either locally or br remotely by RPC.
+Nitrocid KS manages the threads that are created by the `KernelThread` instances. It allows the kernel to manipulate with these threads more efficiently, and they stop each time the kernel is requested to shut down or restart by any power management functions, either locally or remotely by RPC.
 
 `ThreadManager` provides you a whole set of functions and properties to efficiently manage your threads from listing all active threads to sleeping to benchmarking the sleep function.
 
@@ -50,7 +50,7 @@ A `KernelThread` has the following values:
   * Native thread ID that the OS assigned
 
 {% hint style="danger" %}
-`NativeThreadId` property may return inaccurate numbers and can only represent the current PID of the Nitrocid process. Don't use this function unless absolutely necessary.
+`NativeThreadId` property may return inaccurate numbers and can only represent the current PID of the Nitrocid process. Don't use it unless absolutely necessary.
 {% endhint %}
 
 ## Task manager

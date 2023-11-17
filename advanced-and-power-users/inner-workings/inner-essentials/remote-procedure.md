@@ -17,6 +17,8 @@ Basically, it listens to any commands received from any device. The commands are
 * `<Request:Shutdown>`: Remotely shuts the system down
 * `<Request:Reboot>`: Remotely reboots the system
 * `<Request:RebootSafe>`: Remotely reboots the system to safe mode
+* `<Request:RebootMaintenance>`: Remotely reboots the system to maintenance mode
+* `<Request:RebootDebug>`: Remotely reboots the system to debug mode
 * `<Request:SaveScr>`: Remotely saves the screen
 * `<Request:Exec>`: Remotely executes the command
 * `<Request:Acknowledge>`: Remotely acknowledges the device

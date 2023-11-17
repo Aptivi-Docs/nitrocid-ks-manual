@@ -10,12 +10,14 @@ description: Lists your contacts
 Nitrocid KS provides this feature as an addon.
 {% endhint %}
 
-The contacts application lets you list your contacts that are imported from the contacts folder found under the `KSContactsImport` folder. It shows you basic information about your contacts. The contacts application is usually found in your computer under the form of a feature in your favorite mail client or under the form of a standalone application. It's also found in your smartphone in which you can make phone calls and send SMS messages.
+The contacts application lets you list your contacts that are imported from the contacts folder found under the `KSContactsImport` folder. It shows you basic information about your contacts.
+
+The contacts application is usually found in your computer under the form of a feature in your favorite mail client or under the form of a standalone application. It's also found in your smartphone in which you can make phone calls and send SMS messages.
 
 Nitrocid KS, however, has this application as a standalone application and can be executed by invoking the `contacts` command.
 
 {% hint style="info" %}
-Please note that Nitrocid KS is unable to make phone calls and send SMS messages to your contacts.
+Please note that Nitrocid KS is unable to make phone calls and send SMS messages to your contacts as it requires a special device, such as Voice over IP (VoIP) phones, to be able to make calls from your computer, and we don't intend to simulate that.
 {% endhint %}
 
 This application currently supports the following keystrokes:

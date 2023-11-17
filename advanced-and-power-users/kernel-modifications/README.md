@@ -8,7 +8,7 @@ Kernel modifications let you extend the kernel functionality to your liking from
 
 The kernel modifications also let you call the kernel functions and userspace functions, just like what device drivers and user applications in the major operating systems would do, respectively. However, the kernel modifications aren't zero-code solutions, so make sure that you have a bit of C# skills in order to be able to make kernel mods.
 
-{% hint style="danger" %}
+{% hint style="warning" %}
 You can also use Visual Basic in your mod code, but we recommend that you avoid using it if possible as we no longer support that language.
 {% endhint %}
 
@@ -29,10 +29,14 @@ Deep explanation of the kernel modification management can be found in the below
 
 ## Communication
 
-Deep explanation of the inter-mod communication can be found in the below page:
+Deep explanation of the inter-mod communication and the inter-addon communication can be found in the below page:
 
 {% content-ref url="inter-mod-communication.md" %}
 [inter-mod-communication.md](inter-mod-communication.md)
+{% endcontent-ref %}
+
+{% content-ref url="inter-addon-communication.md" %}
+[inter-addon-communication.md](inter-addon-communication.md)
 {% endcontent-ref %}
 
 ## Build...

@@ -26,13 +26,7 @@ gitsh <pathToRepositoryFolder>
 
 When `gitsh` is executed, it first verifies that the `.git` folder found inside the repository folder exists. Then, it creates a new repository instance that allows all of the Git operations to be done.
 
-Once it's done, it checks for the following known default branch names:
-
-* `main`
-* `master`
-* `dev`
-* `development`
-* `trunk`
+Once it's done, it sets the branch name to the default branch from the repository's `HEAD`.
 
 {% hint style="info" %}
 You can check out a specific branch using the `checkout` command.

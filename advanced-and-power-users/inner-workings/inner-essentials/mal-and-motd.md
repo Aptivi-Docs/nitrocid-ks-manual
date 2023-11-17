@@ -14,15 +14,45 @@ This section covers the basic MOTD and MAL messages.
 
 ### Initialization
 
-For initialization, the `ReadMal()` and the `ReadMotd()` functions call these functions, `InitMal()` and `InitMotd()` respectively, when their associated files aren't found.
+```csharp
+public static void InitMal()
+public static void InitMotd()
+```
+
+For initialization, the `ReadMal()` and the `ReadMotd()` functions call these functions, `InitMal()` and `InitMotd()` respectively, when their associated files aren't found. The two functions check to see if their respective files are found in the Nitrocid KS's configuration directory and makes them if they're not found.
+
+When automatically creating them, they'll get created with the following contents:
+
+* MOTD: `Welcome to Nitrocid Kernel!`
+* MAL: `Enjoy your day, <user>!`
 
 ### Setting
 
+```csharp
+public static void SetMal(string Message)
+public static void SetMotd(string Message)
+```
+
 As for saving the current messages, you can use the `SetMal()` and the `SetMotd()` functions, providing it the message that you want to save. Once done, the kernel will read your updated MOTD and MAL messages.
+
+{% hint style="info" %}
+Your message can contain placeholders, such as \<user>. To learn more about the text placeholders, you can consult the below page:
+
+[kernel-placeholders.md](kernel-placeholders.md "mention")
+{% endhint %}
 
 ### Reading
 
-When it comes to reading, `ReadMal()` and `ReadMotd()` does everything to try to read the MAL and the MOTD messages and set them to the parsed MOTD and MAL message properties.
+```csharp
+public static void ReadMal()
+public static void ReadMotd()
+```
+
+When it comes to reading, the `ReadMal()` and `ReadMotd()` functions do everything to try to read the MAL and the MOTD messages and set them to the parsed MOTD and MAL message properties. The next time the current message is queried through the MotdMessage and the MalMessage properties, that message will be returned.
+
+{% hint style="info" %}
+If the messages haven't been read, they'll return a fallback value.
+{% endhint %}
 
 ## Dynamic MOTD and MAL
 

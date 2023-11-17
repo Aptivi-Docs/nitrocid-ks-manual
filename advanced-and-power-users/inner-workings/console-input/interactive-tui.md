@@ -227,3 +227,14 @@ However, if you override the value like below, it'll start up regardless of how 
 ```csharp
 public override bool AcceptsEmptyData => true;
 ```
+
+### `HandleExit()`
+
+If you want to handle exiting your own TUI application in your way, you can override the HandleExit() function like this:
+
+```csharp
+public override void HandleExit()
+{
+    (...)
+}
+```

@@ -14,28 +14,16 @@ If you want to edit the normal text file, choose the below option.
 [text-editor.md](text-editor.md)
 {% endcontent-ref %}
 
-If you want to edit the JSON file easier, choose the below option.
-
-{% content-ref url="json-editor.md" %}
-[json-editor.md](json-editor.md)
-{% endcontent-ref %}
-
 If you want to edit the binary file using the hex representation, and are careful of what you're doing, choose the below option.
 
 {% content-ref url="hex-editor.md" %}
 [hex-editor.md](hex-editor.md)
 {% endcontent-ref %}
 
-If you want to edit an SQL file, choose the below option.
-
-{% content-ref url="sql-editor.md" %}
-[sql-editor.md](sql-editor.md)
-{% endcontent-ref %}
-
 {% hint style="info" %}
 You can also force edit command to launch the editor in a specific type, which can be achieved by appending one of the switches outlined below:
 
 ```
-edit [-hex|-json|-text] <file>
+edit [-hex|-json|-text|-sql] <file>
 ```
 {% endhint %}

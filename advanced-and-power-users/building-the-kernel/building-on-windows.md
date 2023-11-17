@@ -7,14 +7,13 @@ description: Build the simulator on Windows!
 In Windows systems, you have two ways to build the simulator: one if you use Visual Studio 2022 or later, and one if you prefer doing everything via the command-line. Make sure that your computer has the following dependencies:
 
 * [Git for Windows](https://git-scm.com/download/win)
-* [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) (usually installed with Visual Studio 17.4 or later)
-* [.NET 7.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) (usually installed with Visual Studio 17.4 or later)
+* [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) (usually installed with Visual Studio 17.8 or later)
 
 ### Visual Studio 2022+
 
-Before being able to build Nitrocid KS, please make sure that you have at least Visual Studio 2022 version 17.4 or later that supports building projects for .NET 6.0. You can get Visual Studio [here](https://visualstudio.microsoft.com/).
+Before being able to build Nitrocid KS, please make sure that you have at least Visual Studio 2022 version 17.8 or later that supports building projects for .NET 8.0. You can get Visual Studio [here](https://visualstudio.microsoft.com/).
 
-Once you have Visual Studio installed with at least the .NET 6.0 SDK and the .NET development workload, follow these steps:
+Once you have Visual Studio installed with at least the .NET 8.0 SDK and the .NET development workload, follow these steps:
 
 1. Open Visual Studio and press `Clone Repository`
 2.  In the repository location field, write `https://github.com/Aptivi/NitrocidKS.git`

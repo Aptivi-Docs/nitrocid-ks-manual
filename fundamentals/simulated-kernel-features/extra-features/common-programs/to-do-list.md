@@ -8,7 +8,7 @@ description: Your checkbook
 Nitrocid KS provides this feature as an addon.
 {% endhint %}
 
-This program serves as your checkbook to track your tasks. They help you organize your everyday tasks and plans, like plans for the next release of your project, grocery lists, and so on.
+This program serves as your checkbook to track your tasks. They help you organize your everyday tasks and plans, like plans for the next release of your project, grocery lists, and so on. They also help keep track of things that you need or plan to do.
 
 ## Basics
 

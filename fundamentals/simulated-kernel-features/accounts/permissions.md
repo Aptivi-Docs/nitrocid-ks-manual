@@ -50,4 +50,8 @@ Note that your account must have either the administrative permissions enabled o
 
 ## Inner workings
 
-To get an insight of how permissions work internally, consult the above link we've linked for you earlier.
+To get an insight of how permissions work internally, consult the link below:
+
+{% content-ref url="../../../advanced-and-power-users/inner-workings/inner-essentials/the-permissions.md" %}
+[the-permissions.md](../../../advanced-and-power-users/inner-workings/inner-essentials/the-permissions.md)
+{% endcontent-ref %}

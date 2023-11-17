@@ -8,6 +8,10 @@ description: Calculate your mathematical expressions and convert units
 Nitrocid KS provides this feature as an addon.
 {% endhint %}
 
+Unit conversion is a transformation of a given number from the source unit, such as Celsius or Moles, to the target unit, such as Kelvin or Kilo-Moles. The unit converter application helps you convert between two units easily and quickly without the need of manually calculating the difference between the two units.
+
+Some units can be converted easily, such as from 1 kilometer to 1000 meters for geometric measurement, such as length, and some of them can be complicated, such as from 1 atmosphere to 101325 Pascals for pressure. This is why the unit converter helps simplify the calculation for you.
+
 ## CLI version
 
 <figure><img src="../../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
@@ -20,7 +24,7 @@ To use both the programs, refer to the command usages and individual explanation
 
 * `calc <expression>`
   * Calculates the specific arithmetical expression
-* `unitconv <unittype> <quantity> <sourceunit> <targetunit>`
+* `unitconv [-tui] <unittype> <quantity> <sourceunit> <targetunit>`
   * Converts the unit by quantity and type from the source unit to the target unit
 
 <figure><img src="../../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
@@ -29,6 +33,10 @@ You can use the `listunits` command to get all the available units by type.
 
 ## TUI version
 
-The TUI version of unit converter allows you to more interactively convert the units. It lets you choose a unit type and a conversion form. Once you're done selecting, you can press F1 to bring up the conversion dialog.
+The TUI version of unit converter allows you to more interactively convert the units. It lets you choose a unit type and a conversion form. To choose a unit type, press the Up arrow and the Down arrow to change the type. Press TAB to switch between selecting the unit type and the conversion form.
 
-This dialog prompts you for a number (using the source unit) to convert it to the same representation in the target unit. Once you press ENTER, the result will show up.
+Once you're done selecting your source and your target unit, you can press `F1` to bring up the conversion dialog so that you can enter a number.
+
+This dialog prompts you for a number (using the source unit) to convert it to the same representation in the target unit. Once you press `ENTER`, the result will show up.
+
+You can run this version of the unit converter by running `unitconv -tui`.

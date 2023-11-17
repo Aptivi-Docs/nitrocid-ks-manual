@@ -14,6 +14,10 @@ The function gets all the commands, including the unified ones, from the command
 
 The help system then prints the list of commands to the console.
 
+{% hint style="info" %}
+Some of the shells implement too many commands, potentially requiring you to either wrap its output using the `wrap` command, or turn on the simplified help from the kernel settings.
+{% endhint %}
+
 ## Command help
 
 If the user specified a command when calling the `help` command, the help system extracts the help definition and all the command usages.
@@ -21,9 +25,10 @@ If the user specified a command when calling the `help` command, the help system
 It extracts from these values found in the `CommandInfo` class:
 
 * `HelpDefinition`: The brief summary of what the command does
-* `CommandArgumentInfo.Arguments`: Defines the command arguments
-* `CommandArgumentInfo.Switches`: Defines the command switches
-* `CommandArgumentInfo.RenderedUsage`: Defines the rendered usage to be printed for a command
+* `CommandArgumentInfo`: The command argument info that supplies the below information:
+  * `.Arguments`: Defines the command arguments
+  * `.Switches`: Defines the command switches
+  * `.RenderedUsage`: Defines the rendered usage to be printed for a command
 
 The rendered usage has the following characteristics:
 
@@ -31,3 +36,4 @@ The rendered usage has the following characteristics:
 * Switches that require values don't have the `[` and the `]` marks surrounding the `=value` part, indicating that the switch needs a value.
 * For required arguments, they're surrounded with the `<` and the `>` marks. Arguments that are not required are surrounded with the `[` and the `]` marks instead.
 * For numeric arguments, a marker is shown indicating that it only accepts numbers.
+* For switches that conflict, they're put in a group, such as `[-switch1|-switch2]`.

@@ -6,11 +6,10 @@ description: Build the simulator on Linux!
 
 In Linux systems, you can comfortably build Nitrocid KS using the command line, since it's the most lightweight solution. However, you must have the prerequisites before being able to build KS.
 
-* [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
-* [.NET 7.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
+* [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 {% hint style="info" %}
-Ubuntu 22.04 LTS Jammy Jellyfish users or later can directly download .NET 6.0 SDK and .NET 7.0 SDK from the official Ubuntu repositories without having to import the Microsoft's repositories.
+Ubuntu 23.10 Mantic Minotaur users or later can directly download .NET 8.0 SDK from the official Ubuntu repositories without having to import the Microsoft's repositories.
 {% endhint %}
 
 {% hint style="warning" %}

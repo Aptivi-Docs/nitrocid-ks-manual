@@ -8,6 +8,10 @@ In addition to the base kernel features that are highlighted in the list of simu
 
 Select a page below to go to a feature:
 
+{% content-ref url="chatgpt-client.md" %}
+[chatgpt-client.md](chatgpt-client.md)
+{% endcontent-ref %}
+
 {% content-ref url="more-networking/" %}
 [more-networking](more-networking/)
 {% endcontent-ref %}
@@ -20,8 +24,8 @@ Select a page below to go to a feature:
 [common-programs](common-programs/)
 {% endcontent-ref %}
 
-{% content-ref url="chatgpt-client.md" %}
-[chatgpt-client.md](chatgpt-client.md)
+{% content-ref url="more-editors/" %}
+[more-editors](more-editors/)
 {% endcontent-ref %}
 
 ## How do I get these programs?

@@ -331,6 +331,12 @@ For guidance on how to define your command's switches, click the below button:
 [command-switch-information.md](command-switch-information.md)
 {% endcontent-ref %}
 
+For guidance on how to manage your command's switches, click the below button:
+
+{% content-ref url="command-switch-management.md" %}
+[command-switch-management.md](command-switch-management.md)
+{% endcontent-ref %}
+
 For information about the help system and how it works, consult the below page:
 
 {% content-ref url="help-system.md" %}

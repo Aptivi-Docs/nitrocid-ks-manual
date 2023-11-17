@@ -118,6 +118,10 @@ This function allows your mod to set a default screensaver. Once done, it saves 
 
 ## Display Control
 
+{% hint style="info" %}
+This doesn't apply to interactive applications that use the Screen feature as the renderer.
+{% endhint %}
+
 Interactive applications might need to listen to the re-render requests so that they can check to see if they need a re-draw. In order to force re-rendering, you can check for the `ScreenRefreshRequired` property in the `ScreensaverManager` class.
 
 For instance, applications that use Nitrocid's Interactive TUI usually respect this request by listening for the refresh request here:
