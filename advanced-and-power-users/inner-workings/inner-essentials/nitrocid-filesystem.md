@@ -181,3 +181,24 @@ To make a symbolic link, you can use the `MakeSymlink()` function and its `Try` 
 
 * The link name specifies a path to the symbolic link. This name must not exist.
 * The link target specifies a path to an existent file or folder.
+
+### Custom paths
+
+The `KS.Files.Paths` namespace contains a group of functions that allow you to use the pre-defined kernel paths and custom paths. The pre-defined kernel paths can be get by either getting a value from its associated property, such as `AddonsPath`, or by using the `GetKernelPath()` function.
+
+```csharp
+public static string GetKernelPath(KernelPathType PathType)
+```
+
+The custom paths can be registered and unregistered by using the functions that are outlined below:
+
+```csharp
+public static void RegisterKernelPath(string pathType, string path)
+public static void UnregisterKernelPath(string pathType)
+```
+
+If you want to define your own custom path, you must register the kernel path with a file or folder that you choose. It's not necessarily a file or a folder that exists, since you may create it in your mod. After the registration, you can use the `GetKernelPath()` function to give it a name of your registered path type.
+
+```csharp
+public static string GetKernelPath(string PathType)
+```

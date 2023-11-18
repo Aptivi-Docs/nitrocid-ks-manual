@@ -2093,3 +2093,84 @@ public virtual string ReportError(int Progress, string ErrorReport, Exception Ex
 
 Afterwards, you must update the code in all of the overrides (if any) so that it builds a string full of VT sequences and text to print to the console. For example, the [Welcome splash screen](https://github.com/Aptivi/NitrocidKS/commit/6e05dcf86e3706265afaf4220b1a28d991c9df05#diff-bf50d9b8737e56449d43e3d0a56e42174f24e498bd0cbc6b7c2e6eca2578dbad) has been adjusted to use this feature.
 {% endhint %}
+
+### Implemented `ArgumentParameters`
+
+{% code title="ArgumentExecutor.cs" lineNumbers="true" %}
+```csharp
+public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+```
+{% endcode %}
+
+{% code title="IArgument.cs" lineNumbers="true" %}
+```csharp
+void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly);
+```
+{% endcode %}
+
+The `ArgumentParameters` class was implemented to group the variables intended to show argument and switch lists. This is to avoid having to change the signature of the whole `Execute()` method every single addition or removal is planned.
+
+{% hint style="info" %}
+The `Execute()` signature has been changed, so you need to update all your inherited argument classes to hold the new signature:
+
+```csharp
+public override void Execute(ArgumentParameters parameters)
+```
+
+Implemented by:
+
+```csharp
+void Execute(ArgumentParameters parameters);
+```
+{% endhint %}
+
+### Implemented `RemoteDebugCommandParameters`
+
+{% code title="IRemoteDebugCommand.cs" lineNumbers="true" %}
+```csharp
+void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device);
+```
+{% endcode %}
+
+{% code title="RemoteDebugBaseCommand.cs" lineNumbers="true" %}
+```csharp
+public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device)
+```
+{% endcode %}
+
+The `RemoteDebugCommandParameters` class was implemented to group the variables intended to show argument and switch lists. This is to avoid having to change the signature of the whole `Execute()` method every single addition or removal is planned.
+
+{% hint style="info" %}
+The `Execute()` signature has been changed, so you need to update all your inherited remote debug command classes to hold the new signature:
+
+```csharp
+public override void Execute(RemoteDebugCommandParameters parameters, RemoteDebugDevice device)
+```
+
+Implemented by:
+
+```csharp
+void Execute(RemoteDebugCommandParameters parameters, RemoteDebugDevice device);
+```
+{% endhint %}
+
+### Moved `KernelPathType` to `Files.Paths`
+
+{% code title="KernelPathType.cs" lineNumbers="true" %}
+```csharp
+public enum KernelPathType
+```
+{% endcode %}
+
+We've moved `KernelPathType` to its own namespace under the `Files` namespace, called `Paths`, since the custom paths got implemented.
+
+With this change, we've also moved the following classes to `Files.Paths`:
+
+* `Paths` -> `PathsManagement`
+* `PathLookupTools`
+
+{% hint style="info" %}
+For calls to `Paths`, you need to reference it again under the new class name, `PathsManagement`.
+
+For the rest of the classes, you need to update the namespace imports to `Files.Paths`.
+{% endhint %}
