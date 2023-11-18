@@ -14,6 +14,8 @@ The call to the above function requires the `ManagePermissions` permission to be
 
 This function gets all the permissions that may have been fused together by the call to this function (adding multiple permissions at once) and checks them one by one to see if it's granted. If not yet granted, it adds the permission to the granted permissions list. It then saves the changes to the configuration file.
 
+In the case of a user being part of a group that is granted several permissions, a user is automatically granted permissions from that group. This is called inheritance, since it's basically an inheritance of permissions from a group to all the users that are members of that group.
+
 The function that does the reverse operation of granting permissions (revoking the permission) is `RevokePermission()`.
 
 {% hint style="info" %}

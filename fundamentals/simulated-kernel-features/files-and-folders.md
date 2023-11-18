@@ -22,15 +22,15 @@ This interactive TUI is a powerful file manager that allows you to view what's i
 
 It's an interactive TUI application, so the controls are provided here:
 
-* `Enter`: Go to a folder
+* `Enter`: Go to a folder or open a file
 * `F1`: Copy folder or file to the other pane's current working directory
 * `F2`: Move a folder or file to the other pane's current working directory
 * `F3`: Deletes a file or folder
 * `F4`: Goes one directory up
 * `F5`: Shows an information box containing file or directory information
 * `F6`: Allows you to enter a relative or absolute path to a local folder in the current pane
-* `F7`: Allows you to enter a directory to copy the selected file to
-* `F8`: Allows you to enter a directory to move the selected file to
+* `SHIFT + F1`: Allows you to enter a directory to copy the selected file to
+* `SHIFT + F2`: Allows you to enter a directory to move the selected file to
 * `F9`: Allows you to rename a selected file or folder to another name
 * `F10`: Allows you to make a new folder
 * `F11`: Gets the file checksum

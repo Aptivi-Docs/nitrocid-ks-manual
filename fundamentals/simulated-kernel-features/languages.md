@@ -12,7 +12,7 @@ However, Linux boot messages don't get localized unless the localization is set,
 
 You can set the language using the `settings` command under the `General` section. Any language changes will be saved to the configuration file.
 
-Languages usually get translated at the end of each development period of each upcoming kernel version. It's normal to see untranslated strings. If you still see these untranslated strings in the final version, report it to us [using this page](https://github.com/Aptivi/Kernel-Simulator/issues/new).
+Languages usually get translated at the end of each development period of each upcoming kernel version. It's normal to see untranslated strings. If you still see these untranslated strings in the final version, report them to us [using this page](https://github.com/Aptivi/Kernel-Simulator/issues/new).
 
 ### Changing the language
 

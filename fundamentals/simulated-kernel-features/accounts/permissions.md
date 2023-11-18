@@ -30,10 +30,12 @@ You're looking to grant a user permissions. Follow these steps:
 
 1. Log-in to the system account, root, or any of the administrators or users that has at least the permission management authority
 2. Execute the `perm` command to grant the permission
-   * The full usage of the `perm` allow command is `perm <userName> <allow> <perm>`
+   * The full usage of the `perm allow` command is `perm <userName> <allow> <perm>`
 3. Log out of the user and log-in to the new user
 
+{% hint style="info" %}
 Note that your account must have either the administrative permissions enabled or the permission management authority granted to be able to use this command.
+{% endhint %}
 
 ### Revoke permissions
 
@@ -43,10 +45,38 @@ If you no longer want a user to be granted a specific permission, follow these s
 
 1. Log-in to the system account, root, or any of the administrators or users that has at least the permission management authority
 2. Execute the `perm` command to revoke the permission
-   * The full usage of the `perm` revoke command is `perm <userName> <revoke> <perm>`
+   * The full usage of the `perm revoke` command is `perm <userName> <revoke> <perm>`
 3. Log out of the user and log-in to the new user
 
+{% hint style="info" %}
 Note that your account must have either the administrative permissions enabled or the permission management authority granted to be able to use this command.
+{% endhint %}
+
+### Grant a permission to a group
+
+You're looking to grant a user permissions. Follow these steps:
+
+1. Log-in to the system account, root, or any of the administrators or users that has at least the permission management authority
+2. Execute the `permgroup` command to grant the permission
+   * The full usage of the `permgroup allow` command is `permgroup <groupName> <allow> <perm>`
+3. Log out of the user and log-in to a user that is part of a group
+
+{% hint style="info" %}
+Note that your account must have either the administrative permissions enabled or the permission management authority granted to be able to use this command.
+{% endhint %}
+
+### Revoke a permission from a group
+
+If you no longer want a group to be granted a specific permission, follow these steps:
+
+1. Log-in to the system account, root, or any of the administrators or users that has at least the permission management authority
+2. Execute the `permgroup` command to revoke the permission
+   * The full usage of the `permgroup revoke` command is `permgroup <groupName> <revoke> <perm>`
+3. Log out of the user and log-in to a user that is part of a group
+
+{% hint style="info" %}
+Note that your account must have either the administrative permissions enabled or the permission management authority granted to be able to use this command.
+{% endhint %}
 
 ## Inner workings
 

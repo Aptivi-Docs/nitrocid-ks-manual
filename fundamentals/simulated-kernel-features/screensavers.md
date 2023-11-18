@@ -55,12 +55,10 @@ As of 0.1.0 Beta 3, you can enable or disable automatic screen locking by going 
 
 ### Reloading your custom screensaver
 
-To reload your custom screensaver, just pass in your custom screensaver name to the `reloadsaver` command. This is useful in upgrades to the new version of the screensaver to make minor patches to it. Since this command is an administrative command, you either need to use an administrator account or use an account that has been granted the administrative command permissions.
+To reload your custom screensaver, you need to reload the mod that registered your screensaver.
 
-1. Log-in to the system account, root, or any of the administrators or users that has at least the strict command running permissions
-2. Execute the `reloadsaver` command to set the default kernel screensaver
-   * The full usage of the `reloadsaver` command is `reloadsaver <CustomSaver>`
-3. Save your screen using `savescreen [CustomSaver]`.
+1. Execute the `modman reload <modName>` command to re-register your custom screensaver (if the mod registers that screensaver upon starting up)
+2. Save your screen using `savescreen [CustomSaver]`.
 
 {% hint style="info" %}
 Note that your account must have either the administrative permissions enabled or the strict command running permission granted to be able to use this command.

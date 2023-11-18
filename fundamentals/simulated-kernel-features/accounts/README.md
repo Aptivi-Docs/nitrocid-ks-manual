@@ -104,6 +104,14 @@ If you want to get information about a user without having to open the user sett
 2. Open the administration shell by executing the `admin` command
 3. Execute the `userinfo [user]` command
 
+## User Groups
+
+User groups organize users into a group. You can learn more about it by clicking on the below button:
+
+{% content-ref url="groups.md" %}
+[groups.md](groups.md)
+{% endcontent-ref %}
+
 ## Permissions
 
 All users have specific permissions. To get more information about this feature, click on the link below.

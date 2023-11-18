@@ -98,6 +98,7 @@
       * [🗄 SQL Editor](fundamentals/simulated-kernel-features/extra-features/more-editors/sql-editor.md)
     * [🪄 ChatGPT Client](fundamentals/simulated-kernel-features/extra-features/chatgpt-client.md)
   * [👤 Accounts](fundamentals/simulated-kernel-features/accounts/README.md)
+    * [👥 Groups](fundamentals/simulated-kernel-features/accounts/groups.md)
     * [🔓 Permissions](fundamentals/simulated-kernel-features/accounts/permissions.md)
   * [✏ Editors](fundamentals/simulated-kernel-features/editors/README.md)
     * [📝 Text Editor](fundamentals/simulated-kernel-features/editors/text-editor.md)
