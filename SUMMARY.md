@@ -115,7 +115,9 @@
 
 * [⚒ Building the Kernel](advanced-and-power-users/building-the-kernel/README.md)
   * [🪟 Building on Windows](advanced-and-power-users/building-the-kernel/building-on-windows.md)
+  * [🍎 Building on macOS](advanced-and-power-users/building-the-kernel/building-on-macos.md)
   * [🐧 Building on Linux](advanced-and-power-users/building-the-kernel/building-on-linux.md)
+  * [📱 Building on Android](advanced-and-power-users/building-the-kernel/building-on-android.md)
 * [🧰 Kernel Modifications](advanced-and-power-users/kernel-modifications/README.md)
   * [🏗 Build your...](advanced-and-power-users/kernel-modifications/build-your.../README.md)
     * [🧪 Your Mod](advanced-and-power-users/kernel-modifications/build-your.../your-mod.md)
