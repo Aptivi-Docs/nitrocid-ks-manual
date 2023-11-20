@@ -12,7 +12,9 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of `GetFileSystemEntries` from the standard `Directory` class found in the `System.IO` namespace.
 
-**TODO: Populate this section once we finish adding analyzers tracked internally.**
+The `GetFileSystemEntries()` from the `Directory` class gives you a randomly-sorted list of files and directories, which may not be convenient for TUI applications, such as the interactive TUI.
+
+`CreateList()` takes care of that by sorting directories and files in an alphabetical order by putting the directories first before the files. This way, this listing can then be used for interactive applications.
 
 ### Analysis Comparison
 

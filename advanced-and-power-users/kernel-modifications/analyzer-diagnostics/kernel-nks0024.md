@@ -12,7 +12,9 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of `Local` from the standard `TimeZoneInfo` class found in the `System` namespace.
 
-**TODO: Populate this section once we finish adding analyzers tracked internally.**
+`TimeZoneInfo.Local` gives you a `TimeZoneInfo` instance containing information about your computer's current timezone. However, the kernel has been given a brand new feature that allows you to choose your custom timezone without affecting the host system.
+
+As a result, you should use `TimeZones.GetCurrentZoneInfo()` as it respects your kernel settings regarding the timezone.
 
 ### Analysis Comparison
 

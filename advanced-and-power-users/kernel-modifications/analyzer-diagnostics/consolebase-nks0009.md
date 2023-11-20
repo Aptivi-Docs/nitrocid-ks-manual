@@ -12,7 +12,7 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of `ResetColor` from the standard `Console` class found in the `System` namespace.
 
-**TODO: Populate this section once we finish adding analyzers tracked internally.**
+While `ResetColor()` is enough to reset all the colors, we felt that using simple VT sequences to achieve the same goal is more viable. Therefore, we've made the `ResetColors()` function that allows you to simply reset the colors.
 
 ### Analysis Comparison
 

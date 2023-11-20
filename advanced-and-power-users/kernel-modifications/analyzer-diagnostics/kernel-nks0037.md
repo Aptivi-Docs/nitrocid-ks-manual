@@ -12,7 +12,9 @@ This analyzer provides the following strings:
 
 This code analyzer detects the comparison of `Environment.OSVersion.Platform` against the `Win32NT` value.
 
-**TODO: Populate this section once we finish adding analyzers tracked internally.**
+`Environment.OSVersion.Platform` is an ancient way of determining the current operating system that Nitrocid is running on. As a result, it doesn't implement the macOS operating system detection, since it was considered as Unix.
+
+As a result, `KernelPlatform` implements a handful of platform detection functions to allow you to more accurately detect your platform. Also, it simplifies the complicated platform checking statements to its simpler equivalent.
 
 ### Analysis Comparison
 

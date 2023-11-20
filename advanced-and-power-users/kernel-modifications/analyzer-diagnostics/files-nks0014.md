@@ -12,7 +12,9 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of `Create` from the standard `File` class found in the `System.IO` namespace.
 
-**TODO: Populate this section once we finish adding analyzers tracked internally.**
+Using `File.Create()`, path neutralization doesn't take place to ensure that we have the correct absolute path. This causes some of the filesystem operations to operate on files, which are located in the wrong place, and, therefore, errors throw about a target not being found.
+
+A solution to this problem was made with `MakeFile()`, because it takes care of the absolute paths and tries to reduce this kind of error caused by passing relative directories to the arguments.
 
 ### Analysis Comparison
 

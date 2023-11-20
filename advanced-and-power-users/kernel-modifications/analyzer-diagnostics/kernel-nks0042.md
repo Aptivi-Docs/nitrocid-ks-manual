@@ -12,7 +12,9 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of `GetEnvironmentVariable("TERM_PROGRAM")` from the `Environment` class found in the `System` namespace.
 
-**TODO: Populate this section once we finish adding analyzers tracked internally.**
+`GetEnvironmentVariable` is a method to determine the terminal emulator and the terminal type. It's also a method to determine whether it's running on GNU Screen or on Tmux. However, we needed to increase the readability.
+
+As a result, `KernelPlatform` implements a handful of terminal detection functions to simplify the complicated terminal checking statements to its simpler equivalent.
 
 ### Analysis Comparison
 

@@ -12,7 +12,9 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of `GetIsNetworkAvailable` from the `NetworkInterface` class found in the `System.Net.NetworkInformation` namespace.
 
-**TODO: Populate this section once we finish adding analyzers tracked internally.**
+Normally, `NetworkInterface.GetIsNetworkAvailable` would return true if there are network interfaces that are ready to connect (their state is UP). However, this approach doesn't work on Android systems as Nitrocid doesn't build for Xamarin.Android, which has the necessary libraries for Java bindings to the Android API.
+
+As a result, you'll have to use the sensible `NetworkTools.NetworkAvailable` property to allow you to check to see if there are ready network interfaces. Please note that if you have no working internet connection, even if your WiFi is turned on in your Android device, it'll report as false.
 
 ### Analysis Comparison
 

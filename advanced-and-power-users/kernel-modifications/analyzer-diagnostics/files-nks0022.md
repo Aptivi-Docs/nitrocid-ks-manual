@@ -12,7 +12,9 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of `GetInvalidPathChars` from the standard `Path` class found in the `System.IO` namespace.
 
-**TODO: Populate this section once we finish adding analyzers tracked internally.**
+Using `Path.GetInvalidPathChars()`, a weirdness has been discovered on Windows systems running .NET 6.0 or later, because that function doesn't consider the three characters: `"`, `<`, and `>` illegal. Therefore, operations can be made to the files or folders on Windows systems with the three characters on them, causing undefined behavior.
+
+A solution to this problem was made with `GetInvalidPathChars()` from Parsing, because it takes care of this pitfall on Windows systems by placing the three characters above to the blacklist.
 
 ### Analysis Comparison
 

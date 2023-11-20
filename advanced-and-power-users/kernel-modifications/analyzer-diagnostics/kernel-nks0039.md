@@ -12,7 +12,9 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of `IsOSPlatform` from the `RuntimeInformation` class found in the `System.Runtime.InteropServices` namespace.
 
-**TODO: Populate this section once we finish adding analyzers tracked internally.**
+`RuntimeInformation.IsOSPlatform` is a modern way of determining the current operating system that Nitrocid is running on. However, this isn't live detection.
+
+As a result, `KernelPlatform` implements a handful of platform detection functions to allow you to more accurately detect your platform. Also, it simplifies the complicated platform checking statements to its simpler equivalent.
 
 ### Analysis Comparison
 

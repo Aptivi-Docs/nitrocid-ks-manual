@@ -12,7 +12,7 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of `Split("\n")` from the `String` class found in the `System` namespace.
 
-**TODO: Populate this section once we finish adding analyzers tracked internally.**
+Splitting by new lines is a good way to get the lines from your string. However, the complexity needs to be reduced so that more readability is achieved. As a result, `SplitNewLines()` is here to do it in the simplest way possible.
 
 ### Analysis Comparison
 

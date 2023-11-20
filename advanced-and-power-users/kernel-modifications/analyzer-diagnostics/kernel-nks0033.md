@@ -12,7 +12,9 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of `KernelDateTimeUtc.ToString` from the `TimeDateTools` class found in the `KS.Kernel.Time` namespace.
 
-**TODO: Populate this section once we finish adding analyzers tracked internally.**
+`TimeDateTools.KernelDateTime` contains an override to a function that converts that instance of the current date and time to its string representation. However, there is a function dedicated to that, called `Render()` and its siblings, that renders your target time to its equivalent string representation and also respects your kernel settings.
+
+Similarly, `TimeDateTools.KernelDateTimeUtc` has been given the same treatment, because you can also use the `RenderUtc()` function and its siblings.
 
 ### Analysis Comparison
 

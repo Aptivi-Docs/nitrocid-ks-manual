@@ -12,7 +12,9 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of `CurrentUICulture` from the `CultureInfo` class found in the `System.Globalizaiton` namespace.
 
-**TODO: Populate this section once we finish adding analyzers tracked internally.**
+The `CultureInfo.CurrentUICulture` property gives you your current UI culture for your applications. However, Nitrocid is not a GUI application, so we've decided to make our own culture handler that respects your kernel settings.
+
+It's advisable to use the `CultureManager.UpdateCulture()` function so that your mod can load a new culture and save the kernel settings to make this change permanent across reboots.
 
 ### Analysis Comparison
 

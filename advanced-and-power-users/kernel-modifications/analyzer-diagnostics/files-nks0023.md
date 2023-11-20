@@ -12,7 +12,9 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of `GetFullPath` from the standard `Path` class found in the `System.IO` namespace.
 
-**TODO: Populate this section once we finish adding analyzers tracked internally.**
+While `Path.GetFullPath()` operates on the executable project directory, it doesn't represent the state of the current working directory because the UESH shell doesn't use the built-in current working directory property.
+
+`NeutralizePath()` had to be made to not only solve this problem, but also gives you a unified path that has folder names spearated by the platform-agnostic path separator.
 
 ### Analysis Comparison
 

@@ -12,7 +12,9 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of `Delete` from the standard `Directory` class found in the `System.IO` namespace.
 
-**TODO: Populate this section once we finish adding analyzers tracked internally.**
+Using `Path.IsPathRooted()`, it doesn't use any driver to wrap this call, so it calls the built-in `IsPathRooted()` directly.
+
+Alternatively, you can use `Checking.Rooted()`, which uses the filesystem driver for extensibility.
 
 ### Analysis Comparison
 
