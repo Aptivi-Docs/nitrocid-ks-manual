@@ -1,5 +1,5 @@
 ---
-description: What do you want to build? A mod? A screensaver? Or a splash?
+description: What do you want to build? A mod? Or a splash?
 ---
 
 # 🏗 Build your...
