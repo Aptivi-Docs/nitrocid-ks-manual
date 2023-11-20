@@ -360,3 +360,9 @@ For shell presets, click the below button:
 {% content-ref url="shell-presets.md" %}
 [shell-presets.md](shell-presets.md)
 {% endcontent-ref %}
+
+For extra shell features, click the below button:
+
+{% content-ref url="extra-shell-features.md" %}
+[extra-shell-features.md](extra-shell-features.md)
+{% endcontent-ref %}

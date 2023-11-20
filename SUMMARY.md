@@ -190,6 +190,7 @@
     * [🎚 Command Switch Information](advanced-and-power-users/inner-workings/shell-structure/command-switch-information.md)
     * [📜 Shell Scripting](advanced-and-power-users/inner-workings/shell-structure/shell-scripting.md)
     * [📟 Shell Presets](advanced-and-power-users/inner-workings/shell-structure/shell-presets.md)
+    * [💠 Extra Shell Features](advanced-and-power-users/inner-workings/shell-structure/extra-shell-features.md)
   * [🌍 Multilingual Kernel](advanced-and-power-users/inner-workings/multilingual-kernel/README.md)
     * [🌐 Custom Languages](advanced-and-power-users/inner-workings/multilingual-kernel/custom-languages.md)
   * [🖲 Console Input](advanced-and-power-users/inner-workings/console-input/README.md)
