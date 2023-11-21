@@ -202,3 +202,49 @@ If you want to define your own custom path, you must register the kernel path wi
 ```csharp
 public static string GetKernelPath(string PathType)
 ```
+
+### Copying and Moving
+
+The base filesystem driver implements three copying and moving modes:
+
+*   Copying and moving a source file to a destination
+
+    ```csharp
+    // Copying
+    public static void CopyFile(string Source, string Destination)
+    public static bool TryCopyFile(string Source, string Destination)
+
+    // Moving
+    public static void MoveFile(string Source, string Destination)
+    public static bool TryMoveFile(string Source, string Destination)
+    ```
+*   Copying and moving a source directory to a destination
+
+    ```csharp
+    // Copying
+    public static void CopyDirectory(string Source, string Destination)
+    public static void CopyDirectory(string Source, string Destination, bool ShowProgress)
+    public static bool TryCopyDirectory(string Source, string Destination)
+    public static bool TryCopyDirectory(string Source, string Destination, bool ShowProgress)
+
+    // Moving
+    public static void MoveDirectory(string Source, string Destination)
+    public static void MoveDirectory(string Source, string Destination, bool ShowProgress)
+    public static bool TryMoveDirectory(string Source, string Destination)
+    public static bool TryMoveDirectory(string Source, string Destination, bool ShowProgress)
+    ```
+*   Copying and moving a source file or directory to a destination
+
+    ```csharp
+    // Copying
+    public static void CopyFileOrDir(string Source, string Destination)
+    public static bool TryCopyFileOrDir(string Source, string Destination)
+
+    // Moving
+    public static void MoveFileOrDir(string Source, string Destination)
+    public static bool TryMoveFileOrDir(string Source, string Destination)
+    ```
+
+When copying or moving a file or directory, the functions first check for the source to check to see if it's a file, a directory, or both, depending on the function used. For example, if you're copying a directory to a destination, you can use either `CopyFileOrDir()` or `CopyDirectory()`, but not `CopyFile()`.
+
+The `TryCopy*()` and the `TryMove*()` functions return `true` if copying or moving is successful, and false if the operation failed. The normal `Copy*()` and the `Move*()` functions throw an exception if any failure occurs.

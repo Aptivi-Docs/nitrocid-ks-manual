@@ -89,3 +89,38 @@ This feature is also available for Terminaux, so consult its guide for more info
 {% content-ref url="http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/console-writers" %}
 [Console Writers](http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/console-writers)
 {% endcontent-ref %}
+
+## Resetting colors
+
+If you need to reset the colors for further text to be written to the console in its natural colors, you can use the `ResetColors()` function to reset the foreground and the background colors to their defaults.
+
+```csharp
+public static void ResetColors(bool useKernelColors = false)
+```
+
+Additionally, if you pass `true` to the `useKernelColors` parameter, the colors will be reset to the neutral text color for the foreground color and the kernel background color for the background color.
+
+## Splitting text by new lines
+
+Since Nitrocid KS 0.1.0, splitting text by new lines has been greatly improved by actually supporting splitting strings that are carriage-return-delimited by the new line. Also, you can now reliably split text that contains mixed new line characters, such as "\r\n\r", "\r\n\n", and "\r\n\n\r".
+
+You can split text by new lines to get its lines by using the `SplitNewLines()` function.
+
+```csharp
+public static string[] SplitNewLines(this string target)
+```
+
+Alternatively, you can use the `GetWrappedSentences()` function to wrap the lines to an array containing strings that are wrapped by the maximum length, optionally indented in the first line.
+
+```csharp
+public static string[] GetWrappedSentences(string text, int maximumLength)
+public static string[] GetWrappedSentences(string text, int maximumLength, int indentLength)
+```
+
+{% hint style="info" %}
+If you still rely on the old behvior of the new line splitter, you can use the `SplitNewLinesOld()` function. Beware that it will not split strings that contain only carriage return as a new line (mostly strings that are made by [Mac OS 9](https://en.m.wikipedia.org/wiki/Mac\_OS\_9)).
+
+```csharp
+public static string[] SplitNewLinesOld(this string target)
+```
+{% endhint %}

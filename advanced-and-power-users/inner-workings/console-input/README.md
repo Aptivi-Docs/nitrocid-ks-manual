@@ -271,6 +271,10 @@ If you want to explore the other types, click on the below links:
 [presentation-system.md](presentation-system.md)
 {% endcontent-ref %}
 
+{% content-ref url="console-screen.md" %}
+[console-screen.md](console-screen.md)
+{% endcontent-ref %}
+
 Additionally, you can consult the Terminaux library documentation for more info:
 
 {% content-ref url="http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/" %}

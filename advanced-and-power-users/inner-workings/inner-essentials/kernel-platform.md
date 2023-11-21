@@ -22,6 +22,7 @@ This class provides the following OS-related functions:
 * `IsOnUnix()`: Checks to see if Nitrocid KS is running on Unix and its derivatives, such as Linux, macOS, etc.
 * `IsOnMacOS()`: Checks to see if Nitrocid KS is running on Darwin Kernel, the kernel behind macOS.
 * `IsOnAndroid()`: Checks to see if Nitrocid KS is running on Android phones and tablets within Termux.
+* `IsOnUnixMusl()`: Checks to see if the kernel is running on musl libc library or glibc.
 
 ## Terminals
 
@@ -40,10 +41,11 @@ This class provides the following environment-related functions:
 
 * `IsRunningFromGrilo()`: Checks to see whether Nitrocid KS is run from GRILO
 * `IsRunningFromTmux()`: Checks to see whether Nitrocid KS is run on TMUX
-* IsRunningFromScreen(): Checks to see whether Nitrocid KS is run on GNU Screen
+* `IsRunningFromScreen()`: Checks to see whether Nitrocid KS is run on GNU Screen
 
 ## CoreCLR
 
 This class provides the following CoreCLR-related functions:
 
 * `GetCurrentRid()`: Gets the current runtime identifier.
+* `GetCurrentGenericRid()`: Gets the current non-distro-specific runtime identifier.
