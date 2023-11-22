@@ -248,3 +248,35 @@ The base filesystem driver implements three copying and moving modes:
 When copying or moving a file or directory, the functions first check for the source to check to see if it's a file, a directory, or both, depending on the function used. For example, if you're copying a directory to a destination, you can use either `CopyFileOrDir()` or `CopyDirectory()`, but not `CopyFile()`.
 
 The `TryCopy*()` and the `TryMove*()` functions return `true` if copying or moving is successful, and false if the operation failed. The normal `Copy*()` and the `Move*()` functions throw an exception if any failure occurs.
+
+### File and Folder Selector
+
+The file manager includes two separate TUIs that allow you to select a file or a folder conveniently. We'll explain what do the two selectors do and how they work.
+
+#### File Selector
+
+When it comes to file selection, there is a function dedicated to opening the file selector effortlessly, called `SelectFile()`, which you can find its two signatures below:
+
+{% code title="Selection.cs" lineNumbers="true" %}
+```csharp
+public static string SelectFile()
+public static string SelectFile(string path)
+```
+{% endcode %}
+
+When the selector is open, you can do almost all the things, just like in the normal file management TUI, but with some of the features removed, such as copying and moving to the secondary pane.
+
+To select a file, you can press `Enter` to select it. Then, you'll have to exit it manually to save the selected file, thus making `SelectedFile` return a selected file.
+
+#### Folder Selector
+
+When the folder selector is open using the `SelectFolder()` function, you can select a folder effortlessly by pressing the spacebar on the target directory highlighted.
+
+{% code title="Selection.cs" lineNumbers="true" %}
+```csharp
+public static string SelectFolder()
+public static string SelectFolder(string path)
+```
+{% endcode %}
+
+After that, you can press `Esc` to save the selected folder and pass it to the application, which it can access the selected folder value using the `SelectedFolder` property.

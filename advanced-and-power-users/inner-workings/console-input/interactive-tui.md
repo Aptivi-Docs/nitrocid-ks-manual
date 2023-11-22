@@ -238,3 +238,7 @@ public override void HandleExit()
     (...)
 }
 ```
+
+### `Instance`
+
+If you want to access instance-based fields&#x20;
