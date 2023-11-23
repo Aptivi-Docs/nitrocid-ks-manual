@@ -124,3 +124,24 @@ If you still rely on the old behvior of the new line splitter, you can use the `
 public static string[] SplitNewLinesOld(this string target)
 ```
 {% endhint %}
+
+## Alarms
+
+When it comes to alarms, they are useful to alarm you for something at a specified time. Caffeine used to host its own alarm listener service before it got merged to the `Time` part of the kernel. This service and its tools can be accessed via the `AlarmTools` class.
+
+```csharp
+public static class AlarmTools
+```
+
+You can start an alarm using the StartAlarm function that lets you specify your alarm ID, your alarm name, and your alarm interval in seconds.
+
+```csharp
+public static void StartAlarm(string alarmId, string alarmName, int alarmValue)
+```
+
+Additionally, you can stop an alarm before it's up using a function defined below:
+
+```csharp
+public static void StopAlarm(int alarmIdx)
+public static void StopAlarm(string alarmId)
+```

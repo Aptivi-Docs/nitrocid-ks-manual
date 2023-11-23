@@ -170,6 +170,7 @@
     * [📉 Text - NKS0048](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0048.md)
     * [📉 Text - NKS0049](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0049.md)
     * [📉 Text - NKS0050](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0050.md)
+    * [📉 Text - NKS0054](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0054.md)
   * [🔧 Kernel Modification Management](advanced-and-power-users/kernel-modifications/kernel-modification-management.md)
   * [📞 Inter-Mod Communication](advanced-and-power-users/kernel-modifications/inter-mod-communication.md)
   * [📞 Inter-Addon Communication](advanced-and-power-users/kernel-modifications/inter-addon-communication.md)

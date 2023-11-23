@@ -303,7 +303,7 @@ This addon lets you be alarmed when your cup of tea or coffee is ready. You can 
 
 | Commands   | Arguments and Switches |
 | ---------- | ---------------------- |
-| `caffeine` | `<seconds>`            |
+| `caffeine` | `[-abort] <seconds>`   |
 
 ### Calculators Addon
 
