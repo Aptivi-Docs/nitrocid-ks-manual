@@ -21,6 +21,8 @@ If you want to send a notification indicating that there is something new, you c
 * Notification priority
 * Notification type
 
+Each new `Notification` instance automatically generates a new GUID, which specifies a unique notification ID so that the notifications become distinguishable.
+
 {% hint style="info" %}
 To make indeterminate progress notifications, you must set the notification type to `Progress` and set the `ProgressIndeterminate` property to `true` prior to sending notifications. The below example shows you how it's done:
 
@@ -46,3 +48,11 @@ After creating a new instance of Notification, you'll have to use either the `No
 If you no longer want a notification to display in the notifications list, you'll need to run the `dismissnotif` or `dismissnotifs` command. Similarly, in your mods, you'll have to call either the `NotifDismiss()` function for a single notification, or the `NotifDismissAll()` function for all notifications.
 
 After that, the notification should be cleared from the list of recent notifications so that you can keep up with the new updates.
+
+### Notification comparison
+
+You can compare between notifications either by using the equals operator `==` with the two notification instances or by using the `Equals()` method with the other notification explicitly.
+
+{% hint style="info" %}
+Even if the two notifications that are to be compared appear to be the same notification, the normal `Equals()` function also compares the two notification IDs, causing this comparison to return `false` when you pass two new `Notification` instances with properties that hold the same values. Therefore, in such situations, you can use the `EqualsNoId()` function.
+{% endhint %}
