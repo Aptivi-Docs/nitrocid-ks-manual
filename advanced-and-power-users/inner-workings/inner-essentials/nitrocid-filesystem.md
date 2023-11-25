@@ -13,7 +13,7 @@ Generally, Nitrocid KS offers the fully-fledged filesystem functionality that al
 Your mods can access this, too! However, we'll walk you through the Nitrocid filesystem class hierarchy:
 
 * `KS.Files`
-  * This is the general filesystem namespace containing security-related checks for the validity and openness of the files, like lock checks, which are found in the `Filesystem` class. It also contains the kernel path querying system, `Paths`.
+  * This is the general filesystem namespace containing security-related checks for the validity and openness of the files, like lock checks, which are found in the `FilesystemTools` class.
 * `KS.Files.Attributes`
   * This is the namespace responsible for the attribute management for files.
 * `KS.Files.Editors`
@@ -28,8 +28,8 @@ Your mods can access this, too! However, we'll walk you through the Nitrocid fil
   * This is the namespace responsible for the management of the line endings for text files.
 * `KS.Files.Operations`
   * This is the namespace which houses common filesystem operations, such as making, copying, opening, or deleting files and folders.
-* `KS.Files.PathLookup`
-  * This is the namespace that is responsible for the management of the path lookup directories for us with the UESH shell.
+* `KS.Files.Paths`
+  * This is the namespace that is responsible for the management of the kernel path system and the path lookup system.
 
 {% hint style="danger" %}
 We advice you not to use `LineEndings` functions on binary files, since they sometimes contain line endings and they may mess with these binary files. Security measures will ensure that these functions throw before any operation is made.
