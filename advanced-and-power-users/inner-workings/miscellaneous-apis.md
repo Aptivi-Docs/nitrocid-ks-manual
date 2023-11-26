@@ -145,3 +145,20 @@ Additionally, you can stop an alarm before it's up using a function defined belo
 public static void StopAlarm(int alarmIdx)
 public static void StopAlarm(string alarmId)
 ```
+
+## BASE64 Encoding
+
+You can now encode your text to a BASE64 representation of the text and decode your BASE64 representation of a text to an original text using the following two functions that help you perform these operations:
+
+```csharp
+public static string GetBase64Encoded(this string text)
+public static string GetBase64Decoded(this string text)
+```
+
+For example, if you want to encode a text variable that has a value of `Nitrocid KS`, use the `GetBase64Encoded()` function to get this value:
+
+* `Nitrocid KS` -> `Tml0cm9jaWQgS1M=`
+
+If you later want to decode a BASE64 representation of the original text, you can use the GetBase64Decoded() function to get this value:
+
+* `Tml0cm9jaWQgS1M=` -> `Nitrocid KS`

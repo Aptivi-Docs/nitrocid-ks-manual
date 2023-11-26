@@ -56,3 +56,13 @@ You can compare between notifications either by using the equals operator `==` w
 {% hint style="info" %}
 Even if the two notifications that are to be compared appear to be the same notification, the normal `Equals()` function also compares the two notification IDs, causing this comparison to return `false` when you pass two new `Notification` instances with properties that hold the same values. Therefore, in such situations, you can use the `EqualsNoId()` function.
 {% endhint %}
+
+### Notification history export
+
+You can also export the recent notifications list by either using the admin shell to invoke a command called `savenotifs` or, programatically, using a function called `SaveRecents()` from the notification manager class.
+
+```csharp
+public static void SaveRecents()
+```
+
+Either way, the notification history will be saved to the Nitrocid KS configuration folder under the name of `NotificationRecents-n.json`, where n indicates how many times the notification history has been exported.

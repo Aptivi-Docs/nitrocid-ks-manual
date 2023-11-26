@@ -26,7 +26,7 @@ During quality assurance, we're aware of the following issues:
 * _Progress notifications may fail to show up properly after the normal notification._
 * _The kernel may fail to download debug data if the debugging symbol file is not found._
 * _Letting the screen lock after timeout may cause no prompt to show._
-* Download command doesn't support downloading more than 2 GB.
+* _Download command doesn't support downloading more than 2 GB._
 
 Issues that are highlighted in italic are fixed in the upcoming beta version.
 

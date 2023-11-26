@@ -6,7 +6,7 @@ description: How the kernel drivers work and their role in the kernel
 
 The kernel drivers allows your kernel to provide interfaces for different purposes, from console to filesystem. This is to present the kernel your implementation of different driver types. It's not a device driver, though!
 
-The kernel drivers can be called using either the properties that point to the current driver of each driver type or the `DriverHandler.GetDriver<TResult>()` function found under the `KS.Drivers` namespace. These two will return an appropriate driver interface that actually allows you to call their functions that each driver of the same type implements. The types of kernel drivers are listed below:
+The kernel drivers can be called using either the properties that point to the current driver of each driver type or the `GetDriver<TResult>()` function found in the `DriverHandler` class under the `KS.Drivers` namespace. These two will return an appropriate driver interface that actually allows you to call their functions that each driver of the same type implements. The types of kernel drivers are listed below:
 
 | Driver         | Interface               | Base                       | Description                     |
 | -------------- | ----------------------- | -------------------------- | ------------------------------- |
@@ -39,7 +39,7 @@ internal class Terminal : BaseConsoleDriver, IConsoleDriver
 `IsBuiltin()` only returns true if the driver is found in the built-in driver list. `IsRegistered()`, however, returns true if the driver is either built-in or found in the custom drivers list.
 {% endhint %}
 
-If you have a kernel driver that you wish to register, you'll have to register the kernel driver, passing it the `IDriver` interface for your driver and the appropriate type. You can use the `DriverHandler.RegisterDriver()` function to perform this operation, but you should set the current driver to your driver for the target wrappers, like the methods found in the `KS.Files` namespace that call the current filesystem driver, using the `SetDriverSafe<T>()` function.
+If you have a kernel driver that you wish to register, you'll have to register the kernel driver, passing it the `IDriver` interface for your driver and the appropriate type. You can use the `RegisterDriver()` function to perform this operation, but you should set the current driver to your driver for the target wrappers, like the methods found in the `KS.Files` namespace that call the current filesystem driver, using the `SetDriverSafe<T>()` function.
 
 {% hint style="warning" %}
 The `SetDriver<T>()` function can be used, but doesn't prevent you from using internal drivers. We advice you to use the `SetDriverSafe<T>()` function instead.
@@ -91,6 +91,10 @@ var currentDriver = DriverHandler.GetCurrentDriver(driverType);
 
 * GetCurrentDriver() returns the current driver that's used by the kernel
 * GetCurrentDriverLocal() returns the current local driver set by `BeginLocalDriver<T>()` or its safe sibling function.
+
+{% hint style="info" %}
+For all the driver management functions, you can also use the non-generic versions where they ask for a `DriverTypes` value in their first argument.
+{% endhint %}
 
 ### Driver Configuration
 
