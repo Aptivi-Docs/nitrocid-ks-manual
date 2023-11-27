@@ -18,9 +18,9 @@ To see how it works, consult the below page to take you to the inner workings of
 
 <figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
-This interactive TUI is a powerful file manager that allows you to view what's inside the folders, as well as performing operations, like copying, moving, or deleting, on files and folders.
+This interactive TUI is a powerful file manager that allows you to view what's inside the folders, as well as performing operations, like copying, moving, or deleting, on files and folders, just like [Total Commander](https://www.ghisler.com/index.htm) or [Midnight Commander](https://midnight-commander.org/).
 
-It's an interactive TUI application, so the controls are provided here:
+The file management TUI can be accessed using the `ifm` command. You can use the following keys to manipulate with the files here:
 
 * `Enter`: Go to a folder or open a file
 * `F1`: Copy folder or file to the other pane's current working directory
@@ -40,5 +40,5 @@ It's an interactive TUI application, so the controls are provided here:
 * `Esc`: Exits the application
 
 {% hint style="info" %}
-You can turn on/off the file size display on the status in the kernel settings.
+You can turn on/off the file size display on the status in the kernel settings, but this will affect all other applications that use this settings entry.
 {% endhint %}
