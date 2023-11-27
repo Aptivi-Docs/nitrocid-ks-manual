@@ -39,6 +39,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `copy`                  | `<source> <target>`                                                              |
 | `date`                  | `[-date\|-time\|-full] [-utc]`                                                   |
 | `debugshell`            |                                                                                  |
+| `decodebase64`          | `<encoded>`                                                                      |
 | `decodefile`            | `[-key] [-iv] <file> [algorithm]`                                                |
 | `decodetext`            | `[-key] [-iv] <text> [algorithm]`                                                |
 | `dirinfo`               | `<directory>`                                                                    |
@@ -48,6 +49,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `dismissnotifs`         |                                                                                  |
 | `echo`                  | `[-noparse] <text>`                                                              |
 | `edit`                  | `[-text\|-sql\|-json\|-hex] <file>`                                              |
+| `encodebase64`          | `<text>`                                                                         |
 | `encodefile`            | `[-key] [-iv] <file> [algorithm]`                                                |
 | `encodetext`            | `[-key] [-iv] <text> [algorithm]`                                                |
 | `fileinfo`              | `<file>`                                                                         |
@@ -201,6 +203,7 @@ This shell provides debug information. Here are the currently supported commands
 | `lsfields`         | `[-suppress]`          |
 | `lsproperties`     | `[-suppress]`          |
 | `lsshells`         |                        |
+| `showmainbuffer`   |                        |
 | `threadsbt`        |                        |
 
 ### Hex Shell

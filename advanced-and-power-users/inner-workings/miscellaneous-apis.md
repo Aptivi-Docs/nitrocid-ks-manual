@@ -162,3 +162,14 @@ For example, if you want to encode a text variable that has a value of `Nitrocid
 If you later want to decode a BASE64 representation of the original text, you can use the GetBase64Decoded() function to get this value:
 
 * `Tml0cm9jaWQgS1M=` -> `Nitrocid KS`
+
+## Array tools
+
+The array tools class provides you a wide range of tools for manipulating with arrays, such as array randomization, array sorting, and more.
+
+To randomize arrays, the below two functions that do exactly the same thing under different implementations are available:
+
+* `RandomizeArray()`: Uses the [Schwartzian transform](http://en.wikipedia.org/wiki/Schwartzian\_transform) to randomly sort the array.
+* `RandomizeArraySystem()`: Uses the .NET 8.0 [`Shuffle()`](https://learn.microsoft.com/en-us/dotnet/api/system.random.shuffle) function from [`Random`](https://learn.microsoft.com/en-us/dotnet/api/system.random) to randomly sort the array.
+
+You can consult the [Nitrocid API Reference](https://aptivi.github.io/NitrocidKS/api/KS.Misc.Reflection.ArrayTools.html) for more array tools.

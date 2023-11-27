@@ -268,6 +268,21 @@ When the selector is open, you can do almost all the things, just like in the no
 
 To select a file, you can press `Enter` to select it. Then, you'll have to exit it manually to save the selected file, thus making `SelectedFile` return a selected file.
 
+#### Files selector
+
+Like the file selector, but it also allows you to select more than one file to allow your mod to perform various operations on these files, such as bulk copying the selected files to a single target directory.
+
+There is a function that allows you to use this kind of selector, called `SelectFiles()`.
+
+{% code title="Selection.cs" lineNumbers="true" %}
+```csharp
+public static string[] SelectFiles()
+public static string[] SelectFiles(string path)
+```
+{% endcode %}
+
+To select a file, press `Enter` to select it. Once you're done selecting various files, you'll have to exit it manually to save the selected files, thus making `SelectedFiles` return a list of selected files.
+
 #### Folder Selector
 
 When the folder selector is open using the `SelectFolder()` function, you can select a folder effortlessly by pressing the spacebar on the target directory highlighted.

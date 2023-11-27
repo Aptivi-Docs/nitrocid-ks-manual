@@ -2174,3 +2174,29 @@ For calls to `Paths`, you need to reference it again under the new class name, `
 
 For the rest of the classes, you need to update the namespace imports to `Files.Paths`.
 {% endhint %}
+
+### Moved input modes to their own namespaces
+
+```csharp
+// Choice*, InfoBox*, and Selection*
+namespace KS.ConsoleBase.Inputs.Styles
+```
+
+The three input modes have been moved to their own namespaces, because we wanted to organize the `KS.ConsoleBase.Inputs.Styles` namespace to be clean in case we add more input modes.
+
+The following three input modes are affected:
+
+* `ChoiceStyle` -> `KS.ConsoleBase.Inputs.Styles.Choice`
+  * Its accompanying `ChoiceOutputType` has been moved to the above namespace
+* `InfoBoxButtonsColor` -> `KS.ConsoleBase.Inputs.Styles.Infobox`
+* `InfoBoxColor` -> `KS.ConsoleBase.Inputs.Styles.Infobox`
+* `InfoBoxInputColor` -> `KS.ConsoleBase.Inputs.Styles.Infobox`
+* `InfoBoxProgressColor` -> `KS.ConsoleBase.Inputs.Styles.Infobox`
+* `InfoBoxSelectionColor` -> `KS.ConsoleBase.Inputs.Styles.Infobox`
+* `InfoBoxSelectionMultiColor` -> `KS.ConsoleBase.Inputs.Styles.Infobox`
+* `SelectionMultipleStyle` -> `KS.ConsoleBase.Inputs.Styles.Selection`
+* `SelectionStyle` -> `KS.ConsoleBase.Inputs.Styles.Selection`
+
+{% hint style="info" %}
+The above input modes have been moved to the above namespaces, so you need to update your namespace imports to reference the above namespaces.
+{% endhint %}
