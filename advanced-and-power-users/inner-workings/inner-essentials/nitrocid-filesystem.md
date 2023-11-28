@@ -295,3 +295,18 @@ public static string SelectFolder(string path)
 {% endcode %}
 
 After that, you can press `Esc` to save the selected folder and pass it to the application, which it can access the selected folder value using the `SelectedFolder` property.
+
+#### Folders selector
+
+Like the folder selector, but it also allows you to select more than one folder to allow your mod to perform various operations on these folders, such as bulk copying the selected folders to a single target directory.
+
+There is a function that allows you to use this kind of selector, called `SelectFolders()`.
+
+{% code title="Selection.cs" lineNumbers="true" %}
+```csharp
+public static string[] SelectFolders()
+public static string[] SelectFolders(string path)
+```
+{% endcode %}
+
+To select a file, press `Space` to select it. Once you're done selecting various folders, you'll have to exit it manually to save the selected folders, thus making `SelectedFolders` return a list of selected folders.

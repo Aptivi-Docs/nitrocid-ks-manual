@@ -49,3 +49,7 @@ This class provides the following CoreCLR-related functions:
 
 * `GetCurrentRid()`: Gets the current runtime identifier.
 * `GetCurrentGenericRid()`: Gets the current non-distro-specific runtime identifier.
+
+{% hint style="info" %}
+If you're running on a MUSL-based Linux system, `GetCurrentGenericRid()` returns a MUSL-based generic runtime identifier, such as `linux-musl-arm64`.
+{% endhint %}

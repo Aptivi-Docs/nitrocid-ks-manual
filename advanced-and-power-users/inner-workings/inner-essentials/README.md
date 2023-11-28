@@ -30,12 +30,12 @@ Nitrocid KS offers a rich API that is open for any mod created for the current A
 [kernel-drivers.md](kernel-drivers.md)
 {% endcontent-ref %}
 
-{% content-ref url="kernel-arguments.md" %}
-[kernel-arguments.md](kernel-arguments.md)
+{% content-ref url="the-users.md" %}
+[the-users.md](the-users.md)
 {% endcontent-ref %}
 
-{% content-ref url="remote-procedure.md" %}
-[remote-procedure.md](remote-procedure.md)
+{% content-ref url="theme-internals.md" %}
+[theme-internals.md](theme-internals.md)
 {% endcontent-ref %}
 
 {% content-ref url="nitrocid-filesystem.md" %}
@@ -58,6 +58,8 @@ Nitrocid KS offers a rich API that is open for any mod created for the current A
 [system-notifications.md](system-notifications.md)
 {% endcontent-ref %}
 
-{% content-ref url="mal-and-motd.md" %}
-[mal-and-motd.md](mal-and-motd.md)
+{% content-ref url="color-internals.md" %}
+[color-internals.md](color-internals.md)
 {% endcontent-ref %}
+
+The above buttons point to the most trending features of the kernel. In case you want to access to less-trending feature insights, you can use the left pane.

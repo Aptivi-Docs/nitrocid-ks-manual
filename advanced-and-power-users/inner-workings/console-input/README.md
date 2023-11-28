@@ -89,6 +89,10 @@ Be aware that even if the `NoInput` variants protect you from viewing the passwo
 Use `ReadLineNoInputUnsafe()` cautiously, because this variant doesn't wait for the lock mode to exit. Use `ReadLineNoInput()` when possible.
 {% endhint %}
 
+{% hint style="info" %}
+You can also use the `InputStyle` class to prompt the user for the password input, but this is considered a legacy function, and may or may not be removed in the final release of 0.1.0. Use `ReadLineNoInput()` variants mentioned above when possible.
+{% endhint %}
+
 ### Key input
 
 Now, for the key inputs, they only take one key and return the key information about what is the key that was pressed, what are the modifiers, and so on. This helps build interactive applications for the consoles and is cross-platform.

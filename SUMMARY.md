@@ -97,6 +97,7 @@
       * [🖊 JSON Editor](fundamentals/simulated-kernel-features/extra-features/more-editors/json-editor.md)
       * [🗄 SQL Editor](fundamentals/simulated-kernel-features/extra-features/more-editors/sql-editor.md)
     * [🪄 ChatGPT Client](fundamentals/simulated-kernel-features/extra-features/chatgpt-client.md)
+    * [🖼 Docking](fundamentals/simulated-kernel-features/extra-features/docking.md)
   * [👤 Accounts](fundamentals/simulated-kernel-features/accounts/README.md)
     * [👥 Groups](fundamentals/simulated-kernel-features/accounts/groups.md)
     * [🔓 Permissions](fundamentals/simulated-kernel-features/accounts/permissions.md)
@@ -171,6 +172,7 @@
     * [📉 Text - NKS0049](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0049.md)
     * [📉 Text - NKS0050](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0050.md)
     * [📉 Text - NKS0054](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0054.md)
+    * [📉 Text - NKS0055](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0055.md)
   * [🔧 Kernel Modification Management](advanced-and-power-users/kernel-modifications/kernel-modification-management.md)
   * [📞 Inter-Mod Communication](advanced-and-power-users/kernel-modifications/inter-mod-communication.md)
   * [📞 Inter-Addon Communication](advanced-and-power-users/kernel-modifications/inter-addon-communication.md)
@@ -214,10 +216,12 @@
     * [💦 Splash Internals](advanced-and-power-users/inner-workings/inner-essentials/splash-internals.md)
     * [🖥 Kernel Platform](advanced-and-power-users/inner-workings/inner-essentials/kernel-platform.md)
     * [🎨 Theme Internals](advanced-and-power-users/inner-workings/inner-essentials/theme-internals.md)
+    * [⛱ Color Internals](advanced-and-power-users/inner-workings/inner-essentials/color-internals.md)
     * [🔏 Privacy Consents](advanced-and-power-users/inner-workings/inner-essentials/privacy-consents.md)
     * [🔔 System Notifications](advanced-and-power-users/inner-workings/inner-essentials/system-notifications.md)
     * [✉ MAL and MOTD](advanced-and-power-users/inner-workings/inner-essentials/mal-and-motd.md)
     * [⌛ Progress Handlers](advanced-and-power-users/inner-workings/inner-essentials/progress-handlers.md)
+    * [✒ Assembly Signing](advanced-and-power-users/inner-workings/inner-essentials/assembly-signing.md)
   * [🌀 Miscellaneous APIs](advanced-and-power-users/inner-workings/miscellaneous-apis.md)
 
 ***

@@ -36,6 +36,15 @@ To get a brief insight about how this analyzer works, compare the two code block
 </strong>}
 </code></pre>
 
+#### After the fix (alternate)
+
+<pre class="language-csharp" data-title="Somewhere in your mod code" data-line-numbers><code class="lang-csharp">public static void MyFunction()
+{
+    string var = "Hello\r\nWorld!";
+<strong>    var split = var.SplitNewLinesOld();
+</strong>}
+</code></pre>
+
 ### Suppression
 
 You can suppress this suggestion by including it in the appropriate place, whichever is convenient.

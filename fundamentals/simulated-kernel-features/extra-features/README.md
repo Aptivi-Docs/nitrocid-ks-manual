@@ -28,6 +28,10 @@ Select a page below to go to a feature:
 [more-editors](more-editors/)
 {% endcontent-ref %}
 
+{% content-ref url="docking.md" %}
+[docking.md](docking.md)
+{% endcontent-ref %}
+
 ## How do I get these programs?
 
 You can get these extra features, including extra languages, splashes, and screensavers, by either downloading the addons ZIP file from the releases page of the Nitrocid project at GitHub, or by using the `getaddons` command.

@@ -378,6 +378,14 @@ You can use the following commands provided by the dictionary addon:
 | -------- | ---------------------- |
 | `dict`   | `<word>`               |
 
+### Docking
+
+You can use the following commands provided by the screen docking addon:
+
+| Commands | Arguments and Switches |
+| -------- | ---------------------- |
+| `dock`   | `<dockId>`             |
+
 ### Forecast
 
 The forecast addon allows you to take a look at the current forecast across the world. You can use the following commands:
