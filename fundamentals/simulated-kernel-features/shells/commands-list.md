@@ -69,6 +69,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `if`                    | `<expression> <command>`                                                         |
 | `ifm`                   |                                                                                  |
 | `input`                 | `<question>`                                                                     |
+| `inputpass`             | `<question>`                                                                     |
 | `jsonbeautify`          | `<jsonfile> <output>`                                                            |
 | `jsonminify`            | `<jsonfile> <output>`                                                            |
 | `langman`               | `<reload/load/unload> <customlangname>`                                          |
