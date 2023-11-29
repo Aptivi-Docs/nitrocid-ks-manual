@@ -2200,3 +2200,33 @@ The following three input modes are affected:
 {% hint style="info" %}
 The above input modes have been moved to the above namespaces, so you need to update your namespace imports to reference the above namespaces.
 {% endhint %}
+
+### Moved advanced diagnostics to its own addon
+
+{% code title="ThreadManager.cs" lineNumbers="true" %}
+```csharp
+public static Dictionary<string, string[]> GetThreadBacktraces()
+```
+{% endcode %}
+
+This function used to use an advanced diagnostics package, called ClrMd, that facilitates the diagnostics by providing tools that are effective, such as getting all the thread backtraces.
+
+Because the entire kernel debugging system, except a very small part of it, used such diagnostics, we've moved such tools to its own Extras addon. This is not done in an effort to attempt to reduce dependencies to its bare minimum, and may be reinstated in a future release post-0.1.0.
+
+{% hint style="info" %}
+This function has not been removed, but it has been modified to call the same function using the inter-addon communication recently implemented in the third beta version of 0.1.0.
+
+When your mod calls this function, be sure to handle an extra case where it returns an empty dictionary.
+{% endhint %}
+
+### SpecProbe updated to 1.2.0
+
+{% hint style="info" %}
+This is not exactly an API-related breaking change, but this is a breaking change for Windows users. Linux and macOS are not affected.
+{% endhint %}
+
+When SpecProbe was updated to 1.2.0, it contained a re-written hard disk prober that gets all the hard drives and their partitions without relying on [`DriveInfo.GetDrives()`](https://learn.microsoft.com/en-us/dotnet/api/system.io.driveinfo.getdrives) to get all the mounted drives. As a result, it returned a more complete partition list in your hard drives if you're running Windows.
+
+However, this re-written hard disk prober requires administrative rights, because it calls [`DeviceIoControl()`](https://learn.microsoft.com/en-us/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol), which is considered a powerful function for device I/O controls, such as getting drive geometry, getting drive partition table information, and so on. That function was used to directly talk to your drive for such information, which is why it requires administrator rights.
+
+**As a result, Nitrocid KS 0.1.0 Beta 3 will start requiring administrative privileges, starting from commit** [**`dda1d6d`**](https://github.com/Aptivi/NitrocidKS/commit/dda1d6d1d7209682c30b9b93d053056fad40cdfa)**.**

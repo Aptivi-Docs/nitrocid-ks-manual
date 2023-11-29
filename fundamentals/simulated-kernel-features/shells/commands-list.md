@@ -205,7 +205,6 @@ This shell provides debug information. Here are the currently supported commands
 | `lsproperties`     | `[-suppress]`          |
 | `lsshells`         |                        |
 | `showmainbuffer`   |                        |
-| `threadsbt`        |                        |
 
 ### Hex Shell
 
@@ -370,6 +369,14 @@ You can use the following commands provided by the contacts addon:
 | Commands   | Arguments and Switches |
 | ---------- | ---------------------- |
 | `contacts` |                        |
+
+### Diagnostics
+
+You can use the following commands provided by the diagnostics addon:
+
+| Commands    | Arguments and Switches |
+| ----------- | ---------------------- |
+| `threadsbt` |                        |
 
 ### Dictionary
 

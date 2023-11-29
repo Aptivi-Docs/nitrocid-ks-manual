@@ -4,7 +4,7 @@ description: How to install Nitrocid KS on Windows
 
 # 💻 Windows
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Installing Nitrocid KS on Windows is pretty easy, but we recommend installing the simulator using the Chocolatey package manager.
 
@@ -27,6 +27,10 @@ However, we recommend that you have the below software installed on your compute
 | System      | Framework                                                          | Terminal           |
 | ----------- | ------------------------------------------------------------------ | ------------------ |
 | Windows 10+ | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | Windows 10 cmd.exe |
+
+{% hint style="info" %}
+If you see the shield icon <img src="../../.gitbook/assets/image.png" alt="" data-size="line"> in the corner of the Nitrocid logo shown in the **Nitrocid.exe** file, don't worry about it; Nitrocid only probes your hard drives with the help of SpecProbe ([see why](../../versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v3.0/from-0.1.0-beta-2-to-0.1.0-beta-3.md#specprobe-updated-to-1.2.0)), nothing else.
+{% endhint %}
 
 ### KS v0.0.24.0 or lower
 
