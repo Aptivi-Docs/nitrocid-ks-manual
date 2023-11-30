@@ -93,42 +93,8 @@ There is a function that lets you check to see if a built-in or an addon theme e
 
 ### Color conversion
 
-Your theme files can also support any specifier, as long as the specifier is supported by Terminaux. For a quick reminder, Terminaux supports the three true-color specifiers, alongside the color name or the color number, if you intend to use another color model to select colors:
+Your theme files can also support any specifier, as long as the specifier is supported by Terminaux. Consult the below page for more information about how colors are processed in Nitrocid KS with the help of Terminaux:
 
-* RGB: Red, Green, and Blue.
-  * `<RRR>;<GGG>;<BBB>`
-  * where the three variables can be from 0 to 255.
-* RYB: Red, Yellow, and Blue.
-  * `ryb:<RRR>;<YYY>;<BBB>`
-  * where the three variables can be from 0 to 255.
-* CMYK: Cyan, Magenta, and Yellow with the Black Key.
-  * `cmyk:<CCC>;<MMM>;<YYY>;<KKK>`
-  * where these variables can be from 0 to 100.
-* CMY: Cyan, Magenta, and Yellow.
-  * `cmy:<CCC>;<MMM>;<YYY>`
-  * where these variables can be from 0 to 100.
-* HSL: Hue, Saturation, and Luminance (or Lightness).
-  * `hsl:<HHH>;<SSS>;<LLL>`
-  * where the Hue can be from 0 to 360 _**degrees**_ and _**not radians**_.
-  * where the Saturation and the Luminance can be from 0 to 100.
-* HSV: Hue, Saturation, and Value.
-  * `hsv:<HHH>;<SSS>;<VVV>`
-  * where the Hue can be from 0 to 360 _**degrees**_ and _**not radians**_.
-  * where the Saturation and the Luminance can be from 0 to 100.
-
-The commands provided by the color conversion Extras addon help you convert from a color model, such as RGB, to another color model, such as CMYK.
-
-`KernelColorConversionTools` provides you all possible conversion methods to convert a color model to another color model to generate appropriate color specifiers converted to the target unit to create new `Color` instances for your mod's appearance.
-
-For example, if you have Cyan, Magenta, and Yellow values and you want a hex code of it, you can use one of the following function overloads of `ConvertFromCmykToHex()`:
-
-* `ConvertFromCmykToHex(int C, int M, int Y, int K)`
-* `ConvertFromCmykToHex(string CMYKSequence)`
-
-### Color wheel
-
-The new color wheel documentation is coming soon, so stay tuned for updates on the Terminaux documentation:
-
-{% content-ref url="http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/color-wheel" %}
-[Color Wheel](http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/color-wheel)
+{% content-ref url="color-internals.md" %}
+[color-internals.md](color-internals.md)
 {% endcontent-ref %}
