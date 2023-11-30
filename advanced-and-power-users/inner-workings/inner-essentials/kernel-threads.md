@@ -63,7 +63,7 @@ The left pane of the task manager shows you a list of threads, and the right pan
 
 * `F1`
   * Kills a Nitrocid KS thread and regenerates it
-* `Tab`
+* `S`
   * Switches between the Nitrocid KS thread listing and the unmanaged OS thread listing
 * `ESC`
   * Exits the program
