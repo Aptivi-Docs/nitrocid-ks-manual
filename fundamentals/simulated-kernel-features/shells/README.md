@@ -38,6 +38,10 @@ All of the shells contain their own commands that you can review on either the h
 [commands-list.md](commands-list.md)
 {% endcontent-ref %}
 
+{% content-ref url="addon-commands-list.md" %}
+[addon-commands-list.md](addon-commands-list.md)
+{% endcontent-ref %}
+
 ### Preface for the `-set` switch
 
 Some of the commands support the `-set` switch. This means that such commands can set a UESH variable to any value that the command sets without any interference.

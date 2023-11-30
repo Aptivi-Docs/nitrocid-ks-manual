@@ -106,6 +106,7 @@
     * [💾 Hex Editor](fundamentals/simulated-kernel-features/editors/hex-editor.md)
   * [🐚 Shells](fundamentals/simulated-kernel-features/shells/README.md)
     * [📄 Commands List](fundamentals/simulated-kernel-features/shells/commands-list.md)
+    * [📄 Addon Commands List](fundamentals/simulated-kernel-features/shells/addon-commands-list.md)
   * [📂 Files and Folders](fundamentals/simulated-kernel-features/files-and-folders.md)
   * [🌎 Networking](fundamentals/simulated-kernel-features/networking.md)
   * [🇺🇸 Languages](fundamentals/simulated-kernel-features/languages.md)
