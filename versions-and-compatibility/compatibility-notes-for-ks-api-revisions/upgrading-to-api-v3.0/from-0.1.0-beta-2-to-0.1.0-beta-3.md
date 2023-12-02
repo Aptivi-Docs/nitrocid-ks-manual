@@ -2230,3 +2230,17 @@ When SpecProbe was updated to 1.2.0, it contained a re-written hard disk prober 
 However, this re-written hard disk prober requires administrative rights, because it calls [`DeviceIoControl()`](https://learn.microsoft.com/en-us/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol), which is considered a powerful function for device I/O controls, such as getting drive geometry, getting drive partition table information, and so on. That function was used to directly talk to your drive for such information, which is why it requires administrator rights.
 
 **As a result, Nitrocid KS 0.1.0 Beta 3 will start requiring administrative privileges, starting from commit** [**`dda1d6d`**](https://github.com/Aptivi/NitrocidKS/commit/dda1d6d1d7209682c30b9b93d053056fad40cdfa)**.**
+
+### Renamed `RemovePostfix()` to `RemoveSuffix()`
+
+{% code title="TextTools.cs" lineNumbers="true" %}
+```csharp
+public static string RemovePostfix(this string text, string postfix)
+```
+{% endcode %}
+
+It has been recently discovered that "postfix" is less understandable than "suffix" for some of the users, so we've adjusted the name of the function to better align with these requirements.
+
+{% hint style="info" %}
+The functionality of this function wasn't changed while renaming this function.
+{% endhint %}
