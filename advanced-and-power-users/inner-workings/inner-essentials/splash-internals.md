@@ -15,7 +15,7 @@ The splash tools consists of the following classes:
 
 Splashes also contain a context to tell the splash screen that it's in a specific mode, which is one of the following:
 
-* `Showcase`: This is used to showcase your splash screen and how well it works. Used by the `PreviewSplash()` functions for best experience.
+* `Showcase`: This is used to showcase your splash screen and how well it works. Used by the `previewsplash` for best experience.
 * `StartingUp`: Used by the kernel to indicate that the kernel is starting up.
 * `ShuttingDown`: Used by the kernel to indicate that the kernel is shutting down.
 * `Preboot`: Used by the kernel to indicate that the kernel is currently on the pre-boot stage before configuration is loaded.
@@ -43,23 +43,6 @@ public static void UnloadSplashes()
 {% endcode %}
 
 This function does the reverse of `LoadSplashes()` by unloading all the splashes. This means that this function will unregister any splash found in the custom splashes list.
-
-### Previewing the splashes
-
-```csharp
-public static void PreviewSplash(SplashContext context)
-public static void PreviewSplash(bool SplashOut, SplashContext context)
-public static void PreviewSplash(string splashName, SplashContext context)
-public static void PreviewSplash(string splashName, bool splashOut, SplashContext context)
-public static void PreviewSplash(ISplash splash, SplashContext context)
-public static void PreviewSplash(ISplash splash, bool splashOut, SplashContext context)
-```
-
-These functions allow you to preview a specific splash screen either by previewing the current one, the specified splash name, or the specified splash base class instance that implements the ISplash instance. The SplashOut argument indicates whether to test out the `BeginSplashOut()` and `EndSplashOut()` functions.
-
-{% hint style="warning" %}
-Unless you know what you're doing, avoid using `OpenSplash()` and `CloseSplash()` to show progress. Instead, use one of the `PreviewSplash()` overloads if possible.
-{% endhint %}
 
 ## Showing Messages during Kernel Boot
 

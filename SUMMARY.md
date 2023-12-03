@@ -223,6 +223,7 @@
     * [✉ MAL and MOTD](advanced-and-power-users/inner-workings/inner-essentials/mal-and-motd.md)
     * [⌛ Progress Handlers](advanced-and-power-users/inner-workings/inner-essentials/progress-handlers.md)
     * [✒ Assembly Signing](advanced-and-power-users/inner-workings/inner-essentials/assembly-signing.md)
+    * [🎰 Random Number Generation](advanced-and-power-users/inner-workings/inner-essentials/random-number-generation.md)
   * [🌀 Miscellaneous APIs](advanced-and-power-users/inner-workings/miscellaneous-apis.md)
 
 ***

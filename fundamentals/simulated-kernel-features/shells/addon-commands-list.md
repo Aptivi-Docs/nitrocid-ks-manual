@@ -26,6 +26,7 @@ Amusements addon provides you with a pack of games and amusements. You can use t
 | `solver`     |                          |
 | `speedpress` | `[-e\|-m\|-h\|-v\|-c]`   |
 | `wordle`     | `[-orig]`                |
+| `2018`       |                          |
 
 ### Archive shell
 
@@ -221,6 +222,14 @@ Once you enter the Git shell with the provided repo path, you can access the bel
 | `status`     |                          |
 | `unstage`    | `<stagedfile>`           |
 | `unstageall` |                          |
+
+### HDD Uncleaner 2015 Addon
+
+This addon is a Legacy addon that shows you a mock-up of our ancient app, HDD Cleaner 2015. You can use the below commands:
+
+| Commands | Arguments and Switches |
+| -------- | ---------------------- |
+| `2015`   |                        |
 
 ### HTTP Shell
 

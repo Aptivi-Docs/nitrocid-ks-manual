@@ -2244,3 +2244,49 @@ It has been recently discovered that "postfix" is less understandable than "suff
 {% hint style="info" %}
 The functionality of this function wasn't changed while renaming this function.
 {% endhint %}
+
+### Removed hidden commands
+
+{% code title="CommandFlags.cs" lineNumbers="true" %}
+```csharp
+public enum CommandFlags
+{
+    (...)
+    Hidden = 64
+}
+```
+{% endcode %}
+
+Normally, the hidden commands serve as a way to hide a selected command that may have a secret in it. However, it is not completely hidden, because mods can be reverse-engineered using the .NET reverse engineering tools to get the name of the command, which causes this command to be no longer hidden.
+
+We've decided to remove this feature for this reason.
+
+{% hint style="danger" %}
+We advice you to stop using this feature.
+{% endhint %}
+
+### Removed mod parts
+
+{% code title="ModInfo.cs" lineNumbers="true" %}
+```csharp
+internal Dictionary<string, ModPartInfo> ModParts { get; set; }
+```
+{% endcode %}
+
+{% code title="ModPartInfo.cs" lineNumbers="true" %}
+```csharp
+public class ModPartInfo
+```
+{% endcode %}
+
+Mod parts were historically implemented as a way to group parts of one mod when they were just a single C# source code file. That was a way to group several parts of a mod to achieve their own goal.
+
+The problem was that we've taken out support for such mods and replaced them with DLL-based mods, which are still used at this moment because they don't require dynamically compiling the source code with CodeDom. As a result, we've negated the role of CodeDom in terms of loading mods and their so-called "parts".
+
+Upon further examination as to how the mods are loaded, we've reached to a conclusion that mod parts went useless as more and more improvements went in the way to the mod loading system. This feature has now become a maintenance burden when it comes to maintaining the mod system, especially the part where we would finalize the mod for a specific mod. Recent changes to the modding system have also concluded that mod parts are just categorical sugar.
+
+As a result, we've decided to finally remove the mod parts as their role has been cancelled by DLL-based mods and as C# source code-based mods were long removed from the mod loading system to get rid of CodeDom.
+
+{% hint style="info" %}
+This only breaks your mod manager code as it only changes the kernel mod information class and not the mod interface itself. Your mods should still work properly.
+{% endhint %}

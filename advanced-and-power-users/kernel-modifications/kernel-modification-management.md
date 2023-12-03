@@ -23,15 +23,12 @@ The mod finalization phase gets executed as soon as the mod parser sees the file
    * If the checker found that the mod needs a higher API version, the mod parsing fails with the appropriate message
    * If the checker couldn't determine the minimum API version required by the kernel mod, it goes ahead, but with a warning that the mod may fail to start.
 4. Checks the mod localization file from the path: `KSMods/Localization/Mod-FileVersion/`
-5. Checks for the mod part name. **If there is no name, the mod parsing fails.**
-6. If the mod has no name, the mod will be given the name using the file name.
-7. Checks for conflicts of the mod part names.
-8. Checks the mod for the version and its SemVer 2.0 compliance. **If the version is not a SemVer 2.0 compliant, mod parsing fails.**
-9. Adds the mod part to the parts list with the mod part instance
-10. Satisfies the mod dependencies by loading them as appropriate.
-11. Calls the `script.StartMod()` function in your script
-12. Adds the mod to the mod manager
-13. Checks the manual file `ModFile.manual` for existence and initializes it.
+5. If the mod has no name, the mod will be given the name using the file name.
+6. Checks the mod for the version and its SemVer 2.0 compliance. **If the version is not a SemVer 2.0 compliant, mod parsing fails.**
+7. Satisfies the mod dependencies by loading them as appropriate.
+8. Calls the `script.StartMod()` function in your script
+9. Adds the mod to the mod manager
+10. Checks the manual file `ModFile.manual` for existence and initializes it.
 
 {% hint style="info" %}
 The mod system will automatically unload the target mod's directory for assembly lookup. If, for some reason, this fails, you can manually unload their paths from the lookup using the below function:

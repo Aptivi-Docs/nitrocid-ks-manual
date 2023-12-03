@@ -39,6 +39,12 @@ The contact application can import your contacts from the `KSContactsImport` fol
 * VCF contact files holding multiple contacts (same version, mixed versions)
 * Android contacts database file (`contacts2.db`)
 
+The contact application can also import your contact through a short MeCard syntax given to you by a QR code behind it. Below is an example of a complete MeCard syntax:
+
+```
+MECARD:N:Sanders,John,,,;TEL:495-522-3560;EMAIL:john.s@acme.co;ADR:,,Los Angeles,,,,USA;NOTE:Note test for VisualCard;;
+```
+
 {% hint style="info" %}
 To learn more about how VisualCard works, consult the below link named `How it works` and it'll take you to the VisualCard manual.
 {% endhint %}

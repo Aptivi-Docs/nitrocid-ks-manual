@@ -86,8 +86,8 @@ If you want colorless printing, you can use the `Write*Plain()` functions found 
 
 This feature is also available for Terminaux, so consult its guide for more information:
 
-{% content-ref url="http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/console-writers" %}
-[Console Writers](http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/console-writers)
+{% content-ref url="http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/console-tools/console-writers" %}
+[Console Writers](http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/console-tools/console-writers)
 {% endcontent-ref %}
 
 ## Resetting colors
@@ -173,3 +173,17 @@ To randomize arrays, the below two functions that do exactly the same thing unde
 * `RandomizeArraySystem()`: Uses the .NET 8.0 [`Shuffle()`](https://learn.microsoft.com/en-us/dotnet/api/system.random.shuffle) function from [`Random`](https://learn.microsoft.com/en-us/dotnet/api/system.random) to randomly sort the array.
 
 You can consult the [Nitrocid API Reference](https://aptivi.github.io/NitrocidKS/api/KS.Misc.Reflection.ArrayTools.html) for more array tools.
+
+## JSON Difference
+
+The JSON difference finding tool can be accessed using the `FindDifferences()` function found in the `JsonTools` class. This allows you to find differences in addition and deletion of any JSON object.
+
+{% hint style="warning" %}
+Currently, it doesn't support modifications of any value. However, it will be worked on soon.
+{% endhint %}
+
+The difference tool returns the difference in the following format:
+
+* A JSON object with either a plus (`+`) or a minus `(-`) sign if the target object is an object.
+* A JSON object with either a plus (`+`) or a minus (`-`) sign listing differences in addition and deletion of array elements if the target object is an array.
+* A JSON object with a plus (`+`) sign indicating the target object and a minus (`-`) sign indicating the source object.

@@ -80,7 +80,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 |                         | `<list/reloadall>`                                                               |
 | `license`               |                                                                                  |
 | `lintscript`            | `<script>`                                                                       |
-| `list`                  | `[-showdetails\|-suppressmessages\|-recursive] [directory]`                      |
+| `list`                  | `[-showdetails] [-suppressmessages] [-recursive\|-tree] [directory]`             |
 | `lockscreen`            |                                                                                  |
 | `logout`                |                                                                                  |
 | `lsconfigs`             | `-deep`                                                                          |
@@ -95,8 +95,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `md`                    | `<directory>`                                                                    |
 | `mkfile`                | `<file>`                                                                         |
 | `modman`                | `<start/stop/info/reload/install/uninstall> <modfilename>`                       |
-|                         | `<list/listparts> <modname>`                                                     |
-|                         | `<reloadall/stopall/startall>`                                                   |
+|                         | `<list/reloadall/stopall/startall>`                                              |
 | `modmanual`             | `<modname>`                                                                      |
 | `move`                  | `<source> <target>`                                                              |
 | `partinfo`              | `<disknum> <partnum>`                                                            |
@@ -105,7 +104,6 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `permgroup`             | `<groupname> <allow/revoke> <perm>`                                              |
 | `ping`                  | `[-times] <address1> [address2] [...]`                                           |
 | `platform`              | `[-r\|-v\|-b\|-c\|-n]`                                                           |
-| `previewsplash`         | `[-splashout] [-context] <splashname>`                                           |
 | `put`                   | `<filename> <url>`                                                               |
 | `rdebug`                |                                                                                  |
 | `reboot`                | `[ip/safe/maintenance/debug] [port]`                                             |
@@ -193,22 +191,23 @@ This shell provides you administrative tools. The following commands are availab
 
 This shell provides debug information. Here are the currently supported commands:
 
-| Commands           | Arguments and Switches |
-| ------------------ | ---------------------- |
-| `currentbt`        |                        |
-| `debuglog`         | `<sessionnum>`         |
-| `excinfo`          | `<excnum>`             |
-| `getfieldvalue`    | `<field>`              |
-| `getpropertyvalue` | `<property>`           |
-| `keyinfo`          |                        |
-| `lsaddonfields`    | `<addon>`              |
-| `lsaddonfuncs`     | `<addon>`              |
-| `lsaddonprops`     | `<addon>`              |
-| `lsaddons`         |                        |
-| `lsfields`         | `[-suppress]`          |
-| `lsproperties`     | `[-suppress]`          |
-| `lsshells`         |                        |
-| `showmainbuffer`   |                        |
+| Commands           | Arguments and Switches                 |
+| ------------------ | -------------------------------------- |
+| `currentbt`        |                                        |
+| `debuglog`         | `<sessionnum>`                         |
+| `excinfo`          | `<excnum>`                             |
+| `getfieldvalue`    | `<field>`                              |
+| `getpropertyvalue` | `<property>`                           |
+| `keyinfo`          |                                        |
+| `lsaddonfields`    | `<addon>`                              |
+| `lsaddonfuncs`     | `<addon>`                              |
+| `lsaddonprops`     | `<addon>`                              |
+| `lsaddons`         |                                        |
+| `lsfields`         | `[-suppress]`                          |
+| `lsproperties`     | `[-suppress]`                          |
+| `lsshells`         |                                        |
+| `previewsplash`    | `[-splashout] [-context] <splashname>` |
+| `showmainbuffer`   |                                        |
 
 ### Hex Shell
 
