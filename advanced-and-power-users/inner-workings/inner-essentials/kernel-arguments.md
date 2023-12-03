@@ -6,6 +6,7 @@ description: How do the kernel arguments work? And how it affects the kernel?
 
 Kernel Arguments are command-line parameters to the simulator that changes the behavior of the kernel according to the available arguments listed below:
 
+* `attach`: Attaches a Visual Studio debugger to the current instance of the kernel (Windows only)
 * `quiet`: Starts the kernel quietly
 * `maintenance`: Starts the kernel in maintenance mode which behaves like safe mode but with additional features turned off
 * `safe`: Starts the kernel in safe mode which disables all mods
@@ -15,7 +16,9 @@ Kernel Arguments are command-line parameters to the simulator that changes the b
 * `reset`: Wipes all settings and resets the kernel to factory settings
 * `bypasssizedetection`: Bypasses the 80x24 console size detection
 * `noaltbuffer`: Prevents the kernel from using the alternative buffer
+* `noprebootsplash`: Prevents the kernel from displaying the pre-boot splash
 * `lang <lang>`: Selects a pre-boot environment language
+* `verbosepreboot`: Shows extra pre-boot messages
 
 Each argument is provided the `ArgumentInfo` class that defines the argument and its properties.
 
