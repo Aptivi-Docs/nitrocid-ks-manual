@@ -4,49 +4,56 @@ description: What do I need to run Nitrocid?
 
 # 📦 Dependency Information
 
-In order to run Nitrocid KS on all the system, you must install the essential requirements as shown in the platform-specific installation pages.
+{% hint style="info" %}
+Windows users don't need to read this page as Windows provides all the necessary tools to facilitate the work of the kernel and its addons.
+{% endhint %}
 
-However, for Linux and Android systems, you must also install the following dependencies to be able to use Nitrocid.
+In order to run Nitrocid KS on all the system, you must install the essential requirements as shown in the platform-specific installation pages. However, for Linux and Android systems, you must also install the following dependencies to be able to use Nitrocid.
 
 * For Debian and its derivatives (Ubuntu, LMDE, ...)
   * ```sh
-    sudo apt install inxi libjson-xs-perl tzdata
+    sudo apt install tzdata
     ```
 * For Android (Ubuntu PRoot on Termux)
   * ```sh
-    sudo apt install inxi libjson-xs-perl libicu70 tzdata
+    sudo apt install libicu72 tzdata
     ```
 * For Red Hat Enterprise Linux, Rocky Linux, AlmaLinux, ...
   * ```sh
     sudo dnf install -y epel-release
-    sudo dnf install -y inxi perl-JSON-XS libicu tzdata
+    sudo dnf install -y libicu tzdata
     ```
 * For OpenSUSE
   * ```sh
-    sudo zypper install inxi perl-JSON-XS libicu tzdata
+    sudo zypper install libicu tzdata
     ```
 * For Arch Linux and its derivatives (EndeavorOS, ...)
   * ```sh
-    sudo pacman -S inxi perl-json-xs icu tzdata
+    sudo pacman -S icu tzdata
     ```
 * For Alpine Linux
   * ```sh
-    sudo apk add inxi perl-json-xs icu icu-libs icu-data-full tzdata
+    sudo apk add icu icu-libs icu-data-full tzdata
     ```
 
 {% hint style="info" %}
 Depending on a distribution and the amount of packages installed in the current system, the download size will be from 30 to 100 MB.
 
-For addons, extra dependencies might be needed to work. For example, the BassBoom addon might need PulseAudio or ALSA working.
+For addons, extra dependencies might be needed to work. For example, the BassBoom addon might need PulseAudio or ALSA working, and the Inxi.NET addon might need Inxi and Json::XS Perl modules.
 {% endhint %}
 
 Dependency information for each package installed in your target system:
 
-* `inxi`
-  * For probing hardware information. Used by the Inxi.NET library.
-* `perl-json-xs (libjson-xs-perl)`
-  * To facilitate JSON output of Inxi hardware info. Used by the Inxi.NET library.
 * `icu` and its related packages
   * To provide localization information. Needed for the multilingual kernel system.
 * `tzdata`
   * To provide time zone information, like listing all available time zones.
+
+In addition to the base kernel requirements, all addons might require additional packages to be installed in your system:
+
+* `inxi`
+  * For probing hardware information. Used by the Inxi.NET addon.
+* `perl-json-xs (libjson-xs-perl)`
+  * To facilitate JSON output of Inxi hardware info. Used by the Inxi.NET addon.
+* `pulseaudio, libasound2, ...`
+  * To be able to play music using PulseAudio, ALSA, JACK, etc. Used by the BassBoom addon.
