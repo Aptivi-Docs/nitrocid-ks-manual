@@ -29,7 +29,7 @@ This way of debugging is only available if you have Visual Studio installed. If 
 5. In case Visual Studio is asking for source files, point to a file within the Nitrocid KS source
 
 {% hint style="warning" %}
-Please note that we currently don't support Source Link, but we're working on it soon and is in our internal backlog.
+Please note that we currently don't support [Source Link](https://learn.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink), but we're working on it after Beta 3.
 {% endhint %}
 
 ### `KernelException` Class
