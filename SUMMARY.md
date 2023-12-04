@@ -199,9 +199,11 @@
     * [💠 Extra Shell Features](advanced-and-power-users/inner-workings/shell-structure/extra-shell-features.md)
   * [🌍 Multilingual Kernel](advanced-and-power-users/inner-workings/multilingual-kernel/README.md)
     * [🌐 Custom Languages](advanced-and-power-users/inner-workings/multilingual-kernel/custom-languages.md)
+  * [🖥 Console Manipulation](advanced-and-power-users/inner-workings/console-manipulation/README.md)
+    * [🧩 Console Wrappers](advanced-and-power-users/inner-workings/console-manipulation/console-wrappers.md)
+    * [🖥 Console Screen](advanced-and-power-users/inner-workings/console-manipulation/console-screen.md)
   * [🖲 Console Input](advanced-and-power-users/inner-workings/console-input/README.md)
     * [⌨ Interactive TUI](advanced-and-power-users/inner-workings/console-input/interactive-tui.md)
-    * [🖥 Console Screen](advanced-and-power-users/inner-workings/console-input/console-screen.md)
     * [📽 Presentation System](advanced-and-power-users/inner-workings/console-input/presentation-system.md)
   * [♦ Inner Essentials](advanced-and-power-users/inner-workings/inner-essentials/README.md)
     * [🪧 Kernel Placeholders](advanced-and-power-users/inner-workings/inner-essentials/kernel-placeholders.md)
@@ -224,6 +226,7 @@
     * [⌛ Progress Handlers](advanced-and-power-users/inner-workings/inner-essentials/progress-handlers.md)
     * [✒ Assembly Signing](advanced-and-power-users/inner-workings/inner-essentials/assembly-signing.md)
     * [🎰 Random Number Generation](advanced-and-power-users/inner-workings/inner-essentials/random-number-generation.md)
+    * [🌍 Network Tools](advanced-and-power-users/inner-workings/inner-essentials/network-tools.md)
   * [🌀 Miscellaneous APIs](advanced-and-power-users/inner-workings/miscellaneous-apis.md)
 
 ***

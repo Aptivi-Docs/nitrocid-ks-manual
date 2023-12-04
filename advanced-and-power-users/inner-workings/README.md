@@ -30,9 +30,13 @@ Do you want to know how the kernel translates languages? Click below!
 [multilingual-kernel](multilingual-kernel/)
 {% endcontent-ref %}
 
-## Console Input
+## Console Input and Manipulation
 
-Nitrocid KS provides console input functions, but is a test point for future Terminaux releases for development versions of Nitrocid.
+Nitrocid KS provides console input and manipulation functions, but is a test point for future Terminaux releases for development versions of Nitrocid. Click below to get started!
+
+{% content-ref url="console-manipulation/" %}
+[console-manipulation](console-manipulation/)
+{% endcontent-ref %}
 
 {% content-ref url="console-input/" %}
 [console-input](console-input/)

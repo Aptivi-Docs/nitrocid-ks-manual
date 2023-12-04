@@ -18,6 +18,12 @@ Various features of the kernel, like the shell, use this function to get the use
 [shell-structure](../shell-structure/)
 {% endcontent-ref %}
 
+All the input functions that will be explained below use the input driver handled by the driver handler, which has its own manual page here:
+
+{% content-ref url="../inner-essentials/kernel-drivers.md" %}
+[kernel-drivers.md](../inner-essentials/kernel-drivers.md)
+{% endcontent-ref %}
+
 ## Normal inputs
 
 We'll cover the four types of input.
@@ -263,9 +269,9 @@ You can also use the infobox as a choice selection list. Use a desirable functio
 For choices that are three or less, you can use the `InfoBoxButtonsColor` class.
 {% endhint %}
 
-## Other types
+## Other input types
 
-If you want to explore the other types, click on the below links:
+If you want to explore other input types, click on the below links:
 
 {% content-ref url="interactive-tui.md" %}
 [interactive-tui.md](interactive-tui.md)
@@ -273,10 +279,6 @@ If you want to explore the other types, click on the below links:
 
 {% content-ref url="presentation-system.md" %}
 [presentation-system.md](presentation-system.md)
-{% endcontent-ref %}
-
-{% content-ref url="console-screen.md" %}
-[console-screen.md](console-screen.md)
 {% endcontent-ref %}
 
 Additionally, you can consult the Terminaux library documentation for more info:

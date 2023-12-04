@@ -10,8 +10,8 @@ Information centers tend to require no input from the user, because they general
 
 Nitrocid KS attempts to simulate this concept by implementing the non-touch version of the information center that only gives you latest information about various things, such as the time and the date. This is accompanied by the usage of the brand-new screen feature to gain flexibility in regards to screen resizes. Its documentation can be found here to see the magic behind this feature:
 
-{% content-ref url="../../../advanced-and-power-users/inner-workings/console-input/console-screen.md" %}
-[console-screen.md](../../../advanced-and-power-users/inner-workings/console-input/console-screen.md)
+{% content-ref url="../../../advanced-and-power-users/inner-workings/console-manipulation/console-screen.md" %}
+[console-screen.md](../../../advanced-and-power-users/inner-workings/console-manipulation/console-screen.md)
 {% endcontent-ref %}
 
 ### How do I dock my screen?

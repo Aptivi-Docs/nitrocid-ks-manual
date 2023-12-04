@@ -19,7 +19,8 @@ The kernel drivers can be called using either the properties that point to the c
 | DebugLogger    | `IDebugLoggerDriver`    | `BaseDebugLoggerDriver`    | Debug logger drivers            |
 | Encoding       | `IEncodingDriver`       | `BaseEncodingDriver`       | Encoding drivers                |
 | HardwareProber | `IHardwareProberDriver` | `BaseHardwareProberDriver` | Hardware probing drivers        |
-| Sorting        | ISortingDriver          | BaseSortingDriver          | Integer sorting drivers         |
+| Sorting        | `ISortingDriver`        | `BaseSortingDriver`        | Integer sorting drivers         |
+| Input          | `IInputDriver`          | `BaseInputDriver`          | Input drivers                   |
 
 ### Mods and Drivers
 
@@ -89,8 +90,8 @@ If you have a driver interface type or the driver type from the `DriverTypes` en
 var currentDriver = DriverHandler.GetCurrentDriver(driverType);
 ```
 
-* GetCurrentDriver() returns the current driver that's used by the kernel
-* GetCurrentDriverLocal() returns the current local driver set by `BeginLocalDriver<T>()` or its safe sibling function.
+* `GetCurrentDriver()` returns the current driver that's used by the kernel
+* `GetCurrentDriverLocal()` returns the current local driver set by `BeginLocalDriver<T>()` or its safe sibling function.
 
 {% hint style="info" %}
 For all the driver management functions, you can also use the non-generic versions where they ask for a `DriverTypes` value in their first argument.

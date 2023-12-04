@@ -1961,8 +1961,8 @@ The interactive TUI now uses the Screen feature that's available starting from 0
 
 To learn more about the Screen feature, visit the link below:
 
-{% content-ref url="../../../advanced-and-power-users/inner-workings/console-input/console-screen.md" %}
-[console-screen.md](../../../advanced-and-power-users/inner-workings/console-input/console-screen.md)
+{% content-ref url="../../../advanced-and-power-users/inner-workings/console-manipulation/console-screen.md" %}
+[console-screen.md](../../../advanced-and-power-users/inner-workings/console-manipulation/console-screen.md)
 {% endcontent-ref %}
 
 {% hint style="warning" %}

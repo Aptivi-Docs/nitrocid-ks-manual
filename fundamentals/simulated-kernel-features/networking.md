@@ -12,11 +12,7 @@ To simulate this functionality, the simulated kernel provides several features, 
 
 <figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
-To download a file, small or large, from a computer or an Internet website, use the `get` command to download to your current working directory. Use the following execution method to download a URL: `get <URL>`
-
-{% hint style="warning" %}
-Note that this command currently doesn't support downloading a file to other file names in other directories.
-{% endhint %}
+To download a file, small or large, from a computer or an Internet website, use the `get` command to download to your current working directory. Use the following execution method to download a URL: `get [-output=path] <URL>`
 
 ### Upload a file
 
