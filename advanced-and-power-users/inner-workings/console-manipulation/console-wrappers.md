@@ -61,6 +61,6 @@ The console wrappers allow you to call compatible console functions to simplify 
 
 More information about console wrappers can be found in the Terminaux manual.
 
-{% content-ref url="http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/" %}
-[Terminaux - Manual](http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/)
+{% content-ref url="http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-wrapper" %}
+[Console Wrapper](http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-wrapper)
 {% endcontent-ref %}

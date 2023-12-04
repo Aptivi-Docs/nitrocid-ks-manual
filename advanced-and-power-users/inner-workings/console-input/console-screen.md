@@ -15,7 +15,7 @@ Nitrocid KS offers the console screen feature, which allows you to define a scre
 {% hint style="info" %}
 The explanation provided here is not exhaustive, but a more detailed explanation can be found in the Terminaux manual here:
 
-[Terminaux - Manual](http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/ "mention")
+[Console Screen](http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-screen "mention")
 {% endhint %}
 
 You can get started by making a new instance of the `Screen` class and using it to add a new `ScreenPart` instance with its name to make a layer for your rendering sequences. This facilitates buffering the screens to the console.
