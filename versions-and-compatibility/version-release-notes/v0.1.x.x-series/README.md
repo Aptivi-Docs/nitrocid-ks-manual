@@ -14,6 +14,12 @@ It also has renewed the look in several ways, including the modern logon screen.
 
 This version is still work in progress, although you can now test the versions by downloading them from either [GitHub Releases](https://github.com/Aptivi/NitrocidKS/releases) or from [Launchpad PPA](https://launchpad.net/\~eofla/+archive/ubuntu/kernel-sim). The below changes will be populated once the beta ends.
 
+Currently, the following beta versions are released:
+
+* [Beta 1](https://github.com/Aptivi/NitrocidKS/releases/tag/v0.1.0-b1) - API v3.0.25.0 - February 22nd, 2023
+* [Beta 2](https://github.com/Aptivi/NitrocidKS/releases/tag/v0.1.0-b2) - API v3.0.25.42 - August 10th, 2023
+* [Beta 3](https://github.com/Aptivi/NitrocidKS/releases/tag/v0.1.0-b3) - API v3.0.25.??? - December 28th, 2023 (future)
+
 We promise that we'll implement several amazing features during the beta periods. If you found any issues or suggestions, report them on GitHub, and we'll consider responding to your requests within the next 24 hours.
 
 Available manuals for below beta versions:

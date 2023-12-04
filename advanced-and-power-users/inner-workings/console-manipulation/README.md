@@ -12,8 +12,8 @@ The following features are available here (non-exhaustive):
 [console-wrappers.md](console-wrappers.md)
 {% endcontent-ref %}
 
-{% content-ref url="console-screen.md" %}
-[console-screen.md](console-screen.md)
+{% content-ref url="../console-input/console-screen.md" %}
+[console-screen.md](../console-input/console-screen.md)
 {% endcontent-ref %}
 
 For more information about how Terminaux works, consult the below page:

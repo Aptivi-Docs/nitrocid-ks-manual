@@ -28,7 +28,15 @@ During quality assurance, we're aware of the following issues:
 * _Letting the screen lock after timeout may cause no prompt to show._
 * _Download command doesn't support downloading more than 2 GB._
 
-Issues that are highlighted in italic are fixed in the upcoming beta version.
+Issues that are highlighted in italic are fixed in the below beta version.
+
+## 0.1.0 Beta 3
+
+During quality assurance, we're aware of the following issues:
+
+* TBD
+
+Issues that are highlighted in italic are fixed in the upcoming release candidate version.
 
 ## Found an issue?
 

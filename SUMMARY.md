@@ -201,7 +201,7 @@
     * [🌐 Custom Languages](advanced-and-power-users/inner-workings/multilingual-kernel/custom-languages.md)
   * [🖥 Console Manipulation](advanced-and-power-users/inner-workings/console-manipulation/README.md)
     * [🧩 Console Wrappers](advanced-and-power-users/inner-workings/console-manipulation/console-wrappers.md)
-    * [🖥 Console Screen](advanced-and-power-users/inner-workings/console-manipulation/console-screen.md)
+    * [🖥 Console Screen](advanced-and-power-users/inner-workings/console-input/console-screen.md)
   * [🖲 Console Input](advanced-and-power-users/inner-workings/console-input/README.md)
     * [⌨ Interactive TUI](advanced-and-power-users/inner-workings/console-input/interactive-tui.md)
     * [📽 Presentation System](advanced-and-power-users/inner-workings/console-input/presentation-system.md)
