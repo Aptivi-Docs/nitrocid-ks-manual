@@ -6,7 +6,7 @@ description: How do the permissions work?
 
 Permissions are the authorities that are permitted to the user. It allows the kernel user to gain slightly more power than the absolute normal user.
 
-When the kernel starts up, it reads the `permissions` array in the configuration for each user. If it finds a permission in the array, it calls the `PermissionsTools.GrantPermission()` function under the `KS.Users.Permissions` namespace.
+When the kernel starts up, it reads the `permissions` array in the configuration for each user. If it finds a permission in the array, it calls the `PermissionsTools.GrantPermission()` function under the `KS.Security.Permissions` namespace.
 
 {% hint style="info" %}
 The call to the above function requires the `ManagePermissions` permission to be granted in the current user.
@@ -57,3 +57,7 @@ if (!PermissionsTools.IsPermissionGranted(PermissionTypes.type))
   * Flag value is 2048
 * `OpenDebugShell`: Allows the user to open a debug shell
   * Flag value is 4096
+* `InteraddonCommunication`: Allows the user to run commands that depend on inter-addon communication
+  * Flag value is 8192
+* `UseSudo`: Allows the user to use the sudo command
+  * Flag value is 16384

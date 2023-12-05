@@ -82,7 +82,7 @@ This addon allows you access to the calendar functions. You can use the below co
 | Commands   | Arguments and Switches                   |
 | ---------- | ---------------------------------------- |
 | `altdate`  | `[-date\|-time\|-full] [-utc] <culture>` |
-| `calendar` | `<show> [-calendar=type] [year] [month]` |
+| `calendar` | `<tui> [-calendar=type] [year] [month]`  |
 |            | `<event> <add> <date> <title>`           |
 |            | `<event> <remove> <eventid>`             |
 |            | `<event> <list>`                         |

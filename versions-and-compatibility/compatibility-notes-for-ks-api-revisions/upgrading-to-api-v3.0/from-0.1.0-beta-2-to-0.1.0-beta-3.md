@@ -2290,3 +2290,17 @@ As a result, we've decided to finally remove the mod parts as their role has bee
 {% hint style="info" %}
 This only breaks your mod manager code as it only changes the kernel mod information class and not the mod interface itself. Your mods should still work properly.
 {% endhint %}
+
+### Moved permissions to `Security`
+
+{% code title="PermissionsTools.cs" lineNumbers="true" %}
+```csharp
+namespace KS.Users.Permissions
+```
+{% endcode %}
+
+The user permissions feature was implemented as a way to control what users can and cannot do. As a result, it's considered as a security feature more than it's a user accounts feature. Hence, the feature needs to be moved to the `Security` namespace.
+
+{% hint style="info" %}
+None of the functions have been changed as a result of this move. You just need to update your imports to `KS.Security.Permissions`.
+{% endhint %}
