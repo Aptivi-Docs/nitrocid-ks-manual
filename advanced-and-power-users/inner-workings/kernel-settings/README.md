@@ -61,6 +61,10 @@ The kernel provides an easy-to-use tool to seamlessly configure the kernel setti
 
 Selecting a section leads to the settings application listing all the available configuration options, which you can then set their individual options. It even allows you to save the settings if you like the current configuration, load the user settings, and find a settings entry for easier access.
 
+### System updates and information
+
+From the main page, you can easily check for kernel updates and check the system information right from it.
+
 ### Inner workings
 
 You can find more information about the mechanics of the settings application by clicking on the below link.

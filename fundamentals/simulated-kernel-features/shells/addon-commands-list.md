@@ -366,6 +366,7 @@ You can jot down notes by using the following commands:
 | ------------- | ---------------------- |
 | `addnote`     | `<contents>`           |
 | `listnotes`   |                        |
+| `notestui`    |                        |
 | `reloadnotes` |                        |
 | `removenote`  | `<notenum>`            |
 | `removenotes` |                        |

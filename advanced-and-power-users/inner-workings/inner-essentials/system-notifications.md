@@ -38,10 +38,10 @@ NotificationManager.NotifySend(Notif);
 {% hint style="info" %}
 Progress notifications, determinate or not, are shown asynchronously. You'll have to update the `Progress` property until it reaches to 100%, depending on the job being done.
 
-Also, it's necessary to change the notification progress state, regardless of whether the operation succeeded or not.
+**Also, it's necessary to change the notification progress state, regardless of whether the operation succeeded or not. The notification system still shows it, either when its `Progress` property reaches 100%.**
 {% endhint %}
 
-After creating a new instance of Notification, you'll have to use either the `NotifySend()` function to send a single notification, or the `NotifySendRange()` function to send a barrage of notifications. This is to ensure that your notification is displayed.
+After creating a new instance of `Notification`, you'll have to use either the `NotifySend()` function to send a single notification, or the `NotifySendRange()` function to send a barrage of notifications. This is to ensure that your notification is displayed.
 
 ### Notification dismissal
 

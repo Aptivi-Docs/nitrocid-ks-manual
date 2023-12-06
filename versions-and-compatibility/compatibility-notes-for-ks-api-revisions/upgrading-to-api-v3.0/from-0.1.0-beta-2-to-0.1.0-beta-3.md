@@ -2304,3 +2304,15 @@ The user permissions feature was implemented as a way to control what users can 
 {% hint style="info" %}
 None of the functions have been changed as a result of this move. You just need to update your imports to `KS.Security.Permissions`.
 {% endhint %}
+
+### Notification handling changes
+
+Progress notification's handling has changed, because we no longer look for the progress percentage. We only look for the state now to accurately reflect the success or the failure.
+
+{% hint style="info" %}
+As a result, your progress notifications have to change their state to either a success or a failure, even when their progress property went to 100%. You can simply do this:
+
+```csharp
+Notif.ProgressState = NotificationProgressState.Success;
+```
+{% endhint %}
