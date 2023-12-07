@@ -88,8 +88,8 @@ The color selector is an interactive TUI that allows you to seamlessly select yo
 
 To get information about how to use it, you can find it in the Terminaux manual page:
 
-{% content-ref url="http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/color-wheel" %}
-[Color Wheel](http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/color-wheel)
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/color-wheel" %}
+[Color Wheel](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/color-wheel)
 {% endcontent-ref %}
 
 ## Color conversion
@@ -247,3 +247,12 @@ Here's an explanation of what each version does:
   * `minColorR` to `maxColorR`: Red level of the color range. Only applies to true color randomization.
   * `minColorG` to `maxColorG`: Green level of the color range. Only applies to true color randomization.
   * `minColorB` to `maxColorB`: Blue level of the color range. Only applies to true color randomization.
+
+When you turn off black color selection, the function skips the color under the following conditions:
+
+* If the color type is true color, it ignores any color that has all the RGB levels of below 30, such as `29;29;29`.
+* If the color type is not true color, it ignores the following colors:
+  * `ConsoleColors.Black`
+  * `ConsoleColors.Grey0`
+  * `ConsoleColors.Grey3`
+  * `ConsoleColors.Grey7`

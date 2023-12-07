@@ -54,3 +54,22 @@ If your entire screen has been filled and the output isn't done yet, you can use
 | `Home`    | Scrolls to the first page            |
 | `End`     | Scrolls to the last page             |
 | `Any key` | Scrolls to the next page             |
+
+## Aliasing
+
+Additionally, the UESH shell provides you with facility to make aliasing long commands easier than before. The alias management class, `AliasManager`, allows you to manage the shell aliases, like adding aliases, editing them, removing them, and so on.
+
+The built-in aliases that are currently made for you are:
+
+* `ls` -> `list`
+
+Currently, the below functions are available for your mods to use:
+
+* `InitAliases()`: Usually not needed. This populates the list of aliases and lets the shell acknowledge them.
+* `SaveAliases()`: Saves the list of aliases to a configuration file found under the kernel configuration path.
+* `AddAlias()`: Adds an alias to the list of aliases.
+* `RemoveAlias()`: Removes an alias from the list of aliases.
+* `DoesAliasExist()`: Checks to see if a particular alias exists.
+* `GetAliasesListFromType()`: Gets a list of aliases from a shell type, excluding the built-in ones.
+* `GetEntireAliasListFromType()`: Gets a list of aliases from a shell type, including the built-in ones.
+* `GetAlias()`: Gets information about a specific alias.
