@@ -26,6 +26,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `bulkrename`            | `<targetdir> <pattern> [newname]`                                                |
 | `cat`                   | `[-lines\|-nolines\|-plain] <file>`                                              |
 | `cdir`                  |                                                                                  |
+| `changes`               |                                                                                  |
 | `chattr`                | `<file> <add/rem> <attr>`                                                        |
 | `chdir`                 | `<directory/..>`                                                                 |
 | `chhostname`            | `<hostname>`                                                                     |

@@ -10,9 +10,13 @@ This kernel series is the first kernel series that actually – and finally – 
 
 It also has renewed the look in several ways, including the modern logon screen. It holds under API v3.0, which means that mods that depend on API v2.1 or lower won't work with this version or higher.
 
+{% hint style="info" %}
+You can check out more detailed changelogs using the `changes` command. Quick overview of the changes can be found in the [Releases](https://github.com/Aptivi/NitrocidKS/releases) page.
+{% endhint %}
+
 ### Version 0.1.0
 
-This version is still work in progress, although you can now test the versions by downloading them from either [GitHub Releases](https://github.com/Aptivi/NitrocidKS/releases) or from [Launchpad PPA](https://launchpad.net/\~eofla/+archive/ubuntu/kernel-sim). The below changes will be populated once the beta ends.
+This version is still work in progress, although you can now test the versions by downloading them from either GitHub Releases or from [Launchpad PPA](https://launchpad.net/\~eofla/+archive/ubuntu/kernel-sim). The below changes will be populated once the beta ends.
 
 Currently, the following beta versions are released:
 
@@ -22,14 +26,16 @@ Currently, the following beta versions are released:
 
 We promise that we'll implement several amazing features during the beta periods. If you found any issues or suggestions, report them on GitHub, and we'll consider responding to your requests within the next 24 hours.
 
+#### Beta manuals
+
 Available manuals for below beta versions:
 
-{% content-ref url="http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/RoaqpM3GSf9vXxRAagbV/" %}
-[Nitrocid KS v0.1.0 Beta 2 - Manual](http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/RoaqpM3GSf9vXxRAagbV/)
+{% content-ref url="https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/RoaqpM3GSf9vXxRAagbV/" %}
+[Nitrocid KS v0.1.0 Beta 2 - Manual](https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/RoaqpM3GSf9vXxRAagbV/)
 {% endcontent-ref %}
 
-{% content-ref url="http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/Ad5vIFTQSlbQ4N2BpB8m/" %}
-[Nitrocid KS v0.1.0 Beta 1 - Manual](http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/Ad5vIFTQSlbQ4N2BpB8m/)
+{% content-ref url="https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/Ad5vIFTQSlbQ4N2BpB8m/" %}
+[Nitrocid KS v0.1.0 Beta 1 - Manual](https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/Ad5vIFTQSlbQ4N2BpB8m/)
 {% endcontent-ref %}
 
 For list of known issues for 0.1.0 beta versions, consult the below page:
