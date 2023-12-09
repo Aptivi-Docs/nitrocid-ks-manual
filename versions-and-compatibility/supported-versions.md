@@ -14,9 +14,9 @@ This list shows how long the version series and their accompanying versions unde
 {% tab title="API v3.0" %}
 This revision of the third generation API is currently under development.
 
-| Version | Release date | EOL date | Security EOL date |
-| ------- | ------------ | -------- | ----------------- |
-| v0.1.0  | TBA          | TBA      | TBA               |
+| Version  | Release date | EOL date | Security EOL date |
+| -------- | ------------ | -------- | ----------------- |
+| v0.1.0.0 | Q1 2024      | TBA      | TBA               |
 {% endtab %}
 
 {% tab title="API v2.1" %}
