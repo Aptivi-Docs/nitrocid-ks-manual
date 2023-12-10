@@ -2316,3 +2316,19 @@ As a result, your progress notifications have to change their state to either a 
 Notif.ProgressState = NotificationProgressState.Success;
 ```
 {% endhint %}
+
+### Improved custom language loading functions
+
+{% code title="LanguageManager.cs" lineNumbers="true" %}
+```csharp
+public static void InstallCustomLanguage(string LanguageName, bool ThrowOnAlreadyInstalled = true)
+```
+{% endcode %}
+
+`InstallCustomLanguage()` used to only handle languages that have been installed to the custom languages path located in the application data folder. Over time, during the entire span of development, we've noticed that this feature was the least tested feature, so we've decided to take care of it.
+
+By taking care of it, we'd agreed that we'd change the `InstallCustomLanguage()` function so that it takes a path to the JSON file of a language that isn't installed to the kernel yet, and that we'd make a new function that derives from it, called `InstallCustomLanguageByName()`, to preserve the old behavior of pre-Beta 3 versions.
+
+{% hint style="info" %}
+If you still want to use the language name, you need to change the function so that it calls its `...ByName()` sibling instead of the primary one, which now takes the path.
+{% endhint %}

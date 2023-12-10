@@ -22,7 +22,7 @@ Issues that are highlighted in italic are fixed in the below beta version.
 
 During quality assurance, we're aware of the following issues:
 
-* `langman reload <lang>` may fail to reload the custom language.
+* _`langman reload <lang>` may fail to reload the custom language._
 * _Progress notifications may fail to show up properly after the normal notification._
 * _The kernel may fail to download debug data if the debugging symbol file is not found._
 * _Letting the screen lock after timeout may cause no prompt to show._
