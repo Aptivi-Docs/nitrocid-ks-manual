@@ -11,6 +11,7 @@ As API v3.0 is still in development, the breaking changes get committed and land
 
 When upgrading your mods to API v3.0, consider these:
 
+* Starting from 0.1.0, old configuration styles are no longer supported and are kept in your home directory for reference. The kernel will start from scratch as if you've started it for the first time. Don't worry; all your configuration from 0.0.24.0 are still saved in your home directory. This is because of configuration system changes that happened between 0.0.24.0 and 0.1.0.
 * .NET Framework 4.8 is **no longer supported** as of 0.1.0 Beta 1. Please consider using .NET 8.0 instead to continue using Nitrocid KS. This is to improve multi-platform support without having to go to one environment (`dotnetfx` on Windows and `mono` on Linux and macOS) for each platform.
 * Starting from API version `3.0.25.353`, Nitrocid KS **requires** elevated permission to run. This means that you may see the shield icon <img src="../../../.gitbook/assets/image.png" alt="" data-size="line"> in the corner of the Nitrocid logo. See why [here](from-0.1.0-beta-2-to-0.1.0-beta-3.md#specprobe-updated-to-1.2.0).
 * Starting from API version `3.0.25.361`, mods are no longer organized with mod parts. This feature has been removed and won't be coming back. See why [here](from-0.1.0-beta-2-to-0.1.0-beta-3.md#removed-mod-parts).
