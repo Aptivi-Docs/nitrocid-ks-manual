@@ -32,10 +32,23 @@ Select a page below to go to a feature:
 [docking.md](docking.md)
 {% endcontent-ref %}
 
-## How do I get these programs?
+## How do I get them?
 
 You can get these extra features, including extra languages, splashes, and screensavers, by either downloading the addons ZIP file from the releases page of the Nitrocid project at GitHub, or by using the `getaddons` command.
 
 {% hint style="info" %}
-It's necessary to reboot the kernel for the addons to get loaded.
+When downloading addons, consider the following points:
+
+* It's necessary to reboot the kernel for the addons to get loaded.
+* The addon pack size is around **300+ MB**, so you need to download it on unmetered networks, such as WiFi. This is to reduce your data fee.
 {% endhint %}
+
+## What are addons?
+
+Addons are program extension libraries that extend the functionality of a program. It allows more flexibility because they either provide extra features, change how a specific program function works, or change how they look and feel.
+
+In addition, Nitrocid KS provides an addon system that loads all the kernel addons that are built with the Nitrocid project. Mods are the second kind of kernel addons that have lesser privileges, but can be made easily by you. The documentation provides you instructions on how to make your own mod (not zero-code!) using the page below:
+
+{% content-ref url="../../../advanced-and-power-users/kernel-modifications/build-your.../" %}
+[build-your...](../../../advanced-and-power-users/kernel-modifications/build-your.../)
+{% endcontent-ref %}
