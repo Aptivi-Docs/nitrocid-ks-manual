@@ -12,7 +12,7 @@ The calendar shows you days, weeks, and months within the selected year. It not 
 
 The simulated kernel provides you with the calendar management application that attempts to simulate the above functionality. Choose a function to get started. In summary, these usages are found within the `calendar` command.
 
-* `calendar [-calendar=type] <show> [year] [month]`
+* `calendar [-calendar=type] [-legacy] <tui> [year] [month]`
 * `calendar <event> <add> <date> <title>`
 * `calendar <event> <remove> <eventid>`
 * `calendar <event> <list>`
@@ -22,18 +22,16 @@ The simulated kernel provides you with the calendar management application that 
 * `calendar <reminder> <list>`
 * `calendar <reminder> <saveall>`
 
-### Showing the Calendar
+### Interactive Calendar
 
-<figure><img src="../../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+The calendar can be used to show you either the current month or the selected year in the current month or the selected year and month. The interactive calendar allows you to interactively see the current day, the month, and the year. To utilize the functionality, use the following command.
 
-The calendar can be shown to show you either the current month or the selected year in the current month or the selected year and month. To utilize the functionality, use the following command.
-
-* `calendar [-calendar=type] <show>`
-  * Shows you the calendar in the current year and month
-* `calendar [-calendar=type] <show> [year]`
-  * Shows you the calendar in the selected year in the current month
-* `calendar [-calendar=type] <show> [year] [month]`
-  * Shows you the calendar in the selected year and month
+* `calendar [-calendar=type] [-legacy] <tui>`
+  * Shows you the interactive calendar in the current year and month
+* `calendar [-calendar=type] [-legacy] <tui> [year]`
+  * Shows you the interactive calendar in the selected year in the current month
+* `calendar [-calendar=type] [-legacy] <tui> [year] [month]`
+  * Shows you the interactive calendar in the selected year and month
 
 ### Events
 

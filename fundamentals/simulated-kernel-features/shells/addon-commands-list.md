@@ -79,18 +79,18 @@ This addon lets you use different calculators. Use the following commands to get
 
 This addon allows you access to the calendar functions. You can use the below commands:
 
-| Commands   | Arguments and Switches                   |
-| ---------- | ---------------------------------------- |
-| `altdate`  | `[-date\|-time\|-full] [-utc] <culture>` |
-| `calendar` | `<tui> [-calendar=type] [year] [month]`  |
-|            | `<event> <add> <date> <title>`           |
-|            | `<event> <remove> <eventid>`             |
-|            | `<event> <list>`                         |
-|            | `<event> <saveall>`                      |
-|            | `<reminder> <add> <dateandtime> <title>` |
-|            | `<reminder> <remove> <reminderid>`       |
-|            | `<reminder> <list>`                      |
-|            | `<reminder> <saveall>`                   |
+| Commands   | Arguments and Switches                            |
+| ---------- | ------------------------------------------------- |
+| `altdate`  | `[-date\|-time\|-full] [-utc] <culture>`          |
+| `calendar` | `<tui> [-calendar=type] [-legacy] [year] [month]` |
+|            | `<event> <add> <date> <title>`                    |
+|            | `<event> <remove> <eventid>`                      |
+|            | `<event> <list>`                                  |
+|            | `<event> <saveall>`                               |
+|            | `<reminder> <add> <dateandtime> <title>`          |
+|            | `<reminder> <remove> <reminderid>`                |
+|            | `<reminder> <list>`                               |
+|            | `<reminder> <saveall>`                            |
 
 ### Color Conversion
 

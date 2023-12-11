@@ -13,6 +13,8 @@ description: Just started using Nitrocid KS? You've landed on the right place!
 
 **We've fulfilled our promise about several amazing new features during the beta periods!**
 
+**Final touches will be done starting from tomorrow, which is why slow development is expected. This is to focus more on documentation.**
+
 🎊 🎊 🎊
 {% endhint %}
 

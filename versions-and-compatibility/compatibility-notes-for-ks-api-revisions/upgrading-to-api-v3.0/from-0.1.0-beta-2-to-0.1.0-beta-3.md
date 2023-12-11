@@ -2332,3 +2332,30 @@ By taking care of it, we'd agreed that we'd change the `InstallCustomLanguage()`
 {% hint style="info" %}
 If you still want to use the language name, you need to change the function so that it calls its `...ByName()` sibling instead of the primary one, which now takes the path.
 {% endhint %}
+
+### Moved `KernelColorType` versions of writers
+
+{% code title="All console writers" lineNumbers="true" %}
+```csharp
+public static void WriteKernelColor(string Text, KernelColorType colorType, params object[] vars)
+public static void WriteKernelColor(string Text, bool Line, KernelColorType colorType, params object[] vars)
+public static void WriteKernelColor(string Text, bool Line, bool Highlight, KernelColorType colorType, params object[] vars)
+(...)
+```
+{% endcode %}
+
+Because the `KernelColorType` version of all console writers are not part of Terminaux's standard console writers, we've decided to isolate this version of these functions that write text to console in different styles so the following classes house them:
+
+* `TextWriters`: Standard console writing, including positioning and slow writing.
+* `TextFancyWriters`: Fancy console writing, including Figlet writing and simple console graphics.
+* `TextMiscWriters`: Miscellaneous console writing, including line with handle writer.
+
+This change was done as a preparation for the deduplication effort happening as soon as the release candidate cycle starts.
+
+{% hint style="info" %}
+If you wish to use the above `KernelColorType`-based writers, you need to change the class reference to one of the three above classes. Here are three examples:
+
+* `TextWriterColor.WriteKernelColor` -> `TextWriters.Write`
+* `FigletColor.WriteFigletKernelColor` -> `TextFancyWriters.WriteFiglet`
+* `ListWriterColor.WriteList` -> `TextWriters.WriteList`
+{% endhint %}
