@@ -86,8 +86,8 @@ If you want colorless printing, you can use the `Write*Plain()` functions found 
 
 This feature is also available for Terminaux, so consult its guide for more information:
 
-{% content-ref url="http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/console-tools/console-writers" %}
-[Console Writers](http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/console-tools/console-writers)
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-writers" %}
+[Console Writers](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-writers)
 {% endcontent-ref %}
 
 ## Resetting colors

@@ -8,10 +8,14 @@ Locally debugging the kernel allows you to diagnose the kernel directly on the h
 
 ## Structure
 
-The structure of the local debugging log is as follows:
+The structure of the local debugging log is like the below picture:
+
+<figure><img src="../../../.gitbook/assets/Beta3-089-Diags.png" alt=""><figcaption></figcaption></figure>
 
 ```
-date time [level] (method - source:linenum): message
+date time (fully-qualified-method)
+
+[level] : message
 ```
 
 Each of these fields have their own values, as follows:
@@ -25,9 +29,7 @@ Each of these fields have their own values, as follows:
   * `W`: Warning message
   * `E`: Error message
   * `F`: Fatal error message
-* `method`: The method name in which the message was posted
-* `source`: The source code file where the method is found
-* `linenum`: The line number from the source file
+* `fully-qualified-method`: The full method name in which the message was posted
 * `message`: The message
 
 ## Debug your Mods

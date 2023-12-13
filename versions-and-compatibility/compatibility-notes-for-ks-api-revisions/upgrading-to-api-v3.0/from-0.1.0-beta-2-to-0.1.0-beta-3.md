@@ -2359,3 +2359,11 @@ If you wish to use the above `KernelColorType`-based writers, you need to change
 * `FigletColor.WriteFigletKernelColor` -> `TextFancyWriters.WriteFiglet`
 * `ListWriterColor.WriteList` -> `TextWriters.WriteList`
 {% endhint %}
+
+### Terminaux 2.0 migration changes
+
+Nitrocid KS 0.1.0 Beta 3 uses Terminaux 2.0 to handle color work. As a result, we need you to consult the changelogs for this version of Terminaux here:
+
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v2.0" %}
+[API v2.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v2.0)
+{% endcontent-ref %}

@@ -4,7 +4,7 @@ description: Ordered list of simulated kernel flow
 
 # ⭐ Simulated Kernel Features
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Beta3-002-Shell.png" alt=""><figcaption></figcaption></figure>
 
 Within the simulated kernel, there are big amounts of features that actually excite you. As new versions get released, new and spectacular features get added.
 

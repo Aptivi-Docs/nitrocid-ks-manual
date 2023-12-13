@@ -4,6 +4,8 @@ description: You can now dock your screen!
 
 # 🖼 Docking
 
+<figure><img src="../../../.gitbook/assets/Beta3-038-Dock.png" alt=""><figcaption></figcaption></figure>
+
 When it comes to docking your laptop, your desktop, or your tablet, it becomes like an information center that shows you latest information about various things that happens in the whole world, such as the current time and date, the world clock, the latest match information about your favorite sports team, and so on.
 
 Information centers tend to require no input from the user, because they generally update themselves to get the latest information in real time, usually from the Internet. Sometimes, they allow you to touch its screen to make changes to the type of information you want to show.

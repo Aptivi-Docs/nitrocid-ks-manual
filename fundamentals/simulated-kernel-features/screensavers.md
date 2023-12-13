@@ -4,7 +4,7 @@ description: Screensavers and their usage
 
 # 🌌 Screensavers
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Beta3-061-Savers.png" alt=""><figcaption></figcaption></figure>
 
 The screensavers were touted to be a solution against screen burn-ins in cathode ray-tube (CRT) or plasma displays. They fill the screens with either the blank screen or moving image or parts across the entire screen. They also are placed as a security measure so that when screensavers exit, the user will be required to input the password to be able to use your computer again.
 
@@ -24,7 +24,7 @@ If you don't want to be warned of this everytime you run such screensaver, you c
 
 ### Setting the screensaver
 
-<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Beta3-062-Savers.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Extra screensavers are bundled as a screensaver pack addon.

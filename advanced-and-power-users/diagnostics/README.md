@@ -4,7 +4,7 @@ description: Trying to find a defect in the kernel? Great! Thanks for your contr
 
 # 🦠 Diagnostics
 
-<figure><img src="../../.gitbook/assets/image (39) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Beta3-088-Diags.png" alt=""><figcaption></figcaption></figure>
 
 The simulated kernel contains its own diagnostic tools to allow you to diagnose what's wrong with a feature. These diagnostic tools help you analyze the kernel for what it's doing and for how it failed.
 
@@ -29,7 +29,7 @@ This way of debugging is only available if you have Visual Studio installed. If 
 5. In case Visual Studio is asking for source files, point to a file within the Nitrocid KS source
 
 {% hint style="warning" %}
-Please note that we currently don't support [Source Link](https://learn.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink), but we're working on it after Beta 3.
+Please note that we currently don't fully support [Source Link](https://learn.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink), but we're working on it after Beta 3.
 {% endhint %}
 
 ### `KernelException` Class

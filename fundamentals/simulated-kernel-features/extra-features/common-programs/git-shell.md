@@ -4,6 +4,8 @@ description: Git Shell in your hands
 
 # 👩💻 Git Shell
 
+<figure><img src="../../../../.gitbook/assets/Beta3-030-Git.png" alt=""><figcaption></figcaption></figure>
+
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.
 {% endhint %}

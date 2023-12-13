@@ -4,7 +4,7 @@ description: You have several chances to input the right letter, or you're hung!
 
 # 🔤 Hangman
 
-<figure><img src="../../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Beta3-009-Hangman.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.

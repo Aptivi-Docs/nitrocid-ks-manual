@@ -50,7 +50,7 @@ When the kernel starts up, different configuration files are read for different 
 
 ## Settings
 
-<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Beta3-092-Settings.png" alt=""><figcaption></figcaption></figure>
 
 The kernel provides an easy-to-use tool to seamlessly configure the kernel settings. It can be easily invoked using the `settings` command. Running this command alone provides you with the normal kernel settings. The two switches will change the mode:
 

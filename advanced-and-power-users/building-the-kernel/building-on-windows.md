@@ -31,7 +31,7 @@ Once you have Visual Studio installed with at least the .NET 8.0 SDK and the .NE
 6.  Navigate to the build output folder, `KSBuild`, and double click on the `Nitrocid.exe` file\
 
 
-    <figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/Beta3-065-Adv-Building.png" alt=""><figcaption></figcaption></figure>
 
 ### Using the command-line
 
@@ -44,4 +44,4 @@ If you are a hardcore command-line user or if you prefer using the command-line,
 5.  After building is done, run `dotnet run` on the `Nitrocid.csproj` file like so:\
 
 
-    <figure><img src="../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/Beta3-066-Adv-Building.png" alt=""><figcaption></figcaption></figure>

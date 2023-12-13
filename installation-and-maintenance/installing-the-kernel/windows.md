@@ -4,7 +4,7 @@ description: How to install Nitrocid KS on Windows
 
 # 💻 Windows
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Beta3-001-Welcome.png" alt=""><figcaption></figcaption></figure>
 
 Installing Nitrocid KS on Windows is pretty easy, but we recommend installing the simulator using the Chocolatey package manager.
 

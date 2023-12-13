@@ -4,7 +4,7 @@ description: This page describes how to test the kernel with various features
 
 # 🧪 Testing
 
-<figure><img src="../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Beta3-090-Diags.png" alt=""><figcaption></figcaption></figure>
 
 Another way to diagnose the kernel is through testing. It uses the facade system to allow you to test individual kernel features. It can be invoked by running Nitrocid KS with the `testInteractive` command-line argument.
 

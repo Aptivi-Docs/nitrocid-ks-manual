@@ -72,7 +72,7 @@ Typically, the message displays the exception type, the message, and the excepti
 
 ## Debug shell
 
-<figure><img src="../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Beta3-091-Diags.png" alt=""><figcaption></figcaption></figure>
 
 The debug shell allows you to diagnose the kernel in depth. The following commands are available in the below page:
 

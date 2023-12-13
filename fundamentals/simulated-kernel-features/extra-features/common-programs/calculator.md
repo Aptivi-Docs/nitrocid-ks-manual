@@ -4,7 +4,7 @@ description: Calculate your mathematical expressions
 
 # 🔢 Calculator
 
-<figure><img src="../../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Beta3-028-Calculator.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.

@@ -4,7 +4,7 @@ description: Bored already? Try playing games!
 
 # 🎮 Games and Amusements
 
-<figure><img src="../../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Beta3-008-Meteor.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, all games have been moved to the kernel addons.

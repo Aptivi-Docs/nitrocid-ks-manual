@@ -4,6 +4,8 @@ description: Your checkbook
 
 # ☑ To-do List
 
+<figure><img src="../../../../.gitbook/assets/Beta3-034-Todo.png" alt=""><figcaption></figcaption></figure>
+
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.
 {% endhint %}
@@ -25,6 +27,6 @@ Nitrocid provides you with a single command, `todo`, that allows you to do the f
 * `todo list`
   * Lists all tasks and their status
 * `todo save`
-  * Saves the task list to a JSON file, ToDoList.json
+  * Saves the task list to a JSON file, `ToDoList.json`
 * `todo load`
   * Loads the task list from the above JSON file

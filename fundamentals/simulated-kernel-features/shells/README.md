@@ -4,7 +4,7 @@ description: What are the shells?
 
 # 🐚 Shells
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Beta3-002-Shell (1).png" alt=""><figcaption></figcaption></figure>
 
 Operating systems contain their shells that listen to user input and execute any command – either built-in or custom – to perform operations that the users plan or need to do. Shells usually contain the prompt indicator to tell the user where is the current working directory, the user name, the host name, or anything that is set up to show.
 

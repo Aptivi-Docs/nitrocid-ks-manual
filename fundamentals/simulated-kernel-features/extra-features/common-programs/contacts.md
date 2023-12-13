@@ -4,7 +4,7 @@ description: Lists your contacts
 
 # 👥 Contacts
 
-<figure><img src="../../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Beta3-029-Contacts.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.
@@ -49,6 +49,6 @@ MECARD:N:Sanders,John,,,;TEL:495-522-3560;EMAIL:john.s@acme.co;ADR:,,Los Angeles
 To learn more about how VisualCard works, consult the below link named `How it works` and it'll take you to the VisualCard manual.
 {% endhint %}
 
-{% content-ref url="http://127.0.0.1:5000/s/bEvVwD4FK7bX7p8XtIPH/usage/how-it-works" %}
-[How it works](http://127.0.0.1:5000/s/bEvVwD4FK7bX7p8XtIPH/usage/how-it-works)
+{% content-ref url="https://app.gitbook.com/s/bEvVwD4FK7bX7p8XtIPH/usage/how-it-works" %}
+[How it works](https://app.gitbook.com/s/bEvVwD4FK7bX7p8XtIPH/usage/how-it-works)
 {% endcontent-ref %}

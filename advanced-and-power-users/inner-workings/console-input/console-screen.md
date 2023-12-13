@@ -6,8 +6,8 @@ description: Your screen in front of you
 
 Nitrocid KS offers the console screen feature, which allows you to define a screen for your interactive console application. This guarantees you a dynamic terminal sequence generation that you can print to the console. Usage of the VT sequences, as seen in the Terminaux manual, can be found here:
 
-{% content-ref url="http://127.0.0.1:5000/s/NaUWjRlaBR1k5rO42Zy8/usage/how-to-use/vt-sequences" %}
-[VT Sequences](http://127.0.0.1:5000/s/NaUWjRlaBR1k5rO42Zy8/usage/how-to-use/vt-sequences)
+{% content-ref url="https://app.gitbook.com/s/NaUWjRlaBR1k5rO42Zy8/usage/how-to-use/vt-sequences" %}
+[VT Sequences](https://app.gitbook.com/s/NaUWjRlaBR1k5rO42Zy8/usage/how-to-use/vt-sequences)
 {% endcontent-ref %}
 
 ## `Screen` Instance
@@ -15,7 +15,7 @@ Nitrocid KS offers the console screen feature, which allows you to define a scre
 {% hint style="info" %}
 The explanation provided here is not exhaustive, but a more detailed explanation can be found in the Terminaux manual here:
 
-[Console Screen](http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-screen "mention")
+[Console Screen](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-screen "mention")
 {% endhint %}
 
 You can get started by making a new instance of the `Screen` class and using it to add a new `ScreenPart` instance with its name to make a layer for your rendering sequences. This facilitates buffering the screens to the console.

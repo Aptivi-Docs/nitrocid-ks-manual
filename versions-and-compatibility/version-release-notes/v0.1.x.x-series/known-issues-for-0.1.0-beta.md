@@ -34,7 +34,10 @@ Issues that are highlighted in italic are fixed in the below beta version.
 
 During quality assurance, we're aware of the following issues:
 
-* TBD
+* Screensaver locking on UESH may not reset the cursor state
+* Archive shell may fail to start with SharpCompress not being found
+  * Workaround: copy both `ZstdSharp.dll` and `SharpCompress.dll` files from RetroKS addon directory to the Archive addon directory
+* Nitrocid KS currently requires administrative privileges to run
 
 Issues that are highlighted in italic are fixed in the upcoming release candidate version.
 

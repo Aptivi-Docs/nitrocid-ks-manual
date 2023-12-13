@@ -4,7 +4,7 @@ description: Futuristic magic!
 
 # 🔮 v0.1.x.x series
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Beta3-001-Welcome.png" alt=""><figcaption></figcaption></figure>
 
 This kernel series is the first kernel series that actually – and finally – showed seriousness about the beta version of the simulator as outlined in the ancient product documentation dating back to the first ever release, 0.0.1. It added a staggering amount of features that you can't even count! It also brought in massive amounts of improvements to the point that it has been re-imagined like never before!
 
@@ -22,7 +22,7 @@ Currently, the following pre-release versions are released:
 
 * [Beta 1](https://github.com/Aptivi/NitrocidKS/releases/tag/v0.1.0-b1) - API v3.0.25.0 - February 22nd, 2023
 * [Beta 2](https://github.com/Aptivi/NitrocidKS/releases/tag/v0.1.0-b2) - API v3.0.25.42 - August 10th, 2023
-* [Beta 3](https://github.com/Aptivi/NitrocidKS/releases/tag/v0.1.0-b3) - API v3.0.25.??? - December 28th, 2023 (future)
+* [Beta 3](https://github.com/Aptivi/NitrocidKS/releases/tag/v0.1.0-b3) - API v3.0.25.377 - December 28th, 2023 (future)
 
 If you found any issues or suggestions, report them on GitHub, and we'll consider responding to your requests within the next 24 hours.
 

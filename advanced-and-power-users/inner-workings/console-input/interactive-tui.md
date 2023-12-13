@@ -6,9 +6,9 @@ description: Your apps are now interactive
 
 The interactive TUI allows you to make your apps interactive if they provide one or two data sources, which consist of a list of strings, integers, and even class instances, to make getting information about them easier. The interactive TUI renders the screen in two panes, the top being a status bar, and the bottom being a list of key bindings. For clarification, the `ifm` command uses the double pane interactive TUI and the `taskman` command uses the single pane interactive TUI with info in the second pane:
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption><p>Double-paned interactive TUI with the ability to switch between two panes</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Beta3-056-Files.png" alt=""><figcaption><p>Double-paned interactive TUI with the ability to switch between two panes</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption><p>Single-paned interactive TUI</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Beta3-093-Inputs (1).png" alt=""><figcaption><p>Single-paned interactive TUI</p></figcaption></figure>
 
 {% hint style="info" %}
 You can exit out of any interactive TUI application by pressing the `ESC` key on your keyboard.
@@ -67,7 +67,6 @@ internal class MyTui : BaseInteractiveTui, IInteractiveTui
     {
         string currentItem = (string)data;
         InfoBoxColor.WriteInfoBox(currentItem);
-        RedrawRequired = true;
     }
 }
 ```
@@ -77,18 +76,21 @@ However, you cannot execute your interactive TUI based on your class unless you 
 
 {% code title="MyCommand.cs" lineNumbers="true" %}
 ```csharp
-public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
-    InteractiveTuiTools.OpenInteractiveTui(new MyTui());
+public override int Execute(CommandParameters parameters, ref string variableValue)
+{
+	InteractiveTuiTools.OpenInteractiveTui(new MyTui());
+	return 0;
+}
 ```
 {% endcode %}
 
 If everything goes well, you should see this:
 
-<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Beta3-094-Inputs.png" alt=""><figcaption></figcaption></figure>
 
 And if you press your key binding, you'll get this:
 
-<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Beta3-095-Inputs.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 When defining the interactive TUI binding, you can now set the required modifier keys by setting the `bindingKeyModifiers` value. Here is a constructor that supports this property:
@@ -132,18 +134,17 @@ For multiple panes, you'll have to modify your class to take two data sources an
     {
         string currentItem = (string)data;
         InfoBoxColor.WriteInfoBox(currentItem);
-        RedrawRequired = true;
     }
 }
 </code></pre>
 
 If everything goes well, you should be able to switch to the second pane, causing you to be able to select items from the second pane:
 
-<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Beta3-096-Inputs.png" alt=""><figcaption></figcaption></figure>
 
 And if you try to execute your key binding on an item found in the second pane, you'll see this:
 
-<figure><img src="../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Beta3-097-Inputs.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0 Beta 3, you don't have to manually implement the switch function, since it's already implemented for double-pane interactive TUIs.
@@ -153,8 +154,8 @@ Additionally, you can make your TUI app refresh every set millisecond so that yo
 
 For example, to use the Namer library to make a single-paned TUI application that gathers random names to list 10 names in the info pane, you must add a NuGet package, Namer, to your mod's dependencies. To learn more about how to use this library, consult the below page:
 
-{% content-ref url="http://127.0.0.1:5000/s/gmP2CdmfwirIpCISUoX8/usage/how-to-use" %}
-[How to use](http://127.0.0.1:5000/s/gmP2CdmfwirIpCISUoX8/usage/how-to-use)
+{% content-ref url="https://app.gitbook.com/s/gmP2CdmfwirIpCISUoX8/usage/how-to-use" %}
+[How to use](https://app.gitbook.com/s/gmP2CdmfwirIpCISUoX8/usage/how-to-use)
 {% endcontent-ref %}
 
 The code that would do this would look like this:
@@ -184,7 +185,7 @@ The code that would do this would look like this:
 </strong><strong>        var namesBuilder = new StringBuilder();
 </strong><strong>
 </strong><strong>        var list = NameGenerator.GenerateNames(10);
-</strong><strong>        for (int i = 0; i &#x3C; list.Count; i++)
+</strong><strong>        for (int i = 0; i &#x3C; list.Length; i++)
 </strong><strong>        {
 </strong><strong>            string name = list[i];
 </strong><strong>            namesBuilder.AppendLine(name);
@@ -197,7 +198,7 @@ The code that would do this would look like this:
 
 If everything goes well, you should see your TUI app refresh every 15 seconds:
 
-<figure><img src="../../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Beta3-098-Inputs.png" alt=""><figcaption></figcaption></figure>
 
 ### Colors for the TUI
 

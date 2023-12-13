@@ -60,8 +60,8 @@ The following color categories are supported:
 
 What follows the metadata is a list of available kernel color types and their color representations using Terminaux's supported color formats, which are linked in the below page:
 
-{% content-ref url="http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/color-sequences" %}
-[Color Sequences](http://127.0.0.1:5000/s/G0KrE9Uk2AiblqjWtpAo/usage/how-to-use/color-sequences)
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/color-sequences" %}
+[Color Sequences](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/color-sequences)
 {% endcontent-ref %}
 
 {% hint style="warning" %}

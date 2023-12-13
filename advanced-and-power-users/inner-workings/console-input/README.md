@@ -283,6 +283,6 @@ If you want to explore other input types, click on the below links:
 
 Additionally, you can consult the Terminaux library documentation for more info:
 
-{% content-ref url="http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/" %}
-[Terminaux - Manual](http://127.0.0.1:5000/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/)
+{% content-ref url="https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/" %}
+[Terminaux - Manual](https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/)
 {% endcontent-ref %}

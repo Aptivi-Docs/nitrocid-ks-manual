@@ -4,7 +4,7 @@ description: Make your HTTP requests
 
 # 🌐 HTTP Client
 
-<figure><img src="../../../../.gitbook/assets/HTTPClient.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Beta3-006-HttpShell.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.

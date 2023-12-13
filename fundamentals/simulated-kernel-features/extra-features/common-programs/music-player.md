@@ -4,6 +4,8 @@ description: Music on Nitrocid KS!
 
 # 🎧 Music Player
 
+<figure><img src="../../../../.gitbook/assets/Beta3-031-MusicPlayer.png" alt=""><figcaption></figcaption></figure>
+
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.
 {% endhint %}
@@ -14,8 +16,8 @@ Powered by BassBoom, Nitrocid KS provides an addon which hosts audio-related pro
 
 The BassBoom addon features a completely interactive music player (`musicplayer`) that allows you to play music files with support for playlists. The controls for the music player are the same as for the player which is found in the BassBoom.Cli program. For more information, head to the below page:
 
-{% content-ref url="http://127.0.0.1:5000/s/izAJoIbtQw1BdIlE4DBz/fundamentals/bassboom-features/bassboom-cli" %}
-[BassBoom CLI](http://127.0.0.1:5000/s/izAJoIbtQw1BdIlE4DBz/fundamentals/bassboom-features/bassboom-cli)
+{% content-ref url="https://app.gitbook.com/s/izAJoIbtQw1BdIlE4DBz/fundamentals/bassboom-features/bassboom-cli" %}
+[BassBoom CLI](https://app.gitbook.com/s/izAJoIbtQw1BdIlE4DBz/fundamentals/bassboom-features/bassboom-cli)
 {% endcontent-ref %}
 
 ## Sound Player
