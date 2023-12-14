@@ -4,7 +4,7 @@ description: How to install Nitrocid KS on Linux
 
 # 🐧 Linux
 
-<figure><img src="../../.gitbook/assets/b2-linux.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Beta3-099-Linux.png" alt=""><figcaption></figcaption></figure>
 
 Installing Nitrocid KS on Linux is straightforward, but we recommend installing the simulator using the manual unpack method.
 
