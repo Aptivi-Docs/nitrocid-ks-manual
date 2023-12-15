@@ -32,6 +32,14 @@ Select a page below to go to a feature:
 [docking.md](docking.md)
 {% endcontent-ref %}
 
+{% content-ref url="language-studio.md" %}
+[language-studio.md](language-studio.md)
+{% endcontent-ref %}
+
+{% content-ref url="theme-studio.md" %}
+[theme-studio.md](theme-studio.md)
+{% endcontent-ref %}
+
 ## How do I get them?
 
 You can get these extra features, including extra languages, splashes, and screensavers, by either downloading the addons ZIP file from the releases page of the Nitrocid project at GitHub, or by using the `getaddons` command.

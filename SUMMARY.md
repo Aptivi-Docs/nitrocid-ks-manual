@@ -101,6 +101,8 @@
       * [⚖ Unit Converter](fundamentals/simulated-kernel-features/extra-features/common-programs/unit-converter.md)
     * [🪄 ChatGPT Client](fundamentals/simulated-kernel-features/extra-features/chatgpt-client.md)
     * [🖼 Docking](fundamentals/simulated-kernel-features/extra-features/docking.md)
+    * [🌏 Language Studio](fundamentals/simulated-kernel-features/extra-features/language-studio.md)
+    * [🎨 Theme Studio](fundamentals/simulated-kernel-features/extra-features/theme-studio.md)
   * [👤 Accounts](fundamentals/simulated-kernel-features/accounts/README.md)
     * [👥 Groups](fundamentals/simulated-kernel-features/accounts/groups.md)
     * [🔓 Permissions](fundamentals/simulated-kernel-features/accounts/permissions.md)

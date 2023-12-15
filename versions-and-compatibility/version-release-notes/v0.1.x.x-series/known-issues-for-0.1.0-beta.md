@@ -38,6 +38,9 @@ During quality assurance, we're aware of the following issues:
 * Archive shell may fail to start with SharpCompress not being found
   * Workaround: copy both `ZstdSharp.dll` and `SharpCompress.dll` files from RetroKS addon directory to the Archive addon directory
 * Nitrocid KS currently requires administrative privileges to run
+* Language studio may fail to start with this error:
+  * `Command aborted for the following reason: Error reading JObject from JsonReader. Current JsonReader item is not an object: StartArray. Path '', line 1, position 1.`
+* Figlet text for "Please wait" may get glitched on 80x24 terminals.
 
 Issues that are highlighted in italic are fixed in the upcoming release candidate version.
 
