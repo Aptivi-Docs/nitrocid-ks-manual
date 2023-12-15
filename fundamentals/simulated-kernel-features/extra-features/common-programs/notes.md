@@ -4,6 +4,8 @@ description: Hold your sticky notes!
 
 # 🗒 Notes
 
+<figure><img src="../../../../.gitbook/assets/Beta3-101-Notes.png" alt=""><figcaption></figcaption></figure>
+
 If you want a method to have your notes saved, or if you would like to jot down your notes for something crucial or important, sensitive or not, such as your passwords, your website usernames, your server IP addresses, and so on, you'll need to use this application to create such notes.
 
 Usage of this application can be done using the following commands:
@@ -17,6 +19,8 @@ Usage of this application can be done using the following commands:
 * `notestui`: Opens the interactive notes viewer TUI
 
 ### Interactive TUI
+
+<figure><img src="../../../../.gitbook/assets/Beta3-102-Notes.png" alt=""><figcaption></figcaption></figure>
 
 You can also interactively view all your notes using the `notestui` command so that you can read all your notes with more comfort, using the built-in interactive TUI features provided by Terminaux.
 

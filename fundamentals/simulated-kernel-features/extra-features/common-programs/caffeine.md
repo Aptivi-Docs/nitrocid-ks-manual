@@ -4,6 +4,8 @@ description: Your coffee is ready!
 
 # ☕ Caffeine
 
+<figure><img src="../../../../.gitbook/assets/Beta3-100-Caffeine.png" alt=""><figcaption></figcaption></figure>
+
 If you need to be notified whether your coffee is ready after a specified time, you'll need to use this program to facilitate this task. You can use the caffeine command to provide it with either the number of seconds until your caffeine is ready or the caffeine name, which will be provided with the below table:
 
 | Caffeine name   | Time to prepare (seconds) |
