@@ -45,3 +45,7 @@ The simulated kernel provides you the below games. Select a game to get the comp
 {% content-ref url="wordle.md" %}
 [wordle.md](wordle.md)
 {% endcontent-ref %}
+
+{% content-ref url="russian-roulette.md" %}
+[russian-roulette.md](russian-roulette.md)
+{% endcontent-ref %}

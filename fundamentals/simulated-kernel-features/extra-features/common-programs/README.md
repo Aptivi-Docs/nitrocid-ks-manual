@@ -41,3 +41,11 @@ Nitrocid KS contains some of the common programs that have their own documentati
 {% content-ref url="music-player.md" %}
 [music-player.md](music-player.md)
 {% endcontent-ref %}
+
+{% content-ref url="caffeine.md" %}
+[caffeine.md](caffeine.md)
+{% endcontent-ref %}
+
+{% content-ref url="notes.md" %}
+[notes.md](notes.md)
+{% endcontent-ref %}
