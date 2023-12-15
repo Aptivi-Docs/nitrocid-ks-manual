@@ -4,7 +4,7 @@ description: How to install Nitrocid KS on Android
 
 # 📱 Android
 
-<figure><img src="../../.gitbook/assets/Screenshot_20230728_192601_Termux.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot_20231215_182920_Termux.png" alt=""><figcaption></figcaption></figure>
 
 The tricky part is getting Nitrocid KS to run on Android phones and tablets, especially those that run the latest version of Android.
 
