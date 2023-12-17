@@ -359,6 +359,12 @@ For shell presets, click the below button:
 [shell-presets.md](shell-presets.md)
 {% endcontent-ref %}
 
+For shell history, click the below button:
+
+{% content-ref url="shell-history.md" %}
+[shell-history.md](shell-history.md)
+{% endcontent-ref %}
+
 For extra shell features, click the below button:
 
 {% content-ref url="extra-shell-features.md" %}

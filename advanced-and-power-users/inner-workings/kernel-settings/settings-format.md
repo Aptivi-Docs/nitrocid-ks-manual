@@ -6,7 +6,7 @@ description: Each of the settings contain their own format
 
 This page specifies all the possible configuration formats.
 
-## Kernel Configuration
+## Kernel Configuration Entries
 
 The most basic pseudo-representation of the settings entry file is printed below to illustrate the concept:
 
@@ -28,7 +28,7 @@ The most basic pseudo-representation of the settings entry file is printed below
 ]
 ```
 
-Basically, all of the settings entry file start with an array containing one or more of the sections under the selected name for reference. Each section contains these necessary entries:
+Basically, all of the settings entry files start with an array containing one or more of the sections under the selected name for reference. Each section contains these necessary entries:
 
 * `Name`: This variable holds the short section name.
   * The type of this variable is a **string**

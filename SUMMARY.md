@@ -202,6 +202,7 @@
     * [🔋 Command Information](advanced-and-power-users/inner-workings/shell-structure/command-information.md)
     * [⏲ Command Switch Management](advanced-and-power-users/inner-workings/shell-structure/command-switch-management.md)
     * [🎚 Command Switch Information](advanced-and-power-users/inner-workings/shell-structure/command-switch-information.md)
+    * [⏳ Shell History](advanced-and-power-users/inner-workings/shell-structure/shell-history.md)
     * [📜 Shell Scripting](advanced-and-power-users/inner-workings/shell-structure/shell-scripting.md)
     * [📟 Shell Presets](advanced-and-power-users/inner-workings/shell-structure/shell-presets.md)
     * [💠 Extra Shell Features](advanced-and-power-users/inner-workings/shell-structure/extra-shell-features.md)
