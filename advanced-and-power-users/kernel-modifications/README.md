@@ -39,6 +39,14 @@ Deep explanation of the inter-mod communication and the inter-addon communicatio
 [inter-addon-communication.md](inter-addon-communication.md)
 {% endcontent-ref %}
 
+## Analyzers
+
+You can use the mod analyzers by consulting the page below:
+
+{% content-ref url="analyzers-for-mods.md" %}
+[analyzers-for-mods.md](analyzers-for-mods.md)
+{% endcontent-ref %}
+
 ## Build...
 
 If you'd like to build your own modifications, great! Click on the master page below to select what you want to build!

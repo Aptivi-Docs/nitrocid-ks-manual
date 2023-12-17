@@ -131,6 +131,7 @@
   * [🏗 Build your...](advanced-and-power-users/kernel-modifications/build-your.../README.md)
     * [🧪 Your Mod](advanced-and-power-users/kernel-modifications/build-your.../your-mod.md)
     * [🪄 Your Splash](advanced-and-power-users/kernel-modifications/build-your.../your-splash.md)
+  * [📉 Analyzers for Mods](advanced-and-power-users/kernel-modifications/analyzers-for-mods.md)
   * [📈 Analyzer Diagnostics](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/README.md)
     * [📉 Text - NKS0001](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0001.md)
     * [📉 ConsoleBase - NKS0002](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0002.md)
