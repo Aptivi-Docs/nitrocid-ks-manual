@@ -350,37 +350,53 @@ Let's explain each key one by one:
 
 ## Event configuration
 
-The kernel makes an event file for each event made in the `KSEvents` folder either by `calendar event saveall` or by calling the `EventManager.SaveEvents()` function under the `KS.Misc.Calendar.Events` namespace. The format, this time, is an XML file that contains:
+The kernel makes an event file for each event made in the `KSEvents` folder by `calendar event saveall`. The format is a JSON file that contains:
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<EventInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <EventDate>date</EventDate>
-  <EventTitle>title</EventTitle>
-</EventInfo>
+```json
+{
+    "EventDate": "2023-12-18T00:00:00",
+    "EventTitle": "Test",
+    "IsYearly": false,
+    "StartMonth": 1,
+    "StartDay": 1,
+    "EndMonth": 1,
+    "EndDay": 1,
+    "Calendar": "Gregorian"
+}
 ```
 
-Let's explain each key one by one found under the root class, EventInfo:
+Let's explain each key one by one found under the root class, `EventInfo`:
 
 * `EventDate`: Stores the date (and time) of the event
   * The type of this variable is a **date**
 * `EventTitle`: The event title that's usually what's happening on the specified date.
   * The type of this variable is a **string**
+* `IsYearly`: Whether or not this event is a yearly event
+  * The type of this variable is a **boolean**
+* `StartMonth`: For yearly events, specifies the start month.
+  * The type of this variable is an **integer**
+* `StartDay`: For yearly events, specifies the start day.
+  * The type of this variable is an **integer**
+* `EndMonth`: For yearly events, specifies the end month.
+  * The type of this variable is an **integer**
+* `EndDay`: For yearly events, specifies the end day.
+  * The type of this variable is an **integer**
+* `Calendar`: The calendar used while parsing the event date.
+  * The type of this variable is a **string**
 
 ## Reminder configuration
 
-The kernel makes a reminder file for each reminder made in the `KSReminders` folder either by `calendar reminder saveall` or by calling the `ReminderManager.SaveReminders()` function under the `KS.Misc.Calendar.Reminders` namespace. The format, this time, is an XML file that contains:
+The kernel makes a reminder file for each reminder made in the `KSReminders` folder by `calendar reminder saveall`. The format is a JSON file that contains:
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<ReminderInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ReminderDate>date</ReminderDate>
-  <ReminderTitle>title</ReminderTitle>
-  <ReminderImportance>Low/Medium/High</ReminderImportance>
-</ReminderInfo>
+```json
+{
+    "ReminderDate": "2023-12-17T16:00:00",
+    "ReminderTitle": "W2",
+    "ReminderImportance": 1
+}
 ```
 
-Let's explain each key one by one found under the root class, ReminderInfo:
+Let's explain each key one by one found under the root class, `ReminderInfo`:
 
 * `ReminderDate`: Stores the date (and time) of the reminder
   * The type of this variable is a **date**

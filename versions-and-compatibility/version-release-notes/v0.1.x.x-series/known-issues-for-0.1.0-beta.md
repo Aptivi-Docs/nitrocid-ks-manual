@@ -41,6 +41,8 @@ During quality assurance, we're aware of the following issues:
 * Language studio may fail to start with this error:
   * `Command aborted for the following reason: Error reading JObject from JsonReader. Current JsonReader item is not an object: StartArray. Path '', line 1, position 1.`
 * Figlet text for "Please wait" may get glitched on 80x24 terminals.
+* Saving events and reminders might fail
+  * Workaround: make an empty text file with the name of the event or the reminder as the error message indicates using `mkfile`.
 
 Issues that are highlighted in italic are fixed in the upcoming release candidate version.
 
