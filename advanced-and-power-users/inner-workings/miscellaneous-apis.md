@@ -184,6 +184,6 @@ Currently, it doesn't support modifications of any value. However, it will be wo
 
 The difference tool returns the difference in the following format:
 
-* A JSON object with either a plus (`+`) or a minus `(-`) sign if the target object is an object.
+* A JSON object with either a plus (`+`) or a minus (`-`) sign if the target object is an object.
 * A JSON object with either a plus (`+`) or a minus (`-`) sign listing differences in addition and deletion of array elements if the target object is an array.
 * A JSON object with a plus (`+`) sign indicating the target object and a minus (`-`) sign indicating the source object.
