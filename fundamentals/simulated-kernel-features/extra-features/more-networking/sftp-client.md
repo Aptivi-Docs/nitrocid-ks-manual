@@ -35,8 +35,6 @@ To connect to your SFTP server inside the SFTP shell, please follow the steps:
 
 ## Commands
 
-<figure><img src="../../../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
-
 To see the available commands provided by this shell, consult this page below:
 
 {% content-ref url="../../shells/commands-list.md" %}

@@ -9,11 +9,7 @@ description: Just started using Nitrocid KS? You've landed on the right place!
 {% hint style="success" %}
 🎊 🎊 🎊
 
-**Coming close to the third beta release, we strive to announce the release on **<mark style="color:purple;">**December 28th, 2023**</mark>**, to conclude the year of awesomeness and creativity!**
-
-**We've fulfilled our promise about several amazing new features during the beta periods!**
-
-**Final touches will be done starting from tomorrow, which is why slow development is expected. This is to focus more on documentation.**
+**Coming close to the third beta release, we strive to announce the release on **<mark style="color:purple;">**December 28th, 2023**</mark>**, to conclude the year of awesomeness and creativity! We've fulfilled our promise about several amazing new features during the beta periods!**
 
 🎊 🎊 🎊
 {% endhint %}
