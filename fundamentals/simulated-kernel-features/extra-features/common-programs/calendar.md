@@ -64,21 +64,3 @@ If you would like to be reminded about something in the future, you can use this
   * This command lets you list all the reminders and their IDs
 * `calendar <reminder> <saveall>`
   * This command lets you save all the reminders to your kernel configuration directory. The reminders will get loaded upon startup.
-
-## Calendar management API
-
-In addition to providing the calendar command in the addon, the base Nitrocid API provides some of the calendar management APIs to make access to them easier than before. You can now get the calendar straight from the calendar type or its name using the `GetCalendar()` function from the `CalendarTools` class.
-
-Additionally, the time and date renderers can be used with the base calendar class instance obtained from the above function.
-
-{% hint style="warning" %}
-While the events can be configured to be a yearly event, such as the Nitrocid KS release anniversary, such events have to be created by hand until the event commands are updated.
-{% endhint %}
-
-## Date conversion API
-
-Nitrocid API provides date conversion tools that allow you to change how the date and the time are being represented. For instance, you can translate the date and the time to UNIX time and vice versa.
-
-As for the calendars, you can use the `GetDateFromCalendar()` function, provided that you have a calendar instance from the `GetCalendar()` function.
-
-Alternatively, you can use the `GetDateFromCalendarNoCulture()` function for calendars with overridden `Calendar` property.

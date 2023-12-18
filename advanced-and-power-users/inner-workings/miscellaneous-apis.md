@@ -36,7 +36,11 @@ string humanized = bytes.SizeString();
 You can't use this function for enormous sizes, like 1 zettabytes, because of the limitation of the long integers. However, you shouldn't worry about this situation, since this is used generally for file sizes, and a single file in the world hasn't reached this size yet.
 {% endhint %}
 
-## Time zones
+## Time tools
+
+Nitrocid KS provides you with various APIs that allow you to manage time and date and their components. Here are the following tools that you can use:
+
+### Time zones
 
 Nitrocid KS provides a built-in timezone API that allows you to get information about a timezone and convert the time to the equivalent time using the specific timezone.
 
@@ -51,6 +55,24 @@ One of the functions that the above class implements is `GetZoneTimeString()` an
 * The first function returns the full date and time using the specified time zone.
 * The second function returns the time using the specified time zone.
 * The third function returns the date using the specified time zone.
+
+### Calendar management API
+
+In addition to providing the calendar command in the addon, the base Nitrocid API provides some of the calendar management APIs to make access to them easier than before. You can now get the calendar straight from the calendar type or its name using the `GetCalendar()` function from the `CalendarTools` class.
+
+Additionally, the time and date renderers can be used with the base calendar class instance obtained from the above function.
+
+{% hint style="warning" %}
+While the events can be configured to be a yearly event, such as the Nitrocid KS release anniversary, such events have to be created by hand until the event commands are updated.
+{% endhint %}
+
+### Date conversion API
+
+Nitrocid API provides date conversion tools that allow you to change how the date and the time are being represented. For instance, you can translate the date and the time to UNIX time and vice versa.
+
+As for the calendars, you can use the `GetDateFromCalendar()` function, provided that you have a calendar instance from the `GetCalendar()` function.
+
+Alternatively, you can use the `GetDateFromCalendarNoCulture()` function for calendars with overridden `Calendar` property.
 
 ## Properties and Fields
 
