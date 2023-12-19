@@ -39,6 +39,7 @@ This revision of the API is currently supported.
 | v0.0.24.13 | 11/20/2023   |                                  |                                  |
 | v0.0.24.14 | 12/14/2023   |                                  |                                  |
 | v0.0.24.15 | 12/18/2023   |                                  |                                  |
+| v0.0.24.16 | 12/19/2023   |                                  |                                  |
 {% endtab %}
 
 {% tab title="API v2.0" %}
