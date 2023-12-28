@@ -9,7 +9,7 @@ description: Just started using Nitrocid KS? You've landed on the right place!
 {% hint style="success" %}
 🎊 🎊 🎊
 
-**Beta 3 will be out in less than a week! Four months of hard work means that we're close to the final release formation!**
+<mark style="color:purple;">**Beta 3 is out now!**</mark>** Four months of hard work means that we're close to the final release formation!**
 
 🎊 🎊 🎊
 {% endhint %}
