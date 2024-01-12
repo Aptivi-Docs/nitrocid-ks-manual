@@ -190,6 +190,7 @@ public static class LineHandleRangedWriter
 public static class LineHandleWriter
 public static class ConsoleChecker
 public static class ConsoleResizeListener
+public static class ConsoleResizeHandler
 public static class ConsoleWrapper
 ```
 {% endcode %}

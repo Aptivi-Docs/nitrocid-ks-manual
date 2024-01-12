@@ -54,6 +54,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `dismissnotifs`         |                                                                                  |
 | `driverman`             | `<list> <type>`                                                                  |
 |                         | `<types>`                                                                        |
+|                         | `<change> <type> <driverName>`                                                   |
 | `echo`                  | `[-noparse] <text>`                                                              |
 | `edit`                  | `[-text\|-sql\|-json\|-hex] <file>`                                              |
 | `encodebase64`          | `<text>`                                                                         |
@@ -126,7 +127,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `select`                | `<answers> <input> [title] [title2] [...]`                                       |
 | `setexthandler`         | `<extension> <implementer>`                                                      |
 | `setsaver`              | `<saver>`                                                                        |
-| `settings`              | `[-saver\|-addonsaver\|-splash\|-type]`                                          |
+| `settings`              | `[-saver\|-addonsaver\|-splash\|-driver\|-type]`                                 |
 | `set`                   | `<value>`                                                                        |
 | `setrange`              | `<value> [value2] [value3] [...]`                                                |
 | `shownotifs`            |                                                                                  |

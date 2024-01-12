@@ -101,10 +101,12 @@ For all the driver management functions, you can also use the non-generic versio
 
 <figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
 
-The `settings` application now lets you set your system-wide kernel drivers up in a completely new section called `Kernel driver settings`. It lets you configure current drivers for each supported driver type.
+The `settings -driver` application now lets you set your system-wide kernel drivers up in a completely new section called `Kernel driver settings`. It lets you configure current drivers for each supported driver type.
 
 In order to configure your driver, select one of the driver types from the settings section shown above by pressing `ENTER`, and select your driver.
 
 {% hint style="info" %}
+You can also use `driverman` to change the kernel driver settings for scripting scenarios.
+
 Like all other settings, you must save your kernel settings to apply your changes across reboots.
 {% endhint %}

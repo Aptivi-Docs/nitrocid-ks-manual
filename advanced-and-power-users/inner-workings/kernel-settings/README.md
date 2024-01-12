@@ -69,6 +69,7 @@ The kernel provides an easy-to-use tool to seamlessly configure the kernel setti
 * `-saver`: Lets you configure the screensavers
 * `-splash`: Lets you configure the splashes
 * `-addonsaver`: Lets you configure the screensavers from the Extra Screensavers addon
+* `-driver`: Lets you configure the kernel drivers
 * `-type=configType`: Lets you configure a custom section of the kernel settings, including your mod-defined ones.
 
 Selecting a section leads to the settings application listing all the available configuration options, which you can then set their individual options. It even allows you to save the settings if you like the current configuration, load the user settings, and find a settings entry for easier access.
