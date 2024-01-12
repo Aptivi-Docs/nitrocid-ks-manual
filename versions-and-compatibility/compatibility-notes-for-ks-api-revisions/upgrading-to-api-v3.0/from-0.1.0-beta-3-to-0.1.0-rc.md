@@ -269,3 +269,17 @@ To more accurately tell whether the progress has finished or not, we're introduc
 {% hint style="info" %}
 There's no longer a need to cast a progress number to the integer when reporting progress; it already makes use of the double-precision floating-point numbers now.
 {% endhint %}
+
+### Moved MAL/MOTD parsers to `Login`
+
+{% code title="MalParse.cs and MotdParse.cs" lineNumbers="true" %}
+```csharp
+namespace Nitrocid.Misc.Text.Probers.Motd
+```
+{% endcode %}
+
+Earlier, the MOTD and the MAL parsers belonged to the miscellaneous portion of the kernel. However, according to our examination, only the login handler seems to be actively using it. This means that it's more appropriate for these parsers to move to the `Login` namespace.
+
+{% hint style="info" %}
+None of the classes have their functionality changed. You can just update the usings clause to point to `Nitrocid.Users.Login.Motd` instead of `Nitrocid.Misc.Text.Probers.Motd`.
+{% endhint %}
