@@ -4,7 +4,7 @@ description: >-
   Studio.
 ---
 
-# 🧪 Your Mod
+# 🧪 Building your Mod
 
 You're looking to create a mod for Nitrocid KS! That's great! Make sure that you have Visual Studio installed. Follow the steps to create your first mod.
 

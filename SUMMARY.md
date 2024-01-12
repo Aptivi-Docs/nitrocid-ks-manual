@@ -129,7 +129,7 @@
   * [🐧 Building on Linux](advanced-and-power-users/building-the-kernel/building-on-linux.md)
   * [📱 Building on Android](advanced-and-power-users/building-the-kernel/building-on-android.md)
 * [🧰 Kernel Modifications](advanced-and-power-users/kernel-modifications/README.md)
-  * [🧪 Building your Mod](advanced-and-power-users/kernel-modifications/building-your-mod.md)
+  * [🧪 Building your Mod](advanced-and-power-users/kernel-modifications/build-your.../your-mod.md)
   * [📉 Analyzers for Mods](advanced-and-power-users/kernel-modifications/analyzers-for-mods.md)
   * [📈 Analyzer Diagnostics](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/README.md)
     * [📉 Text - NKS0001](advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0001.md)

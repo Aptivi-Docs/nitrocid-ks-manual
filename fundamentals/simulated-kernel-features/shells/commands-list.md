@@ -52,6 +52,8 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `diskinfo`              | `<disknum>`                                                                      |
 | `dismissnotif`          | `<num>`                                                                          |
 | `dismissnotifs`         |                                                                                  |
+| `driverman`             | `<list> <type>`                                                                  |
+|                         | `<types>`                                                                        |
 | `echo`                  | `[-noparse] <text>`                                                              |
 | `edit`                  | `[-text\|-sql\|-json\|-hex] <file>`                                              |
 | `encodebase64`          | `<text>`                                                                         |
