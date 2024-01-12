@@ -15,10 +15,22 @@ The kernel configuration files are stored in the below software paths (`Paths.Ap
 
 When the kernel starts up, different configuration files are read for different purposes. The below settings paths describe the purpose and the type of each.
 
-* Configuration: `KernelConfig.json`
+* Configuration: `KernelMainConfig.json`
   * Description: Stores all the main kernel configuration
   * Type: JSON
   * Location: `Paths.ConfigurationPath` under the `KS.Files` namespace
+* Screensaver Configuration: `KernelSaverConfig.json`
+  * Description: Stores all the screensaver configuration
+  * Type: JSON
+  * Location: `Paths.SaverConfigurationPath` under the `KS.Files` namespace
+* Driver Configuration: `KernelDriverConfig.json`
+  * Description: Stores all the driver configuration
+  * Type: JSON
+  * Location: `Paths.DriverConfigurationPath` under the `KS.Files` namespace
+* Splash Configuration: `KernelSplashConfig.json`
+  * Description: Stores all the splash configuration
+  * Type: JSON
+  * Location: `Paths.SplashConfigurationPath` under the `KS.Files` namespace
 * Aliases: `Aliases.json`
   * Description: Stores all the user-defined aliases
   * Type: JSON

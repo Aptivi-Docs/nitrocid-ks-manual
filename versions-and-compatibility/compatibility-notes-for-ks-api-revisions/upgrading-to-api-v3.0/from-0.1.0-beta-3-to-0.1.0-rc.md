@@ -189,6 +189,8 @@ public static class ProgressTools
 public static class LineHandleRangedWriter
 public static class LineHandleWriter
 public static class ConsoleChecker
+public static class ConsoleResizeListener
+public static class ConsoleWrapper
 ```
 {% endcode %}
 
@@ -228,4 +230,18 @@ Terminaux provides all of these functions and classes. To reduce maintenance bur
 
 {% hint style="info" %}
 You can no longer call these functions directly from Nitrocid KS's `ConsoleBase` namespace. You must make use of Terminaux's namespaces instead.
+{% endhint %}
+
+### Separated driver config from main kernel config
+
+{% code title="KernelMainConfig.cs" lineNumbers="true" %}
+```csharp
+public string Current***Driver
+```
+{% endcode %}
+
+We've separated the driver configuration from the main kernel configuration so that we can separately manage the kernel drivers without having to modify the main kernel configuration. This allows such configuration to be much more portable from before.
+
+{% hint style="info" %}
+You need to update the references to the above properties found in `KernelMainConfig` to point to `DriverConfig` instead of `MainConfig`.
 {% endhint %}
