@@ -59,6 +59,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `encodetext`            | `[-key] [-iv] <text> [algorithm]`                                                |
 | `fileinfo`              | `<file>`                                                                         |
 | `find`                  | `[-recursive] [-exec] <file> <directory>`                                        |
+| `findcmds`              | `<search>`                                                                       |
 | `findreg`               | `[-recursive] [-exec] <fileRegex> <directory>`                                   |
 | `fork`                  |                                                                                  |
 | `get`                   | `[-outputpath] <url>`                                                            |

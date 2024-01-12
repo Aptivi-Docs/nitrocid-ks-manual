@@ -9,7 +9,7 @@ description: Just started using Nitrocid KS? You've landed on the right place!
 {% hint style="success" %}
 🎊 🎊 🎊
 
-<mark style="color:purple;">**Beta 3 is out now!**</mark>** Four months of hard work means that we're close to the final release formation!**
+<mark style="color:purple;">**Get ready for the final release of 0.1.0 on March 11th, 2024!**</mark>
 
 🎊 🎊 🎊
 {% endhint %}

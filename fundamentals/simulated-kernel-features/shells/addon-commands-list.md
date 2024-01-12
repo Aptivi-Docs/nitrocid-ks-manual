@@ -102,23 +102,80 @@ This addon gives you various color model translation commands. You can use the f
 | `colorhextorgbks`  | `<#RRGGBB>`            |
 | `colorhextocmyk`   | `<#RRGGBB>`            |
 | `colorhextocmykks` | `<#RRGGBB>`            |
+| `colorhextocmy`    | `<#RRGGBB>`            |
+| `colorhextocmyks`  | `<#RRGGBB>`            |
+| `colorhextohsv`    | `<#RRGGBB>`            |
+| `colorhextohsvks`  | `<#RRGGBB>`            |
 | `colorhextohsl`    | `<#RRGGBB>`            |
 | `colorhextohslks`  | `<#RRGGBB>`            |
+| `colorhextoryb`    | `<#RRGGBB>`            |
+| `colorhextorybks`  | `<#RRGGBB>`            |
 | `colorrgbtohex`    | `<R> <G> <B>`          |
 | `colorrgbtocmyk`   | `<R> <G> <B>`          |
 | `colorrgbtocmykks` | `<R> <G> <B>`          |
+| `colorrgbtocmy`    | `<R> <G> <B>`          |
+| `colorrgbtocmyks`  | `<R> <G> <B>`          |
+| `colorrgbtohsv`    | `<R> <G> <B>`          |
+| `colorrgbtohsvks`  | `<R> <G> <B>`          |
 | `colorrgbtohsl`    | `<R> <G> <B>`          |
 | `colorrgbtohslks`  | `<R> <G> <B>`          |
+| `colorrgbtoryb`    | `<R> <G> <B>`          |
+| `colorrgbtorybks`  | `<R> <G> <B>`          |
+| `colorrybtorgb`    | `<R> <Y> <B>`          |
+| `colorrybtocmyk`   | `<R> <Y> <B>`          |
+| `colorrybtocmykks` | `<R> <Y> <B>`          |
+| `colorrybtocmy`    | `<R> <Y> <B>`          |
+| `colorrybtocmyks`  | `<R> <Y> <B>`          |
+| `colorrybtohsv`    | `<R> <Y> <B>`          |
+| `colorrybtohsvks`  | `<R> <Y> <B>`          |
+| `colorrybtohsl`    | `<R> <Y> <B>`          |
+| `colorrybtohslks`  | `<R> <Y> <B>`          |
+| `colorrybtorgb`    | `<R> <Y> <B>`          |
+| `colorrybtorgbks`  | `<R> <Y> <B>`          |
 | `colorhsltohex`    | `<H> <S> <L>`          |
 | `colorhsltocmyk`   | `<H> <S> <L>`          |
 | `colorhsltocmykks` | `<H> <S> <L>`          |
+| `colorhsltocmy`    | `<H> <S> <L>`          |
+| `colorhsltocmyks`  | `<H> <S> <L>`          |
+| `colorhsltoryb`    | `<H> <S> <L>`          |
+| `colorhsltorybks`  | `<H> <S> <L>`          |
 | `colorhsltorgb`    | `<H> <S> <L>`          |
 | `colorhsltorgbks`  | `<H> <S> <L>`          |
+| `colorhsltoryb`    | `<H> <S> <L>`          |
+| `colorhsltorybks`  | `<H> <S> <L>`          |
+| `colorhsvtohex`    | `<H> <S> <V>`          |
+| `colorhsvtocmyk`   | `<H> <S> <V>`          |
+| `colorhsvtocmykks` | `<H> <S> <V>`          |
+| `colorhsvtocmy`    | `<H> <S> <V>`          |
+| `colorhsvtocmyks`  | `<H> <S> <V>`          |
+| `colorhsvtohsl`    | `<H> <S> <V>`          |
+| `colorhsvtohslks`  | `<H> <S> <V>`          |
+| `colorhsvtorgb`    | `<H> <S> <V>`          |
+| `colorhsvtorgbks`  | `<H> <S> <V>`          |
+| `colorhsvtoryb`    | `<H> <S> <V>`          |
+| `colorhsvtorybks`  | `<H> <S> <V>`          |
 | `colorcmyktohex`   | `<C> <M> <Y> <K>`      |
 | `colorcmyktorgb`   | `<C> <M> <Y> <K>`      |
 | `colorcmyktorgbks` | `<C> <M> <Y> <K>`      |
+| `colorcmyktoryb`   | `<C> <M> <Y> <K>`      |
+| `colorcmyktorybks` | `<C> <M> <Y> <K>`      |
+| `colorcmyktohsv`   | `<C> <M> <Y> <K>`      |
+| `colorcmyktohsvks` | `<C> <M> <Y> <K>`      |
 | `colorcmyktohsl`   | `<C> <M> <Y> <K>`      |
 | `colorcmyktohslks` | `<C> <M> <Y> <K>`      |
+| `colorcmyktocmy`   | `<C> <M> <Y> <K>`      |
+| `colorcmyktocmyks` | `<C> <M> <Y> <K>`      |
+| `colorcmyktohex`   | `<C> <M> <Y>`          |
+| `colorcmyktorgb`   | `<C> <M> <Y>`          |
+| `colorcmyktorgbks` | `<C> <M> <Y>`          |
+| `colorcmyktoryb`   | `<C> <M> <Y>`          |
+| `colorcmyktorybks` | `<C> <M> <Y>`          |
+| `colorcmyktohsl`   | `<C> <M> <Y>`          |
+| `colorcmyktohslks` | `<C> <M> <Y>`          |
+| `colorcmyktohsv`   | `<C> <M> <Y>`          |
+| `colorcmyktohsvks` | `<C> <M> <Y>`          |
+| `colorcmyktocmy`   | `<C> <M> <Y>`          |
+| `colorcmyktocmyks` | `<C> <M> <Y>`          |
 
 ### Contacts
 

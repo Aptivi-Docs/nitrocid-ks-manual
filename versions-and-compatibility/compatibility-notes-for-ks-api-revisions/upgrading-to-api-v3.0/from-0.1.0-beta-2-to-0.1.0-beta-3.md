@@ -4,7 +4,7 @@ description: Guide for upgrading 0.1.0 Beta 2 mods to 0.1.0 Beta 3
 
 # ⬆ From 0.1.0 Beta 2 to 0.1.0 Beta 3
 
-This page lists all the changes that have been made from 0.1.0 Beta 2 to 0.1.0 Beta 3. For upgrading your mods from 0.0.24.x directly to 0.1.0 Beta 3, use the main upgrade page instead.
+This page lists all the changes that have been made from 0.1.0 Beta 2 to 0.1.0 Beta 3. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page instead.
 
 ### Migrated to `ProvidedArgumentsInfo`
 
@@ -2229,7 +2229,7 @@ When SpecProbe was updated to 1.2.0, it contained a re-written hard disk prober 
 
 However, this re-written hard disk prober requires administrative rights, because it calls [`DeviceIoControl()`](https://learn.microsoft.com/en-us/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol), which is considered a powerful function for device I/O controls, such as getting drive geometry, getting drive partition table information, and so on. That function was used to directly talk to your drive for such information, which is why it requires administrator rights.
 
-**As a result, Nitrocid KS 0.1.0 Beta 3 will start requiring administrative privileges, starting from commit** [**`dda1d6d`**](https://github.com/Aptivi/NitrocidKS/commit/dda1d6d1d7209682c30b9b93d053056fad40cdfa)**.**
+**As a result, Nitrocid KS 0.1.0 Beta 3 will start requiring administrative privileges, starting from commit** [**`dda1d6d`**](https://github.com/Aptivi/NitrocidKS/commit/dda1d6d1d7209682c30b9b93d053056fad40cdfa)**. However, the final version won't ask for administrative privileges unless you explicitly tell it to reboot to the elevated mode on Windows systems.**
 
 ### Renamed `RemovePostfix()` to `RemoveSuffix()`
 

@@ -4,7 +4,7 @@ description: Guide for upgrading 0.0.24.x mods to Beta 1
 
 # ⬆ From 0.0.24.x to 0.1.0 Beta 1
 
-This page lists all the changes that have been made from 0.0.24.x to 0.1.0 Beta 1. For upgrading your mods from 0.0.24.x directly to 0.1.0, use the main upgrade page instead.
+This page lists all the changes that have been made from 0.0.24.x to 0.1.0 Beta 1. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page instead.
 
 ### **Moved events to `KS.Kernel.Events`**
 
