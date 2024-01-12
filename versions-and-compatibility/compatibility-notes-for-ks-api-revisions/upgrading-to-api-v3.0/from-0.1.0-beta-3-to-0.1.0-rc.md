@@ -125,3 +125,107 @@ public static class JsonTools
 {% endcode %}
 
 We've also minified the two above classes to their absolute minimum to only include properties and functions that are specific to Nitrocid KS.
+
+### Wrapped classes with Terminaux
+
+Terminaux contained changes merged with the latest development branch of Nitrocid KS 0.1.0, so we've listed the following classes that got merged with Terminaux:
+
+{% code title="Classes" lineNumbers="true" %}
+```csharp
+public class Screen
+public class ScreenPart
+public static class ScreenTools
+public static class ColorSelector
+public class InputChoiceInfo
+public static class InputChoiceTools
+public static class Input
+public enum ChoiceOutputType
+public static class ChoiceStyle
+public static class InfoBoxButtonsColor
+public static class InfoBoxColor
+public static class InfoBoxInputColor
+public static class InfoBoxProgressColor
+public static class InfoBoxSelectionColor
+public static class InfoBoxSelectionMultipleColor
+public static class InfoBoxTitledButtonsColor
+public static class InfoBoxTitledColor
+public static class InfoBoxTitledInputColor
+public static class InfoBoxTitledProgressColor
+public static class InfoBoxTitledSelectionColor
+public static class InfoBoxTitledSelectionMultipleColor
+public static class InputStyle
+public static class SelectionMultipleStyle
+public static class SelectionStyle
+public class BaseInteractiveTui : IInteractiveTui
+public interface IInteractiveTui
+public class InteractiveTuiBinding
+public static class InteractiveTuiTools
+public static class ListEntryWriterColor
+public static class ListWriterColor
+public static class TextWriterColor
+public static class TextWriterSlowColor
+public static class TextWriterWhereColor
+public static class TextWriterWhereSlowColor
+public static class TextWriterWrappedColor
+public static class BorderColor
+public static class BorderTextColor
+public static class BoxColor
+public static class BoxFrameColor
+public static class BoxFrameTextColor
+public static class CenteredFigletTextColor
+public static class CenteredTextColor
+public static class FigletColor
+public static class FigletWhereColor
+public static class PowerLineColor
+public static class ProgressBarColor
+public static class ProgressBarVerticalColor
+public static class SeparatorWriterColor
+public static class TableColor
+public static class BorderTools
+public class CellOptions
+public class PowerLineSegment
+public static class PowerLineTools
+public static class ProgressTools
+public static class LineHandleRangedWriter
+public static class LineHandleWriter
+public static class ConsoleChecker
+```
+{% endcode %}
+
+In addition to the classes, we've moved the following functions:
+
+{% code title="KernelColorTools.cs" lineNumbers="true" %}
+```csharp
+public static void LoadBack()
+public static void LoadBack(Color ColorSequence)
+public static Color GetGray()
+public static void SetConsoleColor(Color ColorSequence, bool Background = false)
+public static bool TrySetConsoleColor(Color ColorSequence, bool Background)
+public static bool TryParseColor(string ColorSpecifier)
+public static bool TryParseColor(int ColorNum)
+public static bool TryParseColor(int R, int G, int B)
+public static Color GetRandomColor(bool selectBlack = true)
+public static Color GetRandomColor(ColorType type, bool selectBlack = true)
+public static Color GetRandomColor(ColorType type, int minColor, int maxColor, int minColorR, int maxColorR, int minColorG, int maxColorG, int minColorB, int maxColorB)
+```
+{% endcode %}
+
+{% code title="ConsoleExtensions.cs" lineNumbers="true" %}
+```csharp
+public static void ClearKeepPosition()
+public static string GetClearLineToRightSequence()
+public static void ClearLineToRight()
+public static int PercentRepeat(int CurrentNumber, int MaximumNumber, int WidthOffset)
+public static int PercentRepeatTargeted(int CurrentNumber, int MaximumNumber, int TargetWidth)
+public static string FilterVTSequences(string Text)
+public static (int, int) GetFilteredPositions(string Text, bool line, params object[] Vars)
+public static void SetTitle(string Text)
+public static void ResetAll()
+```
+{% endcode %}
+
+Terminaux provides all of these functions and classes. To reduce maintenance burden associated with the duplicated code, we've removed all the duplicated code in the Nitrocid KS codebase. As a result, we've moved all its associated documentation to Terminaux to also reduce the documentation maintenance burden.
+
+{% hint style="info" %}
+You can no longer call these functions directly from Nitrocid KS's `ConsoleBase` namespace. You must make use of Terminaux's namespaces instead.
+{% endhint %}
