@@ -24,25 +24,39 @@ Splashes also contain a context to tell the splash screen that it's in a specifi
 
 The splash management class contains several useful tools to manage them, like loading custom splashes, unloading them, previewing them, etc. The three commonly used functions are:
 
-### Loading the splashes
+### Registering the splashes
 
 {% code title="SplashManager.cs" lineNumbers="true" %}
 ```csharp
-public static void LoadSplashes()
+public static void RegisterSplash(SplashInfo splashInfo)
 ```
 {% endcode %}
 
-This function loads all the splash files found in the custom splashes directory, `KSSplashes`. This will load the splash file, verify that it actually holds a single instance of a splash, and register it to the custom splash list.
+This function registers your splash from the `SplashInfo` instance that you've defined in your mod. This allows your mods that have the load priority set to `Important` to register the splashes before the configuration system loads your config.
 
-### Unloading the splashes
+{% hint style="info" %}
+Since the main kernel configuration file holds the splash info, we suggest that you set your mod loading importance to `Important`.
+{% endhint %}
+
+### Removing the splashes
 
 {% code title="SplashManager.cs" lineNumbers="true" %}
 ```csharp
-public static void UnloadSplashes()
+public static void UnregisterSplash(string splashName)
 ```
 {% endcode %}
 
-This function does the reverse of `LoadSplashes()` by unloading all the splashes. This means that this function will unregister any splash found in the custom splashes list.
+This function removes your splash from the list of known splashes. This function takes the name of your custom splash, usually taken from your splash's `SplashInfo` instance.
+
+### Checking your splash
+
+{% code title="SplashManager.cs" lineNumbers="true" %}
+```csharp
+public static bool IsSplashRegistered(string splashName)
+```
+{% endcode %}
+
+This function checks the list of splashes to query the splash name for its existence. If the splash exists, it returns true. Otherwise, false is returned.
 
 ## Showing Messages during Kernel Boot
 

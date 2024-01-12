@@ -51,6 +51,6 @@ You can use the mod analyzers by consulting the page below:
 
 If you'd like to build your own modifications, great! Click on the master page below to select what you want to build!
 
-{% content-ref url="build-your.../" %}
-[build-your...](build-your.../)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}

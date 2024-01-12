@@ -23,8 +23,8 @@ The mod finalization phase gets executed as soon as the mod parser sees the file
    * If the checker found that the mod needs a higher API version, the mod parsing fails with the appropriate message
    * If the checker couldn't determine the minimum API version required by the kernel mod, it goes ahead, but with a warning that the mod may fail to start.
 4. Checks the mod localization file from the path: `KSMods/Localization/Mod-FileVersion/`
-5. If the mod has no name, the mod will be given the name using the file name.
-6. Checks the mod for the version and its SemVer 2.0 compliance. **If the version is not a SemVer 2.0 compliant, mod parsing fails.**
+5. If the mod has no name, **mod parsing fails.**
+6. Checks the mod for the version and its SemVer 2.0 compliance. **If the version is not a SemVer 2.0 compliant, or if the version is empty, mod parsing fails.**
 7. Satisfies the mod dependencies by loading them as appropriate.
 8. Calls the `script.StartMod()` function in your script
 9. Adds the mod to the mod manager
@@ -94,6 +94,22 @@ The dependencies list file should be saved as the name which satisfies this form
 {% hint style="danger" %}
 If one of the mod dependencies failed to load, the mod parser will report a failure for that mod.
 {% endhint %}
+
+### Mod load priorities
+
+You can also control when your mod loads (early or late) by overriding the `AddonType` enumeration to point to one of the correct mod priorities, depending on your mod:
+
+* `Important`
+* `Optional`
+
+Important mods get loaded before the kernel configuration loads, while the optional ones get loaded after the hardware gets parsed before the system verification stage.
+
+{% code title="Your mod code" lineNumbers="true" %}
+```csharp
+override ModLoadPriority LoadPriority =>
+    ModLoadPriority.Optional
+```
+{% endcode %}
 
 ## Splash parsing
 
