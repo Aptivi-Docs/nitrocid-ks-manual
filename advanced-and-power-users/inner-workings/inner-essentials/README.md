@@ -10,8 +10,8 @@ Nitrocid KS offers a rich API that is open for any mod created for the current A
 [multilingual-kernel](../multilingual-kernel/)
 {% endcontent-ref %}
 
-{% content-ref url="../console-input/" %}
-[console-input](../console-input/)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="kernel-placeholders.md" %}

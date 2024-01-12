@@ -6,9 +6,8 @@ description: All of the colors!
 
 Nitrocid KS uses Terminaux to manipulate with the colors and configure them for the kernel to use. The kernel employs several of the color types for the kernel components, your addons, or your mods to use when writing text using the Nitrocid's console writer.
 
-The `ConsoleBase` namespace contains a namespace dedicated to color management called Colors that contains a plenty of useful tools for color manipulation. Currently, it contains the following classes:
+The `ConsoleBase` namespace contains a namespace dedicated to color management called `Colors` that contains a plenty of useful tools for kernel color manipulation. Currently, it contains the following classes:
 
-* `ColorSelector`
 * `KernelColorConversionTools`
 * `KernelColorTools`
 
@@ -17,7 +16,11 @@ It also contains the following enumerations for different tools:
 * `KernelColorSetErrorReasons`
 * `KernelColorType`
 
-Scroll down in this page to get started with the list of amazing color tools.
+Scroll down in this page to get started with the list of amazing color tools. For the general color tools, you may consult the Terminaux manual:
+
+{% content-ref url="https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/" %}
+[Terminaux - Manual](https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/)
+{% endcontent-ref %}
 
 ## Color types
 
@@ -125,134 +128,3 @@ For example, if you have Cyan, Magenta, and Yellow values and you want a hex cod
 
 * `ConvertFromCmykToHex(int C, int M, int Y, int K)`
 * `ConvertFromCmykToHex(string CMYKSequence)`
-
-## Color tools
-
-Nitrocid KS provides you a built-in color tools class that allows you to manipulate with the colors in various ways. The following types of manipulation are available:
-
-### Populating a list of colors
-
-You can get a list of colors with all the kernel color types by using one of the three functions, depending on the type of the population:
-
-{% code title="KernelColorTools.cs" lineNumbers="true" %}
-```csharp
-public static Dictionary<KernelColorType, Color> PopulateColorsEmpty()
-public static Dictionary<KernelColorType, Color> PopulateColorsDefault()
-public static Dictionary<KernelColorType, Color> PopulateColorsCurrent()
-```
-{% endcode %}
-
-Here's an overview of each function:
-
-* The first function, `PopulateColorsEmpty()`, populates all the colors for all the kernel color types with the black color for all foreground colors and white for background colors.
-* The second function, `PopulateColorsDefault()`, populates all the colors for all the kernel color types with the default kernel colors for all the colors, regardless of the kernel configuration.
-* The second function, `PopulateColorsCurrent()`, populates all the colors for all the kernel color types with the current kernel colors according to the kernel configuration.
-
-### Getting and Setting colors
-
-In addition to the above function, you can also get a color instance from a single color type and set a color for a specified type to your own selected color. These two functions help you do these two tasks simply:
-
-{% code title="KernelColorTools.cs" lineNumbers="true" %}
-```csharp
-public static Color GetColor(KernelColorType type)
-public static Color SetColor(KernelColorType type, Color color)
-```
-{% endcode %}
-
-{% hint style="info" %}
-Any changes made to a kernel color type will be saved to the kernel settings upon shutting the kernel down or rebooting it.
-{% endhint %}
-
-### Loading a background color
-
-You can clear the console screen with a specified background color by calling this below function, provided that it contains several versions of the function:
-
-{% code title="KernelColorTools.cs" lineNumbers="true" %}
-```csharp
-public static void LoadBack()
-public static void LoadBack(Color ColorSequence)
-```
-{% endcode %}
-
-There are two versions of this function:
-
-* The first parameterless function allows you to clear the console screen with the current kernel background color.
-* The second function with the color parameter allows you to clear the console screen with the selected background color.
-
-### Getting a gray color
-
-You can get a gray foreground color that adapts to the lightness of the background color using a single function, `GetGray()`.
-
-{% code title="KernelColorTools.cs" lineNumbers="true" %}
-```csharp
-public static Color GetGray()
-```
-{% endcode %}
-
-This will return either a gray color on dark backgrounds or a neutral text color on bright backgrounds.
-
-### Setting a console color
-
-The color tools allows you to set a console color either using the kernel color type, such as a neutral text color, or using a `Color` instance to select a custom color. The following functions are available:
-
-{% code title="KernelColorTools.cs" lineNumbers="true" %}
-```csharp
-public static void SetConsoleColor(KernelColorType colorType)
-public static void SetConsoleColor(KernelColorType colorType, bool Background)
-public static void SetConsoleColor(Color ColorSequence, bool Background = false)
-public static bool TrySetConsoleColor(KernelColorType colorType)
-public static bool TrySetConsoleColor(KernelColorType colorType, bool Background)
-public static bool TrySetConsoleColor(Color ColorSequence, bool Background)
-```
-{% endcode %}
-
-In addition to setting the foreground color, you can also make it set the background color by passing `true` to `background` argument in all the supported console color setting functions above.
-
-### Parsing colors
-
-This allows you to easily parse either the color specifier string, the color number from 0 to 255, or the RGB color level values from 0 to 255. The following functions are available:
-
-{% code title="KernelColorTools.cs" lineNumbers="true" %}
-```csharp
-public static bool TryParseColor(string ColorSpecifier)
-public static bool TryParseColor(int ColorNum)
-public static bool TryParseColor(int R, int G, int B)
-```
-{% endcode %}
-
-The following functions are listed:
-
-* The first function takes a color specifier and parses it.
-* The second function takes a color number and parses it.
-* The third function takes RGB color values and parses them.
-
-### Getting a random color
-
-You can get a random color of any type using any of the three functions:
-
-{% code title="KernelColorTools.cs" lineNumbers="true" %}
-```csharp
-public static Color GetRandomColor(bool selectBlack = true)
-public static Color GetRandomColor(ColorType type, bool selectBlack = true)
-public static Color GetRandomColor(ColorType type, int minColor, int maxColor, int minColorR, int maxColorR, int minColorG, int maxColorG, int minColorB, int maxColorB)
-```
-{% endcode %}
-
-Here's an explanation of what each version does:
-
-* The first version only allows you to choose whether you need to select the black color or not. It returns a random color in its true color form.
-* The second version allows you to choose a color type, along with the above black color selection. It returns a random color in the color type that you select.
-* The third version allows you to choose a color type and several of the color ranges.
-  * `minColor` to `maxColor`: Value can be from 0 to 16 if the type is 16 colors, or from 0 to 255 if the type is 256 colors. Ignored for true color randomization.
-  * `minColorR` to `maxColorR`: Red level of the color range. Only applies to true color randomization.
-  * `minColorG` to `maxColorG`: Green level of the color range. Only applies to true color randomization.
-  * `minColorB` to `maxColorB`: Blue level of the color range. Only applies to true color randomization.
-
-When you turn off black color selection, the function skips the color under the following conditions:
-
-* If the color type is true color, it ignores any color that has all the RGB levels of below 30, such as `29;29;29`.
-* If the color type is not true color, it ignores the following colors:
-  * `ConsoleColors.Black`
-  * `ConsoleColors.Grey0`
-  * `ConsoleColors.Grey3`
-  * `ConsoleColors.Grey7`
