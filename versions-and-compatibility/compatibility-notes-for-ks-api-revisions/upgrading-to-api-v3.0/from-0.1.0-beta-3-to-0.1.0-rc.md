@@ -246,3 +246,26 @@ We've separated the driver configuration from the main kernel configuration so t
 {% hint style="info" %}
 You need to update the references to the above properties found in `KernelMainConfig` to point to `DriverConfig` instead of `MainConfig`.
 {% endhint %}
+
+### Used double-precision floats for progress handling
+
+{% code title="ProgressHandler.cs" lineNumbers="true" %}
+```csharp
+public Action<int, string> ProgressAction
+public ProgressHandler(Action<int, string> progressAction, string context)
+```
+{% endcode %}
+
+{% code title="ProgressManager.cs" lineNumbers="true" %}
+```csharp
+public static void ReportProgress(int progress, string context)
+public static void ReportProgress(int progress, string context, string message)
+public static void ReportProgress(int progress, string context, string message, params object[] vars)
+```
+{% endcode %}
+
+To more accurately tell whether the progress has finished or not, we're introducing the double-precision floating-point numbers to the progress handler and the manager, effectively improving the progress handling for long tasks.
+
+{% hint style="info" %}
+There's no longer a need to cast a progress number to the integer when reporting progress; it already makes use of the double-precision floating-point numbers now.
+{% endhint %}

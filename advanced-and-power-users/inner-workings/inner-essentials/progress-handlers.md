@@ -12,7 +12,7 @@ Every progress handler can be created using the following constructor:
 
 {% code title="ProgressHandler.cs" lineNumbers="true" %}
 ```csharp
-public ProgressHandler(Action<int, string> progressAction, string context)
+public ProgressHandler(Action<double, string> progressAction, string context)
 ```
 {% endcode %}
 
@@ -47,9 +47,9 @@ ProgressManager.UnregisterProgressHandler(handler);
 After you register the handler, you can report the progress using the same context using one of the following functions:
 
 ```csharp
-public static void ReportProgress(int progress, string context)
-public static void ReportProgress(int progress, string context, string message)
-public static void ReportProgress(int progress, string context, string message, params object[] vars)
+public static void ReportProgress(double progress, string context)
+public static void ReportProgress(double progress, string context, string message)
+public static void ReportProgress(double progress, string context, string message, params object[] vars)
 ```
 
 Any call to one of these `ReportProgress()` functions with the correct context that is handled will follow it the progress indicator showing on your screen, or any other progress action, depending on how you're handling the progress.

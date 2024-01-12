@@ -119,7 +119,7 @@ To get theme information for a specific theme, you need to use the `ThemeInfo` c
 * `ThemeInfo(ThemeFileStream)`
   * This gives you a new instance of `ThemeInfo` with the theme parameters from the given stream containing the theme JSON contents
 
-Alternatively, you can use `GetThemeInfo()` to get theme information about a specified theme using the theme name.
+Alternatively, you can use `GetThemeInfo()` to get theme information about a specified theme using the theme name. After that, you can apply a theme using this instance using `ApplyTheme`.
 
 {% hint style="warning" %}
 `ThemeInfo()` constructor with theme names is now deprecated in favor of the theme packs. Please use the `GetInstalledThemes()` output and get the theme info instance from there instead.
@@ -141,10 +141,11 @@ You can also change all your kernel colors so that a theme can be applied using 
 
 {% code title="ThemeTools.cs" lineNumbers="true" %}
 ```csharp
-public static void ApplyThemeFromResources(string theme)
-public static void ApplyThemeFromFile(string ThemeFile)
-public static void SetColorsTheme(ThemeInfo ThemeInfo)
-public static bool TrySetColorsTheme(ThemeInfo ThemeInfo)
+public static void ApplyThemeFromResources(string theme, bool dry = false)
+public static void ApplyThemeFromFile(string ThemeFile, bool dry = false)
+public static void ApplyTheme(ThemeInfo themeInfo, bool dry = false)
+public static void SetColorsTheme(ThemeInfo ThemeInfo, bool dry = false)
+public static bool TrySetColorsTheme(ThemeInfo ThemeInfo, bool dry = false)
 ```
 {% endcode %}
 
@@ -152,7 +153,7 @@ Each function does the following:
 
 * The first function gets a theme name and gets an instance of `ThemeInfo` for it. Then, it sets the kernel colors to the colors that are defined by a theme.
 * The second function parses a theme JSON file while getting an instance of `ThemeInfo` from it and sets the kernel colors to the colors that are set by that theme.
-* The third function gets all the colors from `ThemeInfo` and sets the kernel colors to the colors that are defined by that instance.
+* The third function gets all the colors from `ThemeInfo` and sets the kernel colors to the colors that are defined by that instance. If not dry, the kernel configuration is saved to save the new changes.
 
 ### Checking the color requirements
 
