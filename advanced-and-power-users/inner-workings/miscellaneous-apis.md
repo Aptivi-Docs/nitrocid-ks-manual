@@ -156,15 +156,9 @@ You can consult the [Nitrocid API Reference](https://aptivi.github.io/NitrocidKS
 
 ## JSON Difference
 
-The JSON difference finding tool can be accessed using the `FindDifferences()` function found in the `JsonTools` class. This allows you to find differences in addition and deletion of any JSON object.
+The JSON difference finding tool can be accessed using the `FindDifferences()` function found in the `JsonTools` class. This allows you to find differences in addition and deletion of any JSON object. The difference tool returns the difference in the following format:
 
-{% hint style="warning" %}
-Currently, it doesn't support modifications of any value. However, it will be worked on soon.
-{% endhint %}
-
-The difference tool returns the difference in the following format:
-
-* A JSON object with either a plus (`+`) or a minus (`-`) sign if the target object is an object.
+* A JSON object with either a plus (`+`), an asterisk (`*`), or a minus (`-`) sign if the target object is an object.
 * A JSON object with either a plus (`+`) or a minus (`-`) sign listing differences in addition and deletion of array elements if the target object is an array.
 * A JSON object with a plus (`+`) sign indicating the target object and a minus (`-`) sign indicating the source object.
 
