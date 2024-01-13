@@ -110,6 +110,10 @@ This addon gives you various color model translation commands. You can use the f
 | `colorhextohslks`  | `<#RRGGBB>`            |
 | `colorhextoryb`    | `<#RRGGBB>`            |
 | `colorhextorybks`  | `<#RRGGBB>`            |
+| `colorhextoyiq`    | `<#RRGGBB>`            |
+| `colorhextoyiqks`  | `<#RRGGBB>`            |
+| `colorhextoyuv`    | `<#RRGGBB>`            |
+| `colorhextoyuvks`  | `<#RRGGBB>`            |
 | `colorrgbtohex`    | `<R> <G> <B>`          |
 | `colorrgbtocmyk`   | `<R> <G> <B>`          |
 | `colorrgbtocmykks` | `<R> <G> <B>`          |
@@ -121,6 +125,10 @@ This addon gives you various color model translation commands. You can use the f
 | `colorrgbtohslks`  | `<R> <G> <B>`          |
 | `colorrgbtoryb`    | `<R> <G> <B>`          |
 | `colorrgbtorybks`  | `<R> <G> <B>`          |
+| `colorrgbtoyiq`    | `<R> <G> <B>`          |
+| `colorrgbtoyiqks`  | `<R> <G> <B>`          |
+| `colorrgbtoyuv`    | `<R> <G> <B>`          |
+| `colorrgbtoyuvks`  | `<R> <G> <B>`          |
 | `colorrybtorgb`    | `<R> <Y> <B>`          |
 | `colorrybtocmyk`   | `<R> <Y> <B>`          |
 | `colorrybtocmykks` | `<R> <Y> <B>`          |
@@ -132,6 +140,10 @@ This addon gives you various color model translation commands. You can use the f
 | `colorrybtohslks`  | `<R> <Y> <B>`          |
 | `colorrybtorgb`    | `<R> <Y> <B>`          |
 | `colorrybtorgbks`  | `<R> <Y> <B>`          |
+| `colorrybtoyiq`    | `<R> <Y> <B>`          |
+| `colorrybtoyiqks`  | `<R> <Y> <B>`          |
+| `colorrybtoyuv`    | `<R> <Y> <B>`          |
+| `colorrybtoyuvks`  | `<R> <Y> <B>`          |
 | `colorhsltohex`    | `<H> <S> <L>`          |
 | `colorhsltocmyk`   | `<H> <S> <L>`          |
 | `colorhsltocmykks` | `<H> <S> <L>`          |
@@ -143,6 +155,10 @@ This addon gives you various color model translation commands. You can use the f
 | `colorhsltorgbks`  | `<H> <S> <L>`          |
 | `colorhsltoryb`    | `<H> <S> <L>`          |
 | `colorhsltorybks`  | `<H> <S> <L>`          |
+| `colorhsltoyiq`    | `<H> <S> <L>`          |
+| `colorhsltoyiqks`  | `<H> <S> <L>`          |
+| `colorhsltoyuv`    | `<H> <S> <L>`          |
+| `colorhsltoyuvks`  | `<H> <S> <L>`          |
 | `colorhsvtohex`    | `<H> <S> <V>`          |
 | `colorhsvtocmyk`   | `<H> <S> <V>`          |
 | `colorhsvtocmykks` | `<H> <S> <V>`          |
@@ -154,6 +170,10 @@ This addon gives you various color model translation commands. You can use the f
 | `colorhsvtorgbks`  | `<H> <S> <V>`          |
 | `colorhsvtoryb`    | `<H> <S> <V>`          |
 | `colorhsvtorybks`  | `<H> <S> <V>`          |
+| `colorhsvtoyiq`    | `<H> <S> <V>`          |
+| `colorhsvtoyiqks`  | `<H> <S> <V>`          |
+| `colorhsvtoyuv`    | `<H> <S> <V>`          |
+| `colorhsvtoyuvks`  | `<H> <S> <V>`          |
 | `colorcmyktohex`   | `<C> <M> <Y> <K>`      |
 | `colorcmyktorgb`   | `<C> <M> <Y> <K>`      |
 | `colorcmyktorgbks` | `<C> <M> <Y> <K>`      |
@@ -165,17 +185,55 @@ This addon gives you various color model translation commands. You can use the f
 | `colorcmyktohslks` | `<C> <M> <Y> <K>`      |
 | `colorcmyktocmy`   | `<C> <M> <Y> <K>`      |
 | `colorcmyktocmyks` | `<C> <M> <Y> <K>`      |
-| `colorcmyktohex`   | `<C> <M> <Y>`          |
-| `colorcmyktorgb`   | `<C> <M> <Y>`          |
-| `colorcmyktorgbks` | `<C> <M> <Y>`          |
-| `colorcmyktoryb`   | `<C> <M> <Y>`          |
-| `colorcmyktorybks` | `<C> <M> <Y>`          |
-| `colorcmyktohsl`   | `<C> <M> <Y>`          |
-| `colorcmyktohslks` | `<C> <M> <Y>`          |
-| `colorcmyktohsv`   | `<C> <M> <Y>`          |
-| `colorcmyktohsvks` | `<C> <M> <Y>`          |
-| `colorcmyktocmy`   | `<C> <M> <Y>`          |
-| `colorcmyktocmyks` | `<C> <M> <Y>`          |
+| `colorcmyktoyiq`   | `<C> <M> <Y> <K>`      |
+| `colorcmyktoyiqks` | `<C> <M> <Y> <K>`      |
+| `colorcmyktoyuv`   | `<C> <M> <Y> <K>`      |
+| `colorcmyktoyuvks` | `<C> <M> <Y> <K>`      |
+| `colorcmytohex`    | `<C> <M> <Y>`          |
+| `colorcmytorgb`    | `<C> <M> <Y>`          |
+| `colorcmytorgbks`  | `<C> <M> <Y>`          |
+| `colorcmytoryb`    | `<C> <M> <Y>`          |
+| `colorcmytorybks`  | `<C> <M> <Y>`          |
+| `colorcmytohsl`    | `<C> <M> <Y>`          |
+| `colorcmytohslks`  | `<C> <M> <Y>`          |
+| `colorcmytohsv`    | `<C> <M> <Y>`          |
+| `colorcmytohsvks`  | `<C> <M> <Y>`          |
+| `colorcmytocmyk`   | `<C> <M> <Y>`          |
+| `colorcmytocmykks` | `<C> <M> <Y>`          |
+| `colorcmytoyiq`    | `<C> <M> <Y>`          |
+| `colorcmytoyiqks`  | `<C> <M> <Y>`          |
+| `colorcmytoyuv`    | `<C> <M> <Y>`          |
+| `colorcmytoyuvks`  | `<C> <M> <Y>`          |
+| `coloryiqtohex`    | `<Y> <I> <Q>`          |
+| `coloryiqtorgb`    | `<Y> <I> <Q>`          |
+| `coloryiqtorgbks`  | `<Y> <I> <Q>`          |
+| `coloryiqtoryb`    | `<Y> <I> <Q>`          |
+| `coloryiqtorybks`  | `<Y> <I> <Q>`          |
+| `coloryiqtocmyk`   | `<Y> <I> <Q>`          |
+| `coloryiqtocmykks` | `<Y> <I> <Q>`          |
+| `coloryiqtocmy`    | `<Y> <I> <Q>`          |
+| `coloryiqtocmyks`  | `<Y> <I> <Q>`          |
+| `coloryiqtohsl`    | `<Y> <I> <Q>`          |
+| `coloryiqtohslks`  | `<Y> <I> <Q>`          |
+| `coloryiqtohsv`    | `<Y> <I> <Q>`          |
+| `coloryiqtohsvks`  | `<Y> <I> <Q>`          |
+| `coloryiqtoyuv`    | `<Y> <I> <Q>`          |
+| `coloryiqtoyuvks`  | `<Y> <I> <Q>`          |
+| `coloryuvtohex`    | `<Y> <U> <V>`          |
+| `coloryuvtorgb`    | `<Y> <U> <V>`          |
+| `coloryuvtorgbks`  | `<Y> <U> <V>`          |
+| `coloryuvtoryb`    | `<Y> <U> <V>`          |
+| `coloryuvtorybks`  | `<Y> <U> <V>`          |
+| `coloryuvtocmyk`   | `<Y> <U> <V>`          |
+| `coloryuvtocmykks` | `<Y> <U> <V>`          |
+| `coloryuvtocmy`    | `<Y> <U> <V>`          |
+| `coloryuvtocmyks`  | `<Y> <U> <V>`          |
+| `coloryuvtohsl`    | `<Y> <U> <V>`          |
+| `coloryuvtohslks`  | `<Y> <U> <V>`          |
+| `coloryuvtohsv`    | `<Y> <U> <V>`          |
+| `coloryuvtohsvks`  | `<Y> <U> <V>`          |
+| `coloryuvtoyiq`    | `<Y> <U> <V>`          |
+| `coloryuvtoyiqks`  | `<Y> <U> <V>`          |
 
 ### Contacts
 
