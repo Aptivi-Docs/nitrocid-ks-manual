@@ -4,13 +4,9 @@ description: Features that are available only in the kernel addons
 
 # 🌟 Extra Features
 
-In addition to the base kernel features that are highlighted in the list of simulated kernel features after this master page, the kernel also provides extra features, like an unofficial ChatGPT client, if their associated addons are installed to the kernel.
+In addition to the base kernel features that are highlighted in the list of simulated kernel features after this master page, the kernel also provides extra features if their associated addons are installed to the kernel.
 
 Select a page below to go to a feature:
-
-{% content-ref url="chatgpt-client.md" %}
-[chatgpt-client.md](chatgpt-client.md)
-{% endcontent-ref %}
 
 {% content-ref url="more-networking/" %}
 [more-networking](more-networking/)
@@ -48,7 +44,7 @@ You can get these extra features, including extra languages, splashes, and scree
 When downloading addons, consider the following points:
 
 * It's necessary to reboot the kernel for the addons to get loaded.
-* The addon pack size is around **300+ MB**, so you need to download it on unmetered networks, such as WiFi. This is to reduce your data fee.
+* The addon pack size is around **100+ MB**, so you need to download it on unmetered networks, such as WiFi. This is to reduce your data fee.
 {% endhint %}
 
 ## What are addons?
@@ -57,6 +53,6 @@ Addons are program extension libraries that extend the functionality of a progra
 
 In addition, Nitrocid KS provides an addon system that loads all the kernel addons that are built with the Nitrocid project. Mods are the second kind of kernel addons that have lesser privileges, but can be made easily by you. The documentation provides you instructions on how to make your own mod (not zero-code!) using the page below:
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="../../../advanced-and-power-users/kernel-modifications/build-your.../your-mod.md" %}
+[your-mod.md](../../../advanced-and-power-users/kernel-modifications/build-your.../your-mod.md)
 {% endcontent-ref %}

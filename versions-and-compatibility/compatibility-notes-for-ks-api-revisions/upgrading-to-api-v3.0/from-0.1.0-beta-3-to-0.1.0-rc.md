@@ -192,6 +192,16 @@ public static class ConsoleChecker
 public static class ConsoleResizeListener
 public static class ConsoleResizeHandler
 public static class ConsoleWrapper
+public class ChoiceInputElement : IElement
+public class DynamicTextElement : IElement
+public interface IElement
+public class InputElement : IElement
+public class MaskedInputElement : IElement
+public class MultipleChoiceInputElement : IElement
+public class TextElement : IElement
+public class PresentationPage
+public static class PresentationTools
+public class Slideshow
 ```
 {% endcode %}
 
@@ -282,4 +292,95 @@ Earlier, the MOTD and the MAL parsers belonged to the miscellaneous portion of t
 
 {% hint style="info" %}
 None of the classes have their functionality changed. You can just update the usings clause to point to `Nitrocid.Users.Login.Motd` instead of `Nitrocid.Misc.Text.Probers.Motd`.
+{% endhint %}
+
+### Removed three addons from the known addons list
+
+{% code title="KnownAddons.cs" lineNumbers="true" %}
+```csharp
+public enum KnownAddons
+{
+    (...)
+    /// <summary>
+    /// ChatGPT Unofficial Client Extras addon
+    /// </summary>
+    ExtrasChatGpt,
+    (...)
+    /// <summary>
+    /// RetroKS Extras addon
+    /// </summary>
+    ExtrasRetroKS,
+    (...)
+    /// <summary>
+    /// Inxi.NET Hardware Prober Legacy addon
+    /// </summary>
+    LegacyInxiNet,
+    (...)
+}
+```
+{% endcode %}
+
+As a result of the three addons being removed at the start of the release candidate development cycle, we've decided to remove their leftovers: code files and known addons list. This is to ensure that the inter-addon communication doesn't expect any more deleted addons.
+
+{% hint style="danger" %}
+You can no longer use these addons to perform inter-addon communication.
+{% endhint %}
+
+### Command lists, revamped
+
+{% code title="IShellInfo.cs" lineNumbers="true" %}
+```csharp
+Dictionary<string, CommandInfo> Commands { get; }
+Dictionary<string, CommandInfo> ModCommands { get; }
+```
+{% endcode %}
+
+The two properties used to host a single dictionary that contained a key for the command name and a value for the actual command information instance. Over time, we've discovered that specifying a command two times when building the shell info is redundant, so we've decided to convert the two properties to a list to make the job easier for the mod developers to assign their own command and to reduce confusion.
+
+However, the following properties had to be modified during the change:
+
+{% code title="ShellManager.cs" lineNumbers="true" %}
+```csharp
+public static ReadOnlyDictionary<string, CommandInfo> UnifiedCommands
+```
+{% endcode %}
+
+In addition to that, the following functions had to be modified:
+
+{% code title="ModManager.cs" lineNumbers="true" %}
+```csharp
+public static Dictionary<string, CommandInfo> ListModCommands(ShellType ShellType)
+public static Dictionary<string, CommandInfo> ListModCommands(string ShellType)
+```
+{% endcode %}
+
+{% code title="CommandManager.cs" lineNumbers="true" %}
+```csharp
+public static bool IsCommandFound(string Command, ShellType ShellType, bool includeAliases = true)
+public static bool IsCommandFound(string Command, string ShellType, bool includeAliases = true)
+public static bool IsCommandFound(string Command, bool includeAliases = true)
+public static Dictionary<string, CommandInfo> GetCommands(ShellType ShellType, bool includeAliases = true)
+public static Dictionary<string, CommandInfo> GetCommands(string ShellType, bool includeAliases = true)
+public static Dictionary<string, CommandInfo> FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, ShellType ShellType, bool includeAliases = true)
+public static Dictionary<string, CommandInfo> FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, string ShellType, bool includeAliases = true)
+public static CommandInfo GetCommand(string Command, ShellType ShellType, bool includeAliases = true)
+public static CommandInfo GetCommand(string Command, string ShellType, bool includeAliases = true)
+```
+{% endcode %}
+
+As a result, the alias management had to change a bit on how it worked to adjust with this kind of change, resulting in a property in `CommandInfo`, called `Aliases`, showing up.
+
+The reason for this revamp is that because we needed to reduce the complexity of defining commands, especially when it comes to command names, you had to write it twice: the first time on the key and the second time on the `CommandInfo` constructor.
+
+{% hint style="info" %}
+You'll have to do the following:
+
+* For the functions, the `includeAliases` argument is gone. As a result, you'll have to cut the last argument passed to it.
+* `ListModCommands()` now returns an array of `CommandInfo` instead of a dictionary.
+*   You need to update your public overrides as illustrated in the below code block:
+
+    ```diff
+    -public override Dictionary<string, CommandInfo> Commands => new() ...
+    +public override List<CommandInfo> Commands => new() ...
+    ```
 {% endhint %}

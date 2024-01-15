@@ -98,19 +98,17 @@ internal class YourShellInfo : BaseShellInfo, IShellInfo
 This is where your commands get together by overriding the `Commands` variable with the new dictionary containing all your commands, like below (in the UESH shell):
 
 ```csharp
-public override Dictionary<string, CommandInfo> Commands => new()
+public override List<CommandInfo> Commands => new()
 {
-    { "adduser",
-        new CommandInfo("adduser", /* Localizable */ "Adds users",
-            new[] {
-                new CommandArgumentInfo(new[]
-                {
-                    new CommandArgumentPart(true, "username"),
-                    new CommandArgumentPart(false, "password"),
-                    new CommandArgumentPart(false, "confirm"),
-                }, Array.Empty<SwitchInfo>())
-            }, new AddUserCommand(), CommandFlags.Strict)
-    },
+    new CommandInfo("adduser", /* Localizable */ "Adds users",
+        new[] {
+            new CommandArgumentInfo(new[]
+            {
+                new CommandArgumentPart(true, "username"),
+                new CommandArgumentPart(false, "password"),
+                new CommandArgumentPart(false, "confirm"),
+            }, Array.Empty<SwitchInfo>())
+        }, new AddUserCommand(), CommandFlags.Strict),
     (...)
 };
 ```

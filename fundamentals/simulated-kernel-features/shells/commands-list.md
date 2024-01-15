@@ -208,6 +208,7 @@ This shell provides debug information. Here are the currently supported commands
 | `lsaddonfuncs`     | `<addon>`                              |
 | `lsaddonprops`     | `<addon>`                              |
 | `lsaddons`         |                                        |
+| `lsbaseaddons`     |                                        |
 | `lsfields`         | `[-suppress]`                          |
 | `lsproperties`     | `[-suppress]`                          |
 | `lsshells`         |                                        |

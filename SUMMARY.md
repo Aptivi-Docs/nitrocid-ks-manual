@@ -102,7 +102,6 @@
       * [☑ To-do List](fundamentals/simulated-kernel-features/extra-features/common-programs/to-do-list.md)
       * [⚖ Unit Converter](fundamentals/simulated-kernel-features/extra-features/common-programs/unit-converter.md)
       * [☀ Weather](fundamentals/simulated-kernel-features/extra-features/common-programs/weather.md)
-    * [🪄 ChatGPT Client](fundamentals/simulated-kernel-features/extra-features/chatgpt-client.md)
     * [🖼 Docking](fundamentals/simulated-kernel-features/extra-features/docking.md)
     * [🌏 Language Studio](fundamentals/simulated-kernel-features/extra-features/language-studio.md)
     * [🎨 Theme Studio](fundamentals/simulated-kernel-features/extra-features/theme-studio.md)
