@@ -21,4 +21,4 @@ The famous Hangman game! It lets you guess what characters are in a word. You ha
 
 * Normal (`hangman`): Six attempts max
 * Hardcore (`hangman -hardcore`): One attempt max
-* Practive (`hangman -practice`): Unlimited attempts
+* Practice (`hangman -practice`): Unlimited attempts

@@ -97,10 +97,6 @@ Additionally, you can change the kernel settings and list them using the followi
 
 This feature is useful for your UESH scripts and for your quick shortcut to change your settings.
 
-{% hint style="warning" %}
-Currently, setconfigvalue can't change the settings value to any variable that don't use strings. We're working on this very soon.
-{% endhint %}
-
 ## Settings format
 
 The settings format is out of scope for this page, so click the below link to learn more.
