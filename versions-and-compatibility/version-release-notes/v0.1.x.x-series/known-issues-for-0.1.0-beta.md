@@ -34,17 +34,25 @@ Issues that are highlighted in italic are fixed in the below beta version.
 
 During quality assurance, we're aware of the following issues:
 
-* Screensaver locking on UESH may not reset the cursor state
-* Archive shell may fail to start with SharpCompress not being found
-  * Workaround: copy both `ZstdSharp.dll` and `SharpCompress.dll` files from RetroKS addon directory to the Archive addon directory
-* Nitrocid KS currently requires administrative privileges to run
-* Language studio may fail to start with this error:
-  * `Command aborted for the following reason: Error reading JObject from JsonReader. Current JsonReader item is not an object: StartArray. Path '', line 1, position 1.`
-* Figlet text for "Please wait" may get glitched on 80x24 terminals.
-* Saving events and reminders might fail
-  * Workaround: make an empty text file with the name of the event or the reminder as the error message indicates using `mkfile`.
+* _Screensaver locking on UESH may not reset the cursor state_
+* _Archive shell may fail to start with SharpCompress not being found_
+  * _Workaround: copy both `ZstdSharp.dll` and `SharpCompress.dll` files from RetroKS addon directory to the Archive addon directory_
+* _Nitrocid KS currently requires administrative privileges to run_
+* _Language studio may fail to start with this error:_
+  * _`Command aborted for the following reason: Error reading JObject from JsonReader. Current JsonReader item is not an object: StartArray. Path '', line 1, position 1.`_
+* _Figlet text for "Please wait" may get glitched on 80x24 terminals._
+* _Saving events and reminders might fail_
+  * _Workaround: make an empty text file with the name of the event or the reminder as the error message indicates using `mkfile`._
 
 Issues that are highlighted in italic are fixed in the upcoming release candidate version.
+
+## 0.1.0 Release Candidate
+
+During quality assurance, we're aware of the following issues:
+
+* TBD
+
+Issues that are highlighted in italic are fixed in the final version.
 
 ## Found an issue?
 

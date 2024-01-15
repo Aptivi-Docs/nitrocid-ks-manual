@@ -23,12 +23,17 @@ Currently, the following pre-release versions are released:
 * [Beta 1](https://github.com/Aptivi/NitrocidKS/releases/tag/v0.1.0-b1) - API v3.0.25.0 - February 22nd, 2023
 * [Beta 2](https://github.com/Aptivi/NitrocidKS/releases/tag/v0.1.0-b2) - API v3.0.25.42 - August 10th, 2023
 * [Beta 3](https://github.com/Aptivi/NitrocidKS/releases/tag/v0.1.0-b3) - API v3.0.25.377 - December 28th, 2023
+* Release Candidate - API v3.0.25.4xx - February 1st, 2024 (future)
 
 If you found any issues or suggestions, report them on GitHub, and we'll consider responding to your requests within the next 24 hours.
 
 #### Beta manuals
 
 Available manuals for below beta versions:
+
+{% content-ref url="https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/3mRuFh68DHtbpLXUGDzq/" %}
+[Nitrocid KS v0.1.0 Release Candidate - Manual](https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/3mRuFh68DHtbpLXUGDzq/)
+{% endcontent-ref %}
 
 {% content-ref url="https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/kfeoFVXA0LPgBamKZDG4/" %}
 [Nitrocid KS v0.1.0 Beta 3 - Manual](https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/kfeoFVXA0LPgBamKZDG4/)
