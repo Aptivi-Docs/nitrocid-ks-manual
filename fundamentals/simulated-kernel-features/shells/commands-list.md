@@ -79,8 +79,6 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `ifm`                   |                                                                                  |
 | `input`                 | `<question>`                                                                     |
 | `inputpass`             | `<question>`                                                                     |
-| `jsonbeautify`          | `<jsonfile> <output>`                                                            |
-| `jsonminify`            | `<jsonfile> <output>`                                                            |
 | `langman`               | `<reload/load/unload> <customlangname>`                                          |
 |                         | `<list/reloadall>`                                                               |
 | `license`               |                                                                                  |
@@ -189,6 +187,7 @@ This shell provides you administrative tools. The following commands are availab
 | `lsevents`         |                                                  |
 | `lsusers`          |                                                  |
 | `userflag`         | `<user> <admin/anonymous/disabled> <false/true>` |
+| `userfullname`     | `<user> <name/clear>`                            |
 | `userinfo`         | `[user]`                                         |
 | `userlang`         | `<user> <lang/clear>`                            |
 

@@ -391,6 +391,9 @@ The JSON shell allows you to easily edit JSON files. You can use the below comma
 | `exitnosave`       |                                                                   |
 | `findproperty`     | `[-parentproperty] <propname>`                                    |
 | `jsoninfo`         | `[-simplified] [-showvals]`                                       |
+| `jsonminify`       | `<jsonfile> <output>`                                             |
+| `jsonbeautify`     | `<jsonfile> <output>`                                             |
+| `jsondiff`         | `<file1> <file2>`                                                 |
 | `print`            | `[propname]`                                                      |
 | `rm`               | `<objectPath>`                                                    |
 | `rmobject`         | `[-parentproperty] <objname>`                                     |
