@@ -68,6 +68,7 @@ When it comes to auto-completion, if you press TAB on any of the argument positi
     * `$variable`: List of UESH variables
     * `perm`: List of permission types
     * `cmd`, `command`: List of all available commands
+    * `shell`: List of all available shells
   * If the expression is not listed in any of the known expressions list, it'll check for the selection indicator characters (the slash `/` key).
     * For example, the `true/false` expression will generate an autocompleter that completes the two words: `true` and `false`.
   * In case there is none, the shell will use the default auto completer, which fetches possible files and folders on your current working directory.

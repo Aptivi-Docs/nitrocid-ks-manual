@@ -384,3 +384,48 @@ You'll have to do the following:
     +public override List<CommandInfo> Commands => new() ...
     ```
 {% endhint %}
+
+### Moved network classes one level shallow
+
+{% code title="Network classes" lineNumbers="true" %}
+```csharp
+namespace Nitrocid.Network.Base.Connections
+namespace Nitrocid.Network.Base.SpeedDial
+namespace Nitrocid.Network.Base.Transfer
+namespace Nitrocid.Network.RPC
+namespace Nitrocid.Network.RSS
+```
+{% endcode %}
+
+The network namespace needed better organization, because a lot of network-based shells were moved to their own addons. As a result, we've moved all the classes under `Base` one level closer to the root namespace, while the RPC and the RSS classes were moved to the `Types` namespace.
+
+{% hint style="info" %}
+This movement is done based on the fact that the network classes needed better organization. You'll have to update the following namespaces:
+
+```csharp
+namespace Nitrocid.Network.Connections
+namespace Nitrocid.Network.SpeedDial
+namespace Nitrocid.Network.Transfer
+namespace Nitrocid.Network.Types.RPC
+namespace Nitrocid.Network.Types.RSS
+```
+{% endhint %}
+
+### Added file combination to `Manipulation`
+
+{% code title="Combination.cs" lineNumbers="true" %}
+```csharp
+public static class Combination
+```
+{% endcode %}
+
+The file combination methods from the above class were considered to be file manipulation functions, so we've moved these functions to the `Manipulation` class:
+
+* `CombineTextFiles()`
+* `CombineBinaryFiles()`
+
+In addition to that, we've removed the `Combination` class as it only contained the two above functions.
+
+{% hint style="info" %}
+Change the references of `Combination` to `Manipulation` class when calling these functions.
+{% endhint %}

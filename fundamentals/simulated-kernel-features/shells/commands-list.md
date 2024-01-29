@@ -109,7 +109,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `platform`              | `[-r\|-v\|-b\|-c\|-n]`                                                           |
 | `put`                   | `<filename> <url>`                                                               |
 | `rdebug`                |                                                                                  |
-| `reboot`                | `[ip/safe/maintenance/debug] [port]`                                             |
+| `reboot`                | `[-safe\|-maintenance\|-debug] [ip] [port]`                                      |
 | `reloadconfig`          |                                                                                  |
 | `retroks`               |                                                                                  |
 | `rexec`                 | `<address> <port> <command>`                                                     |
@@ -137,6 +137,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `sumfile`               | `[-relative] <algorithm/all> <file> [output]`                                    |
 | `sumfiles`              | `[-relative] <algorithm/all> <dir> [output]`                                     |
 | `symlink`               | `<linkname> <target>`                                                            |
+| `sysinfo`               | `[-s\|-h\|-u\|-m\|-l\|-a]`                                                       |
 | `taskman`               |                                                                                  |
 | `themeprev`             | `[theme]`                                                                        |
 | `themeset`              | `[-y] [theme]`                                                                   |
