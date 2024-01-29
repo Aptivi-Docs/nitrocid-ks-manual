@@ -50,7 +50,7 @@ Issues that are highlighted in italic are fixed in the upcoming release candidat
 
 During quality assurance, we're aware of the following issues:
 
-* TBD
+* Console display may be garbled on terminals with&#x20;
 
 Issues that are highlighted in italic are fixed in the final version.
 

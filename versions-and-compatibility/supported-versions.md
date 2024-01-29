@@ -16,9 +16,9 @@ _All dates are in MM/DD/YYYY._
 {% tab title="API v3.0" %}
 This revision of the third generation API is currently under development.
 
-| Version  | Release date | EOL date | Security EOL date |
-| -------- | ------------ | -------- | ----------------- |
-| v0.1.0.0 | 3/11/2024    | TBA      | TBA               |
+| Version  | Release date | EOL date  | Security EOL date |
+| -------- | ------------ | --------- | ----------------- |
+| v0.1.0.0 | 3/11/2024    | 3/11/2029 | 3/11/2032         |
 {% endtab %}
 
 {% tab title="API v2.1" %}

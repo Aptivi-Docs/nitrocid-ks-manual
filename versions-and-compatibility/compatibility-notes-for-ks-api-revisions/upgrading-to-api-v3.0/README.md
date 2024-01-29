@@ -33,10 +33,10 @@ This version is a futuristic magic that brings in many feature additions and spe
 When upgrading your mods to API v3.0, consider these:
 
 * A breaking change has been made so that every mod that need to work with API version `3.0.25.123` or higher should satisfy the following conditions for their versions:
-  1. Mod versions should satisfy the SemVer v2.0 specification. Mod parsing will fail if an invalid version expression is entered.
+  * Mod versions should satisfy the SemVer v2.0 specification. Mod parsing will fail if an invalid version expression is entered.
 * Additionally, a breaking change has been made starting from API version `3.0.25.154` that will make the mod loader fail under the following conditions:
-  1. The mod is not strongly signed using any strong naming key and loading untrusted mods is disabled.
+  * The mod is not strongly signed using any strong naming key and loading untrusted mods is disabled.
 * Starting from API version `3.0.25.310`, Nitrocid KS now uses .NET 8.0, which means that all your mods will have to be updated to continue working.
 {% endhint %}
 
-This will be populated as soon as we reach the release candidate stage of 0.1.0 to maintain consistency.
+This will be populated as soon as we reach the final stage of 0.1.0 to maintain consistency.
