@@ -9,6 +9,8 @@ description: Just started using Nitrocid KS? You've landed on the right place!
 {% hint style="success" %}
 🎊 🎊 🎊
 
+<mark style="color:purple;">**We're currently working on finalizing the 0.1.0 release that its development started on August 10th, 2022!**</mark>
+
 <mark style="color:purple;">**Get ready for the final release of 0.1.0 on March 11th, 2024!**</mark>
 
 🎊 🎊 🎊
