@@ -98,15 +98,13 @@ You can get the kernel version information using the following properties from t
 
 ## Writing to the console
 
-The Writers part of the ConsoleBase provides you classes that allow you to render and write content to the console, ranging from simple text writing to Figlet writing to box borders.
+The `Writers` namespace of the Nitrocid-specific `ConsoleBase` namespace contains the following three writer types:
 
-You can either use the `Write*()` functions to write the rendered result directly to the console, or you can use the `Render*()` functions to get a string that can be used with the plain writer of the `TextWriterColor`, `WritePlain()`.
+* `TextWriters`: Provides you with all the normal console writers with kernel color types.
+* `TextFancyWriters`: Provides you with all the fancy writers with kernel color types.
+* `TextMiscWriters`: Provides you with all the miscellaneous writers with kernel color types.
 
-{% hint style="info" %}
-If you want colorless printing, you can use the `Write*Plain()` functions found in the writer classes.
-{% endhint %}
-
-This feature is also available for Terminaux, so consult its guide for more information:
+If you want to either plainly write text or with a custom color of your choice, consult the Terminaux guide for more information:
 
 {% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-writers" %}
 [Console Writers](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-writers)
@@ -114,7 +112,7 @@ This feature is also available for Terminaux, so consult its guide for more info
 
 ## Resetting colors
 
-If you need to reset the colors for further text to be written to the console in its natural colors, you can use the `ResetColors()` function to reset the foreground and the background colors to their defaults.
+If you need to reset the colors for further text to be written to the console in its natural colors, you can use the `ResetColors()` function in the `ConsoleTools` class to reset the foreground and the background colors to their defaults.
 
 ```csharp
 public static void ResetColors(bool useKernelColors = false)
@@ -124,13 +122,13 @@ Additionally, if you pass `true` to the `useKernelColors` parameter, the colors 
 
 ## Alarms
 
-When it comes to alarms, they are useful to alarm you for something at a specified time. Caffeine used to host its own alarm listener service before it got merged to the `Time` part of the kernel. This service and its tools can be accessed via the `AlarmTools` class.
+When it comes to alarms, they are useful to alarm you for something at a specified time. This service and its tools can be accessed via the `AlarmTools` class.
 
 ```csharp
 public static class AlarmTools
 ```
 
-You can start an alarm using the StartAlarm function that lets you specify your alarm ID, your alarm name, and your alarm interval in seconds.
+You can start an alarm using the `StartAlarm()` function that lets you specify your alarm ID, your alarm name, and your alarm interval in seconds.
 
 ```csharp
 public static void StartAlarm(string alarmId, string alarmName, int alarmValue)
