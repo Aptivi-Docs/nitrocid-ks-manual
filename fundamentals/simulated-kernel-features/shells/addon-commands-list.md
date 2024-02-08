@@ -379,28 +379,21 @@ You can use the following commands to get information about your Internet radio 
 
 The JSON shell allows you to easily edit JSON files. You can use the below commands:
 
-| Commands           | Arguments and Switches                                            |
-| ------------------ | ----------------------------------------------------------------- |
-| `add`              | `<-type=value> [-parentPath=value] [-propName=value] <jsonValue>` |
-| `addarray`         | `[-parentproperty] <propname> <propvalue1> [propvalue2] [...]`    |
-| `addproperty`      | `[-parentproperty] <propname> <propvalue>`                        |
-| `addobject`        | `[-parentproperty] <arrname> <arrvalue>`                          |
-| `addobjectindexed` | `[-parentproperty] <idx> <arrvalue>`                              |
-| `clear`            |                                                                   |
-| `delproperty`      | `<propname>`                                                      |
-| `exitnosave`       |                                                                   |
-| `findproperty`     | `[-parentproperty] <propname>`                                    |
-| `jsoninfo`         | `[-simplified] [-showvals]`                                       |
-| `jsonminify`       | `<jsonfile> <output>`                                             |
-| `jsonbeautify`     | `<jsonfile> <output>`                                             |
-| `jsondiff`         | `<file1> <file2>`                                                 |
-| `print`            | `[propname]`                                                      |
-| `rm`               | `<objectPath>`                                                    |
-| `rmobject`         | `[-parentproperty] <objname>`                                     |
-| `rmobjectindexed`  | `[-parentproperty] <objidx>`                                      |
-| `save`             | `[-b\|-m]`                                                        |
-| `set`              | `<-type=value> [-parentPath=value] [-propName=value] <jsonValue>` |
-| `tui`              |                                                                   |
+| Commands       | Arguments and Switches                                            |
+| -------------- | ----------------------------------------------------------------- |
+| `add`          | `<-type=value> [-parentPath=value] [-propName=value] <jsonValue>` |
+| `clear`        |                                                                   |
+| `exitnosave`   |                                                                   |
+| `findproperty` | `[-parentproperty] <propname>`                                    |
+| `jsoninfo`     | `[-simplified] [-showvals]`                                       |
+| `jsonminify`   | `<jsonfile> <output>`                                             |
+| `jsonbeautify` | `<jsonfile> <output>`                                             |
+| `jsondiff`     | `<file1> <file2>`                                                 |
+| `print`        | `[propname]`                                                      |
+| `rm`           | `<objectPath>`                                                    |
+| `save`         | `[-b\|-m]`                                                        |
+| `set`          | `<-type=value> [-parentPath=value] [-propName=value] <jsonValue>` |
+| `tui`          |                                                                   |
 
 ### Language Studio
 
