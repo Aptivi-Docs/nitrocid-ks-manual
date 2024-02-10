@@ -136,6 +136,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `sudo`                  | `<command>`                                                                      |
 | `sumfile`               | `[-relative] <algorithm/all> <file> [output]`                                    |
 | `sumfiles`              | `[-relative] <algorithm/all> <dir> [output]`                                     |
+| `sumtext`               | `<algorithm/all> <text>`                                                         |
 | `symlink`               | `<linkname> <target>`                                                            |
 | `sysinfo`               | `[-s\|-h\|-u\|-m\|-l\|-a]`                                                       |
 | `taskman`               |                                                                                  |

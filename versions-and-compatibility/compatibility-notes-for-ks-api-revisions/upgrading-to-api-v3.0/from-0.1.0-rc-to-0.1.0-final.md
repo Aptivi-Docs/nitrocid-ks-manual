@@ -51,3 +51,76 @@ As a result, your mods will break if they assume that these three algorithms are
 {% hint style="info" %}
 Your mods will break only if they have been used and the three addons are not installed yet.
 {% endhint %}
+
+### Removed `SettingVariable` command flag
+
+{% code title="CommandFlags.cs" lineNumbers="true" %}
+```csharp
+public enum CommandFlags
+{
+    (...)
+    [Obsolete("-set=varname already exists. Use the AcceptsSet parameter from the CommandArgumentInfo constructor instead of this flag.")]
+    SettingVariable = 8,
+    (...)
+}
+```
+{% endcode %}
+
+We have introduced a new way to give your UESH commands an option to set a value to the UESH variable that is set by the `-set=varname` switch. This way, we've decided to remove `SettingVariable` in favor of the `AcceptsSet` parameter from the `CommandArgumentInfo` constructor.
+
+{% hint style="danger" %}
+From now on, you'll no longer be able to use the `SettingVariable` switch.
+{% endhint %}
+
+### Figlet tools class moved to Terminaux 3.0
+
+{% code title="FigletTextTools.cs" lineNumbers="true" %}
+```csharp
+public static class FigletTextTools
+```
+{% endcode %}
+
+The figlet text tools class has been moved to Terminaux 3.0, because we were working on a major version of Terminaux to aim for better experience for console applications, which promises many features to come, such as the transparent console support.
+
+As for this change, it has been moved to this version of the terminal library to be able to manage default Figlet fonts in easier and more consistent ways.
+
+{% hint style="info" %}
+From now, use the `Config.MainConfig.DefaultFigletFontName` property while Terminaux 3.0 gets released.
+{% endhint %}
+
+### Removed obsolete functions from 0.1.0 RC
+
+{% code title="KernelThread.cs" lineNumbers="true" %}
+```csharp
+public ulong NativeThreadId
+```
+{% endcode %}
+
+{% code title="AliasManager.cs" lineNumbers="true" %}
+```csharp
+public static void ManageAlias(string mode, ShellType Type, string AliasCmd, string DestCmd = "")
+public static void ManageAlias(string mode, string Type, string AliasCmd, string DestCmd = "")
+```
+{% endcode %}
+
+{% code title="UESHCommands.cs" lineNumbers="true" %}
+```csharp
+public static class UESHCommands
+```
+{% endcode %}
+
+The above functions have been obsoleted during the development cycle of 0.1.0. They have been removed in preparation for the final release of 0.1.0 for the below reasons:
+
+* The native thread ID can't be get accurately, because managed threads and native threads don't have a 1:1 relationship with each other. Furthermore, one managed thread may use multiple operating system native threads. It's obtainable through the diagnostic library created by Microsoft, ClrMd, but we don't want to risk implementing it in fear of malicious mods using them to cause problems, such as re-implementing `Thread.Abort()` of some sort.
+* The `ManageAlias()` functions were wrappers of the alias management functions. The wrapper functions appear to be doing nothing other than just being proxy functions with the mode as string declaring if we need to add or to remove an alias.
+* The `UESHCommands` class was created to help mod developers set a UESH variable if they had `SettingVariable` enabled. However, `-set=varname` was implemented, resulting in both `UESHCommands` and `SettingVariable` being candidates for removal.
+
+As a result, we've decided to remove them to clean things up.
+
+{% hint style="info" %}
+Here are some tips:
+
+* As for the native thread ID, it won't be re-implemented.
+* As for the `ManageAlias()` functions, they won't be re-implemented.
+* As for the UESHCommands class, you can just use the `-set=varname` switch instead.
+{% endhint %}

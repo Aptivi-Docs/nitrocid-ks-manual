@@ -292,6 +292,30 @@ TextWriterColor.Write(result);
 variableValue = result;
 ```
 
+### Return codes
+
+Your commands all feature return codes. The return code is zero by default, which means that the command has executed successfully. In case of a failure, some commands may return numbers other than zero, which indicate that there is something wrong when executing a command, possibly due to either a failed operation, a general error, or some other error.
+
+The kernel exceptions can also be used as return codes, though you'll have to reference to a class, called `KernelExceptionTools`, to be able to get an error code by exception type using the `GetErrorCode()` function. In addition to that, you can also use it with an instance of a kernel exception instance, in case you've wrapped the code with the try...catch clause and that you're catching all the `KernelException` errors, which almost all APIs throw on either a failure condition or an invalid operation.
+
+{% hint style="info" %}
+All kernel exception codes consist of `10000` added with the enumeration number of the kernel exception type.
+{% endhint %}
+
+Here's a minimal example of what exit does when you're trying to exit the mother shell:
+
+<pre class="language-csharp"><code class="lang-csharp">public override int Execute(CommandParameters parameters, ref string variableValue)
+{
+    if (ShellManager.IsOnMotherShell())
+    {
+        TextWriters.Write(Translate.DoTranslation("You can't exit the mother shell. Did you mean to log out of your account, shut the kernel down, or reboot it?"), KernelColorType.Error);
+<strong>        return KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation);
+</strong>    }
+    ShellManager.KillShell();
+    return 0;
+}
+</code></pre>
+
 ### Command flags
 
 Finally, the command flags (`CommandFlags`) can be defined. One or more of the command flags can be defined using the OR (`|`) operator when defining the command flags. These flags are available:
@@ -302,16 +326,10 @@ Finally, the command flags (`CommandFlags`) can be defined. One or more of the c
   * The flag value is 2
 * `Obsolete`: The command is obsolete.
   * The flag value is 4
-* `SettingVariable`: The command is setting a UESH variable.
-  * The flag value is 8
 * `RedirectionSupported`: Redirection is supported, meaning that all the output to the commands can be redirected to a file.
-  * The flag value is 16
+  * The flag value is 8
 * `Wrappable`: This command is wrappable to pages.
-  * The flag value is 32
-
-{% hint style="info" %}
-`SettingVariable` is obsolete. Please use the AcceptsSet parameter when making a new CommandArgumentInfo.
-{% endhint %}
+  * The flag value is 16
 
 ## More?
 
