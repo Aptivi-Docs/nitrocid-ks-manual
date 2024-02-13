@@ -103,6 +103,7 @@ The `Writers` namespace of the Nitrocid-specific `ConsoleBase` namespace contain
 * `TextWriters`: Provides you with all the normal console writers with kernel color types.
 * `TextFancyWriters`: Provides you with all the fancy writers with kernel color types.
 * `TextMiscWriters`: Provides you with all the miscellaneous writers with kernel color types.
+* `TextDynamicWriters`: Provides you with all the dynamically animated console writers with kernel color types.
 
 If you want to either plainly write text or with a custom color of your choice, consult the Terminaux guide for more information:
 

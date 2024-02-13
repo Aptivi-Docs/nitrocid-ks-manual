@@ -124,3 +124,58 @@ Here are some tips:
 * As for the `ManageAlias()` functions, they won't be re-implemented.
 * As for the UESHCommands class, you can just use the `-set=varname` switch instead.
 {% endhint %}
+
+### Exact wording definition changed
+
+{% code title="CommandArgumentPart.cs" lineNumbers="true" %}
+```csharp
+public string ExactWording { get; private set; }
+public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[], string[]> autoCompleter = null, bool isNumeric = false, string exactWording = null)
+```
+{% endcode %}
+
+{% code title="CommandArgumentPartOptions.cs" lineNumbers="true" %}
+```csharp
+public string ExactWording { get; set; }
+```
+{% endcode %}
+
+Earlier, we've introduced exact wording option to the command argument to let the user know that this is the exact wording that they must write in order for the command to get executed. However, doing the same thing for more than one word was tedious, as you had to make many instances of `CommandArgumentInfo` to cover all the words.
+
+As a result, we've decided to turn the definition of the two above variables to an array of strings that indicates what one of the words the user used to execute a command.
+
+{% hint style="info" %}
+You'll have to turn the declaration of this variable from a simple string to an array of strings, even if it's only one word.
+
+```diff
+ [
+     new CommandArgumentPart(true, "tui", new CommandArgumentPartOptions()
+     {
+-        ExactWording = "tui"
++        ExactWording = ["tui"]
+...
+```
+{% endhint %}
+
+### Moved slow/wrapped writers to `TextDynamicWriters`
+
+{% code title="TextWriters.cs" lineNumbers="true" %}
+```csharp
+public static void WriteSlowly(string msg, bool Line, double MsEachLetter, KernelColorType colorType, params object[] vars)
+public static void WriteSlowly(string msg, bool Line, double MsEachLetter, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, KernelColorType colorType, params object[] vars)
+public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, KernelColorType colorType, params object[] vars)
+public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, KernelColorType colorType, params object[] vars)
+public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+public static void WriteWrapped(string Text, bool Line, KernelColorType colorType, params object[] vars)
+public static void WriteWrapped(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+```
+{% endcode %}
+
+We have moved all the above writers from `TextWriters` to its own separate class that contains all the dynamic writers, `TextDynamicWriters`. The dynamic writers can not be stored as a single string, so we've moved them as appropriate.
+
+{% hint style="info" %}
+None of the functions have been changed. You just need to update the reference to `TextWriters` to point to `TextDynamicWriters` instead.
+{% endhint %}
