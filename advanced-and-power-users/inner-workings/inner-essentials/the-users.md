@@ -34,7 +34,7 @@ Trying to run any of the four functions above results in a `KernelException` if 
 Login handlers are login interfaces in which Nitrocid summons in order to commence a login process, just after all the necessary components of the kernel have finished loading. They provide three login flows:
 
 * `LoginScreen()`
-  * This is the first step for every login handler to stylize their login screen. It can be simple (textual) or modern (interactive)
+  * This is the first step for every login handler to stylize their login screen. It can be simple (textual) or modern (interactive). The return value determines whether to proceed to the user selector screen or to refresh itself (useful for shutdown/reboot options).
 * `UserSelector()`
   * This is the second stage in which the login handler must prompt for the username and return the correct username that exists. Additionally, you can make it return the username that the user input.
 * `PasswordHandler(user)`

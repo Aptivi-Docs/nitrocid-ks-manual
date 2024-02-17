@@ -179,3 +179,80 @@ We have moved all the above writers from `TextWriters` to its own separate class
 {% hint style="info" %}
 None of the functions have been changed. You just need to update the reference to `TextWriters` to point to `TextDynamicWriters` instead.
 {% endhint %}
+
+### Unsafe start/kill shell functions internalized
+
+{% code title="ShellManager.cs" lineNumbers="true" %}
+```csharp
+public static void StartShellForced(ShellType ShellType, params object[] ShellArgs)
+public static void StartShellForced(string ShellType, params object[] ShellArgs)
+public static void KillShellForced()
+```
+{% endcode %}
+
+Earlier beta versions of Nitrocid KS 0.1.0 have provided these functions to the public API space to allow your mods to forcefully start and/or kill shells, including the mother shell. However, we have realized that malicious mods can make use of these functions to try to log users out.
+
+We took this into consideration and removed these functions from the public API space and reserved them for internal use.
+
+{% hint style="warning" %}
+As of the final release of Nitrocid KS 0.1.0, you'll no longer be able to kill the shells forcefully, including the mother shell.
+{% endhint %}
+
+### `LoginScreen()` now returns a boolean value
+
+{% code title="ILoginHandler.cs" lineNumbers="true" %}
+```csharp
+void LoginScreen();
+```
+{% endcode %}
+
+{% code title="BaseLoginHandler.cs" lineNumbers="true" %}
+```csharp
+public virtual void LoginScreen()
+```
+{% endcode %}
+
+The login handler used to check to see if any login handler has requested a system shutdown, but the mod developers needed to make a global variable that checks to see if the user has requested a shutdown or reboot. Starting from the final version of Nitrocid 0.1.0, `LoginScreen()` now returns a boolean value to determine whether the login handler should proceed to go to the username selection screen (where you're required to input your username) or to refresh itself.
+
+{% hint style="info" %}
+If you hold this global variable, you must remove it and use the `return` clause to decide how to proceed.
+{% endhint %}
+
+### Overhauled the screensaver timeout settings
+
+{% code title="KernelMainConfig.cs" lineNumbers="true" %}
+```csharp
+public int ScreenTimeout
+```
+{% endcode %}
+
+{% code title="ScreensaverManager.cs" lineNumbers="true" %}
+```csharp
+public static int ScreenTimeout
+```
+{% endcode %}
+
+The screensaver timeout settings has been changed to the TimeSpan instance to accommodate the large timeouts that are bigger than the integer maximum value (indicated by `int.MaxValue`). This also makes things easier than before by having you to specify the time span as in the `HH:MM:SS` format in its simplest form, or `DDD.HH:MM:SS.NNN` for completeness.
+
+{% hint style="info" %}
+Don't worry, the new implementation is smart enough to detect old configurations and to convert them (as in milliseconds) to the new format.
+{% endhint %}
+
+### Progress reporting simplified
+
+{% code title="SplashReport.cs" lineNumbers="true" %}
+```csharp
+public static void ReportProgress(string Text, int Progress, bool force = false, ISplash splash = null, params object[] Vars)
+```
+{% endcode %}
+
+We've made a refactor to the progress reporting codebase so that it's easier to maintain. As a consequence, two arguments from the warning and the error reporters have been added to the `ReportProgress()` function.
+
+It may look intimidating to use, but it's rather easy, because all arguments after the `progress` number are optional. Also, we've implemented an enumeration list, called `SplashReportSeverity`, that allows you to report either a progress, a warning, or an error.
+
+{% hint style="info" %}
+You'll have to update your calls to the master `ReportProgress()` function to provide these two extra arguments before specifying the `ISplash` implementation:
+
+* Exception: An exception to use (default is `null`)
+* Severity: The severity of the report (default is `Info`)
+{% endhint %}
