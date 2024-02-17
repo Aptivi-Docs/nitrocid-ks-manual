@@ -4,7 +4,7 @@ description: Inner workings of the help system
 
 # ❔ Help System
 
-The help system is what every shell uses, invoked by the unified `help` command available for every type of shell. The function responsible for showing help entries or command usage and some extra help is `HelpSystem.ShowHelp()` in the `KS.Shell.ShellBase.Commands` namespace. Explore with us the mechanics of the help system below.
+The help system is what every shell uses, invoked by the unified `help` command available for every type of shell. The function responsible for showing help entries or command usage and some extra help is `HelpSystem.ShowHelp()` in the `Nitrocid.Shell.ShellBase.Commands` namespace. Explore with us the mechanics of the help system below.
 
 ## General help
 

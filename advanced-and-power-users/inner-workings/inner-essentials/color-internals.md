@@ -84,6 +84,7 @@ Nitrocid KS provides you with the following color types to help you make an insp
 | `TuiOptionForeground`      | Interactive TUI option foreground color                     |
 | `TuiBoxBackground`         | Interactive TUI box background color                        |
 | `TuiBoxForeground`         | Interactive TUI box foreground color                        |
+| `DisabledOption`           | Disabled option color                                       |
 
 ## Color selector
 
@@ -91,34 +92,13 @@ The color selector is an interactive TUI that allows you to seamlessly select yo
 
 To get information about how to use it, you can find it in the Terminaux manual page:
 
-{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/color-wheel" %}
-[Color Wheel](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/color-wheel)
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/input-reader/other-input/color-wheel" %}
+[Color Wheel](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/input-reader/other-input/color-wheel)
 {% endcontent-ref %}
 
 ## Color conversion
 
-Your theme files can also support any specifier, as long as the specifier is supported by Terminaux. For a quick reminder, Terminaux supports the three true-color specifiers, alongside the color name or the color number, if you intend to use another color model to select colors:
-
-* RGB: Red, Green, and Blue.
-  * `<RRR>;<GGG>;<BBB>`
-  * where the three variables can be from 0 to 255.
-* RYB: Red, Yellow, and Blue.
-  * `ryb:<RRR>;<YYY>;<BBB>`
-  * where the three variables can be from 0 to 255.
-* CMYK: Cyan, Magenta, and Yellow with the Black Key.
-  * `cmyk:<CCC>;<MMM>;<YYY>;<KKK>`
-  * where these variables can be from 0 to 100.
-* CMY: Cyan, Magenta, and Yellow.
-  * `cmy:<CCC>;<MMM>;<YYY>`
-  * where these variables can be from 0 to 100.
-* HSL: Hue, Saturation, and Luminance (or Lightness).
-  * `hsl:<HHH>;<SSS>;<LLL>`
-  * where the Hue can be from 0 to 360 _**degrees**_ and _**not radians**_.
-  * where the Saturation and the Luminance can be from 0 to 100.
-* HSV: Hue, Saturation, and Value.
-  * `hsv:<HHH>;<SSS>;<VVV>`
-  * where the Hue can be from 0 to 360 _**degrees**_ and _**not radians**_.
-  * where the Saturation and the Luminance can be from 0 to 100.
+Your theme files can also support any specifier, as long as the specifier is supported by Terminaux. For a quick reminder, Terminaux supports the true-color specifiers, alongside the color name or the color number, if you intend to use another color model to select colors.
 
 The commands provided by the color conversion Extras addon help you convert from a color model, such as RGB, to another color model, such as CMYK.
 

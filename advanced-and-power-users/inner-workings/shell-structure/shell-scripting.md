@@ -238,7 +238,7 @@ Custom conditions are mod-defined conditions that customize the way that you def
 
 {% code lineNumbers="true" %}
 ```csharp
-using KS.Scripting.Conditions;
+using Nitrocid.Scripting.Conditions;
 
 public class MyCondition : BaseCondition, ICondition
 {

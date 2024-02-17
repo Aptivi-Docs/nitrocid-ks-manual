@@ -44,7 +44,7 @@ Calling the debug function below will post your debug message to the kernel debu
 public static void WriteDebug(DebugLevel Level, string text, params object[] vars)
 ```
 
-Found in the `DebugWriter` module under the `KS.Kernel.Debugging` namespace.
+Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespace.
 
 ### Conditional Debugging
 
@@ -54,7 +54,7 @@ Calling the debug function below will post your debug message to the kernel debu
 public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object[] vars)
 ```
 
-Found in the `DebugWriter` module under the `KS.Kernel.Debugging` namespace.
+Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespace.
 
 ### Privacy-aware Debugging
 
@@ -64,7 +64,7 @@ Calling the debug function below will post your debug message to the kernel debu
 public static void WriteDebugPrivacy(DebugLevel Level, string text, int[] SecureVarIndexes, params object[] vars)
 ```
 
-Found in the `DebugWriter` module under the `KS.Kernel.Debugging` namespace.
+Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespace.
 
 ### Stack Trace Debugging
 
@@ -74,7 +74,7 @@ Calling the debug function below will post the stack trace of an exception, incl
 public static void WriteDebugStackTrace(Exception Ex)
 ```
 
-Found in the `DebugWriter` module under the `KS.Kernel.Debugging` namespace.
+Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespace.
 
 ### Stack Trace Conditional Debugging
 
@@ -84,7 +84,7 @@ Calling the debug function below will post the stack trace of an exception, incl
 public static void WriteDebugStackTraceConditional(bool Condition, Exception Ex)
 ```
 
-Found in the `DebugWriter` module under the `KS.Kernel.Debugging` namespace.
+Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespace.
 
 ## Debug quotas
 

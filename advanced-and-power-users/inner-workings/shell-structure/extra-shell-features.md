@@ -19,7 +19,7 @@ CancellationHandlers.InhibitCancel()
 ```
 
 {% hint style="info" %}
-The `CancellationHandlers` class can be found in the `KS.Shell.ShellBase.Commands` namespace.
+The `CancellationHandlers` class can be found in the `Nitrocid.Shell.ShellBase.Commands` namespace.
 {% endhint %}
 
 If you call `InhibitCancel()`, it's no longer possible to use `CTRL + C` to cancel the current command. This is useful if the command is in the middle of an uninterruptible work or is in interaction with a native library.

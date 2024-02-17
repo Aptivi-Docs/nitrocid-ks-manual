@@ -213,9 +213,9 @@ public static void PreviewTheme(ThemeInfo theme)
 
 Each of these two functions get a list of kernel color types known by the color management tools and their associated colors. Then, they show you a preview of the theme colors. You can use the following key bindings in this interactive preview:
 
-* ENTER: Exits the preview
-* Arrow Left: Switches to the previous kernel color type
-* Arrow Right: Switches to the next kernel color type
+* `ENTER`: Exits the preview
+* `Arrow Left`: Switches to the previous kernel color type
+* `Arrow Right`: Switches to the next kernel color type
 
 ## Other tools
 

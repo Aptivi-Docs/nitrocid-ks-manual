@@ -49,8 +49,8 @@ You can use the mod analyzers by consulting the page below:
 
 ## Build...
 
-If you'd like to build your own modifications, great! Click on the master page below to select what you want to build!
+If you'd like to build your own modifications, great! Click on the page below to get started.
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="build-your.../your-mod.md" %}
+[your-mod.md](build-your.../your-mod.md)
 {% endcontent-ref %}

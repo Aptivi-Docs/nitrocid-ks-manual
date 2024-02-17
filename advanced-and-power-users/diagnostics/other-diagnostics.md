@@ -18,7 +18,7 @@ This is internally used by the kernel debugger and the kernel exception to allow
 When the constructor is called, it generates information about the third stack frame to get the caller's method info. If the frame number is specified, it gets offset by `+1` to get info about the needed method.
 
 {% hint style="info" %}
-This method is internally called by the debug writer. If you really want to create an instance of this class, you'll have to use Reflection. The class name is `DebugStackFrame` in the `KS.Kernel.Debugging.Trace` namespace.
+This method is internally called by the debug writer. If you really want to create an instance of this class, you'll have to use Reflection. The class name is `DebugStackFrame` in the `Nitrocid.Kernel.Debugging.Trace` namespace.
 {% endhint %}
 
 ## Kernel dump files
@@ -57,7 +57,7 @@ The kernel exceptions are just normal errors with a generic message intended to 
 
 {% @github-files/github-code-block url="https://github.com/Aptivi/NitrocidKS/blob/main/public/Nitrocid/Kernel/Exceptions/KernelExceptionMessages.cs" %}
 
-To make a kernel exception, throw a new instance of `KernelException` found in the `KS.Kernel.Exceptions` namespace in one of the forms:
+To make a kernel exception, throw a new instance of `KernelException` found in the `Nitrocid.Kernel.Exceptions` namespace in one of the forms:
 
 ```csharp
 public KernelException(KernelExceptionType exceptionType)

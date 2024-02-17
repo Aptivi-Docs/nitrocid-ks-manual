@@ -12,23 +12,23 @@ Generally, Nitrocid KS offers the fully-fledged filesystem functionality that al
 
 Your mods can access this, too! However, we'll walk you through the Nitrocid filesystem class hierarchy:
 
-* `KS.Files`
+* `Nitrocid.Files`
   * This is the general filesystem namespace containing security-related checks for the validity and openness of the files, like lock checks, which are found in the `FilesystemTools` class.
-* `KS.Files.Attributes`
+* `Nitrocid.Files.Attributes`
   * This is the namespace responsible for the attribute management for files.
-* `KS.Files.Editors`
+* `Nitrocid.Files.Editors`
   * This is the namespace that holds the tools for type-specific text file editing tools
-* `KS.Files.Extensions`
+* `Nitrocid.Files.Extensions`
   * This is the namespace responsible for the extension management for files.
-* `KS.Files.Folders`
+* `Nitrocid.Files.Folders`
   * This is the namespace that specializes with the listing of folders and querying the current directory.
-* `KS.Files.Instances`
+* `Nitrocid.Files.Instances`
   * This is the namespace that holds filesystem-related classes.
-* `KS.Files.LineEndings`
+* `Nitrocid.Files.LineEndings`
   * This is the namespace responsible for the management of the line endings for text files.
-* `KS.Files.Operations`
+* `Nitrocid.Files.Operations`
   * This is the namespace which houses common filesystem operations, such as making, copying, opening, or deleting files and folders.
-* `KS.Files.Paths`
+* `Nitrocid.Files.Paths`
   * This is the namespace that is responsible for the management of the kernel path system and the path lookup system.
 
 {% hint style="danger" %}
@@ -80,7 +80,7 @@ Consult the above link to the API reference for more info about how to use these
 * `BaseEntryUnprocessed`: The base entry from the unprocessed file path
 * `BaseEntry`: The base entry from the neutralized file path
 
-You can create a new instance of this class, assuming that you've imported the `KS.Files.Instances` namespace, by simply calling the constructor like below:
+You can create a new instance of this class, assuming that you've imported the `Nitrocid.Files.Instances` namespace, by simply calling the constructor like below:
 
 ```csharp
 var entry = new FileSystemEntry(pathToFile);
@@ -184,7 +184,7 @@ To make a symbolic link, you can use the `MakeSymlink()` function and its `Try` 
 
 ### Custom paths
 
-The `KS.Files.Paths` namespace contains a group of functions that allow you to use the pre-defined kernel paths and custom paths. The pre-defined kernel paths can be get by either getting a value from its associated property, such as `AddonsPath`, or by using the `GetKernelPath()` function.
+The `Nitrocid.Files.Paths` namespace contains a group of functions that allow you to use the pre-defined kernel paths and custom paths. The pre-defined kernel paths can be get by either getting a value from its associated property, such as `AddonsPath`, or by using the `GetKernelPath()` function.
 
 ```csharp
 public static string GetKernelPath(KernelPathType PathType)

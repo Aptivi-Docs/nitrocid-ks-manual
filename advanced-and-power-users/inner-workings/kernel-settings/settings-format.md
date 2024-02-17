@@ -83,7 +83,6 @@ In special cases, each type might require different variables to be set before t
 * `SIntSlider`
 * `SDouble`
 * `SPreset`
-* `SLang`
 * `SFiglet`
 
 Only the types that require additional configuration are listed below. The below variables must be set to work with these types:
@@ -120,7 +119,7 @@ If the target listing is an enumeration, the list can be obtained immediately wi
 
 * `EnumerationInternal`: Specifies whether the enumeration is found within the kernel or within an external assembly
   * The type of this variable is a **boolean**
-* `Enumeration`: The fully qualified name of the enumeration, including the whole namespace. If internal, `KS.` can be omitted. Enumerations inside the static classes must be appended with the plus sign, for example, `ConsoleBase.Inputs.Styles.ChoiceStyle+ChoiceOutputType`.
+* `Enumeration`: The fully qualified name of the enumeration, including the whole namespace. If internal, `Nitrocid.` can be omitted. Enumerations inside the static classes must be appended with the plus sign, for example, `ConsoleBase.Inputs.Styles.ChoiceStyle+ChoiceOutputType`.
   * The type of this variable is a **string**
 * `EnumerationAssembly`: An assembly name containing the enumeration. It can be omitted if enumeration is internal
   * The type of this variable is a **string**
@@ -191,7 +190,7 @@ This type is a shell preset that is treated as a string in the kernel configurat
 
 #### General case
 
-It provides only one variable, `ShellType`, that specifies the shell type for listing all the presets. It delegates the listing functions to `PromptPresetManager.PromptForPresets()` function with the shell type in the `KS.Shell.Prompts` namespace.
+It provides only one variable, `ShellType`, that specifies the shell type for listing all the presets. It delegates the listing functions to `PromptPresetManager.PromptForPresets()` function with the shell type in the `Nitrocid.Shell.Prompts` namespace.
 
 * `SelectionFunctionName`: The function within the below specified type that returns the list. It must contain no arguments.
   * The type of this variable is a **string**
@@ -232,7 +231,7 @@ The format is as below:
 
 ## User Configuration
 
-The kernel makes a user configuration entry for each new user created either by the `adduser` command or by the call of the `UserManagement.InitializeUser()` function in the `KS.Users` namespace under the name of `Users.json` found in the kernel configuration directory. The format of the file looks like this:
+The kernel makes a user configuration entry for each new user created either by the `adduser` command or by the call of the `UserManagement.InitializeUser()` function in the `Nitrocid.Users` namespace under the name of `Users.json` found in the kernel configuration directory. The format of the file looks like this:
 
 ```json
 [
@@ -278,7 +277,7 @@ Let's explain each key one by one:
 
 ## Group configuration
 
-The kernel also supports user groups created either by the `addgroup` command or by the call of the `GroupManagement.AddGroup()` function in the `KS.Users.Groups` namespace under the name of `UserGroups.json` found in the kernel configuration directory. The format of the file looks like this:
+The kernel also supports user groups created either by the `addgroup` command or by the call of the `GroupManagement.AddGroup()` function in the `Nitrocid.Users.Groups` namespace under the name of `UserGroups.json` found in the kernel configuration directory. The format of the file looks like this:
 
 ```json
 [
@@ -298,7 +297,7 @@ Let's explain each key one by one:
 
 ## Alias configuration
 
-The kernel makes an alias configuration entry for each new alias created either by the `alias` command or by the call of the `AliasManager.ManageAlias()` function in the `KS.Shell.ShellBase.Aliases` namespace under the name of `Aliases.json` found in the kernel configuration directory. The format of the file looks like this:
+The kernel makes an alias configuration entry for each new alias created either by the `alias` command or by the call of the `AliasManager.ManageAlias()` function in the `Nitrocid.Shell.ShellBase.Aliases` namespace under the name of `Aliases.json` found in the kernel configuration directory. The format of the file looks like this:
 
 ```json
 [
@@ -413,6 +412,6 @@ The configuration files for the message of the day before login (MOTD) and after
 [kernel-placeholders.md](../inner-essentials/kernel-placeholders.md)
 {% endcontent-ref %}
 
-Both of these files are read every time the kernel log-in handler starts. The functions that are responsible for loading such info are both the `ReadMotd()` and the `ReadMal()` functions found under their respective namespaces `KS.Misc.Probers.Motd` and `KS.Misc.Probers.Mal`.
+Both of these files are read every time the kernel log-in handler starts. The functions that are responsible for loading such info are both the `ReadMotd()` and the `ReadMal()` functions found under their respective namespaces `Nitrocid.Misc.Probers.Motd` and `Nitrocid.Misc.Probers.Mal`.
 
 Changes to both files are done by the `SetMotd()` and the `SetMal()` functions under the same namespace. They're invoked either manually or by the usage of the `chmotd` and the `chmal` commands in the main shell.

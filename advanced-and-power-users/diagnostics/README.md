@@ -28,10 +28,6 @@ This way of debugging is only available if you have Visual Studio installed. If 
 4. Click on `Attach`
 5. In case Visual Studio is asking for source files, point to a file within the Nitrocid KS source
 
-{% hint style="warning" %}
-Please note that we currently don't fully support [Source Link](https://learn.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink), but we're working on it after Beta 3.
-{% endhint %}
-
 ### `KernelException` Class
 
 `KernelException` is an exception class that uses the exception type to give you a possible cause for each exception type. The kernel (and your mods) make extensive use of this exception to signal an error, but this class can also hold an inner exception of either the nested `KernelException` class or any of the `Exception` classes.

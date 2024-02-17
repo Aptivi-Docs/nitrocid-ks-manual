@@ -6,7 +6,7 @@ description: Do you want to <placeholder>?
 
 Kernel placeholders are text variables for any piece of text that are replaced by different elements found within the kernel. They are parsed in several different areas of the kernel, the most famous example being the MOTD and the MAL messages.
 
-The probing takes place in the `PlaceParse.ProbePlaces()` function found within the `KS.Misc.Probers.Placeholder` namespace. The following types of text use this function to parse the placeholders:
+The probing takes place in the `PlaceParse.ProbePlaces()` function found within the `Nitrocid.Misc.Probers.Placeholder` namespace. The following types of text use this function to parse the placeholders:
 
 * MOTD and MAL messages
 * Username prompt and their derivatives for each shell

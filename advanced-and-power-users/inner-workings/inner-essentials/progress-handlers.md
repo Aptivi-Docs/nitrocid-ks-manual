@@ -70,10 +70,10 @@ You must write the context correctly, as it is case-sensitive. Trying to report 
 
 This is the full example code that registers progress handlers for two contexts and reports the progress on them until the progress reaches 100%.
 
-<pre class="language-csharp" data-title="TestProgressHandler.cs" data-line-numbers><code class="lang-csharp">using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Languages;
-using KS.Misc.Progress;
+<pre class="language-csharp" data-title="TestProgressHandler.cs" data-line-numbers><code class="lang-csharp">using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Progress;
 using System.Threading;
 
 namespace KS.Kernel.Debugging.Testing.Facades
@@ -85,10 +85,10 @@ namespace KS.Kernel.Debugging.Testing.Facades
         {
             int progress = 0;
 <strong>            var handler = new ProgressHandler((num, text) =>
-</strong><strong>                TextWriterColor.WriteKernelColor($"{num}% {text}", KernelColorType.Progress)
+</strong><strong>                TextWriters.Write($"{num}% {text}", KernelColorType.Progress)
 </strong><strong>            , "General");
 </strong><strong>            var handler2 = new ProgressHandler((num, text) =>
-</strong><strong>                TextWriterColor.WriteKernelColor($"{num}% {text}", KernelColorType.NeutralText)
+</strong><strong>                TextWriters.Write($"{num}% {text}", KernelColorType.NeutralText)
 </strong><strong>            , "Nongeneral");
 </strong><strong>            ProgressManager.RegisterProgressHandler(handler);
 </strong><strong>            ProgressManager.RegisterProgressHandler(handler2);
