@@ -51,6 +51,8 @@ To lock your screen in the simulated kernel, you need to use the `lockscreen` co
 
 {% hint style="info" %}
 As of 0.1.0 Beta 3, you can enable or disable automatic screen locking by going to the kernel settings > Screensaver and enabling or disabling the `Enable Screensaver Timeout` setting.
+
+If you have this option enabled, you can set the timeout in the format of `DDD.HH:MM:SS.NNN`, or `HH:MM:SS` in the simplest form.
 {% endhint %}
 
 ### Reloading your custom screensaver

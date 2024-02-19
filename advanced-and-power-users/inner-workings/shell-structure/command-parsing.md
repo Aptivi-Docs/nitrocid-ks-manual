@@ -84,3 +84,17 @@ wrap help \-addon
 {% hint style="info" %}
 Unknown characters will stay escaped, but that depends on the behavior of the regular expression driver.
 {% endhint %}
+
+### `-set` switch property
+
+Your commands can now change their behavior, depending on if the `-set` switch was passed to the command. You can use the `parameters.SwitchSetPassed` value just like below:
+
+{% code title="SetRange.cs" lineNumbers="true" %}
+```csharp
+if (!parameters.SwitchSetPassed)
+{
+    TextWriters.Write(Translate.DoTranslation("You must pass the -set switch with the variable that you want to set this value to."), KernelColorType.Error);
+    return KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation);
+}
+```
+{% endcode %}
