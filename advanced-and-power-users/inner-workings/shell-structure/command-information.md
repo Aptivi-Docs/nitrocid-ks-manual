@@ -23,12 +23,16 @@ To implement `CommandArgumentInfo`, call the constructor either with no paramete
 ```csharp
 public CommandArgumentInfo()
 public CommandArgumentInfo(bool AcceptsSet)
+public CommandArgumentInfo(bool AcceptsSet, bool infiniteBounds)
 public CommandArgumentInfo(CommandArgumentPart[] Arguments)
 public CommandArgumentInfo(CommandArgumentPart[] Arguments, bool AcceptsSet)
+public CommandArgumentInfo(CommandArgumentPart[] Arguments, bool AcceptsSet, bool infiniteBounds)
 public CommandArgumentInfo(SwitchInfo[] Switches)
 public CommandArgumentInfo(SwitchInfo[] Switches, bool AcceptsSet)
+public CommandArgumentInfo(SwitchInfo[] Switches, bool AcceptsSet, bool infiniteBounds)
 public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches)
 public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet)
+public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet, bool infiniteBounds)
 ```
 
 where:
@@ -36,6 +40,7 @@ where:
 * `Arguments`: Defines the command arguments
 * `Switches`: Defines the command switches
 * `AcceptsSet`: Whether to accept the `-set` switch
+* `infiniteBounds`: Whether to accept infinite number of arguments or not
 
 For `CommandArgumentPart` instances, consult the below constructor to create an array of `CommandArgumentPart` instances when defining your commands:
 
