@@ -10,8 +10,8 @@ Random number generation involves a sequence of numbers that can't be reasonly p
 
 Nitrocid KS has a random number generator driver that allows you to generate various random numbers or choices based on your purpose, such as getting a random integer number, a random boolean (true or false), and so on. This is wrapped with a kernel driver handler, which you can read about it below:
 
-{% content-ref url="kernel-drivers.md" %}
-[kernel-drivers.md](kernel-drivers.md)
+{% content-ref url="kernel-drivers/" %}
+[kernel-drivers](kernel-drivers/)
 {% endcontent-ref %}
 
 ## Random Numbers

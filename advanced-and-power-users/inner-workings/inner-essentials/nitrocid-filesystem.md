@@ -2,12 +2,12 @@
 description: Let's go deeper into the filesystem functionality!
 ---
 
-# 🗃 Nitrocid Filesystem
+# 🗃️ Nitrocid Filesystem
 
 Generally, Nitrocid KS offers the fully-fledged filesystem functionality that allows you to perform filesystem operations ranging from simple to complex, like copying files to checking their lock state. This is done with the assistance of the kernel drivers, which we covered previously in the below page:
 
-{% content-ref url="kernel-drivers.md" %}
-[kernel-drivers.md](kernel-drivers.md)
+{% content-ref url="kernel-drivers/" %}
+[kernel-drivers](kernel-drivers/)
 {% endcontent-ref %}
 
 Your mods can access this, too! However, we'll walk you through the Nitrocid filesystem class hierarchy:

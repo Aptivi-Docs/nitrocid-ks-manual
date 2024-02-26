@@ -8,19 +8,7 @@ The kernel drivers allows your kernel to provide interfaces for different purpos
 
 The kernel drivers can be called using either the properties that point to the current driver of each driver type or the `GetDriver<TResult>()` function found in the `DriverHandler` class under the `KS.Drivers` namespace. These two will return an appropriate driver interface that actually allows you to call their functions that each driver of the same type implements. The types of kernel drivers are listed below:
 
-| Driver         | Interface               | Base                       | Description                     |
-| -------------- | ----------------------- | -------------------------- | ------------------------------- |
-| Random         | `IRandomDriver`         | `BaseRandomDriver`         | Random number generator drivers |
-| Console        | `IConsoleDriver`        | `BaseConsoleDriver`        | Console drivers                 |
-| Network        | `INetworkDriver`        | `BaseNetworkDriver`        | Network drivers                 |
-| Filesystem     | `IFilesystemDriver`     | `BaseFilesystemDriver`     | Filesystem drivers              |
-| Encryption     | `IEncryptionDriver`     | `BaseEncryptionDriver`     | Encryption drivers              |
-| Regexp         | `IRegexpDriver`         | `BaseRegexpDriver`         | Regular expression drivers      |
-| DebugLogger    | `IDebugLoggerDriver`    | `BaseDebugLoggerDriver`    | Debug logger drivers            |
-| Encoding       | `IEncodingDriver`       | `BaseEncodingDriver`       | Encoding drivers                |
-| HardwareProber | `IHardwareProberDriver` | `BaseHardwareProberDriver` | Hardware probing drivers        |
-| Sorting        | `ISortingDriver`        | `BaseSortingDriver`        | Integer sorting drivers         |
-| Input          | `IInputDriver`          | `BaseInputDriver`          | Input drivers                   |
+<table><thead><tr><th data-type="content-ref">Driver</th><th>Interface</th><th>Base</th><th>Description</th></tr></thead><tbody><tr><td><a href="rng-drivers.md">rng-drivers.md</a></td><td><code>IRandomDriver</code></td><td><code>BaseRandomDriver</code></td><td>Random number generator drivers</td></tr><tr><td><a href="console-drivers.md">console-drivers.md</a></td><td><code>IConsoleDriver</code></td><td><code>BaseConsoleDriver</code></td><td>Console drivers</td></tr><tr><td><a href="network-drivers.md">network-drivers.md</a></td><td><code>INetworkDriver</code></td><td><code>BaseNetworkDriver</code></td><td>Network drivers</td></tr><tr><td><a href="filesystem-drivers.md">filesystem-drivers.md</a></td><td><code>IFilesystemDriver</code></td><td><code>BaseFilesystemDriver</code></td><td>Filesystem drivers</td></tr><tr><td><a href="encryption-drivers.md">encryption-drivers.md</a></td><td><code>IEncryptionDriver</code></td><td><code>BaseEncryptionDriver</code></td><td>Encryption drivers</td></tr><tr><td><a href="regular-expression-drivers.md">regular-expression-drivers.md</a></td><td><code>IRegexpDriver</code></td><td><code>BaseRegexpDriver</code></td><td>Regular expression drivers</td></tr><tr><td><a href="debug-logger-drivers.md">debug-logger-drivers.md</a></td><td><code>IDebugLoggerDriver</code></td><td><code>BaseDebugLoggerDriver</code></td><td>Debug logger drivers</td></tr><tr><td><a href="encoding-drivers.md">encoding-drivers.md</a></td><td><code>IEncodingDriver</code></td><td><code>BaseEncodingDriver</code></td><td>Encoding drivers</td></tr><tr><td><a href="hardware-prober-drivers.md">hardware-prober-drivers.md</a></td><td><code>IHardwareProberDriver</code></td><td><code>BaseHardwareProberDriver</code></td><td>Hardware probing drivers</td></tr><tr><td><a href="sorting-drivers.md">sorting-drivers.md</a></td><td><code>ISortingDriver</code></td><td><code>BaseSortingDriver</code></td><td>Integer sorting drivers</td></tr><tr><td><a href="input-drivers.md">input-drivers.md</a></td><td><code>IInputDriver</code></td><td><code>BaseInputDriver</code></td><td>Input drivers</td></tr></tbody></table>
 
 ### Mods and Drivers
 
@@ -99,7 +87,7 @@ For all the driver management functions, you can also use the non-generic versio
 
 ### Driver Configuration
 
-<figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
 
 The `settings -driver` application now lets you set your system-wide kernel drivers up in a completely new section called `Kernel driver settings`. It lets you configure current drivers for each supported driver type.
 
