@@ -2,7 +2,7 @@
 description: Guide for upgrading 0.1.0 RC mods to 0.1.0 Final
 ---
 
-# ⬆ From 0.1.0 RC to 0.1.0 Final
+# ⬆️ From 0.1.0 RC to 0.1.0 Final
 
 This page lists all the changes that have been made from 0.1.0 RC to 0.1.0 Final. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page instead.
 
@@ -255,4 +255,26 @@ You'll have to update your calls to the master `ReportProgress()` function to pr
 
 * Exception: An exception to use (default is `null`)
 * Severity: The severity of the report (default is `Info`)
+{% endhint %}
+
+### Removed opting in to new color selector option
+
+{% code title="ConsoleTools.cs" lineNumbers="true" %}
+```csharp
+public static bool UseNewColorSelector
+```
+{% endcode %}
+
+{% code title="KernelMainConfig.cs" lineNumbers="true" %}
+```csharp
+public bool UseNewColorSelector { get; set; } = true;
+```
+{% endcode %}
+
+We've removed opting in to the new color selector because the old one was gone during the development of 0.1.0. We've also made the new color selector powered by Terminaux as default to be stronger and more accurate and visual than before.
+
+This will make it easier to use the brand new color selector than the old one that started as a simple text.
+
+{% hint style="danger" %}
+You can no longer use this config entry. We suggest you use Terminaux's color selector feature.
 {% endhint %}

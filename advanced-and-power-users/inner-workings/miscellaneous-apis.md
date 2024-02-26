@@ -60,6 +60,10 @@ One of the functions that the above class implements is `GetZoneTimeString()` an
 
 In addition to providing the calendar command in the addon, the base Nitrocid API provides some of the calendar management APIs to make access to them easier than before. You can now get the calendar straight from the calendar type or its name using the `GetCalendar()` function from the `CalendarTools` class.
 
+{% hint style="info" %}
+Additionally, you can use the variant calendar, which uses your culture to define a calendar culture. This can be accessed by calling `GetCalendar()` with `CalendarTypes.Variant` as a type.
+{% endhint %}
+
 Additionally, the time and date renderers can be used with the base calendar class instance obtained from the above function.
 
 {% hint style="warning" %}
