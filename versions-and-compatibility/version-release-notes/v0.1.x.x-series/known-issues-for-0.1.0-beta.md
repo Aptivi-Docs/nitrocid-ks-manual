@@ -2,7 +2,7 @@
 description: Beware! There are spike strips on the road!
 ---
 
-# ⚠ Known issues for 0.1.0 Beta
+# ⚠️ Known issues for 0.1.0 Beta
 
 There are no beta versions without any known issues discovered by either the development team of a software or the quality assurance team. Nitrocid KS is no exception.
 
@@ -50,7 +50,7 @@ Issues that are highlighted in italic are fixed in the upcoming release candidat
 
 During quality assurance, we're aware of the following issues:
 
-* Console display may be garbled on terminals with&#x20;
+* _Console display may be garbled on terminals sometimes_
 
 Issues that are highlighted in italic are fixed in the final version.
 
