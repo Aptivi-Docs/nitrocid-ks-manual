@@ -4,15 +4,15 @@ description: How to install Nitrocid KS on Windows
 
 # 💻 Windows
 
-<figure><img src="../../.gitbook/assets/Beta3-001-Welcome.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/001-welcome.png" alt=""><figcaption></figcaption></figure>
 
 Installing Nitrocid KS on Windows is pretty easy, but we recommend installing the simulator using the Chocolatey package manager.
-
-Before performing the installation, your Windows system must meet the following requirements:
 
 {% hint style="info" %}
 Extra kernel add-ons may require additional hardware on your computer to work. For example, the BassBoom addon requires that you have audio drivers installed on your computer.
 {% endhint %}
+
+Before performing the installation, your Windows system must meet the following requirements:
 
 ### KS v0.1.0 or later
 
@@ -28,14 +28,10 @@ However, we recommend that you have the below software installed on your compute
 | ----------- | ------------------------------------------------------------------ | ------------------ |
 | Windows 10+ | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | Windows 10 cmd.exe |
 
-{% hint style="info" %}
-If you see the shield icon <img src="../../.gitbook/assets/image.png" alt="" data-size="line"> in the corner of the Nitrocid logo shown in the **Nitrocid.exe** file, don't worry about it; Nitrocid only probes your hard drives with the help of SpecProbe ([see why](../../versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v3.0/from-0.1.0-beta-2-to-0.1.0-beta-3.md#specprobe-updated-to-1.2.0)), nothing else.
-{% endhint %}
-
-### KS v0.0.24.0 or lower
+### KS v0.0.24.0
 
 {% hint style="warning" %}
-We support installing KS 0.0.24.0 or lower until the full deprecation of .NET Framework.
+We support installing KS 0.0.24.0 until the full deprecation of .NET Framework.
 {% endhint %}
 
 To run Nitrocid KS in the absolute minimum requirements, your computer needs to have the following installed:
@@ -75,7 +71,7 @@ If you like to manually unpack the Nitrocid KS packages, follow these steps:
 5. Execute `ks` or `Nitrocid.exe` to start the kernel
 
 {% hint style="info" %}
-For 0.0.24.0 or older, files that end with the `-dotnet` prefix means that it's for .NET 6.0.
+For 0.0.24.0, files that end with the `-dotnet` prefix means that it's for .NET 6.0.
 {% endhint %}
 
 ## Bleeding-edge
@@ -90,3 +86,11 @@ If you're a tester to such software, please follow the steps on your Windows mac
 4. Extract the file. Be sure that you have the latest version of 7-Zip or your favorite archive manager installed
 5. Open your favorite terminal emulator, like ConEmu, and change the working directory to a folder containing the Nitrocid KS executable
 6. Execute `ks` or `Nitrocid.exe` to start the kernel
+
+## Notice for SmartScreen
+
+SmartScreen may detect that the Nitrocid and its associated executables may not pass the SmartScreen attestation. If this happens, you'll see the below page:
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+Nitrocid KS will not put your PC at risk (except if you downloaded a copy from an unofficial software distributor, or from an unofficial source other than our official GitHub releases found [here](https://github.com/Aptivi/NitrocidKS/releases), our Chocolatey page found [here](https://community.chocolatey.org/packages/KS), and our NuGet page found [here](https://www.nuget.org/packages/KS/)). Click on `More Info`, then click on `Run anyways`.
