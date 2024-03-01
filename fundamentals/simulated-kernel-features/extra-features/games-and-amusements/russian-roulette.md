@@ -4,6 +4,8 @@ description: Want to play Russian Roulette, man?
 
 # 🎰 Russian Roulette
 
+<figure><img src="../../../../.gitbook/assets/011-roulette.png" alt=""><figcaption></figcaption></figure>
+
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.
 {% endhint %}

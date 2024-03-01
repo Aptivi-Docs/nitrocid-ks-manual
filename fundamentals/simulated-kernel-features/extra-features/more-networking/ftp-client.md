@@ -2,9 +2,9 @@
 description: How to use your FTP client
 ---
 
-# 🗃 FTP Client
+# 🗃️ FTP Client
 
-<figure><img src="../../../../.gitbook/assets/Beta3-003-FtpShell.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/003-ftp.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.

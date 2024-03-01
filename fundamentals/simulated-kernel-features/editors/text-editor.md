@@ -4,7 +4,7 @@ description: Editing your text is easy!
 
 # 📝 Text Editor
 
-<figure><img src="../../../.gitbook/assets/Beta3-017-Editor.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/018-editorcli.png" alt=""><figcaption></figcaption></figure>
 
 This text editor shell provides you an ability to edit any and all the text files. The `edit` command infers the file type whether it's the text file, the JSON file, or the binary file. It contains many editing tools described in the below section by invoking its commands.
 
@@ -18,7 +18,7 @@ You can consult the below page for the list of text editor commands.
 
 ## Interactive TUI
 
-<figure><img src="../../../.gitbook/assets/Beta3-016-Editor.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/017-editortui.png" alt=""><figcaption></figcaption></figure>
 
 In addition to the text editor being a shell, you can switch to an alternative mode when you're in the shell by executing the `tui` command. This way, you'll get access to the fully interactive text editor.
 

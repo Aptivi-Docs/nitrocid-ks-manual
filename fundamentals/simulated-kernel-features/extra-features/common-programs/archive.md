@@ -4,9 +4,7 @@ description: You can manipulate with the archive files!
 
 # 📦 Archive
 
-
-
-<figure><img src="../../../../.gitbook/assets/Beta3-024-Archive.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/023-archive.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.

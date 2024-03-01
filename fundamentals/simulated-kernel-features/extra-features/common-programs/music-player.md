@@ -4,7 +4,7 @@ description: Music on Nitrocid KS!
 
 # 🎧 Music Player
 
-<figure><img src="../../../../.gitbook/assets/Beta3-031-MusicPlayer.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/032-music.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.

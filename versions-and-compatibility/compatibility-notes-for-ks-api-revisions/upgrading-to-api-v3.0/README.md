@@ -23,8 +23,8 @@ When upgrading your mods to API v3.0, consider these:
 
 This version is a futuristic magic that brings in many feature additions and spectacular improvements in all fields, including cosmetic changes.
 
-{% content-ref url="../../version-release-notes/v0.1.x.x-series/" %}
-[v0.1.x.x-series](../../version-release-notes/v0.1.x.x-series/)
+{% content-ref url="../../version-release-notes/v0.1.x.x-series.md" %}
+[v0.1.x.x-series.md](../../version-release-notes/v0.1.x.x-series.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}

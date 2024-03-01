@@ -4,7 +4,7 @@ description: Multilingual Kernel!
 
 # 🇺🇸 Languages
 
-<figure><img src="../../.gitbook/assets/Beta3-059-Languages.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/066-welcomelang.png" alt=""><figcaption></figcaption></figure>
 
 Localization was implemented when computers were distributed in non-English countries to aid the users in using their computers in their native language. This feature is currently supported in both Windows and Unix-based operating systems.
 
@@ -16,7 +16,7 @@ Languages usually get translated at the end of each development period of each u
 
 ### Changing the language
 
-<figure><img src="../../.gitbook/assets/Beta3-060-Languages.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/067-setlang.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Extra languages are bundled as a kernel extras addon.

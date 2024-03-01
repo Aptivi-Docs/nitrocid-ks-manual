@@ -18,7 +18,7 @@ The simulated kernel attempts to simulate the two features, which can be invoked
 
 ### Timer
 
-<figure><img src="../../../../.gitbook/assets/Beta3-032-Timer.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/036-timer.png" alt=""><figcaption></figcaption></figure>
 
 The simulated kernel powers the timer feature that, by default, sets the remaining time to just one minute. The controls are:
 
@@ -30,7 +30,7 @@ You can start the application up with the `timer` command.
 
 ### Stopwatch
 
-<figure><img src="../../../../.gitbook/assets/Beta3-033-Stopwatch.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/037-stopwatch.png" alt=""><figcaption></figcaption></figure>
 
 The simulated kernel also simulates the stopwatch functionality with the ability to set the laps. You can also reset the stopwatch. The controls are:
 

@@ -20,11 +20,11 @@ Nitrocid KS can be bootable using the simulated GRILO bootloader. To install Nit
     * Windows: `%localappdata%/GRILO/Bootables/ks/`
     * Linux: `~/.config/grilo/Bootables/ks`
 
-    <figure><img src="../../.gitbook/assets/Beta3-063-GRILO.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/070-grilo1.png" alt=""><figcaption></figcaption></figure>
 3.  Start the GRILO bootloader (.NET 8.0), and choose one of the `Nitrocid` options\
 
 
-    <figure><img src="../../.gitbook/assets/Beta3-064-GRILO.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/071-grilo2.png" alt=""><figcaption></figcaption></figure>
 
 The kernel should boot up completely.
 

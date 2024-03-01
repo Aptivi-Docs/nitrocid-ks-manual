@@ -2,7 +2,7 @@
 description: Calculate your mathematical expressions and convert units
 ---
 
-# ⚖ Unit Converter
+# ⚖️ Unit Converter
 
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.
@@ -20,22 +20,20 @@ The unit converter is used to easily convert the source units to different units
 
 {% @github-files/github-code-block url="https://github.com/angularsen/UnitsNet/tree/master/UnitsNet/GeneratedCode/Units" %}
 
-To use both the programs, refer to the command usages and individual explanations below.
+To use this program, refer to the command usages and individual explanations below.
 
-* `calc <expression>`
-  * Calculates the specific arithmetical expression
 * `unitconv [-tui] <unittype> <quantity> <sourceunit> <targetunit>`
   * Converts the unit by quantity and type from the source unit to the target unit
 
-<figure><img src="../../../../.gitbook/assets/Beta3-036-UnitConv.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/039-unitconv.png" alt=""><figcaption></figcaption></figure>
 
 You can use the `listunits` command to get all the available units by type.
 
 ## TUI version
 
-<figure><img src="../../../../.gitbook/assets/Beta3-037-UnitConv.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/040-unitconvtui.png" alt=""><figcaption></figcaption></figure>
 
-The TUI version of unit converter allows you to more interactively convert the units. It lets you choose a unit type and a conversion form. To choose a unit type, press the Up arrow and the Down arrow to change the type. Press TAB to switch between selecting the unit type and the conversion form.
+The TUI version of unit converter allows you to more interactively convert the units. It lets you choose a unit type and a conversion form. To choose a unit type, press the `Up Arrow` and the `Down Arrow` keys to change the type. Press `TAB` to switch between selecting the unit type and the conversion form.
 
 Once you're done selecting your source and your target unit, you can press `F1` to bring up the conversion dialog so that you can enter a number.
 

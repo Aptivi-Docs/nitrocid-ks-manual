@@ -2,7 +2,7 @@
 description: Calendars, events, and reminders
 ---
 
-# 🗓 Calendar
+# 🗓️ Calendar
 
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.
@@ -24,7 +24,7 @@ The simulated kernel provides you with the calendar management application that 
 
 ### Interactive Calendar
 
-<figure><img src="../../../../.gitbook/assets/Beta3-025-CalendarTui.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/025-calendar.png" alt=""><figcaption></figcaption></figure>
 
 The calendar can be used to show you either the current month or the selected year in the current month or the selected year and month. The interactive calendar allows you to interactively see the current day, the month, and the year. To utilize the functionality, use the following command.
 
@@ -37,7 +37,7 @@ The calendar can be used to show you either the current month or the selected ye
 
 ### Events
 
-<figure><img src="../../../../.gitbook/assets/Beta3-026-CalendarEvents.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/026-calendarevent.png" alt=""><figcaption></figcaption></figure>
 
 If there is a particular event that will happen in the future, you can use this subcommand to manage your events.
 
@@ -52,7 +52,7 @@ If there is a particular event that will happen in the future, you can use this 
 
 ### Reminders
 
-<figure><img src="../../../../.gitbook/assets/Beta3-027-CalendarReminders.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/027-calendarreminder.png" alt=""><figcaption></figcaption></figure>
 
 If you would like to be reminded about something in the future, you can use this subcommand to manage your reminders.
 

@@ -2,7 +2,7 @@
 description: This page lists all versions with their release notes
 ---
 
-# 🗞 Version Release Notes
+# 🗞️ Version Release Notes
 
 Every single version of the kernel comes with many changes, including feature additions, general improvements, and bug fixes. This page lists all the kernel series based on the API feature level version that will be listed from the oldest to the latest.
 
@@ -116,6 +116,6 @@ Every single version of the kernel comes with many changes, including feature ad
 
 ## API v3.0 series
 
-{% content-ref url="v0.1.x.x-series/" %}
-[v0.1.x.x-series](v0.1.x.x-series/)
+{% content-ref url="v0.1.x.x-series.md" %}
+[v0.1.x.x-series.md](v0.1.x.x-series.md)
 {% endcontent-ref %}

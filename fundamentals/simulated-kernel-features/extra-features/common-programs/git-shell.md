@@ -2,9 +2,9 @@
 description: Git Shell in your hands
 ---
 
-# 👩💻 Git Shell
+# 👩‍💻 Git Shell
 
-<figure><img src="../../../../.gitbook/assets/Beta3-030-Git.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/031-gitsh.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.

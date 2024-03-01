@@ -4,7 +4,7 @@ description: Manage your messages with this mail client
 
 # 📧 Mail Client
 
-<figure><img src="../../../../.gitbook/assets/Beta3-007-MailShell.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/007-mail.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.

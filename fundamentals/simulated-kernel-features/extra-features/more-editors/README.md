@@ -2,9 +2,9 @@
 description: More editors are here
 ---
 
-# 🖊 More Editors
+# 🖊️ More Editors
 
-<figure><img src="../../../../.gitbook/assets/Beta3-016-Editor.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/017-editortui.png" alt=""><figcaption></figcaption></figure>
 
 In addition to the basic editors shipped with the base Nitrocid kernel, the editors addon ship additional editors, such as the JSON editor and the SQL editor.
 

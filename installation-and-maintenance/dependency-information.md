@@ -39,7 +39,7 @@ In order to run Nitrocid KS on all the system, you must install the essential re
 {% hint style="info" %}
 Depending on a distribution and the amount of packages installed in the current system, the download size will be from 30 to 100 MB.
 
-For addons, extra dependencies might be needed to work. For example, the BassBoom addon might need PulseAudio or ALSA working, and the Inxi.NET addon might need Inxi and Json::XS Perl modules.
+For addons, extra dependencies might be needed to work. For example, the BassBoom addon might need PulseAudio or ALSA working.
 {% endhint %}
 
 Dependency information for each package installed in your target system:
@@ -51,9 +51,5 @@ Dependency information for each package installed in your target system:
 
 In addition to the base kernel requirements, all addons might require additional packages to be installed in your system:
 
-* `inxi`
-  * For probing hardware information. Used by the Inxi.NET addon.
-* `perl-json-xs (libjson-xs-perl)`
-  * To facilitate JSON output of Inxi hardware info. Used by the Inxi.NET addon.
 * `pulseaudio, libasound2, ...`
   * To be able to play music using PulseAudio, ALSA, JACK, etc. Used by the BassBoom addon.

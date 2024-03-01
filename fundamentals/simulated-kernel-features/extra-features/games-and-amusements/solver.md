@@ -4,7 +4,7 @@ description: Can you solve mathematical equations on time?
 
 # 🔢 Solver
 
-<figure><img src="../../../../.gitbook/assets/Beta3-013-Solver.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/014-solver.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.

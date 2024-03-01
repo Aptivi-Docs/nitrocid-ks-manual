@@ -2,9 +2,9 @@
 description: This is today's weather forecast.
 ---
 
-# ☀ Weather
+# ☀️ Weather
 
-<figure><img src="../../../../.gitbook/assets/Beta3-104-Weather.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/041-weather.png" alt=""><figcaption></figcaption></figure>
 
 The weather kernel addon allows you to check your city's weather forecast using the OpenWeatherMap free forecast API. You can check the information about the current weather condition in your city, such as the state of the forecast, the wind speed, the humidity, and so on.
 

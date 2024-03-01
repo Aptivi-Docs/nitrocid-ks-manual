@@ -2,9 +2,9 @@
 description: You can now dock your screen!
 ---
 
-# 🖼 Docking
+# 🖼️ Docking
 
-<figure><img src="../../../.gitbook/assets/Beta3-038-Dock.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/042-dock.png" alt=""><figcaption></figcaption></figure>
 
 When it comes to docking your laptop, your desktop, or your tablet, it becomes like an information center that shows you latest information about various things that happens in the whole world, such as the current time and date, the world clock, the latest match information about your favorite sports team, and so on.
 
@@ -12,8 +12,8 @@ Information centers tend to require no input from the user, because they general
 
 Nitrocid KS attempts to simulate this concept by implementing the non-touch version of the information center that only gives you latest information about various things, such as the time and the date. This is accompanied by the usage of the brand-new screen feature to gain flexibility in regards to screen resizes. Its documentation can be found here to see the magic behind this feature:
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-screen" %}
+[Console Screen](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-screen)
 {% endcontent-ref %}
 
 ### How do I dock my screen?
