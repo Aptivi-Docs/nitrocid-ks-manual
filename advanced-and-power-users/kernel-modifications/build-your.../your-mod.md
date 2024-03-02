@@ -10,16 +10,16 @@ You're looking to create a mod for Nitrocid KS! That's great! Make sure that you
 
 1.  Press `Create a new project` on Visual Studio homepage
 
-    <figure><img src="../../../.gitbook/assets/Beta3-067-Adv-Building-Mod-VS.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/077-modbuild.png" alt=""><figcaption></figcaption></figure>
 2.  Find `Class Library` and double-click it
 
-    <figure><img src="../../../.gitbook/assets/Beta3-068-Adv-Building-Mod-VS.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/078-modbuild.png" alt=""><figcaption></figcaption></figure>
 3.  Write your mod name, like in our example, `MyFirstMod`.
 
-    <figure><img src="../../../.gitbook/assets/Beta3-069-Adv-Building-Mod-VS.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/079-modbuild.png" alt=""><figcaption></figcaption></figure>
 4.  Make sure that `.NET 8.0` is used. Press `Create`.
 
-    <figure><img src="../../../.gitbook/assets/Beta3-070-Adv-Building-Mod-VS.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/080-modbuild.png" alt=""><figcaption></figcaption></figure>
 5.  Right-click on `Dependencies` -> `Manage NuGet Packages`, find `KS`, and install it.
 
     <figure><img src="../../../.gitbook/assets/Beta3-071-Adv-Building-Mod-VS.png" alt=""><figcaption></figcaption></figure>
