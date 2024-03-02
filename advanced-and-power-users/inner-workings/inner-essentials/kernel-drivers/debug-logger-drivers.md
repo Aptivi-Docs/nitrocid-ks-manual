@@ -4,6 +4,8 @@ description: Changing how the debug logger works
 
 # 🔌 Debug Logger Drivers
 
+<figure><img src="../../../../.gitbook/assets/120-inner.png" alt=""><figcaption></figcaption></figure>
+
 The debug logger driver is one of the supported driver types on Nitrocid KS. These drivers allow you to change how the debug logger works, thus earning dynamic debug logging.
 
 The console drivers have the following characteristics:

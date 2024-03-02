@@ -2,7 +2,7 @@
 description: How the settings application works?
 ---
 
-# ⛏ Mechanics of Settings App
+# ⛏️ Mechanics of Settings App
 
 The Settings application displays all the available sections on the first page and the available configuration options inside it on the second page. But, how?
 
@@ -30,5 +30,7 @@ Here's how the settings application works:
 4. When the user sets a new value, the app attempts to set a value by delegating the `PropertyManager.SetPropertyValue()` function in the `Nitrocid.Misc.Reflection` namespace.
 
 When the user is done configuring the kernel to their needs, they'll save the kernel configuration. The app invokes the `Config.CreateConfig()` function to save the changes to the configuration file.
+
+<figure><img src="../../../.gitbook/assets/101-settings.png" alt=""><figcaption></figcaption></figure>
 
 The CLI version of the settings, which hosts the four commands as explained in the Kernel Settings page, uses a bunch of settings tools, including `GetSettingsKey()` that allows you to quickly get a settings key containing settings key information for a specified variable. This key is usable for useful functions, like setting a variable to a specified value that `setconfigvalue` is doing.

@@ -4,6 +4,8 @@ description: Changing how the random number generator works
 
 # 🔌 RNG Drivers
 
+<figure><img src="../../../../.gitbook/assets/126-inner.png" alt=""><figcaption></figcaption></figure>
+
 The random number generator driver is one of the supported driver types on Nitrocid KS. These drivers allow you to change how the random number generator works, thus earning dynamic random number generator improvements, such as providing faster methods to get random numbers.
 
 The random number generator drivers have the following characteristics:

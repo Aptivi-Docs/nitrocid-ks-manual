@@ -4,11 +4,13 @@ description: Talks about shell scripting and how it works
 
 # 📜 Shell Scripting
 
+<figure><img src="../../../.gitbook/assets/110-shell.png" alt=""><figcaption></figcaption></figure>
+
 UESH shell contains scripting support. The shell scripts have the `.uesh` extension containing a subset of UESH commands inside it. A simple UESH script containing a command that sets a UESH variable is as follows:
 
 ```
-set $hellotext Hello
-echo $hellotext
+set -set=hellotext Hello
+echo <$:hellotext>
 ```
 
 ## Script parser
@@ -24,6 +26,8 @@ echo {0}
 As soon as the parsing is done, the final line gets executed by the `GetLine()` command.
 
 ## Variables
+
+<figure><img src="../../../.gitbook/assets/111-shell.png" alt=""><figcaption></figcaption></figure>
 
 UESH provides the variable facility, which holds the variable as a key and the variable value as a value. Each variable starts with the dollar sign like `$var`, regardless of the platform.
 

@@ -4,6 +4,8 @@ description: Coloring things...
 
 # 🎨 Theme Internals
 
+<figure><img src="../../../.gitbook/assets/135-inner.png" alt=""><figcaption></figcaption></figure>
+
 Nitrocid KS first came with color theme support in the fourth major version, 0.0.4, but only supported 16 colors defined by the `ConsoleColor` enumeration. Since then, various themes have been added to the point that we once reached 95+ themes before going down to 65+ themes.
 
 Themes for the kernel consist of color information for each kernel color type. They are made with a simple JSON syntax that's easy to use. Here's the format of each theme JSON file:
@@ -189,6 +191,8 @@ The two below sections explains the two previews.
 
 ### Simple previews
 
+<figure><img src="../../../.gitbook/assets/137-inner.png" alt=""><figcaption></figcaption></figure>
+
 The simple theme preview shows you a wrapped list of color types and their examples, colored with the foreground color in the placeholder text. You can get access to this preview by calling these functions:
 
 {% code title="ThemePreviewTools.cs" lineNumbers="true" %}
@@ -201,6 +205,8 @@ public static void PreviewThemeSimple(ThemeInfo theme)
 Each of these two functions get a list of kernel color types known by the color management tools and their associated colors. Then, they show you a preview of the theme colors.
 
 ### Interactive preview
+
+<figure><img src="../../../.gitbook/assets/136-inner.png" alt=""><figcaption></figcaption></figure>
 
 The interactive theme preview shows you a full-screen colored box that changes its color according to the selected kernel color type and the list of theme colors. You can get access to this preview by calling these functions:
 

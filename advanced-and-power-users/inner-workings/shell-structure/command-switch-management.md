@@ -2,7 +2,7 @@
 description: We need to manage your command switches
 ---
 
-# ⏲ Command Switch Management
+# ⏲️ Command Switch Management
 
 There is a static class dedicated to managing the switches, called SwitchManager. It allows you to manage the switches with the values. There are two functions that specialize in getting the switch values: `GetSwitchValues()` and `GetSwitchValue()`.
 
@@ -13,6 +13,8 @@ You can always use these functions with the `SwitchesOnly` array found in the `E
 {% endhint %}
 
 The switches can be set to conflict with each other by passing an array of incompatible switches to the SwitchInfo constructor, specifically the last parameter, `conflictsWith`. However, each switch to be conflicted must set their `conflictsWith` arrays to the opposing switches.
+
+<figure><img src="../../../.gitbook/assets/109-shell.png" alt=""><figcaption></figcaption></figure>
 
 For example, if you want a command to have three switches (`-s`, `-t`, `-u`) that conflict with each other, you can specify three SwitchInfo instances with the following properties (assuming that you've already set the `HelpDefinition`, `IsRequired`, and `ArgumentsRequired` parameters):
 
@@ -66,7 +68,7 @@ For example, if this parameter was set to 1 and you've defined three required ar
 Then, this will set `Arg3` to be omittable, which means that the user doesn't have to set the value for this argument in order for the command to execute.
 
 {% hint style="info" %}
-A real-world example is the `weather` command. It contains an switch, `-list`, which omits the last 2 arguments, which causes this command to be executable with just `weather -list`. Its `SwitchInfo` is defined below:
+A real-world example is the `weather` command. It contains a switch, `-list`, which omits the last 2 arguments, which causes this command to be executable with just `weather -list`. Its `SwitchInfo` is defined below:
 
 ```csharp
 new SwitchInfo("list", "Shows all the available cities", false, false, null, 2, false)

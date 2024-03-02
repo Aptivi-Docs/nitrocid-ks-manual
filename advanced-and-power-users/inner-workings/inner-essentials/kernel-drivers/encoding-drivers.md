@@ -4,6 +4,8 @@ description: Changing how the encoding works
 
 # 🔌 Encoding Drivers
 
+<figure><img src="../../../../.gitbook/assets/121-inner.png" alt=""><figcaption></figcaption></figure>
+
 The encoding driver is one of the supported driver types on Nitrocid KS. These drivers allow you to change how the encoding works, thus earning dynamic encoding based on your selected encoding algorithms.
 
 The console drivers have the following characteristics:

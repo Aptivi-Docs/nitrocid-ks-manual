@@ -4,6 +4,8 @@ description: Changing how the hardware prober works
 
 # 🔌 Hardware Prober Drivers
 
+<figure><img src="../../../../.gitbook/assets/124-inner.png" alt=""><figcaption></figcaption></figure>
+
 The hardware prober driver is one of the supported driver types on Nitrocid KS. These drivers allow you to change how the hardware prober works, thus earning dynamic hardware prober improvements.
 
 The hardware prober drivers have the following characteristics:

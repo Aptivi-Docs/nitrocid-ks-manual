@@ -2,7 +2,9 @@
 description: How do the kernel arguments work? And how it affects the kernel?
 ---
 
-# 🎛 Kernel Arguments
+# 🎛️ Kernel Arguments
+
+<figure><img src="../../../.gitbook/assets/129-inner.png" alt=""><figcaption></figcaption></figure>
 
 Kernel Arguments are command-line parameters to the simulator that changes the behavior of the kernel according to the available arguments listed below:
 

@@ -4,6 +4,8 @@ description: How do you want to display your prompt?
 
 # 📟 Shell Presets
 
+<figure><img src="../../../.gitbook/assets/112-shell.png" alt=""><figcaption></figcaption></figure>
+
 While `ShellManager.GetLine()` prompts for input, it decides which shell preset, `PromptPresetBase`, is used according to the list of presets, `ShellPresets`, that **should** make a new prompt preset class that you made for your shell.
 
 `CurrentPreset` specifies the current `PromptPresetBase` class, which is usually found in the `ShellPresets` list. It usually calls the `PromptPresetManager.CurrentPresets[ShellType]` variable.

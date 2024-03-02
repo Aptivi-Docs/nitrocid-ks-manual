@@ -2,7 +2,9 @@
 description: Sometimes we need to check your platform.
 ---
 
-# 🖥 Kernel Platform
+# 🖥️ Kernel Platform
+
+<figure><img src="../../../.gitbook/assets/134-inner.png" alt=""><figcaption></figcaption></figure>
 
 Sometimes, your mod may contain code that only works on certain platforms. For example, your mod may intentionally call an external unmanaged library's function to do something not normally done in the .NET world using P/Invokes. However, native libraries need to be compiled for the target machines.
 
@@ -13,6 +15,10 @@ Or, you may want to change the behavior of your mod by platform or by how the ke
 {% hint style="warning" %}
 Currently, `KernelPlatform` doesn't support checking for architectures, like `IsAmd64()`.
 {% endhint %}
+
+You can check your kernel version and your host RID by going to `settings` > `System information`.
+
+<figure><img src="../../../.gitbook/assets/133-inner.png" alt=""><figcaption></figcaption></figure>
 
 ## Operating systems
 

@@ -4,6 +4,8 @@ description: Changing how the network works
 
 # 🔌 Network Drivers
 
+<figure><img src="../../../../.gitbook/assets/125-inner.png" alt=""><figcaption></figcaption></figure>
+
 The network driver is one of the supported driver types on Nitrocid KS. These drivers allow you to change how the network works, thus earning dynamic network improvements, such as providing better methods to perform network operations.
 
 The network drivers have the following characteristics:

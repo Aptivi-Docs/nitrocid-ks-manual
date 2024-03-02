@@ -28,7 +28,6 @@ The mod finalization phase gets executed as soon as the mod parser sees the file
 7. Satisfies the mod dependencies by loading them as appropriate.
 8. Calls the `script.StartMod()` function in your script
 9. Adds the mod to the mod manager
-10. Checks the manual file `ModFile.manual` for existence and initializes it.
 
 {% hint style="info" %}
 The mod system will automatically unload the target mod's directory for assembly lookup. If, for some reason, this fails, you can manually unload their paths from the lookup using the below function:

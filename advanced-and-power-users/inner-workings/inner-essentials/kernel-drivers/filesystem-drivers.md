@@ -4,6 +4,8 @@ description: Changing how the filesystem works
 
 # 🔌 Filesystem Drivers
 
+<figure><img src="../../../../.gitbook/assets/123-inner.png" alt=""><figcaption></figcaption></figure>
+
 The filesystem driver is one of the supported driver types on Nitrocid KS. These drivers allow you to change how the filesystem works, thus earning dynamic filesystem improvements, such as providing better workarounds to perform certain console functions, providing code to speed up the console, and much more.
 
 The console drivers have the following characteristics:

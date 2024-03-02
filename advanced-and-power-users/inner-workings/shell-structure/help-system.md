@@ -4,9 +4,13 @@ description: Inner workings of the help system
 
 # ❔ Help System
 
+<figure><img src="../../../.gitbook/assets/102-shell.png" alt=""><figcaption></figcaption></figure>
+
 The help system is what every shell uses, invoked by the unified `help` command available for every type of shell. The function responsible for showing help entries or command usage and some extra help is `HelpSystem.ShowHelp()` in the `Nitrocid.Shell.ShellBase.Commands` namespace. Explore with us the mechanics of the help system below.
 
 ## General help
+
+<figure><img src="../../../.gitbook/assets/103-shell.png" alt=""><figcaption></figcaption></figure>
 
 When the user requests the `help` command in any shell, the above function gets called, querying the current shell type (`Shell.CurrentShellType`) as discussed previously.
 

@@ -4,6 +4,8 @@ description: Let's go deeper into the filesystem functionality!
 
 # 🗃️ Nitrocid Filesystem
 
+<figure><img src="../../../.gitbook/assets/063-ifm.png" alt=""><figcaption></figcaption></figure>
+
 Generally, Nitrocid KS offers the fully-fledged filesystem functionality that allows you to perform filesystem operations ranging from simple to complex, like copying files to checking their lock state. This is done with the assistance of the kernel drivers, which we covered previously in the below page:
 
 {% content-ref url="kernel-drivers/" %}
@@ -250,6 +252,8 @@ When copying or moving a file or directory, the functions first check for the so
 The `TryCopy*()` and the `TryMove*()` functions return `true` if copying or moving is successful, and false if the operation failed. The normal `Copy*()` and the `Move*()` functions throw an exception if any failure occurs.
 
 ### File and Folder Selector
+
+<figure><img src="../../../.gitbook/assets/131-inner.png" alt=""><figcaption></figcaption></figure>
 
 The file manager includes two separate TUIs that allow you to select a file or a folder conveniently. We'll explain what do the two selectors do and how they work.
 

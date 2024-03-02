@@ -4,7 +4,7 @@ description: Trying to find a defect in the kernel? Great! Thanks for your contr
 
 # 🦠 Diagnostics
 
-<figure><img src="../../.gitbook/assets/Beta3-088-Diags.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/096-debug.png" alt=""><figcaption></figcaption></figure>
 
 The simulated kernel contains its own diagnostic tools to allow you to diagnose what's wrong with a feature. These diagnostic tools help you analyze the kernel for what it's doing and for how it failed.
 
@@ -32,7 +32,7 @@ This way of debugging is only available if you have Visual Studio installed. If 
 
 `KernelException` is an exception class that uses the exception type to give you a possible cause for each exception type. The kernel (and your mods) make extensive use of this exception to signal an error, but this class can also hold an inner exception of either the nested `KernelException` class or any of the `Exception` classes.
 
-Each KernelException instance holds the following properties:
+Each `KernelException` instance holds the following properties:
 
 * `ExceptionType`: Specifies the exception type using the `KernelExceptionType` enumeration.
 * `OriginalExceptionMessage`: Specifies the original exception message before being processed.

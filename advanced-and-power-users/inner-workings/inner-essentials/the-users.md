@@ -55,14 +55,16 @@ You can now add or remove your custom login handlers to make your kernel use you
 public static void RegisterHandler(string name, BaseLoginHandler handler)
 ```
 
-Similarly, if you want to unregister your login handler, you can do so by using the `UnregisterHandler()` function.
-
-```csharp
-public static void UnregisterHandler(string name)
-```
-
 After that, you should be able to find your login handler when trying to change your login screen using the `settings` command.
 
 {% hint style="info" %}
 If you want your mod to automatically populate your custom login handler on startup, you may use the `RegisterHandler()` function, but make sure to unregister it using the `UnregisterHandler()` function when your mod is being unloaded.
 {% endhint %}
+
+### Unregistering handlers
+
+Similarly, if you want to unregister your login handler, you can do so by using the `UnregisterHandler()` function.
+
+```csharp
+public static void UnregisterHandler(string name)
+```

@@ -13,56 +13,52 @@ The kernel configuration files are stored in the below software paths (`Paths.Ap
 * Windows: `%localappdata%\KS\`
 * Linux: `~/.config/ks/`
 
-When the kernel starts up, different configuration files are read for different purposes. The below settings paths describe the purpose and the type of each.
+When the kernel starts up, different configuration files are read for different purposes. The below settings paths describe the purpose and the type of each (with all the addons).
 
-* Configuration: `KernelMainConfig.json`
-  * Description: Stores all the main kernel configuration
-  * Type: JSON
-  * Location: `Paths.ConfigurationPath` under the `KS.Files` namespace
-* Screensaver Configuration: `KernelSaverConfig.json`
-  * Description: Stores all the screensaver configuration
-  * Type: JSON
-  * Location: `Paths.SaverConfigurationPath` under the `KS.Files` namespace
-* Driver Configuration: `KernelDriverConfig.json`
-  * Description: Stores all the driver configuration
-  * Type: JSON
-  * Location: `Paths.DriverConfigurationPath` under the `KS.Files` namespace
-* Splash Configuration: `KernelSplashConfig.json`
-  * Description: Stores all the splash configuration
-  * Type: JSON
-  * Location: `Paths.SplashConfigurationPath` under the `KS.Files` namespace
-* Aliases: `Aliases.json`
-  * Description: Stores all the user-defined aliases
-  * Type: JSON
-  * Location: `Paths.AliasesPath` under the `KS.Files` namespace
-* Users: `Users.json`
-  * Description: Stores all the users
-  * Type: JSON
-  * Location: `Paths.UsersPath` under the `KS.Files` namespace
-* Speed Dial: `SpeedDial.json`
-  * Description: Stores all the saved connections
-  * Type: JSON
-  * Location: `Paths.SpeedDialPath` under the `KS.Files` namespace
-* Remote Debug Device Names: `DebugDevicesNames.json`
-  * Description: Stores all the remote debug device names
-  * Type: JSON
-  * Location: `Paths.DebugDevNamesPath` under the `KS.Files` namespace
-* MOTD: `MOTD.txt`
-  * Description: Stores the message of the day
-  * Type: Text file
-  * Location: `Paths.MOTDPath` under the `KS.Files` namespace
-* MAL: `MAL.txt`
-  * Description: Stores the message of the day after login
-  * Type: Text file
-  * Location: `Paths.MALPath` under the `KS.Files` namespace
-* User Groups: `UserGroups.json`
-  * Description: Stores the user groups
-  * Type: JSON
-  * Location: `Paths.UserGroupsPath` under the `KS.Files` namespace
+```
+d-----          3/2/2024  11:29 AM                KSEvents
+d-----          3/2/2024  11:29 AM                KSMods
+d-----          3/2/2024  11:29 AM                KSReminders
+-a----          3/2/2024  11:29 AM              4 Aliases.json
+-a----          3/2/2024  11:29 AM            270 AmusementsConfig.json
+-a----          3/2/2024  11:29 AM            718 AmusementsSaversConfig.json
+-a----          3/2/2024  11:29 AM             38 AmusementsSplashesConfig.json
+-a----          3/2/2024  11:29 AM             40 ArchiveConfig.json
+-a----          3/2/2024  11:29 AM             46 BassBoomConfig.json
+-a----          3/2/2024  11:29 AM             28 BassBoomSaversConfig.json
+-a----          3/2/2024  11:29 AM             49 CalendarConfig.json
+-a----          3/2/2024  11:29 AM              2 Consents.json
+-a----          3/2/2024  11:29 AM             22 ExtensionHandlers.json
+-a----          3/2/2024  11:29 AM          30915 ExtraSaversConfig.json
+-a----          3/2/2024  11:29 AM            234 ExtraSplashesConfig.json
+-a----          3/2/2024  11:29 AM             26 ForecastConfig.json
+-a----          3/2/2024  11:29 AM            554 FtpConfig.json
+-a----          3/2/2024  11:29 AM             36 GitConfig.json
+-a----          3/2/2024  11:29 AM             42 HttpConfig.json
+-a----          3/2/2024  11:29 AM            139 JsonConfig.json
+-a----          3/2/2024  11:29 AM            399 KernelDriverConfig.json
+-a----          3/2/2024  11:29 AM           7174 KernelMainConfig.json
+-a----          3/2/2024  11:29 AM             92 KernelSaverConfig.json
+-a----          3/2/2024  11:29 AM          47407 KSJournal-0.json
+-a----          3/2/2024  11:29 AM            512 MailConfig.json
+-a----          3/2/2024  11:29 AM             23 MAL.txt
+-a----          3/2/2024  11:29 AM             27 MOTD.txt
+-a----          3/2/2024  11:29 AM            218 NameGenSaversConfig.json
+-a----          3/2/2024  11:29 AM              2 notes.json
+-a----          3/2/2024  11:29 AM            157 RssConfig.json
+-a----          3/2/2024  11:29 AM            143 SftpConfig.json
+-a----          3/2/2024  11:29 AM            138 ShellHistories.json
+-a----          3/2/2024  11:29 AM             41 SqlConfig.json
+-a----          3/2/2024  11:29 AM             64 TimersConfig.json
+-a----          3/2/2024  11:29 AM             23 TipsConfig.json
+-a----          3/2/2024  11:29 AM              4 ToDoList.json
+-a----          3/2/2024  11:29 AM              2 UserGroups.json
+-a----          3/2/2024  11:29 AM            533 Users.json
+```
 
 ## Settings
 
-<figure><img src="../../../.gitbook/assets/Beta3-092-Settings.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/101-settings.png" alt=""><figcaption></figcaption></figure>
 
 The kernel provides an easy-to-use tool to seamlessly configure the kernel settings. It can be easily invoked using the `settings` command. Running this command alone provides you with the normal kernel settings. The two switches will change the mode:
 

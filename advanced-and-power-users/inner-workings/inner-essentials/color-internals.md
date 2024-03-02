@@ -2,7 +2,9 @@
 description: All of the colors!
 ---
 
-# ⛱ Color Internals
+# ⛱️ Color Internals
+
+<figure><img src="../../../.gitbook/assets/138-inner.png" alt=""><figcaption></figcaption></figure>
 
 Nitrocid KS uses Terminaux to manipulate with the colors and configure them for the kernel to use. The kernel employs several of the color types for the kernel components, your addons, or your mods to use when writing text using the Nitrocid's console writer.
 
@@ -88,6 +90,8 @@ Nitrocid KS provides you with the following color types to help you make an insp
 
 ## Color selector
 
+<figure><img src="../../../.gitbook/assets/139-inner.png" alt=""><figcaption></figcaption></figure>
+
 The color selector is an interactive TUI that allows you to seamlessly select your favorite color, while getting information about it in the main screen, such as the converted color models, the color levels, and more.
 
 To get information about how to use it, you can find it in the Terminaux manual page:
@@ -97,6 +101,8 @@ To get information about how to use it, you can find it in the Terminaux manual 
 {% endcontent-ref %}
 
 ## Color conversion
+
+<figure><img src="../../../.gitbook/assets/140-inner.png" alt=""><figcaption></figcaption></figure>
 
 Your theme files can also support any specifier, as long as the specifier is supported by Terminaux. For a quick reminder, Terminaux supports the true-color specifiers, alongside the color name or the color number, if you intend to use another color model to select colors.
 

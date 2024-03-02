@@ -27,13 +27,20 @@ There are two types of Nitrocid analyzers as highlighted above. This section sho
 
 In order to install the Visual Studio-based analyzer for Nitrocid mods, follow the below steps:
 
-1. Extract the `mod-analyzer` package using your archive manager.
-2.  Go to the directory of the analyzer that you've extracted, and scroll down until you see `Nitrocid.Analyzers.Vsix.vsix`
+1. Open Visual Studio 2022 and open `Extensions` > `Manage Extensions...`.
+2.  Search for `Aptivi.NKSAnalyzers`
 
-    <figure><img src="../../.gitbook/assets/image_2023-12-17_114150379.png" alt=""><figcaption></figcaption></figure>
-3. Follow the instructions on the installer until it completes the installation
-4. Open your mod project on Visual Studio
-5. Start working on your mod, and you'll see `NKS` analyzers.
+    <figure><img src="../../.gitbook/assets/091-modanalyzers.png" alt=""><figcaption></figcaption></figure>
+3.  Once it gets downloaded, close all Visual Studio windows until this window appears
+
+    <figure><img src="../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+4.  Click on Modify and wait until this window shows up
+
+    <figure><img src="../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+5.  Start working on your mod, and you'll see `NKS` analyzers.\
+
+
+    <figure><img src="../../.gitbook/assets/093-modanalyzers.png" alt=""><figcaption></figcaption></figure>
 
 ### Standalone Analyzer
 
@@ -44,4 +51,4 @@ In case you can't use Visual Studio-based analyzer for your mods, you can use th
 3.  Run `dotnet Nitrocid.StandaloneAnalyzer.dll path/to/mod.sln`\
 
 
-    <figure><img src="../../.gitbook/assets/image_2023-12-17_115217784.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/094-modanalyzers.png" alt=""><figcaption></figcaption></figure>

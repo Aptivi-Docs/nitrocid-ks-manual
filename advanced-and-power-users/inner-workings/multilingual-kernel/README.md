@@ -8,6 +8,8 @@ The languages were introduced to the kernel to allow users who don't natively sp
 
 ## JSON file format
 
+<figure><img src="../../../.gitbook/assets/114-lang.png" alt=""><figcaption></figcaption></figure>
+
 The kernel languages use the JSON localization files that store the following information:
 
 * `Name`: The name of the language

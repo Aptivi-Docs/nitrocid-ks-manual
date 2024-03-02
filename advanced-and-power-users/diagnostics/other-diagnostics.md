@@ -10,10 +10,10 @@ There are various diagnostic tools that the kernel can make use of, including th
 
 This is internally used by the kernel debugger and the kernel exception to allow getting information about the source code that generated the call. Currently, this information is provided:
 
-* Method name: The routine name that made a call to the class constructor
-* Line number: The line number of the method described above
-* Column number: The column number found within the line
-* File name: The file name of the class that the method situates
+* **Method name**: The routine name that made a call to the class constructor
+* **Line number**: The line number of the method described above
+* **Column number**: The column number found within the line
+* **File name**: The file name of the class that the method situates
 
 When the constructor is called, it generates information about the third stack frame to get the caller's method info. If the frame number is specified, it gets offset by `+1` to get info about the needed method.
 
@@ -72,17 +72,13 @@ Typically, the message displays the exception type, the message, and the excepti
 
 ## Debug shell
 
-<figure><img src="../../.gitbook/assets/Beta3-091-Diags.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/100-diag.png" alt=""><figcaption></figcaption></figure>
 
 The debug shell allows you to diagnose the kernel in depth. The following commands are available in the below page:
 
 {% content-ref url="../../fundamentals/simulated-kernel-features/shells/commands-list.md" %}
 [commands-list.md](../../fundamentals/simulated-kernel-features/shells/commands-list.md)
 {% endcontent-ref %}
-
-{% hint style="warning" %}
-This shell just silently exits in the release builds, due to how sophisticated its tools are.
-{% endhint %}
 
 {% hint style="danger" %}
 If you're running on Windows 7, `threadsbt` is not going to work due to how it uses the [`PssCaptureSnapshot`](https://learn.microsoft.com/en-us/windows/win32/api/processsnapshot/nf-processsnapshot-psscapturesnapshot) Windows API function, which is first introduced on Windows 8.1, which makes this operating system a minimum requirement for using this command.

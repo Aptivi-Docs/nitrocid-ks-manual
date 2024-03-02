@@ -4,6 +4,8 @@ description: Changing how the console works
 
 # 🔌 Console Drivers
 
+<figure><img src="../../../../.gitbook/assets/119-inner.png" alt=""><figcaption></figcaption></figure>
+
 The console driver is one of the supported driver types on Nitrocid KS. These drivers allow you to change how the console works, thus earning dynamic console improvements, such as providing better workarounds to perform certain console functions, providing code to speed up the console, and much more.
 
 The console drivers have the following characteristics:

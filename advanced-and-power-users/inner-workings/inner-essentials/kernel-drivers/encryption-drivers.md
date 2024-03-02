@@ -4,6 +4,8 @@ description: Changing how the encryption works
 
 # 🔌 Encryption Drivers
 
+<figure><img src="../../../../.gitbook/assets/122-inner.png" alt=""><figcaption></figcaption></figure>
+
 The encryption driver is one of the supported driver types on Nitrocid KS. These drivers allow you to change how the encryption works, thus earning dynamic encryption improvements.
 
 The console drivers have the following characteristics:

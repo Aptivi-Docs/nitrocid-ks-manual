@@ -4,6 +4,8 @@ description: Changing how the sorting algorithms work
 
 # 🔌 Sorting Drivers
 
+<figure><img src="../../../../.gitbook/assets/128-inner.png" alt=""><figcaption></figcaption></figure>
+
 The sorting driver is one of the supported driver types on Nitrocid KS. These drivers allow you to change how the sorting works, thus earning dynamic sorting improvements, such as providing fast and efficient array sorting code.
 
 The sorting drivers have the following characteristics:

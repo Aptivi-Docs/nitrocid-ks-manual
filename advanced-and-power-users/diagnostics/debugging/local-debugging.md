@@ -10,10 +10,37 @@ Locally debugging the kernel allows you to diagnose the kernel directly on the h
 
 The structure of the local debugging log is like the below picture:
 
-<figure><img src="../../../.gitbook/assets/Beta3-089-Diags.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/097-debug.png" alt=""><figcaption></figcaption></figure>
+
+The local debug logs contain two versions of formatting:
+
+### Classic
+
+```
+date time [level] (method - source:linenum): message
+```
+
+Each of these fields have their own values, as follows:
+
+* `date`: The date of the event
+* `time`: The time of the event
+* `level`: One character error level, which is one of:
+  * `T`: Trace verbose message
+  * `D`: Debug verbose message
+  * `I`: Informational message
+  * `W`: Warning message
+  * `E`: Error message
+  * `F`: Fatal error message
+* `method`: The method name in which the message was posted
+* `source`: The source code file where the method is found
+* `linenum`: The line number from the source file
+* `message`: The message
+
+### Modern
 
 ```
 date time (fully-qualified-method)
+==================================
 
 [level] : message
 ```

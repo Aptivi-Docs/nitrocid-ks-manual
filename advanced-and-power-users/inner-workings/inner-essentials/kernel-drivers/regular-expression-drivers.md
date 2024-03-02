@@ -4,6 +4,8 @@ description: Changing how the regular expression works
 
 # 🔌 Regular Expression Drivers
 
+<figure><img src="../../../../.gitbook/assets/127-inner.png" alt=""><figcaption></figcaption></figure>
+
 The regular expression driver is one of the supported driver types on Nitrocid KS. These drivers allow you to change how the regular expression works, thus earning dynamic regular expression improvements.
 
 The regular expression drivers have the following characteristics:

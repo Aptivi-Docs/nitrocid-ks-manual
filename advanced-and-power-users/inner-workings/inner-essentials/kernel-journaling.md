@@ -4,6 +4,8 @@ description: Let's keep the journals here.
 
 # 📒 Kernel Journaling
 
+<figure><img src="../../../.gitbook/assets/130-inner.png" alt=""><figcaption></figcaption></figure>
+
 Kernel journals are JSON files that tell you how the kernel is going, such as the boot process and raised events. They are serialized to the journal entry class, `JournalEntry`, which you can get all of the current session's kernel journals by using a function, `GetJournalEntries()`. Each entry contains the following items:
 
 * `Date`: the date in which the event happened.

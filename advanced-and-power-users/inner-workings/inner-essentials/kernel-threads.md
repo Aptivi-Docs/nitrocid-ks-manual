@@ -49,6 +49,8 @@ A `KernelThread` has the following values:
 
 ## Task manager
 
+<figure><img src="../../../.gitbook/assets/116-inner.png" alt=""><figcaption></figcaption></figure>
+
 The task manager can be called by `taskman` in the normal shell. It allows you to list both the Nitrocid KS threads and the unmanaged operating system threads, and it provides you with their information.
 
 The left pane of the task manager shows you a list of threads, and the right pane shows you the selected thread info.
@@ -72,6 +74,8 @@ The selected thread information can be found on the right pane of your task mana
 
 #### Nitrocid KS threads
 
+<figure><img src="../../../.gitbook/assets/116-inner.png" alt=""><figcaption></figcaption></figure>
+
 The below information are shown:
 
 * `Task name`
@@ -86,6 +90,8 @@ The below information are shown:
   * Whether the thread is ready to be started or not
 
 #### Unmanaged OS threads
+
+<figure><img src="../../../.gitbook/assets/117-inner.png" alt=""><figcaption></figcaption></figure>
 
 The below information are shown:
 

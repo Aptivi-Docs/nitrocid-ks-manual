@@ -4,13 +4,15 @@ description: Your notifications are on your way!
 
 # 🔔 System Notifications
 
+<figure><img src="../../../.gitbook/assets/141-inner.png" alt=""><figcaption></figcaption></figure>
+
 Nitrocid KS provides a way to show the progress from specific applications or to show the update using a feature called the notifications. The kernel handles the notifications and displays all new notifications in the upper right corner of the screen.
 
 These notifications have the following types:
 
-* Normal notifications: these notifications contain the title and the description to tell you what you're being notified about.
-* Progress notifications: these notifications contain the title, the description, and the progress data to indicate how much work is being done.
-* Indeterminate progress notifications: these notifications are basically the same as the progress notifications, except that they don't provide any progress information; they just show whether the progress succeeded or failed.
+* **Normal notifications**: these notifications contain the title and the description to tell you what you're being notified about.
+* **Progress notifications**: these notifications contain the title, the description, and the progress data to indicate how much work is being done.
+* **Indeterminate progress notifications**: these notifications are basically the same as the progress notifications, except that they don't provide any progress information; they just show whether the progress succeeded or failed.
 
 ### Sending notifications
 

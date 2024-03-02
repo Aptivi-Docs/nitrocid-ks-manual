@@ -89,27 +89,19 @@ If you want your language to be used in the entire kernel, follow these steps:
 
 If you want your language to be used just for your user account, follow these steps:
 
-1. Make sure that Nitrocid KS is shut down. If you skip this step, restart Nitrocid KS after you finish following this instruction.
-2. In your host system, navigate to the kernel configuration path (`%LOCALAPPDATA%/KS/` or `~/.config/ks/`)
-3. Open your favorite text editor to `Users.json`
-4. Create the `preferredlanguage` key if it doesn't exist, then change its value to your three-letter language name.
-5. Save the file, and start Nitrocid KS
-6. Log-in to your target account. The language should change to your custom language.
+* Log in to any user account _that has administrative permissions or access to the kernel settings program_
+* Execute the `admin` command
+* Execute the `userlang` command, pointing it to a user account and a language as needed
+* Log out and log in as that user
 
 ## Other options for the generator
 
-This locale generator comes with options to change how it works. These switches provide the following functions: (Switches with the `(INT)` suffix are reserved for internal usage only)
+This locale generator comes with options to change how it works. These switches provide the following functions:
 
 * `--CustomOnly`
   * Restricts the generator to custom languages
-* `--NormalOnly` `(INT)`
-  * Restricts the generator to normal languages
-* `--All` `(INT)`
-  * Generates all the languages (default)
 * `--Singular <lang>`
   * Restricts the generator to a single custom or normal language
-* `--CopyToResources` `(INT)`
-  * Copies the resulting normal language outputs to the resources folder
 
 ## Installing custom languages by hand
 
