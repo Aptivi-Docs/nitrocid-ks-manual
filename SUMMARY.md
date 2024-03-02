@@ -94,6 +94,7 @@
       * [🗓️ Calendar](fundamentals/simulated-kernel-features/extra-features/common-programs/calendar.md)
       * [🔢 Calculator](fundamentals/simulated-kernel-features/extra-features/common-programs/calculator.md)
       * [👥 Contacts](fundamentals/simulated-kernel-features/extra-features/common-programs/contacts.md)
+      * [📕 Dictionary](fundamentals/simulated-kernel-features/extra-features/common-programs/dictionary.md)
       * [👩‍💻 Git Shell](fundamentals/simulated-kernel-features/extra-features/common-programs/git-shell.md)
       * [🎧 Music Player](fundamentals/simulated-kernel-features/extra-features/common-programs/music-player.md)
       * [🗒️ Notes](fundamentals/simulated-kernel-features/extra-features/common-programs/notes.md)

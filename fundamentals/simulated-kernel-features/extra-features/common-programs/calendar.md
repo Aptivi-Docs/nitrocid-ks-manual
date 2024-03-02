@@ -35,6 +35,16 @@ The calendar can be used to show you either the current month or the selected ye
 * `calendar [-calendar=type] [-legacy] <tui> [year] [month]`
   * Shows you the interactive calendar in the selected year and month
 
+The following days are highlighted in this way:
+
+* The days are highlighted in yellow, indicating the weekdays without any events and/or reminders.
+* The days are highlighted in cyan, indicating the weekends.
+* The days are highlighted also in cyan, indicating days with events and/or reminders.
+* The selected day is highlighted in green.
+* The days that contain events are surrounded with the `<` and the `>` signs.
+* The days that contain reminders are surrounded with the `(` and the `)` signs.
+* The days that contain events and reminders at the same time are surrounded with the `[` and the `]` signs.
+
 ### Events
 
 <figure><img src="../../../../.gitbook/assets/026-calendarevent.png" alt=""><figcaption></figcaption></figure>

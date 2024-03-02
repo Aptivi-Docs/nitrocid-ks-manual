@@ -8,6 +8,14 @@ description: Editing your JSON files using just commands
 
 You're looking for an `ed`-like JSON editing experience which allows you to view and edit the JSON file. This is the right place! The `edit` command infers the file type whether it's the text file, the JSON file, or the binary file. It contains many editing tools described in the below section by invoking these commands.
 
+{% hint style="info" %}
+Some commands may also be found outside the JSON shell, such as the following:
+
+* `jsonbeautify`: Beautifies the minified JSON file
+* `jsonminify`: Minifies the beautified JSON file
+* `jsondiff`: Gets a difference between two JSON files
+{% endhint %}
+
 ## Commands
 
 You can consult the below page for the list of JSON editor commands.

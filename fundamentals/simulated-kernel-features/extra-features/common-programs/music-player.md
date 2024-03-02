@@ -31,3 +31,7 @@ Additionally, this feature was shipped as an addon, meaning that the [native VLC
 
 Furthermore, the 0.0.8.6 version and the 0.0.11.x versions have removed the VLC player support.
 {% endhint %}
+
+## Lyric Player and Manager
+
+The BassBoom addon also provides you with a lyric player that you can invoke via the `playlyric` command. This only plays the lyric without its associated music. The `lyriclines` command only gives you the lyric lines and their parsed time spans.
