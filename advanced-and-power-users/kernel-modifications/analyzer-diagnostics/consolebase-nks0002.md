@@ -12,7 +12,7 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of the standard `Console` class found in the `System` namespace. However, this class is a sealed class, so it's rendered inextensible, causing you to have to make its abstraction class to wrap its functions if you want to add extra code, like checking for VT sequences.
 
-Fortunately, Nitrocid KS has its own console wrapper, `ConsoleWrapper`, that makes use of the current local console driver that contains the necessary checks, like checking the console for its fullness (positioning and any other functions other than plain writing).
+Fortunately, Terminaux has a console wrapper, `ConsoleWrapper`, that makes use of the current local console driver that contains the necessary checks, like checking the console for its fullness (positioning and any other functions other than plain writing). It's connected to the local console driver that Nitrocid KS manages.
 
 So, if you want to use the `Console` class, you must replace these calls with `ConsoleWrapper` to take advantage of the local console drivers.
 

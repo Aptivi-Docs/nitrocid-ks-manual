@@ -27,7 +27,7 @@ To get a brief insight about how this analyzer works, compare the two code block
 #### After the fix
 
 <pre class="language-csharp" data-title="Somewhere in your mod code..." data-line-numbers><code class="lang-csharp">public static void MyFunction() =>
-<strong>    KernelColorTools.SetConsoleColor(ConsoleColors.Green, true);
+<strong>    ColorTools.SetConsoleColor(ConsoleColors.Green, true);
 </strong></code></pre>
 
 ### Suppression

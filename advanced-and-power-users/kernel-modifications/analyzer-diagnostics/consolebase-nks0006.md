@@ -1,5 +1,5 @@
 ---
-description: Use ReadLine() from Input
+description: Use ReadLine() from InputTools
 ---
 
 # 📉 ConsoleBase - NKS0006
@@ -12,7 +12,7 @@ This analyzer provides the following strings:
 
 This code analyzer detects the usage of `ReadLine` from the standard `Console` class found in the `System` namespace. While this function brings some of the awesome features, such as the history and the positioning, they are limited in terms of flexibility.
 
-Historically, it had problems with Mono on Linux not playing nice with these features, causing the console to register an incorrect character to the buffer, messing things up in the process.
+Historically, it had problems with Mono on Linux not playing nice with these features, causing the console to register an incorrect character to the buffer, messing things up in the process. This was one of the outstanding issues that we had to deal with during the development of 0.0.16.0 in 2021.
 
 The `ReadLine()` provided by Nitrocid KS is a wrapper to Terminaux's console input reader feature, except that the settings are managed by Nitrocid KS and that their histories are saved once the kernel shuts down, further allowing flexibility.
 
@@ -29,7 +29,7 @@ To get a brief insight about how this analyzer works, compare the two code block
 #### After the fix
 
 <pre class="language-csharp" data-title="Somewhere in your mod code..." data-line-numbers><code class="lang-csharp">public static void MyFunction() =>
-<strong>    string input = Input.ReadLine();
+<strong>    string input = InputTools.ReadLine();
 </strong></code></pre>
 
 ### Suppression

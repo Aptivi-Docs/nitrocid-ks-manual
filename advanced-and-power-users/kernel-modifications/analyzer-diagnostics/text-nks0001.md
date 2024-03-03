@@ -16,7 +16,7 @@ The reason is that `string.Format()` tries to format any text within the .NET st
 
 Also, `TextTools.FormatString()` doesn't attempt to format any string and returns the plain string that's passed to it if there are no arguments to be passed to the formatter, making it impossible to crash if it was used without arguments accidentally or intentionally.
 
-This analyzer detects the usage of `string.Format()` and fixes it by replacing the call with `TextTools.FormatString()`, importing the `KS.Misc.Text` namespace if necessary.
+This analyzer detects the usage of `string.Format()` and fixes it by replacing the call with `TextTools.FormatString()`, importing the `Textify.General` namespace if necessary.
 
 ### Analysis Comparison
 

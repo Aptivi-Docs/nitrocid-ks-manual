@@ -25,7 +25,7 @@ To get a brief insight about how this analyzer works, compare the two code block
 #### After the fix
 
 <pre class="language-csharp" data-title="Somewhere in your mod code..." data-line-numbers><code class="lang-csharp">public static void MyFunction() =>
-<strong>    ConsoleExtensions.SetTitle("Hello, world!");
+<strong>    ConsoleMisc.SetTitle("Hello, world!");
 </strong></code></pre>
 
 ### Suppression
