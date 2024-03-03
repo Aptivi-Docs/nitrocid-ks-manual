@@ -238,6 +238,7 @@
     * [✉️ MAL and MOTD](advanced-and-power-users/inner-workings/inner-essentials/mal-and-motd.md)
     * [⌛ Progress Handlers](advanced-and-power-users/inner-workings/inner-essentials/progress-handlers.md)
     * [✒️ Assembly Signing](advanced-and-power-users/inner-workings/inner-essentials/assembly-signing.md)
+    * [🔐 Assembly Reflection](advanced-and-power-users/inner-workings/inner-essentials/assembly-reflection.md)
     * [🎰 Random Number Generation](advanced-and-power-users/inner-workings/inner-essentials/random-number-generation.md)
     * [🌍 Network Tools](advanced-and-power-users/inner-workings/inner-essentials/network-tools.md)
     * [🕙 Date and Time](advanced-and-power-users/inner-workings/inner-essentials/date-and-time.md)
