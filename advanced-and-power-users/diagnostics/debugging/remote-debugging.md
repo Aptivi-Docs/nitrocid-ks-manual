@@ -39,6 +39,8 @@ You should be able to see debugging messages once the connection to the remote d
 
 ## Remote debug chat
 
+<figure><img src="../../../.gitbook/assets/149-rchat.png" alt=""><figcaption></figcaption></figure>
+
 The chatting feature was added to the remote debugger to allow chatting with the other users debugging the same kernel to discuss what is happening in the kernel.
 
 Every device connected to the remote debugger using the provided connection information will have their entries added to the remote debug device configuration file. They'll be told to register their device with a name before they can chat.
