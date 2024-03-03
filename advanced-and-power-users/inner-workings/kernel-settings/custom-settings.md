@@ -2,7 +2,9 @@
 description: You can add your own custom settings, too!
 ---
 
-# ⚙ Custom Settings
+# ⚙️ Custom Settings
+
+<figure><img src="../../../.gitbook/assets/150-custsettings.png" alt=""><figcaption></figcaption></figure>
 
 Customized settings give you an ability to leverage the built-in settings application provided by the Nitrocid base system to customize your mod's behavior. These settings are saved to your kernel configuration directory as JSON files under the class names for easy recognition.
 
