@@ -23,20 +23,20 @@ When building mods, you have to do the following:
 
 Deep explanation of the kernel modification management can be found in the below page:
 
-{% content-ref url="managing-your-mod/" %}
-[managing-your-mod](managing-your-mod/)
+{% content-ref url="kernel-modification-management.md" %}
+[kernel-modification-management.md](kernel-modification-management.md)
 {% endcontent-ref %}
 
 ## Communication
 
 Deep explanation of the inter-mod communication and the inter-addon communication can be found in the below page:
 
-{% content-ref url="managing-your-mod/inter-mod-communication.md" %}
-[inter-mod-communication.md](managing-your-mod/inter-mod-communication.md)
+{% content-ref url="inter-mod-communication.md" %}
+[inter-mod-communication.md](inter-mod-communication.md)
 {% endcontent-ref %}
 
-{% content-ref url="managing-your-mod/inter-addon-communication.md" %}
-[inter-addon-communication.md](managing-your-mod/inter-addon-communication.md)
+{% content-ref url="inter-addon-communication.md" %}
+[inter-addon-communication.md](inter-addon-communication.md)
 {% endcontent-ref %}
 
 ## Analyzers

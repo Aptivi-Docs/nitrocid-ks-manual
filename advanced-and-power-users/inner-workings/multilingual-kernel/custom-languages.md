@@ -124,6 +124,6 @@ For mods that want to install or uninstall custom languages, you can use the API
 
 Your mods can now be translated! Nitrocid KS can now detect your language files from your mods. For more information, consult the "Mod Translations" section in the below link:
 
-{% content-ref url="../../kernel-modifications/managing-your-mod/" %}
-[managing-your-mod](../../kernel-modifications/managing-your-mod/)
+{% content-ref url="../../kernel-modifications/kernel-modification-management.md" %}
+[kernel-modification-management.md](../../kernel-modifications/kernel-modification-management.md)
 {% endcontent-ref %}

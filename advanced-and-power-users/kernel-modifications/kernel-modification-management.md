@@ -7,11 +7,10 @@ description: This page describes how to manage your kernel mods
 Kernel modification files are stored in the following directories that are found under the kernel configuration directory:
 
 * `KSMods`: Stores all the modifications under the `.dll` extension
-* `KSSplashes`: Stores all the kernel splashes under the `.dll` extension
 
-Custom splashes get loaded before the configuration files load, so people who use custom splashes in their kernel configuration will actually see their custom splashes when the kernel starts up.
+Important mods, including those that load splashes on boot, get loaded after the configuration files load, so people who use custom splashes in their kernel configuration will actually see their custom splashes when the kernel starts up.
 
-However, for mods and screensavers, they get loaded late, so they can load properly. This loading is done by scanning the `KSMods` directory and querying every `.DLL` file with `ParseMod()`.
+However, for optional mods, they get loaded late so they can load properly. This loading is done by scanning the `KSMods` directory and querying every `.DLL` file with `ParseMod()`.
 
 ## Mod parsing
 
