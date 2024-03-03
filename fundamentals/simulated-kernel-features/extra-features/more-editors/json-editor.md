@@ -16,6 +16,14 @@ Some commands may also be found outside the JSON shell, such as the following:
 * `jsondiff`: Gets a difference between two JSON files
 {% endhint %}
 
+## JSON Difference
+
+The JSON difference finding tool can be accessed using the `FindDifferences()` function found in the `JsonTools` class. This allows you to find differences in addition and deletion of any JSON object. The difference tool returns the difference in the following format:
+
+* A JSON object with either a plus (`+`), an asterisk (`*`), or a minus (`-`) sign if the target object is an object.
+* A JSON object with either a plus (`+`) or a minus (`-`) sign listing differences in addition and deletion of array elements if the target object is an array.
+* A JSON object with a plus (`+`) sign indicating the target object and a minus (`-`) sign indicating the source object.
+
 ## Commands
 
 You can consult the below page for the list of JSON editor commands.

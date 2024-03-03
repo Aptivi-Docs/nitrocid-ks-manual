@@ -114,3 +114,13 @@ For example, if you have Cyan, Magenta, and Yellow values and you want a hex cod
 
 * `ConvertFromCmykToHex(int C, int M, int Y, int K)`
 * `ConvertFromCmykToHex(string CMYKSequence)`
+
+## Resetting colors
+
+If you need to reset the colors for further text to be written to the console in its natural colors, you can use the `ResetColors()` function in the `ConsoleTools` class to reset the foreground and the background colors to their defaults.
+
+```csharp
+public static void ResetColors(bool useKernelColors = false)
+```
+
+Additionally, if you pass `true` to the `useKernelColors` parameter, the colors will be reset to the neutral text color for the foreground color and the kernel background color for the background color.

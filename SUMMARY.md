@@ -240,6 +240,7 @@
     * [✒️ Assembly Signing](advanced-and-power-users/inner-workings/inner-essentials/assembly-signing.md)
     * [🎰 Random Number Generation](advanced-and-power-users/inner-workings/inner-essentials/random-number-generation.md)
     * [🌍 Network Tools](advanced-and-power-users/inner-workings/inner-essentials/network-tools.md)
+    * [🕙 Date and Time](advanced-and-power-users/inner-workings/inner-essentials/date-and-time.md)
   * [🌀 Miscellaneous APIs](advanced-and-power-users/inner-workings/miscellaneous-apis.md)
 
 ***

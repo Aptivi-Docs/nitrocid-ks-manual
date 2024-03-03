@@ -36,48 +36,6 @@ string humanized = bytes.SizeString();
 You can't use this function for enormous sizes, like 1 zettabytes, because of the limitation of the long integers. However, you shouldn't worry about this situation, since this is used generally for file sizes, and a single file in the world hasn't reached this size yet.
 {% endhint %}
 
-## Time tools
-
-Nitrocid KS provides you with various APIs that allow you to manage time and date and their components. Here are the following tools that you can use:
-
-### Time zones
-
-Nitrocid KS provides a built-in timezone API that allows you to get information about a timezone and convert the time to the equivalent time using the specific timezone.
-
-This API is found in the `TimeZones` class.
-
-{% hint style="info" %}
-If the kernel-wide time zone is enabled, the current kernel time and date changes, depending on your selected kernel-wide time zone. Otherwise, the kernel uses the operating system time and date.
-{% endhint %}
-
-One of the functions that the above class implements is `GetZoneTimeString()` and its sibling functions, `GetZoneTimeTimeString()` and `GetZoneTimeDateString()`.
-
-* The first function returns the full date and time using the specified time zone.
-* The second function returns the time using the specified time zone.
-* The third function returns the date using the specified time zone.
-
-### Calendar management API
-
-In addition to providing the calendar command in the addon, the base Nitrocid API provides some of the calendar management APIs to make access to them easier than before. You can now get the calendar straight from the calendar type or its name using the `GetCalendar()` function from the `CalendarTools` class.
-
-{% hint style="info" %}
-Additionally, you can use the variant calendar, which uses your culture to define a calendar culture. This can be accessed by calling `GetCalendar()` with `CalendarTypes.Variant` as a type.
-{% endhint %}
-
-Additionally, the time and date renderers can be used with the base calendar class instance obtained from the above function.
-
-{% hint style="warning" %}
-While the events can be configured to be a yearly event, such as the Nitrocid KS release anniversary, such events have to be created by hand until the event commands are updated.
-{% endhint %}
-
-### Date conversion API
-
-Nitrocid API provides date conversion tools that allow you to change how the date and the time are being represented. For instance, you can translate the date and the time to UNIX time and vice versa.
-
-As for the calendars, you can use the `GetDateFromCalendar()` function, provided that you have a calendar instance from the `GetCalendar()` function.
-
-Alternatively, you can use the `GetDateFromCalendarNoCulture()` function for calendars with overridden `Calendar` property.
-
 ## Properties and Fields
 
 The `Reflection` part of the Nitrocid API provides you with options to access public properties and fields that are declared in the public classes dynamically.
@@ -115,37 +73,6 @@ If you want to either plainly write text or with a custom color of your choice, 
 [Console Writers](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-writers)
 {% endcontent-ref %}
 
-## Resetting colors
-
-If you need to reset the colors for further text to be written to the console in its natural colors, you can use the `ResetColors()` function in the `ConsoleTools` class to reset the foreground and the background colors to their defaults.
-
-```csharp
-public static void ResetColors(bool useKernelColors = false)
-```
-
-Additionally, if you pass `true` to the `useKernelColors` parameter, the colors will be reset to the neutral text color for the foreground color and the kernel background color for the background color.
-
-## Alarms
-
-When it comes to alarms, they are useful to alarm you for something at a specified time. This service and its tools can be accessed via the `AlarmTools` class.
-
-```csharp
-public static class AlarmTools
-```
-
-You can start an alarm using the `StartAlarm()` function that lets you specify your alarm ID, your alarm name, and your alarm interval in seconds.
-
-```csharp
-public static void StartAlarm(string alarmId, string alarmName, int alarmValue)
-```
-
-Additionally, you can stop an alarm before it's up using a function defined below:
-
-```csharp
-public static void StopAlarm(int alarmIdx)
-public static void StopAlarm(string alarmId)
-```
-
 ## Array tools
 
 The array tools class provides you a wide range of tools for manipulating with arrays, such as array randomization, array sorting, and more.
@@ -156,11 +83,3 @@ To randomize arrays, the below two functions that do exactly the same thing unde
 * `RandomizeArraySystem()`: Uses the .NET 8.0 [`Shuffle()`](https://learn.microsoft.com/en-us/dotnet/api/system.random.shuffle) function from [`Random`](https://learn.microsoft.com/en-us/dotnet/api/system.random) to randomly sort the array.
 
 You can consult the [Nitrocid API Reference](https://aptivi.github.io/NitrocidKS/api/KS.Misc.Reflection.ArrayTools.html) for more array tools.
-
-## JSON Difference
-
-The JSON difference finding tool can be accessed using the `FindDifferences()` function found in the `JsonTools` class. This allows you to find differences in addition and deletion of any JSON object. The difference tool returns the difference in the following format:
-
-* A JSON object with either a plus (`+`), an asterisk (`*`), or a minus (`-`) sign if the target object is an object.
-* A JSON object with either a plus (`+`) or a minus (`-`) sign listing differences in addition and deletion of array elements if the target object is an array.
-* A JSON object with a plus (`+`) sign indicating the target object and a minus (`-`) sign indicating the source object.
