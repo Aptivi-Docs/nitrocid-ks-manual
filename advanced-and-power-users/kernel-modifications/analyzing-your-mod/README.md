@@ -2,11 +2,54 @@
 description: Here's a list of analyzer diagnostics.
 ---
 
-# 📈 Analyzer Diagnostics
+# 📈 Analyzing your Mod
 
-Nitrocid KS provides you with its own code analyzer to check your mod code for anything odd, such as the usage of a function that already exists in Nitrocid's code or possible code refactorings to suit the selected mod API version.
+Analyzers, in .NET, are tools that allow you to check the quality of your code and to fix common design pitfalls in your code. These fixes typically tailor the use of better features or the removal of unnecessary code.
 
-This code analyzer runs under both the CLI and the Visual Studio GUI (as a .VSIX extension). It provides suggestions as to how to improve your mod code.
+Similarly, we provide you with analyzers that detect the usage of non-Nitrocid methods and classes and provide you fixes that make use of Nitrocid methods and classes as good alternatives. These analyzers are applicable only to Nitrocid mods.
+
+We provide you two types of analyzers for your Nitrocid mods:
+
+* **Visual Studio-based analyzers**: They analyze your mods while you're working on them in Visual Studio.
+* **Standalone analyzers**: They analyze your mod code outside Visual Studio.
+
+In this page, we'll give you instructions on how to install such analyzers. Choose the analyzer type based on your preferences.
+
+## Installation
+
+There are two types of Nitrocid analyzers as highlighted above. This section shows you how to analyze your code with either Visual Studio and the standalone analyzer. The mod analyzer package found in the release contains both the standalone analyzer and the Visual Studio-based analyzer.
+
+### Visual Studio
+
+In order to install the Visual Studio-based analyzer for Nitrocid mods, follow the below steps:
+
+1. Open Visual Studio 2022 and open `Extensions` > `Manage Extensions...`.
+2.  Search for `Aptivi.NKSAnalyzers`
+
+    <figure><img src="../../../.gitbook/assets/091-modanalyzers.png" alt=""><figcaption></figcaption></figure>
+3.  Once it gets downloaded, close all Visual Studio windows until this window appears
+
+    <figure><img src="../../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+4.  Click on Modify and wait until this window shows up
+
+    <figure><img src="../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+5.  Start working on your mod, and you'll see `NKS` analyzers.\
+
+
+    <figure><img src="../../../.gitbook/assets/093-modanalyzers.png" alt=""><figcaption></figcaption></figure>
+
+### Standalone Analyzer
+
+In case you can't use Visual Studio-based analyzer for your mods, you can use the standalone analyzer. To use it, follow the steps:
+
+1. Open the command prompt
+2. Go to the directory where the standalone analyzer is located. Use `cd` to change the directory.
+3.  Run `dotnet Nitrocid.StandaloneAnalyzer.dll path/to/mod.sln`\
+
+
+    <figure><img src="../../../.gitbook/assets/094-modanalyzers.png" alt=""><figcaption></figcaption></figure>
+
+## Diagnostics
 
 The following code analyzers are shipped, with links to each page:
 
@@ -18,7 +61,7 @@ Currently, there are no analyzers which generate errors yet. However, we'll plan
 {% tab title="Warnings" %}
 The following analyzers generate warnings:
 
-<table><thead><tr><th width="139">Diag. ID</th><th data-type="content-ref">Page</th></tr></thead><tbody><tr><td><code>NKS0001</code></td><td><a href="text-nks0001.md">text-nks0001.md</a></td></tr><tr><td><code>NKS0002</code></td><td><a href="consolebase-nks0002.md">consolebase-nks0002.md</a></td></tr><tr><td><code>NKS0003</code></td><td><a href="consolebase-nks0003.md">consolebase-nks0003.md</a></td></tr></tbody></table>
+<table><thead><tr><th width="140">Diag. ID</th><th data-type="content-ref">Page</th></tr></thead><tbody><tr><td><code>NKS0001</code></td><td><a href="text-nks0001.md">text-nks0001.md</a></td></tr><tr><td><code>NKS0002</code></td><td><a href="consolebase-nks0002.md">consolebase-nks0002.md</a></td></tr><tr><td><code>NKS0003</code></td><td><a href="consolebase-nks0003.md">consolebase-nks0003.md</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Suggestions" %}

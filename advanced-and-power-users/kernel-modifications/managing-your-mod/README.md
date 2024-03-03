@@ -2,7 +2,7 @@
 description: This page describes how to manage your kernel mods
 ---
 
-# 🔧 Kernel Modification Management
+# 🔧 Managing your Mod
 
 Kernel modification files are stored in the following directories that are found under the kernel configuration directory:
 
@@ -164,3 +164,25 @@ The viewer supports these controls:
 * `F1`: Info about the selected manual page
 * `Shift + I`: Opens the info box containing your mod manual
 * `ESC`: Exits the viewer
+
+## Mod Inter-communication
+
+In addition to the above mod management tools, Nitrocid KS provides you with tools that allow you to communicate with either the other mods or the other addons that implement their publicly-available functions, fields, or properties as in the following overridable mod properties:
+
+{% code title="IMod.cs" lineNumbers="true" %}
+```csharp
+ReadOnlyDictionary<string, Delegate> PubliclyAvailableFunctions { get; }
+ReadOnlyDictionary<string, PropertyInfo> PubliclyAvailableProperties { get; }
+ReadOnlyDictionary<string, FieldInfo> PubliclyAvailableFields { get; }
+```
+{% endcode %}
+
+To get started, follow the two pages below, depending on the type of the communication, to get started:
+
+{% content-ref url="inter-mod-communication.md" %}
+[inter-mod-communication.md](inter-mod-communication.md)
+{% endcontent-ref %}
+
+{% content-ref url="inter-addon-communication.md" %}
+[inter-addon-communication.md](inter-addon-communication.md)
+{% endcontent-ref %}

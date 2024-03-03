@@ -86,3 +86,16 @@ The three functions return an empty array under the following conditions:
 
 * There are no properties or fields in all the mod parts from your mod.
 {% endhint %}
+
+## Supported addons
+
+The following addons support inter-addon communication:
+
+* Nitrocid.Extras.Diagnostics
+  * `GetThreadBacktraces`
+* Nitrocid.Extras.SqlShell
+  * `IsSql`
+
+{% hint style="info" %}
+Currently, a very small amount of addon functions are available, but we'll work on it to extend support for inter-addon communication in the future.
+{% endhint %}
