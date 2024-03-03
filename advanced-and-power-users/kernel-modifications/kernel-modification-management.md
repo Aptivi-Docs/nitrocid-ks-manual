@@ -152,6 +152,8 @@ This is my mod documentation, which hosts the documentation and technical inform
 
 ## Manual page viewer
 
+<figure><img src="../../.gitbook/assets/148-modmanual.png" alt=""><figcaption></figcaption></figure>
+
 The manual page viewer can be invoked with the `modmanual` command, which takes an argument that should be a valid kernel mod name.
 
 When this command is executed, the manual page viewer TUI starts by listing all the available manual pages that the mod provides. Then, it shows you a brief description in the second pane, which will most likely tell you to press `Shift + I` to get access to more information.
