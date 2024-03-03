@@ -4,7 +4,7 @@ description: How to install Nitrocid KS on Linux
 
 # 🐧 Linux
 
-<figure><img src="../../.gitbook/assets/Beta3-099-Linux.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/146-linux.png" alt=""><figcaption></figcaption></figure>
 
 Installing Nitrocid KS on Linux is straightforward, but we recommend installing the simulator using the manual unpack method.
 
@@ -22,17 +22,17 @@ To run Nitrocid KS in the absolute minimum requirements, your computer needs to 
 | ----------------- | ------------------------------------------------------------------ | ----------------------------- |
 | Supported distros | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | Konsole, GNOME Terminal, etc. |
 
-### KS v0.0.24.0 or lower
+### KS v0.0.24.0
 
 {% hint style="warning" %}
-We support installing KS 0.0.24.0 or lower until the full deprecation of .NET Framework.
+We support installing KS 0.0.24.0 until the full deprecation of .NET Framework.
 {% endhint %}
 
 To run Nitrocid KS in the absolute minimum requirements, your computer needs to have the following installed:
 
 | System            | Framework                                                          | Terminal                      |
 | ----------------- | ------------------------------------------------------------------ | ----------------------------- |
-| Supported distros | [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) | Konsole, GNOME Terminal, etc. |
+| Supported distros | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | Konsole, GNOME Terminal, etc. |
 | Supported distros | [Mono 5.10+](https://www.mono-project.com/download/stable/)        | Konsole, GNOME Terminal, etc. |
 
 ### Required packages
@@ -66,10 +66,10 @@ For 0.0.24.x or older, files that end with the `-dotnet` prefix means that it's 
 If you're running Ubuntu, you can install KS using the Ubuntu PPA. Just follow these steps:
 
 1. Open your terminal emulator and execute the following:
-   * sudo add-apt-repository ppa:eofla/kernel-sim
-   * sudo apt update
+   * `sudo add-apt-repository ppa:eofla/kernel-sim`
+   * `sudo apt update`
 2. Install the `kernel-simulator` package
-   * sudo apt install kernel-simulator
+   * `sudo apt install kernel-simulator`
 3. Start `ks` or use your app drawer to find `Nitrocid KS`
 
 ## Bleeding-edge

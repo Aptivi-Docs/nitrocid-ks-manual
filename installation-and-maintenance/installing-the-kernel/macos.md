@@ -40,10 +40,6 @@ There is one way to install Nitrocid KS on macOS systems. Follow these steps to 
 4. Open your favorite terminal emulator, like iTerm2, and change the working directory to a folder containing the Nitrocid KS executable
 5. Execute `dotnet Nitrocid.dll` to start the kernel
 
-{% hint style="info" %}
-For 0.0.24.x or older, files that end with the `-dotnet` prefix means that it's for .NET 6.0.
-{% endhint %}
-
 ## Bleeding-edge
 
 Bleeding-edge builds usually come from building the development branch of the kernel, and they usually contain bugs and other untested features.
