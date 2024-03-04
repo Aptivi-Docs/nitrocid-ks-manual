@@ -121,6 +121,18 @@ It then extracts the splash instance from the assembly and checks to see if it e
 
 At the end of the mod parsing, the manual pages get initialized by the `InitMan()` function, which checks the file extension `.man` and attempts to create a `Manual` class instance.
 
+{% hint style="info" %}
+If you want to implement manual pages in your mod, you must have a folder called `<ModName>.dll.manual` in the `KSMods` folder with the `.man` files inside. For example, the tree representation of the directory hierarchy represents a valid way to put your manual files inside for the `MyFirstMod` kernel mod:
+
+```
+KSMods:
+
+- MyFirstMod.dll.manual: [/]
+  - test.man: 239 B
+- MyFirstMod.dll: 14.5 KB
+```
+{% endhint %}
+
 In turn, this calls the manual checker that parses the entire file. It checks for the following:
 
 * Every manual page starts with the `(*MAN START*)` header
