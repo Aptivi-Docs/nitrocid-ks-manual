@@ -19,7 +19,7 @@ When upgrading your mods to API v3.0, consider these:
 * Starting from API version, `3.0.25.383`, the mod name and the mod version must be specified, because if they aren't specified, the mod parsing fails. See why [here](from-0.1.0-beta-3-to-0.1.0-rc.md#mandatory-mod-version-and-name-properties).
 {% endhint %}
 
-## To 0.1.0
+## From 0.0.24 to 0.1.0
 
 This version is a futuristic magic that brings in many feature additions and spectacular improvements in all fields, including cosmetic changes.
 
@@ -39,4 +39,10 @@ When upgrading your mods to API v3.0, consider these:
 * Starting from API version `3.0.25.310`, Nitrocid KS now uses .NET 8.0, which means that all your mods will have to be updated to continue working.
 {% endhint %}
 
-This will be populated as soon as we reach the final stage of 0.1.0 to maintain consistency.
+## Detailed important changes
+
+This section explains how to adapt the important changes to your mod code so that it works with 0.1.0 and higher. This highlights the most important changes that we have compiled for you.
+
+### Old configuration styles
+
+To be done.

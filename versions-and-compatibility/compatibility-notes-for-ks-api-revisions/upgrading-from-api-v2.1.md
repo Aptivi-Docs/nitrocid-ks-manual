@@ -8,7 +8,7 @@ When upgrading your modification from the target of the later version of Nitroci
 
 The following changes were listed sequentially as development went on.
 
-## From 0.0.24.0
+## From 0.0.23 to 0.0.24
 
 This version was released to make groundbreaking additions and improvements.
 

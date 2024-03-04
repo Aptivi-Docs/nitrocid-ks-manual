@@ -6,7 +6,7 @@ description: Follow the compatibility notes when upgrading your mods from API v1
 
 When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v1.1, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod. These changes will be listed starting from 0.0.8 to the last version in this API revision.
 
-## From 0.0.8
+## From 0.0.7 to 0.0.8
 
 This version brought many awesome changes, including the addition of screensavers and SSH.
 
@@ -43,7 +43,7 @@ According to the debug logs inside the function, it was meant to make a list of 
 We advice you to cease using this function, since it's classed as abusive.
 {% endhint %}
 
-## From 0.0.10
+## From 0.0.8 to 0.0.10
 
 This release brings a vast amount of improvements, but there is one API removal which is pinpointed below.
 
@@ -71,7 +71,7 @@ public static void DisconnectDbgDev(string IPAddr)
 ```
 {% endcode %}
 
-## From 0.0.11
+## From 0.0.10 to 0.0.11
 
 This kernel version series added new features, like the text editor.
 

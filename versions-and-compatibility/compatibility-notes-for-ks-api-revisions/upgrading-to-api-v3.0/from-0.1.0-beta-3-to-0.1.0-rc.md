@@ -2,9 +2,13 @@
 description: Guide for upgrading 0.1.0 Beta 3 mods to 0.1.0 RC
 ---
 
-# ⬆ From 0.1.0 Beta 3 to 0.1.0 RC
+# ⬆️ From 0.1.0 Beta 3 to 0.1.0 RC
 
-This page lists all the changes that have been made from 0.1.0 Beta 3 to 0.1.0 RC. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page instead.
+This page lists all the changes that have been made from 0.1.0 Beta 3 to 0.1.0 RC. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page where it highlights the most important changes.
+
+## From Beta 3 to RC
+
+During RC's development, we have made the following breaking changes:
 
 ### Removed "mod part" leftovers
 

@@ -6,7 +6,7 @@ description: Follow the compatibility notes when upgrading your mods from API v1
 
 When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v1.3, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod. These changes will be listed starting from 0.0.16 to the last version in this API revision.
 
-## From 0.0.16
+## From 0.0.15 to 0.0.16
 
 This version refined the kernel in various aspects, including the enhancements of the coloring system and the addition of various useful features.
 
@@ -233,7 +233,7 @@ This function was used to prompt the user for the SFTP password for the specifie
 We advice you to cease using this function.
 {% endhint %}
 
-## From 0.0.17
+## From 0.0.16 to 0.0.17
 
 This version was released as a small update to add minor features and general improvements.
 
@@ -279,7 +279,7 @@ public static void ShowAllTimeZones()
 ```
 {% endcode %}
 
-## From 0.0.18
+## From 0.0.17 to 0.0.18
 
 This version added some more features to the kernel, including the custom startup banner support.
 

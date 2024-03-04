@@ -2,9 +2,13 @@
 description: Guide for upgrading 0.1.0 Beta 1 mods to 0.1.0 Beta 2
 ---
 
-# ⬆ From 0.1.0 Beta 1 to 0.1.0 Beta 2
+# ⬆️ From 0.1.0 Beta 1 to 0.1.0 Beta 2
 
-This page lists all the changes that have been made from 0.1.0 Beta 1 to 0.1.0 Beta 2. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page instead.
+This page lists all the changes that have been made from 0.1.0 Beta 1 to 0.1.0 Beta 2. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page where it highlights the most important changes.
+
+## From Beta 1 to Beta 2
+
+During Beta 2's development, we have made the following breaking changes:
 
 ### Employed `ColorPrint.Core` for color wheel
 

@@ -8,7 +8,7 @@ When upgrading your modification from the target of the later version of Nitroci
 
 The following changes were listed sequentially as development went on.
 
-## From 0.0.20.0
+## From 0.0.18 to 0.0.20
 
 This version was released to make groundbreaking additions and improvements.
 
@@ -971,7 +971,7 @@ The built-in string evaluators were used for the calculator functionality in the
 We advice you to cease using this function.
 {% endhint %}
 
-## From 0.0.21.0
+## From 0.0.20 to 0.0.21
 
 This version was a minor update to 0.0.20.0.
 
@@ -1015,7 +1015,7 @@ public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsT
 ```
 {% endcode %}
 
-## From 0.0.22.0
+## From 0.0.21 to 0.0.22
 
 This version was a great update to the API v2.0 series, because it added Android support to KS!
 
@@ -1098,7 +1098,7 @@ public static string ReadLine(string InputText, string DefaultValue, bool UseCtr
 ```
 {% endcode %}
 
-## From 0.0.23.0
+## From 0.0.22 to 0.0.23
 
 This version was the last version from the API v2.0 series.
 

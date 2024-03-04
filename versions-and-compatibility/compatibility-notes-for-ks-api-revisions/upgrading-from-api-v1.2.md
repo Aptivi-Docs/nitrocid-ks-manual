@@ -6,7 +6,7 @@ description: Follow the compatibility notes when upgrading your mods from API v1
 
 When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v1.2, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod. These changes will be listed starting from 0.0.12 to the last version in this API revision.
 
-## From 0.0.12
+## From 0.0.11 to 0.0.12
 
 This version added some of the interesting features, including the built-in kernel configuration tool that still witnessed improvements to this day.
 
@@ -74,7 +74,7 @@ They were removed because Extensification was being made at that time, and they 
 To continue using these functions, we suggest that you re-implement these functions yourself.
 {% endhint %}
 
-## Version 0.0.12.3
+## From 0.0.12 to 0.0.12.3
 
 This version brought minor improvements. However, there was an API removal.
 
@@ -99,7 +99,7 @@ public static void StopRPC()
 ```
 {% endcode %}
 
-## From 0.0.14
+## From 0.0.12.3 to 0.0.14
 
 This version added some more features, like the usage of Inxi.NET for the first time in the kernel and the BouncingBlock screensaver.
 
@@ -186,7 +186,7 @@ It got removed again in favor of the string evaluator that was implemented in th
 The calculator no longer uses the string evaluator, and now uses the `StringMath` library to calculate the expressions.
 {% endhint %}
 
-## From 0.0.15
+## From 0.0.14 to 0.0.15
 
 This version was released as the last major version in the API v1.2 series.
 

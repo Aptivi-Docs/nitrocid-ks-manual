@@ -2,9 +2,13 @@
 description: Guide for upgrading 0.0.24.x mods to Beta 1
 ---
 
-# ⬆ From 0.0.24.x to 0.1.0 Beta 1
+# ⬆️ From 0.0.24.x to 0.1.0 Beta 1
 
-This page lists all the changes that have been made from 0.0.24.x to 0.1.0 Beta 1. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page instead.
+This page lists all the changes that have been made from 0.0.24.x to 0.1.0 Beta 1. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page where it highlights the most important changes. We have made nine milestones prior to the first beta release.
+
+## From 0.0.24.x to Milestone 1
+
+During Milestone 1's development, we have made the following breaking changes:
 
 ### **Moved events to `KS.Kernel.Events`**
 
@@ -17,7 +21,7 @@ Public Class Events
     Public Event KernelStarted()
     Public Event PreLogin()
     Public Event PostLogin(Username As String)
-(...)
+    (...)
 ```
 {% endcode %}
 
@@ -171,6 +175,10 @@ These power management functions were there in `KernelTools` since the earliest 
 Change the namespace declaration to refer to kernel update code from `KS.Kernel.KernelTools` to `KS.Kernel.Updates`.
 {% endhint %}
 
+## From Milestone 1 to Milestone 2
+
+During Milestone 2's development, we have made the following breaking changes:
+
 ### **Removed `ListArgs` from `ICommand` and `IArgument`**
 
 {% code lineNumbers="true" %}
@@ -212,6 +220,10 @@ We have deleted `Color255` from `KS.ConsoleBase` as a result of this migration.
 {% hint style="info" %}
 Change the namespace declaration to refer to `GetEsc()` from `KS.ConsoleBase.Colors` to `KS.Misc.Text.CharManager`.
 {% endhint %}
+
+## From Milestone 2 to Milestone 3
+
+During Milestone 3's development, we have made the following breaking changes:
 
 ### **Removed `FullArgumentList`**
 
@@ -274,6 +286,10 @@ This function was not needed to execute aliases since there has been recent impr
 {% hint style="info" %}
 This function wasn't part of the public KS API. We advice you to cease using this function.
 {% endhint %}
+
+## From Milestone 3 to Milestone 4
+
+During Milestone 4's development, we have made the following breaking changes:
 
 ### **Renamed debug writer function names**
 
@@ -349,6 +365,24 @@ If you need to change the hostname, you need to use the `ChangeHostname` functio
 public static void ChangeHostname(string NewHost)
 ```
 {% endcode %}
+
+## From Milestone 4 to Milestone 5
+
+During Milestone 5's development, we have made the following breaking changes:
+
+### Renamed permissions to groups
+
+{% code title="PermissionManagement.cs" lineNumbers="true" %}
+```csharp
+public static class PermissionManagement
+```
+{% endcode %}
+
+We have renamed the permissions feature to `groups` to avoid confusion. Later, it's been renamed to user flags in later development versions.
+
+## From Milestone 5 to Milestone 7
+
+During Milestone 7's development, we have made the following breaking changes:
 
 ### **Made abstractions regarding the color management class**
 
@@ -436,6 +470,10 @@ As part of an ongoing change to the encryption driver, we've changed the algorit
 {% hint style="info" %}
 Encryption driver no longer uses the `EncryptionAlgorithms` enumeration, although it now handles custom algorithms. The enumeration can't be used anymore.
 {% endhint %}
+
+## From Milestone 7 to Milestone 8
+
+During Milestone 8's development, we have made the following breaking changes:
 
 ### **Renamed two classes related to shell**
 
@@ -599,6 +637,24 @@ The latest ColorSeq version, 1.0.2, will be used to make it easier to achieve.
 {% hint style="info" %}
 It's best to upgrade your `ConsoleColor` variables to `ConsoleColors` at minimum.
 {% endhint %}
+
+### Added last argument support to auto completer
+
+{% code title="CommandArgumentInfo.cs" lineNumbers="true" %}
+```csharp
+public Func<string[]> AutoCompleter { get; private set; }
+```
+{% endcode %}
+
+We've added support for the last argument written to aid the auto completer in completing the command according to the last argument written. This is to ensure completions in the right context.
+
+{% hint style="info" %}
+If your command needs this feature, it's best to implement it.
+{% endhint %}
+
+## From Milestone 8 to Milestone X
+
+During Milestone X's development, we have made the following breaking changes:
 
 ### **Renamed command executor and base to reduce confusion**
 
@@ -956,8 +1012,12 @@ Public Function GetPropertyValueInVariable(Variable As String, [Property] As Str
 VariableProperty is no longer used, so we decided to remove it. As a consequence, we also had to remove the `PropertyManager.GetPropertyValueInVariable()` routine.
 
 {% hint style="danger" %}
-We advice you to cease using these functions.
+We advise you to cease using these functions.
 {% endhint %}
+
+## From Milestone X to Beta 1
+
+During Beta 1's development, we have made the following breaking changes:
 
 ### **Moved `ColTypes` to `KernelColorType`**
 
