@@ -111,6 +111,10 @@ Handling extensions consists of a class, called `ExtensionHandler`, that contain
 
 You can register your custom handler using the `RegisterHandler()` function found in the `ExtensionHandlerTools` class. This way, next time IFM opens up a file with an extension that contains your handler, it will execute your own custom handler.
 
+```csharp
+ExtensionHandlerTools.RegisterHandler(".txt", "txthandler", (path) => Opening.OpenEditor(path, true), (path) => $"Lines: {File.ReadAllLines(path).Length}");
+```
+
 Additionally, any mod that uses `OpenDeterministically()` on a file will trigger your custom handlers.
 
 {% hint style="warning" %}
