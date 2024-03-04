@@ -90,7 +90,6 @@ This function was called by the RPC thread which started during the call to the 
 
 {% hint style="info" %}
 StartRPC() and StopRPC() are still available as viable ways of starting and stopping the remote procedure server. The below code block shows you the method signature of the two functions.
-{% endhint %}
 
 {% code title="RemoteProcedure.cs" lineNumbers="true" %}
 ```csharp
@@ -98,6 +97,7 @@ public static void StartRPC()
 public static void StopRPC()
 ```
 {% endcode %}
+{% endhint %}
 
 ## From 0.0.12.3 to 0.0.14
 
@@ -159,14 +159,14 @@ As Inxi.NET got released at the end of 2020, it was used by Nitrocid KS to separ
 As a result, we removed all the above classes and routines.
 
 {% hint style="info" %}
-To continue using these functions and routines, use the Inxi.NET library. If you just want to list the hardware, use the ListHardware() routine.
-{% endhint %}
+To continue using these functions and routines, use the Inxi.NET library. If you just want to list the hardware, use the `ListHardware()` routine.
 
 {% code title="HardwareList.cs" lineNumbers="true" %}
 ```csharp
 public static void ListHardware(string HardwareType)
 ```
 {% endcode %}
+{% endhint %}
 
 ### `DoCalc()`
 
@@ -206,7 +206,6 @@ This function was used as a wrapper to the `ReadContents()` routine found in the
 
 {% hint style="info" %}
 To simulate this function, use the `ReadContents()` function and the console writer to print the debug logs. Both of the methods have their own method signatures written below in the code block.
-{% endhint %}
 
 {% code title="DebugLog.cs" lineNumbers="true" %}
 ```csharp
@@ -223,3 +222,4 @@ public static string[] ReadContents(string filename)
 public static void WriteList<T>(IEnumerable<T> List)
 ```
 {% endcode %}
+{% endhint %}

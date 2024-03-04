@@ -63,13 +63,13 @@ This function was released to make a wrapper for the `DisconnectDbgDev()` functi
 
 {% hint style="info" %}
 Alternatively, you can use the same function in the latest kernel version. `DisconnectDbgDev()` in API 3.0 can handle these cases. The method signature is shown in the below code block.
-{% endhint %}
 
 {% code title="RemoteDebugTools.cs" lineNumbers="true" %}
 ```csharp
 public static void DisconnectDbgDev(string IPAddr)
 ```
 {% endcode %}
+{% endhint %}
 
 ## From 0.0.10 to 0.0.11
 

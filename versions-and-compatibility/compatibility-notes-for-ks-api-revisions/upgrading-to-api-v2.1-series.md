@@ -41,12 +41,6 @@ All new screensavers should use the `BaseScreensaver` class. All existing screen
 As for the parser, it has been reimplemented to take only the screensaver DLL files.
 {% endhint %}
 
-{% code title="CustomSaverParser.cs" lineNumbers="true" %}
-```csharp
-public static void ParseCustomSaver(string file)
-```
-{% endcode %}
-
 ### **Removed support for `PerformCmd()`**
 
 {% code title="IScript.vb" lineNumbers="true" %}
@@ -59,13 +53,13 @@ Sub PerformCmd(Command As CommandInfo, Optional Args As String = "")
 
 {% hint style="info" %}
 `BaseCommand.Execute()` can be overridden in the below method signature:
-{% endhint %}
 
 {% code title="BaseCommand.cs" lineNumbers="true" %}
 ```csharp
 public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Restructured the filesystem API**
 
@@ -170,7 +164,6 @@ Public Sub CommandPromptWrite()
 
 {% hint style="info" %}
 Your shell should use the `PromptPresetBase` class to define your own shell prompts.
-{% endhint %}
 
 {% code title="PromptPresetManager.cs" lineNumbers="true" %}
 ```csharp
@@ -178,6 +171,7 @@ public static void WriteShellPrompt(ShellType ShellType)
 public static void WriteShellPrompt(string ShellType)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Organized the `ShellBase` namespaces**
 

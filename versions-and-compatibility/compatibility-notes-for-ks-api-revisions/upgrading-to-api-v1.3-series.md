@@ -31,7 +31,6 @@ This function was implemented to set the kernel colors from any theme name. Howe
 If you want to apply your theme from either the pre-defined kernel themes or the custom theme file, use one of the three functions. Their method signatures are shown below.
 
 The second function, `ParseCurrentTheme()`, was actually checking the kernel colors against all the themes that were defined and, if matched, returned the appropriate theme name. Such function is not available as an alternative in the current version of the kernel and may not arrive soon.
-{% endhint %}
 
 {% code title="ThemeTools.cs" lineNumbers="true" %}
 ```csharp
@@ -40,6 +39,7 @@ public static void ApplyThemeFromFile(string ThemeFile)
 public static void SetColorsTheme(ThemeInfo ThemeInfo)
 ```
 {% endcode %}
+{% endhint %}
 
 ### `ListDrivers()`
 
@@ -53,13 +53,13 @@ This function listed all the parsed hardware that Inxi.NET parsed. Since 0.0.16,
 
 {% hint style="info" %}
 `ListHardware()` offers the same functionality as this function, except that it now takes a specific hardware type or all the types. To upgrade your mod to the latest API, you need to use the below function.
-{% endhint %}
 
 {% code title="HardwareList.cs" lineNumbers="true" %}
 ```csharp
 public static void ListHardware(string HardwareType)
 ```
 {% endcode %}
+{% endhint %}
 
 ### `NotEnoughArgumentsException` class
 
@@ -111,7 +111,6 @@ This method used to return culture names from the current kernel language. Howev
 
 {% hint style="info" %}
 The same functionality made a return, but, this time, we used variables.
-{% endhint %}
 
 {% code title="CultureManager.cs" lineNumbers="true" %}
 ```csharp
@@ -122,6 +121,7 @@ public static List<string> GetCultureNamesFromCurrentLang()
 public static List<string> GetCultureNamesFromLang(string Language)
 ```
 {% endcode %}
+{% endhint %}
 
 ### Configuration Renovation
 
@@ -208,7 +208,6 @@ This function was used as an on/off lever to trigger all mods in one go. It got 
 
 {% hint style="info" %}
 You can still use the two separate functions in the latest kernel version series. But, be careful if you're using these APIs! You could be stopping your own mods! Their method signatures are shown below.
-{% endhint %}
 
 {% code title="ModManager.cs" lineNumbers="true" %}
 ```csharp
@@ -218,6 +217,7 @@ public static void StartMod(string ModFilename)
 public static void StopMod(string ModFilename)
 ```
 {% endcode %}
+{% endhint %}
 
 ### `SFTPPromptForPassword()`
 
@@ -269,7 +269,6 @@ This routine was used to show information about all or selected time zone, inclu
 To use this function in the latest API revision, use these three functions listed in the below code block.
 
 Beware that you need to have **`tzdata`** package installed on your Linux system!
-{% endhint %}
 
 {% code title="TimeZones.cs" lineNumbers="true" %}
 ```csharp
@@ -278,6 +277,7 @@ public static bool ShowTimeZones(string Zone)
 public static void ShowAllTimeZones()
 ```
 {% endcode %}
+{% endhint %}
 
 ## From 0.0.17 to 0.0.18
 

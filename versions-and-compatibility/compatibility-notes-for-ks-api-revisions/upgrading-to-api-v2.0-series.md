@@ -37,7 +37,6 @@ They're now unified to one help function. As a result, all above functions were 
 
 {% hint style="info" %}
 You can use the `ShowHelp()` function to utilize the feature. The below method signatures show their usage in your mods.
-{% endhint %}
 
 {% code title="HelpSystem.cs" lineNumbers="true" %}
 ```csharp
@@ -48,6 +47,7 @@ public static void ShowHelp(string command, ShellType CommandType)
 public static void ShowHelp(string command, string CommandType)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Improved naming of injected commands**
 
@@ -110,7 +110,6 @@ These variables were used to host the FTP and SFTP clients to perform operations
 
 {% hint style="info" %}
 These variables are still accessible, though they're now properties. To get the actual client from `NetworkConnection`, you need to cast the `ConnectionInstance` of the two below properties to their respective types: `FtpClient`, `SftpClient`.
-{% endhint %}
 
 {% code lineNumbers="true" %}
 ```csharp
@@ -121,6 +120,7 @@ public static NetworkConnection ClientFTP
 public static NetworkConnection ClientSFTP
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Reworked on how to create notifications**
 
@@ -135,13 +135,13 @@ The notification system was created to manage notifications. Each notification h
 
 {% hint style="info" %}
 The below notification constructor can be used to create a new notification.
-{% endhint %}
 
 {% code title="Notification.cs" lineNumbers="true" %}
 ```csharp
 public Notification(string Title, string Desc, NotificationManager.NotifPriority Priority, NotificationManager.NotifType Type)
 ```
 {% endcode %}
+{% endhint %}
 
 ### Made getting kernel paths more secure
 
@@ -155,18 +155,18 @@ An array, `paths`, used to store all the kernel paths, but it was implemented in
 
 {% hint style="info" %}
 In the current version, only the `GetKernelPath()` function can be used.
-{% endhint %}
 
 {% code title="Paths.cs" lineNumbers="true" %}
 ```csharp
 public static string GetKernelPath(KernelPathType PathType)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Debug now uses the `DebugLevel` enumerator**
 
 {% code title="DebugWriters.vb" lineNumbers="true" %}
-```csharp
+```visual-basic
 Public Sub Wdbg(ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
 Public Sub WdbgConditional(ByRef Condition As Boolean, ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
 Public Sub WdbgDevicesOnly(ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
@@ -177,7 +177,6 @@ The debugging functions used to take a debugging level using characters, but it 
 
 {% hint style="info" %}
 The debugger still uses the debug error level using the enumeration mentioned above. Updated versions of the kernel can use these debug writers with the enumerator, by referring to the method signatures of these.
-{% endhint %}
 
 {% code title="DebugWriter.cs" lineNumbers="true" %}
 ```csharp
@@ -186,6 +185,7 @@ public static void WriteDebugConditional(bool Condition, DebugLevel Level, strin
 public static void WriteDebugDevicesOnly(DebugLevel Level, string text, params object[] vars)
 ```
 {% endcode %}
+{% endhint %}
 
 ### Rewritten the command handler
 
@@ -218,7 +218,6 @@ The two command executors mentioned above were removed and the command threads w
 
 {% hint style="info" %}
 The command executors can be invoked by using the `GetLine()` method for your own shells implemented in your mods.
-{% endhint %}
 
 {% code title="Shell.cs" lineNumbers="true" %}
 ```csharp
@@ -229,6 +228,7 @@ public static void GetLine(string FullCommand, string OutputPath = "", ShellType
 public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true)
 ```
 {% endcode %}
+{% endhint %}
 
 ### Moved platform detection methods to PlatformDetector
 
@@ -258,13 +258,13 @@ This interface was made to support the custom screensavers. It has been split fr
 
 {% hint style="info" %}
 You can still use this interface, though it's renamed to `IScreensaver`.
-{% endhint %}
 
 {% code title="IScreensaver.cs" lineNumbers="true" %}
 ```csharp
 public interface IScreensaver
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Renamed variables in public API**
 
@@ -369,7 +369,6 @@ The first two stream variables were used by `ReadMOTDFromFile` and `SetMOTD` res
 
 {% hint style="info" %}
 The `ReadMotd()` function was still available, but it has been separated to `ReadMal` and this function. Their method signatures are found below.
-{% endhint %}
 
 ```csharp
 // MotdParse.cs
@@ -378,6 +377,7 @@ public static void ReadMotd()
 // MalParse.cs
 public static void ReadMal()
 ```
+{% endhint %}
 
 ### Split `GetConnectionInfo`
 
@@ -391,7 +391,6 @@ This function used to host both the connection info constructor and the prompt f
 
 {% hint style="info" %}
 These functions can be used to construct SSH connection information.
-{% endhint %}
 
 {% code title="SSH.cs" lineNumbers="true" %}
 ```csharp
@@ -399,6 +398,7 @@ public static ConnectionInfo GetConnectionInfo(string Address, int Port, string 
 public static ConnectionInfo PromptConnectionInfo(string Address, int Port, string Username)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Changed how mail listing works**
 
@@ -412,7 +412,6 @@ This function used to construct a string containing a list of messages according
 
 {% hint style="info" %}
 This function is still available. They can be used with these method signatures.
-{% endhint %}
 
 {% code title="MailManager.cs" lineNumbers="true" %}
 ```csharp
@@ -420,6 +419,7 @@ public static void MailListMessages(int PageNum)
 public static void MailListMessages(int PageNum, int MessagesInPage)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Changed how reading contents API works**
 
@@ -429,11 +429,10 @@ Public Sub ReadContents(ByVal filename As String)
 ```
 {% endcode %}
 
-This function used to directly print the file contents to the console. As we were trying to refine the API, this function was changed to contain an array of strings containing file lines. This caused PrintContents to be made, printing the contents to the console using ReadContents.
+This function used to directly print the file contents to the console. As we were trying to refine the API, this function was changed to contain an array of strings containing file lines. This caused `PrintContents` to be made, printing the contents to the console using `ReadContents`.
 
 {% hint style="info" %}
 Their method signatures are shown below.
-{% endhint %}
 
 {% code title="FileRead.cs" lineNumbers="true" %}
 ```csharp
@@ -443,6 +442,7 @@ public static void PrintContents(string filename, bool PrintLineNumbers, bool Fo
 public static void DisplayInHex(long StartByte, long EndByte, byte[] FileByte)
 ```
 {% endcode %}
+{% endhint %}
 
 ### Removed `NotifyCreate()`
 
@@ -456,13 +456,13 @@ This function was used to call the constructor of the Notification class and set
 
 {% hint style="info" %}
 You can still create notifications using the constructor that its method signature is printed below.
-{% endhint %}
 
 {% code title="Notification.cs" lineNumbers="true" %}
 ```csharp
 public Notification(string Title, string Desc, NotificationManager.NotifPriority Priority, NotificationManager.NotifType Type)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Split the theme-related tools from `ColorTools`**
 
@@ -481,7 +481,6 @@ As a result, `colorTemplates` was renamed to Themes and the theme overload for `
 
 {% hint style="info" %}
 In the current API revision, you can apply your theme using the following functions:
-{% endhint %}
 
 {% code title="ThemeTools.cs" lineNumbers="true" %}
 ```csharp
@@ -490,6 +489,7 @@ public static void ApplyThemeFromFile(string ThemeFile)
 public static void SetColorsTheme(ThemeInfo ThemeInfo)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Implemented help helpers for commands and arguments**
 
@@ -503,20 +503,16 @@ The commands used to use the hard-coded extra help to provide additional informa
 
 {% hint style="info" %}
 To implement the help helpers, the constructor of the `CommandInfo` class has been changed to hold the base command, which already holds a command interface containing the overridable `HelpHelper()` method.
-{% endhint %}
 
-{% code title="CommandInfo.cs" lineNumbers="true" %}
 ```csharp
+// CommandInfo.cs
 public CommandInfo(string Command, ShellType Type, string HelpDefinition, CommandArgumentInfo CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
-public CommandInfo(string Command, string Type, string HelpDefinition, CommandArgumentInfo CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None
-```
-{% endcode %}
+public CommandInfo(string Command, string Type, string HelpDefinition, CommandArgumentInfo CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
 
-{% code title="BaseCommand.cs" lineNumbers="true" %}
-```csharp
+// BaseCommand.cs
 public virtual void HelpHelper()
 ```
-{% endcode %}
+{% endhint %}
 
 ### **Enumerized the reasons for the three events**
 
@@ -536,13 +532,13 @@ The event system has been heavily redesigned in the latest API so that you can u
 * `EventType.LoginError` (Username, Reason)
 * `EventType.ThemeSetError` (Theme, Reason)
 * `EventType.ColorSetError` (Reason)
-{% endhint %}
 
 {% code title="EventsManager.cs" lineNumbers="true" %}
 ```csharp
 public static void FireEvent(EventType Event, params object[] Params)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Split the custom screensaver code**
 
@@ -561,16 +557,12 @@ Public Function SetCustomSaverSettings(ByVal CustomSaver As String, ByVal SaverS
 
 The custom screensaver code were located alongside the screensaver management code. They're relocated to the new location based on the type:
 
-* CompileCustom and GenSaver functions were moved to CustomSaverCompiler
-* The remaining six functions were moved to CustomSaverTools
+* `CompileCustom` and `GenSaver` functions were moved to `CustomSaverCompiler`
+* The remaining six functions were moved to `CustomSaverTools`
 
 {% hint style="info" %}
 The custom screensaver compilation functions were remade as we've migrated to DLL-only modding and screensaver code.
 {% endhint %}
-
-```csharp
-public static void ParseCustomSaver(string file)
-```
 
 ### **Moved few variables regarding mods**
 
@@ -652,13 +644,13 @@ This function used to return a list of kernel updates, but it was later found ou
 
 {% hint style="info" %}
 The `FetchKernelUpdates` is still available as a usable method that mods can use by referring to the method signature below:
-{% endhint %}
 
 {% code title="UpdateManager.cs" lineNumbers="true" %}
 ```csharp
 public static KernelUpdate FetchKernelUpdates()
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Removed the RGB class**
 
@@ -686,7 +678,6 @@ This variable used to store the mod information for each loaded mod. It was foun
 
 {% hint style="info" %}
 If you really want to list the mods using this dictionary, consider using the function for it. Its method signature is shown below:
-{% endhint %}
 
 {% code title="ModManager.cs" lineNumbers="true" %}
 ```csharp
@@ -694,6 +685,7 @@ public static Dictionary<string, ModInfo> ListMods()
 public static Dictionary<string, ModInfo> ListMods(string SearchTerm)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **`[G|S]etConfig*` functions and subs are now obsolete**
 
@@ -744,7 +736,6 @@ Public Sub GetLine(ByVal ArgsMode As Boolean, ByVal strcommand As String, Option
 
 {% hint style="info" %}
 `GetLine` has been massively changed so that it actually gets the input and executes a given command in your shell. You can use this function in your shell to listen for commands. The method signatures show the ways of how you can use this routine.
-{% endhint %}
 
 {% code title="Shell.cs" lineNumbers="true" %}
 ```csharp
@@ -755,6 +746,7 @@ public static void GetLine(string FullCommand, string OutputPath = "", ShellType
 public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Renamed `ShellCommandType` to `ShellType`**
 
@@ -768,19 +760,15 @@ This enumeration was used to indicate the shell type to perform the operation re
 
 {% hint style="info" %}
 For built-in shells, you can use the `ShellType` enumeration in functions that take it. However, when defining custom shells, be sure to register your shell with `ShellTypeManager` using the `RegisterShell()` function to tell KS that there is a new shell coming. Custom shells can't be used with the `ShellType` enumeration.
-{% endhint %}
 
-{% code title="ShellType.cs" lineNumbers="true" %}
 ```csharp
+// ShellType.cs
 public enum ShellType
-```
-{% endcode %}
 
-{% code title="ShellTypeManager.cs" lineNumbers="true" %}
-```csharp
+// ShellTypeManager.cs
 public static void RegisterShell(string ShellType, BaseShellInfo ShellTypeInfo)
 ```
-{% endcode %}
+{% endhint %}
 
 ### **Moved all the `GetLine()` functions for all shells to the master `GetLine()`**
 
@@ -795,7 +783,6 @@ All the `GetLine()` functions were moved to the master GetLine as it has witness
 
 {% hint style="info" %}
 `GetLine()` has been massively changed so that it actually gets the input and executes a given command in your shell. You can use this function in your shell to listen for commands. The method signatures show the ways of how you can use this routine.
-{% endhint %}
 
 {% code title="Shell.cs" lineNumbers="true" %}
 ```csharp
@@ -806,6 +793,7 @@ public static void GetLine(string FullCommand, string OutputPath = "", ShellType
 public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Moved `GetTerminalEmulator()` to `ConsoleExtensions`**
 
@@ -819,13 +807,13 @@ This function was used to check the sanity of the terminal emulator for Linux sy
 
 {% hint style="info" %}
 `KernelPlatform` now hosts this function, but the method signature is the same.
-{% endhint %}
 
 {% code title="KernelPlatform.cs" lineNumbers="true" %}
 ```csharp
 public static string GetTerminalEmulator()
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Split the exceptions to separate codefiles**
 
@@ -842,7 +830,6 @@ These exceptions used to be hosted on the Exceptions masterclass, but they were 
 
 {% hint style="info" %}
 The kernel exception system had a massive rewrite to the point where every single kernel exception was given an enumeration value and their own message. You can throw these exceptions using the `KernelException` masterclass.
-{% endhint %}
 
 {% code title="KernelException.cs" lineNumbers="true" %}
 ```csharp
@@ -854,6 +841,7 @@ public KernelException(KernelExceptionType exceptionType, string message, Except
 public KernelException(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Renamed new line field to `NewLine` from `vbNewLine`**
 
@@ -1007,13 +995,13 @@ They're removed as a result of the migration of these functions.
 
 {% hint style="info" %}
 `FindSetting()` was moved to `ConfigTools`, and it was improved. You can see the method signature below.
-{% endhint %}
 
 {% code title="ConfigTools.cs" lineNumbers="true" %}
 ```csharp
 public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsToken)
 ```
 {% endcode %}
+{% endhint %}
 
 ## From 0.0.21 to 0.0.22
 
@@ -1034,11 +1022,10 @@ Public Function GetPropertiesNoEvaluation(VariableType As Type) As Dictionary(Of
 ```
 {% endcode %}
 
-These functions were used to get the property values and properties themselves. However, it was found that they're located on FieldManager and we felt that it was a bit misleading, so we decided to move them to their own dedicated class, PropertyManager.
+These functions were used to get the property values and properties themselves. However, it was found that they're located on `FieldManager` and we felt that it was a bit misleading, so we decided to move them to their own dedicated class, `PropertyManager`.
 
 {% hint style="info" %}
 These functions have been renamed to shorter names and used cached expressions to slightly improve performance. You can find their method signatures.
-{% endhint %}
 
 {% code title="PropertyManager.cs" lineNumbers="true" %}
 ```csharp
@@ -1048,6 +1035,7 @@ public static Dictionary<string, object> GetProperties(Type VariableType)
 public static Dictionary<string, Type> GetPropertiesNoEvaluation(Type VariableType)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Events and reminders format**
 
@@ -1067,13 +1055,13 @@ As we implemented the fully-fledged `CommandBase.Execute()` function which does 
 
 {% hint style="info" %}
 `BaseCommand.Execute()` can be overridden in the below method signature:
-{% endhint %}
 
 {% code title="BaseCommand.cs" lineNumbers="true" %}
 ```csharp
 public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Removed `ReadLineLong()`**
 
@@ -1087,7 +1075,6 @@ This function was implemented to take advantage of the long input support in the
 
 {% hint style="info" %}
 Long inputs are supported by the `Input.ReadLine` function that has several method signatures shown below:
-{% endhint %}
 
 {% code title="Input.cs" lineNumbers="true" %}
 ```csharp
@@ -1097,6 +1084,7 @@ public static string ReadLine(string InputText, string DefaultValue)
 public static string ReadLine(string InputText, string DefaultValue, bool UseCtrlCAsInput)
 ```
 {% endcode %}
+{% endhint %}
 
 ## From 0.0.22 to 0.0.23
 

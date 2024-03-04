@@ -136,7 +136,6 @@ These functions come as a duo, presenting different ways to do just one job: pin
 
 {% hint style="info" %}
 This function was returned much later as a cross-platform method to ping network devices in the `NetworkTools.PingAddress()` function. The below code block can be used to show you the method signature of the function in the latest kernel version.
-{% endhint %}
 
 {% code title="NetworkTools.cs" lineNumbers="true" %}
 ```csharp
@@ -145,6 +144,7 @@ public static PingReply PingAddress(string Address, int Timeout)
 public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer)
 ```
 {% endcode %}
+{% endhint %}
 
 ### `panicPrompt()`
 
@@ -172,13 +172,13 @@ This function was used to change the username to another name using prompts, but
 
 {% hint style="info" %}
 This function made its own return under `ChangeUsername()` in the same module. The code block below shows you the method signature of the function.
-{% endhint %}
 
 {% code title="UserManagement.cs" lineNumbers="true" %}
 ```csharp
 public static void ChangeUsername(string OldName, string Username)
 ```
 {% endcode %}
+{% endhint %}
 
 ### `changePassword()` and `changePasswordPrompt()`
 
@@ -193,13 +193,13 @@ Both functions prompt for the same thing, which is changing the target user pass
 
 {% hint style="info" %}
 Password changing is returned in later versions of the kernel starting with 0.0.12 under the `ChangePassword()` function. Below code block shows you the method signature for the new function.
-{% endhint %}
 
 {% code title="UserManagement.cs" lineNumbers="true" %}
 ```csharp
 public static void ChangePassword(string Target, string CurrentPass, string NewPass)
 ```
 {% endcode %}
+{% endhint %}
 
 ### `removeUser()`
 
@@ -213,13 +213,13 @@ This function used to prompt you for the user which was to be removed. However, 
 
 {% hint style="info" %}
 This function was later returned. The below code block shows you the method signature.
-{% endhint %}
 
 {% code title="UserManagement.cs" lineNumbers="true" %}
 ```csharp
 public static void RemoveUser(string user)
 ```
 {% endcode %}
+{% endhint %}
 
 ### `addUser()` and `newPassword()`
 
@@ -234,13 +234,13 @@ The first function used to prompt you for the new user, which, after being provi
 
 {% hint style="info" %}
 `AddUser()` was later implemented in the latest kernel versions. The below code block shows you the usage of the routine.
-{% endhint %}
 
 {% code title="UserManagement.cs" lineNumbers="true" %}
 ```csharp
 public static void AddUser(string newUser, string newPassword = "")
 ```
 {% endcode %}
+{% endhint %}
 
 ### `UseDefaults()`, `SetColorSteps()`, and `advanceStep()`
 
@@ -258,7 +258,6 @@ The 2021 analysis of the removed functions says that it was removed as part of t
 
 {% hint style="info" %}
 We advice you to use `PopulateColorsDefault()` implemented in 0.1.0 Beta 1 as an alternative to the first function. For the second one, use the `SetConsoleColor()` function found under `KernelColorTools` as shown in the method signature in the below code block.
-{% endhint %}
 
 {% code title="ColorTools.cs" lineNumbers="true" %}
 ```csharp
@@ -267,6 +266,7 @@ public static void SetConsoleColor(KernelColorType colorType, bool Background, b
 public static void SetConsoleColor(Color ColorSequence, bool Background = false, bool ForceSet = false)
 ```
 {% endcode %}
+{% endhint %}
 
 ### `TemplatePrompt()`
 
@@ -280,7 +280,6 @@ This function used to prompt you for writing the template name to set the kernel
 
 {% hint style="info" %}
 Use `SetColorsTheme()`, `ApplyThemeFromFile()`, or `ApplyThemeFromResources()` as viable functions to set your theme. The below code block shows you the method signature. Also, the `themesel` command shows you the list of themes and allows you to choose between available themes.
-{% endhint %}
 
 {% code title="ThemeTools.cs" lineNumbers="true" %}
 ```csharp
@@ -289,6 +288,7 @@ public static void ApplyThemeFromFile(string ThemeFile)
 public static void ApplyThemeFromResources(string theme)
 ```
 {% endcode %}
+{% endhint %}
 
 ## From 0.0.5 to 0.0.5.1
 
@@ -363,7 +363,6 @@ This function was implemented as part of the addition of Unix systems to the sup
 
 {% hint style="info" %}
 If you want to get a path to your mod directory, use the `ModsPath` property found in the Paths module. Alternatively, you can use a function to get said kernel path with the `GetKernelPath` function if you pass it the `KernelPathType.Mods` value.
-{% endhint %}
 
 {% code title="Paths.cs" lineNumbers="true" %}
 ```csharp
@@ -371,6 +370,7 @@ public static string ModsPath
 public static string GetKernelPath(KernelPathType PathType)
 ```
 {% endcode %}
+{% endhint %}
 
 ### `ProbeGPU()`, `Hddinfo()`, `Cpuinfo()`,  `SysMemory()`, and `BiosInformation()`
 
@@ -388,13 +388,13 @@ These hardware parsing functions used to probe information about your computer's
 
 {% hint style="info" %}
 `ListHardware` is implemented to show you info about hardware based on supported types, or "all" to show everything. The method signature shows you how you can use this method defined in `HardwareList`.
-{% endhint %}
 
 {% code title="HardwareList.cs" lineNumbers="true" %}
 ```csharp
 public static void ListHardware(string HardwareType)
 ```
 {% endcode %}
+{% endhint %}
 
 ### `PreWriteToDebugger`, `PostWriteToDebugger`, `PreWriteToConsole`, and `PostWriteToConsole` events
 
@@ -487,17 +487,13 @@ This version series is the last version group for Nitrocid KS API v1.0, which in
 
 ### `ExpressionCalculate()`
 
-{% code title="stdCalc.vb" lineNumbers="true" %}
 ```visual-basic
+'stdCalc.vb
 Public Sub expressionCalculate(ByVal ParamArray exps() As String)
-```
-{% endcode %}
 
-{% code title="sciCalc.vb" lineNumbers="true" %}
-```visual-basic
+'sciCalc.vb
 Public Sub expressionCalculate(ByVal sciMode As Boolean, ByVal ParamArray exps() As Object)
 ```
-{% endcode %}
 
 For the standard calculator, it calculates all the expressions that consist of just numbers and operators and prints their results to the console. It takes the expression list and lists all numbers and operators in their separate lists and combines them to the final expression string to be computed by the DataTable class which can be found by clicking below:
 
@@ -644,7 +640,6 @@ This function was a helper function to list all local directories, but specializ
 
 {% hint style="danger" %}
 We advise you to cease using this function, and start using the `List()` function. The method signature for this function is listed below.
-{% endhint %}
 
 ```csharp
 // Get a list of files and directories straight to the terminal
@@ -656,6 +651,7 @@ public static void List(string folder, bool ShowFileDetails, bool SuppressUnauth
 // Get a list of files and directories and manipulate them programmatically
 public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false)
 ```
+{% endhint %}
 
 ### `PingTarget()`
 
@@ -669,7 +665,6 @@ This function was used to ping a remote computer or remote server across the LAN
 
 {% hint style="info" %}
 This function was returned much later as a cross-platform method to ping network devices in the `NetworkTools.PingAddress()` function. The below code block can be used to show you the method signature of the function in the latest kernel version.
-{% endhint %}
 
 {% code title="NetworkTools.cs" lineNumbers="true" %}
 ```csharp
@@ -678,6 +673,7 @@ public static PingReply PingAddress(string Address, int Timeout)
 public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer)
 ```
 {% endcode %}
+{% endhint %}
 
 ### Network Listing API
 
@@ -700,10 +696,10 @@ As a consequence, we decided to remove the whole API, making the kernel non-depe
 
 {% hint style="info" %}
 It was later returned in 0.1.0 pre-beta, but it doesn't use the insecure SAMBA 1.0 protocol. Instead, it uses ICMP pinging to check for all online devices in the LAN. You can use this function as listed below.
-{% endhint %}
 
 {% code title="NetworkTools.cs" lineNumbers="true" %}
 ```csharp
 public static IPAddress[] GetOnlineDevicesInNetwork()
 ```
 {% endcode %}
+{% endhint %}

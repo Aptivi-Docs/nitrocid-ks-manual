@@ -130,7 +130,6 @@ These two functions were unrelated to the settings app, but `FindSetting()` was 
 
 {% hint style="info" %}
 You can find these methods in the `ConfigTools` module located in the `KS.Kernel.Configuration` namespace.
-{% endhint %}
 
 {% code title="ConfigTools.cs" lineNumbers="true" %}
 ```csharp
@@ -138,6 +137,7 @@ public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsT
 public static Dictionary<string, bool> CheckConfigVariables()
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Moved power management functions to `KS.Kernel.Power`**
 
@@ -159,13 +159,13 @@ Now, we don't have to initialize paths every time we make an internal app that d
 
 {% hint style="info" %}
 This function is not part of the public API. Reflection calls to this function will stop working. We advice you to use the `GetKernelPath` function since it's much faster.
-{% endhint %}
 
 {% code title="Paths.cs" lineNumbers="true" %}
 ```csharp
 public static string GetKernelPath(KernelPathType PathType)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Moved kernel update code to `Kernel.Updates`**
 
@@ -313,7 +313,6 @@ We needed to do the same thing as we've renamed `W()` to `Write()`, so we rename
 
 {% hint style="info" %}
 You can use these functions to write debugging information in your mods to the kernel debugger. The below method signatures are provided:
-{% endhint %}
 
 {% code title="DebugWriter.cs" lineNumbers="true" %}
 ```csharp
@@ -324,6 +323,7 @@ public static void WriteDebugStackTraceConditional(bool Condition, Exception Ex)
 public static void WriteDebugStackTrace(Exception Ex)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Moved MAL and MOTD message to `Misc.Probers.Motd`**
 
@@ -339,13 +339,6 @@ These have no relationship with the kernel directly.
 If you need to set the MOTD and MAL messages, you need to use the `SetMotd()` and `SetMal()` functions.
 {% endhint %}
 
-{% code lineNumbers="true" %}
-```csharp
-public static void SetMotd(string Message)
-public static void SetMal(string Message)
-```
-{% endcode %}
-
 ### **Moved `HostName` from Kernel to `NetworkTools`**
 
 {% code title="Kernel.vb" lineNumbers="true" %}
@@ -358,13 +351,13 @@ It has no relationship with the kernel either.
 
 {% hint style="info" %}
 If you need to change the hostname, you need to use the `ChangeHostname` function in `NetworkTools`.
-{% endhint %}
 
 {% code title="NetworkTools.cs" lineNumbers="true" %}
 ```csharp
 public static void ChangeHostname(string NewHost)
 ```
 {% endcode %}
+{% endhint %}
 
 ## From Milestone 4 to Milestone 5
 
@@ -416,13 +409,13 @@ As a result, we've used `CommandArgumentInfo` in `ArgumentInfo`.
 
 {% hint style="info" %}
 You need to change how you call the constructor of `ArgumentInfo` to hold the `CommandArgumentInfo` instance.
-{% endhint %}
 
 {% code title="ArgumentInfo.cs" lineNumbers="true" %}
 ```csharp
 public ArgumentInfo(string Argument, string HelpDefinition, CommandArgumentInfo ArgArgumentInfo, ArgumentExecutor ArgumentBase, bool Obsolete = false, Action AdditionalHelpAction = null)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Removed `SetColors` as they're no longer used**
 
@@ -449,13 +442,13 @@ We have improved the color tools module, so SetColors is no longer used. We've r
 
 {% hint style="info" %}
 To set the kernel type to a specified color, use `SetColor()`.
-{% endhint %}
 
 {% code title="ColorTools.cs" lineNumbers="true" %}
 ```csharp
 public static Color SetColor(KernelColorType type, Color color)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Changed algorithm enum to EncryptionAlgorithms**
 
@@ -541,14 +534,14 @@ We have moved all the events to its own dedicated array containing all the avail
 Event firing and response functions are moved to the EventsManager class in one function, `FireEvent`.
 
 {% hint style="info" %}
-To fire events, you now have to use the FireEvent function found under the EventsManager module. Its method signature is printed below:
-{% endhint %}
+To fire events, you now have to use the `FireEvent` function found under the `EventsManager` module. Its method signature is printed below:
 
 {% code title="EventsManager.cs" lineNumbers="true" %}
 ```csharp
 public static void FireEvent(EventType Event, params object[] Params)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Moved `NewLine` from `Kernel` to `CharManager`**
 
@@ -617,7 +610,6 @@ As a side-effect, we've changed the color signatures from foreground and backgro
 
 {% hint style="info" %}
 Use the new method signatures to write your table. As for the `ConsoleColor` version, we advice you to upgrade to `ConsoleColors` at minimum.
-{% endhint %}
 
 {% code title="TableColor.cs" lineNumbers="true" %}
 ```csharp
@@ -627,6 +619,7 @@ public static void WriteTable(string[] Headers, string[,] Rows, int Margin, Cons
 public static void WriteTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Tried to balance color support for writers**
 
@@ -815,13 +808,13 @@ To aid in simplicity of the function, we've replaced the two reference variables
 
 {% hint style="info" %}
 The first tuple value in the returned value specifies the filtered X position, and the second one specifies the filtered Y position in the console buffer.
-{% endhint %}
 
 {% code title="ConsoleExtensions.cs" lineNumbers="true" %}
 ```csharp
 public static (int, int) GetFilteredPositions(string Text, params object[] Vars)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Internalized several kernel tools**
 
@@ -889,7 +882,6 @@ The theme preview routine used to depend on the theme studio to do its job, unde
 
 {% hint style="info" %}
 You can use the new `ThemeTools.PreviewTheme()` function to preview any theme. The method signatures are written below.
-{% endhint %}
 
 {% code title="ThemeTools.cs" lineNumbers="true" %}
 ```csharp
@@ -898,6 +890,7 @@ public static void PreviewTheme(ThemeInfo theme)
 public static void PreviewTheme(Dictionary<KernelColorType, Color> colors)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Migrated kernel arguments**
 
@@ -933,13 +926,13 @@ The kernel drivers are beneficial, so we decided to give the encryptors a chance
 
 {% hint style="info" %}
 You can implement your own encryptor by registering your custom encryption driver using the `RegisterDriver` function.
-{% endhint %}
 
 {% code title="DriverHandler.cs" lineNumbers="true" %}
 ```csharp
 public static void RegisterDriver(DriverTypes type, IDriver driver)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Removed `TwoNewlines` argument from `WriteLicense`**
 
@@ -1031,13 +1024,13 @@ This is an enumeration which simply tells the difference of all the defined and 
 
 {% hint style="info" %}
 To continue using the kernel color type enumeration, rename the references from `ColTypes` to `KernelColorType`, importing the `KS.ConsoleBase.Colors` namespace.
-{% endhint %}
 
 {% code title="KernelColorType.cs" lineNumbers="true" %}
 ```csharp
 public enum KernelColorType
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Removed `ref` from conditional debug writers**
 
@@ -1052,7 +1045,6 @@ The conditional debug writers didn't do anything to the boolean condition that c
 
 {% hint style="info" %}
 Remove the `ref` prefix from the boolean variable that is being tested from your conditional debug writer calls. Follow the below method signatures:
-{% endhint %}
 
 {% code title="DebugWriters.cs" lineNumbers="true" %}
 ```csharp
@@ -1060,6 +1052,7 @@ public static void WriteDebugConditional(bool Condition, DebugLevel Level, strin
 public static void WriteDebugStackTraceConditional(bool Condition, Exception Ex)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Removed `GroupManagement` (a.k.a. `PermissionManagement`)**
 
@@ -1080,7 +1073,6 @@ To grant or revoke individual permissions from a specified user, use the followi
 You may need to import the `KS.Users.Permissions` namespace to use this feature, although it works on all permissions, unlike the superuser variable which grants all permissions.
 
 Their method signatures are written below.
-{% endhint %}
 
 {% code title="PermissionsTools.cs" lineNumbers="true" %}
 ```csharp
@@ -1088,6 +1080,7 @@ public static void GrantPermission(string User, PermissionTypes permissionType)
 public static void RevokePermission(string User, PermissionTypes permissionType)
 ```
 {% endcode %}
+{% endhint %}
 
 ### **Removed obsolete functions**
 
@@ -1111,17 +1104,13 @@ We advice you to cease using these functions.
 {% endhint %}
 
 {% hint style="warning" %}
-To sleep without blocking, convert all your BackgroundWorkers to KernelThread and use the appropriate SleepNoBlock overload for your kernel thread. The below method signature is shown.
-{% endhint %}
+To sleep without blocking, convert all your `BackgroundWorker`s to `KernelThread` and use the appropriate `SleepNoBlock` overload for your kernel thread. The below method signature is shown.
 
 {% code title="ThreadManager.cs" lineNumbers="true" %}
 ```csharp
 public static void SleepNoBlock(long Time, KernelThread ThreadWork)
 ```
 {% endcode %}
-
-{% hint style="warning" %}
-You may have to convert your speed dial entries manually. The instructions will be done soon. Please stay tuned!
 {% endhint %}
 
 ### Argument auto-completion re-implemented
@@ -1136,6 +1125,7 @@ Command auto-completion used to be available on ReadLine.Reboot to automatically
 
 As a result, the auto completion facility in your shell, if it has one implemented in your `CommandArgumentInfo`, will have to be re-implemented to parse the whole command passed to the auto-completion builder, `AutoCompleter`, and generate suggestions based on that data.
 
+{% hint style="info" %}
 In your `CommandInfo` implementation of your command, you'll also have to re-implement it so that the auto-completer takes three arguments. You can always discard the index and delimiters argument in your action declaration: `(Text, _, _) => Function(Text)`.
 
 {% code title="CommandArgumentInfo.cs" lineNumbers="true" %}
@@ -1143,6 +1133,7 @@ In your `CommandInfo` implementation of your command, you'll also have to re-imp
 public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool ArgumentsRequired, int MinimumArguments, bool AcceptsSet = false, Func<string, int, char[], string[]> AutoCompleter = null)
 ```
 {% endcode %}
+{% endhint %}
 
 ### Converted kernel exceptions
 
