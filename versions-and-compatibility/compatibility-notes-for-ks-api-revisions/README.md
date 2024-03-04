@@ -12,44 +12,44 @@ Looking to upgrade your existing mods from the API that you initially targeted t
 
 The current breaking changes for the current revision, which is v3.0, are listed in the page below:
 
-{% content-ref url="upgrading-to-api-v3.0/" %}
-[upgrading-to-api-v3.0](upgrading-to-api-v3.0/)
+{% content-ref url="upgrading-to-api-v3.0-series/" %}
+[upgrading-to-api-v3.0-series](upgrading-to-api-v3.0-series/)
 {% endcontent-ref %}
 
 If there is a new API revision, we'll link the last API revision here.
 
 ## Versions 0.0.1.x -> 0.0.7.x
 
-{% content-ref url="upgrading-from-api-v1.0.md" %}
-[upgrading-from-api-v1.0.md](upgrading-from-api-v1.0.md)
+{% content-ref url="upgrading-to-api-v1.0-series.md" %}
+[upgrading-to-api-v1.0-series.md](upgrading-to-api-v1.0-series.md)
 {% endcontent-ref %}
 
 ## Versions 0.0.8.x -> 0.0.11.x
 
-{% content-ref url="upgrading-from-api-v1.1.md" %}
-[upgrading-from-api-v1.1.md](upgrading-from-api-v1.1.md)
+{% content-ref url="upgrading-to-api-v1.1-series.md" %}
+[upgrading-to-api-v1.1-series.md](upgrading-to-api-v1.1-series.md)
 {% endcontent-ref %}
 
 ## Versions 0.0.12.x -> 0.0.15.x
 
-{% content-ref url="upgrading-from-api-v1.2.md" %}
-[upgrading-from-api-v1.2.md](upgrading-from-api-v1.2.md)
+{% content-ref url="upgrading-to-api-v1.2-series.md" %}
+[upgrading-to-api-v1.2-series.md](upgrading-to-api-v1.2-series.md)
 {% endcontent-ref %}
 
 ## Versions 0.0.16.x -> 0.0.19.x
 
-{% content-ref url="upgrading-from-api-v1.3.md" %}
-[upgrading-from-api-v1.3.md](upgrading-from-api-v1.3.md)
+{% content-ref url="upgrading-to-api-v1.3-series.md" %}
+[upgrading-to-api-v1.3-series.md](upgrading-to-api-v1.3-series.md)
 {% endcontent-ref %}
 
 ## Versions 0.0.20.x -> 0.0.23.x
 
-{% content-ref url="upgrading-from-api-v2.0.md" %}
-[upgrading-from-api-v2.0.md](upgrading-from-api-v2.0.md)
+{% content-ref url="upgrading-to-api-v2.0-series.md" %}
+[upgrading-to-api-v2.0-series.md](upgrading-to-api-v2.0-series.md)
 {% endcontent-ref %}
 
 ## Versions from the 0.0.24.x series
 
-{% content-ref url="upgrading-from-api-v2.1.md" %}
-[upgrading-from-api-v2.1.md](upgrading-from-api-v2.1.md)
+{% content-ref url="upgrading-to-api-v2.1-series.md" %}
+[upgrading-to-api-v2.1-series.md](upgrading-to-api-v2.1-series.md)
 {% endcontent-ref %}

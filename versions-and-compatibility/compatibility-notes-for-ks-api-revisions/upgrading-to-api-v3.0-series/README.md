@@ -1,8 +1,8 @@
 ---
-description: Follow the compatibility notes when upgrading your mods to API v3.0
+description: Follow the compatibility notes when upgrading your mods to API v3.0 series
 ---
 
-# 🔼 Upgrading to API v3.0
+# 🔼 Upgrading to API v3.0 series
 
 As API v3.0 is still in development, the breaking changes get committed and land here. They describe what broke and what should be used instead.
 

@@ -1,8 +1,8 @@
 ---
-description: Follow the compatibility notes when upgrading your mods from API v2.1
+description: Follow the compatibility notes when upgrading your mods to API v2.1 series
 ---
 
-# 🔼 Upgrading from API v2.1
+# 🔼 Upgrading to API v2.1 series
 
 When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v2.1, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod.
 

@@ -1,12 +1,12 @@
 ---
-description: Follow the compatibility notes when upgrading your mods from API v1.0
+description: Follow the compatibility notes when upgrading your mods to API v1.0 series
 ---
 
-# 🔼 Upgrading from API v1.0
+# 🔼 Upgrading to API v1.0 series
 
 When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v1.0, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod. These changes will be listed starting from 0.0.4 to the last version in this API revision.
 
-## 0.0.4
+## From 0.0.1 to 0.0.4
 
 Although this version is the first version which supported the kernel modification feature, these below functions are removed for reasons stated below each function.
 
@@ -40,12 +40,12 @@ This function first appeared with the initial debut of the group system. However
 
 {% hint style="info" %}
 The new permission system is here, and you can make use of it to grant and deny users a specific permission. Their method signatures are written below:
-{% endhint %}
 
 ```csharp
 public static void GrantPermission(string User, PermissionTypes permissionType)
 public static void RevokePermission(string User, PermissionTypes permissionType)
 ```
+{% endhint %}
 
 ### `ProbeBIOS()`
 
@@ -61,7 +61,7 @@ This function was added to "simplify" silencing the messages being seen when the
 We advice you to cease using this function.
 {% endhint %}
 
-##
+## From 0.0.4 to 0.0.4.5
 
 This version incorporated a few changes to the kernel, including the below API changes that may impact your mods.
 
@@ -79,7 +79,7 @@ This function was created back in 0.0.2 to wrap the conditional execution of `Sh
 Latest generations of Nitrocid KS offer better quiet mode, which functions more dynamically than the implementation on the first-generation versions. We advice you to cease using this function.
 {% endhint %}
 
-##
+## From 0.0.4.5 to 0.0.5
 
 This kernel version incorporated changes to the kernel, such as these API changes that occurred:
 
@@ -290,7 +290,7 @@ public static void ApplyThemeFromResources(string theme)
 ```
 {% endcode %}
 
-##
+## From 0.0.5 to 0.0.5.1
 
 This release was a minor release to the 0.0.5.x series.
 
@@ -309,7 +309,7 @@ The first function served as the prompt for adding and removing groups for users
 The new permission system replaces the two functions with more API-friendly functions that can be found in the `PermissionsTools` class. However, if you're referring to actual user groups, you may want to take a look at the `GroupManagement` class instead.
 {% endhint %}
 
-##
+## From 0.0.5.1 to 0.0.6
 
 0.0.6 brought several features, including the API changes described below:
 
@@ -473,7 +473,7 @@ This function used to query the aforementioned API to convert the value from the
 We no longer support currency conversions as part of the current state of the economy, including the recent inflations. We advice you to cease using this feature if possible.
 {% endhint %}
 
-##
+## From 0.0.6 to 0.0.7
 
 This version series is the last version group for Nitrocid KS API v1.0, which incorporated many changes, such as the addition of languages. In contrast, the following APIs are removed:
 
