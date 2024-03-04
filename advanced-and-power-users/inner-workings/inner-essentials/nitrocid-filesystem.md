@@ -119,6 +119,11 @@ Additionally, any mod that uses `OpenDeterministically()` on a file will trigger
 
 {% hint style="warning" %}
 Make sure that you unregister all your handlers when unloading your mod. `RegisterHandler()` throws if it discovers that your handler that handles your specific extension is already added to the list of handlers.
+
+```csharp
+var handler = ExtensionHandlerTools.GetExtensionHandler(".txt", "txthandler");
+ExtensionHandlerTools.UnregisterHandler(".txt", handler);
+```
 {% endhint %}
 
 For the list of default handlers, they get saved to the `ExtensionHandlers.json` file. These handlers get used everytime a request to `GetExtensionHandler(string extension)` function is made.
