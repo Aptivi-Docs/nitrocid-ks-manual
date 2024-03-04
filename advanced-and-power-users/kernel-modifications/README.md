@@ -27,29 +27,17 @@ Deep explanation of the kernel modification management can be found in the below
 [kernel-modification-management.md](kernel-modification-management.md)
 {% endcontent-ref %}
 
-## Communication
-
-Deep explanation of the inter-mod communication and the inter-addon communication can be found in the below page:
-
-{% content-ref url="inter-mod-communication.md" %}
-[inter-mod-communication.md](inter-mod-communication.md)
-{% endcontent-ref %}
-
-{% content-ref url="inter-addon-communication.md" %}
-[inter-addon-communication.md](inter-addon-communication.md)
-{% endcontent-ref %}
-
 ## Analyzers
 
 You can use the mod analyzers by consulting the page below:
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="analyzer-diagnostics/" %}
+[analyzer-diagnostics](analyzer-diagnostics/)
 {% endcontent-ref %}
 
-## Build...
+## Building
 
-If you'd like to build your own modifications, great! Click on the page below to get started.
+If you'd like to build your own modifications, that's great! Click on the page below to get started.
 
 {% content-ref url="build-your.../your-mod.md" %}
 [your-mod.md](build-your.../your-mod.md)
