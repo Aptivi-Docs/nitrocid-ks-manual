@@ -158,7 +158,7 @@ This class **must** override the `SettingsEntries` property from the base class 
 </strong>}
 </code></pre>
 
-After that, you must register your confguration class by just two lines somewhere in your mod initialization code:
+After that, you must register your configuration class by just two lines somewhere in your mod initialization code:
 
 {% code title="MyModInit.cs" lineNumbers="true" %}
 ```csharp
@@ -183,6 +183,30 @@ ConfigTools.UnregisterCustomSetting(nameof(OxygenSettings));
 
 {% hint style="info" %}
 You don't have to do all the guesswork to figure out how to get your custom configuration name. All you have to do is to point the above function to the name of your configuration class using the `nameof` function.
+{% endhint %}
+
+### Using your own custom settings
+
+To use your own custom settings, you'll have to get a settings instance from `GetKernelConfig()` before being able to get the updated settings instance containing your configured settings, even if you have a new instance of your custom settings. You can easily wrap it to a property like this:
+
+{% code title="Mod.cs" lineNumbers="true" %}
+```csharp
+internal static BaseKernelConfig Configuration =>
+    Config.GetKernelConfig(nameof(OxygenSettings));
+```
+{% endcode %}
+
+You can then get a value from your desired settings key. For example, if you want to get a value of a string configuration defined earlier, called `CustomString`, you can get the value of this key like this:
+
+{% code title="Mod.cs" lineNumbers="true" %}
+```csharp
+var key = ConfigTools.GetSettingsKey(Configuration, nameof(OxygenSettings.CustomString));
+string value = (string)ConfigTools.GetValueFromEntry(key, Configuration);
+```
+{% endcode %}
+
+{% hint style="warning" %}
+If you used this method against your newly-created instance of your custom settings (the `customSettings` variable) instead of the above property, calls to `GetValueFromEntry()` would not return the configured results changed by the settings command.
 {% endhint %}
 
 ### Testing your own custom settings
