@@ -4,9 +4,23 @@ description: This page lists all versions with their release notes
 
 # 🗞️ Version Release Notes
 
-Every single version of the kernel comes with many changes, including feature additions, general improvements, and bug fixes. This page lists all the kernel series based on the API feature level version that will be listed from the oldest to the latest.
+Every single version of the kernel comes with many changes, including feature additions, general improvements, and bug fixes. This page lists all the kernel series based on the API feature level version that will be listed from the oldest to the latest, with the latest current series being the current API feature level version.
 
-## API v1.0 series
+## Current API series
+
+The current API version series all operate under API version v3.0.
+
+{% content-ref url="v0.1.x.x-series.md" %}
+[v0.1.x.x-series.md](v0.1.x.x-series.md)
+{% endcontent-ref %}
+
+## Older series
+
+Here is a list of the older version series through the lifetime of Nitrocid KS.
+
+### API v1.0 series
+
+This series is no longer supported.
 
 {% content-ref url="v0.0.1.x-series.md" %}
 [v0.0.1.x-series.md](v0.0.1.x-series.md)
@@ -36,7 +50,9 @@ Every single version of the kernel comes with many changes, including feature ad
 [v0.0.7.x-series](v0.0.7.x-series/)
 {% endcontent-ref %}
 
-## API v1.1 series
+### API v1.1 series
+
+This series is no longer supported.
 
 {% content-ref url="v0.0.8.x-series.md" %}
 [v0.0.8.x-series.md](v0.0.8.x-series.md)
@@ -54,7 +70,9 @@ Every single version of the kernel comes with many changes, including feature ad
 [v0.0.11.x-series.md](v0.0.11.x-series.md)
 {% endcontent-ref %}
 
-## API v1.2 series
+### API v1.2 series
+
+This series is no longer supported.
 
 {% content-ref url="v0.0.12.x-series.md" %}
 [v0.0.12.x-series.md](v0.0.12.x-series.md)
@@ -72,7 +90,9 @@ Every single version of the kernel comes with many changes, including feature ad
 [v0.0.15.x-series.md](v0.0.15.x-series.md)
 {% endcontent-ref %}
 
-## API v1.3 series
+### API v1.3 series
+
+This series is no longer supported.
 
 {% content-ref url="v0.0.16.x-series.md" %}
 [v0.0.16.x-series.md](v0.0.16.x-series.md)
@@ -90,7 +110,9 @@ Every single version of the kernel comes with many changes, including feature ad
 [v0.0.19.x-series.md](v0.0.19.x-series.md)
 {% endcontent-ref %}
 
-## API v2.0 series
+### API v2.0 series
+
+This series is no longer supported.
 
 {% content-ref url="v0.0.20.x-series.md" %}
 [v0.0.20.x-series.md](v0.0.20.x-series.md)
@@ -108,14 +130,10 @@ Every single version of the kernel comes with many changes, including feature ad
 [v0.0.23.x-series.md](v0.0.23.x-series.md)
 {% endcontent-ref %}
 
-## API v2.1 series
+### API v2.1 series
+
+This series is currently supported until the deprecation of .NET Framework.
 
 {% content-ref url="v0.0.24.x-series.md" %}
 [v0.0.24.x-series.md](v0.0.24.x-series.md)
-{% endcontent-ref %}
-
-## API v3.0 series
-
-{% content-ref url="v0.1.x.x-series.md" %}
-[v0.1.x.x-series.md](v0.1.x.x-series.md)
 {% endcontent-ref %}
