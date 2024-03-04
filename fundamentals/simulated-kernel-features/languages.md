@@ -10,30 +10,44 @@ Localization was implemented when computers were distributed in non-English coun
 
 However, Linux boot messages don't get localized unless the localization is set, which is done in the middle of the boot process. This simulator attempts to localize the boot messages in the start of the process.
 
-You can set the language using the `settings` command under the `General` section. Any language changes will be saved to the configuration file.
-
-Languages usually get translated at the end of each development period of each upcoming kernel version. It's normal to see untranslated strings. If you still see these untranslated strings in the final version, report them to us [using this page](https://github.com/Aptivi/Kernel-Simulator/issues/new).
-
-### Changing the language
-
-<figure><img src="../../.gitbook/assets/067-setlang.png" alt=""><figcaption></figcaption></figure>
-
 {% hint style="info" %}
 Extra languages are bundled as a kernel extras addon.
 {% endhint %}
 
-To change the simulated kernel language, follow these steps:
+## Setting the language
 
-1. Log-in to the system account, root, or any of the administrators or users that has at least the settings management permission
+You can set the language using the `settings` command under the `General` section. Any language changes will be saved to the configuration file.
+
+Languages usually get translated at the end of each development period of each upcoming kernel version, so it's normal to see untranslated strings in development versions. If you still see these untranslated strings in the final version, report them to us [using this page](https://github.com/Aptivi/Kernel-Simulator/issues/new).
+
+{% hint style="info" %}
+You can use `chlang` with the `-usesyslang` switch to change your kernel language to a language that Nitrocid detects based on your UI language set by your operating system.
+{% endhint %}
+
+### Through settings
+
+<figure><img src="../../.gitbook/assets/067-setlang.png" alt=""><figcaption></figcaption></figure>
+
+To change the simulated kernel language using the settings application, follow these steps:
+
+1. Log-in to the system account, `root`, or any of the administrators or users that has at least the settings management permission
 2. Execute the `settings` command, go to `General`, and go to `Language`
-3. Select a new language
+3. Select a new language, then log-out and log in again.
 
 {% hint style="info" %}
 Note that your account must have either the administrative permissions enabled or the settings management permission granted to be able to use this command.
 {% endhint %}
 
-{% hint style="info" %}
-Additionally, you can change the language using the `chlang` command with the ability to change your preferred user language using the `-user` switch.
+### Through command-line
 
-You can also use this command with the `-usesyslang` switch to change your kernel language to a language that Nitrocid detects based on your UI language set by your operating system.
+<figure><img src="../../.gitbook/assets/156-chlang.png" alt=""><figcaption></figcaption></figure>
+
+To change the simulated kernel language using the command-line, follow these steps:
+
+1. Log-in to the system account, `root`, or any of the administrators or users that has at least the settings management permission
+2. Execute the `chlang` command, pointing it to the target language that you wish to set to, such as `dtc` and `ptg`.
+3. Log-out and log in again.
+
+{% hint style="info" %}
+Note that your account must have either the administrative permissions enabled or the settings management permission granted to be able to use this command.
 {% endhint %}
