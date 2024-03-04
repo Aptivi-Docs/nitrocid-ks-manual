@@ -4,6 +4,8 @@ description: Files and folders are essential for your daily computing usage
 
 # 📂 Files and Folders
 
+<figure><img src="../../.gitbook/assets/155-listtree.png" alt=""><figcaption></figcaption></figure>
+
 Files and folders are created to organize your documents, photos, music, videos, and other types of files. They are useful for many purposes, like organizing your archives, your albums, your backups, your personal files, and other types.
 
 Nitrocid KS simulates this component with the help of kernel drivers using your host computer's filesystem to perform common file operations, such as copying, moving, deleting, editing, and many others. In addition, it also supports advanced features, like file content type detection and file lock check.
@@ -12,6 +14,12 @@ To see how it works, consult the below page to take you to the inner workings of
 
 {% content-ref url="../../advanced-and-power-users/inner-workings/inner-essentials/nitrocid-filesystem.md" %}
 [nitrocid-filesystem.md](../../advanced-and-power-users/inner-workings/inner-essentials/nitrocid-filesystem.md)
+{% endcontent-ref %}
+
+Meanwhile, you can check out the list of available commands here:
+
+{% content-ref url="shells/commands-list.md" %}
+[commands-list.md](shells/commands-list.md)
 {% endcontent-ref %}
 
 ## Interactive file manager
