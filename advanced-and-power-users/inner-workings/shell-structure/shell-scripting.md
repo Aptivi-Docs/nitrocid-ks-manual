@@ -297,8 +297,8 @@ The error code variable, `UESHErrorCode`, holds information about the last proce
 * `Exception.GetHashCode()`
   * Some commands throw this value from any exception. Indicates that the command failed to perform its operation.
 * `10000 + KernelExceptionType`
-  * Some commands throw this value from any KernelException that is thrown by the command executor. Indicates that the command failed to perform its operation, but the kernel already knows about it.
-  * Example: If `KernelExceptionType.Config` is thrown from the command executor, and the command knows how to return this exception as an error code, then it'll return the sum of `10000 + 7`, which is `10007`.
+  * Some commands throw this value from any `KernelException` that is thrown by the command executor. Indicates that the command failed to perform its operation, but the kernel already knows about it.
+  * Example: If `KernelExceptionType.Config` is thrown from the command executor, and the command knows how to return this exception as an error code, such as using `KernelExceptionTools.GetErrorCode()`, then it'll return the sum of `10000 + 7`, which is `10007`.
 
 #### Command-specific error codes
 
@@ -310,3 +310,65 @@ The error code variable, `UESHErrorCode`, holds information about the last proce
   * Indicates that the unit type is not found (`unitconv` command)
 * `4`
   * Indicates that the hashes don't match (`verify` command)
+* `5`
+  * Indicates that the version code can't be formed (`version` command)
+  * Indicates that the action taken is invalid (`todo` command)
+* `6`
+  * Indicates that the version code can't be formed (`platform` command)
+* `7`
+  * Indicates that the line endings converter can't convert binary files (`convertlineendings` command)
+* `8`
+  * Indicates that the note number is not numeric (`removenote` command)
+* `9`
+  * Indicates that the repository has been modified (`checkout` command)
+* `10`
+  * Indicates that the branch doesn't exist (`checkout` command)
+* `11`
+  * Indicates that the repository has been modified (`fetch` command)
+* `12`
+  * Indicates that the remote doesn't exist (`fetch` command)
+* `13`
+  * Indicates that there are no remotes to pull updates from (`fetch` command)
+* `14`
+  * Indicates that you need to identify yourself (`pull` command)
+* `15`
+  * Indicates that you need to identify yourself (`maketag` and `commit` command)
+* `16`
+  * Indicates that the culture is not found (`altdate` command)
+* `17`
+  * Indicates that there is no such lyric file (`playlyric` command)
+* `18`
+  * Indicates that the number of times is invalid (`repeat` command)
+* `19`
+  * Indicates that `repeat` can't repeat itself (`repeat` command)
+* `20`
+  * Indicates that the number of columns is invalid (`wraptext` command)
+* `21`
+  * Indicates that the extension handler is not registered (`getdefaultexthandler` command)
+* `22`
+  * Indicates that the extension handler is not registered (`getexthandlers` command)
+* `23`
+  * Indicates that the extension is not registered (`setexthandler` command)
+* `24`
+  * Indicates that the extension implementer is not registered (`setexthandler` command)
+* `25`
+  * Indicates that the port number is invalid (`netfminfo` command)
+* `26`
+  * Indicates that the number of seconds or the drink name is invalid (`caffeine` command)
+* `27`
+  * Indicates that there is no such lyric file (`lyriclines` command)
+* `28`
+  * Indicates that there is no config or key (`getconfigvalue`, `setconfigvalue`, and `lsconfigvalues` command)
+* `29`
+  * Indicates that the music file is not found (`playsound` command)
+* `30`
+  * Indicates that the MPG123 library has timed out (`playsound` command)
+  * Indicates that the music file is not specified (`musicplayer` command)
+* `31`
+  * Indicates that the music file is not found (`musicplayer` command)
+* `32`
+  * Indicates that there are no caffeine alerts to abort (`caffeine` command)
+* `33`
+  * Indicates that this command is not supported on Windows (`showmainbuffer` command)
+* `34`
+  * Indicates that the dock is not found (`dock` command)
