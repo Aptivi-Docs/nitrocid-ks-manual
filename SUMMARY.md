@@ -241,6 +241,7 @@
     * [🎰 Random Number Generation](advanced-and-power-users/inner-workings/inner-essentials/random-number-generation.md)
     * [🌍 Network Tools](advanced-and-power-users/inner-workings/inner-essentials/network-tools.md)
     * [🕙 Date and Time](advanced-and-power-users/inner-workings/inner-essentials/date-and-time.md)
+    * [📖 Mod Manual Pages](advanced-and-power-users/inner-workings/inner-essentials/mod-manual-pages.md)
   * [🌀 Miscellaneous APIs](advanced-and-power-users/inner-workings/miscellaneous-apis.md)
 
 ***
