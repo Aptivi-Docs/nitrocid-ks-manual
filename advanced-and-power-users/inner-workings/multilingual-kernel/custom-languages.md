@@ -122,8 +122,25 @@ For mods that want to install or uninstall custom languages, you can use the API
 
 ### Your Mods and Your Strings
 
-Your mods can now be translated! Nitrocid KS can now detect your language files from your mods. For more information, consult the "Mod Translations" section in the below link:
+Your mods can now be translated! Nitrocid KS can now detect your language files from your mods. The mod parser within the kernel looks for the localization files found under the `KSMods/Localization/Mod-FileVersion/` path. The format is in JSON, and the file name is the same as the three-letter language name. The format is the same as the regular Nitrocid KS localization files embedded as resources. For example, for the French language, the format would look like below:
 
-{% content-ref url="../../kernel-modifications/kernel-modification-management.md" %}
-[kernel-modification-management.md](../../kernel-modifications/kernel-modification-management.md)
-{% endcontent-ref %}
+{% code title="fre.json" lineNumbers="true" %}
+```json
+{
+  "Name": "French",
+  "Transliterable": false,
+  "Localizations": {
+    "Invalid color template {0}": "Modèle de couleur non valide {0}",
+    (...)
+  }
+}
+```
+{% endcode %}
+
+{% hint style="info" %}
+You must use the `mklang` command within Nitrocid, pointing to a directory that contains your language metadata and your `eng.txt` file containing all strings from your mod in order to be able to translate them within the app. When you're done, save your changes by choosing the `Save` option.
+{% endhint %}
+
+In the Localizations property, it holds a group of keys and values. The key is an original string extracted from your mod (`"Invalid color template {0}"`) and the value is the translated string (`"Modèle de couleur non valide {0}"`).
+
+When Nitrocid KS detects your localization file, it tries to parse it and adds your translated strings to the `ModInfo` class, which is used by the `Translate` static class to translate your mod strings.
