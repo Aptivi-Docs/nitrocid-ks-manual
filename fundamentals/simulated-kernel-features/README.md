@@ -28,8 +28,8 @@ The buttons below lists some of the features that blow your mind.
 [shells](shells/)
 {% endcontent-ref %}
 
-{% content-ref url="files-and-folders.md" %}
-[files-and-folders.md](files-and-folders.md)
+{% content-ref url="files-and-folders/" %}
+[files-and-folders](files-and-folders/)
 {% endcontent-ref %}
 
 {% content-ref url="networking.md" %}

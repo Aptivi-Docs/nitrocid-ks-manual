@@ -4,7 +4,7 @@ description: Files and folders are essential for your daily computing usage
 
 # 📂 Files and Folders
 
-<figure><img src="../../.gitbook/assets/155-listtree.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/155-listtree.png" alt=""><figcaption></figcaption></figure>
 
 Files and folders are created to organize your documents, photos, music, videos, and other types of files. They are useful for many purposes, like organizing your archives, your albums, your backups, your personal files, and other types.
 
@@ -12,19 +12,19 @@ Nitrocid KS simulates this component with the help of kernel drivers using your 
 
 To see how it works, consult the below page to take you to the inner workings of the Nitrocid kernel filesystem.
 
-{% content-ref url="../../advanced-and-power-users/inner-workings/inner-essentials/nitrocid-filesystem.md" %}
-[nitrocid-filesystem.md](../../advanced-and-power-users/inner-workings/inner-essentials/nitrocid-filesystem.md)
+{% content-ref url="../../../advanced-and-power-users/inner-workings/inner-essentials/nitrocid-filesystem.md" %}
+[nitrocid-filesystem.md](../../../advanced-and-power-users/inner-workings/inner-essentials/nitrocid-filesystem.md)
 {% endcontent-ref %}
 
 Meanwhile, you can check out the list of available commands here:
 
-{% content-ref url="shells/commands-list.md" %}
-[commands-list.md](shells/commands-list.md)
+{% content-ref url="../shells/commands-list.md" %}
+[commands-list.md](../shells/commands-list.md)
 {% endcontent-ref %}
 
 ## Interactive file manager
 
-<figure><img src="../../.gitbook/assets/063-ifm.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/063-ifm.png" alt=""><figcaption></figcaption></figure>
 
 This interactive TUI is a powerful file manager that allows you to view what's inside the folders, as well as performing operations, like copying, moving, or deleting, on files and folders, just like [Total Commander](https://www.ghisler.com/index.htm) or [Midnight Commander](https://midnight-commander.org/).
 
@@ -65,7 +65,7 @@ To remove files or folders from the directory in the current pane, you can press
 
 In the interactive file manager, you can navigate the whole storage device by going to desired folders, such as your source code directory located in a secondary hard drive. If you press `ENTER` on a directory, you'll open it, allowing you to see its contents. Pressing `F4` causes you to go back one level up - that is, going back to the previous directory.
 
-<figure><img src="../../.gitbook/assets/151-ifm.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/151-ifm.png" alt=""><figcaption></figcaption></figure>
 
 However, if you want to select a directory to navigate to by selecting a directory, you can press `F6` to open up another interactive TUI that allows you to navigate to folders and select the desired folder. Pressing `Spacebar` on a folder causes you to select a folder that you want to open. If you want to open a folder using just a path or if you want to go to another drive, you can use `F6` to open an interactive input infobox that allows you to write a full path to a desired directory.
 
@@ -73,7 +73,7 @@ If you selected a folder and pressed `ESC` to exit the selector, the interactive
 
 ### File or folder information
 
-<figure><img src="../../.gitbook/assets/152-ifm.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/152-ifm.png" alt=""><figcaption></figcaption></figure>
 
 You can get information about either a file or a folder that you have selected in the current pane by pressing the `F5` key. For directories, you'll be able to get the following information:
 
@@ -86,7 +86,7 @@ You can get information about either a file or a folder that you have selected i
 * `Attributes`
 * `Parent directory`
 
-<figure><img src="../../.gitbook/assets/153-ifm.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/153-ifm.png" alt=""><figcaption></figcaption></figure>
 
 However, if you press `F5` on a selected file, you'll be able to get the following information:
 
@@ -121,16 +121,22 @@ You can also easily make a new folder by pressing `F10` to allow you to write a 
 
 ### Hash information
 
+<figure><img src="../../../.gitbook/assets/160-ifmhash.png" alt=""><figcaption></figcaption></figure>
+
 By pressing `F11`, you can get a hash representation of a selected file under an algorithm that you select, assuming that this algorithm exists in the encryption driver manager that you can learn more about here:
 
-{% content-ref url="../../advanced-and-power-users/inner-workings/inner-essentials/kernel-drivers/encryption-drivers.md" %}
-[encryption-drivers.md](../../advanced-and-power-users/inner-workings/inner-essentials/kernel-drivers/encryption-drivers.md)
+{% content-ref url="../../../advanced-and-power-users/inner-workings/inner-essentials/kernel-drivers/encryption-drivers.md" %}
+[encryption-drivers.md](../../../advanced-and-power-users/inner-workings/inner-essentials/kernel-drivers/encryption-drivers.md)
 {% endcontent-ref %}
 
 By pressing `F12`, you can verify the hash of a file by pasting in the expected hash. Note that the expected hash must be in the same algorithm as the driver that you've selected.
 
+{% hint style="info" %}
+Note that `F11` may be used in the Windows command prompt. In the Windows Terminal, disable the `F11` keybinding by going to `Settings` > `Actions`.
+{% endhint %}
+
 ### File preview
 
-<figure><img src="../../.gitbook/assets/154-ifm.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/154-ifm.png" alt=""><figcaption></figcaption></figure>
 
 By pressing `P`, you'll be able to preview either a binary or a text file inside an informational box. You can use `UP` and `DOWN` arrows to navigate the file by one line, `Page Up` and `Page Down` to navigate by one page, or `Q` to exit the informational box.
