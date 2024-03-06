@@ -47,6 +47,24 @@ When downloading addons, consider the following points:
 * The addon pack size is around **100+ MB**, so you need to download it on unmetered networks, such as WiFi. This is to reduce your data fee.
 {% endhint %}
 
+### Installing addons manually
+
+In case the `getaddons` command didn't work properly, you'll have to resort to installing the kernel addons manually. We have packed the addons pack for each release for easy installation. To install the addons manually, follow these steps:
+
+1.  Download an `-addons.zip` file that corresponds to your kernel version from [this page](https://github.com/Aptivi/NitrocidKS/releases) and open your favorite archive manager.\
+
+
+    <figure><img src="../../../.gitbook/assets/161-addonszip.png" alt=""><figcaption></figcaption></figure>
+2.  Make a new folder under the Nitrocid KS binary folder called `Addons`.\
+
+
+    <figure><img src="../../../.gitbook/assets/162-addonszip.png" alt=""><figcaption></figcaption></figure>
+3.  Extract all the folders to the `Addons` folder.\
+
+
+    <figure><img src="../../../.gitbook/assets/163-addonszip.png" alt=""><figcaption></figcaption></figure>
+4. Run Nitrocid KS and verify that the addon commands work.
+
 ## What are addons?
 
 Addons are program extension libraries that extend the functionality of a program. It allows more flexibility because they either provide extra features, change how a specific program function works, or change how they look and feel.
