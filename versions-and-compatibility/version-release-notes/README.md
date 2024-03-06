@@ -14,13 +14,23 @@ The current API version series all operate under API version v3.0.
 [v0.1.x.x-series.md](v0.1.x.x-series.md)
 {% endcontent-ref %}
 
+## Older supported series
+
+Here is a list of the older Nitrocid KS version series that are still supported.
+
+### API v2.1 series
+
+This series is currently supported until the deprecation of .NET Framework.
+
+{% content-ref url="v0.0.24.x-series.md" %}
+[v0.0.24.x-series.md](v0.0.24.x-series.md)
+{% endcontent-ref %}
+
 ## Older series
 
-Here is a list of the older version series through the lifetime of Nitrocid KS.
+Here is a list of the older version series through the lifetime of Nitrocid KS. Please note that they are no longer supported.
 
 ### API v1.0 series
-
-This series is no longer supported.
 
 {% content-ref url="v0.0.1.x-series.md" %}
 [v0.0.1.x-series.md](v0.0.1.x-series.md)
@@ -52,8 +62,6 @@ This series is no longer supported.
 
 ### API v1.1 series
 
-This series is no longer supported.
-
 {% content-ref url="v0.0.8.x-series.md" %}
 [v0.0.8.x-series.md](v0.0.8.x-series.md)
 {% endcontent-ref %}
@@ -71,8 +79,6 @@ This series is no longer supported.
 {% endcontent-ref %}
 
 ### API v1.2 series
-
-This series is no longer supported.
 
 {% content-ref url="v0.0.12.x-series.md" %}
 [v0.0.12.x-series.md](v0.0.12.x-series.md)
@@ -92,8 +98,6 @@ This series is no longer supported.
 
 ### API v1.3 series
 
-This series is no longer supported.
-
 {% content-ref url="v0.0.16.x-series.md" %}
 [v0.0.16.x-series.md](v0.0.16.x-series.md)
 {% endcontent-ref %}
@@ -112,8 +116,6 @@ This series is no longer supported.
 
 ### API v2.0 series
 
-This series is no longer supported.
-
 {% content-ref url="v0.0.20.x-series.md" %}
 [v0.0.20.x-series.md](v0.0.20.x-series.md)
 {% endcontent-ref %}
@@ -128,12 +130,4 @@ This series is no longer supported.
 
 {% content-ref url="v0.0.23.x-series.md" %}
 [v0.0.23.x-series.md](v0.0.23.x-series.md)
-{% endcontent-ref %}
-
-### API v2.1 series
-
-This series is currently supported until the deprecation of .NET Framework.
-
-{% content-ref url="v0.0.24.x-series.md" %}
-[v0.0.24.x-series.md](v0.0.24.x-series.md)
 {% endcontent-ref %}
