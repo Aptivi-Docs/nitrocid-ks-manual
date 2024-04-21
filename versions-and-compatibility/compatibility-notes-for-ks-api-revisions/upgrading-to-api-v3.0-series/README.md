@@ -87,4 +87,40 @@ For instructions on how to strongly name your mods, you can consult the below pa
 
 ### Other breaking changes
 
-We have highlighted the most important breaking changes for your kernel mods. Now, for the other breaking changes, you'll need to adapt the changed from 0.0.24.x to 0.1.0 using the guides that are explained in the next five pages.
+We have highlighted the most important breaking changes for your kernel mods. Now, for the other breaking changes, you'll need to adapt the changed from 0.0.24.x to 0.1.0 using the guides that are explained in the below pages:
+
+{% content-ref url="from-0.0.24.x-to-0.1.0-beta-1.md" %}
+[from-0.0.24.x-to-0.1.0-beta-1.md](from-0.0.24.x-to-0.1.0-beta-1.md)
+{% endcontent-ref %}
+
+{% content-ref url="from-0.1.0-beta-1-to-0.1.0-beta-2.md" %}
+[from-0.1.0-beta-1-to-0.1.0-beta-2.md](from-0.1.0-beta-1-to-0.1.0-beta-2.md)
+{% endcontent-ref %}
+
+{% content-ref url="from-0.1.0-beta-2-to-0.1.0-beta-3.md" %}
+[from-0.1.0-beta-2-to-0.1.0-beta-3.md](from-0.1.0-beta-2-to-0.1.0-beta-3.md)
+{% endcontent-ref %}
+
+{% content-ref url="from-0.1.0-beta-3-to-0.1.0-rc.md" %}
+[from-0.1.0-beta-3-to-0.1.0-rc.md](from-0.1.0-beta-3-to-0.1.0-rc.md)
+{% endcontent-ref %}
+
+{% content-ref url="from-0.1.0-rc-to-0.1.0-final.md" %}
+[from-0.1.0-rc-to-0.1.0-final.md](from-0.1.0-rc-to-0.1.0-final.md)
+{% endcontent-ref %}
+
+The below sections specify the post-0.1.0 releases.
+
+## From 0.1.0.0 to 0.1.0.3
+
+Between 0.1.0.0 and 0.1.0.3, we've made the following breaking changes:
+
+### Updated Terminaux to 3.3.0.1
+
+We've updated Terminaux to 3.3.0.1 to fix a bug related to the selection style crashing when pressing ESC. In consequence, because the fix was released after the 3.3.0 release, we had to increase the mod API version to `3.0.25.439`.
+
+You can consult the list of breaking changes that result from upgrading Terminaux 3.2.0 to 3.3.0 by pressing the below button:
+
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v3.0" %}
+[API v3.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v3.0)
+{% endcontent-ref %}
