@@ -70,6 +70,14 @@ The kernel provides an easy-to-use tool to seamlessly configure the kernel setti
 
 Selecting a section leads to the settings application listing all the available configuration options, which you can then set their individual options. It even allows you to save the settings if you like the current configuration, load the user settings, and find a settings entry for easier access.
 
+{% hint style="success" %}
+Starting from 0.1.0.5, you can easily migrate most of your kernel configuration, including your speed dial settings, from the old format that 0.0.16.0 introduced back on 2021. Just open the settings app and select "Migrate old configuration."
+{% endhint %}
+
+{% hint style="danger" %}
+We'll never support configuration migration for older formats, such as the `.ini` format that 0.0.4 introduced, due to deprecation of API versions 1.0, 1.1, and 1.2.
+{% endhint %}
+
 ### System updates and information
 
 From the main page, you can easily check for kernel updates and check the system information right from it.

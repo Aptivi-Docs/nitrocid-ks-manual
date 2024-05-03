@@ -12,7 +12,7 @@ Before you can upgrade, you need to consider the following:
 * Mods will need to be upgraded to the version that you're upgrading to.
 * Configuration backups, including those that are created by your mods, will have to be created before each upgrade.
 
-As for upgrading to 0.1.0, old configuration styles are no longer supported and are kept in your home directory for reference. See why [here](../../versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v3.0-series/from-0.1.0-beta-2-to-0.1.0-beta-3.md).
+As for upgrading to 0.1.0, old configuration styles are no longer supported and are kept in your home directory for reference. However, starting from 0.1.0.5, you can migrate most of your old-style configuration (as early as 0.0.16.0 released on 2021) to 0.1.0 and later. See why [here](../../versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v3.0-series/from-0.1.0-beta-2-to-0.1.0-beta-3.md).
 {% endhint %}
 
 Nitrocid KS can be upgraded in all supported platforms. However, some upgrades might break your mods and configuration files, so please be sure that you follow the compatibility notes which is linked below.
