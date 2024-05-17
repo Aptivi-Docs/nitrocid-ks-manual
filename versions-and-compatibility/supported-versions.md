@@ -16,9 +16,20 @@ _All dates are in MM/DD/YYYY._
 {% tab title="API v3.0" %}
 This revision of the third generation API is currently under development.
 
-| Version  | Release date | EOL date  | Security EOL date |
-| -------- | ------------ | --------- | ----------------- |
-| v0.1.0.0 | 3/11/2024    | 3/11/2029 | 3/11/2032         |
+*   Version v0.1.0.x series\
+
+
+    | Version  | Release date | EOL date  | Security EOL date |
+    | -------- | ------------ | --------- | ----------------- |
+    | v0.1.0.0 | 3/11/2024    | 3/11/2029 | 3/11/2032         |
+    | v0.1.0.1 | 3/11/2024    |           |                   |
+    | v0.1.0.2 | 4/16/2024    |           |                   |
+    | v0.1.0.3 | 4/21/2024    |           |                   |
+    | v0.1.0.4 | 4/23/2024    |           |                   |
+    | v0.1.0.5 | 4/28/2024    |           |                   |
+    | v0.1.0.6 | 4/29/2024    |           |                   |
+    | v0.1.0.7 | 5/12/2024    |           |                   |
+    | v0.1.0.8 | 5/17/2024    |           |                   |
 {% endtab %}
 
 {% tab title="API v2.1" %}
