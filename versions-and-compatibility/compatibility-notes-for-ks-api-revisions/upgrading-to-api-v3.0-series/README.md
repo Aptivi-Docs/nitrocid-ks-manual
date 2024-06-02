@@ -124,3 +124,28 @@ You can consult the list of breaking changes that result from upgrading Terminau
 {% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v3.0" %}
 [API v3.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v3.0)
 {% endcontent-ref %}
+
+## From 0.1.0 to 0.1.1
+
+This version is another futuristic magic that brings in feature additions and spectacular improvements. This version is built on top of the 0.1.0 codebase to provide you with the most gorgeous features ever introduced.
+
+{% content-ref url="../../version-release-notes/v0.1.x.x-series.md" %}
+[v0.1.x.x-series.md](../../version-release-notes/v0.1.x.x-series.md)
+{% endcontent-ref %}
+
+### Detailed important changes
+
+This section explains how to adapt the important changes to your mod code so that it works with 0.1.1 and higher. This highlights the most important changes that we have compiled for you.
+
+#### Usage of Terminaux 4.0.0 and VisualCard 1.0.0
+
+Nitrocid has been updated to use Terminaux 4.0.0 and VisualCard 1.0.0. This is to bring in tons of amazing new features from both the libraries that aim to provide you with the best user and developer experience. You'll need to consult their own manual page for more information about how to adapt your Nitrocid mods to align with the latest breaking changes. VisualCard's breaking changes page is at the top button, and Terminaux's breaking changes page is at the bottom button.
+
+{% content-ref url="https://app.gitbook.com/s/bEvVwD4FK7bX7p8XtIPH/breaking-changes" %}
+[Breaking Changes](https://app.gitbook.com/s/bEvVwD4FK7bX7p8XtIPH/breaking-changes)
+{% endcontent-ref %}
+
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes" %}
+[Breaking changes](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes)
+{% endcontent-ref %}
+

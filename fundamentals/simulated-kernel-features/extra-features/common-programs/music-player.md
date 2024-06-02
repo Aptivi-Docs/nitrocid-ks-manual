@@ -35,3 +35,11 @@ Furthermore, the 0.0.8.6 version and the 0.0.11.x versions have removed the VLC 
 ## Lyric Player and Manager
 
 The BassBoom addon also provides you with a lyric player that you can invoke via the `playlyric` command. This only plays the lyric without its associated music. The `lyriclines` command only gives you the lyric lines and their parsed time spans.
+
+## Online Radio Stations
+
+You can use the `musicplayer -r` command to listen to your favorite online radio station, as long as it's an MP3-based radio station. You can easily verify this by taking a look at the MIME data that you can get using BassBoom's `RadioTools`' functions.
+
+{% hint style="info" %}
+This feature requires an active Internet connection to work.
+{% endhint %}

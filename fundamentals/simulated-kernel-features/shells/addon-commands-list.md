@@ -51,12 +51,12 @@ Once you enter the archive shell with the provided archive file path, you can ac
 
 This addon allows you to get access to the BassBoom utility features. You can use the following commands:
 
-| Commands      | Arguments and Switches |
-| ------------- | ---------------------- |
-| `lyriclines`  | `<lyric.lrc>`          |
-| `playlyric`   | `<lyric.lrc>`          |
-| `playsound`   | `<musicfile>`          |
-| `musicplayer` | `[musicfile]`          |
+| Commands      | Arguments and Switches       |
+| ------------- | ---------------------------- |
+| `lyriclines`  | `<lyric.lrc>`                |
+| `playlyric`   | `<lyric.lrc>`                |
+| `playsound`   | `<musicfile>`                |
+| `musicplayer` | `-r [musicfile\|stationurl]` |
 
 ### Caffeine Addon
 
