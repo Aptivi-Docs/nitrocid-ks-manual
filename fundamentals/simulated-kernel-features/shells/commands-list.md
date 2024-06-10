@@ -109,7 +109,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `platform`              | `[-r\|-v\|-b\|-c\|-n]`                                                           |
 | `put`                   | `<filename> <url>`                                                               |
 | `rdebug`                |                                                                                  |
-| `reboot`                | `[-safe\|-maintenance\|-debug] [ip] [port]`                                      |
+| `reboot`                | `[-safe\|-maintenance\|-debug]`                                                  |
 | `reloadconfig`          |                                                                                  |
 | `retroks`               |                                                                                  |
 | `rexec`                 | `<address> <port> <command>`                                                     |
@@ -118,6 +118,8 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `rmuser`                | `<username>`                                                                     |
 | `rmgroup`               | `<groupname>`                                                                    |
 | `rmuserfromgroup`       | `<username> <groupname>`                                                         |
+| `rreboot`               | `[-safe\|-maintenance\|-debug] [ip] [port]`                                      |
+| `rshutdown`             | `[ip] [port]`                                                                    |
 | `saveconfig`            |                                                                                  |
 | `savescreen`            | `[-select] [saver]`                                                              |
 | `search`                | `<regex> <file>`                                                                 |
@@ -131,7 +133,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `shownotifs`            |                                                                                  |
 | `showtd`                |                                                                                  |
 | `showtdzone`            | `[-all] [-selection] <timezone>`                                                 |
-| `shutdown`              | `[ip] [port]`                                                                    |
+| `shutdown`              |                                                                                  |
 | `sleep`                 | `<ms>`                                                                           |
 | `sudo`                  | `<command>`                                                                      |
 | `sumfile`               | `[-relative] <algorithm/all> <file> [output]`                                    |
