@@ -120,7 +120,6 @@
   * [🌎 Networking](fundamentals/simulated-kernel-features/networking.md)
   * [🇺🇸 Languages](fundamentals/simulated-kernel-features/languages.md)
   * [🌌 Screensavers](fundamentals/simulated-kernel-features/screensavers.md)
-  * [💿 Bootable Simulation](fundamentals/simulated-kernel-features/bootable-simulation.md)
 
 ## Advanced and Power Users
 
