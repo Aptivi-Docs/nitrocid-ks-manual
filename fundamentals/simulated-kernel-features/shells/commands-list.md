@@ -20,6 +20,9 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `adduser`               | `<username> [password]`                                                          |
 | `addusertogroup`        | `<username> <group>`                                                             |
 | `admin`                 |                                                                                  |
+| `alarm`                 | `<start/stop> <alarmname> [interval]`                                            |
+|                         | `<list>`                                                                         |
+|                         | `[-tui]`                                                                         |
 | `alias`                 | `<rem/add> <shelltype> <alias> [cmd]`                                            |
 | `beep`                  |                                                                                  |
 | `blockdbgdev`           | `<ipaddress>`                                                                    |
@@ -127,10 +130,10 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `select`                | `<answers> <input> [title] [title2] [...]`                                       |
 | `setexthandler`         | `<extension> <implementer>`                                                      |
 | `setsaver`              | `<saver>`                                                                        |
-| `settings`              | `[-saver\|-addonsaver\|-splash\|-driver\|-type]`                                 |
+| `settings`              | `[-saver\|-addonsaver\|-splash\|-driver\|-type=typename] [-sel]`                 |
 | `set`                   | `<value>`                                                                        |
 | `setrange`              | `<value> [value2] [value3] [...]`                                                |
-| `shownotifs`            |                                                                                  |
+| `shownotifs`            | `[-tui]`                                                                         |
 | `showtd`                |                                                                                  |
 | `showtdzone`            | `[-all] [-selection] <timezone>`                                                 |
 | `shutdown`              |                                                                                  |

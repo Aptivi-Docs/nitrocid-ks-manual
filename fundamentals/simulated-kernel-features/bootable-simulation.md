@@ -4,6 +4,10 @@ description: You can boot into Nitrocid KS using GRILO!
 
 # 💿 Bootable Simulation
 
+{% hint style="info" %}
+This documentation page is being considered for removal.
+{% endhint %}
+
 The GRILO bootloader simulator simulates the theory of the bootloaders and how they work in any device. It allows you to run any bootable .NET assemblies that implement the `IBootable` interface. To learn more about GRILO, visit the link below:
 
 {% content-ref url="https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/BLR1Eu9QDGfIEp3maSdB/" %}

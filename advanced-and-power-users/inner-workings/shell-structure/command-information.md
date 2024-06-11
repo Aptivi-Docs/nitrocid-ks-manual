@@ -45,7 +45,7 @@ where:
 For `CommandArgumentPart` instances, consult the below constructor to create an array of `CommandArgumentPart` instances when defining your commands:
 
 ```csharp
-public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[], string[]> autoCompleter = null, bool isNumeric = false, string[] exactWording = null)
+public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[], string[]> autoCompleter = null, bool isNumeric = false, string[] exactWording = null, string argumentDesc = "")
 ```
 
 where:
@@ -57,6 +57,7 @@ where:
   * The second `string[]` (output) denotes the suggestions returned
 * `isNumeric`: Whether this argument part accepts numeric values only
 * `exactWording`: If not empty, the user must write one of the words declared in this variable for this argument to be satisfied
+* `argumentDesc`: Unlocalized argument description that shows up in the help entry
 
 {% hint style="info" %}
 When it comes to auto-completion, if you press `TAB` on any of the argument positions, the shell will select the following completers as appropriate:

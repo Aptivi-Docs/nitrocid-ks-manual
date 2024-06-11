@@ -149,3 +149,65 @@ Nitrocid has been updated to use Terminaux 4.0.0 and VisualCard 1.0.0. This is t
 [Breaking changes](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes)
 {% endcontent-ref %}
 
+#### Color requirement functions condensed
+
+{% code title="ThemeTools.cs" lineNumbers="true" %}
+```csharp
+public static bool Is255ColorsRequired(string theme)
+public static bool Is255ColorsRequired(ThemeInfo theme)
+public static bool Is255ColorsRequired(Dictionary<KernelColorType, Color> colors)
+public static bool IsTrueColorRequired(string theme)
+public static bool IsTrueColorRequired(ThemeInfo theme)
+public static bool IsTrueColorRequired(Dictionary<KernelColorType, Color> colors)
+```
+{% endcode %}
+
+The color requirement functions have been condensed so that it becomes easier to use and to understand. They have been condensed into just one function: `MinimumTypeRequired()`.
+
+{% hint style="info" %}
+The `MinimumTypeRequired()` function has been implemented to simplify the color requirement detection functions. The signatures are basically the same, but you need to also provide the color type that you want to check at the end of the function.
+{% endhint %}
+
+#### `AlarmEntry` implementation
+
+{% code title="AlarmTools.cs" lineNumbers="true" %}
+```csharp
+public static KeyValuePair<(string, string), DateTime> GetAlarmFromId(string alarmId)
+```
+{% endcode %}
+
+To more easily manage the alarm instances, we had to implement the `AlarmEntry` class that contains all the necessary properties for each alarm that your mods can control. In order to implement this class, we had to edit all the dictionaries that represent a list of alarms by name so that we hold just the alarm entry instance.
+
+{% hint style="info" %}
+Most of the time, you won't need to make any changes to how you call the functions. You just need to be aware of the fact that `GetAlarmFromId()` now returns a `KeyValuePair<string, AlarmEntry>`.
+{% endhint %}
+
+#### Removed references to GRILO
+
+{% code title="KernelPlatform.cs" lineNumbers="true" %}
+```csharp
+public static bool IsRunningFromGrilo()
+```
+{% endcode %}
+
+As GRILO is being sunset due to the implementation of the bootloader and the kernel environment management tools to Nitrocid, we've decided to remove everything related to GRILO by removing all the functions that have connections with that application.
+
+{% hint style="danger" %}
+We advise you to cease using this function. Your bootable apps now need to reference Nitrocid and become a kernel mod in order to work again as a bootable app.
+{% endhint %}
+
+#### Access to the part options
+
+{% code title="CommandArgumentPart.cs" lineNumbers="true" %}
+```csharp
+public Func<string[], string[]> AutoCompleter { get; private set; }
+public bool IsNumeric { get; private set; }
+public string[] ExactWording { get; private set; }
+```
+{% endcode %}
+
+We needed to add support for argument descriptions, which would show up in the command-specific help entry for more clarification. However, this added to the burden of maintaining a larg amount of arguments in the `CommandArgumentPart` constructor. As a result, we had to replace these properties with a single property, `Options`, that grants you easy access to the command argument part options.
+
+{% hint style="info" %}
+The constructors are not affected; one of it has been provided an extra optional argument that specifies the unlocalized argument description.
+{% endhint %}

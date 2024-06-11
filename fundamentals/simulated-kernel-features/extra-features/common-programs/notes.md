@@ -24,6 +24,4 @@ Usage of this application can be done using the following commands:
 
 You can also interactively view all your notes using the `notestui` command so that you can read all your notes with more comfort, using the built-in interactive TUI features provided by Terminaux.
 
-{% hint style="info" %}
-Currently, it doesn't provide any editing functionality. However, we'll work on it in the next version of Nitrocid KS.
-{% endhint %}
+Like the console version, you can also add, remove, or edit notes using Nitrocid's text editor TUI that is powerful.

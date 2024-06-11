@@ -271,9 +271,10 @@ You can use the following commands provided by the screen docking addon:
 
 The forecast addon allows you to take a look at the current forecast across the world. You can use the following commands:
 
-| Commands  | Arguments and Switches               |
-| --------- | ------------------------------------ |
-| `weather` | `[-list] <cityid/cityname> [apikey]` |
+| Commands      | Arguments and Switches                         |
+| ------------- | ---------------------------------------------- |
+| `weather`     | `[-list=name] <latitude> <longitude> [apikey]` |
+| `weather-old` | `[-list] <cityid/cityname> [apikey]`           |
 
 ### FTP Shell
 

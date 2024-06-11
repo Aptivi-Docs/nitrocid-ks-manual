@@ -60,13 +60,17 @@ d-----          3/2/2024  11:29 AM                KSReminders
 
 <figure><img src="../../../.gitbook/assets/101-settings.png" alt=""><figcaption></figcaption></figure>
 
-The kernel provides an easy-to-use tool to seamlessly configure the kernel settings. It can be easily invoked using the `settings` command. Running this command alone provides you with the normal kernel settings. The two switches will change the mode:
+The kernel provides an easy-to-use tool to seamlessly configure the kernel settings. It can be easily invoked using the `settings` command. Running this command alone provides you with the normal kernel settings. The following switches will change the mode:
 
 * `-saver`: Lets you configure the screensavers
 * `-splash`: Lets you configure the splashes
 * `-addonsaver`: Lets you configure the screensavers from the Extra Screensavers addon
 * `-driver`: Lets you configure the kernel drivers
 * `-type=configType`: Lets you configure a custom section of the kernel settings, including your mod-defined ones.
+
+{% hint style="info" %}
+Currently, the settings application uses Terminaux's interactive TUI feature. If you still prefer the selection style to the TUI, you can pass the `-sel` switch.
+{% endhint %}
 
 Selecting a section leads to the settings application listing all the available configuration options, which you can then set their individual options. It even allows you to save the settings if you like the current configuration, load the user settings, and find a settings entry for easier access.
 

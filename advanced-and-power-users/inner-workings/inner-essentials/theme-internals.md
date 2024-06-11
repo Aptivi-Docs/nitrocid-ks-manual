@@ -159,26 +159,21 @@ Each function does the following:
 
 ### Checking the color requirements
 
-You can also check to see if a theme requires 255 colors or true colors using the below functions:
+You can also check to see if a theme requires a level of colors using the below functions:
 
 {% code title="ThemeTools.cs" lineNumbers="true" %}
 ```csharp
-// 255 colors
-public static bool Is255ColorsRequired(string theme)
-public static bool Is255ColorsRequired(ThemeInfo theme)
-public static bool Is255ColorsRequired(Dictionary<KernelColorType, Color> colors)
-
-// True colors
-public static bool IsTrueColorRequired(string theme)
-public static bool IsTrueColorRequired(ThemeInfo theme)
-public static bool IsTrueColorRequired(Dictionary<KernelColorType, Color> colors)
+public static bool MinimumTypeRequired(string theme, ColorType type)
+public static bool MinimumTypeRequired(ThemeInfo theme, ColorType type)
+public static bool MinimumTypeRequired(Dictionary<KernelColorType, Color> colors, ColorType type)
 ```
 {% endcode %}
 
 Each function takes either a theme name, an instance of `ThemeInfo`, or a dictionary of each kernel color type with their color instance.
 
-* The 255-color requirement functions check the `Color` instance for the type and return `true` if the type is 255 colors. Also, they return `true` if the theme requires true colors.
-* The true color requirement functions check the `Color` instance for the type and return `true` if the type is true colors.
+* If you pass the `EightBit` type to this function, it checks the `Color` instance for the type and return `true` if the type is 255 colors or higher.
+* If you pass the `TrueColor` type to this function, it checks the `Color` instance for the type and return `true` if the type is true colors.
+* If you pass the `FourBit` type to this function, it always returns `false`.
 
 ## Theme preview tools
 

@@ -101,36 +101,13 @@ No scripting is complete with conditions, which control the execution of the com
 `<type>` can be one of the following:
 
 * `null`
-* `string`
-* `fullstring`
+* `string, fullstring`
 * `numeric`
-* `byte`
-* `i8`
-* `ubyte`
-* `u8`
-* `int16`
-* `short`
-* `i16`
-* `int32`
-* `integer`
-* `i32`
-* `int64`
-* `long`
-* `i64`
-* `uint16`
-* `ushort`
-* `u16`
-* `uint32`
-* `uinteger`
-* `u32`
-* `uint64`
-* `ulong`
-* `u64`
-* `decimal`
-* `float`
-* `f32`
-* `double`
-* `f64`
+* `byte, i8, ubyte, u8`
+* `int16, short, i16, uint16, ushort, u16`
+* `int32, integer, i32, uint32, uinteger, u32`
+* `int64, long, i64, uint64, ulong, u64`
+* `float, f32, double, f64, decimal`
 * `bool`
 * `regex`
 
