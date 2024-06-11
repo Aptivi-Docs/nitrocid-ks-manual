@@ -1,39 +1,52 @@
 ---
-description: Trying to find a defect in the kernel? Great! Thanks for your contribution!
+description: What loads your operating system?
 ---
 
-# 🦠 Diagnostics
+# 📀 Bootloader
 
-<figure><img src="../../.gitbook/assets/096-debug.png" alt=""><figcaption></figcaption></figure>
+A bootloader is the first computer program that is run after the Basic Input/Output System (BIOS) or the Unified Extensible Firmware Interface (UEFI) phase. It's the computer program that is responsible for booting an operating system.
 
-The simulated kernel contains its own diagnostic tools to allow you to diagnose what's wrong with a feature. These diagnostic tools help you analyze the kernel for what it's doing and for how it failed.
+There are two stages for the bootloader: the first-stage boot loader and the second-stage boot loader. The first-stage boot loader resides in the boot sector, usually found in the first few bytes of your hard drive. However, the second-stage bootloaders are typically stored on the hard drive and are usually loaded by the first-stage ones.
 
-There are two ways to diagnose the kernel: in-kernel debugging, and using Visual Studio.
+Second-stage bootloaders can be configured to give the user multiple booting choices, which is what major bootloaders, like Windows Boot Manager and GRUB, do.
 
-## In-kernel Debugging
+The integrated bootloader that is found inside the Nitrocid kernel simulates the second-stage bootloader usually found in your computer's hard drive. It simulates the multiple booting choices to allow you to boot to different applications. It also simulates the booting process by executing other kernel environments.
 
-In-kernel debugging allows you to use its own built-in tools to debug the kernel and its components. For more information, head to the below page.
+The bootloader interacts with your keyboard to give the users a chance to select their operating system to be booted. In order to learn more about the bootloader, we need to first explain how the kernel environments work.
 
-{% content-ref url="debugging/" %}
-[debugging](debugging/)
-{% endcontent-ref %}
+## Kernel Environments
 
-## Visual Studio
+Kernel environments are classes that are responsible for storing the entry point of the environment, which runs all the necessary features and handles the entire system. They also contain facilities that modify the behavior of the environments by passing arguments to it.
 
-This way of debugging is only available if you have Visual Studio installed. If you have the source code of the kernel cloned from our GitHub, you can attach the Nitrocid KS process to the debugger. Here's how, assuming that Nitrocid KS is already open:
+Kernel environments are managed in the `EnvironmentTools` class, and your mod can access it to create your own kernel environment for your purposes. This is useful in certain situations, especially when you want to make a separate interface for kids that contains games and kid-friendly applications.
 
-1. Open Visual Studio to the empty project
-2. Right-click on `Debug` -> `Attach to Process`
-3. Find `Nitrocid.exe`
-4. Click on `Attach`
-5. In case Visual Studio is asking for source files, point to a file within the Nitrocid KS source
+The base environment is modeled in a way that you need to override the following functions to create your own environment:
 
-### `KernelException` Class
+* `Name`: The name of your environment that the bootloader shows.
+* `EnvironmentEntry`: A delegate to the entry point of your environment.
 
-`KernelException` is an exception class that uses the exception type to give you a possible cause for each exception type. The kernel (and your mods) make extensive use of this exception to signal an error, but this class can also hold an inner exception of either the nested `KernelException` class or any of the `Exception` classes.
+{% hint style="info" %}
+The kernel environment system basically assumes that your entry point code contains a loop that checks to see if neither a reboot nor a shutdown is requested. The base entry point code looks like this (only the relevant part):
 
-Each `KernelException` instance holds the following properties:
+```csharp
+private static void MainLoop()
+{
+    while (!PowerManager.RebootRequested && !PowerManager.KernelShutdown)
+    {
+        (...)
+    }
+}
+```
+{% endhint %}
 
-* `ExceptionType`: Specifies the exception type using the `KernelExceptionType` enumeration.
-* `OriginalExceptionMessage`: Specifies the original exception message before being processed.
-* `KernelExceptionMessage`: Shows a full message from the exception type.
+After that, you'll need to create a new instance of your environment and set it as the default environment using `SetEnvironment()`. Optionally, you can set the arguments using the `SetEnvironmentArgs()` function.
+
+## Bootloader Components
+
+The bootloader contains three essential components:
+
+* Boot choices
+* Kernel environments
+* Boot styles
+
+To learn more about these, you can consult their own pages.
