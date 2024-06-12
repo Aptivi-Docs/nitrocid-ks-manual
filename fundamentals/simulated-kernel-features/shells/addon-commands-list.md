@@ -436,6 +436,14 @@ This shell allows you to check your e-mails and send them. You can use the follo
 | `send`    |                                   |
 | `sendenc` |                                   |
 
+### Pastebin
+
+This shell allows you to send either a file or a string to one of the pastebin providers. You can use the following commands:
+
+| Commands   | Arguments and Switches                                                                                               |
+| ---------- | -------------------------------------------------------------------------------------------------------------------- |
+| `pastebin` | `[-provider=address:host\|-type=raw/http/https\|-postpage=path/to/remote/post\|-postformat=text/json] <file/string>` |
+
 ### RSS Shell
 
 You can use this shell to read your RSS feeds using the `rss` command. You can use the below commands:
@@ -449,6 +457,7 @@ You can use this shell to read your RSS feeds using the `rss` command. You can u
 | `list`         |                              |
 | `listbookmark` |                              |
 | `read`         | `<feednum>`                  |
+| `selfeed`      | `<phrase>`                   |
 | `search`       | `[-t\|-d\|-a\|-cs] <phrase>` |
 | `unbookmark`   |                              |
 
