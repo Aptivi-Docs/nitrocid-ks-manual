@@ -211,3 +211,24 @@ We needed to add support for argument descriptions, which would show up in the c
 {% hint style="info" %}
 The constructors are not affected; one of it has been provided an extra optional argument that specifies the unlocalized argument description.
 {% endhint %}
+
+#### Base screensaver configuration implementation changed
+
+{% code title="MatrixBleed.cs" lineNumbers="true" %}
+```csharp
+public static class MatrixBleedSettings
+```
+{% endcode %}
+
+When the Nitrocid KS settings implementation still relied on manual key access and value casting, such as the usage of the indexer that accessed the settings section and keys, we had to proxy the screensaver settings due to the fact that we didn't have a concrete way of accessing the screensaver settings in a meaningful way.
+
+Historically, going back to 0.0.12.0, it was the first kernel series that has added screensaver configuration in its minimal form, such as allowing true color and 256 color modes. Since then, the release of 0.0.20.0 redefined the configuration in a way that became necessary for us to change the settings handler. We used to proxy the screensaver settings because we were manually creating settings entries and processing them. This proxying came in two forms:
+
+* The first list of an individual screensaver settings list contained only value setting, and this is found in the main configuration instance.
+* The second list of an individual screensaver settings list contained value setting properties and value checks as implemented in the same file that implemented that screensaver.
+
+For consistency and ease of maintenance, we've decided to remove this proxying, causing all the value check code to move to the kernel screensaver settings instance.
+
+{% hint style="info" %}
+Use the screensaver settings instance directly using the `SaverConfig` property in the `Config` class.
+{% endhint %}
