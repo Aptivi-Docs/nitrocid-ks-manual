@@ -27,3 +27,5 @@ The weather kernel addon provides the following properties:
 {% hint style="info" %}
 We recommend the Weather.com implementation using the weather command. The syntax is a bit different, because it requires that you know the latitude and the longitude of your area. If you want to get this information, you can use the `-list` switch, providing it your city name and your API key.
 {% endhint %}
+
+In addition to that, you can consult the weather in an interactive TUI by calling the `weather` command with just the `-tui` switch. Please note that this is not supported for the OpenWeatherMap version of the `weather` command.

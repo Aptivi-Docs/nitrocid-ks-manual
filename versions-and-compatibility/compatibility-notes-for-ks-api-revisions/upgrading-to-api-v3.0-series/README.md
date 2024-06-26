@@ -137,9 +137,9 @@ This version is another futuristic magic that brings in feature additions and sp
 
 This section explains how to adapt the important changes to your mod code so that it works with 0.1.1 and higher. This highlights the most important changes that we have compiled for you.
 
-#### Usage of Terminaux 4.0.0 and VisualCard 1.0.0
+#### Usage of Terminaux 4.x and VisualCard 1.0.0
 
-Nitrocid has been updated to use Terminaux 4.0.0 and VisualCard 1.0.0. This is to bring in tons of amazing new features from both the libraries that aim to provide you with the best user and developer experience. You'll need to consult their own manual page for more information about how to adapt your Nitrocid mods to align with the latest breaking changes. VisualCard's breaking changes page is at the top button, and Terminaux's breaking changes page is at the bottom button.
+Nitrocid has been updated to use Terminaux 4.x and VisualCard 1.0.0. This is to bring in tons of amazing new features from both the libraries that aim to provide you with the best user and developer experience. You'll need to consult their own manual page for more information about how to adapt your Nitrocid mods to align with the latest breaking changes. VisualCard's breaking changes page is at the top button, and Terminaux's breaking changes page is at the bottom button.
 
 {% content-ref url="https://app.gitbook.com/s/bEvVwD4FK7bX7p8XtIPH/breaking-changes" %}
 [Breaking Changes](https://app.gitbook.com/s/bEvVwD4FK7bX7p8XtIPH/breaking-changes)
@@ -231,4 +231,42 @@ For consistency and ease of maintenance, we've decided to remove this proxying, 
 
 {% hint style="info" %}
 Use the screensaver settings instance directly using the `SaverConfig` property in the `Config` class.
+{% endhint %}
+
+#### VSIX analyzers no longer shipped
+
+We're no longer shipping the VSIX version of the Nitrocid analyzers because of low interest. Additionally, this version of the analyzers only worked in the full Visual Studio installation, which is only applicable for Windows systems. Moreover, the Community version of Visual Studio and all the other .NET IDEs, such as Rider, can't use this extension, and will have to rely on the NuGet package for analyzers.
+
+Starting from 0.1.1, we've switched the distribution from VSIX to NuGet to be able to selectively install the analyzer to your project of your choice.
+
+{% hint style="warning" %}
+You are required to remove the VSIX version to be able to use the NuGet version of the analyzers, because they conflict with each other.
+{% endhint %}
+
+#### Moved JSON tools to Textify
+
+{% code title="JsonTextTools.cs" lineNumbers="true" %}
+```csharp
+public static class JsonTextTools
+```
+{% endcode %}
+
+We've moved this class to Textify and made sure that all of the functions that use this class point to the newer `JsonTools` class that Textify provides. This is because we wanted these functions to be independent of Nitrocid so that only grabbing Textify would be enough.
+
+{% hint style="info" %}
+Change the function references to point to `JsonTools` instead of `JsonTextTools`.
+{% endhint %}
+
+#### Removed a RetroKS path property
+
+{% code title="PathsManagement.cs" lineNumbers="true" %}
+```csharp
+public static string RetroKSDownloadPath
+```
+{% endcode %}
+
+We've removed a leftover that was spotted during the analysis of the paths during implementation of the widgets. This property was not removed in the final version of Nitrocid KS 0.1.0, but all the code that refers to the RetroKS project was removed due to the obsolescence.
+
+{% hint style="danger" %}
+We advice you to stop using this property.
 {% endhint %}
