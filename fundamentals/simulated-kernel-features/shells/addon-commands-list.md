@@ -14,19 +14,19 @@ Additionally, addons provide commands that you can use to get the most out of th
 
 Amusements addon provides you with a pack of games and amusements. You can use the below commands:
 
-| Commands     | Arguments and Switches   |
-| ------------ | ------------------------ |
-| `backrace`   |                          |
-| `hangman`    | `[-hardcore\|-practice]` |
-| `meteor`     |                          |
-| `quote`      |                          |
-| `roulette`   |                          |
-| `shipduet`   |                          |
-| `snaker`     |                          |
-| `solver`     |                          |
-| `speedpress` | `[-e\|-m\|-h\|-v\|-c]`   |
-| `wordle`     | `[-orig]`                |
-| `2018`       |                          |
+| Commands     | Arguments and Switches                        |
+| ------------ | --------------------------------------------- |
+| `backrace`   |                                               |
+| `hangman`    | `[-uncommon\|-common] [-hardcore\|-practice]` |
+| `meteor`     |                                               |
+| `quote`      |                                               |
+| `roulette`   |                                               |
+| `shipduet`   |                                               |
+| `snaker`     |                                               |
+| `solver`     |                                               |
+| `speedpress` | `[-e\|-m\|-h\|-v\|-c]`                        |
+| `wordle`     | `[-uncommon\|-common] [-orig]`                |
+| `2018`       |                                               |
 
 ### Archive shell
 

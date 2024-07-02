@@ -10,17 +10,19 @@ The encoding driver is one of the supported driver types on Nitrocid KS. These d
 
 The console drivers have the following characteristics:
 
-* Interface: `IEncodingDriver`
-* Base class: `BaseEncodingDriver`
+* Interface: `IEncodingDriver` (symmetric) or `IEncodingAsymmetricDriver` (asymmetric)
+* Base class: `BaseEncodingDriver` (symmetric) or `BaseEncodingAsymmetricDriver` (asymmetric)
 
 The encoding drivers have the following functions that you can optionally override below:
 
 {% code title="IEncodingDriver.cs" lineNumbers="true" %}
 ```csharp
-object Instance { get; }
-bool IsSymmetric { get; }
+// Below two properties are not available in the asymmetric driver
 byte[] Key { get; }
 byte[] Iv { get; }
+
+// Available globally
+object Instance { get; }
 void Initialize();
 byte[] GetEncodedString(string text);
 string GetDecodedString(byte[] encoded);
@@ -32,6 +34,7 @@ void EncodeFile(string path);
 void DecodeFile(string path);
 void EncodeFile(string path, byte[] key, byte[] iv);
 void DecodeFile(string path, byte[] key, byte[] iv);
+bool TryRepresentAsText(byte[] encoded, out string strEncoded);
 ```
 {% endcode %}
 

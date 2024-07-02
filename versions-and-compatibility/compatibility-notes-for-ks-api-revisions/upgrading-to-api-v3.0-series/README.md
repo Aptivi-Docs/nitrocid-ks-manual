@@ -137,9 +137,9 @@ This version is another futuristic magic that brings in feature additions and sp
 
 This section explains how to adapt the important changes to your mod code so that it works with 0.1.1 and higher. This highlights the most important changes that we have compiled for you.
 
-#### Usage of Terminaux 4.x and VisualCard 1.0.0
+#### Usage of Terminaux 4.x and VisualCard 1.x
 
-Nitrocid has been updated to use Terminaux 4.x and VisualCard 1.0.0. This is to bring in tons of amazing new features from both the libraries that aim to provide you with the best user and developer experience. You'll need to consult their own manual page for more information about how to adapt your Nitrocid mods to align with the latest breaking changes. VisualCard's breaking changes page is at the top button, and Terminaux's breaking changes page is at the bottom button.
+Nitrocid has been updated to use Terminaux 4.x and VisualCard 1.x. This is to bring in tons of amazing new features from both the libraries that aim to provide you with the best user and developer experience. You'll need to consult their own manual page for more information about how to adapt your Nitrocid mods to align with the latest breaking changes. VisualCard's breaking changes page is at the top button, and Terminaux's breaking changes page is at the bottom button.
 
 {% content-ref url="https://app.gitbook.com/s/bEvVwD4FK7bX7p8XtIPH/breaking-changes" %}
 [Breaking Changes](https://app.gitbook.com/s/bEvVwD4FK7bX7p8XtIPH/breaking-changes)
@@ -269,4 +269,49 @@ We've removed a leftover that was spotted during the analysis of the paths durin
 
 {% hint style="danger" %}
 We advice you to stop using this property.
+{% endhint %}
+
+#### Centered writer breaking changes
+
+{% code title="TextFancyWriters.cs" lineNumbers="true" %}
+```csharp
+public static void WriteCentered(int top, string Text, KernelColorType ColTypes, params object[] Vars)
+public static void WriteCentered(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
+public static void WriteCentered(string Text, KernelColorType ColTypes, params object[] Vars)
+public static void WriteCentered(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
+public static void WriteCenteredOneLine(int top, string Text, KernelColorType ColTypes, params object[] Vars)
+public static void WriteCenteredOneLine(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
+public static void WriteCenteredOneLine(string Text, KernelColorType ColTypes, params object[] Vars)
+public static void WriteCenteredOneLine(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
+```
+{% endcode %}
+
+Terminaux 4.2.0 and later have introduced a breaking change that involves how the centered text writers work in terms of passing the parameters to the generator. As part of the widget system introduction, we needed to add the margin system. As a result, you'll notice that all calls to this function with the `Vars` argument will need to be revised.
+
+{% hint style="info" %}
+You'll need to rewrite how you call these functions so that you either pass a single object array like this: `Vars: vars`, or specify the margin values. You can always default to zeroes, and then you can pass the variables as if nothing happened.
+{% endhint %}
+
+#### Symmetric and asymmetric encoding drivers separated
+
+{% code title="IEncodingDriver.cs" lineNumbers="true" %}
+```csharp
+bool IsSymmetric { get; }
+```
+{% endcode %}
+
+{% code title="BaseEncodingDriver.cs" lineNumbers="true" %}
+```csharp
+public virtual bool IsSymmetric =>
+    true;
+```
+{% endcode %}
+
+In order to make implementation of the encoding drivers easier than before, we had to separate the encoding driver to make two versions: Symmetric and asymmetric. We've preserved the name of the symmetric version, while we've given the asymmetric version a new name: `EncodingAsymmetric`.
+
+{% hint style="info" %}
+You should change the driver type to match the symmetry type of your encoding algorithm driver. Either way, you should remove the `IsSymmetric` override. If your driver type is:
+
+* symmetric, you don't need to do anything other than removing the `IsSymmetric` override.
+* asymmetric, you need to remove the three overrides (`IsSymmetric`, `Key`, and `Iv`) and change the implementation so that your driver implements `BaseEncodingAsymmetricDriver` and `IEncodingAsymmetricDriver`.
 {% endhint %}
