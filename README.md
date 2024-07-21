@@ -10,12 +10,6 @@ If you're here wondering what is Nitrocid KS, then you're at the right place! Ni
 
 Nitrocid KS, Kernel Simulator back then, started on 2018 as version 0.0.1, when it was still in its early access stages (alpha). It featured an extremely basic simulator that only focused on the matter at hand: the kernel, the login mechanism, and the shell application. Since then, we've made various improvements to the point that we've finally formed the "beta" stage of the kernel, which is version 0.1.0.
 
-The kernel can not only be run standalone, but you can also start it up using GRILO, making it a fully-fledged computer simulator. GRILO is a bootloader simulator that allows you to make your C# and Visual Basic applications bootable from the simulated bootloader. To learn more about it, consult this page:
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
 Nitrocid KS has not only become more beautiful than the first version, but it has also become more flexible than before by allowing your mods to extend the kernel functionalities or to provide users with extra applications, screensavers, and more.
 
 This documentation is a manual for Nitrocid KS. It describes everything about almost all the features, some of which you can use them with your mods in order to extend your kernel. To get started, right-click on any page in the left pane.
