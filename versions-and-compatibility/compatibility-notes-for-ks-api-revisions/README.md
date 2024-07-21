@@ -1,5 +1,5 @@
 ---
-description: This page lists all the migration ways to upgrade your mods
+description: This page lists all the migration methods to upgrade your mods
 ---
 
 # 👍 Compatibility Notes for KS API Revisions

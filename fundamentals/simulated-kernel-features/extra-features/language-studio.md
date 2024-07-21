@@ -61,3 +61,7 @@ If you're done translating the same string in all the languages, you can go back
 * If you want to remove a string, you'll have to choose the `Remove string` option. You'll be prompted to select a string that you want removed.
 
 If you want to save the translations and make them usable as a language, you can choose `Save translations`, and your translation files will be placed under the `Output` folder.
+
+{% hint style="info" %}
+Alternatively, you can launch the language studio TUI by passing the `-tui` switch. Consult the keystrokes list by pressing the `K` key inside the TUI for help.
+{% endhint %}

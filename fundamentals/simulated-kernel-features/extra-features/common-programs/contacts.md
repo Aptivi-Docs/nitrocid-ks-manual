@@ -14,7 +14,12 @@ The contacts application lets you list your contacts that are imported from the 
 
 The contacts application is usually found in your computer under the form of a feature in your favorite mail client or under the form of a standalone application. It's also found in your smartphone in which you can make phone calls and send SMS messages.
 
-Nitrocid KS, however, has this application as a standalone application and can be executed by invoking the `contacts` command.
+Nitrocid KS, however, has this application as a standalone application and can be executed by invoking the `contacts` command. You can also perform contact management without the contacts interactive TUI by using one of the following four commands:
+
+* `contactinfo`: Shows you contact information
+* `importcontacts`: Imports the contacts from either a MeCard string or a vCard file
+* `listcontacts`: Lists all the contacts
+* `loadcontacts`: Loads all the contacts
 
 {% hint style="info" %}
 Please note that Nitrocid KS is unable to make phone calls and send SMS messages to your contacts as it requires a special device, such as Voice over IP (VoIP) phones, to be able to make calls from your computer, and we don't intend to simulate that.

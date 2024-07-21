@@ -20,6 +20,10 @@ Nitrocid KS attempts to simulate this concept by implementing the non-touch vers
 
 You can dock your screen to turn it to an information center using the `dock` command, giving it an ID of the dock. The following docks can be used:
 
-<table><thead><tr><th width="161">Name</th><th width="163">ID</th><th>Description</th></tr></thead><tbody><tr><td>Digital Clock</td><td><code>DigitalClock</code></td><td>Shows you a digital clock that updates itself</td></tr></tbody></table>
+<table><thead><tr><th width="161">Name</th><th width="163">ID</th><th>Description</th></tr></thead><tbody><tr><td>Digital Clock</td><td><code>DigitalClock</code></td><td>Shows you a digital clock that updates itself</td></tr><tr><td>Analog Clock</td><td><code>AnalogClock</code></td><td>Shows you an analog clock that updates itself</td></tr><tr><td>Emoji</td><td><code>Emoji</code></td><td>Cycles between emojis</td></tr></tbody></table>
 
-Once you dock your screen, depending on the dock used, you can follow the instructions usually given by the dock mode to exit it. The screensaver won't be launched during the docking period.
+Once you dock your screen, depending on the dock used, you can follow the instructions usually given by the dock mode to exit it. The screensaver won't be launched during the docking period. Docks use the widget system to render, so you can consult the page below for more information.
+
+{% content-ref url="../lockscreen-widgets.md" %}
+[lockscreen-widgets.md](../lockscreen-widgets.md)
+{% endcontent-ref %}

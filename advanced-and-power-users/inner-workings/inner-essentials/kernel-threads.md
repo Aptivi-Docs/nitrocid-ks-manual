@@ -140,6 +140,8 @@ Thread.Sleep(1000);
 thread.Stop();
 </code></pre>
 
+You can get the child thread information and manage child threads inside child threads using the `GetChild()` function, passing it the child thread index starting from zero, usually accompanied by the `ChildThreadCount` property.
+
 ### Looping until the thread stops
 
 If your thread consists of an infinite loop doing something useful, like updating the timer screen, the only viable way to implement such a loop within a `KernelThread` instance is to put a `while` clause, polling the condition of (`!MyThread.IsStopping`). Even better, you should catch a `ThreadInterruptedException` in case your thread does something that takes a long time. Here's an example of how it's used in the timer update thread (excluding the actual logic inside):

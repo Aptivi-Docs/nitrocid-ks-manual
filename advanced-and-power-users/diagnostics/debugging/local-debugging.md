@@ -63,6 +63,10 @@ Each of these fields have their own values, as follows:
 
 To debug your mods, they must call the debug functions in order for the kernel to acknowledge your message. There are useful functions listed below that may help you debug your routines in your mods.
 
+{% hint style="info" %}
+You can also use the Output window if you've built Nitrocid KS with `VSDEBUG` compiler constant, but it has severe performance repercussions.
+{% endhint %}
+
 ### Normal Debugging
 
 Calling the debug function below will post your debug message to the kernel debugger normally. There's a function for you to call below:

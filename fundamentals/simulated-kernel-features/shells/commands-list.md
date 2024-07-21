@@ -24,7 +24,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 |                         | `<list>`                                                                         |
 |                         | `[-tui]`                                                                         |
 | `alias`                 | `<rem/add> <shelltype> <alias> [cmd]`                                            |
-| `beep`                  |                                                                                  |
+| `beep`                  | `[freq] [ms]`                                                                    |
 | `blockdbgdev`           | `<ipaddress>`                                                                    |
 | `bulkrename`            | `<targetdir> <pattern> [newname]`                                                |
 | `cat`                   | `[-lines\|-nolines\|-plain] <file>`                                              |

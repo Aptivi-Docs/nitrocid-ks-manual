@@ -19,6 +19,7 @@ Amusements addon provides you with a pack of games and amusements. You can use t
 | `backrace`   |                                               |
 | `hangman`    | `[-uncommon\|-common] [-hardcore\|-practice]` |
 | `meteor`     |                                               |
+| `pong`       |                                               |
 | `quote`      |                                               |
 | `roulette`   |                                               |
 | `shipduet`   |                                               |
@@ -51,12 +52,21 @@ Once you enter the archive shell with the provided archive file path, you can ac
 
 This addon allows you to get access to the BassBoom utility features. You can use the following commands:
 
-| Commands      | Arguments and Switches       |
-| ------------- | ---------------------------- |
-| `lyriclines`  | `<lyric.lrc>`                |
-| `playlyric`   | `<lyric.lrc>`                |
-| `playsound`   | `<musicfile>`                |
-| `musicplayer` | `-r [musicfile\|stationurl]` |
+| Commands      | Arguments and Switches        |
+| ------------- | ----------------------------- |
+| `lyriclines`  | `<lyric.lrc>`                 |
+| `playlyric`   | `<lyric.lrc>`                 |
+| `playsound`   | `<musicfile>`                 |
+| `musicplayer` | `-r [musicfile\|stationurl]`  |
+| `netfminfo`   | `[-secure] <hostname> <port>` |
+
+### Beep Synth Addon
+
+This addon allows you to play beep synth files using the following commands:
+
+| Commands    | Arguments and Switches |
+| ----------- | ---------------------- |
+| `beepsynth` | `<synthfile>`          |
 
 ### Caffeine Addon
 
@@ -96,152 +106,26 @@ This addon allows you access to the calendar functions. You can use the below co
 
 This addon gives you various color model translation commands. You can use the following commands:
 
-| Commands           | Arguments and Switches |
-| ------------------ | ---------------------- |
-| `colorhextorgb`    | `<#RRGGBB>`            |
-| `colorhextorgbks`  | `<#RRGGBB>`            |
-| `colorhextocmyk`   | `<#RRGGBB>`            |
-| `colorhextocmykks` | `<#RRGGBB>`            |
-| `colorhextocmy`    | `<#RRGGBB>`            |
-| `colorhextocmyks`  | `<#RRGGBB>`            |
-| `colorhextohsv`    | `<#RRGGBB>`            |
-| `colorhextohsvks`  | `<#RRGGBB>`            |
-| `colorhextohsl`    | `<#RRGGBB>`            |
-| `colorhextohslks`  | `<#RRGGBB>`            |
-| `colorhextoryb`    | `<#RRGGBB>`            |
-| `colorhextorybks`  | `<#RRGGBB>`            |
-| `colorhextoyiq`    | `<#RRGGBB>`            |
-| `colorhextoyiqks`  | `<#RRGGBB>`            |
-| `colorhextoyuv`    | `<#RRGGBB>`            |
-| `colorhextoyuvks`  | `<#RRGGBB>`            |
-| `colorrgbtohex`    | `<R> <G> <B>`          |
-| `colorrgbtocmyk`   | `<R> <G> <B>`          |
-| `colorrgbtocmykks` | `<R> <G> <B>`          |
-| `colorrgbtocmy`    | `<R> <G> <B>`          |
-| `colorrgbtocmyks`  | `<R> <G> <B>`          |
-| `colorrgbtohsv`    | `<R> <G> <B>`          |
-| `colorrgbtohsvks`  | `<R> <G> <B>`          |
-| `colorrgbtohsl`    | `<R> <G> <B>`          |
-| `colorrgbtohslks`  | `<R> <G> <B>`          |
-| `colorrgbtoryb`    | `<R> <G> <B>`          |
-| `colorrgbtorybks`  | `<R> <G> <B>`          |
-| `colorrgbtoyiq`    | `<R> <G> <B>`          |
-| `colorrgbtoyiqks`  | `<R> <G> <B>`          |
-| `colorrgbtoyuv`    | `<R> <G> <B>`          |
-| `colorrgbtoyuvks`  | `<R> <G> <B>`          |
-| `colorrybtorgb`    | `<R> <Y> <B>`          |
-| `colorrybtocmyk`   | `<R> <Y> <B>`          |
-| `colorrybtocmykks` | `<R> <Y> <B>`          |
-| `colorrybtocmy`    | `<R> <Y> <B>`          |
-| `colorrybtocmyks`  | `<R> <Y> <B>`          |
-| `colorrybtohsv`    | `<R> <Y> <B>`          |
-| `colorrybtohsvks`  | `<R> <Y> <B>`          |
-| `colorrybtohsl`    | `<R> <Y> <B>`          |
-| `colorrybtohslks`  | `<R> <Y> <B>`          |
-| `colorrybtorgb`    | `<R> <Y> <B>`          |
-| `colorrybtorgbks`  | `<R> <Y> <B>`          |
-| `colorrybtoyiq`    | `<R> <Y> <B>`          |
-| `colorrybtoyiqks`  | `<R> <Y> <B>`          |
-| `colorrybtoyuv`    | `<R> <Y> <B>`          |
-| `colorrybtoyuvks`  | `<R> <Y> <B>`          |
-| `colorhsltohex`    | `<H> <S> <L>`          |
-| `colorhsltocmyk`   | `<H> <S> <L>`          |
-| `colorhsltocmykks` | `<H> <S> <L>`          |
-| `colorhsltocmy`    | `<H> <S> <L>`          |
-| `colorhsltocmyks`  | `<H> <S> <L>`          |
-| `colorhsltoryb`    | `<H> <S> <L>`          |
-| `colorhsltorybks`  | `<H> <S> <L>`          |
-| `colorhsltorgb`    | `<H> <S> <L>`          |
-| `colorhsltorgbks`  | `<H> <S> <L>`          |
-| `colorhsltoryb`    | `<H> <S> <L>`          |
-| `colorhsltorybks`  | `<H> <S> <L>`          |
-| `colorhsltoyiq`    | `<H> <S> <L>`          |
-| `colorhsltoyiqks`  | `<H> <S> <L>`          |
-| `colorhsltoyuv`    | `<H> <S> <L>`          |
-| `colorhsltoyuvks`  | `<H> <S> <L>`          |
-| `colorhsvtohex`    | `<H> <S> <V>`          |
-| `colorhsvtocmyk`   | `<H> <S> <V>`          |
-| `colorhsvtocmykks` | `<H> <S> <V>`          |
-| `colorhsvtocmy`    | `<H> <S> <V>`          |
-| `colorhsvtocmyks`  | `<H> <S> <V>`          |
-| `colorhsvtohsl`    | `<H> <S> <V>`          |
-| `colorhsvtohslks`  | `<H> <S> <V>`          |
-| `colorhsvtorgb`    | `<H> <S> <V>`          |
-| `colorhsvtorgbks`  | `<H> <S> <V>`          |
-| `colorhsvtoryb`    | `<H> <S> <V>`          |
-| `colorhsvtorybks`  | `<H> <S> <V>`          |
-| `colorhsvtoyiq`    | `<H> <S> <V>`          |
-| `colorhsvtoyiqks`  | `<H> <S> <V>`          |
-| `colorhsvtoyuv`    | `<H> <S> <V>`          |
-| `colorhsvtoyuvks`  | `<H> <S> <V>`          |
-| `colorcmyktohex`   | `<C> <M> <Y> <K>`      |
-| `colorcmyktorgb`   | `<C> <M> <Y> <K>`      |
-| `colorcmyktorgbks` | `<C> <M> <Y> <K>`      |
-| `colorcmyktoryb`   | `<C> <M> <Y> <K>`      |
-| `colorcmyktorybks` | `<C> <M> <Y> <K>`      |
-| `colorcmyktohsv`   | `<C> <M> <Y> <K>`      |
-| `colorcmyktohsvks` | `<C> <M> <Y> <K>`      |
-| `colorcmyktohsl`   | `<C> <M> <Y> <K>`      |
-| `colorcmyktohslks` | `<C> <M> <Y> <K>`      |
-| `colorcmyktocmy`   | `<C> <M> <Y> <K>`      |
-| `colorcmyktocmyks` | `<C> <M> <Y> <K>`      |
-| `colorcmyktoyiq`   | `<C> <M> <Y> <K>`      |
-| `colorcmyktoyiqks` | `<C> <M> <Y> <K>`      |
-| `colorcmyktoyuv`   | `<C> <M> <Y> <K>`      |
-| `colorcmyktoyuvks` | `<C> <M> <Y> <K>`      |
-| `colorcmytohex`    | `<C> <M> <Y>`          |
-| `colorcmytorgb`    | `<C> <M> <Y>`          |
-| `colorcmytorgbks`  | `<C> <M> <Y>`          |
-| `colorcmytoryb`    | `<C> <M> <Y>`          |
-| `colorcmytorybks`  | `<C> <M> <Y>`          |
-| `colorcmytohsl`    | `<C> <M> <Y>`          |
-| `colorcmytohslks`  | `<C> <M> <Y>`          |
-| `colorcmytohsv`    | `<C> <M> <Y>`          |
-| `colorcmytohsvks`  | `<C> <M> <Y>`          |
-| `colorcmytocmyk`   | `<C> <M> <Y>`          |
-| `colorcmytocmykks` | `<C> <M> <Y>`          |
-| `colorcmytoyiq`    | `<C> <M> <Y>`          |
-| `colorcmytoyiqks`  | `<C> <M> <Y>`          |
-| `colorcmytoyuv`    | `<C> <M> <Y>`          |
-| `colorcmytoyuvks`  | `<C> <M> <Y>`          |
-| `coloryiqtohex`    | `<Y> <I> <Q>`          |
-| `coloryiqtorgb`    | `<Y> <I> <Q>`          |
-| `coloryiqtorgbks`  | `<Y> <I> <Q>`          |
-| `coloryiqtoryb`    | `<Y> <I> <Q>`          |
-| `coloryiqtorybks`  | `<Y> <I> <Q>`          |
-| `coloryiqtocmyk`   | `<Y> <I> <Q>`          |
-| `coloryiqtocmykks` | `<Y> <I> <Q>`          |
-| `coloryiqtocmy`    | `<Y> <I> <Q>`          |
-| `coloryiqtocmyks`  | `<Y> <I> <Q>`          |
-| `coloryiqtohsl`    | `<Y> <I> <Q>`          |
-| `coloryiqtohslks`  | `<Y> <I> <Q>`          |
-| `coloryiqtohsv`    | `<Y> <I> <Q>`          |
-| `coloryiqtohsvks`  | `<Y> <I> <Q>`          |
-| `coloryiqtoyuv`    | `<Y> <I> <Q>`          |
-| `coloryiqtoyuvks`  | `<Y> <I> <Q>`          |
-| `coloryuvtohex`    | `<Y> <U> <V>`          |
-| `coloryuvtorgb`    | `<Y> <U> <V>`          |
-| `coloryuvtorgbks`  | `<Y> <U> <V>`          |
-| `coloryuvtoryb`    | `<Y> <U> <V>`          |
-| `coloryuvtorybks`  | `<Y> <U> <V>`          |
-| `coloryuvtocmyk`   | `<Y> <U> <V>`          |
-| `coloryuvtocmykks` | `<Y> <U> <V>`          |
-| `coloryuvtocmy`    | `<Y> <U> <V>`          |
-| `coloryuvtocmyks`  | `<Y> <U> <V>`          |
-| `coloryuvtohsl`    | `<Y> <U> <V>`          |
-| `coloryuvtohslks`  | `<Y> <U> <V>`          |
-| `coloryuvtohsv`    | `<Y> <U> <V>`          |
-| `coloryuvtohsvks`  | `<Y> <U> <V>`          |
-| `coloryuvtoyiq`    | `<Y> <U> <V>`          |
-| `coloryuvtoyiqks`  | `<Y> <U> <V>`          |
+| Commands         | Arguments and Switches                                                        |
+| ---------------- | ----------------------------------------------------------------------------- |
+| `colorspecto`    | `<targetModelName> <specifier>`                                               |
+| `colorspectohex` | `<specifier>`                                                                 |
+| `colorspectoks`  | `<targetModelName> <specifier>`                                               |
+| `colorto`        | `<sourceModelName> <targetModelName> <number1> <number2> <number3> [number4]` |
+| `colortohex`     | `<sourceModelName> <number1> <number2> <number3> [number4]`                   |
+| `colortoks`      | `<sourceModelName> <targetModelName> <number1> <number2> <number3> [number4]` |
 
 ### Contacts
 
 You can use the following commands provided by the contacts addon:
 
-| Commands   | Arguments and Switches |
-| ---------- | ---------------------- |
-| `contacts` |                        |
+| Commands         | Arguments and Switches    |
+| ---------------- | ------------------------- |
+| `contacts`       |                           |
+| `listcontacts`   |                           |
+| `loadcontacts`   |                           |
+| `importcontacts` | `[-mecard] <mecard/path>` |
+| `contactinfo`    | `<contactNum>`            |
 
 ### Diagnostics
 
@@ -339,14 +223,6 @@ Once you enter the Git shell with the provided repo path, you can access the bel
 | `unstage`    | `<stagedfile>`           |
 | `unstageall` |                          |
 
-### HDD Uncleaner 2015 Addon
-
-This addon is a Legacy addon that shows you a mock-up of our ancient app, HDD Cleaner 2015. You can use the below commands:
-
-| Commands | Arguments and Switches |
-| -------- | ---------------------- |
-| `2015`   |                        |
-
 ### HTTP Shell
 
 The HTTP shell allows you to interact with an HTTP server, like sending requests to it. You can use the below commands:
@@ -367,14 +243,6 @@ The HTTP shell allows you to interact with an HTTP server, like sending requests
 | `poststring` | `<request> <string>`     |
 | `rmheader`   | `<key>`                  |
 | `setagent`   | `<useragent>`            |
-
-### Internet Radio
-
-You can use the following commands to get information about your Internet radio station:
-
-| Commands    | Arguments and Switches        |
-| ----------- | ----------------------------- |
-| `netfminfo` | `[-secure] <hostname> <port>` |
 
 ### JSON Shell
 
@@ -400,9 +268,9 @@ The JSON shell allows you to easily edit JSON files. You can use the below comma
 
 You can use the following commands to build your own language:
 
-| Commands | Arguments and Switches |
-| -------- | ---------------------- |
-| `mklang` | `<pathtotranslations>` |
+| Commands | Arguments and Switches        |
+| -------- | ----------------------------- |
+| `mklang` | `[-tui] <pathtotranslations>` |
 
 ### Name generator
 
@@ -503,13 +371,21 @@ This shell allows you to execute commands from the connected SQLite database fil
 | `dbinfo` |                        |
 | `tui`    |                        |
 
+### Stocks
+
+This addon provides you with the following commands to query stock price info:
+
+| Commands | Arguments and Switches |
+| -------- | ---------------------- |
+| `stock`  | `[company]`            |
+
 ### Theme Studio
 
 You can make your own precious and epic themes by using the following commands:
 
 | Commands  | Arguments and Switches |
 | --------- | ---------------------- |
-| `mktheme` | `<themename>`          |
+| `mktheme` | `[-tui] <themename>`   |
 
 ### Time info
 

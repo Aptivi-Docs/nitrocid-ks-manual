@@ -76,13 +76,11 @@ You must specify the main mod name in the above functions, since they use that n
 
 You can now list all the available functions, properties, and fields from a specific mod using one of the following functions:
 
-{% code title="InterAddonTools.cs" lineNumbers="true" %}
 ```csharp
-public static string[] ListAvailableFunctions(string addonName)
-public static string[] ListAvailableProperties(string addonName)
-public static string[] ListAvailableFields(string addonName)
+public static string[] ListAvailableFunctions(string modName)
+public static string[] ListAvailableProperties(string modName)
+public static string[] ListAvailableFields(string modName)
 ```
-{% endcode %}
 
 {% hint style="info" %}
 You must specify the main mod name in the above functions, since they use that name to fetch all mod parts and query them for available functions, fields, or properties.
@@ -91,3 +89,12 @@ The three functions return an empty array under the following conditions:
 
 * There are no properties or fields in all the mod parts from your mod.
 {% endhint %}
+
+### Listing function and set property parameters
+
+You can list all the function and set property parameters in depth by using the following functions:
+
+```csharp
+public static ParameterInfo[] GetFunctionParameters(string modName, string functionName)
+public static ParameterInfo[] GetSetPropertyParameters(string modName, string propertyName)
+```

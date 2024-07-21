@@ -315,3 +315,48 @@ You should change the driver type to match the symmetry type of your encoding al
 * symmetric, you don't need to do anything other than removing the `IsSymmetric` override.
 * asymmetric, you need to remove the three overrides (`IsSymmetric`, `Key`, and `Iv`) and change the implementation so that your driver implements `BaseEncodingAsymmetricDriver` and `IEncodingAsymmetricDriver`.
 {% endhint %}
+
+#### Removed "HDD Uncleaner"
+
+{% code title="KnownAddons.cs" lineNumbers="true" %}
+```csharp
+/// <summary>
+/// HDD Uncleaner 2015 Legacy addon
+/// </summary>
+LegacyHddUncleaner,
+```
+{% endcode %}
+
+We've removed an addon that provided you with an amusement app that simulated how an ancient software of ours, "HDD Cleaner", would run. It was only meant for demonstration purposes.
+
+{% hint style="danger" %}
+It's advisable to stop using this enumeration value, but the auto generator may override this enumerator's value with another addon.
+{% endhint %}
+
+#### Removed config property wrappers
+
+As seen in [this commit](https://github.com/Aptivi/NitrocidKS/commit/e96c4559cf3b20079fc1f960579738fa81e522fd), we've decided to remove the configuration property wrappers as a result of the improvements that were witnessed in the configuration system during the development of the 0.1.0 version.
+
+{% hint style="danger" %}
+It's advised to use the `Config.MainConfig` instance to point to the required configuration properties that have their wrappers deleted.
+{% endhint %}
+
+#### Removed time/date corner
+
+{% code title="KernelMainConfig.cs" lineNumbers="true" %}
+```csharp
+public bool CornerTimeDate { get; set; }
+```
+{% endcode %}
+
+{% code title="TimeDateTopRight.cs" lineNumbers="true" %}
+```csharp
+public static class TimeDateTopRight
+```
+{% endcode %}
+
+The time/date corner that was initially introduced in the 0.0.4.5 version of Nitrocid KS was considered to be one of the oldest features that stayed. Unfortunately, we had to remove this feature in favor of The Nitrocid Homepage.
+
+{% hint style="danger" %}
+It's advisable for you to stop using this feature.
+{% endhint %}

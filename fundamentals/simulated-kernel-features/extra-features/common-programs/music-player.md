@@ -43,3 +43,65 @@ You can use the `musicplayer -r` command to listen to your favorite online radio
 {% hint style="info" %}
 This feature requires an active Internet connection to work.
 {% endhint %}
+
+## Beep Synths
+
+Create a handy JSON file from the below template:
+
+```json
+{
+    "name": "Song",
+    "chapters": [
+        {
+            "name": "Chapter 1",
+            "synths": [
+                "freq ms",
+                "freq ms",
+                [...]
+            ]
+        },
+        {
+            "name": "Chapter 2",
+            "synths": [
+                "freq ms",
+                "freq ms",
+                [...]
+            ]
+        },
+        [...]
+    ]
+}
+```
+
+In the main `name` key found in the root object of the beep synth JSON representation, provide a song name. In the `chapters` key, provide an array of chapter objects that contain the two properties:
+
+* `name`: Name of the chapter.
+* `synths`: Synth representations in hertz and milliseconds, separated by a space. Pauses can be implemented by specifying the frequency of 0.
+
+An example of a simple beep synth file looks like this:
+
+```json
+{
+    "name": "Song",
+    "chapters": [
+        {
+            "name": "Chapter 1",
+            "synths": [
+                "723 640",
+                "323 750",
+                "424 87"
+            ]
+        },
+        {
+            "name": "Chapter 2",
+            "synths": [
+                "400 800",
+                "600 800",
+                "800 800"
+            ]
+        },
+    ]
+}
+```
+
+Afterwards, save the file and play it using the `beepsynth` command, pointing it to your song JSON file.

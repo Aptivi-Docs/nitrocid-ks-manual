@@ -127,7 +127,9 @@ The above functions reset the progress report so that it says "Loading," so thes
 
 {% code title="SplashManager.cs" lineNumbers="true" %}
 ```csharp
+public static void BeginSplashOut()
 public static void BeginSplashOut(SplashContext context)
+public static void EndSplashOut()
 public static void EndSplashOut(SplashContext context)
 ```
 {% endcode %}
@@ -136,9 +138,9 @@ If you want to show messages or anything interesting during the kernel boot, you
 
 {% code title="SplashManager.cs" lineNumbers="true" %}
 ```csharp
-SplashManager.BeginSplashOut(SplashContext.Showcase);
+SplashManager.BeginSplashOut();
 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("We've reached {0}%!"), vars: prog);
-SplashManager.EndSplashOut(SplashContext.Showcase);
+SplashManager.EndSplashOut();
 ```
 {% endcode %}
 
