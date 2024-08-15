@@ -10,6 +10,10 @@ The kernel simulator can be installed on all the supported platforms. The instal
 We don't support starting Nitrocid KS from another environment other than direct execution. If Nitrocid detects that you're running it in such a configuration, functionality will be limited for your security.
 {% endhint %}
 
+{% hint style="danger" %}
+We no longer support 32-bit platforms; hence we only support ARM64 and AMD64. Find out why [here](https://officialaptivi.wordpress.com/2024/08/03/final-word-regarding-32-bit-support/).
+{% endhint %}
+
 Depending on your platform, the amount of disk space taken by KS and its runtime dependencies might vary. Select your platform below and follow the steps.
 
 {% content-ref url="windows.md" %}
