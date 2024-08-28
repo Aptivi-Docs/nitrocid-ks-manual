@@ -360,3 +360,17 @@ The time/date corner that was initially introduced in the 0.0.4.5 version of Nit
 {% hint style="danger" %}
 It's advisable for you to stop using this feature.
 {% endhint %}
+
+## From 0.1.1.0 to 0.1.1.13
+
+Between 0.1.1.0 and 0.1.1.13, we've made the following breaking changes:
+
+### Updated Terminaux to 5.0
+
+We've updated Terminaux to 5.0 to bring improvements. However, this doesn't come without the cost of having to deal with the breaking changes, which, in this case, is many.
+
+You can consult the list of breaking changes that result from upgrading to Terminaux 5.0 by pressing the below button:
+
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v5.0" %}
+[API v5.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v5.0)
+{% endcontent-ref %}
