@@ -42,7 +42,8 @@ This revision of the third generation API is currently under development.
     | v0.1.0.18 | 8/24/2024    |           |                   |
     | v0.1.0.19 | 8/29/2024    |           |                   |
     | v0.1.0.20 | 8/30/2024    |           |                   |
-    | v0.1.1.21 | 8/31/2024    |           |                   |
+    | v0.1.0.21 | 8/31/2024    |           |                   |
+    | v0.1.0.22 | 9/3/2024     |           |                   |
 *   Version v0.1.1.x series\
 
 
@@ -64,6 +65,7 @@ This revision of the third generation API is currently under development.
     | v0.1.1.13 | 8/29/2024    |           |                   |
     | v0.1.1.14 | 8/30/2024    |           |                   |
     | v0.1.1.15 | 8/31/2024    |           |                   |
+    | v0.1.1.16 | 9/3/2024     |           |                   |
 {% endtab %}
 
 {% tab title="API v2.1" %}
@@ -107,6 +109,7 @@ This revision of the API is currently supported.
 | v0.0.24.34 | 8/20/2024    |                                  |                                  |
 | v0.0.24.35 | 8/20/2024    |                                  |                                  |
 | v0.0.24.36 | 8/23/2024    |                                  |                                  |
+| v0.0.24.37 | 9/3/2024     |                                  |                                  |
 {% endtab %}
 {% endtabs %}
 
