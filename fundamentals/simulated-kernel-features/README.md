@@ -14,6 +14,10 @@ Some features of the kernel, such as the usage of SpecProbe driver, may need ele
 
 As of 0.1.1, you can now use your mouse to navigate the kernel's interactive TUIs, but that doesn't mean that you can quit using your keyboard, as you'll still need it for many tasks, including the UESH shell. The buttons below lists some of the features that blow your mind.
 
+{% content-ref url="the-nitrocid-homepage.md" %}
+[the-nitrocid-homepage.md](the-nitrocid-homepage.md)
+{% endcontent-ref %}
+
 {% content-ref url="accounts/" %}
 [accounts](accounts/)
 {% endcontent-ref %}

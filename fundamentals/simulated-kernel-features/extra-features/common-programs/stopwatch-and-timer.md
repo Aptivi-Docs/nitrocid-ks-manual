@@ -36,6 +36,7 @@ The simulated kernel also simulates the stopwatch functionality with the ability
 
 * `ENTER`: Starts counting up the time or stops the entire stopwatch
 * `L`: Sets the lap on the current elapsed time
+* `SHIFT + L`: Shows a complete list of laps in an infobox
 * `R`: Resets the stopwatch and its laps
 * `ESC`: Exits the application
 

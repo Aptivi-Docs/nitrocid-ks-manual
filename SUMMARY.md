@@ -119,6 +119,7 @@
     * [📄 Addon Commands List](fundamentals/simulated-kernel-features/shells/addon-commands-list.md)
   * [📂 Files and Folders](fundamentals/simulated-kernel-features/files-and-folders/README.md)
     * [🔐 Hashing and Encryption](fundamentals/simulated-kernel-features/files-and-folders/hashing-and-encryption.md)
+  * [🏠 The Nitrocid Homepage](fundamentals/simulated-kernel-features/the-nitrocid-homepage.md)
   * [🌎 Networking](fundamentals/simulated-kernel-features/networking.md)
   * [🇺🇸 Languages](fundamentals/simulated-kernel-features/languages.md)
   * [🌌 Screensavers](fundamentals/simulated-kernel-features/screensavers.md)
