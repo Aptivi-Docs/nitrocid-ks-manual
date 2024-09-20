@@ -121,6 +121,7 @@ This revision of the API is currently supported until 12/31/2024.
 | v0.0.24.36 | 8/23/2024    |            |                   |
 | v0.0.24.37 | 9/3/2024     |            |                   |
 | v0.0.24.38 | 9/15/2024    |            |                   |
+| v0.0.24.40 | 9/16/2024    |            |                   |
 {% endtab %}
 {% endtabs %}
 
