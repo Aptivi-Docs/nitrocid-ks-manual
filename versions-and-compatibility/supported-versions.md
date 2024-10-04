@@ -49,6 +49,7 @@ This revision of the third generation API is currently under development.
     | v0.1.0.25 | 9/12/2024    |           |                   |
     | v0.1.0.26 | 9/14/2024    |           |                   |
     | v0.1.0.27 | 9/15/2024    |           |                   |
+    | v0.1.0.28 | 10/3/2024    |           |                   |
 *   Version v0.1.1.x series\
 
 
@@ -76,6 +77,7 @@ This revision of the third generation API is currently under development.
     | v0.1.1.19 | 9/12/2024    |           |                   |
     | v0.1.1.20 | 9/14/2024    |           |                   |
     | v0.1.1.21 | 9/15/2024    |           |                   |
+    | v0.1.1.22 | 10/3/2024    |           |                   |
 {% endtab %}
 
 {% tab title="API v2.1" %}
@@ -127,7 +129,7 @@ This revision of the API is currently supported until 12/31/2024.
 
 ## What about out-of-support versions?
 
-We can't provide information about out-of-support versions, including their release dates, on this page, but we have a separate page that you can access below:
+We have a separate page that you can access below:
 
 {% content-ref url="eol-versions.md" %}
 [eol-versions.md](eol-versions.md)
