@@ -1,8 +1,9 @@
 ---
 description: How to define your custom languages.
+icon: globe
 ---
 
-# 🌐 Custom Languages
+# Custom Languages
 
 When you extract the binary folder of Nitrocid KS, you may see a folder called `CustomLanguages`. Inside it, you can see the `Metadata.json` file that holds language metadata as described in the previous article. Before reading this, you must understand the multilingual kernel feature and how it works by clicking on the below link.
 

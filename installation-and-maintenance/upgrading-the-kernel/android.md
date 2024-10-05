@@ -1,8 +1,9 @@
 ---
 description: How to upgrade Nitrocid KS on Android
+icon: android
 ---
 
-# 📱 Android
+# Android
 
 The only way to upgrade your kernel in Android is to unpack the updated kernel files manually. This method also works for bleeding-edge builds. To upgrade, follow these steps:
 

@@ -1,8 +1,9 @@
 ---
 description: How to upgrade Nitrocid KS on Windows
+icon: windows
 ---
 
-# 💻 Windows
+# Windows
 
 Upgrading your kernel on Windows is pretty simple, depending on the way you've installed the simulator. To upgrade your kernel, choose a method. Please note that the second method, which is unpacking the update yourself, can also be done with the bleeding-edge builds.
 

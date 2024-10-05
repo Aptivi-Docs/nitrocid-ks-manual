@@ -1,8 +1,9 @@
 ---
 description: Your homepage, your way!
+icon: house
 ---
 
-# 🏠 The Nitrocid Homepage
+# The Nitrocid Homepage
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 

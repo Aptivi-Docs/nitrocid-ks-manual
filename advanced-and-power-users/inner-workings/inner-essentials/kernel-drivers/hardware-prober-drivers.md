@@ -1,8 +1,9 @@
 ---
 description: Changing how the hardware prober works
+icon: plug-circle-bolt
 ---
 
-# 🔌 Hardware Prober Drivers
+# Hardware Prober Drivers
 
 <figure><img src="../../../../.gitbook/assets/124-inner.png" alt=""><figcaption></figcaption></figure>
 

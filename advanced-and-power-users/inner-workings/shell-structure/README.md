@@ -1,8 +1,9 @@
 ---
 description: Explaining the inner workings of all the kernel shells
+icon: square-terminal
 ---
 
-# 🐚 Shell Structure
+# Shell Structure
 
 Kernel shells can be built by implementing two different interfaces and base classes. Why two? Because the shell handler relies on:
 

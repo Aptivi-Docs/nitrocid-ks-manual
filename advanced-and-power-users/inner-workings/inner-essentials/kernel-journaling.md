@@ -1,8 +1,9 @@
 ---
 description: Let's keep the journals here.
+icon: notebook
 ---
 
-# 📒 Kernel Journaling
+# Kernel Journaling
 
 <figure><img src="../../../.gitbook/assets/130-inner.png" alt=""><figcaption></figcaption></figure>
 

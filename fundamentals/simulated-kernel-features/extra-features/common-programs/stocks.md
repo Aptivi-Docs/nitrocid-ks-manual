@@ -1,8 +1,9 @@
 ---
 description: Show stock prices
+icon: display-chart-up-circle-dollar
 ---
 
-# 💹 Stocks
+# Stocks
 
 <figure><img src="../../../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: What are accounts in the kernel?
+icon: user
 ---
 
-# 👤 Accounts
+# Accounts
 
 <figure><img src="../../../.gitbook/assets/045-login.png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: Two spaceships fight with each other. Who will survive?
+icon: ship
 ---
 
-# ☄️ ShipDuet
+# ShipDuet
 
 <figure><img src="../../../../.gitbook/assets/012-shipduet.png" alt=""><figcaption></figcaption></figure>
 

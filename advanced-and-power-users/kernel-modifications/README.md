@@ -1,8 +1,9 @@
 ---
 description: What are the Kernel Modifications?
+icon: toolbox
 ---
 
-# 🧰 Kernel Modifications
+# Kernel Modifications
 
 Kernel modifications let you extend the kernel functionality to your liking from custom commands to custom kernel applications. It also lets you unleash your console art by letting you make your own screensaver and your own kernel splash screen.
 

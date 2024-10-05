@@ -1,8 +1,9 @@
 ---
 description: Editing your text is easy!
+icon: spell-check
 ---
 
-# 📝 Text Editor
+# Text Editor
 
 <figure><img src="../../../.gitbook/assets/018-editorcli.png" alt=""><figcaption></figcaption></figure>
 

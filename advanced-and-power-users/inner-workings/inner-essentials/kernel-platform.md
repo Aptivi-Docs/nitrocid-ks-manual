@@ -1,8 +1,9 @@
 ---
 description: Sometimes we need to check your platform.
+icon: computer
 ---
 
-# 🖥️ Kernel Platform
+# Kernel Platform
 
 <figure><img src="../../../.gitbook/assets/134-inner.png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: Build the simulator on Windows!
+icon: windows
 ---
 
-# 🪟 Building on Windows
+# Building on Windows
 
 In Windows systems, you have two ways to build the simulator: one if you use Visual Studio 2022 or later, and one if you prefer doing everything via the command-line. Make sure that your computer has the following dependencies:
 

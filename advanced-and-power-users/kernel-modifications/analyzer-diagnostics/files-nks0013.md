@@ -1,8 +1,9 @@
 ---
 description: Use Making.MakeDirectory()
+icon: chart-mixed
 ---
 
-# 📉 Files - NKS0013
+# Files - NKS0013
 
 This analyzer provides the following strings:
 

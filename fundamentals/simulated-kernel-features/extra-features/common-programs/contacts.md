@@ -1,8 +1,9 @@
 ---
 description: Lists your contacts
+icon: square-user
 ---
 
-# 👥 Contacts
+# Contacts
 
 <figure><img src="../../../../.gitbook/assets/029-Contacts.png" alt=""><figcaption></figcaption></figure>
 

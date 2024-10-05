@@ -1,8 +1,9 @@
 ---
 description: Talks about shell scripting and how it works
+icon: scroll-old
 ---
 
-# 📜 Shell Scripting
+# Shell Scripting
 
 <figure><img src="../../../.gitbook/assets/110-shell.png" alt=""><figcaption></figcaption></figure>
 

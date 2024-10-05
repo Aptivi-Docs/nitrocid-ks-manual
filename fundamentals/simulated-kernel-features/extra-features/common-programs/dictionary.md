@@ -1,8 +1,9 @@
 ---
 description: The English Dictionary
+icon: book
 ---
 
-# 📕 Dictionary
+# Dictionary
 
 <figure><img src="../../../../.gitbook/assets/143-dict.png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: Let's build it!
+icon: trowel-bricks
 ---
 
-# ⚒ Building the Kernel
+# Building the Kernel
 
 Building Nitrocid on your computer is great, since this software is already open-source under the [GNU GPL v3.0](https://github.com/Aptivi/Kernel-Simulator/blob/master/LICENSE) license. To be able to build Nitrocid, choose your platform below.
 

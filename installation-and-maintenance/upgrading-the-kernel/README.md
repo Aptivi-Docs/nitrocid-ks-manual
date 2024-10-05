@@ -1,8 +1,9 @@
 ---
 description: This page talks about available methods of upgrading
+icon: up
 ---
 
-# ⏫ Upgrading the Kernel
+# Upgrading the Kernel
 
 {% hint style="warning" %}
 ## Stop!

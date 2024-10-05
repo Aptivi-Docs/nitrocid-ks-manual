@@ -1,8 +1,9 @@
 ---
 description: Transfer your files securely between your servers and your PC
+icon: lock-keyhole
 ---
 
-# 🔒 SFTP Client
+# SFTP Client
 
 <figure><img src="../../../../.gitbook/assets/004-sftp.png" alt=""><figcaption></figcaption></figure>
 

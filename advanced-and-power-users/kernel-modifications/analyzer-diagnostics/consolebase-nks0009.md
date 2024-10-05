@@ -1,8 +1,9 @@
 ---
 description: Use ConsoleTools.ResetColors()
+icon: chart-mixed
 ---
 
-# 📉 ConsoleBase - NKS0009
+# ConsoleBase - NKS0009
 
 This analyzer provides the following strings:
 

@@ -1,8 +1,9 @@
 ---
 description: In general...
+icon: corn
 ---
 
-# 🌽 What is the Kernel?
+# What is the Kernel?
 
 The Kernel is the core of the operating system that powers complete control over the entire system and is memory-resident. It allows interactions between hardware and software. It's one of the first programs that get loaded after the bootloader stage.
 

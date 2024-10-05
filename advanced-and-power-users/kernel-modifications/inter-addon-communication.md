@@ -1,8 +1,9 @@
 ---
 description: Mods talking to an addon or more than one addon in Nitrocid
+icon: phone
 ---
 
-# 📞 Inter-Addon Communication
+# Inter-Addon Communication
 
 Inter-Addon Communication allows your mods to execute the publicly-available functions of a kernel addon. It allows your mods to talk to the kernel addons in a mechanism that doesn't interfere with the other end's operations.
 

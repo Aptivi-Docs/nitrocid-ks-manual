@@ -1,8 +1,9 @@
 ---
 description: Your mods and your screensavers
+icon: desktop
 ---
 
-# 🌃 Screensaver Internals
+# Screensaver Internals
 
 <figure><img src="../../../.gitbook/assets/068-saver.png" alt=""><figcaption></figcaption></figure>
 

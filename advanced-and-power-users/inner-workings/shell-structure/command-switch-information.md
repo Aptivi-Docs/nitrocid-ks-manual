@@ -1,8 +1,9 @@
 ---
 description: How can we modify the behavior of a command?
+icon: toggle-off
 ---
 
-# 🎚 Command Switch Information
+# Command Switch Information
 
 For `SwitchInfo` instances, consult the below constructors to create an array of `SwitchInfo` instances when defining your commands:
 

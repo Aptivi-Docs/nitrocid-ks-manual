@@ -1,8 +1,9 @@
 ---
 description: Can you press a key on time?
+icon: keyboard
 ---
 
-# ⌨️ SpeedPress
+# SpeedPress
 
 <figure><img src="../../../../.gitbook/assets/015-speedpress.png" alt=""><figcaption></figcaption></figure>
 

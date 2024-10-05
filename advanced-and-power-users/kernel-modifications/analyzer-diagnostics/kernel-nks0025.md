@@ -1,8 +1,9 @@
 ---
 description: Use TimeDateRenderers.RenderTime()
+icon: chart-mixed
 ---
 
-# 📉 Kernel - NKS0025
+# Kernel - NKS0025
 
 This analyzer provides the following strings:
 

@@ -1,8 +1,9 @@
 ---
 description: How to install Nitrocid KS on macOS
+icon: apple
 ---
 
-# 🍎 macOS
+# macOS
 
 {% hint style="warning" %}
 The installation instructions is based on pre-release version of Nitrocid KS, and the system requirements may change during the development.

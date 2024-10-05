@@ -1,8 +1,9 @@
 ---
 description: Hold your sticky notes!
+icon: memo-pad
 ---
 
-# 🗒️ Notes
+# Notes
 
 <figure><img src="../../../../.gitbook/assets/033-Notes.png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: Calculate your mathematical expressions and convert units
+icon: scale-balanced
 ---
 
-# ⚖️ Unit Converter
+# Unit Converter
 
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.

@@ -1,8 +1,9 @@
 ---
 description: Build the simulator on macOS!
+icon: apple
 ---
 
-# 🍎 Building on macOS
+# Building on macOS
 
 In macOS systems, you can comfortably build Nitrocid KS using the command line, since it's the most lightweight solution. However, you must have the prerequisites before being able to build KS.
 

@@ -1,8 +1,9 @@
 ---
 description: Let's go deeper into the filesystem functionality!
+icon: cabinet-filing
 ---
 
-# 🗃️ Nitrocid Filesystem
+# Nitrocid Filesystem
 
 <figure><img src="../../../.gitbook/assets/063-ifm.png" alt=""><figcaption></figcaption></figure>
 

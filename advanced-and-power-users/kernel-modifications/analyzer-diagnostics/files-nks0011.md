@@ -1,8 +1,9 @@
 ---
 description: Use Listing.GetFileSystemEntries()
+icon: chart-mixed
 ---
 
-# 📉 Files - NKS0011
+# Files - NKS0011
 
 This analyzer provides the following strings:
 

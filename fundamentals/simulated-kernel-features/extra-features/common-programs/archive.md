@@ -1,8 +1,9 @@
 ---
 description: You can manipulate with the archive files!
+icon: box-taped
 ---
 
-# 📦 Archive
+# Archive
 
 <figure><img src="../../../../.gitbook/assets/023-archive.png" alt=""><figcaption></figcaption></figure>
 

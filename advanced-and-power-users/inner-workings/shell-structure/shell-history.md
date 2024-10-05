@@ -1,8 +1,9 @@
 ---
 description: What have you run last time?
+icon: hourglass-end
 ---
 
-# ⏳ Shell History
+# Shell History
 
 The shell history is another UESH shell feature that allows you to recall the last commands that you've executed in the current and in the previous sessions. This is accompanied by a file that shows you a history of commands executed in all the Nitrocid sessions.
 

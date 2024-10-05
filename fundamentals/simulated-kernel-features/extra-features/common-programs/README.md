@@ -1,8 +1,9 @@
 ---
 description: These are your common programs
+icon: toolbox
 ---
 
-# 🧰 Common Programs
+# Common Programs
 
 Nitrocid KS contains some of the common programs that have their own documentation. The following programs are the top 5 trending kernel extensions. In case you don't see an extension here, use the left pane to select a program.
 

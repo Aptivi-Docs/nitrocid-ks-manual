@@ -1,8 +1,9 @@
 ---
 description: Sign here, please.
+icon: pen-fancy
 ---
 
-# ✒ Assembly Signing
+# Assembly Signing
 
 In .NET Framework, there is a function that gives your assembly a strong signature called [Strong Naming](https://learn.microsoft.com/en-us/dotnet/standard/library-guidance/strong-naming). It allows you to sign your assembly — in this case **your mod** — to give it a strong name and be trustworthy according to the Nitrocid mod parser.
 

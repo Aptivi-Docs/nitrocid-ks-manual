@@ -1,8 +1,9 @@
 ---
 description: List of available addon commands
+icon: square-code
 ---
 
-# 📄 Addon Commands List
+# Addon Commands List
 
 This page is a reference that serves as a list of available addon commands.
 

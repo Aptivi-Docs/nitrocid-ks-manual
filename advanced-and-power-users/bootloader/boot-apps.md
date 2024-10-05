@@ -1,8 +1,9 @@
 ---
 description: Deep explanation about the kernel environments.
+icon: envira
 ---
 
-# ▶️ Kernel Environments
+# Kernel Environments
 
 Kernel environments represent classes that are responsible for storing the entry point delegate of the environment, which runs all the necessary features and handles the entire system. They also contain facilities that modify the behavior of the environments by passing arguments to it.
 

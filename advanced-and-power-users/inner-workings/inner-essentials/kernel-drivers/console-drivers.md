@@ -1,8 +1,9 @@
 ---
 description: Changing how the console works
+icon: plug-circle-bolt
 ---
 
-# 🔌 Console Drivers
+# Console Drivers
 
 <figure><img src="../../../../.gitbook/assets/119-inner.png" alt=""><figcaption></figcaption></figure>
 

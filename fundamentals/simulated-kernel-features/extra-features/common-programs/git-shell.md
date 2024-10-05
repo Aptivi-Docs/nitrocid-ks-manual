@@ -1,8 +1,9 @@
 ---
 description: Git Shell in your hands
+icon: code-branch
 ---
 
-# 👩‍💻 Git Shell
+# Git Shell
 
 <figure><img src="../../../../.gitbook/assets/031-gitsh.png" alt=""><figcaption></figcaption></figure>
 

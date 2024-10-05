@@ -1,8 +1,9 @@
 ---
 description: Use Moving.MoveFileOrDir()
+icon: chart-mixed
 ---
 
-# 📉 Files - NKS0015
+# Files - NKS0015
 
 This analyzer provides the following strings:
 

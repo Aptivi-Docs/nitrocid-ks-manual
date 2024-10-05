@@ -1,8 +1,9 @@
 ---
 description: Stopwatch for your favorite races, and timer to time yourself in some process
+icon: alarm-clock
 ---
 
-# ⏰ Stopwatch and Timer
+# Stopwatch and Timer
 
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.

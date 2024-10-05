@@ -1,8 +1,9 @@
 ---
 description: Use TWC.Write()
+icon: chart-mixed
 ---
 
-# 📉 ConsoleBase - NKS0008
+# ConsoleBase - NKS0008
 
 This analyzer provides the following strings:
 

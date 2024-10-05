@@ -1,8 +1,9 @@
 ---
 description: Did you plug the device in?
+icon: plug
 ---
 
-# 🔌 v0.0.7.x series
+# v0.0.7.x series
 
 <figure><img src="https://officialaptivi.files.wordpress.com/2022/02/68747470733a2f2f692e696d6775722e636f6d2f776870656135482e706e67.png" alt=""><figcaption></figcaption></figure>
 

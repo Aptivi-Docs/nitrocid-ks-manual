@@ -1,8 +1,9 @@
 ---
 description: Do you want an app to access your files?
+icon: user-lock
 ---
 
-# 🔏 Privacy Consents
+# Privacy Consents
 
 For controlled access to parts of your system, like your files, we've introduced privacy consents feature which allows you to choose whether to allow a certain operation to be done to your files, data, etc. This increases privacy, especially when apps try to abuse privacy-sensitive features to do something malignant.
 

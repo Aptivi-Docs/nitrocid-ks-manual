@@ -1,8 +1,9 @@
 ---
 description: Your coffee is ready!
+icon: mug-hot
 ---
 
-# ☕ Caffeine
+# Caffeine
 
 <figure><img src="../../../../.gitbook/assets/024-caffeine.png" alt=""><figcaption></figcaption></figure>
 

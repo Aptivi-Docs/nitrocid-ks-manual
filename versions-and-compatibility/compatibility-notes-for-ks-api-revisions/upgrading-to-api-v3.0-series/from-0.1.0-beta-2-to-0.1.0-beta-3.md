@@ -1,8 +1,9 @@
 ---
 description: Guide for upgrading 0.1.0 Beta 2 mods to 0.1.0 Beta 3
+icon: up
 ---
 
-# ⬆ From 0.1.0 Beta 2 to 0.1.0 Beta 3
+# From 0.1.0 Beta 2 to 0.1.0 Beta 3
 
 This page lists all the changes that have been made from 0.1.0 Beta 2 to 0.1.0 Beta 3. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page instead.
 

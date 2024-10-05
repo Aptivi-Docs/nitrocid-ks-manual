@@ -1,8 +1,9 @@
 ---
 description: List of available commands
+icon: square-code
 ---
 
-# 📄 Commands List
+# Commands List
 
 This page is a reference that serves as a list of available commands. For addon commands, consult the below page here:
 

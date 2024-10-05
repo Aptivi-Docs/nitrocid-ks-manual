@@ -1,8 +1,9 @@
 ---
 description: Did you have permission to do this?
+icon: unlock
 ---
 
-# 🔓 Permissions
+# Permissions
 
 Permissions indicate what actions that your user or any of the other users are allowed or denied. They can be used to allow or deny users access to some features in the real-world systems. For example, in the filesystem permissions found in Linux systems, if your user isn't granted the execute permission for a specific file, trying to execute said file will give you the permission denied message, preventing the execution of this file.
 

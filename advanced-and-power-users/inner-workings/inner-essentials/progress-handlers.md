@@ -1,8 +1,9 @@
 ---
 description: Please wait while we're processing your request...
+icon: hourglass-end
 ---
 
-# ⌛ Progress Handlers
+# Progress Handlers
 
 The progress handlers allow you to handle how you want to notify that there is progress going on. For long operations that are split to short operations, such as showing what files are being copied for every single file, you can use this facility to register and unregister your progress handlers.
 

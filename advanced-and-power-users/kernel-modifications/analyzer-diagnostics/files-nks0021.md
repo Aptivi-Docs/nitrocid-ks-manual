@@ -1,8 +1,9 @@
 ---
 description: Use Checking.Rooted()
+icon: chart-mixed
 ---
 
-# 📉 Files - NKS0021
+# Files - NKS0021
 
 This analyzer provides the following strings:
 

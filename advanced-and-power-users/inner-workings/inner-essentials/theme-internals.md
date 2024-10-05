@@ -1,8 +1,9 @@
 ---
 description: Coloring things...
+icon: palette
 ---
 
-# 🎨 Theme Internals
+# Theme Internals
 
 <figure><img src="../../../.gitbook/assets/135-inner.png" alt=""><figcaption></figcaption></figure>
 

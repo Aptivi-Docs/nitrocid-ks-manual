@@ -1,8 +1,9 @@
 ---
 description: Make your HTTP requests
+icon: globe
 ---
 
-# 🌐 HTTP Client
+# HTTP Client
 
 <figure><img src="../../../../.gitbook/assets/006-http.png" alt=""><figcaption></figcaption></figure>
 

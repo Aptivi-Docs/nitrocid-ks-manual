@@ -1,8 +1,9 @@
 ---
 description: Handles all your RSS feeds
+icon: square-rss
 ---
 
-# 📰 RSS Client
+# RSS Client
 
 <figure><img src="../../../../.gitbook/assets/005-rss.png" alt=""><figcaption></figcaption></figure>
 

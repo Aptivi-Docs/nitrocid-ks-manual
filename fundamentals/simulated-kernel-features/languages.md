@@ -1,8 +1,9 @@
 ---
 description: Multilingual Kernel!
+icon: language
 ---
 
-# 🇺🇸 Languages
+# Languages
 
 <figure><img src="../../.gitbook/assets/066-welcomelang.png" alt=""><figcaption></figcaption></figure>
 

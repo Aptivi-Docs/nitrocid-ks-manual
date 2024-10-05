@@ -1,8 +1,9 @@
 ---
 description: Music on Nitrocid KS!
+icon: headphones
 ---
 
-# 🎧 Music Player
+# Music Player
 
 <figure><img src="../../../../.gitbook/assets/032-music.png" alt=""><figcaption></figcaption></figure>
 

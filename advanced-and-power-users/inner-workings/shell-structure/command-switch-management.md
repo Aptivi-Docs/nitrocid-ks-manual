@@ -1,8 +1,9 @@
 ---
 description: We need to manage your command switches
+icon: toggle-large-on
 ---
 
-# ⏲️ Command Switch Management
+# Command Switch Management
 
 There is a static class dedicated to managing the switches, called SwitchManager. It allows you to manage the switches with the values. There are two functions that specialize in getting the switch values: `GetSwitchValues()` and `GetSwitchValue()`.
 

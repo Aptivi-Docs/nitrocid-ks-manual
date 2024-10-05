@@ -1,8 +1,9 @@
 ---
 description: Build the simulator on Android!
+icon: android
 ---
 
-# 📱 Building on Android
+# Building on Android
 
 In Android phones and tablets with Termux installed with proot, you can comfortably build Nitrocid KS using the command line, since it's the most lightweight solution. However, you must have the prerequisites before being able to build KS.
 

@@ -1,8 +1,9 @@
 ---
 description: What do I need to run Nitrocid?
+icon: box
 ---
 
-# 📦 Dependency Information
+# Dependency Information
 
 {% hint style="info" %}
 Windows users don't need to read this page as Windows provides all the necessary tools to facilitate the work of the kernel and its addons.

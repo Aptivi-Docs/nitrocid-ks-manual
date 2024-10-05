@@ -1,8 +1,9 @@
 ---
 description: The original pong game
+icon: table-tennis-paddle-ball
 ---
 
-# 🏓 Pong
+# Pong
 
 <figure><img src="../../../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: What loads your operating system?
+icon: compact-disc
 ---
 
-# 📀 Bootloader
+# Bootloader
 
 A bootloader is the first computer program that is run after the Basic Input/Output System (BIOS) or the Unified Extensible Firmware Interface (UEFI) phase. It's the computer program that is responsible for booting an operating system.
 

@@ -1,8 +1,9 @@
 ---
 description: Making your own themes easily.
+icon: palette
 ---
 
-# 🎨 Theme Studio
+# Theme Studio
 
 <figure><img src="../../../.gitbook/assets/044-themestudio.png" alt=""><figcaption></figcaption></figure>
 

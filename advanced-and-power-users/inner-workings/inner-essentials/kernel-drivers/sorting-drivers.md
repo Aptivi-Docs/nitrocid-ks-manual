@@ -1,8 +1,9 @@
 ---
 description: Changing how the sorting algorithms work
+icon: plug-circle-bolt
 ---
 
-# 🔌 Sorting Drivers
+# Sorting Drivers
 
 <figure><img src="../../../../.gitbook/assets/128-inner.png" alt=""><figcaption></figcaption></figure>
 

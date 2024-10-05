@@ -1,8 +1,9 @@
 ---
 description: This is today's weather forecast.
+icon: sun-cloud
 ---
 
-# ☀️ Weather
+# Weather
 
 <figure><img src="../../../../.gitbook/assets/041-weather.png" alt=""><figcaption></figcaption></figure>
 

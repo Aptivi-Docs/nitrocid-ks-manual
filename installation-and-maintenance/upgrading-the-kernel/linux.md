@@ -1,8 +1,9 @@
 ---
 description: How to upgrade Nitrocid KS on Linux
+icon: linux
 ---
 
-# 🐧 Linux
+# Linux
 
 Upgrading the kernel on Linux is simple, depending on the way you've installed the kernel. To upgrade the kernel, choose your preferred method.
 

@@ -1,8 +1,9 @@
 ---
 description: Use Checking.Exists()
+icon: chart-mixed
 ---
 
-# 📉 Files - NKS0020
+# Files - NKS0020
 
 This analyzer provides the following strings:
 

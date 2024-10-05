@@ -1,8 +1,9 @@
 ---
 description: Here's a list of analyzer diagnostics.
+icon: chart-mixed
 ---
 
-# 📈 Analyzing your Mod
+# Analyzing your Mod
 
 Analyzers, in .NET, are tools that allow you to check the quality of your code and to fix common design pitfalls in your code. These fixes typically tailor the use of better features or the removal of unnecessary code.
 

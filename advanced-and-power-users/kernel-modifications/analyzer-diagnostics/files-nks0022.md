@@ -1,8 +1,9 @@
 ---
 description: Use Parsing.GetInvalidPathChars()
+icon: chart-mixed
 ---
 
-# 📉 Files - NKS0022
+# Files - NKS0022
 
 This analyzer provides the following strings:
 

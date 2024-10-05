@@ -1,8 +1,9 @@
 ---
 description: Use Making.MakeFile()
+icon: chart-mixed
 ---
 
-# 📉 Files - NKS0014
+# Files - NKS0014
 
 This analyzer provides the following strings:
 

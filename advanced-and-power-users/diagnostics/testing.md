@@ -1,8 +1,9 @@
 ---
 description: This page describes how to test the kernel with various features
+icon: vial
 ---
 
-# 🧪 Testing
+# Testing
 
 <figure><img src="../../.gitbook/assets/098-test.png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: How do the kernel arguments work? And how it affects the kernel?
+icon: square-sliders
 ---
 
-# 🎛️ Kernel Arguments
+# Kernel Arguments
 
 <figure><img src="../../../.gitbook/assets/129-inner.png" alt=""><figcaption></figcaption></figure>
 

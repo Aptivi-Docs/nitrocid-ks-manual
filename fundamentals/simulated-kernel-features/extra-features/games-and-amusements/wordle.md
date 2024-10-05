@@ -1,8 +1,9 @@
 ---
 description: Master your words!
+icon: square-w
 ---
 
-# 🔠 Wordle
+# Wordle
 
 <figure><img src="../../../../.gitbook/assets/016-wordle.png" alt=""><figcaption></figcaption></figure>
 

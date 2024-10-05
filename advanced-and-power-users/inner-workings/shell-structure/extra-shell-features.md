@@ -1,8 +1,9 @@
 ---
 description: The UESH shell provides more features than you can imagine!
+icon: square-plus
 ---
 
-# 💠 Extra Shell Features
+# Extra Shell Features
 
 In addition to all the base shell features that UESH contains, the following extra features can be used within the shell. Currently, the following features are supported:
 

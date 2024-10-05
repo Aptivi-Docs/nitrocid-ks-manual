@@ -1,8 +1,9 @@
 ---
 description: Changing how the encoding works
+icon: plug-circle-bolt
 ---
 
-# 🔌 Encoding Drivers
+# Encoding Drivers
 
 <figure><img src="../../../../.gitbook/assets/121-inner.png" alt=""><figcaption></figcaption></figure>
 

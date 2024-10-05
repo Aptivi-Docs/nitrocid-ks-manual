@@ -1,8 +1,9 @@
 ---
 description: Define this command for me!
+icon: info
 ---
 
-# 🔋 Command Information
+# Command Information
 
 Each command you define in your shell must provide a new instance of the `CommandInfo` class holding details about the specified command. The new instance of the class can be made using the constructor defined below:
 

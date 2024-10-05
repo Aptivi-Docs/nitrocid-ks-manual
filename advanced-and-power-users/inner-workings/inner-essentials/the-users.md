@@ -1,8 +1,9 @@
 ---
 description: This page describes the internal workings of the username management
+icon: users
 ---
 
-# 👥 The Users
+# The Users
 
 Nitrocid KS provides you with a rich user management that does basic and advanced operations, such as creating a user, removing a user, listing users, and so on.
 

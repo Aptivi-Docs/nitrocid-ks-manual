@@ -1,8 +1,9 @@
 ---
 description: What is it? How do we simulate the kernel? What aspects are we simulating?
+icon: computer
 ---
 
-# 👾 What is Nitrocid KS?
+# What is Nitrocid KS?
 
 Nitrocid KS attempts to simulate the most basic kernel components and functions, including the hardware parsing, filesystem operations, and drivers. It also demonstrates how the operating system interacts with the kernel.
 

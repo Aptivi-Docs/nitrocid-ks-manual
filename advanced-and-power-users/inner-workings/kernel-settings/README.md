@@ -1,8 +1,9 @@
 ---
 description: How settings works.
+icon: wrench
 ---
 
-# 🔧 Kernel Settings
+# Kernel Settings
 
 The kernel is extensively configurable. It allows you to customize your kernel to fit your needs across all areas, ranging from general kernel settings to networking to screensavers. It's an exciting feature!
 

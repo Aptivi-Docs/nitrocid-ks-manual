@@ -1,8 +1,9 @@
 ---
 description: Use TextTools.SplitNewLines()
+icon: chart-mixed
 ---
 
-# 📉 Text - NKS0054
+# Text - NKS0054
 
 This analyzer provides the following strings:
 

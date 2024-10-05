@@ -1,8 +1,9 @@
 ---
 description: Use KernelPlatform.IsRunningFromScreen()
+icon: chart-mixed
 ---
 
-# 📉 Kernel - NKS0053
+# Kernel - NKS0053
 
 This analyzer provides the following strings:
 

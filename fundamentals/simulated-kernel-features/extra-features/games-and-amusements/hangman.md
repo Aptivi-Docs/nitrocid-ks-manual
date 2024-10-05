@@ -1,8 +1,9 @@
 ---
 description: You have several chances to input the right letter, or you're hung!
+icon: square-a
 ---
 
-# 🔤 Hangman
+# Hangman
 
 <figure><img src="../../../../.gitbook/assets/009-hangman.png" alt=""><figcaption></figcaption></figure>
 

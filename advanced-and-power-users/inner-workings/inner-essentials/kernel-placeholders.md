@@ -1,8 +1,9 @@
 ---
 description: Do you want to <placeholder>?
+icon: billboard
 ---
 
-# 🪧 Kernel Placeholders
+# Kernel Placeholders
 
 <figure><img src="../../../.gitbook/assets/115-inner.png" alt=""><figcaption></figcaption></figure>
 

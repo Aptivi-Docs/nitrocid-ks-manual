@@ -1,8 +1,9 @@
 ---
 description: Build the simulator on Linux!
+icon: linux
 ---
 
-# 🐧 Building on Linux
+# Building on Linux
 
 In Linux systems, you can comfortably build Nitrocid KS using the command line, since it's the most lightweight solution. However, you must have the prerequisites before being able to build KS.
 

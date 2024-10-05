@@ -1,8 +1,9 @@
 ---
 description: Manage your messages with this mail client
+icon: envelope
 ---
 
-# 📧 Mail Client
+# Mail Client
 
 <figure><img src="../../../../.gitbook/assets/007-mail.png" alt=""><figcaption></figcaption></figure>
 

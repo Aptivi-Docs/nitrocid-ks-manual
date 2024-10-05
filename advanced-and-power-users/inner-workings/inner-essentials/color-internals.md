@@ -1,8 +1,9 @@
 ---
 description: All of the colors!
+icon: swatchbook
 ---
 
-# ⛱️ Color Internals
+# Color Internals
 
 <figure><img src="../../../.gitbook/assets/138-inner.png" alt=""><figcaption></figcaption></figure>
 

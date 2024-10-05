@@ -1,8 +1,9 @@
 ---
 description: Threading at its best!
+icon: phone
 ---
 
-# 📞 Kernel Threads
+# Kernel Threads
 
 Threads are a great way to asynchronously do things in your mod! They play a huge role on preventing the block from happening on the main thread. Single-threaded aplications usually get blocked by long operations, but threads solve this problem.
 

@@ -1,8 +1,9 @@
 ---
 description: Use KernelPlatform.IsRunningFromTmux()
+icon: chart-mixed
 ---
 
-# 📉 Kernel - NKS0052
+# Kernel - NKS0052
 
 This analyzer provides the following strings:
 

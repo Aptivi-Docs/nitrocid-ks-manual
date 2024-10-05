@@ -1,8 +1,9 @@
 ---
 description: Changing how the filesystem works
+icon: plug-circle-bolt
 ---
 
-# 🔌 Filesystem Drivers
+# Filesystem Drivers
 
 <figure><img src="../../../../.gitbook/assets/123-inner.png" alt=""><figcaption></figcaption></figure>
 

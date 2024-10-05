@@ -1,8 +1,9 @@
 ---
 description: Choose where to go.
+icon: hand-back-point-up
 ---
 
-# 👆 Boot Choices
+# Boot Choices
 
 Nitrocid's internal bootloader simulates the boot choices as in GRUB and LILO. These allow you to select any operating system to boot from in the real-world. The simulated bootloader lets you select any kernel environment to run the main entry point.
 

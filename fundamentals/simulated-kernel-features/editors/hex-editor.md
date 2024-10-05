@@ -1,8 +1,9 @@
 ---
 description: Edit your hex files reliably and in bytes
+icon: binary
 ---
 
-# 💾 Hex Editor
+# Hex Editor
 
 <figure><img src="../../../.gitbook/assets/Beta3-018-HexEditor.png" alt=""><figcaption></figcaption></figure>
 

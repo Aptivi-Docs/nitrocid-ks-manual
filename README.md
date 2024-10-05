@@ -1,8 +1,9 @@
 ---
 description: Nitrocid KS is a kernel simulator made in C#!
+icon: hand-wave
 ---
 
-# 👋 Welcome!
+# Welcome!
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 

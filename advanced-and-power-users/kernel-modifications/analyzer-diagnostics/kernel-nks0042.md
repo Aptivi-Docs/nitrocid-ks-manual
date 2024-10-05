@@ -1,8 +1,9 @@
 ---
 description: Use KernelPlatform.GetTerminalEmulator()
+icon: chart-mixed
 ---
 
-# 📉 Kernel - NKS0042
+# Kernel - NKS0042
 
 This analyzer provides the following strings:
 

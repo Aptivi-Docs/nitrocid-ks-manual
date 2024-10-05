@@ -1,8 +1,9 @@
 ---
 description: How the settings application works?
+icon: pickaxe
 ---
 
-# ⛏️ Mechanics of Settings App
+# Mechanics of Settings App
 
 The Settings application displays all the available sections on the first page and the available configuration options inside it on the second page. But, how?
 

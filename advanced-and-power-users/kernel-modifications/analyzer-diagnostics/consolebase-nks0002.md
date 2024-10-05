@@ -1,8 +1,9 @@
 ---
 description: Use ConsoleWrapper instead of Console
+icon: chart-mixed
 ---
 
-# 📉 ConsoleBase - NKS0002
+# ConsoleBase - NKS0002
 
 This analyzer provides the following strings:
 

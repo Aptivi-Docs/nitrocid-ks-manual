@@ -1,8 +1,9 @@
 ---
 description: Changing how the encryption works
+icon: plug-circle-bolt
 ---
 
-# 🔌 Encryption Drivers
+# Encryption Drivers
 
 <figure><img src="../../../../.gitbook/assets/122-inner.png" alt=""><figcaption></figcaption></figure>
 

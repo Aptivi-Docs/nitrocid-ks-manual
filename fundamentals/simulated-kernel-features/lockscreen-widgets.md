@@ -1,8 +1,9 @@
 ---
 description: What are the lockscreen widgets?
+icon: calendar-range
 ---
 
-# 📅 Lockscreen Widgets
+# Lockscreen Widgets
 
 Lockscreen widgets is a modern lockscreen feature that gives you quick insights about different information, including the world clock and the news, in a full-screen format. These widgets can be found in the modern logon screen introduced in the 0.1.0 version of Nitrocid. In the lock screen, you can easily switch between the main screen and the widgets (up to 2 widgets).
 

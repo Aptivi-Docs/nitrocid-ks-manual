@@ -1,8 +1,9 @@
 ---
 description: Do you pick the right horse to win?
+icon: horse
 ---
 
-# 🏇 BackRace
+# BackRace
 
 <figure><img src="../../../../.gitbook/assets/010-backrace.png" alt=""><figcaption></figcaption></figure>
 

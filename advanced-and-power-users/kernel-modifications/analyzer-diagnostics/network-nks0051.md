@@ -1,8 +1,9 @@
 ---
 description: Use NetworkTools.NetworkAvailable
+icon: chart-mixed
 ---
 
-# 📉 Network - NKS0051
+# Network - NKS0051
 
 This analyzer provides the following strings:
 

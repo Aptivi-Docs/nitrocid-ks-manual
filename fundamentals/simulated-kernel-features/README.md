@@ -1,8 +1,9 @@
 ---
 description: Ordered list of simulated kernel flow
+icon: star
 ---
 
-# ⭐ Simulated Kernel Features
+# Simulated Kernel Features
 
 <figure><img src="../../.gitbook/assets/002-shell.png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: Your database, here.
+icon: database
 ---
 
-# 🗄️ SQL Editor
+# SQL Editor
 
 <figure><img src="../../../../.gitbook/assets/021-sqleditorcli.png" alt=""><figcaption></figcaption></figure>
 

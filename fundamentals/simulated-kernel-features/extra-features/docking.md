@@ -1,8 +1,9 @@
 ---
 description: You can now dock your screen!
+icon: image
 ---
 
-# 🖼️ Docking
+# Docking
 
 <figure><img src="../../../.gitbook/assets/042-dock.png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: How to install Nitrocid KS on Linux
+icon: linux
 ---
 
-# 🐧 Linux
+# Linux
 
 <figure><img src="../../.gitbook/assets/146-linux.png" alt=""><figcaption></figcaption></figure>
 

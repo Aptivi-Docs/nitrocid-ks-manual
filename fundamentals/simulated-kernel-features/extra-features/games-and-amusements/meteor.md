@@ -2,9 +2,10 @@
 description: >-
   You are a spaceship and the meteors are coming to destroy you. Can you save
   it?
+icon: meteor
 ---
 
-# ☄️ Meteor
+# Meteor
 
 <figure><img src="../../../../.gitbook/assets/008-meteor.png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: Calculate your mathematical expressions
+icon: calculator
 ---
 
-# 🔢 Calculator
+# Calculator
 
 <figure><img src="../../../../.gitbook/assets/028-calc.png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: The time has come!
+icon: clock
 ---
 
-# 🕔 v0.0.5.x series
+# v0.0.5.x series
 
 The time has come to bring the series to the stable release. It added aliases, permanent color setting, and so on.
 

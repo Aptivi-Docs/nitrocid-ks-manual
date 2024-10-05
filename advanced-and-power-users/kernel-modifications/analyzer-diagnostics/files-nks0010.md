@@ -1,8 +1,9 @@
 ---
 description: Use Listing.CreateList()
+icon: chart-mixed
 ---
 
-# 📉 Files - NKS0010
+# Files - NKS0010
 
 This analyzer provides the following strings:
 

@@ -1,8 +1,9 @@
 ---
 description: Lists all inner workings
+icon: diamond
 ---
 
-# ♦️ Inner Essentials
+# Inner Essentials
 
 Nitrocid KS offers a rich API that is open for any mod created for the current API series of Nitrocid. In order to get started, click on the buttons below to explore:
 

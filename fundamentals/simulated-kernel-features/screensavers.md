@@ -1,8 +1,9 @@
 ---
 description: Screensavers and their usage
+icon: display
 ---
 
-# 🌌 Screensavers
+# Screensavers
 
 <figure><img src="../../.gitbook/assets/068-saver.png" alt=""><figcaption></figcaption></figure>
 

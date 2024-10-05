@@ -1,8 +1,9 @@
 ---
 description: Use Copying.CopyFileOrDir()
+icon: chart-mixed
 ---
 
-# 📉 Files - NKS0012
+# Files - NKS0012
 
 This analyzer provides the following strings:
 

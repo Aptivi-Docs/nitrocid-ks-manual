@@ -1,8 +1,9 @@
 ---
 description: Use KernelPlatform.IsOnWindows()
+icon: chart-mixed
 ---
 
-# 📉 Kernel - NKS0037
+# Kernel - NKS0037
 
 This analyzer provides the following strings:
 

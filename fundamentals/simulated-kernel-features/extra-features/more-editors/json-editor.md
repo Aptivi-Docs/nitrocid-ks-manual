@@ -1,8 +1,9 @@
 ---
 description: Editing your JSON files using just commands
+icon: pen-to-square
 ---
 
-# 🖊️ JSON Editor
+# JSON Editor
 
 <figure><img src="../../../../.gitbook/assets/019-jsoneditorcli.png" alt=""><figcaption></figcaption></figure>
 

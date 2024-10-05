@@ -1,8 +1,9 @@
 ---
 description: What are the shells?
+icon: square-terminal
 ---
 
-# 🐚 Shells
+# Shells
 
 <figure><img src="../../../.gitbook/assets/002-shell.png" alt=""><figcaption></figcaption></figure>
 

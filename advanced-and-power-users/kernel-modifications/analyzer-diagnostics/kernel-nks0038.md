@@ -1,8 +1,9 @@
 ---
 description: Use KernelPlatform.IsOnUnix()
+icon: chart-mixed
 ---
 
-# 📉 Kernel - NKS0038
+# Kernel - NKS0038
 
 This analyzer provides the following strings:
 

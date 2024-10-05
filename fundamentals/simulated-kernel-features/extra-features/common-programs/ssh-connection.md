@@ -1,8 +1,9 @@
 ---
 description: Connecting to your computer remotely...
+icon: house-laptop
 ---
 
-# 🔌 SSH Connection
+# SSH Connection
 
 <figure><img src="../../../../.gitbook/assets/035-ssh.png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: Use KernelPlatform.GetTerminalType()
+icon: chart-mixed
 ---
 
-# 📉 Kernel - NKS0043
+# Kernel - NKS0043
 
 This analyzer provides the following strings:
 

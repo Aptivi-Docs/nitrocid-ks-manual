@@ -1,8 +1,9 @@
 ---
 description: Use SetTitle() from ConsoleExtensions
+icon: chart-mixed
 ---
 
-# 📉 ConsoleBase - NKS0003
+# ConsoleBase - NKS0003
 
 This analyzer provides the following strings:
 

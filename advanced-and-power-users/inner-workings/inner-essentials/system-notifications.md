@@ -1,8 +1,9 @@
 ---
 description: Your notifications are on your way!
+icon: bell
 ---
 
-# 🔔 System Notifications
+# System Notifications
 
 <figure><img src="../../../.gitbook/assets/141-inner.png" alt=""><figcaption></figcaption></figure>
 

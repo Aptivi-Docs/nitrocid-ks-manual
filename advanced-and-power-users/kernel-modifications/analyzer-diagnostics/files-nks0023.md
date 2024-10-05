@@ -1,8 +1,9 @@
 ---
 description: Use Filesystem.NeutralizePath()
+icon: chart-mixed
 ---
 
-# 📉 Files - NKS0023
+# Files - NKS0023
 
 This analyzer provides the following strings:
 

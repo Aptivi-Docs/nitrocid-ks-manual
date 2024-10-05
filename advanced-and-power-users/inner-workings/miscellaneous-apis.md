@@ -2,9 +2,10 @@
 description: >-
   Other inner workings that don't fit with the inner essentials and might be
   useful for your mods
+icon: galaxy
 ---
 
-# 🌀 Miscellaneous APIs
+# Miscellaneous APIs
 
 In addition to the essential APIs that are provided with the Nitrocid kernel that allow you to make awesome mods ranging from simple ones to the most complicated ones, Nitrocid provides some of the useful APIs that don't fit with the category but can be helpful when developing mods.
 

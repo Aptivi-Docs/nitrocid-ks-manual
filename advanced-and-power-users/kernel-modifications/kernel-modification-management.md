@@ -1,8 +1,9 @@
 ---
 description: This page describes how to manage your kernel mods
+icon: wrench
 ---
 
-# 🔧 Managing your Mod
+# Managing your Mod
 
 Kernel modification files are stored in the following directories that are found under the kernel configuration directory:
 

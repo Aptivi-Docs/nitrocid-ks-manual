@@ -1,8 +1,9 @@
 ---
 description: Guide for upgrading 0.0.24.x mods to Beta 1
+icon: up
 ---
 
-# ⬆️ From 0.0.24.x to 0.1.0 Beta 1
+# From 0.0.24.x to 0.1.0 Beta 1
 
 This page lists all the changes that have been made from 0.0.24.x to 0.1.0 Beta 1. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page where it highlights the most important changes. We have made nine milestones prior to the first beta release.
 

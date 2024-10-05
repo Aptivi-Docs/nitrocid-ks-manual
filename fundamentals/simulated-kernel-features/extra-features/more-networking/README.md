@@ -1,8 +1,9 @@
 ---
 description: More networking features
+icon: earth-africa
 ---
 
-# 🌏 More Networking
+# More Networking
 
 In addition to the base networking features that the base Nitrocid kernel features, we have some of the extra features that the networking addons, such as the SFTP shell, ship. Here are the extra features:
 

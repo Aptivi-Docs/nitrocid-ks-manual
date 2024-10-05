@@ -1,8 +1,9 @@
 ---
 description: Each of the settings contain their own format
+icon: screwdriver
 ---
 
-# 🔩 Settings Format
+# Settings Format
 
 This page specifies all the possible configuration formats.
 

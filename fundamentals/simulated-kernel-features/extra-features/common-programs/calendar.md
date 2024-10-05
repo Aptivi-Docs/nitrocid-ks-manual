@@ -1,8 +1,9 @@
 ---
 description: Calendars, events, and reminders
+icon: calendar-days
 ---
 
-# 🗓️ Calendar
+# Calendar
 
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.

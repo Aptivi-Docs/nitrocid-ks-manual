@@ -1,8 +1,9 @@
 ---
 description: Splash screens!
+icon: droplet
 ---
 
-# 💦 Splash Internals
+# Splash Internals
 
 <figure><img src="../../../.gitbook/assets/001-welcome.png" alt=""><figcaption></figcaption></figure>
 

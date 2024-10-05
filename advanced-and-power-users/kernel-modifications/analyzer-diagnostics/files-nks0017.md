@@ -1,8 +1,9 @@
 ---
 description: Use Removing.RemoveDirectory()
+icon: chart-mixed
 ---
 
-# 📉 Files - NKS0017
+# Files - NKS0017
 
 This analyzer provides the following strings:
 

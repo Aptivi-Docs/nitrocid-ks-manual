@@ -1,8 +1,9 @@
 ---
 description: Changing how the network works
+icon: plug-circle-bolt
 ---
 
-# 🔌 Network Drivers
+# Network Drivers
 
 <figure><img src="../../../../.gitbook/assets/125-inner.png" alt=""><figcaption></figcaption></figure>
 

@@ -2,9 +2,10 @@
 description: >-
   NO CHEATING! We're joking, debugging actually helps you find defects in the
   kernel.
+icon: microscope
 ---
 
-# 🔬 Debugging
+# Debugging
 
 In-kernel debugging is a kernel facility that allows you to analyze the kernel components without using Visual Studio. This can be activated by passing `debug` to the kernel executable. This method has two ways.
 

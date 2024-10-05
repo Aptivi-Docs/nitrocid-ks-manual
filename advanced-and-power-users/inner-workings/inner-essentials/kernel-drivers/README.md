@@ -1,8 +1,9 @@
 ---
 description: How the kernel drivers work and their role in the kernel
+icon: plug-circle-bolt
 ---
 
-# 🔌 Kernel Drivers
+# Kernel Drivers
 
 The kernel drivers allows your kernel to provide interfaces for different purposes, from console to filesystem. This is to present the kernel your implementation of different driver types. It's not a device driver, though!
 

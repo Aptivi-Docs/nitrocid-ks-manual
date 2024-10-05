@@ -1,8 +1,9 @@
 ---
 description: This page describes about the available methods of installation.
+icon: compact-disc
 ---
 
-# 📀 Installing the Kernel
+# Installing the Kernel
 
 The kernel simulator can be installed on all the supported platforms. The installation steps are straightforward, but must be followed in order to ensure that the kernel starts right.
 

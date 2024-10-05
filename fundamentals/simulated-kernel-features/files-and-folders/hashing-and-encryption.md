@@ -1,8 +1,9 @@
 ---
 description: We need to verify your files.
+icon: key-skeleton
 ---
 
-# 🔐 Hashing and Encryption
+# Hashing and Encryption
 
 <figure><img src="../../../.gitbook/assets/157-sum.png" alt=""><figcaption></figcaption></figure>
 

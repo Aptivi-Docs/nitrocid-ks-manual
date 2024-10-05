@@ -1,8 +1,9 @@
 ---
 description: Use ReadLine() from InputTools
+icon: chart-mixed
 ---
 
-# 📉 ConsoleBase - NKS0006
+# ConsoleBase - NKS0006
 
 This analyzer provides the following strings:
 

@@ -1,8 +1,9 @@
 ---
 description: Read the manual!
+icon: book-open
 ---
 
-# 📖 Mod Manual Pages
+# Mod Manual Pages
 
 Manual pages for your kernel modifications allow you to learn more about your mod as an end user and to document various parts of your mod as a mod developer. This is akin to manual pages on Linux, except that it's more limited in terms of syntaxes, allowing free-form bodies.
 

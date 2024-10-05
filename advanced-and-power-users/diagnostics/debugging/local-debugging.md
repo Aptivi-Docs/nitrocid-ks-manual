@@ -1,8 +1,9 @@
 ---
 description: Debugging the kernel locally
+icon: bugs
 ---
 
-# 🧬 Local Debugging
+# Local Debugging
 
 Locally debugging the kernel allows you to diagnose the kernel directly on the host computer. Debugging information from different kernel components are saved to a kernel debugging file, `kernelDbg-#.log`, where it is numbered depending on how many times the kernel is run.
 

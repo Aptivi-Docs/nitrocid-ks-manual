@@ -1,8 +1,9 @@
 ---
 description: Use KernelPlatform.IsOnMacOs()
+icon: chart-mixed
 ---
 
-# 📉 Kernel - NKS0041
+# Kernel - NKS0041
 
 This analyzer provides the following strings:
 

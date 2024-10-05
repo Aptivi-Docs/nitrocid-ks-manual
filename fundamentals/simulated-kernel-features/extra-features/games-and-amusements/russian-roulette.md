@@ -1,8 +1,9 @@
 ---
 description: Want to play Russian Roulette, man?
+icon: slot-machine
 ---
 
-# 🎰 Russian Roulette
+# Russian Roulette
 
 <figure><img src="../../../../.gitbook/assets/011-roulette.png" alt=""><figcaption></figcaption></figure>
 

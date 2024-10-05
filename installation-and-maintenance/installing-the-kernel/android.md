@@ -1,8 +1,9 @@
 ---
 description: How to install Nitrocid KS on Android
+icon: android
 ---
 
-# 📱 Android
+# Android
 
 <figure><img src="../../.gitbook/assets/147-android.png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: The snake game!
+icon: snake
 ---
 
-# 🐍 Snaker
+# Snaker
 
 <figure><img src="../../../../.gitbook/assets/013-snaker.png" alt=""><figcaption></figcaption></figure>
 

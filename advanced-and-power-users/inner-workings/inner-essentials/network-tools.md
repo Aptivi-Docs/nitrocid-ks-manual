@@ -1,8 +1,9 @@
 ---
 description: You're connected to the network!
+icon: earth-europe
 ---
 
-# 🌍 Network Tools
+# Network Tools
 
 The network tools allow you to perform basic network operations that Nitrocid KS supports. These tools are used by the basic network features, which you can basically consult its documentation page at:
 

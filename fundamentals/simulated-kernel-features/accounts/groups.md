@@ -1,8 +1,9 @@
 ---
 description: Group of users are here
+icon: people-group
 ---
 
-# 👥 Groups
+# Groups
 
 Grouping the users is a common task for user management, because the groups not only organize users in a consistent manner, but they also derive permissions and other rules to all the users that are part in a group. For example, if a group has a permission that would allow users inside a group to use administrative commands, all the users will get that permission.
 

@@ -1,8 +1,9 @@
 ---
 description: How to install Nitrocid KS on Windows
+icon: windows
 ---
 
-# 💻 Windows
+# Windows
 
 <figure><img src="../../.gitbook/assets/001-welcome.png" alt=""><figcaption></figcaption></figure>
 

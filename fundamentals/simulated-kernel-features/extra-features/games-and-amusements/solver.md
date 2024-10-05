@@ -1,8 +1,9 @@
 ---
 description: Can you solve mathematical equations on time?
+icon: input-numeric
 ---
 
-# 🔢 Solver
+# Solver
 
 <figure><img src="../../../../.gitbook/assets/014-solver.png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: Two or more than two mods talking to each other in Nitrocid
+icon: phone
 ---
 
-# 📞 Inter-Mod Communication
+# Inter-Mod Communication
 
 Inter-Mod Communication allows your mods to execute the publicly-available functions of another mod. It allows you to connect two or more than two mods with each other in a mechanism that doesn't interfere with the other mod's operations.
 

@@ -1,8 +1,9 @@
 ---
 description: How does it work?
+icon: hammer
 ---
 
-# ⚒ Inner Workings
+# Inner Workings
 
 Discovering how the kernel and its components work is great, because it actually increases your knowledge of the kernel. We've prepared various pages for different features, which will be explained below:
 

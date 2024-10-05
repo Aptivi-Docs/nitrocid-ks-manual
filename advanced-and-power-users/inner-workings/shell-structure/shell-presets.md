@@ -1,8 +1,9 @@
 ---
 description: How do you want to display your prompt?
+icon: brush
 ---
 
-# 📟 Shell Presets
+# Shell Presets
 
 <figure><img src="../../../.gitbook/assets/112-shell.png" alt=""><figcaption></figcaption></figure>
 

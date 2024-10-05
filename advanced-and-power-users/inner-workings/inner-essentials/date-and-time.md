@@ -1,8 +1,9 @@
 ---
 description: Date and time tools
+icon: clock-three
 ---
 
-# 🕙 Date and Time
+# Date and Time
 
 Nitrocid KS provides an API that allows you to perform date and time operations, like rendering them to a string instance, managing time zones, and starting alarms. This feature is found under the `Nitrocid.Kernel.Time` namespace, as this feature is crucial for the kernel to be able to tell the current date (today) and the current time (now).
 

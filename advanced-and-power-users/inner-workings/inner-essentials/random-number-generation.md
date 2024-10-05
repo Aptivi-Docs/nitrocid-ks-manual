@@ -1,8 +1,9 @@
 ---
 description: Your random number generator is here! Let's see if you're lucky.
+icon: slot-machine
 ---
 
-# 🎰 Random Number Generation
+# Random Number Generation
 
 The random number generator is a module that allows you to get a random number from the smallest possible number to the largest possible number. It's available for the majority of the computers, such as your desktop computer, your tablet, and so on.
 

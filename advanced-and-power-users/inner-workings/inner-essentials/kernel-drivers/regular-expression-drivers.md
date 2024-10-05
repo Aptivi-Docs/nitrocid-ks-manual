@@ -1,8 +1,9 @@
 ---
 description: Changing how the regular expression works
+icon: plug-circle-bolt
 ---
 
-# 🔌 Regular Expression Drivers
+# Regular Expression Drivers
 
 <figure><img src="../../../../.gitbook/assets/127-inner.png" alt=""><figcaption></figcaption></figure>
 

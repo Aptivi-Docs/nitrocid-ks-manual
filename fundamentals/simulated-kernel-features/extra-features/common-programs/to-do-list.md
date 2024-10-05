@@ -1,8 +1,9 @@
 ---
 description: Your checkbook
+icon: clipboard-list-check
 ---
 
-# ☑️ To-do List
+# To-do List
 
 <figure><img src="../../../../.gitbook/assets/038-todo.png" alt=""><figcaption></figcaption></figure>
 

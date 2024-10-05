@@ -1,8 +1,9 @@
 ---
 description: You can add your own custom settings, too!
+icon: sliders
 ---
 
-# ⚙️ Custom Settings
+# Custom Settings
 
 <figure><img src="../../../.gitbook/assets/150-custsettings.png" alt=""><figcaption></figcaption></figure>
 

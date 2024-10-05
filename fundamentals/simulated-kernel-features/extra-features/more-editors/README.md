@@ -1,8 +1,9 @@
 ---
 description: More editors are here
+icon: pencil-mechanical
 ---
 
-# 🖊️ More Editors
+# More Editors
 
 <figure><img src="../../../../.gitbook/assets/017-editortui.png" alt=""><figcaption></figcaption></figure>
 

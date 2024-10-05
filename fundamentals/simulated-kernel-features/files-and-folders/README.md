@@ -1,8 +1,9 @@
 ---
 description: Files and folders are essential for your daily computing usage
+icon: folder-open
 ---
 
-# 📂 Files and Folders
+# Files and Folders
 
 <figure><img src="../../../.gitbook/assets/155-listtree.png" alt=""><figcaption></figcaption></figure>
 

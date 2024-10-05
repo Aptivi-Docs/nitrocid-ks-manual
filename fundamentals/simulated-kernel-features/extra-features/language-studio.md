@@ -1,8 +1,9 @@
 ---
 description: Making your own language...
+icon: earth-americas
 ---
 
-# 🌏 Language Studio
+# Language Studio
 
 <figure><img src="../../../.gitbook/assets/043-langstudio.png" alt=""><figcaption></figcaption></figure>
 

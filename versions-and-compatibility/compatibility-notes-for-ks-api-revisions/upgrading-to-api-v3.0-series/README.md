@@ -1,8 +1,9 @@
 ---
 description: Follow the compatibility notes when upgrading your mods to API v3.0 series
+icon: up
 ---
 
-# 🔼 Upgrading to API v3.0 series
+# Upgrading to API v3.0 series
 
 As API v3.0 is still in development, the breaking changes get committed and land here. They describe what broke and what should be used instead.
 

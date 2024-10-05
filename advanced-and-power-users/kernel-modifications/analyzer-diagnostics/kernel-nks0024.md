@@ -1,8 +1,9 @@
 ---
 description: Use TimeZones.GetCurrentZoneInfo()
+icon: chart-mixed
 ---
 
-# 📉 Kernel - NKS0024
+# Kernel - NKS0024
 
 This analyzer provides the following strings:
 

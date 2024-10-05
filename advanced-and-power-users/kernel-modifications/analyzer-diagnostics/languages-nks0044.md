@@ -1,8 +1,9 @@
 ---
 description: Use CultureManager.CurrentCult
+icon: chart-mixed
 ---
 
-# 📉 Languages - NKS0044
+# Languages - NKS0044
 
 This analyzer provides the following strings:
 

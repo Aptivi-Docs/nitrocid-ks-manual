@@ -1,8 +1,9 @@
 ---
 description: Use Checking.FolderExists()
+icon: chart-mixed
 ---
 
-# 📉 Files - NKS0019
+# Files - NKS0019
 
 This analyzer provides the following strings:
 

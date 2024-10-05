@@ -1,8 +1,9 @@
 ---
 description: This page lists all versions with their release notes
+icon: newspaper
 ---
 
-# 🗞️ Version Release Notes
+# Version Release Notes
 
 Every single version of the kernel comes with many changes, including feature additions, general improvements, and bug fixes. This page lists all the kernel series based on the API feature level version that will be listed from the oldest to the latest, with the latest current series being the current API feature level version.
 

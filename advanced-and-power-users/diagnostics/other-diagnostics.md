@@ -1,8 +1,9 @@
 ---
 description: Diagnosing the kernel the other way!
+icon: syringe
 ---
 
-# 💉 Other Diagnostics
+# Other Diagnostics
 
 There are various diagnostic tools that the kernel can make use of, including those listed below.
 

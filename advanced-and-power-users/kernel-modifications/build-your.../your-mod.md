@@ -2,9 +2,10 @@
 description: >-
   This page describes how to make your own custom modification using Visual
   Studio.
+icon: vial
 ---
 
-# 🧪 Building your Mod
+# Building your Mod
 
 You're looking to create a mod for Nitrocid KS! That's great! Make sure that you have Visual Studio installed. Follow the steps to create your first mod.
 

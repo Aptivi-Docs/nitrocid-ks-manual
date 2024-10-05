@@ -1,8 +1,9 @@
 ---
 description: Use TextTools.FormatString() instead of string.Format()
+icon: chart-mixed
 ---
 
-# 📉 Text - NKS0001
+# Text - NKS0001
 
 This analyzer provides the following strings:
 

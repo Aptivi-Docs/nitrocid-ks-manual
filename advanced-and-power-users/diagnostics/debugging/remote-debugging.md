@@ -1,8 +1,9 @@
 ---
 description: Debugging the kernel on LAN
+icon: satellite-dish
 ---
 
-# 🛰️ Remote Debugging
+# Remote Debugging
 
 Remote debugging allows you to remotely diagnose the kernel live. It uses TCP networking to listen to the configurable port.
 

@@ -1,8 +1,9 @@
 ---
 description: Changing how the debug logger works
+icon: plug-circle-bolt
 ---
 
-# 🔌 Debug Logger Drivers
+# Debug Logger Drivers
 
 <figure><img src="../../../../.gitbook/assets/120-inner.png" alt=""><figcaption></figcaption></figure>
 

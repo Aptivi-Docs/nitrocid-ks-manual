@@ -1,8 +1,9 @@
 ---
 description: Changing how the console input works
+icon: plug-circle-bolt
 ---
 
-# 🔌 Input Drivers
+# Input Drivers
 
 The console input driver is one of the supported driver types on Nitrocid KS. These drivers allow you to change how the console input works, thus earning dynamic console input improvements, such as providing better methods to read the console input (like Spectre.Console).
 

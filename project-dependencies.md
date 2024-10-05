@@ -1,8 +1,9 @@
 ---
 description: We depend on...
+icon: block-brick
 ---
 
-# 🧱 Project Dependencies
+# Project Dependencies
 
 In order for Nitrocid KS to work properly, it uses a bunch of libraries for its core functionality and built-in shell applications. You can find the list of dependencies by going to [this link](https://github.com/Aptivi/NitrocidKS/network/dependencies).
 

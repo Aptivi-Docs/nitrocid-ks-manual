@@ -1,8 +1,9 @@
 ---
 description: Trying to find a defect in the kernel? Great! Thanks for your contribution!
+icon: virus-covid
 ---
 
-# 🦠 Diagnostics
+# Diagnostics
 
 <figure><img src="../../.gitbook/assets/096-debug.png" alt=""><figcaption></figcaption></figure>
 

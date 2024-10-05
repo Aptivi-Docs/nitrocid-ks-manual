@@ -1,8 +1,9 @@
 ---
 description: Make your own custom boot style!
+icon: boot-heeled
 ---
 
-# 💄 Custom Boot Styles
+# Custom Boot Styles
 
 When Nitrocid reads the configuration file, the bootloader parses the boot style name and attempts to load that style. Your mods can load custom boot styles by consulting functions in the `BootStyleManager` class that allows you to add your own custom boot style to the bootloader.
 

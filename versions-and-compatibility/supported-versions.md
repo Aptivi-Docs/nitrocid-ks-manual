@@ -1,8 +1,9 @@
 ---
 description: This page lists all the supported version series and their history.
+icon: badge-check
 ---
 
-# 🔱 Supported Versions
+# Supported Versions
 
 Nitrocid KS has a wide assortment of versions developed within its entire lifetime, with 0.0.1 being the very first version released on February 22, 2018. However, we can't keep supporting all the versions of the project at the same time, so we've made a table of supported version series.
 

@@ -1,8 +1,9 @@
 ---
 description: Use SetConsoleColor(Color) from KernelColorTools
+icon: chart-mixed
 ---
 
-# 📉 ConsoleBase - NKS0004
+# ConsoleBase - NKS0004
 
 This analyzer provides the following strings:
 

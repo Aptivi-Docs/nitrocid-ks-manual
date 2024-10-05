@@ -1,8 +1,9 @@
 ---
 description: Reflecting things...
+icon: lock-keyhole
 ---
 
-# 🔐 Assembly Reflection
+# Assembly Reflection
 
 Nitrocid KS provides you with reflection tools to make using it easier for mods that want to use this feature for the following reasons:
 

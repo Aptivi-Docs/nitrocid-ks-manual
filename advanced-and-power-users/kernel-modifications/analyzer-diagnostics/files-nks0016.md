@@ -1,8 +1,9 @@
 ---
 description: Use Removing.RemoveFile()
+icon: chart-mixed
 ---
 
-# 📉 Files - NKS0016
+# Files - NKS0016
 
 This analyzer provides the following strings:
 

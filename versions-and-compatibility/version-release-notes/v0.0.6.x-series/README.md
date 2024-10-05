@@ -1,8 +1,9 @@
 ---
 description: The book is done!
+icon: book
 ---
 
-# 📕 v0.0.6.x series
+# v0.0.6.x series
 
 The whole series book was done and it was published with the release of 0.0.6.0 on June 19, 2019. This series was known to have started the real documentation of the kernel which evolved to this very documentation.
 

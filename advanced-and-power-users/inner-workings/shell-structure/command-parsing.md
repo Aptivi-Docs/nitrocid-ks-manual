@@ -1,8 +1,9 @@
 ---
 description: How command parsing works
+icon: badge-check
 ---
 
-# 🗜️ Command Parsing
+# Command Parsing
 
 Once the `GetLine()` function gets your input, it attempts to split any command with the semicolon between them, like:
 

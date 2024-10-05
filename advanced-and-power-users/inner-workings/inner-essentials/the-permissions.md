@@ -1,8 +1,9 @@
 ---
 description: How do the permissions work?
+icon: key
 ---
 
-# 🔐 The Permissions
+# The Permissions
 
 Permissions are the authorities that are permitted to the user. It allows the kernel user to gain slightly more power than the absolute normal user.
 

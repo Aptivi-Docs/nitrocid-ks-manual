@@ -1,8 +1,9 @@
 ---
 description: How to use your FTP client
+icon: folder-open
 ---
 
-# 🗃️ FTP Client
+# FTP Client
 
 <figure><img src="../../../../.gitbook/assets/003-ftp.png" alt=""><figcaption></figcaption></figure>
 

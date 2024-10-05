@@ -1,8 +1,9 @@
 ---
 description: Inner workings of the help system
+icon: question
 ---
 
-# ❔ Help System
+# Help System
 
 <figure><img src="../../../.gitbook/assets/102-shell.png" alt=""><figcaption></figcaption></figure>
 

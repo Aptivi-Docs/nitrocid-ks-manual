@@ -1,8 +1,9 @@
 ---
 description: This page lists all the migration methods to upgrade your mods
+icon: thumbs-up
 ---
 
-# 👍 Compatibility Notes for KS API Revisions
+# Compatibility Notes for KS API Revisions
 
 Every single API revision comes with their own breaking changes. In order to provide you a satisfying mod development experience, we have to document all the breaking changes that occurred between API revisions and versions inside them.
 

@@ -1,8 +1,9 @@
 ---
 description: Bored already? Try playing games!
+icon: gamepad-modern
 ---
 
-# 🎮 Games and Amusements
+# Games and Amusements
 
 <figure><img src="../../../../.gitbook/assets/008-meteor.png" alt=""><figcaption></figcaption></figure>
 

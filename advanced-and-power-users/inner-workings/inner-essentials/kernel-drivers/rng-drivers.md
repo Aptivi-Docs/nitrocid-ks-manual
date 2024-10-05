@@ -1,8 +1,9 @@
 ---
 description: Changing how the random number generator works
+icon: plug-circle-bolt
 ---
 
-# 🔌 RNG Drivers
+# RNG Drivers
 
 <figure><img src="../../../../.gitbook/assets/126-inner.png" alt=""><figcaption></figcaption></figure>
 

@@ -1,8 +1,9 @@
 ---
 description: Features that are available only in the kernel addons
+icon: sparkles
 ---
 
-# 🌟 Extra Features
+# Extra Features
 
 In addition to the base kernel features that are highlighted in the list of simulated kernel features after this master page, the kernel also provides extra features if their associated addons are installed to the kernel.
 

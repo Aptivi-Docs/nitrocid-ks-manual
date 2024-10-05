@@ -1,8 +1,9 @@
 ---
 description: How remote procedure works
+icon: satellite
 ---
 
-# 📡 Remote Procedure
+# Remote Procedure
 
 Remote Procedure is a remote controlling system for the kernel that allows external devices connected to the network to execute commands remotely. It can be triggered on and off in the kernel settings. By default, it's turned on.
 
