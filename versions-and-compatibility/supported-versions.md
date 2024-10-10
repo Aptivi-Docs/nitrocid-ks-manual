@@ -1,6 +1,6 @@
 ---
-description: This page lists all the supported version series and their history.
 icon: badge-check
+description: This page lists all the supported version series and their history.
 ---
 
 # Supported Versions
@@ -51,6 +51,7 @@ This revision of the third generation API is currently under development.
     | v0.1.0.26 | 9/14/2024    |           |                   |
     | v0.1.0.27 | 9/15/2024    |           |                   |
     | v0.1.0.28 | 10/3/2024    |           |                   |
+    | v0.1.0.29 | 10/10/2024   |           |                   |
 *   Version v0.1.1.x series\
 
 
@@ -79,6 +80,7 @@ This revision of the third generation API is currently under development.
     | v0.1.1.20 | 9/14/2024    |           |                   |
     | v0.1.1.21 | 9/15/2024    |           |                   |
     | v0.1.1.22 | 10/3/2024    |           |                   |
+    | v0.1.1.23 | 10/10/2024   |           |                   |
 {% endtab %}
 
 {% tab title="API v2.1" %}
@@ -125,6 +127,7 @@ This revision of the API is currently supported until 12/31/2024.
 | v0.0.24.37 | 9/3/2024     |            |                   |
 | v0.0.24.38 | 9/15/2024    |            |                   |
 | v0.0.24.40 | 9/16/2024    |            |                   |
+| v0.0.24.41 | 10/10/2024   |            |                   |
 {% endtab %}
 {% endtabs %}
 
