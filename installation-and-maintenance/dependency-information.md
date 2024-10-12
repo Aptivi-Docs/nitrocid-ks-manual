@@ -1,6 +1,6 @@
 ---
-description: What do I need to run Nitrocid?
 icon: box
+description: What do I need to run Nitrocid?
 ---
 
 # Dependency Information
@@ -13,13 +13,17 @@ Windows users don't need to read this page as Windows provides all the necessary
 
 In order to run Nitrocid KS on all the system, you must install the essential requirements as shown in the platform-specific installation pages. However, for Linux and Android systems, you must also install the following dependencies to be able to use Nitrocid.
 
+{% hint style="info" %}
+For [Ubuntu](https://packages.ubuntu.com/search?keywords=icu\&searchon=sourcenames), [Debian](https://packages.debian.org/search?suite=all\&searchon=sourcenames\&keywords=icu), and their alternatives, you can consult a list of `libicu` versions that you can download for your distribution version. Replace `libicuXX` with the library version number applicable for your distribution.
+{% endhint %}
+
 * For Debian and its derivatives (Ubuntu, LMDE, ...)
   * ```sh
     sudo apt install tzdata
     ```
 * For Android (Ubuntu PRoot on Termux)
   * ```sh
-    sudo apt install libicu72 tzdata
+    sudo apt install libicuXX tzdata
     ```
 * For Red Hat Enterprise Linux, Rocky Linux, AlmaLinux, ...
   * ```sh
@@ -67,7 +71,7 @@ If you wish to run Nitrocid 0.0.24.x, you need to install the following dependen
     ```
 * For Android (Ubuntu PRoot on Termux)
   * ```sh
-    sudo apt install inxi libjson-xs-perl libicu70
+    sudo apt install inxi libjson-xs-perl libicuXX
     ```
 * For Red Hat Enterprise Linux, Rocky Linux, AlmaLinux, ...
   * ```sh
