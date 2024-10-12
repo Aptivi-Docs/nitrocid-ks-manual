@@ -1,6 +1,6 @@
 ---
-description: This page lists all versions with their release notes
 icon: newspaper
+description: This page lists all versions with their release notes
 ---
 
 # Version Release Notes
@@ -21,7 +21,7 @@ Here is a list of the older Nitrocid KS version series that are still supported.
 
 ### API v2.1 series
 
-This series is currently supported until the deprecation of .NET Framework.
+This series is currently supported until December 31st, 2024.
 
 {% content-ref url="v0.0.24.x-series.md" %}
 [v0.0.24.x-series.md](v0.0.24.x-series.md)
