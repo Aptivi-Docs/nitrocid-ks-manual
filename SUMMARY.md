@@ -61,6 +61,7 @@
   * [macOS](installation-and-maintenance/upgrading-the-kernel/macos.md)
   * [Linux](installation-and-maintenance/upgrading-the-kernel/linux.md)
   * [Android](installation-and-maintenance/upgrading-the-kernel/android.md)
+* [Nitrocid LIVE!](installation-and-maintenance/nitrocid-live.md)
 * [Dependency Information](installation-and-maintenance/dependency-information.md)
 
 ## Fundamentals
