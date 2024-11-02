@@ -1,6 +1,6 @@
 ---
-description: Nitrocid live distribution!
 icon: play
+description: Nitrocid live distribution!
 ---
 
 # Nitrocid LIVE!
@@ -36,6 +36,14 @@ $ qemu-system-x86_64.exe -cdrom "/f/Downloads/NKS_Live_amd64.iso" -m 8G -cpu max
 Change the `"/f/Downloads/NKS_Live_amd64.iso"` part to point to the correct directory.
 {% endhint %}
 
+If everything is OK, you should be greeted with this:
+
+<figure><img src="../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
+
+After this question, you should be able to see Nitrocid KS initializing.
+
+<figure><img src="../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
+
 ### Virtual machine (VMware)
 
 Once you create a new virtual machine with at least 8 GB RAM, click on `CD/DVD`, and click on `Browse`. Find the ISO file that you've downloaded, and double-click on it.
@@ -47,6 +55,12 @@ Afterwards, start the virtual machine. You may need to press ESC in quick succes
 {% hint style="info" %}
 `wpeinit` may crash with blue screen here, so answer N if it crashes.
 {% endhint %}
+
+<figure><img src="../.gitbook/assets/Arch Linux-2024-11-02-12-43-07.png" alt=""><figcaption></figcaption></figure>
+
+After this question, you should be able to see Nitrocid KS initializing.
+
+<figure><img src="../.gitbook/assets/Arch Linux-2024-11-02-12-47-55.png" alt=""><figcaption></figcaption></figure>
 
 ## Real hardware
 
