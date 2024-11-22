@@ -1,6 +1,6 @@
 ---
-description: Explaining the inner workings of all the kernel shells
 icon: square-terminal
+description: Explaining the inner workings of all the kernel shells
 ---
 
 # Shell Structure
@@ -342,8 +342,8 @@ For guidance on how to define your command, click the below button:
 
 For guidance on how to define your command's switches, click the below button:
 
-{% content-ref url="command-switch-information.md" %}
-[command-switch-information.md](command-switch-information.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 For guidance on how to manage your command's switches, click the below button:

@@ -1,9 +1,13 @@
 ---
-description: We need to manage your command switches
 icon: toggle-large-on
+description: We need to manage and define your command switches
 ---
 
-# Command Switch Management
+# Command Switches
+
+The command switches function is split into two categories, which is switch management and switch information definition.
+
+## Switch management
 
 There is a static class dedicated to managing the switches, called SwitchManager. It allows you to manage the switches with the values. There are two functions that specialize in getting the switch values: `GetSwitchValues()` and `GetSwitchValue()`.
 
@@ -94,3 +98,19 @@ The function to perform this check on a specific switch is `IsSwitchValueNumeric
 public static bool IsSwitchValueNumeric(string[] switches, string switchKey)
 ```
 {% endcode %}
+
+## Switch information definition
+
+For `SwitchInfo` instances, consult the below constructors to create an array of `SwitchInfo` instances when defining your commands:
+
+```csharp
+public SwitchInfo(string Switch, string HelpDefinition)
+public SwitchInfo(string Switch, string HelpDefinition, SwitchOptions options)
+public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[] conflictsWith = null, int optionalizeLastRequiredArguments = 0)
+```
+
+{% hint style="info" %}
+You can access the switch options using the `Options` property. The existing properties, like `IsRequired`, are proxies to that property, but are to stay for compatibility.
+
+Try to use the second overload if you want to specify the options, if possible. This allows you to be more expressive in your mod command definition code, making it more readable.
+{% endhint %}
