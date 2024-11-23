@@ -1,6 +1,6 @@
 ---
-description: Follow the compatibility notes when upgrading your mods to API v3.0 series
 icon: up
+description: Follow the compatibility notes when upgrading your mods to API v3.0 series
 ---
 
 # Upgrading to API v3.0 series
@@ -375,3 +375,19 @@ You can consult the list of breaking changes that result from upgrading to Termi
 {% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v5.0" %}
 [API v5.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v5.0)
 {% endcontent-ref %}
+
+## From 0.1.1.13 to 0.1.2
+
+This version is yet another futuristic magic that brings in feature additions and spectacular improvements. This version is built on top of the 0.1.1 codebase to provide you with the most gorgeous features ever introduced.
+
+{% content-ref url="../../version-release-notes/v0.1.x.x-series.md" %}
+[v0.1.x.x-series.md](../../version-release-notes/v0.1.x.x-series.md)
+{% endcontent-ref %}
+
+### Detailed important changes
+
+This section explains how to adapt the important changes to your mod code so that it works with 0.1.2 and higher. This highlights the most important changes that we have compiled for you.
+
+{% hint style="info" %}
+This section is currently a stub section.
+{% endhint %}

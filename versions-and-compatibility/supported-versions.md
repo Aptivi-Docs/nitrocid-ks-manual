@@ -89,6 +89,11 @@ This revision of the third generation API is currently under development.
     | v0.1.1.25 | 10/17/2024   |           |                   |
     | v0.1.1.26 | 10/20/2024   |           |                   |
     | v0.1.1.27 | TBD          |           |                   |
+* Version v0.1.2.x series
+
+| Version  | Release date | EOL date | Security EOL date |
+| -------- | ------------ | -------- | ----------------- |
+| v0.1.2.0 | TBD          | TBD      | TBD               |
 {% endtab %}
 
 {% tab title="API v2.1" %}

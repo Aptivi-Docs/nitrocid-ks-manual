@@ -1,6 +1,6 @@
 ---
-description: This page lists all the unsupported version series and their history.
 icon: clock-rotate-left
+description: This page lists all the unsupported version series and their history.
 ---
 
 # EOL Versions
@@ -10,6 +10,10 @@ Like all the software in the entire world, Nitrocid KS has support periods for i
 ## List of unsupported version series
 
 {% tabs %}
+{% tab title="API v2.1" %}
+
+{% endtab %}
+
 {% tab title="API v2.0" %}
 This revision is no longer supported.
 
