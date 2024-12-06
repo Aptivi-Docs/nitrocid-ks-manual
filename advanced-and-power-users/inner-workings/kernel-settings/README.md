@@ -1,6 +1,6 @@
 ---
-description: How settings works.
 icon: wrench
+description: How settings works.
 ---
 
 # Kernel Settings
@@ -17,44 +17,54 @@ The kernel configuration files are stored in the below software paths (`Paths.Ap
 When the kernel starts up, different configuration files are read for different purposes. The below settings paths describe the purpose and the type of each (with all the addons).
 
 ```
-d-----          3/2/2024  11:29 AM                KSEvents
-d-----          3/2/2024  11:29 AM                KSMods
-d-----          3/2/2024  11:29 AM                KSReminders
--a----          3/2/2024  11:29 AM              4 Aliases.json
--a----          3/2/2024  11:29 AM            270 AmusementsConfig.json
--a----          3/2/2024  11:29 AM            718 AmusementsSaversConfig.json
--a----          3/2/2024  11:29 AM             38 AmusementsSplashesConfig.json
--a----          3/2/2024  11:29 AM             40 ArchiveConfig.json
--a----          3/2/2024  11:29 AM             46 BassBoomConfig.json
--a----          3/2/2024  11:29 AM             28 BassBoomSaversConfig.json
--a----          3/2/2024  11:29 AM             49 CalendarConfig.json
--a----          3/2/2024  11:29 AM              2 Consents.json
--a----          3/2/2024  11:29 AM             22 ExtensionHandlers.json
--a----          3/2/2024  11:29 AM          30915 ExtraSaversConfig.json
--a----          3/2/2024  11:29 AM            234 ExtraSplashesConfig.json
--a----          3/2/2024  11:29 AM             26 ForecastConfig.json
--a----          3/2/2024  11:29 AM            554 FtpConfig.json
--a----          3/2/2024  11:29 AM             36 GitConfig.json
--a----          3/2/2024  11:29 AM             42 HttpConfig.json
--a----          3/2/2024  11:29 AM            139 JsonConfig.json
--a----          3/2/2024  11:29 AM            399 KernelDriverConfig.json
--a----          3/2/2024  11:29 AM           7174 KernelMainConfig.json
--a----          3/2/2024  11:29 AM             92 KernelSaverConfig.json
--a----          3/2/2024  11:29 AM          47407 KSJournal-0.json
--a----          3/2/2024  11:29 AM            512 MailConfig.json
--a----          3/2/2024  11:29 AM             23 MAL.txt
--a----          3/2/2024  11:29 AM             27 MOTD.txt
--a----          3/2/2024  11:29 AM            218 NameGenSaversConfig.json
--a----          3/2/2024  11:29 AM              2 notes.json
--a----          3/2/2024  11:29 AM            157 RssConfig.json
--a----          3/2/2024  11:29 AM            143 SftpConfig.json
--a----          3/2/2024  11:29 AM            138 ShellHistories.json
--a----          3/2/2024  11:29 AM             41 SqlConfig.json
--a----          3/2/2024  11:29 AM             64 TimersConfig.json
--a----          3/2/2024  11:29 AM             23 TipsConfig.json
--a----          3/2/2024  11:29 AM              4 ToDoList.json
--a----          3/2/2024  11:29 AM              2 UserGroups.json
--a----          3/2/2024  11:29 AM            533 Users.json
+d-----          7/5/2024   4:17 PM                KSContacts
+d-----          7/5/2024   4:15 PM                KSContactsImport
+d-----          6/1/2024   4:41 PM                KSEvents
+d-----          6/1/2024   4:49 PM                KSMods
+d-----          6/1/2024   4:41 PM                KSReminders
+-a----         6/20/2024   7:50 PM              2 Aliases.json
+-a----         12/4/2024  11:58 PM            270 AmusementsConfig.json
+-a----         12/4/2024  11:58 PM            718 AmusementsSaversConfig.json
+-a----         12/4/2024  11:58 PM             38 AmusementsSplashesConfig.json
+-a----         12/4/2024  11:58 PM             40 ArchiveConfig.json
+-a----         12/4/2024  11:58 PM             44 BassBoomConfig.json
+-a----         12/4/2024  11:58 PM             28 BassBoomSaversConfig.json
+-a----         12/4/2024  11:58 PM             49 CalendarConfig.json
+-a----         12/4/2024  11:58 PM              2 Consents.json
+-a----         12/4/2024  11:58 PM             26 ContactsConfig.json
+-a----         12/4/2024  11:58 PM             22 ExtensionHandlers.json
+-a----         12/4/2024  11:58 PM          31717 ExtraSaversConfig.json
+-a----         12/4/2024  11:58 PM            234 ExtraSplashesConfig.json
+-a----         12/4/2024  11:58 PM             26 ForecastConfig.json
+-a----         12/4/2024  11:58 PM            554 FtpConfig.json
+-a----         12/4/2024  11:58 PM             36 GitConfig.json
+-a----         12/4/2024  11:58 PM             42 HttpConfig.json
+-a----         12/4/2024  11:58 PM            139 JsonConfig.json
+-a----         6/20/2024   7:50 PM            285 KernelCustomSettings.json
+-a----         7/11/2024   6:51 PM        2780957 kernelDbg-0.log
+-a----         12/4/2024  11:58 PM            484 KernelDriverConfig.json
+-a----         12/4/2024  11:58 PM           7632 KernelMainConfig.json
+-a----         12/4/2024  11:58 PM             92 KernelSaverConfig.json
+-a----         12/4/2024  11:58 PM             35 KernelSplashConfig.json
+-a----         12/4/2024  11:58 PM            856 KernelWidgetsConfig.json
+-a----          6/1/2024   4:42 PM          42570 KSJournal-0.json
+-a----         12/4/2024  11:58 PM            512 MailConfig.json
+-a----         6/20/2024   7:50 PM             48 MAL.txt
+-a----         6/20/2024   7:50 PM             48 MOTD.txt
+-a----         12/4/2024  11:58 PM            218 NameGenSaversConfig.json
+-a----         6/11/2024   5:56 PM             24 notes.json
+-a----         12/4/2024  11:58 PM            157 RssConfig.json
+-a----         12/4/2024  11:58 PM            143 SftpConfig.json
+-a----         12/4/2024  11:58 PM           2315 ShellHistories.json
+-a----         6/22/2024   5:20 PM            260 SpeedDial.json
+-a----         12/4/2024  11:58 PM             41 SqlConfig.json
+-a----         12/4/2024  11:58 PM             73 SshConfig.json
+-a----         12/4/2024  11:58 PM             70 StocksConfig.json
+-a----         12/4/2024  11:58 PM             64 TimersConfig.json
+-a----         12/4/2024  11:58 PM             23 TipsConfig.json
+-a----          6/1/2024   4:41 PM              4 ToDoList.json
+-a----          6/1/2024   4:41 PM              2 UserGroups.json
+-a----          9/7/2024   9:51 PM            795 Users.json
 ```
 
 ## Settings
@@ -64,8 +74,9 @@ d-----          3/2/2024  11:29 AM                KSReminders
 The kernel provides an easy-to-use tool to seamlessly configure the kernel settings. It can be easily invoked using the `settings` command. Running this command alone provides you with the normal kernel settings. The following switches will change the mode:
 
 * `-saver`: Lets you configure the screensavers
-* `-splash`: Lets you configure the splashes
 * `-addonsaver`: Lets you configure the screensavers from the Extra Screensavers addon
+* `-splash`: Lets you configure the splashes
+* `-addonsplash`: Lets you configure the splashes from the Extra Splashes addon
 * `-driver`: Lets you configure the kernel drivers
 * `-widgets`: Lets you configure the kernel widgets for the lockscreen
 * `-type=configType`: Lets you configure a custom section of the kernel settings, including your mod-defined ones.

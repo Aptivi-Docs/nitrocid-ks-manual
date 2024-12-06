@@ -1,21 +1,13 @@
 ---
-description: How the settings application works?
 icon: pickaxe
+description: How the settings application works?
 ---
 
 # Mechanics of Settings App
 
 The Settings application displays all the available sections on the first page and the available configuration options inside it on the second page. But, how?
 
-The Settings application uses the embedded JSON file inside the kernel to provide it the available configuration options inside each section. Reading these files are done by the Settings app upon starting it up using the `settings` command, which:
-
-| Settings type        | Switch               |
-| -------------------- | -------------------- |
-| Normal               |                      |
-| Screensaver          | `-saver`             |
-| Splash               | `-splash`            |
-| Extra screensavers   | `-addonsaver`        |
-| Other settings types | `-type=settingstype` |
+The Settings application uses the embedded JSON file inside the kernel to provide it the available configuration options inside each section. Reading these files are done by the Settings app upon starting it up using the `settings` command with their appropriate switches in the previous page.
 
 The format of all the settings can be found in the below link.
 

@@ -388,6 +388,65 @@ This version is yet another futuristic magic that brings in feature additions an
 
 This section explains how to adapt the important changes to your mod code so that it works with 0.1.2 and higher. This highlights the most important changes that we have compiled for you.
 
+#### Removed modern debug log look
+
+{% code title="KernelMainConfig.cs" lineNumbers="true" %}
+```csharp
+public bool DebugLegacyLogStyle { get; set; } = true;
+```
+{% endcode %}
+
+We have removed the modern debug log look introduced in the 0.1.0 series, because although it provided a more comfortable look for log reading, we've considered it as a flawed goal due to problems that may come with it, such as log timing differences.
+
+{% hint style="danger" %}
+It's advisable for you to stop using this feature.
+{% endhint %}
+
+#### Removed `SplashDisplaysProgress`
+
+{% code title="BaseSplash.cs" lineNumbers="true" %}
+```csharp
+public virtual bool SplashDisplaysProgress => Info.DisplaysProgress;
+```
+{% endcode %}
+
+{% code title="ISplash.cs" lineNumbers="true" %}
+```csharp
+bool SplashDisplaysProgress { get; }
+```
+{% endcode %}
+
+The above property has been removed, because the `SplashInfo` instance already contains information about whether the splash displays progress information or not. This removal is necessary to maintain consistency.
+
+{% hint style="danger" %}
+It's advisable for you to stop using this property.
+{% endhint %}
+
+#### Removed `ConfigCategory`
+
+{% code title="ConfigCategory.cs" lineNumbers="true" %}
+```csharp
+public enum ConfigCategory
+```
+{% endcode %}
+
+This enumeration went unused as the 0.1.0 configuration has been remade with speed and serialization in mind. Therefore, it got removed as it's of no use. Also, it's limited to only specifying the categories in the main kernel configuration, none of which apply to other configurations, including the custom configuration instances that your mods may install.
+
 {% hint style="info" %}
-This section is currently a stub section.
+A viable alternative, `GetSettingsEntries()`, can be used to get the categories from all configurations.
+{% endhint %}
+
+#### Merged `ListLanguages()` and `ListLanguagesWithCountry()` functions
+
+{% code title="LanguageManager.cs" lineNumbers="true" %}
+```csharp
+public static Dictionary<string, LanguageInfo> ListAllLanguagesWithCountry()
+public static Dictionary<string, LanguageInfo> ListLanguagesWithCountry(string SearchTerm)
+```
+{% endcode %}
+
+The above functions have been merged with the `ListLanguages()` function and it got an extra boolean parameter that does exactly the same thing. The reason was that because we wanted to avoid code repetition.
+
+{% hint style="info" %}
+If you still want to list languages with their countries in the key, you can now move to `ListLanguages`, passing `true` to the last optional argument.
 {% endhint %}

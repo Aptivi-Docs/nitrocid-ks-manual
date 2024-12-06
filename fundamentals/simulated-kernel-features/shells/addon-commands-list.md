@@ -1,6 +1,6 @@
 ---
-description: List of available addon commands
 icon: square-code
+description: List of available addon commands
 ---
 
 # Addon Commands List
@@ -53,13 +53,12 @@ Once you enter the archive shell with the provided archive file path, you can ac
 
 This addon allows you to get access to the BassBoom utility features. You can use the following commands:
 
-| Commands      | Arguments and Switches        |
-| ------------- | ----------------------------- |
-| `lyriclines`  | `<lyric.lrc>`                 |
-| `playlyric`   | `<lyric.lrc>`                 |
-| `playsound`   | `<musicfile>`                 |
-| `musicplayer` | `-r [musicfile\|stationurl]`  |
-| `netfminfo`   | `[-secure] <hostname> <port>` |
+| Commands     | Arguments and Switches        |
+| ------------ | ----------------------------- |
+| `lyriclines` | `<lyric.lrc>`                 |
+| `playlyric`  | `<lyric.lrc>`                 |
+| `playsound`  | `<musicfile>`                 |
+| `netfminfo`  | `[-secure] <hostname> <port>` |
 
 ### Beep Synth Addon
 
@@ -102,6 +101,14 @@ This addon allows you access to the calendar functions. You can use the below co
 |            | `<reminder> <remove> <reminderid>`                |
 |            | `<reminder> <list>`                               |
 |            | `<reminder> <saveall>`                            |
+
+### Chemistry
+
+This addon gives you commands that allow you to interact with the periodic table. You can use the following commands:
+
+| Commands  | Arguments and Switches     |
+| --------- | -------------------------- |
+| `element` | `name/symbol/atomicNumber` |
 
 ### Color Conversion
 
