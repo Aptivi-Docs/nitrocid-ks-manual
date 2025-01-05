@@ -1,6 +1,6 @@
 ---
-description: How to install Nitrocid KS on Linux
 icon: linux
+description: How to install Nitrocid KS on Linux
 ---
 
 # Linux
@@ -26,7 +26,7 @@ To run Nitrocid KS in the absolute minimum requirements, your computer needs to 
 ### KS v0.0.24.0
 
 {% hint style="warning" %}
-We support installing KS 0.0.24.0 until the full deprecation of .NET Framework.
+We no longer support the KS 0.0.24.x series or lower.
 {% endhint %}
 
 To run Nitrocid KS in the absolute minimum requirements, your computer needs to have the following installed:
@@ -67,11 +67,13 @@ For 0.0.24.x or older, files that end with the `-dotnet` prefix means that it's 
 If you're running Ubuntu, you can install KS using the Ubuntu PPA. Just follow these steps:
 
 1. Open your terminal emulator and execute the following:
-   * `sudo add-apt-repository ppa:eofla/kernel-sim`
+   * `sudo add-apt-repository ppa:eofla/nitrocid`
    * `sudo apt update`
-2. Install the `kernel-simulator` package
-   * `sudo apt install kernel-simulator`
-3. Start `ks` or use your app drawer to find `Nitrocid KS`
+2. Install the `nitrocid` package and follow the instructions
+   * `sudo apt install nitrocid`
+3. Start `ks` (appending the `-XX` suffix to indicate the third mod API version part, such as `27`), or use your app drawer to find `Nitrocid KS` corresponding to your installed mod API version
+
+You can choose between the version series that you want to upgrade in the output of the `apt` command when it prompts you to select one of them, as `nitrocid` is a virtual package.
 
 ## Bleeding-edge
 

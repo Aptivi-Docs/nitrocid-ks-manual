@@ -1,6 +1,6 @@
 ---
-description: How to upgrade Nitrocid KS on Linux
 icon: linux
+description: How to upgrade Nitrocid KS on Linux
 ---
 
 # Linux
@@ -27,8 +27,8 @@ If you're running Ubuntu, you can update KS using the Ubuntu PPA. Just follow th
 
 1. Open your terminal emulator and execute the following command, assuming that you've already imported the Ubuntu PPA.
    * `sudo apt update`
-2. Install the `kernel-simulator` package
-   * `sudo apt install kernel-simulator`
-3. Start `ks` or use your app drawer to find `Nitrocid KS`
+2. Install the `nitrocid` package and follow the instructions
+   * `sudo apt install nitrocid`
+3. Start `ks` (appending the `-XX` suffix to indicate the third mod API version part, such as `27`), or use your app drawer to find `Nitrocid KS` corresponding to your installed mod API version
 
-Once you upgrade KS using this method, you can't use your package manager to downgrade the version, so update accordingly. If you really want to downgrade the package, the only safe way to downgrade is to unpack the kernel manually.
+You can choose between the version series that you want to upgrade in the output of the `apt` command when it prompts you to select one of them, as `nitrocid` is a virtual package.

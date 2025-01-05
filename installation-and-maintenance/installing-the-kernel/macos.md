@@ -1,6 +1,6 @@
 ---
-description: How to install Nitrocid KS on macOS
 icon: apple
+description: How to install Nitrocid KS on macOS
 ---
 
 # macOS
@@ -26,7 +26,7 @@ To run Nitrocid KS in the absolute minimum requirements, your computer needs to 
 ### KS v0.0.20.0 or lower
 
 {% hint style="warning" %}
-We support installing KS 0.0.20.0 or lower until **2/22/2027**.
+We no longer support the KS 0.0.24.x series or lower.
 {% endhint %}
 
 The above requirements are applied to the 0.0.20.0 version series or lower. The first version to introduce macOS support is 0.0.16.0. However, if possible, use the recent nightly builds of the upcoming version of the kernel.

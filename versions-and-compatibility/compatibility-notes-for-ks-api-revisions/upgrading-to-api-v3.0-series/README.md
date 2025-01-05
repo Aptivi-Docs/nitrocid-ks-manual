@@ -718,3 +718,9 @@ This is done to prevent the Lite version of Nitrocid KS from being able to run a
 {% hint style="info" %}
 You can use the [inter-addon communication](../../../advanced-and-power-users/kernel-modifications/inter-addon-communication.md) to be able to interact with this addon, since these classes remain public.
 {% endhint %}
+
+#### `Nitrocid.LocaleGen.Core` removed
+
+This NuGet package didn't expose any public API since its inception. It was originally meant to be as a plan for 0.1.0.x to consolidate all the LocaleGen projects and their siblings into one, but it seems that it was never done as of the release of the second beta of 0.1.0.
+
+Now, we've completed the work of consolidation, removing `Nitrocid.LocaleGen.Core` in the process, resulting in such NuGet package being deprecated without an alternative. Additionally, all the internal projects and LocaleGen itself have been migrated into one application that is to be included in the main Nitrocid build output, `Nitrocid.Locales`.

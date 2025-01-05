@@ -61,7 +61,6 @@
   * [macOS](installation-and-maintenance/upgrading-the-kernel/macos.md)
   * [Linux](installation-and-maintenance/upgrading-the-kernel/linux.md)
   * [Android](installation-and-maintenance/upgrading-the-kernel/android.md)
-* [Nitrocid LIVE!](installation-and-maintenance/nitrocid-live.md)
 * [Dependency Information](installation-and-maintenance/dependency-information.md)
 
 ## Fundamentals
@@ -212,6 +211,7 @@
     * [Shell Presets](advanced-and-power-users/inner-workings/shell-structure/shell-presets.md)
     * [Extra Shell Features](advanced-and-power-users/inner-workings/shell-structure/extra-shell-features.md)
   * [Multilingual Kernel](advanced-and-power-users/inner-workings/multilingual-kernel/README.md)
+    * [Locale Tools](advanced-and-power-users/inner-workings/multilingual-kernel/locale-tools.md)
     * [Custom Languages](advanced-and-power-users/inner-workings/multilingual-kernel/custom-languages.md)
   * [Inner Essentials](advanced-and-power-users/inner-workings/inner-essentials/README.md)
     * [Kernel Drivers](advanced-and-power-users/inner-workings/inner-essentials/kernel-drivers/README.md)
