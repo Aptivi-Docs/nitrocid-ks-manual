@@ -1,6 +1,6 @@
 ---
-description: This page describes how to manage your kernel mods
 icon: wrench
+description: This page describes how to manage your kernel mods
 ---
 
 # Managing your Mod
@@ -15,7 +15,7 @@ However, for optional mods, they get loaded late so they can load properly. This
 
 ## Mod parsing
 
-The mod finalization phase gets executed as soon as the mod parser sees the file as a mod (a `.dll` assembly that implements `IMod`), with a call to the `FinalizeMods()` function. Here's what it does:
+The mod finalization phase gets executed as soon as the mod parser sees the file as a mod (a `.dll` assembly that implements `IMod` from `Nitrocid.Kernel.Extensions`), with a call to the `FinalizeMods()` function. Here's what it does:
 
 1. If it sees the script as an instance of `IMod`, it fires the `ModParsed` event
 2. Adds mod dependency path to the assembly lookup path (`KSMods/Deps/Mod-FileVersion/`)
@@ -87,15 +87,7 @@ override ModLoadPriority LoadPriority =>
 
 ## Mod Inter-communication
 
-In addition to the above mod management tools, Nitrocid KS provides you with tools that allow you to communicate with either the other mods or the other addons that implement their publicly-available functions, fields, or properties as in the following overridable mod properties:
-
-{% code title="IMod.cs" lineNumbers="true" %}
-```csharp
-ReadOnlyDictionary<string, Delegate> PubliclyAvailableFunctions { get; }
-ReadOnlyDictionary<string, PropertyInfo> PubliclyAvailableProperties { get; }
-ReadOnlyDictionary<string, FieldInfo> PubliclyAvailableFields { get; }
-```
-{% endcode %}
+In addition to the above mod management tools, Nitrocid KS provides you with tools that allow you to communicate with either the other mods or the other addons that implement their public static functions, fields, or properties.
 
 To get started, follow the two pages below, depending on the type of the communication, to get started:
 
@@ -106,3 +98,15 @@ To get started, follow the two pages below, depending on the type of the communi
 {% content-ref url="inter-addon-communication.md" %}
 [inter-addon-communication.md](inter-addon-communication.md)
 {% endcontent-ref %}
+
+{% hint style="info" %}
+Mod management classes require that you use the inter-addon communication being done against the `Nitrocid.Extras.Mods` addon.
+
+For example, to manage blacklisted mods, do this:
+
+```csharp
+var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "AddModToBlacklist", modManagerType, "MaliciousMod.dll");
+var blacklistedMods = (IEnumerable<string>?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "GetBlacklistedMods", modManagerType) ?? [];
+```
+{% endhint %}

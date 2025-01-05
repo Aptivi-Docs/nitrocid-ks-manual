@@ -1,63 +1,44 @@
 ---
-description: Debugging the kernel locally
 icon: bugs
+description: Debugging the kernel locally
 ---
 
 # Local Debugging
 
-Locally debugging the kernel allows you to diagnose the kernel directly on the host computer. Debugging information from different kernel components are saved to a kernel debugging file, `kernelDbg-#.log`, where it is numbered depending on how many times the kernel is run.
+Locally debugging the kernel allows you to diagnose the kernel directly on the host computer. Debugging information from different kernel components are saved to a kernel debugging log file. Aptivestigate uses the following paths to log the events:
+
+* Windows: `%LOCALAPPDATA%/Aptivi/Logs`
+* Unix: `~/.config/Aptivi/Logs`
+
+{% hint style="info" %}
+The `Logs` directory doesn't necessarily contain files that pertain to what Nitrocid logs, but you can distinguish them using the `Nitrocid` name directly after the `log_` prefix (e.g. `log_Nitrocid_202412300947526611103_1b0264b4-856e-4024-b822-bf384765ae4e.txt`).
+{% endhint %}
 
 ## Structure
 
 The structure of the local debugging log is like the below picture:
 
-<figure><img src="../../../.gitbook/assets/097-debug.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-The local debug logs contain two versions of formatting:
-
-### Classic
+Every line in the local debug logs follow the below structure (if debug information is available):
 
 ```
-date time [level] (method - source:linenum): message
+date time offset [level] (method - source:linenum): message
 ```
-
-Each of these fields have their own values, as follows:
 
 * `date`: The date of the event
 * `time`: The time of the event
-* `level`: One character error level, which is one of:
-  * `T`: Trace verbose message
-  * `D`: Debug verbose message
-  * `I`: Informational message
-  * `W`: Warning message
-  * `E`: Error message
-  * `F`: Fatal error message
+* `offset`: The time zone offset of the event
+* `level`: Logging level, which is one of:
+  * `T`: Trace verbose message (as `DBG`)
+  * `D`: Debug verbose message (as `DBG`)
+  * `I`: Informational message (as `INF`)
+  * `W`: Warning message (as `WRN`)
+  * `E`: Error message (as `ERR`)
+  * `F`: Fatal error message  (as `FTL`)
 * `method`: The method name in which the message was posted
 * `source`: The source code file where the method is found
 * `linenum`: The line number from the source file
-* `message`: The message
-
-### Modern
-
-```
-date time (fully-qualified-method)
-==================================
-
-[level] : message
-```
-
-Each of these fields have their own values, as follows:
-
-* `date`: The date of the event
-* `time`: The time of the event
-* `level`: One character error level, which is one of:
-  * `T`: Trace verbose message
-  * `D`: Debug verbose message
-  * `I`: Informational message
-  * `W`: Warning message
-  * `E`: Error message
-  * `F`: Fatal error message
-* `fully-qualified-method`: The full method name in which the message was posted
 * `message`: The message
 
 ## Debug your Mods
@@ -117,13 +98,3 @@ public static void WriteDebugStackTraceConditional(bool Condition, Exception Ex)
 ```
 
 Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespace.
-
-## Debug quotas
-
-If you want to rotate logs each `n`th message, such as the 10000th message, you can enable this feature by going to the kernel settings and enabling it there. You can also set the number of messages before the log rotation occurs.
-
-If this session's debug quota is exceeded, the new debug file is created with the increasing number. For example, if `kernelDbg-0.log` exceeds 10000 messages, the debugger creates the `kernelDbg-1.log` and writes further messages there, and so on.
-
-{% hint style="info" %}
-You'll need to restart the kernel to make use of this feature.
-{% endhint %}

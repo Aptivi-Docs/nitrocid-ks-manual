@@ -409,6 +409,7 @@ You can use the timer and the stopwatch using the following commands:
 
 | Commands    | Arguments and Switches |
 | ----------- | ---------------------- |
+| `pomodoro`  |                        |
 | `stopwatch` |                        |
 | `timer`     |                        |
 

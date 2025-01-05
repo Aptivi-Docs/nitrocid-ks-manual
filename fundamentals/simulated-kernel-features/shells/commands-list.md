@@ -1,6 +1,6 @@
 ---
-description: List of available commands
 icon: square-code
+description: List of available commands
 ---
 
 # Commands List
@@ -32,10 +32,11 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `cdir`                  |                                                                                  |
 | `changes`               |                                                                                  |
 | `chattr`                | `<file> <add/rem> <attr>`                                                        |
+| `chculture`             | `[-user] <culture>`                                                              |
 | `chdir`                 | `<directory/..>`                                                                 |
 | `chhostname`            | `<hostname>`                                                                     |
 | `chklock`               | `[-waitforunlock] <file>`                                                        |
-| `chlang`                | `[-usesyslang\|-user] <language>`                                                |
+| `chlang`                | `[-user\|-country] <language>`                                                   |
 | `chmal`                 | `[message]`                                                                      |
 | `chmotd`                | `[message]`                                                                      |
 | `choice`                | `[-o\|-t\|-m\|-a] [-single\|-multiple] <answers> <input> [title] [title2] [...]` |
@@ -194,6 +195,7 @@ This shell provides you administrative tools. The following commands are availab
 | `journal`          |                                                  |
 | `lsevents`         |                                                  |
 | `lsusers`          |                                                  |
+| `userculture`      | `<user> <culture/clear>`                         |
 | `userflag`         | `<user> <admin/anonymous/disabled> <false/true>` |
 | `userfullname`     | `<user> <name/clear>`                            |
 | `userinfo`         | `[user]`                                         |

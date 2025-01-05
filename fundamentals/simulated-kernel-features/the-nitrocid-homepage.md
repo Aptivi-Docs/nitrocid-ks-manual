@@ -1,18 +1,18 @@
 ---
-description: Your homepage, your way!
 icon: house
+description: Your homepage, your way!
 ---
 
 # The Nitrocid Homepage
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 Nitrocid KS 0.1.1 introduces you with an awesome homepage that gets started every time you log in, though you can disable it through the kernel settings. It provides you with the following elements:
 
 * Extensible application list
 * Settings and About buttons
-* An analog clock widget
-* Top three RSS feeds
+* A customizable widget that you can turn off and on through the kernel settings
+* Top three RSS feeds (you can turn it off and on through the kernel settings)
 * Keybindings that allow you to control the homepage
 
 {% hint style="info" %}

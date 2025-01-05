@@ -1,13 +1,13 @@
 ---
-description: Use Checking.FolderExists()
 icon: chart-mixed
+description: Use Checking.FolderExists()
 ---
 
 # Files - NKS0019
 
 This analyzer provides the following strings:
 
-<table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>Directory.Exists</code> instead of <code>Checking.FolderExists()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>Checking.FolderExists()</code> instead of <code>Directory.Exists</code></td></tr><tr><td>Description</td><td><code>Checking.FolderExists()</code> neutralizes the provided path to its absolute correct path, while <code>Directory.Exists</code> operates at the executable directory (<code>Environment.CurrentDirectory</code>), which may not be what you want.</td></tr></tbody></table>
+<table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>Directory.Exists</code> instead of <code>FilesystemTools.FolderExists()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>FilesystemTools.FolderExists()</code> instead of <code>Directory.Exists</code></td></tr><tr><td>Description</td><td><code>FilesystemTools.FolderExists()</code> neutralizes the provided path to its absolute correct path, while <code>Directory.Exists</code> operates at the executable directory (<code>Environment.CurrentDirectory</code>), which may not be what you want.</td></tr></tbody></table>
 
 ### Extended Description
 
@@ -33,7 +33,7 @@ To get a brief insight about how this analyzer works, compare the two code block
 
 <pre class="language-csharp" data-title="Somewhere in your mod code..." data-line-numbers><code class="lang-csharp">public static void MyFunction()
 {
-<strong>    Checking.FolderExists("test");
+<strong>    FilesystemTools.FolderExists("test");
 </strong>}
 </code></pre>
 

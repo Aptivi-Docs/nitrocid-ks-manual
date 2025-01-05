@@ -1,13 +1,13 @@
 ---
-description: Use Listing.CreateList()
 icon: chart-mixed
+description: Use Listing.CreateList()
 ---
 
 # Files - NKS0010
 
 This analyzer provides the following strings:
 
-<table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>Directory.GetFileSystemEntries</code> instead of <code>Listing.CreateList()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>Listing.CreateList()</code> instead of <code>Directory.GetFileSystemEntries</code></td></tr><tr><td>Description</td><td><code>Listing.CreateList()</code> returns a list of <code>FileSystemEntry</code> instances that provides you information about a file, as well as a wrapper to the <code>FileSystemInfo</code> instance for that file.</td></tr></tbody></table>
+<table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>Directory.GetFileSystemEntries</code> instead of <code>FilesystemTools.CreateList()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>FilesystemTools.CreateList()</code> instead of <code>Directory.GetFileSystemEntries</code></td></tr><tr><td>Description</td><td><code>FilesystemTools.CreateList()</code> returns a list of <code>FileSystemEntry</code> instances that provides you information about a file, as well as a wrapper to the <code>FileSystemInfo</code> instance for that file.</td></tr></tbody></table>
 
 ### Extended Description
 
@@ -33,7 +33,7 @@ To get a brief insight about how this analyzer works, compare the two code block
 
 <pre class="language-csharp" data-title="Somewhere in your mod code..." data-line-numbers><code class="lang-csharp">public static void MyFunction()
 {
-<strong>    var files = Listing.CreateList(PathsManagement.AppDataPath);
+<strong>    var files = FilesystemTools.CreateList(PathsManagement.AppDataPath);
 </strong>}
 </code></pre>
 

@@ -1,6 +1,6 @@
 ---
-description: Each of the settings contain their own format
 icon: screwdriver
+description: Each of the settings contain their own format
 ---
 
 # Settings Format
@@ -57,12 +57,10 @@ In the `Keys` variable, it contains an array of objects containing the settings 
 
 The variables that can be omitted are specified below:
 
-* `IsInternal`: Specifies whether the variable is internal (can be omitted)
+* `Masked`: Specifies whether the string is a secret or not (shows as asterisks when editing)
   * The type of this variable is a **boolean**
-* `IsEnumerable`: If the variable is an enumerable that can be set, set to `true`
+* `IsEnumeration`: If the variable is an enumeration, set to `true`
   * The type of this variable is a **boolean**
-* `EnumerableIndex`: Required for `IsEnumerable` entries. Specifies the index starting from zero
-  * The type of this variable is an **integer**
 * `IsValuePath`: If the value takes a path, then `true`
   * The type of this variable is a **boolean**
 * `IsPathCurrentPath`: If the value takes a relative path, then `true` to neutralize the input path to the current path
@@ -85,6 +83,7 @@ In special cases, each type might require different variables to be set before t
 * `SDouble`
 * `SPreset`
 * `SFiglet`
+* `SMultivar`
 
 Only the types that require additional configuration are listed below. The below variables must be set to work with these types:
 
@@ -98,8 +97,14 @@ If the target listing is not an enumeration, the list can be obtained using a fu
 
 * `SelectionFunctionName`: The function within the below specified type that returns the list. It must contain no arguments.
   * The type of this variable is a **string**
-* `SelectionFunctionType`: The type containing the function above
+* `SelectionFunctionType`: The type containing the function above (must be a fully-qualified type name)
   * The type of this variable is a **string**
+* `SelectionFunctionArgs`: An array of arguments to be passed to the function (if omitted, nothing is passed to the function)
+  * The type of this variable is an **object** containing the two keys:
+    * `ArgType`: A fully qualified name of a target type (must be simple types, such as `System.String`)
+      * The type of this variable is a **string**
+    * `ArgValue`: A valid value that can be converted to the target type
+      * The type of this variable is a **string**
 * `SelectionFallback`: An array of the fallback values in case the function fails
   * The type of this variable is an **array**
 
@@ -110,9 +115,19 @@ The format is as below:
     "IsEnumeration": false,
     "SelectionFunctionName": "FunctionThatReturnsAList",
     "SelectionFunctionType": "TypeThatImplementsTheFunction",
+    "SelectionFunctionArgs": [
+        {
+            "ArgType": "System.Boolean",
+            "ArgValue": "False"
+        }
+    ],
     "SelectionFallback": [ "Fallback 1" ]
 }
 ```
+
+{% hint style="info" %}
+In the `SelectionFunctionArgs` value, please make sure that you pass the correct number of parameters in their correct order and in their correct types.
+{% endhint %}
 
 #### Case 2
 
@@ -174,6 +189,10 @@ The target list is always a parameterless function that always returns a list th
   * The type of this variable is a **string**
 * `Delimiter`: The delimiter character
   * The type of this variable is a **string**
+* `DelimiterVariable`: The delimiter variable name
+  * The type of this variable is a **string**
+* `DelimiterVariableType`: The type containing the delimiter variable name (must be a fully-qualified type name)
+  * The type of this variable is a **string**
 
 The format is as below:
 
@@ -229,6 +248,30 @@ The format is as below:
     "MaximumValue": 10
 }
 ```
+
+### `SMultivar`
+
+This type is to group multiple settings entries, which are indicated in an array value of the `Variables` key in the entries JSON file. The format is as below:
+
+```json
+{
+    "Name": "Kernel color schemes",
+    "Type": "SMultivar",
+    "Description": "This allows you to set multiple kernel color schemes",
+    "Variables": [
+        {
+            "Name": "User Name Shell Color",
+            "Type": "SColor",
+            "Variable": "UserNameShellColor"
+        },
+        (...)
+    ]
+}
+```
+
+{% hint style="info" %}
+You can nest the `SMultivar` entries, since the `Variables` value gets deserialized into an array of the settings entries instance used internally, and the settings application takes this into account.
+{% endhint %}
 
 ## User Configuration
 

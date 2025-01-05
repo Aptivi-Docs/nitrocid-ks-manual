@@ -1,6 +1,6 @@
 ---
-description: Coloring things...
 icon: palette
+description: Coloring things...
 ---
 
 # Theme Internals
@@ -59,6 +59,7 @@ The following color categories are supported:
 * `Exciting`: Themes that make you excited
 * `Mesmerizing`: Mesmerizing and relaxing themes
 * `Standard`: Standard themes (usually housing the first themes ever released)
+* `Linux`: Linux flavor themes
 {% endhint %}
 
 What follows the metadata is a list of available kernel color types and their color representations using Terminaux's supported color formats, which are linked in the below page:

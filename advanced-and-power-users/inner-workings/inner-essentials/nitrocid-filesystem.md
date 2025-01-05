@@ -1,6 +1,6 @@
 ---
-description: Let's go deeper into the filesystem functionality!
 icon: cabinet-filing
+description: Let's go deeper into the filesystem functionality!
 ---
 
 # Nitrocid Filesystem
@@ -13,24 +13,20 @@ Generally, Nitrocid KS offers the fully-fledged filesystem functionality that al
 [kernel-drivers](kernel-drivers/)
 {% endcontent-ref %}
 
-Your mods can access this, too! However, we'll walk you through the Nitrocid filesystem class hierarchy:
+Your mods can access this, too! The filesystem part of the kernel contain the following namespaces:
 
 * `Nitrocid.Files`
-  * This is the general filesystem namespace containing security-related checks for the validity and openness of the files, like lock checks, which are found in the `FilesystemTools` class.
-* `Nitrocid.Files.Attributes`
-  * This is the namespace responsible for the attribute management for files.
+  * This is the general filesystem namespace containing all filesystem operations and security-related checks for the validity and openness of the files, like lock checks, which are found in the `FilesystemTools` class.
 * `Nitrocid.Files.Editors`
   * This is the namespace that holds the tools for type-specific text file editing tools
 * `Nitrocid.Files.Extensions`
   * This is the namespace responsible for the extension management for files.
 * `Nitrocid.Files.Folders`
-  * This is the namespace that specializes with the listing of folders and querying the current directory.
+  * This is the namespace that contains sorting-related enumerations.
 * `Nitrocid.Files.Instances`
   * This is the namespace that holds filesystem-related classes.
 * `Nitrocid.Files.LineEndings`
-  * This is the namespace responsible for the management of the line endings for text files.
-* `Nitrocid.Files.Operations`
-  * This is the namespace which houses common filesystem operations, such as making, copying, opening, or deleting files and folders.
+  * This is the namespace that holds newline-related enumerations.
 * `Nitrocid.Files.Paths`
   * This is the namespace that is responsible for the management of the kernel path system and the path lookup system.
 
@@ -48,7 +44,7 @@ To learn more about all the available API functions regarding the filesystem, cl
 
 ### Path Checks and Lock Checks
 
-Every filesystem operation committed within the `KS.Files` namespace and its functions get their paths checked with the path neutralizer to make a unified version of the path to point to the file relative to either the current path according to the filesystem routine or to the absolute path provided to the neutralizer. This neutralizer is called `Filesystem.NeutralizePath()`.
+Every filesystem operation committed within the `Nitrocid.Files` namespace and its functions get their paths checked with the path neutralizer to make a unified version of the path to point to the file relative to either the current path according to the filesystem routine or to the absolute path provided to the neutralizer. This neutralizer is called `Filesystem.NeutralizePath()`.
 
 However, the neutralizer also checks for the validity of the path as a mitigation to the Windows 10 NTFS corruption and forced BSOD bugs by calling the `ThrowOnInvalidPath()` function.
 

@@ -384,6 +384,16 @@ This version is yet another futuristic magic that brings in feature additions an
 [v0.1.x.x-series.md](../../version-release-notes/v0.1.x.x-series.md)
 {% endcontent-ref %}
 
+### Updated Terminaux to 6.0
+
+We've updated Terminaux to 6.0 to bring improvements. However, this doesn't come without the cost of having to deal with the breaking changes, which, in this case, is many.
+
+You can consult the list of breaking changes that result from upgrading to Terminaux 6.0 by pressing the below button:
+
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v6.0" %}
+[API v6.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v6.0)
+{% endcontent-ref %}
+
 ### Detailed important changes
 
 This section explains how to adapt the important changes to your mod code so that it works with 0.1.2 and higher. This highlights the most important changes that we have compiled for you.
@@ -449,4 +459,262 @@ The above functions have been merged with the `ListLanguages()` function and it 
 
 {% hint style="info" %}
 If you still want to list languages with their countries in the key, you can now move to `ListLanguages`, passing `true` to the last optional argument.
+{% endhint %}
+
+#### Aptivestigate is used for debugger and crash handler
+
+{% code title="KernelMainConfig.cs" lineNumbers="true" %}
+```csharp
+public bool DebugQuotaCheck { get; set; }
+public int DebugQuotaLines { get; set; } = 10000;
+```
+{% endcode %}
+
+As [Aptivestigate](https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/ytZJv37OLeFyPEHQJtyw/) is now used to handle unhandled crashes and to facilitate the work of the debugger with the help of [Serilog](https://serilog.net/), which already provides the quota system, we've decided to remove the two above settings entries to improve log rotation.
+
+As a consequence, you'll have to implement the `DebugLevel` argument in your debug logger implementation like this:
+
+```csharp
+public override void Write(string text, DebugLevel level)
+{ }
+
+public override void Write(string text, DebugLevel level, params object[] vars)
+{ }
+```
+
+In addition to that, Aptivestigate uses the following paths to log the events:
+
+* Windows: `%LOCALAPPDATA%/Aptivi/Logs`
+* Unix: `~/.config/Aptivi/Logs`
+
+This caused us to remove the `Debugging` kernel path to ensure that all logs that are logged by applications using Aptivestigate are logged in one place.
+
+{% code title="KernelPathType.cs" lineNumbers="true" %}
+```csharp
+public enum KernelPathType
+{
+    (...)
+    Debugging,
+    (...)
+}
+```
+{% endcode %}
+
+{% code title="PathsManagement.cs" lineNumbers="true" %}
+```csharp
+public static string DebuggingPath
+```
+{% endcode %}
+
+{% hint style="info" %}
+Aptivestigate will continue to get updated, despite the low frequency of updates, which is expected. It will be expanded to allow you to control the logging behavior.
+{% endhint %}
+
+#### Screensaver properties are get-only
+
+{% code title="IScreensaver.cs" lineNumbers="true" %}
+```csharp
+string ScreensaverName { get; set; }
+bool ScreensaverContainsFlashingImages { get; set; }
+```
+{% endcode %}
+
+{% code title="BaseScreensaver.cs" lineNumbers="true" %}
+```csharp
+public virtual string ScreensaverName { get; set; } = "BaseScreensaver";
+public virtual bool ScreensaverContainsFlashingImages { get; set; } = false;
+```
+{% endcode %}
+
+The two overridable properties mentioned above have been inappropriately declared to be settable, despite them being read-only informational properties. In order to maintain consistency, we've decided to remove the setter from the property so that you can override them only once. This ensures that all the information present in the screensaver instances are correct.
+
+{% hint style="info" %}
+You should edit the overridden properties so that they don't expose the setters.
+{% endhint %}
+
+#### Culture management is separate from the language management
+
+{% code title="KernelMainConfig.cs" lineNumbers="true" %}
+```csharp
+// Removed
+public bool LangChangeCulture { get; set; }
+
+// Renamed to CurrentCultureName
+public string CurrentCultStr { get; set; } = "en-US";
+```
+{% endcode %}
+
+{% code title="CultureManager.cs" lineNumbers="true" %}
+```csharp
+// Removed
+public static void UpdateCultureDry()
+public static void UpdateCulture()
+public static CultureInfo[] GetCulturesFromCurrentLang()
+public static List<string> GetCultureNamesFromCurrentLang()
+public static CultureInfo[]? GetCulturesFromLang(string Language)
+public static List<string>? GetCultureNamesFromLang(string Language)
+
+// Renamed to CurrentCulture
+public static CultureInfo CurrentCult =>
+    new(Config.MainConfig.CurrentCultStr);
+```
+{% endcode %}
+
+{% code title="LanguageInfo.cs" lineNumbers="true" %}
+```csharp
+// Removed
+public string CultureCode =>
+    cultureCode;
+public CultureInfo[] Cultures =>
+    cultures;
+    
+// Modified to remove cultureCode
+public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001, string cultureCode = "", string country = "")
+public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, string[]? LanguageToken, string cultureCode = "", string country = "")
+```
+{% endcode %}
+
+{% code title="LanguageManager.cs" lineNumbers="true" %}
+```csharp
+// Removed
+public static string InferLanguageFromSystem()
+```
+{% endcode %}
+
+To allow users more flexibility into choosing their own culture that is recognized by the kernel, the above functions that are tagged as removed above are deleted from the public API.
+
+{% hint style="danger" %}
+There are no alternatives for this.
+{% endhint %}
+
+#### Removed `WelcomeMessage` from the public API
+
+{% code title="WelcomeMessage.cs" lineNumbers="true" %}
+```csharp
+public static class WelcomeMessage
+```
+{% endcode %}
+
+This class was not meant to be used by the kernel mods in the first place, because it contained code that was utilized by the kernel startup sequence, which would be inappropriate to use once the kernel boots up. We've decided to remove this class from the API to prevent misuse.
+
+{% hint style="danger" %}
+There are no alternatives for this.
+{% endhint %}
+
+#### Removed fancy console writers
+
+```csharp
+public static class TextDynamicWriters
+public static class TextFancyWriters
+public static class TextMiscWriters
+```
+
+The above classes have been removed, because Terminaux 7.0 is planned to remove the old-school function-based writers, which were marked as obsolete thanks to the new cyclic writers. Those writers were in use by the above static classes.
+
+{% code title="TextWriters.cs" lineNumbers="true" %}
+```csharp
+public static void WriteListEntry(string entry, string value, KernelColorType ListKeyColor, KernelColorType ListValueColor, int indent = 0)
+public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, KernelColorType ListKeyColor, KernelColorType ListValueColor)
+public static void WriteList<T>(IEnumerable<T> List, KernelColorType ListKeyColor, KernelColorType ListValueColor)
+```
+{% endcode %}
+
+In addition to that, the above functions were removed from the `TextWriters` class for the same reason.
+
+{% hint style="info" %}
+Consult the Terminaux documentation for more information on how to use the cyclic writers [here](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-writers/cyclic-writers).
+{% endhint %}
+
+#### `SelectionFunctionType` changes
+
+When using the above settings entry key, you'll need to provide the fully-qualified type name, not just a short name. This is to avoid ambiguity.
+
+#### Merged filesystem operation classes
+
+{% code title="All operation classes" lineNumbers="true" %}
+```csharp
+public static class (OperationName)
+
+// Relocated to FilesystemTools partial class
+public static partial class FilesystemTools
+```
+{% endcode %}
+
+To avoid fragmentation in the filesystem tools, such as `Opening`, `Listing`, and `Checking`, we've decided to merge such classes, except those that are not directly related to the filesystem operation, to the `FilesystemTools` partial class in the `Nitrocid.Files` namespace.
+
+{% hint style="info" %}
+You'll need to update your using clause to point to `Nitrocid.Files` and to update your references to such classes to point to `FilesystemTools`.
+{% endhint %}
+
+#### `CheckConfigVariables()` simplified for `SMultivar` support
+
+{% code title="ConfigTools.cs" lineNumbers="true" %}
+```csharp
+public static Dictionary<string, bool> CheckConfigVariables()
+public static Dictionary<string, bool> CheckConfigVariables(string configTypeName)
+public static Dictionary<string, bool> CheckConfigVariables(BaseKernelConfig? entries)
+public static Dictionary<string, bool> CheckConfigVariables(SettingsEntry[]? entries, BaseKernelConfig? config)
+```
+{% endcode %}
+
+The above function's return value has changed to `List<bool>`. Consequently, you'll no longer be able to get information about which variable is for which, because we've omitted the configuration names.
+
+{% hint style="info" %}
+In the final version of 0.1.2, we promise to restore the original functionality, but it's going to use a tuple instead of a dictionary because of a potential of multiple settings keys, especially the `SMultivar` keys, that can hold the same name in the same configuration entry.
+{% endhint %}
+
+#### Inter-addon and inter-mod communication updated
+
+We've updated the inter-addon and the inter-mod communication so that you can work with the mods and the addons with more depth. See the changes here.
+
+{% content-ref url="../../../advanced-and-power-users/kernel-modifications/inter-mod-communication.md" %}
+[inter-mod-communication.md](../../../advanced-and-power-users/kernel-modifications/inter-mod-communication.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../../advanced-and-power-users/kernel-modifications/inter-addon-communication.md" %}
+[inter-addon-communication.md](../../../advanced-and-power-users/kernel-modifications/inter-addon-communication.md)
+{% endcontent-ref %}
+
+#### Added info-based reflection functions
+
+{% code title="FieldManager.cs" lineNumbers="true" %}
+```csharp
+// UseGeneral removed
+public static object? GetFieldValue(string Variable, Type? VariableType, bool UseGeneral = false)
+
+// Entire function removed
+public static FieldInfo? GetFieldGeneral(string Variable)
+```
+{% endcode %}
+
+{% code title="PropertyManager.cs" lineNumbers="true" %}
+```csharp
+// UseGeneral removed
+public static object? GetPropertyValue(string Variable, Type? VariableType, bool UseGeneral = false)
+
+// Entire function removed
+public static PropertyInfo? GetPropertyGeneral(string Variable)
+```
+{% endcode %}
+
+We've added reflection functions that used the following:
+
+* `MethodBase`: for method reflection
+* `FieldInfo`: for field reflection
+* `PropertyInfo`: for property reflection
+
+As a consequence, we've removed the `Get*General()` functions due to internal structural changes in regards to the configuration reading mechanism, as well as have changed the signature of the `Get*Value()` functions so that they don't have an optional parameter, `UseGeneral`, anymore.
+
+{% hint style="info" %}
+`Get*Value()` functions are already aware of the settings-related properties.
+{% endhint %}
+
+#### Moved `Nitrocid.Modifications` to the `Nitrocid.Extras.Mods` addon
+
+This affects all the classes except the most essential ones and the inter-mod communication class. They have been moved to this addon, so even the kernel requires the usage of the inter-addon communication in order to be able to utilize mod functions.
+
+This is done to prevent the Lite version of Nitrocid KS from being able to run any mod, provided that the necessary mod code, including the starting functions, have been moved to that addon.
+
+{% hint style="info" %}
+You can use the [inter-addon communication](../../../advanced-and-power-users/kernel-modifications/inter-addon-communication.md) to be able to interact with this addon, since these classes remain public.
 {% endhint %}

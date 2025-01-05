@@ -1,6 +1,6 @@
 ---
-description: Reflecting things...
 icon: lock-keyhole
+description: Reflecting things...
 ---
 
 # Assembly Reflection
@@ -19,7 +19,7 @@ This feature of Nitrocid KS is essential in cases where the default .NET impleme
 
 The reflection part of Nitrocid KS contains tools that allow you to manipulate with the arrays, such as sorting and randomizing array elements. Here are the following functions that you can use:
 
-* `RandomizeArray()`: Randomizes the array using the [Schwartzian's transform](http://en.wikipedia.org/wiki/Schwartzian\_transform) formula.
+* `RandomizeArray()`: Randomizes the array using the [Schwartzian's transform](http://en.wikipedia.org/wiki/Schwartzian_transform) formula.
 * `RandomizeArraySystem()`: Randomizes the array using .NET 8.0's [Random.Shared.Shuffle()](https://learn.microsoft.com/en-us/dotnet/api/system.random.shuffle) function.
 * `SortNumbers()`: Sorts the numbers using one of the sorting algorithms implemented by your array sorting drivers.
 
@@ -82,7 +82,7 @@ In addition to the functions available in the above two classes, you can get all
 
 ## Method tools
 
-In addition to property and field tools, the reflection feature of Nitrocid KS also allows you to manage methods and invoke them by their name. This set of tools allows you to do the following:
+In addition to property and field tools, the reflection feature of Nitrocid KS also allows you to manage methods and invoke them by their name or by their `MethodBase` instance. This set of tools allows you to do the following:
 
 * `GetMethod()`: This function allows you to get a public method from either one of the Nitrocid kernel types or a specific type inside and outside Nitrocid.
 * `InvokeMethod()`: This function allows you to invoke a non-static method, provided that you already have an object that is of a specific type that implements the public method.

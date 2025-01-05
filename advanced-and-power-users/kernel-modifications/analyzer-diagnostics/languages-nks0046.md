@@ -1,6 +1,6 @@
 ---
-description: Use CultureManager.UpdateCulture
 icon: chart-mixed
+description: Use CultureManager.UpdateCulture
 ---
 
 # Languages - NKS0046
@@ -11,7 +11,7 @@ This analyzer provides the following strings:
 
 ### Extended Description
 
-This code analyzer detects the usage of `CurrentUICulture` from the `CultureInfo` class found in the `System.Globalizaiton` namespace.
+This code analyzer detects the usage of `CurrentUICulture` from the `CultureInfo` class found in the `System.Globalization` namespace.
 
 The `CultureInfo.CurrentUICulture` property gives you your current UI culture for your applications. However, Nitrocid is not a GUI application, so we've decided to make our own culture handler that respects your kernel settings.
 

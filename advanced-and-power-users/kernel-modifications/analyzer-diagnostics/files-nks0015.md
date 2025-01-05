@@ -1,13 +1,13 @@
 ---
-description: Use Moving.MoveFileOrDir()
 icon: chart-mixed
+description: Use Moving.MoveFileOrDir()
 ---
 
 # Files - NKS0015
 
 This analyzer provides the following strings:
 
-<table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>File.Move</code> instead of <code>Moving.MoveFileOrDir()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>Moving.MoveFileOrDir()</code> instead of <code>File.Move</code></td></tr><tr><td>Description</td><td><code>Moving.MoveFileOrDir()</code> neutralizes the provided path to its absolute correct path, while <code>File.Move</code> operates at the executable directory (<code>Environment.CurrentDirectory</code>), which may not be what you want.</td></tr></tbody></table>
+<table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>File.Move</code> instead of <code>FilesystemTools.MoveFileOrDir()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>FilesystemTools.MoveFileOrDir()</code> instead of <code>File.Move</code></td></tr><tr><td>Description</td><td><code>FilesystemTools.MoveFileOrDir()</code> neutralizes the provided path to its absolute correct path, while <code>File.Move</code> operates at the executable directory (<code>Environment.CurrentDirectory</code>), which may not be what you want.</td></tr></tbody></table>
 
 ### Extended Description
 
@@ -33,7 +33,7 @@ To get a brief insight about how this analyzer works, compare the two code block
 
 <pre class="language-csharp" data-title="Somewhere in your mod code..." data-line-numbers><code class="lang-csharp">public static void MyFunction()
 {
-<strong>    Moving.MoveFileOrDir("test.txt", PathsManagement.AppDataPath);
+<strong>    FilesystemTools.MoveFileOrDir("test.txt", PathsManagement.AppDataPath);
 </strong>}
 </code></pre>
 

@@ -1,6 +1,6 @@
 ---
-description: Your mods and your screensavers
 icon: desktop
+description: Your mods and your screensavers
 ---
 
 # Screensaver Internals
@@ -141,4 +141,15 @@ if (ScreensaverManager.ScreenRefreshRequired || BaseInteractiveTui.RedrawRequire
 
 {% hint style="warning" %}
 This property returns `true` if the screensaver has been entered. However, if you need to get the value of this property, you must do so once, because it gets reset to `false` once it's called.
+{% endhint %}
+
+### Unified delays
+
+Some screensavers allow you to specify a next draw delay upon completion of the `ScreensaverLogic()` code. You can enable the generalized delay for all the screensavers that use the `Delay()` function in the `ScreensaverManager` class using the following settings:
+
+* `ScreensaverUnifiedDelay`: Whether to force all screensavers to delay writing in the specified amount of milliseconds or to let all screensavers decide by themselves.
+* `ScreensaverDelay`: How many milliseconds to delay (doesn't apply when unified delay is disabled)
+
+{% hint style="warning" %}
+Screensavers that use `SleepNoBlock()` from `ThreadManager` don't get affected by the unified delay switch.
 {% endhint %}

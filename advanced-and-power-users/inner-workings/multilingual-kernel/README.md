@@ -1,6 +1,6 @@
 ---
-description: Describes about the inner workings of the kernel language feature
 icon: earth-africa
+description: Describes about the inner workings of the kernel language feature
 ---
 
 # Multilingual Kernel
@@ -20,7 +20,9 @@ The kernel languages use the JSON localization files that store the following in
 * `Localizations`: Contains translated strings
   * The type of this variable is an **array** of **strings**
 
-The source of the generated JSON files come from `Nitrocid.LocaleGen`, a tool shipped with the kernel.
+{% hint style="info" %}
+The source of the generated JSON files come from `Nitrocid.Locales`, a tool shipped with the kernel.
+{% endhint %}
 
 ## Locale Generator
 
@@ -39,7 +41,6 @@ Each copy of Nitrocid KS provides you two placeholder folders, `CustomLanguages`
         "name": "Language",
         "transliterable": false,
         "codepage": 65001,
-        "culture": "en-GB",
         "country": "United Kingdom"
     }
 ]
@@ -56,7 +57,6 @@ Both the language entries are required.
         "name": "Language",
         "transliterable": true,
         "codepage": 65001,
-        "culture": "en-GB",
         "country": "United Kingdom"
     },
     {
@@ -64,7 +64,6 @@ Both the language entries are required.
         "name": "Language",
         "transliterable": true,
         "codepage": 65001,
-        "culture": "en-GB",
         "country": "United Kingdom"
     }
 ]
@@ -82,8 +81,6 @@ The variables are shown below:
   * The type of this variable is a **boolean**
 * `codepage`: The codepage to use (Windows only)
   * The type of this variable is an **integer**
-* `culture`: The culture to use
-  * The type of this variable is a **string**
 * `country`: The country in which the language is being used
   * The type of this variable is a **string**
 
@@ -136,3 +133,41 @@ To learn more about custom languages and how they work, click on the button belo
 {% content-ref url="custom-languages.md" %}
 [custom-languages.md](custom-languages.md)
 {% endcontent-ref %}
+
+### `LocalizedString` struct
+
+The `LocalizedString` struct allows you to easily store both the original untranslated text and the localized translated text. You can easily create a new instance of this struct by casting it either implicitly or explicitly to a string.
+
+```csharp
+// Implicit cast from the string
+LocalizedString locStr1 = "Hello!";
+
+// Explicit cast from the string
+LocalizedString locStr2 = (LocalizedString)"Hello!";
+
+// Using the constructor
+LocalizedString locStr3 = new("Hello!");
+```
+
+The struct contains the following properties:
+
+* `Original`: The original string that was passed to the constructor
+* `Localized`: The string that is localized to the current language
+
+You can get the localized string by either using the `ToString()` function, by getting the value of `Localized` property, or by casting the struct either implicitly or explicitly to a string.
+
+```csharp
+// Using the ToString() function
+string locStrRes1 = locStr1.ToString();
+
+// Using the Localized property
+string locStrRes2 = locStr1.Localized;
+
+// Using implicit and explicit casting
+string locStrRes3 = locStr1;
+string locStrRes4 = (string)locStr1;
+```
+
+{% hint style="info" %}
+This is useful when defining variables that don't necessarily get regenerated dynamically. You should still use those variables to get the translated versions, given that those variables already provide fields or properties that use this struct.
+{% endhint %}

@@ -1,101 +1,167 @@
 ---
-description: Two or more than two mods talking to each other in Nitrocid
 icon: phone
+description: Two or more than two mods talking to each other in Nitrocid
 ---
 
 # Inter-Mod Communication
 
 Inter-Mod Communication allows your mods to execute the publicly-available functions of another mod. It allows you to connect two or more than two mods with each other in a mechanism that doesn't interfere with the other mod's operations.
 
-### How to make a function publicly accessible?
+## Prerequisites for inter-mod communication
 
-You can make a function publicly accessible in one mod by implementing the `PubliclyAvailableFunctions` with a read-only dictionary that contains all your publicly-available functions in your main mod entry point.
+In order to be able to communicate with the other mods in your mod, you'll need to get the mod types and to select a type that you'll need to work on. This is to avoid ambiguity that may be caused by calling functions, properties, or fields that may have the same name. You can do the following:
 
-{% code title="Interface declaration" %}
+### Listing types
+
+You can now list all the available public types from a mod. You must use this before being able to perform the rest of the communication functions, such as getting functions and executing them.
+
+{% code title="InterModTools.cs" lineNumbers="true" %}
 ```csharp
-ReadOnlyDictionary<string, Delegate> PubliclyAvailableFunctions { get; }
+public static Type[] ListAvailableTypes(string modName)
 ```
 {% endcode %}
 
-The key is the function name that the mod manager uses to search for a function when invoking the function executor. The value, which is a delegate of either a function or a method (subs in Visual Basic), can either take no parameters or take parameters of varying sizes.
+{% hint style="info" %}
+In order for a type to appear, it must be public and visible.
 
-To execute custom mod functions in another mod, you must specify the mod name and the function to execute in the `ExecuteCustomModFunction()` method:
+The above functions return an empty array under the following conditions:
+
+* There are no public and/or visible types.
+{% endhint %}
+
+### Getting types
+
+You can get a specific type from a mod using the fully-qualified type name. These functions are used implicitly when passing the type name instead of the type instance returned by the below functions:
+
+{% code title="InterModTools.cs" lineNumbers="true" %}
+```csharp
+public static Type GetTypeFromMod(string modName, string typeName)
+```
+{% endcode %}
+
+{% hint style="info" %}
+In order for a type to appear, it must be public and visible.
+
+The above functions throw an exception under the following conditions:
+
+* There are no public and/or visible types under the specified type name.
+{% endhint %}
+
+## Operation
+
+After getting a type, you can call the rest of the inter-mod communication functions.
+
+### How do I call a publicly accessible mod function?
+
+To execute custom mod functions (which must be public and static) in your mod, you must specify the full mod name, the type that you're working on, and the function to execute in the `ExecuteCustomModFunction()` method:
 
 ```csharp
-public static object ExecuteCustomModFunction(string modName, string functionName)
-public static object ExecuteCustomModFunction(string modName, string functionName, params object[] parameters)
+public static object? ExecuteCustomModFunction(string modName, string functionName, string typeName)
+public static object? ExecuteCustomModFunction(string modName, string functionName, string typeName, params object?[]? parameters)
+public static object? ExecuteCustomModFunction(string modName, string functionName, Type type)
+public static object? ExecuteCustomModFunction(string modName, string functionName, Type type, params object?[]? parameters)
 ```
 
 {% hint style="info" %}
-You must specify the main mod name in the above function, since it uses that name to fetch all mod parts and query them for available functions.
+You must specify the main mod name in the above function, since it uses that name to query an addon for available functions.
 
 `ExecuteCustomModFunction()` returns `null` under the following conditions:
 
-* There are no functions in all the mod parts from your mod.
-* There is no function that goes by the name of the specified function name that you plan to execute.
+* There are no functions in all the mods.
 * There is a function, but the delegate is unspecified.
+
+It throws an exception if these conditions are true:
+
+* There is no function that goes by the name of the specified function name that you plan to execute.
 {% endhint %}
 
-### How can I make a property or a field publicly accessible?
+### How can I get/set a value from/to a property or a field?
 
-In your mod, you can make a property or a field publicly accessible by implementing the `PubliclyAvailableProperties` property with a read-only dictionary that contains all your publicly-available properties in your main mod entry point. Similarly, you can add a field to its own dedicated dictionary, `PubliclyAvailableFields`.
-
-{% code title="Interface declaration" %}
-```csharp
-ReadOnlyDictionary<string, PropertyInfo> PubliclyAvailableProperties { get; }
-ReadOnlyDictionary<string, FieldInfo> PubliclyAvailableFields { get; }
-```
-{% endcode %}
-
-The key is the property or the field name that the mod manager uses to search for a property or a field to get or set its value.
-
-To get a property value or a field value from a mod, you can call the following functions:
+To get a property value or a field value (which must be public and static) from a mod, you can call the following functions:
 
 ```csharp
-public static object GetCustomModPropertyValue(string modName, string propertyName)
-public static object GetCustomModFieldValue(string modName, string fieldName)
+public static object? GetCustomModPropertyValue(string modName, string propertyName, string typeName)
+public static object? GetCustomModFieldValue(string modName, string fieldName, string typeName)
+public static object? GetCustomModPropertyValue(string modName, string propertyName, Type type)
+public static object? GetCustomModFieldValue(string modName, string fieldName, Type type)
 ```
 
-Similarly, to set a property value or a field value declared publicly by a mod, you can call the following functions:
+Similarly, to set a property value or a field value (which must be public and static) declared publicly by an addon, you can call the following functions:
 
 ```csharp
-public static void SetCustomModPropertyValue(string modName, string propertyName, object value)
-public static void SetCustomModFieldValue(string modName, string fieldName, object value)
+public static void SetCustomModPropertyValue(string modName, string propertyName, string typeName, object? value)
+public static void SetCustomModFieldValue(string modName, string fieldName, string typeName, object? value)
+public static void SetCustomModPropertyValue(string modName, string propertyName, Type type, object? value)
+public static void SetCustomModFieldValue(string modName, string fieldName, Type type, object? value)
 ```
 
 {% hint style="info" %}
-You must specify the main mod name in the above functions, since they use that name to fetch all mod parts and query them for available fields or properties.
+You must specify the main mod name in the above function, since it uses that name to query an addon for available properties or fields.
 
 `GetCustomModPropertyValue()` and `GetCustomModFieldValue()` return `null` under the following conditions:
 
-* There are no properties or fields in all the mod parts from your mod.
+* There are no properties or fields in all the mods.
+* There is a property or field, but the delegate is unspecified.
+* There is a property or field, but they return `null`.
+
+It throws an exception if these conditions are true:
+
 * There is no property or field that goes by the name of the specified name that you plan to execute.
-* There is a property or a field, but that item is not static
 {% endhint %}
 
 ### Listing functions, properties, and fields
 
-You can now list all the available functions, properties, and fields from a specific mod using one of the following functions:
+You can now list all the available functions, properties, and fields from a specific addon using one of the following functions:
 
+{% code title="InterAddonTools.cs" lineNumbers="true" %}
 ```csharp
-public static string[] ListAvailableFunctions(string modName)
-public static string[] ListAvailableProperties(string modName)
-public static string[] ListAvailableFields(string modName)
+// For functions
+public static Dictionary<string, MethodInfo> ListAvailableFunctions(string modName, string typeName)
+public static Dictionary<string, MethodInfo> ListAvailableFunctions(string modName, Type type)
+
+// For properties
+public static Dictionary<string, PropertyInfo> ListAvailableProperties(string modName, string typeName)
+public static Dictionary<string, PropertyInfo> ListAvailableProperties(string modName, Type type)
+
+// For fields
+public static Dictionary<string, FieldInfo> ListAvailableFields(string modName, string typeName)
+public static Dictionary<string, FieldInfo> ListAvailableFields(string modName, Type type)
 ```
+{% endcode %}
 
 {% hint style="info" %}
-You must specify the main mod name in the above functions, since they use that name to fetch all mod parts and query them for available functions, fields, or properties.
+You must specify the main mod name in the above functions and the type that this mod exposes.
 
-The three functions return an empty array under the following conditions:
+The above functions return an empty array under the following conditions:
 
-* There are no properties or fields in all the mod parts from your mod.
+* There are no accessible public static functions, properties, or fields.
 {% endhint %}
 
 ### Listing function and set property parameters
 
 You can list all the function and set property parameters in depth by using the following functions:
 
+{% code title="InterAddonTools.cs" lineNumbers="true" %}
 ```csharp
-public static ParameterInfo[] GetFunctionParameters(string modName, string functionName)
-public static ParameterInfo[] GetSetPropertyParameters(string modName, string propertyName)
+// Normal functions
+public static ParameterInfo[]? GetFunctionParameters(string modName, string functionName, string typeName)
+public static ParameterInfo[]? GetFunctionParameters(string modName, string functionName, Type type)
+
+// Property setters
+public static ParameterInfo[]? GetSetPropertyParameters(string modName, string propertyName, string typeName)
+public static ParameterInfo[]? GetSetPropertyParameters(string modName, string propertyName, Type type)
 ```
+{% endcode %}
+
+{% hint style="info" %}
+You must specify the main mod name in the above function, since it uses that name to query an addon for available properties or fields.
+
+These functions return `null` under the following conditions:
+
+* There are no properties or functions in all the mods.
+* There is a property, but there is no setter.
+
+It throws an exception if these conditions are true:
+
+* There is no property or function that goes by the name of the specified name that you plan to execute.
+{% endhint %}

@@ -1,13 +1,13 @@
 ---
-description: Use Removing.RemoveDirectory()
 icon: chart-mixed
+description: Use Removing.RemoveDirectory()
 ---
 
 # Files - NKS0017
 
 This analyzer provides the following strings:
 
-<table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>Directory.Delete</code> instead of <code>Removing.RemoveDirectory()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>Removing.RemoveDirectory()</code> instead of <code>Directory.Delete</code></td></tr><tr><td>Description</td><td><code>Removing.RemoveDirectory()</code> neutralizes the provided path to its absolute correct path, while <code>Directory.Delete</code> operates at the executable directory (<code>Environment.CurrentDirectory</code>), which may not be what you want.</td></tr></tbody></table>
+<table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>Directory.Delete</code> instead of <code>FilesystemTools.RemoveDirectory()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>FilesystemTools.RemoveDirectory()</code> instead of <code>Directory.Delete</code></td></tr><tr><td>Description</td><td><code>FilesystemTools.RemoveDirectory()</code> neutralizes the provided path to its absolute correct path, while <code>Directory.Delete</code> operates at the executable directory (<code>Environment.CurrentDirectory</code>), which may not be what you want.</td></tr></tbody></table>
 
 ### Extended Description
 
@@ -33,7 +33,7 @@ To get a brief insight about how this analyzer works, compare the two code block
 
 <pre class="language-csharp" data-title="Somewhere in your mod code..." data-line-numbers><code class="lang-csharp">public static void MyFunction()
 {
-<strong>    Removing.RemoveDirectory("test");
+<strong>    FilesystemTools.RemoveDirectory("test");
 </strong>}
 </code></pre>
 

@@ -1,13 +1,13 @@
 ---
-description: Use Making.MakeDirectory()
 icon: chart-mixed
+description: Use Making.MakeDirectory()
 ---
 
 # Files - NKS0013
 
 This analyzer provides the following strings:
 
-<table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>Directory.CreateDirectory</code> instead of <code>Making.MakeDirectory()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>Making.MakeDirectory()</code> instead of <code>Directory.CreateDirectory</code></td></tr><tr><td>Description</td><td><code>Making.MakeDirectory()</code> neutralizes the provided path to its absolute correct path, while <code>Directory.CreateDirectory</code> operates at the executable directory (<code>Environment.CurrentDirectory</code>), which may not be what you want.</td></tr></tbody></table>
+<table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>Directory.CreateDirectory</code> instead of <code>FilesystemTools.MakeDirectory()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>FilesystemTools.MakeDirectory()</code> instead of <code>Directory.CreateDirectory</code></td></tr><tr><td>Description</td><td><code>FilesystemTools.MakeDirectory()</code> neutralizes the provided path to its absolute correct path, while <code>Directory.CreateDirectory</code> operates at the executable directory (<code>Environment.CurrentDirectory</code>), which may not be what you want.</td></tr></tbody></table>
 
 ### Extended Description
 
@@ -33,7 +33,7 @@ To get a brief insight about how this analyzer works, compare the two code block
 
 <pre class="language-csharp" data-title="Somewhere in your mod code..." data-line-numbers><code class="lang-csharp">public static void MyFunction()
 {
-<strong>    Making.MakeDirectory("test");
+<strong>    FilesystemTools.MakeDirectory("test");
 </strong>}
 </code></pre>
 

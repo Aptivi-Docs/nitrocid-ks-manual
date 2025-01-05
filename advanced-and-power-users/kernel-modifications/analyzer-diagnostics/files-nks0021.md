@@ -1,13 +1,13 @@
 ---
-description: Use Checking.Rooted()
 icon: chart-mixed
+description: Use Checking.Rooted()
 ---
 
 # Files - NKS0021
 
 This analyzer provides the following strings:
 
-<table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>Path.IsPathRooted</code> instead of <code>Checking.Rooted()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>Checking.Rooted()</code> instead of <code>Path.IsPathRooted</code></td></tr><tr><td>Description</td><td><code>Checking.Rooted()</code> uses the filesystem driver to call <code>Path.IsPathRooted</code>.</td></tr></tbody></table>
+<table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>Path.IsPathRooted</code> instead of <code>FilesystemTools.Rooted()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>FilesystemTools.Rooted()</code> instead of <code>Path.IsPathRooted</code></td></tr><tr><td>Description</td><td><code>FilesystemTools.Rooted()</code> uses the filesystem driver to call <code>Path.IsPathRooted</code>.</td></tr></tbody></table>
 
 ### Extended Description
 
@@ -15,7 +15,7 @@ This code analyzer detects the usage of `Delete` from the standard `Directory` c
 
 Using `Path.IsPathRooted()`, it doesn't use any driver to wrap this call, so it calls the built-in `IsPathRooted()` directly.
 
-Alternatively, you can use `Checking.Rooted()`, which uses the filesystem driver for extensibility.
+Alternatively, you can use `FilesystemTools.Rooted()`, which uses the filesystem driver for extensibility.
 
 ### Analysis Comparison
 
@@ -33,7 +33,7 @@ To get a brief insight about how this analyzer works, compare the two code block
 
 <pre class="language-csharp" data-title="Somewhere in your mod code..." data-line-numbers><code class="lang-csharp">public static void MyFunction()
 {
-<strong>    Checking.Rooted("C:/test.txt");
+<strong>    FilesystemTools.Rooted("C:/test.txt");
 </strong>}
 </code></pre>
 
