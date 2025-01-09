@@ -724,3 +724,45 @@ You can use the [inter-addon communication](../../../advanced-and-power-users/ke
 This NuGet package didn't expose any public API since its inception. It was originally meant to be as a plan for 0.1.0.x to consolidate all the LocaleGen projects and their siblings into one, but it seems that it was never done as of the release of the second beta of 0.1.0.
 
 Now, we've completed the work of consolidation, removing `Nitrocid.LocaleGen.Core` in the process, resulting in such NuGet package being deprecated without an alternative. Additionally, all the internal projects and LocaleGen itself have been migrated into one application that is to be included in the main Nitrocid build output, `Nitrocid.Locales`.
+
+#### Debug writer changed for CompilerServices attributes
+
+{% code title="DebugWriter.cs" lineNumbers="true" %}
+```csharp
+public static void WriteDebugPrivacy(DebugLevel Level, string text, int[] SecureVarIndexes, params object?[]? vars)
+public static void WriteDebug(DebugLevel Level, string text, params object?[]? vars)
+public static void WriteDebugLogOnly(DebugLevel Level, string text, params object?[]? vars)
+public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object?[]? vars)
+public static void WriteDebugDevicesOnly(DebugLevel Level, string text, bool force, params object?[]? vars)
+public static bool WriteDebugDeviceOnly(DebugLevel Level, string text, bool force, RemoteDebugDevice device, params object?[]? vars)
+public static void WriteDebugChatsOnly(DebugLevel Level, string text, bool force, params object?[]? vars)
+```
+{% endcode %}
+
+The debug writer's functions have been edited to include three new arguments before the `vars` parameter. However, the following types were used:
+
+* `memberName`: `string` \[`CallerMemberName` attribute]
+* `memberLine`: `int` \[`CallerLineNumber` attribute]
+* `memberPath`: `string` \[`CallerFilePath` attribute]
+
+Additionally, the nature of `params` in the last argument, along with the usage of an array of any object (as indicated by `object?[]?`), causes these functions to allow you to supply infinite arguments without having to explicitly create an array.
+
+Because of potential conflicts, we've decided to convert the `vars` argument to a normal parameter with the default value of `null`. This is going to break the build, as you'll have to change how you call the functions.
+
+```csharp
+public static void Assert(bool condition, ...)
+public static void AssertNot(bool condition, ...)
+public static void AssertNull<T>(T value, ...)
+public static void AssertNotNull<T>(T value, ...)
+public static void AssertFail(string message, ...)
+```
+
+This also affects all the above `Assert()` functions found in the `DebugCheck` class.
+
+{% hint style="info" %}
+You'll have to change how you call these functions. Don't worry; you'll just have to append the `vars:` prefix and create an array just like any other array that holds your variables for text formatting. For example:
+
+```csharp
+DebugWriter.WriteDebug(DebugLevel.I, "Hi, {0}!", vars: ["Nitrocid KS"]);
+```
+{% endhint %}

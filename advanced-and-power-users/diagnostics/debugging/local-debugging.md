@@ -54,7 +54,7 @@ You can also use the Output window if you've built Nitrocid KS with `VSDEBUG` co
 Calling the debug function below will post your debug message to the kernel debugger normally. There's a function for you to call below:
 
 ```csharp
-public static void WriteDebug(DebugLevel Level, string text, params object[] vars)
+public static void WriteDebug(DebugLevel Level, string text, [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = "", object?[]? vars = null)
 ```
 
 Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespace.
@@ -64,7 +64,7 @@ Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespac
 Calling the debug function below will post your debug message to the kernel debugger if the condition that you've set within the function is satisfied. There's a function for you to call below:
 
 ```csharp
-public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object[] vars)
+public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = "", object?[]? vars = null)
 ```
 
 Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespace.
@@ -74,7 +74,7 @@ Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespac
 Calling the debug function below will post your debug message to the kernel debugger normally. However, it also filters every variable you've selected to be censored in the debug log. For example, if you provide two variables (A, B) and B contains sensitive info, you may want to create an array of indexes which holds B's index (in this case, 1) when calling the below function.
 
 ```csharp
-public static void WriteDebugPrivacy(DebugLevel Level, string text, int[] SecureVarIndexes, params object[] vars)
+public static void WriteDebugPrivacy(DebugLevel Level, string text, int[] SecureVarIndexes, [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = "", object?[]? vars = null)
 ```
 
 Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespace.
@@ -84,7 +84,7 @@ Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespac
 Calling the debug function below will post the stack trace of an exception, including its inner exceptions, to the kernel debugger. There's a function for you to call below:
 
 ```csharp
-public static void WriteDebugStackTrace(Exception Ex)
+public static void WriteDebugStackTrace(Exception? Ex)
 ```
 
 Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespace.
@@ -94,7 +94,17 @@ Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespac
 Calling the debug function below will post the stack trace of an exception, including its inner exceptions, to the kernel debugger if the condition that you've set within the function is satisfied. There's a function for you to call below:
 
 ```csharp
-public static void WriteDebugStackTraceConditional(bool Condition, Exception Ex)
+public static void WriteDebugStackTraceConditional(bool Condition, Exception? Ex)
+```
+
+Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespace.
+
+### Log-Only Debugging
+
+Calling the debug function below will post your debug message to the kernel debugger without relaying it to all remote debug devices. There's a function for you to call below:
+
+```csharp
+public static void WriteDebugLogOnly(DebugLevel Level, string text, [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = "", object?[]? vars = null)
 ```
 
 Found in the `DebugWriter` module under the `Nitrocid.Kernel.Debugging` namespace.

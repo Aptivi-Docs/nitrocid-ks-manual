@@ -1,6 +1,6 @@
 ---
-description: Debugging the kernel on LAN
 icon: satellite-dish
+description: Debugging the kernel on LAN
 ---
 
 # Remote Debugging
@@ -61,15 +61,21 @@ The debug writer class provides you functions that allow you to write your debug
 ### Write to the remote debug
 
 ```csharp
-public static bool WriteDebugDeviceOnly(DebugLevel Level, string text, bool force, RemoteDebugDevice device, params object[] vars)
+public static bool WriteDebugDeviceOnly(DebugLevel Level, string text, bool force, RemoteDebugDevice device, [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = "", object?[]? vars = null)
 ```
 
-`WriteDebugDeviceOnly()` writes your debugging message to the devices that are connected to the remote debug facility.
+`WriteDebugDeviceOnly()` writes your debugging message to a device that is connected to the remote debug facility.
+
+```csharp
+public static void WriteDebugDevicesOnly(DebugLevel Level, string text, bool force, [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = "", object?[]? vars = null)
+```
+
+`WriteDebugDevicesOnly()` writes your debugging message to the devices that are connected to the remote debug facility.
 
 ### Write to the remote debug chat
 
 ```csharp
-public static void WriteDebugChatsOnly(DebugLevel Level, string text, bool force, params object[] vars)
+public static void WriteDebugChatsOnly(DebugLevel Level, string text, bool force, [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = "", object?[]? vars = null)
 ```
 
 `WriteDebugChatsOnly()` writes your debugging message to the devices that are connected to the remote debug chat.
