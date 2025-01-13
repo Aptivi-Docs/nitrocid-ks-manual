@@ -49,10 +49,6 @@ If you like to manually unpack the Nitrocid KS packages, follow these steps:
 4. Open your favorite terminal emulator, like Konsole, and change the working directory to a folder containing the Nitrocid KS executable
 5. Execute `dotnet Nitrocid.dll` to start the kernel
 
-{% hint style="info" %}
-For 0.0.24.x or older, files that end with the `-dotnet` prefix means that it's for .NET 6.0.
-{% endhint %}
-
 ### Method 2: Ubuntu PPA
 
 {% hint style="info" %}

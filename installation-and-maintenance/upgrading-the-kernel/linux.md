@@ -7,7 +7,17 @@ description: How to upgrade Nitrocid KS on Linux
 
 Upgrading the kernel on Linux is simple, depending on the way you've installed the kernel. To upgrade the kernel, choose your preferred method.
 
-### Method 2: Ubuntu PPA
+## Method 1: Manually unpacking
+
+If you'd like to manually update your kernel to the latest version or to the latest bleeding-edge version, follow these steps:
+
+1. Ensure that you have all the required software installed
+2. Download the latest release ZIP file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
+3. Unpack the ZIP archive to any folder of your choice
+4. Open your favorite terminal emulator, like Konsole, and change the working directory to a folder containing the Nitrocid KS executable
+5. Execute `dotnet Nitrocid.dll` to start the kernel
+
+## Method 2: Ubuntu PPA
 
 {% hint style="info" %}
 This only applies to Ubuntu and its derivatives. However, we only support the vanilla Ubuntu distribution. <mark style="color:red;">**Don't try this method on**</mark> [<mark style="color:red;">**Debian**</mark>](https://wiki.debian.org/DontBreakDebian#Don.27t_make_a_FrankenDebian)<mark style="color:red;">**.**</mark>
@@ -23,7 +33,7 @@ If you're running Ubuntu, you can update Nitrocid KS using the Ubuntu PPA, assum
 
 You can choose between the version series that you want to upgrade in the output of the `apt` command when it prompts you to select one of them, as `nitrocid` is a virtual package.
 
-### Method 3: Arch Linux AUR
+## Method 3: Arch Linux AUR
 
 {% hint style="info" %}
 This only applies to vanilla Arch Linux. We don't officially support Arch's derivatives, such as Manjaro and EndeavourOS.
