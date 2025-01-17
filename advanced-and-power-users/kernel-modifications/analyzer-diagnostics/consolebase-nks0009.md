@@ -1,13 +1,13 @@
 ---
-description: Use ConsoleTools.ResetColors()
 icon: chart-mixed
+description: Use ConsoleTools.ResetColors()
 ---
 
 # ConsoleBase - NKS0009
 
 This analyzer provides the following strings:
 
-<table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>Console.ResetColor</code> instead of <code>ConsoleExtensions.ResetColors()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>ConsoleTools.ResetColors()</code> instead of <code>Console.ResetColor</code></td></tr><tr><td>Description</td><td><code>ConsoleTools.ResetColors()</code> contains VT sequences that help reset colors in a portable way.</td></tr></tbody></table>
+<table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>Console.ResetColor</code> instead of <code>KernelColorTools.ResetColors()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>KernelColorTools.ResetColors()</code> instead of <code>Console.ResetColor</code></td></tr><tr><td>Description</td><td><code>KernelColorTools.ResetColors()</code> contains VT sequences that help reset colors in a portable way.</td></tr></tbody></table>
 
 ### Extended Description
 
@@ -31,7 +31,7 @@ To get a brief insight about how this analyzer works, compare the two code block
 
 <pre class="language-csharp" data-title="Somewhere in your mod code..." data-line-numbers><code class="lang-csharp">public static void MyFunction()
 {
-<strong>    ConsoleTools.ResetColors();
+<strong>    KernelColorTools.ResetColors();
 </strong>}
 </code></pre>
 
