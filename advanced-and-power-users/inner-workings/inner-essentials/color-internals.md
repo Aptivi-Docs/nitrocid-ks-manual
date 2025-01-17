@@ -1,6 +1,6 @@
 ---
-description: All of the colors!
 icon: swatchbook
+description: All of the colors!
 ---
 
 # Color Internals
@@ -121,7 +121,7 @@ For example, if you have Cyan, Magenta, and Yellow values and you want a hex cod
 
 ## Resetting colors
 
-If you need to reset the colors for further text to be written to the console in its natural colors, you can use the `ResetColors()` function in the `ConsoleTools` class to reset the foreground and the background colors to their defaults.
+If you need to reset the colors for further text to be written to the console in its natural colors, you can use the `ResetColors()` function in the `KernelColorTools` class to reset the foreground and the background colors to their defaults.
 
 ```csharp
 public static void ResetColors(bool useKernelColors = false)

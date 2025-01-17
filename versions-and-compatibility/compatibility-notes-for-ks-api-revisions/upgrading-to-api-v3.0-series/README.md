@@ -766,3 +766,24 @@ You'll have to change how you call these functions. Don't worry; you'll just hav
 DebugWriter.WriteDebug(DebugLevel.I, "Hi, {0}!", vars: ["Nitrocid KS"]);
 ```
 {% endhint %}
+
+#### Refactored console tools
+
+{% code title="ConsoleTools.cs" lineNumbers="true" %}
+```csharp
+public static class ConsoleTools
+{
+    (...)
+    public static void ResetColors(bool useKernelColors = false)
+    public static void ResetBackground(bool useKernelColors = false)
+    public static void ResetForeground(bool useKernelColors = false)
+    (...)
+}
+```
+{% endcode %}
+
+The above functions have been moved to the `KernelColorTools` class. Since those functions were the only functions that were made to the public, with no properties or fields set to public, we've decided to mark the `ConsoleTools` class as internal.
+
+{% hint style="info" %}
+You can still use these functions in the `KernelColorTools` class.
+{% endhint %}
