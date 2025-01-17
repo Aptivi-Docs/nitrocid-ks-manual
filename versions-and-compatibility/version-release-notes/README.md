@@ -15,18 +15,6 @@ The current API version series all operate under API version v3.0.
 [v0.1.x.x-series.md](v0.1.x.x-series.md)
 {% endcontent-ref %}
 
-## Older supported series
-
-Here is a list of the older Nitrocid KS version series that are still supported.
-
-### API v2.1 series
-
-This series is currently supported until December 31st, 2024.
-
-{% content-ref url="v0.0.24.x-series.md" %}
-[v0.0.24.x-series.md](v0.0.24.x-series.md)
-{% endcontent-ref %}
-
 ## Older series
 
 Here is a list of the older version series through the lifetime of Nitrocid KS. Please note that they are no longer supported.
@@ -131,4 +119,10 @@ Here is a list of the older version series through the lifetime of Nitrocid KS. 
 
 {% content-ref url="v0.0.23.x-series.md" %}
 [v0.0.23.x-series.md](v0.0.23.x-series.md)
+{% endcontent-ref %}
+
+### API v2.1 series
+
+{% content-ref url="v0.0.24.x-series.md" %}
+[v0.0.24.x-series.md](v0.0.24.x-series.md)
 {% endcontent-ref %}
