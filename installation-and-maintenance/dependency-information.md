@@ -9,8 +9,6 @@ description: What do I need to run Nitrocid?
 Windows users don't need to read this page as Windows provides all the necessary tools to facilitate the work of the kernel and its addons.
 {% endhint %}
 
-## For 0.1.0 or higher
-
 In order to run Nitrocid KS on all the system, you must install the essential requirements as shown in the platform-specific installation pages. However, for Linux and Android systems, you must also install the following dependencies to be able to use Nitrocid.
 
 {% hint style="info" %}

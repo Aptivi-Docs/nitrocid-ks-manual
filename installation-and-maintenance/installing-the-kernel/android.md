@@ -1,6 +1,6 @@
 ---
-description: How to install Nitrocid KS on Android
 icon: android
+description: How to install Nitrocid KS on Android
 ---
 
 # Android
@@ -14,7 +14,7 @@ The tricky part is getting Nitrocid KS to run on Android phones and tablets, esp
 To install Nitrocid KS on your phone or tablet, install the following dependencies:
 
 * [Termux](https://termux.dev/en/)
-* [Ubuntu PRoot](https://wiki.termux.com/wiki/PRoot#Installing\_Linux\_distributions)
+* [Ubuntu PRoot](https://wiki.termux.com/wiki/PRoot#Installing_Linux_distributions)
 
 Ensure that your Android version is compatible with Termux. You need at least 8 GB of free storage and Android 7.0 or higher.
 
@@ -51,10 +51,6 @@ Once you're done, follow the steps:
    * `apt install unzip`
    * `unzip 0.x.x.x-bin.zip`
 9. Execute `dotnet Nitrocid.dll`
-
-{% hint style="info" %}
-For 0.0.24.x or older, files that end with the `-dotnet` prefix means that it's for .NET 6.0.
-{% endhint %}
 
 ## Bleeding-edge
 
@@ -99,7 +95,7 @@ In order to fix the first message, append the below environment variable before 
 <pre class="language-shell-session"><code class="lang-shell-session"><strong>$ DOTNET_GCHeapHardLimit=1C0000000 dotnet build
 </strong></code></pre>
 
-However, to fix the second message, download the fixed version of `proot` using [this link](https://drive.google.com/file/d/1J9euzuGB5w6WGLVNVxTFVnrauTEzISAV/view?usp=sharing) ([mirror if down](https://mega.nz/file/6dYT2YrY#IPKfJRx3Rt8xql1ggyQ95rgEkpDd\_vksP02vnnaOPd4)) and run these commands outside the Ubuntu `proot-distro` environment:
+However, to fix the second message, download the fixed version of `proot` using [this link](https://drive.google.com/file/d/1J9euzuGB5w6WGLVNVxTFVnrauTEzISAV/view?usp=sharing) ([mirror if down](https://mega.nz/file/6dYT2YrY#IPKfJRx3Rt8xql1ggyQ95rgEkpDd_vksP02vnnaOPd4)) and run these commands outside the Ubuntu `proot-distro` environment:
 
 <pre class="language-shell-session"><code class="lang-shell-session"><strong># dpkg -i proot_5.1.107-50_aarch64.deb
 </strong><strong># apt-mark hold proot

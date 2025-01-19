@@ -60,10 +60,6 @@ If you like to manually unpack the Nitrocid KS packages, follow these steps:
 4. Open your favorite terminal emulator, like ConEmu, and change the working directory to a folder containing the Nitrocid KS executable
 5. Execute `ks` or `Nitrocid.exe` to start the kernel
 
-{% hint style="info" %}
-For 0.0.24.0, files that end with the `-dotnet` prefix means that it's for .NET 6.0.
-{% endhint %}
-
 ## Bleeding-edge
 
 Bleeding-edge builds usually come from building the development branch of the kernel, and they usually contain bugs and other untested features.

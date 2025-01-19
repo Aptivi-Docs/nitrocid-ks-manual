@@ -1,6 +1,6 @@
 ---
-description: How to upgrade Nitrocid KS on Android
 icon: android
+description: How to upgrade Nitrocid KS on Android
 ---
 
 # Android
@@ -15,7 +15,3 @@ The only way to upgrade your kernel in Android is to unpack the updated kernel f
 3. Use unzip to extract the files
    * `unzip 0.x.x.x-bin.zip`
 4. Execute `dotnet Nitrocid.dll`
-
-{% hint style="info" %}
-For 0.0.24.x or older, files that end with the `-dotnet` prefix means that it's for .NET 6.0.
-{% endhint %}
