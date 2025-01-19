@@ -13,10 +13,6 @@ Installing Nitrocid KS on Windows is pretty easy, but we recommend installing th
 Extra kernel add-ons may require additional hardware on your computer to work. For example, the BassBoom addon requires that you have audio drivers installed on your computer.
 {% endhint %}
 
-Before performing the installation, your Windows system must meet the following requirements:
-
-### KS v0.1.0 or later
-
 To run Nitrocid KS in the absolute minimum requirements, your computer needs to have the following installed:
 
 | System     | Framework                                                          | Terminal                                                  |
@@ -29,31 +25,24 @@ However, we recommend that you have the below software installed on your compute
 | ----------- | ------------------------------------------------------------------ | ------------------ |
 | Windows 10+ | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | Windows 10 cmd.exe |
 
-### KS v0.0.24.0
-
-{% hint style="warning" %}
-We no longer support the KS 0.0.24.x series or lower.
-{% endhint %}
-
-To run Nitrocid KS in the absolute minimum requirements, your computer needs to have the following installed:
-
-| System     | Framework                                                                                                        | Terminal                                                  |
-| ---------- | ---------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| Windows 7+ | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)                                               | [ConEmu](https://conemu.github.io/) or Windows 10 cmd.exe |
-| Windows 7+ | [.NET Framework 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-web-installer) | [ConEmu](https://conemu.github.io/) or Windows 10 cmd.exe |
-
-However, we recommend that your computer have the below software installed to get the best out of the kernel:
-
-| System      | Framework                                                                                                        | Terminal           |
-| ----------- | ---------------------------------------------------------------------------------------------------------------- | ------------------ |
-| Windows 10+ | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)                                               | Windows 10 cmd.exe |
-| Windows 10+ | [.NET Framework 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-web-installer) | Windows 10 cmd.exe |
-
 ## Installation
 
 There are several ways to install Nitrocid KS on Windows systems. We recommend installing KS using the Chocolatey package manager for simplicity.
 
-### Method 1: Chocolatey
+### Method 1: Windows Installer
+
+The Windows Installer method allows you to easily install Nitrocid KS.
+
+1. Download the latest Windows Installer ZIP file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases)
+2. Unpack the ZIP archive to any folder of your choice using [7-Zip](https://7-zip.org/)
+3. Double-click on the MSI file, and follow the instructions
+4. Go to your installation path and double-click on `Nitrocid.exe`.
+
+{% hint style="info" %}
+This is currently a prototype method and might change during the development cycle.
+{% endhint %}
+
+### Method 2: Chocolatey
 
 This step-by-step guide shows you how to install Nitrocid KS using the package manager, [Chocolatey](https://chocolatey.org/install), assuming that you already have it on your system.
 
@@ -61,7 +50,7 @@ This step-by-step guide shows you how to install Nitrocid KS using the package m
 2. Open your favorite terminal emulator, like ConEmu, and execute the following command: `choco install ks`
 3. Start Nitrocid KS using `ks`
 
-### Method 2: Manual unpack
+### Method 3: Manual unpack
 
 If you like to manually unpack the Nitrocid KS packages, follow these steps:
 

@@ -1,6 +1,6 @@
 ---
-description: This page talks about available methods of upgrading
 icon: up
+description: This page talks about available methods of upgrading
 ---
 
 # Upgrading the Kernel
@@ -22,7 +22,7 @@ Nitrocid KS can be upgraded in all supported platforms. However, some upgrades m
 [compatibility-notes-for-ks-api-revisions](../../versions-and-compatibility/compatibility-notes-for-ks-api-revisions/)
 {% endcontent-ref %}
 
-Generally, Nitrocid KS can automatically download an update file and, if launched through the built-in launcher for Linux systems, installs the update itself. For Windows systems, it can be seamlessly updated if you installed Nitrocid through Chocolatey. For Ubuntu systems, Nitrocid PPA installs can also be updated through `apt upgrade`.
+Nitrocid KS can be seamlessly updated if you installed Nitrocid through Chocolatey or Windows Installer on Windows systems. For Ubuntu and Arch systems, Nitrocid PPA installs can also be updated through `apt upgrade` and your AUR helper's package upgrade command.
 
 However, if this mechanism fails, you can rely on manually updating. Select your platform to get instructions.
 

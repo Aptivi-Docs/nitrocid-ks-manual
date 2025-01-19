@@ -787,3 +787,17 @@ The above functions have been moved to the `KernelColorTools` class. Since those
 {% hint style="info" %}
 You can still use these functions in the `KernelColorTools` class.
 {% endhint %}
+
+#### Automatic update downloads removed
+
+{% code title="KernelMainConfig.cs" lineNumbers="true" %}
+```csharp
+public bool AutoDownloadUpdate { get; set; } = true;
+```
+{% endcode %}
+
+Since we're working on improvements for Nitrocid KS to ensure that it gets updated seamlessly and only when required, we've decided to stop the automatic update downloads by removing the feature. This ensures that we can provide distraction-free user experience.
+
+{% hint style="danger" %}
+It's advisable to stop using this configuration entry.
+{% endhint %}
