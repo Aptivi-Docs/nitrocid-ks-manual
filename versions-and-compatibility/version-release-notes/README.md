@@ -9,15 +9,25 @@ Every single version of the kernel comes with many changes, including feature ad
 
 ## Current API series
 
-The current API version series all operate under API version v3.0.
+The current API version series all operate under API version v3.1.
+
+{% content-ref url="v0.1.x.x-series-1.md" %}
+[v0.1.x.x-series-1.md](v0.1.x.x-series-1.md)
+{% endcontent-ref %}
+
+## Older supported series
+
+The older series are listed when they're still supported.
+
+### API v3.0 series
 
 {% content-ref url="v0.1.x.x-series.md" %}
 [v0.1.x.x-series.md](v0.1.x.x-series.md)
 {% endcontent-ref %}
 
-## Older series
+## Deprecated series
 
-Here is a list of the older version series through the lifetime of Nitrocid KS. Please note that they are no longer supported.
+Here is a list of the deprecated older version series through the lifetime of Nitrocid KS.
 
 ### API v1.0 series
 
