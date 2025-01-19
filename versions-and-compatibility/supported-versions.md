@@ -22,7 +22,7 @@ This revision of the third generation API is currently under development.
 
     | Version   | Release date | EOL date  | Security EOL date |
     | --------- | ------------ | --------- | ----------------- |
-    | v0.1.0.0  | 3/11/2024    | 3/11/2029 | 3/11/2032         |
+    | v0.1.0.0  | 3/11/2024    | 3/11/2029 | 3/11/2034         |
     | v0.1.0.1  | 3/11/2024    |           |                   |
     | v0.1.0.2  | 4/16/2024    |           |                   |
     | v0.1.0.3  | 4/21/2024    |           |                   |
@@ -58,6 +58,7 @@ This revision of the third generation API is currently under development.
     | v0.1.0.33 | 12/22/2024   |           |                   |
     | v0.1.0.34 | 12/27/2024   |           |                   |
     | v0.1.0.35 | 1/3/2025     |           |                   |
+    | v0.1.0.36 | 1/7/2025     |           |                   |
 *   Version v0.1.1.x series\
 
 
@@ -93,6 +94,7 @@ This revision of the third generation API is currently under development.
     | v0.1.1.27 | 12/22/2024   |           |                   |
     | v0.1.1.28 | 12/27/2024   |           |                   |
     | v0.1.1.29 | 1/3/2025     |           |                   |
+    | v0.1.1.30 | 1/7/2025     |           |                   |
 * Version v0.1.2.x series
 
 | Version  | Release date | EOL date | Security EOL date |
