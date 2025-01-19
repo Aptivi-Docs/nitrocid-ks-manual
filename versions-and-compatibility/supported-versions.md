@@ -25,7 +25,7 @@ This revision of the third-generation API is currently under development.
 {% endtab %}
 
 {% tab title="API v3.0" %}
-This revision of the third generation API is supported until 3/11/2024.
+This revision of the third generation API is supported until 3/11/2034.
 
 *   Version v0.1.0.x series\
 
