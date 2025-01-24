@@ -102,9 +102,6 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `lsvars`                |                                                                                  |
 | `md`                    | `<directory>`                                                                    |
 | `mkfile`                | `<file>`                                                                         |
-| `modman`                | `<start/stop/info/reload/install/uninstall> <modfilename>`                       |
-|                         | `<list/reloadall/stopall/startall>`                                              |
-| `modmanual`             | `<modname>`                                                                      |
 | `move`                  | `<source> <target>`                                                              |
 | `partinfo`              | `<disknum> <partnum>`                                                            |
 | `pathfind`              | `<filename>`                                                                     |

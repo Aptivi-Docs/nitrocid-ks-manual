@@ -49,7 +49,7 @@ You can start the application up with the `stopwatch` command.
 
 ## Pomodoro
 
-<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The Pomodoro timer is provided to you by the kernel addon to simplify the task of dividing time into break segments. The controls are:
 

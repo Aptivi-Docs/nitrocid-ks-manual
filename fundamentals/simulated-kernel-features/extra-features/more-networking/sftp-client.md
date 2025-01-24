@@ -1,6 +1,6 @@
 ---
-description: Transfer your files securely between your servers and your PC
 icon: lock-keyhole
+description: Transfer your files securely between your servers and your PC
 ---
 
 # SFTP Client
@@ -41,3 +41,13 @@ To see the available commands provided by this shell, consult this page below:
 {% content-ref url="../../shells/commands-list.md" %}
 [commands-list.md](../../shells/commands-list.md)
 {% endcontent-ref %}
+
+## Interactive TUI
+
+<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+You can also interact with the files right from the interactive TUI to make things easier. You can perform operations right from the TUI without having to write down commands. For example, you can use the F1 key to copy a local/remote file to the remote/local host.
+
+{% hint style="info" %}
+Press K to get a list of available keybindings.
+{% endhint %}

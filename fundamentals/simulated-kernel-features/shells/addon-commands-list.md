@@ -183,9 +183,12 @@ This shell provides you a client to the FTP servers. Here is a list of supported
 | `execute`   | `<command>`                              |
 | `get`       | `<file> [where]`                         |
 | `getfolder` | `<folder> [where]`                       |
+| `ifm`       |                                          |
 | `info`      |                                          |
 | `lsl`       | `[-showdetails\|suppressmessages] [dir]` |
 | `lsr`       | `[-showdetails] [dir]`                   |
+| `mkldir`    | `<directory>`                            |
+| `mkrdir`    | `<directory>`                            |
 | `mv`        | `<source> <target>`                      |
 | `put`       | `<file> [output]`                        |
 | `putfolder` | `<folder> [output]`                      |
@@ -311,6 +314,7 @@ This shell allows you to check your e-mails and send them. You can use the follo
 | `rmdir`   | `<foldername>`                    |
 | `send`    |                                   |
 | `sendenc` |                                   |
+| `tui`     |                                   |
 
 ### Pastebin
 
@@ -349,8 +353,11 @@ SFTP shell allows you to interact with the SFTP servers.
 | `del`    | `<file>`                                  |
 | `detach` |                                           |
 | `get`    | `<file>`                                  |
+| `ifm`    |                                           |
 | `lsl`    | `[-showdetails\|-suppressmessages] [dir]` |
 | `lsr`    | `[-showdetails] [dir]`                    |
+| `mkldir` | `<directory>`                             |
+| `mkrdir` | `<directory>`                             |
 | `put`    | `<file>`                                  |
 | `pwdl`   |                                           |
 | `pwdr`   |                                           |
@@ -435,3 +442,13 @@ You can initiate unit conversion using the following commands:
 | ----------- | -------------------------------------------------------- |
 | `listunits` | `<type>`                                                 |
 | `unitconv`  | `[-tui] <unittype> <quantity> <sourceunit> <targetunit>` |
+
+### Mod management
+
+You can manage your mods using the following commands:
+
+| Commands    | Arguments and Switches                                                                                     |
+| ----------- | ---------------------------------------------------------------------------------------------------------- |
+| `modmanual` | `<modname>`                                                                                                |
+| `modman`    | <p><code>&#x3C;start/stop/info/reload/install/</code></p><p><code>uninstall> &#x3C;modfilename></code></p> |
+|             | <p><code>&#x3C;list/reloadall/stopall/startall/</code></p><p><code>tui></code></p>                         |

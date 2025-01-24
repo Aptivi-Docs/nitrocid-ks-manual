@@ -1,6 +1,6 @@
 ---
-description: You can now dock your screen!
 icon: image
+description: You can now dock your screen!
 ---
 
 # Docking
@@ -13,8 +13,8 @@ Information centers tend to require no input from the user, because they general
 
 Nitrocid KS attempts to simulate this concept by implementing the non-touch version of the information center that only gives you latest information about various things, such as the time and the date. This is accompanied by the usage of the brand-new screen feature to gain flexibility in regards to screen resizes. Its documentation can be found here to see the magic behind this feature:
 
-{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-screen" %}
-[Console Screen](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-screen)
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/textual-ui/console-screen" %}
+[Console Screen](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/textual-ui/console-screen)
 {% endcontent-ref %}
 
 ### How do I dock my screen?
