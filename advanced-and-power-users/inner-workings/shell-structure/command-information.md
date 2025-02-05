@@ -1,21 +1,22 @@
 ---
-description: Define this command for me!
 icon: info
+description: Define this command for me!
 ---
 
 # Command Information
 
-Each command you define in your shell must provide a new instance of the `CommandInfo` class holding details about the specified command. The new instance of the class can be made using the constructor defined below:
+Each command you define in your shell must provide a new instance of the `CommandInfo` class holding details about the specified command. The new instance of the class can be made using one of the constructors defined below:
 
 ```csharp
 public CommandInfo(string Command, string HelpDefinition, CommandArgumentInfo[] CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
+public CommandInfo(string Command, string HelpDefinition, BaseCommand? CommandBase, CommandFlags Flags = CommandFlags.None)
 ```
 
 where:
 
 * `Command`: The command
 * `HelpDefinition`: The brief summary of what the command does
-* `CommandArgumentInfo`: Array of argument information about your command
+* `CommandArgumentInfo`: Array of argument information about your command (can be omitted)
 * `CommandBase`: An instance of the `BaseCommand` containing command execution information
 * `CommandFlags`: All command flags
 

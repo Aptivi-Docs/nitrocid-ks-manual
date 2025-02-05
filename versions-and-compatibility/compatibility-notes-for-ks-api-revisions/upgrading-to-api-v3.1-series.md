@@ -471,3 +471,28 @@ As we've implemented the color viewer in Terminaux, we've finally removed the "s
 {% hint style="info" %}
 This is a behavioral change.
 {% endhint %}
+
+#### Base shell info generic class implemented
+
+{% code title="BaseShellInfo.cs" lineNumbers="true" %}
+```csharp
+public abstract class BaseShellInfo : IShellInfo
+```
+{% endcode %}
+
+When you create your own shell info classes to give your shell some important information, such as commands and other info, you had to override the `BaseShell` property so that it returned a new instance of your shell. However, this can be a hassle in certain scenarios.
+
+Starting from Nitrocid KS 0.1.2 and Terminaux 7.0, you'll no longer have to override the BaseShell property because we've implemented a generic version of the above class that takes a type of your shell. For example, if your shell is called `OxygenShell` and your shell info class is called `OxygenShellInfo`, you can just inherit the generic version of the class so that it becomes `BaseShellInfo<OxygenShell>`.
+
+As a result, the following properties are removed from the IShellInfo interface:
+
+{% code title="IShellInfo.cs" lineNumbers="true" %}
+```csharp
+BaseShell? ShellBase { get; }
+PromptPresetBase CurrentPreset { get; }
+```
+{% endcode %}
+
+{% hint style="info" %}
+When inheriting the non-generic base shell class, your shell info class might hold wrong information about your shell, even if your commands are defined. Therefore, you must migrate to the generic version of the class if you want to retain your shell settings.
+{% endhint %}

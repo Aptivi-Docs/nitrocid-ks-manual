@@ -8,7 +8,7 @@ description: Explaining the inner workings of all the kernel shells
 Kernel shells can be built by implementing two different interfaces and base classes. Why two? Because the shell handler relies on:
 
 * `BaseShell` and `IShell`: To hold shell type and initialization code
-* `BaseShellInfo` and `IShellInfo`: To hold shell commands and the base shell
+* `BaseShellInfo<ShellType>` and `IShellInfo`: To hold shell commands and the base shell
 
 ## Shell Handler
 
@@ -90,10 +90,10 @@ Be sure to unregister your shell using the `UnregisterShell()` function, or the 
 
 ### Shell Information
 
-Every `BaseShell` class you create must accompany it with a separate class that implements the `BaseShellInfo` and `IShellInfo` classes, as in below:
+Every `BaseShell` class you create must accompany it with a separate class that implements the `BaseShellInfo` and `IShellInfo` classes, specifying your shell class name when inheriting the generic version of the `BaseShellInfo` class, as in below:
 
 ```csharp
-internal class YourShellInfo : BaseShellInfo, IShellInfo
+internal class YourShellInfo : BaseShellInfo<YourShell>, IShellInfo
 ```
 
 This is where your commands get together by overriding the `Commands` variable with the new dictionary containing all your commands, like below (in the UESH shell):
@@ -114,6 +114,10 @@ public override List<CommandInfo> Commands => new()
 };
 ```
 
+{% hint style="info" %}
+You can omit the array definition of `CommandArgumentInfo` instances to create parameterless commands more easily.
+{% endhint %}
+
 In addition, you can override the `ShellPresets` class with a new dictionary containing all the presets for your shell, like below:
 
 ```csharp
@@ -121,18 +125,6 @@ public override Dictionary<string, PromptPresetBase> ShellPresets => new()
 {
     { "Default", new DefaultPreset() }
 };
-```
-
-`ShellBase`, however, must be overridden with an instance of your shell in this form:
-
-```csharp
-public override BaseShell ShellBase => new YourShell();
-```
-
-Additionally, `CurrentPreset` must be overridden with a variable that queries your shell type with the `CurrentPresets` variable as in below:
-
-```csharp
-public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets[ShellType];
 ```
 
 The `ShellType` variable found within the `BaseShellInfo` class is a wrapper for the `ShellBase.ShellType` variable for easier access. It's not overridable and is defined like this:
@@ -183,7 +175,7 @@ You'll have to adapt your shell to take the first argument, `ShellArgs[0]`, as t
     FTPShellCommon.clientConnection = ftpConnection;
 </code></pre>
 
-<pre class="language-csharp" data-title="FTPShellInfo.cs" data-line-numbers><code class="lang-csharp">internal class FTPShellInfo : BaseShellInfo, IShellInfo
+<pre class="language-csharp" data-title="FTPShellInfo.cs" data-line-numbers><code class="lang-csharp">internal class FTPShellInfo : BaseShellInfo&#x3C;FTPShell>, IShellInfo
 {
     (...)
 <strong>    public override bool AcceptsNetworkConnection => true;
@@ -340,13 +332,7 @@ For guidance on how to define your command, click the below button:
 [command-information.md](command-information.md)
 {% endcontent-ref %}
 
-For guidance on how to define your command's switches, click the below button:
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
-For guidance on how to manage your command's switches, click the below button:
+For guidance on how to define and manage your command's switches, click the below button:
 
 {% content-ref url="command-switch-management.md" %}
 [command-switch-management.md](command-switch-management.md)
