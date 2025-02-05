@@ -1,6 +1,6 @@
 ---
-description: Follow the compatibility notes when upgrading your mods to API v3.1 series
 icon: up
+description: Follow the compatibility notes when upgrading your mods to API v3.1 series
 ---
 
 # Upgrading to API v3.1 series
@@ -39,7 +39,7 @@ We have removed the modern debug log look introduced in the 0.1.0 series, becaus
 It's advisable for you to stop using this feature.
 {% endhint %}
 
-**Removed `SplashDisplaysProgress`**
+#### **Removed `SplashDisplaysProgress`**
 
 {% code title="BaseSplash.cs" lineNumbers="true" %}
 ```csharp
@@ -59,7 +59,7 @@ The above property has been removed, because the `SplashInfo` instance already c
 It's advisable for you to stop using this property.
 {% endhint %}
 
-**Removed `ConfigCategory`**
+#### **Removed `ConfigCategory`**
 
 {% code title="ConfigCategory.cs" lineNumbers="true" %}
 ```csharp
@@ -73,7 +73,7 @@ This enumeration went unused as the 0.1.0 configuration has been remade with spe
 A viable alternative, `GetSettingsEntries()`, can be used to get the categories from all configurations.
 {% endhint %}
 
-**Merged `ListLanguages()` and `ListLanguagesWithCountry()` functions**
+#### **Merged `ListLanguages()` and `ListLanguagesWithCountry()` functions**
 
 {% code title="LanguageManager.cs" lineNumbers="true" %}
 ```csharp
@@ -88,7 +88,7 @@ The above functions have been merged with the `ListLanguages()` function and it 
 If you still want to list languages with their countries in the key, you can now move to `ListLanguages`, passing `true` to the last optional argument.
 {% endhint %}
 
-**Aptivestigate is used for debugger and crash handler**
+#### **Aptivestigate is used for debugger and crash handler**
 
 {% code title="KernelMainConfig.cs" lineNumbers="true" %}
 ```csharp
@@ -137,7 +137,7 @@ public static string DebuggingPath
 Aptivestigate will continue to get updated, despite the low frequency of updates, which is expected. It will be expanded to allow you to control the logging behavior.
 {% endhint %}
 
-**Screensaver properties are get-only**
+#### **Screensaver properties are get-only**
 
 {% code title="IScreensaver.cs" lineNumbers="true" %}
 ```csharp
@@ -159,7 +159,7 @@ The two overridable properties mentioned above have been inappropriately declare
 You should edit the overridden properties so that they don't expose the setters.
 {% endhint %}
 
-**Culture management is separate from the language management**
+#### **Culture management is separate from the language management**
 
 {% code title="KernelMainConfig.cs" lineNumbers="true" %}
 ```csharp
@@ -214,7 +214,7 @@ To allow users more flexibility into choosing their own culture that is recogniz
 There are no alternatives for this.
 {% endhint %}
 
-**Removed `WelcomeMessage` from the public API**
+#### **Removed `WelcomeMessage` from the public API**
 
 {% code title="WelcomeMessage.cs" lineNumbers="true" %}
 ```csharp
@@ -228,7 +228,7 @@ This class was not meant to be used by the kernel mods in the first place, becau
 There are no alternatives for this.
 {% endhint %}
 
-**Removed fancy console writers**
+#### **Removed fancy console writers**
 
 ```csharp
 public static class TextDynamicWriters
@@ -252,7 +252,7 @@ In addition to that, the above functions were removed from the `TextWriters` cla
 Consult the Terminaux documentation for more information on how to use the cyclic writers [here](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-writers/cyclic-writers).
 {% endhint %}
 
-**`SelectionFunctionType` changes**
+#### **`SelectionFunctionType` changes**
 
 When using the above settings entry key, you'll need to provide the fully-qualified type name, not just a short name. This is to avoid ambiguity.
 
@@ -273,7 +273,7 @@ To avoid fragmentation in the filesystem tools, such as `Opening`, `Listing`, an
 You'll need to update your using clause to point to `Nitrocid.Files` and to update your references to such classes to point to `FilesystemTools`.
 {% endhint %}
 
-**`CheckConfigVariables()` simplified for `SMultivar` support**
+#### **`CheckConfigVariables()` simplified for `SMultivar` support**
 
 {% code title="ConfigTools.cs" lineNumbers="true" %}
 ```csharp
@@ -290,11 +290,11 @@ The above function's return value has changed to `List<bool>`. Consequently, you
 In the final version of 0.1.2, we promise to restore the original functionality, but it's going to use a tuple instead of a dictionary because of a potential of multiple settings keys, especially the `SMultivar` keys, that can hold the same name in the same configuration entry.
 {% endhint %}
 
-**Inter-addon and inter-mod communication updated**
+#### **Inter-addon and inter-mod communication updated**
 
 We've updated the inter-addon and the inter-mod communication so that you can work with the mods and the addons with more depth. See the changes here.
 
-**Added info-based reflection functions**
+#### **Added info-based reflection functions**
 
 {% code title="FieldManager.cs" lineNumbers="true" %}
 ```csharp
@@ -328,7 +328,7 @@ As a consequence, we've removed the `Get*General()` functions due to internal st
 `Get*Value()` functions are already aware of the settings-related properties.
 {% endhint %}
 
-**Moved `Nitrocid.Modifications` to the `Nitrocid.Extras.Mods` addon**
+#### **Moved `Nitrocid.Modifications` to the `Nitrocid.Extras.Mods` addon**
 
 This affects all the classes except the most essential ones and the inter-mod communication class. They have been moved to this addon, so even the kernel requires the usage of the inter-addon communication in order to be able to utilize mod functions.
 
@@ -338,7 +338,7 @@ This is done to prevent the Lite version of Nitrocid KS from being able to run a
 You can use the inter-addon communication to be able to interact with this addon, since these classes remain public.
 {% endhint %}
 
-**`Nitrocid.LocaleGen.Core` removed**
+#### **`Nitrocid.LocaleGen.Core` removed**
 
 This NuGet package didn't expose any public API since its inception. It was originally meant to be as a plan for 0.1.0.x to consolidate all the LocaleGen projects and their siblings into one, but it seems that it was never done as of the release of the second beta of 0.1.0.
 
@@ -386,7 +386,7 @@ DebugWriter.WriteDebug(DebugLevel.I, "Hi, {0}!", vars: ["Nitrocid KS"]);
 ```
 {% endhint %}
 
-**Refactored console tools**
+#### **Refactored console tools**
 
 {% code title="ConsoleTools.cs" lineNumbers="true" %}
 ```csharp
@@ -407,7 +407,7 @@ The above functions have been moved to the `KernelColorTools` class. Since those
 You can still use these functions in the `KernelColorTools` class.
 {% endhint %}
 
-**Automatic update downloads removed**
+#### **Automatic update downloads removed**
 
 {% code title="KernelMainConfig.cs" lineNumbers="true" %}
 ```csharp
@@ -419,4 +419,55 @@ Since we're working on improvements for Nitrocid KS to ensure that it gets updat
 
 {% hint style="danger" %}
 It's advisable to stop using this configuration entry.
+{% endhint %}
+
+#### Removed the NTFS mitigation for the 2021 corruption
+
+{% code title="FilesystemTools.cs" lineNumbers="true" %}
+```csharp
+public static void ThrowOnInvalidPath(string? Path)
+```
+{% endcode %}
+
+When we were working on the 0.0.15.0 version of Nitrocid KS (Kernel Simulator back then), we became aware of the NTFS bug causing Windows 10 systems that didn't have the fix to display the "disk corrupt" message when "accessing" the NTFS bitmap, leading the users into rebooting the PC to check the whole disk. We also became aware of the kernel driver bug that caused a crash of the system with Blue Screen of Death (BSOD) when the system tried to access an arbitrary path. As a response, we've released that version with the fix applied as per commit [aa8250c](https://github.com/Aptivi/Nitrocid/commit/aa8250ce5ab777b467e1b58c596cd761b80ba32e).
+
+However, NuGet back then assumed that the version published contained "malware" that actually checked the path string with `Contains()`. This was the e-mail:
+
+> Package KS 0.0.15 owned by your account was identified as malware and deleted.
+>
+> _— NuGet team, "Malware detected in a NuGet.org package"_
+
+Our intention was not to inject "malware" into the final distribution, so we'd negotiated with the NuGet team about the clarification of our checking method, and this was their response:
+
+> Both the 0.0.15 version and the 0.0.14.2 versions of your KS package triggered our malware detection/validation. The 0.0.15 version was deleted for this reason (our malware analysis team concluded it was malicious). However, given extra details you provided and this is the second instance of the problem, I have submitted the details you provided to our malware analysis team for further review.
+>
+> Apologies on the delay but, to be safe, we cannot allow this package to complete validation until there is a conclusive response from our malware analysis team. Our team takes the security of our customers extremely seriously and depend on our partner teams to evaluate packages for malware.
+>
+> In general, if Windows 10 is identifying a package or package contents as malware as a “false positive”, package consumers will run into the very same problem that you and our malware validation is encountering. Therefore, I believe it is best to work with the malware analysis team to resolve this issue conclusively.
+>
+> _— NuGet team_
+
+Meanwhile, we'd released the clean version under the 0.0.14.3 version with commit [a8d45c3](https://github.com/Aptivi/Nitrocid/commit/a8d45c32afde41aa2ad04ad84cd96832b6394971). The NuGet team then allowed us to push newer versions of Nitrocid KS with the checking code included.
+
+Fast forward to the present, this check was no longer necessary, because almost all computers were patched, so we've decided to remove the check, this time, at will instead of being forced.
+
+{% hint style="warning" %}
+You can still implement this code, referring to [this commit](https://github.com/Aptivi/Nitrocid/commit/5d5e886d552e203b2e06ab39665fd6a03c8f3e8f#diff-8720daddbbf90b90112ada4140838886e36eab7f12688ecdccb8bcc2f4dc5e4b) that caused this breaking change, in your mod. However, because this part of code is licensed with GNU GPL 3.0+, you'll have to credit the whole project by preserving the license header found at the top of the code file of Nitrocid KS.
+
+However, some scanners may still detect your mod as "malware," so we don't recommend re-implementing this function at all.
+{% endhint %}
+
+#### Theme preview function simplified
+
+{% code title="ThemePreviewTools.cs" lineNumbers="true" %}
+```csharp
+public static void PreviewThemeSimple(string theme)
+public static void PreviewThemeSimple(ThemeInfo theme)
+```
+{% endcode %}
+
+As we've implemented the color viewer in Terminaux, we've finally removed the "simple" version of the theme preview and merged its functionality with the normal version.
+
+{% hint style="info" %}
+This is a behavioral change.
 {% endhint %}

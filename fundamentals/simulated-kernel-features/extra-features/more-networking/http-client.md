@@ -1,6 +1,6 @@
 ---
-description: Make your HTTP requests
 icon: globe
+description: Make your HTTP requests
 ---
 
 # HTTP Client
@@ -28,6 +28,6 @@ To be able to use the below commands that are listed in the below section, you h
 
 To get access to the list of commands, consult the below page:
 
-{% content-ref url="../../shells/commands-list.md" %}
-[commands-list.md](../../shells/commands-list.md)
+{% content-ref url="../../shells/addon-commands-list.md" %}
+[addon-commands-list.md](../../shells/addon-commands-list.md)
 {% endcontent-ref %}

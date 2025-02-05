@@ -1,6 +1,6 @@
 ---
-description: Handles all your RSS feeds
 icon: square-rss
+description: Handles all your RSS feeds
 ---
 
 # RSS Client
@@ -29,6 +29,6 @@ If you passed the `-tui` switch, it'll open the interactive TUI to your favorite
 
 These below commands can be found by consulting the below page:
 
-{% content-ref url="../../shells/commands-list.md" %}
-[commands-list.md](../../shells/commands-list.md)
+{% content-ref url="../../shells/addon-commands-list.md" %}
+[addon-commands-list.md](../../shells/addon-commands-list.md)
 {% endcontent-ref %}

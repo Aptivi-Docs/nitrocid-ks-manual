@@ -46,17 +46,6 @@ To learn more about all the available API functions regarding the filesystem, cl
 
 Every filesystem operation committed within the `Nitrocid.Files` namespace and its functions get their paths checked with the path neutralizer to make a unified version of the path to point to the file relative to either the current path according to the filesystem routine or to the absolute path provided to the neutralizer. This neutralizer is called `Filesystem.NeutralizePath()`.
 
-However, the neutralizer also checks for the validity of the path as a mitigation to the Windows 10 NTFS corruption and forced BSOD bugs by calling the `ThrowOnInvalidPath()` function.
-
-{% hint style="warning" %}
-If the conditions were met:
-
-* Attempting to access a Windows path including `$i30`, which is the NTFS volume bitmap, or
-* Attempting to open the `kernelconnect` node on `condrv` using a specially crafted path,
-
-The checker will throw a `KernelException` with the `KernelExcceptionType` of `Filesystem` stating that the attempt of accessing these paths is invalid.
-{% endhint %}
-
 Optionally, the functions also make use of the file and folder lock checking mechanisms by invoking one of these functions:
 
 * `IsFileLocked()`

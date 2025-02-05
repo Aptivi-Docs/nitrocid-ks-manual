@@ -1,6 +1,6 @@
 ---
-description: Ordered list of simulated kernel flow
 icon: star
+description: Ordered list of simulated kernel flow
 ---
 
 # Simulated Kernel Features
@@ -45,6 +45,10 @@ As of 0.1.1, you can now use your mouse to navigate the kernel's interactive TUI
 
 {% content-ref url="screensavers.md" %}
 [screensavers.md](screensavers.md)
+{% endcontent-ref %}
+
+{% content-ref url="audio-cues.md" %}
+[audio-cues.md](audio-cues.md)
 {% endcontent-ref %}
 
 In addition to the above features, consult the below page to get some of the extra features:

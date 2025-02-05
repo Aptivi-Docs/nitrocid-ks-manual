@@ -1,6 +1,6 @@
 ---
-description: Manage your messages with this mail client
 icon: envelope
+description: Manage your messages with this mail client
 ---
 
 # Mail Client
@@ -34,6 +34,10 @@ To use the encrypted mail, you need to have both your private key and your recip
 
 To get a list of available mail commands, consult the page below:
 
-{% content-ref url="../../shells/commands-list.md" %}
-[commands-list.md](../../shells/commands-list.md)
+{% content-ref url="../../shells/addon-commands-list.md" %}
+[addon-commands-list.md](../../shells/addon-commands-list.md)
 {% endcontent-ref %}
+
+{% hint style="info" %}
+You can also use the interactive TUI version of the mail client by issuing the `tui` command inside the mail shell.
+{% endhint %}

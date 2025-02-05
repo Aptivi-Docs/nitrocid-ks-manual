@@ -125,6 +125,7 @@
   * [Localization](fundamentals/simulated-kernel-features/languages.md)
   * [Screensavers](fundamentals/simulated-kernel-features/screensavers.md)
   * [Lockscreen Widgets](fundamentals/simulated-kernel-features/lockscreen-widgets.md)
+  * [Audio Cues](fundamentals/simulated-kernel-features/audio-cues.md)
 
 ## Advanced and Power Users
 
