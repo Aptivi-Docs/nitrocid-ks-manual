@@ -35,12 +35,8 @@ The Windows Installer method allows you to easily install Nitrocid KS.
 
 1. Download the latest Windows Installer ZIP file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases)
 2. Unpack the ZIP archive to any folder of your choice using [7-Zip](https://7-zip.org/)
-3. Double-click on the MSI file, and follow the instructions
+3. Double-click on a single EXE file, and follow the instructions
 4. Go to your installation path and double-click on `Nitrocid.exe`.
-
-{% hint style="info" %}
-This is currently a prototype method and might change during the development cycle.
-{% endhint %}
 
 ### Method 2: Chocolatey
 
