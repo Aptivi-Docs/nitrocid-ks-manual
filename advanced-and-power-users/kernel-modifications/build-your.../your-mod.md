@@ -1,8 +1,8 @@
 ---
+icon: vial
 description: >-
   This page describes how to make your own custom modification using Visual
   Studio.
-icon: vial
 ---
 
 # Building your Mod
@@ -38,18 +38,10 @@ You're looking to create a mod for Nitrocid KS! That's great! Make sure that you
     <figure><img src="../../../.gitbook/assets/085-modbuild.png" alt=""><figcaption></figcaption></figure>
 10. Now, implement everything as you wish. Once you're done, follow the steps on how to create a strong name signing key and [sign your mod](https://learn.microsoft.com/en-us/dotnet/standard/assembly/sign-strong-name). Then, click on the `Build` menu and select `Build Solution`.
 
-    <div align="left">
-
-    <figure><img src="../../../.gitbook/assets/086-modbuild.png" alt=""><figcaption></figcaption></figure>
-
-    </div>
+    <div align="left"><figure><img src="../../../.gitbook/assets/086-modbuild.png" alt=""><figcaption></figcaption></figure></div>
 11. Once the solution is built, open the file explorer to the solution directory by right-clicking on the solution and selecting `Open Folder in File Explorer`.
 
-    <div align="left">
-
-    <figure><img src="../../../.gitbook/assets/087-modbuild.png" alt=""><figcaption></figcaption></figure>
-
-    </div>
+    <div align="left"><figure><img src="../../../.gitbook/assets/087-modbuild.png" alt=""><figcaption></figcaption></figure></div>
 12. Navigate to the output directory and copy the `.dll` file to `KSMods` under the `%localappdata%/KS` folder.
 
     <figure><img src="../../../.gitbook/assets/088-modbuild.png" alt=""><figcaption></figcaption></figure>
@@ -62,3 +54,11 @@ You will have to turn on kernel modifications from the kernel settings. Navigate
 
 You can also make use of the [`KSTemplates`](https://github.com/Aptivi/KSTemplates) repository, which can be installed to Visual Studio using the `dotnet new install path/to/KS.Templates.nupkg` command.
 {% endhint %}
+
+## Bleeding-edge builds
+
+Bleeding-edge NuGet builds are available in our organization's GitHub Package Registry. In order to use such builds, you'll need to consult the <mark style="color:green;">**Installing canary NuGet packages**</mark> section of the below page:
+
+{% content-ref url="https://app.gitbook.com/s/Id4bob6wnHvpX4zbVVtI/csharp-libraries/installation-and-upgrade/installation" %}
+[Installation](https://app.gitbook.com/s/Id4bob6wnHvpX4zbVVtI/csharp-libraries/installation-and-upgrade/installation)
+{% endcontent-ref %}
