@@ -58,16 +58,16 @@ Bleeding-edge builds usually come from building the development branch of the ke
 
 If you're a tester to such software, please follow the steps on your Windows machine. Please be sure that you're signed in to your GitHub account.
 
-1. Open [this page](https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-linux.yml)
+1. Open the [canary release preparation workflow](https://github.com/Aptivi/Nitrocid/actions/workflows/release-canary.yml)
 2. Select the most recent build
-3. Scroll down to Artifacts and click on the `ks-build` button to download the ZIP file on your device
+3. Scroll down to Artifacts and click on the `nks-build` button to download the ZIP file or one of the `installer-ARCH-msi` files for the installer version, where `ARCH` is either `x64` or `arm64`.
 4. Repeat steps 1-6 in the `Installation` section
 5. Now, use the `termux-setup-storage` command. Follow the instructions [here](https://wiki.termux.com/wiki/Termux-setup-storage).
-6. Copy the `ks-build.zip` file from `~/storage/downloads/ks-build.zip` to your home directory
-   * `cp ~/storage/downloads/ks-build.zip ~/`
+6. Copy the `nks-build.zip` file from `~/storage/downloads/nks-build.zip` to your home directory
+   * `cp ~/storage/downloads/nks-build.zip ~/`
 7. Still in the home directory, install unzip to extract the files
    * `apt install unzip`
-   * `unzip ks-build.zip`
+   * `unzip nks-build.zip`
 8. Execute `dotnet Nitrocid.dll`
 
 ## Important notes

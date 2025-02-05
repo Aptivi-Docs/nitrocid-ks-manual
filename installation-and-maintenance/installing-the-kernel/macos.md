@@ -37,9 +37,9 @@ Bleeding-edge builds usually come from building the development branch of the ke
 
 If you're a tester to such software, please follow the steps on your macOS machine. Please be sure that you're signed in to your GitHub account.
 
-1. Open [this page](https://github.com/Aptivi/Kernel-Simulator/actions/workflows/build-win.yml)
+1. Open the [canary release preparation workflow](https://github.com/Aptivi/Nitrocid/actions/workflows/release-canary.yml)
 2. Select the most recent build
-3. Scroll down to Artifacts and click on the `ks-build` button to download the ZIP file
-4. Extract the file. Be sure that you have the latest version of your favorite archive manager installed
+3. Scroll down to Artifacts and click on the `nks-build` button to download the ZIP file.
+4. Extract the file. Be sure that you have the latest version of your favorite archive manager installed.
 5. Open your favorite terminal emulator, like iTerm 2, and change the working directory to a folder containing the Nitrocid KS executable
 6. Execute `ks` or `dotnet Nitrocid.dll` to start the kernel
