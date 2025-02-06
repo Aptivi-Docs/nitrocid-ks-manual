@@ -30,7 +30,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `bulkrename`            | `<targetdir> <pattern> [newname]`                                                |
 | `cat`                   | `[-lines\|-nolines\|-plain] <file>`                                              |
 | `cdir`                  |                                                                                  |
-| `changes`               |                                                                                  |
+| `changes`               | `-online`                                                                        |
 | `chattr`                | `<file> <add/rem> <attr>`                                                        |
 | `chculture`             | `[-user] <culture>`                                                              |
 | `chdir`                 | `<directory/..>`                                                                 |
