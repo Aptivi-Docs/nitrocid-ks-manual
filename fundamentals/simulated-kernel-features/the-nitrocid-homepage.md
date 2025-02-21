@@ -5,9 +5,9 @@ description: Your homepage, your way!
 
 # The Nitrocid Homepage
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
 
-Nitrocid KS 0.1.1 introduces you with an awesome homepage that gets started every time you log in, though you can disable it through the kernel settings. It provides you with the following elements:
+Nitrocid KS introduces you with an awesome homepage that gets started every time you log in, though you can disable it through the kernel settings. It provides you with the following elements:
 
 * Extensible application list
 * Settings and About buttons
@@ -23,7 +23,7 @@ In order to show the top three RSS feeds, an RSS kernel addon must be installed,
 
 You can navigate the application list using either the up/down arrow keys, page up/page down arrow keys, or home/end keys. You can also use your mouse to navigate the homepage, but you must enable the mouse support in order to be able to select an item using just your mouse.
 
-The keybindings shown at the botton of the screen allow you to perform various operations, such as exiting to the shell, logging out, and executing a selected action.
+The keybindings shown at the bottom of the screen allow you to perform various operations, such as exiting to the shell, logging out, and executing a selected action.
 
 ## Custom applications
 
