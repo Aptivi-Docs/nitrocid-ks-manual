@@ -496,3 +496,18 @@ PromptPresetBase CurrentPreset { get; }
 {% hint style="info" %}
 When inheriting the non-generic base shell class, your shell info class might hold wrong information about your shell, even if your commands are defined. Therefore, you must migrate to the generic version of the class if you want to retain your shell settings.
 {% endhint %}
+
+#### Removed unused function from `SwitchInfo`
+
+{% code title="SwitchInfo.cs" lineNumbers="true" %}
+```csharp
+public string GetTranslatedHelpEntry() =>
+    Translate.DoTranslation(HelpDefinition);
+```
+{% endcode %}
+
+This function was just a small wrapper to get the translated version of the help entry. The localization tools are now able to detect unlocalized strings more efficiently than before, and we felt that this function was just a syntax sugar, so we've decided to remove this function as mods can now have translatable strings.
+
+{% hint style="info" %}
+You can use `Translate.DoTranslation()` against the `HelpDefinition` property to achieve the same goal.
+{% endhint %}

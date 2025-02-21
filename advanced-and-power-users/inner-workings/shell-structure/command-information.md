@@ -44,6 +44,34 @@ where:
 * `AcceptsSet`: Whether to accept the `-set` switch
 * `infiniteBounds`: Whether to accept infinite number of arguments or not
 
+{% hint style="info" %}
+For commands that require more than just simple argument checking as specified in the `CommandArgumentPart` instances, you can use the `ArgChecker` property to set it to a function delegate that checks all the arguments, with the command parameter info as the first argument. Such functions must return 0 to continue execution. Else, the command execution will not continue and the last error code will be set to what the function returns.
+
+This is an example for the `alarm` command:
+
+<pre class="language-csharp" data-title="CommandInfo for alarm" data-line-numbers><code class="lang-csharp">new CommandInfo("alarm", /* Localizable */ "Manage your alarms",
+    [
+        new CommandArgumentInfo(
+        [
+            (...)
+        ])
+        {
+<strong>            ArgChecker = (cp) => AlarmCommand.CheckArgument(cp, "start")
+</strong>        },
+        (...)
+    ], new AlarmCommand(), CommandFlags.Strict),
+</code></pre>
+
+{% code title="Alarm command code" lineNumbers="true" %}
+```csharp
+internal static int CheckArgument(CommandParameters parameters)
+{
+    (...)
+}
+```
+{% endcode %}
+{% endhint %}
+
 For `CommandArgumentPart` instances, consult the below constructor to create an array of `CommandArgumentPart` instances when defining your commands:
 
 ```csharp

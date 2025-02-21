@@ -21,9 +21,9 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `adduser`               | `<username> [password]`                                                          |
 | `addusertogroup`        | `<username> <group>`                                                             |
 | `admin`                 |                                                                                  |
-| `alarm`                 | `<start/stop> <alarmname> [interval]`                                            |
-|                         | `<list>`                                                                         |
-|                         | `[-tui]`                                                                         |
+| `alarm`                 | `<start> <alarmname> <interval>`                                                 |
+|                         | `<stop> <alarmname>`                                                             |
+|                         | `[-tui] <list>`                                                                  |
 | `alias`                 | `<rem/add> <shelltype> <alias> [cmd]`                                            |
 | `beep`                  | `[freq] [ms]`                                                                    |
 | `blockdbgdev`           | `<ipaddress>`                                                                    |
@@ -169,6 +169,7 @@ The below commands are available to all the shells, either built-in or your cust
 | `exit`          |                                                              |
 | `help`          | `[-general\|-mod\|-alias\|-addon\|-unified\|-all] [command]` |
 | `loadhistories` |                                                              |
+| `pipe`          | `[-quoted] <sourceCommand> <targetCommand>`                  |
 | `presets`       |                                                              |
 | `repeat`        | `<times> [command]`                                          |
 | `savehistories` |                                                              |

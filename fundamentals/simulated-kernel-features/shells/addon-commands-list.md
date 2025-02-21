@@ -106,9 +106,10 @@ This addon allows you access to the calendar functions. You can use the below co
 
 This addon gives you commands that allow you to interact with the periodic table. You can use the following commands:
 
-| Commands  | Arguments and Switches     |
-| --------- | -------------------------- |
-| `element` | `name/symbol/atomicNumber` |
+| Commands   | Arguments and Switches     |
+| ---------- | -------------------------- |
+| `element`  | `name/symbol/atomicNumber` |
+| `elements` |                            |
 
 ### Color Conversion
 

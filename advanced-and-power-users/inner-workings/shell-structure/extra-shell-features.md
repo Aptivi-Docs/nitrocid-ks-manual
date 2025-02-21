@@ -1,6 +1,6 @@
 ---
-description: The UESH shell provides more features than you can imagine!
 icon: square-plus
+description: The UESH shell provides more features than you can imagine!
 ---
 
 # Extra Shell Features
@@ -76,3 +76,16 @@ Currently, the below functions are available for your mods to use:
 * `GetAliasesListFromType()`: Gets a list of aliases from a shell type, excluding the built-in ones.
 * `GetEntireAliasListFromType()`: Gets a list of aliases from a shell type, including the built-in ones.
 * `GetAlias()`: Gets information about a specific alias.
+
+## Piping Command Output
+
+It's possible to pipe the source command output as arguments to the target command. You can now use the `wrap` command to pipe all output to the target command as arguments. For example, if you're piping the output of `ls` to `echo`, you'll run the `wrap -quoted ls echo` command. This command executes two commands:
+
+* `ls`: Executes directory listing command and buffers the output.
+* `echo`: Executes the text printing command with the buffered output as parameters, enclosing it with the double quotes if the `-quoted` switch is passed.
+
+{% hint style="info" %}
+If you find that piping command output doesn't work properly, depending on the target command, you'll have to enclose the output with the double quotes by passing `wrap` the `-quoted` switch.
+
+The source command must have the `wrappable` flag as piping relies on buffering the output.
+{% endhint %}

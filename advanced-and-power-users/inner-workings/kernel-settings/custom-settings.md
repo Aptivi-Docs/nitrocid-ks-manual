@@ -1,6 +1,6 @@
 ---
-description: You can add your own custom settings, too!
 icon: sliders
+description: You can add your own custom settings, too!
 ---
 
 # Custom Settings
@@ -226,4 +226,17 @@ When registering custom settings, the kernel runs a validation test to ensure th
 If **any** of the kernel configuration entries is invalid, the configuration tools will report a failure. Make sure that all of the entries are valid and that you've specified the variable names correctly. Use `nameof` to help you assign them.
 
 **The variable names are case-sensitive.**
+{% endhint %}
+
+### Fallback configuration
+
+You can generate a configuration instance that contains all fallback values that are determined by the constructor of all settings properties. You can provide either a configuration class as a generic type argument, or a config type name, using the `GetFallbackKernelConfig()` function.
+
+To demonstrate that, you can use either of the following:
+
+* <kbd>F8</kbd>: Reset all configuration entries
+* <kbd>SHIFT</kbd> + <kbd>R</kbd>: Reset selected configuration entry
+
+{% hint style="warning" %}
+Some of the kernel settings may store the current settings, even if the fallback instances are generated. Settings for your mods should not rely on external variables when possible.
 {% endhint %}
