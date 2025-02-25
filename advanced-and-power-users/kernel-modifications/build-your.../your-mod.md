@@ -52,7 +52,7 @@ You're looking to create a mod for Nitrocid KS! That's great! Make sure that you
 {% hint style="info" %}
 You will have to turn on kernel modifications from the kernel settings. Navigate to `General > Start kernel modifications on boot` and turn it on.
 
-You can also make use of the [`KSTemplates`](https://github.com/Aptivi/KSTemplates) repository, which can be installed to Visual Studio using the `dotnet new install path/to/KS.Templates.nupkg` command.
+You can also make use of the [`KSTemplates`](https://github.com/Aptivi/KSTemplates) repository, which can be installed to Visual Studio using the `dotnet new install path/to/KS.Templates.nupkg` command. It installs both C# and Visual Basic templates for your mods.
 {% endhint %}
 
 ## Bleeding-edge builds

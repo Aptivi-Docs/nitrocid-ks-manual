@@ -1,6 +1,6 @@
 ---
-description: More networking features
 icon: earth-africa
+description: More networking features
 ---
 
 # More Networking
@@ -9,6 +9,10 @@ In addition to the base networking features that the base Nitrocid kernel featur
 
 {% content-ref url="ftp-client.md" %}
 [ftp-client.md](ftp-client.md)
+{% endcontent-ref %}
+
+{% content-ref url="ssh-connection.md" %}
+[ssh-connection.md](ssh-connection.md)
 {% endcontent-ref %}
 
 {% content-ref url="sftp-client.md" %}

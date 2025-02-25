@@ -1,11 +1,11 @@
 ---
-description: Making your own themes easily.
 icon: palette
+description: Making your own themes easily.
 ---
 
 # Theme Studio
 
-<figure><img src="../../../.gitbook/assets/044-themestudio.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
 
 The theme studio allows you to make your own custom themes easily by letting you edit every single color type. It provides you with a fully-fledged color wheel provided by Terminaux to ensure that what you select is accurate and tailored to your needs. You can simply run this program by running the `mktheme <name>` command.
 
@@ -33,6 +33,8 @@ Once you're done with the theme, the theme studio doesn't automatically save you
 You can set your kernel theme to use your custom theme by executing the `themeset` command with the path to your theme JSON file as the first argument, such as `themeset Colorful.json`.
 {% endhint %}
 
-{% hint style="info" %}
-Alternatively, you can launch the theme studio TUI by passing the `-tui` switch. Consult the keystrokes list by pressing the `K` key inside the TUI for help.
-{% endhint %}
+## Interactive TUI
+
+<figure><img src="../../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+
+The theme studio also provides you with the interactive TUI that allows you to make your theme interactively. Press <kbd>K</kbd> to get started.

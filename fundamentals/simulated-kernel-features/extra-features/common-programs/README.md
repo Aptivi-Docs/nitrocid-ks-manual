@@ -19,8 +19,8 @@ Nitrocid KS contains some of the common programs that have their own documentati
 [contacts.md](contacts.md)
 {% endcontent-ref %}
 
-{% content-ref url="ssh-connection.md" %}
-[ssh-connection.md](ssh-connection.md)
+{% content-ref url="weather.md" %}
+[weather.md](weather.md)
 {% endcontent-ref %}
 
 {% content-ref url="git-shell.md" %}

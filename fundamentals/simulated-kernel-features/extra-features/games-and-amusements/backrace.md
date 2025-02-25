@@ -1,11 +1,11 @@
 ---
-description: Do you pick the right horse to win?
 icon: horse
+description: Do you pick the right horse to win?
 ---
 
 # BackRace
 
-<figure><img src="../../../../.gitbook/assets/010-backrace.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.
