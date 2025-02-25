@@ -11,11 +11,11 @@ As API v3.1 is still in development, the breaking changes get committed and land
 
 This version gives your kernel a nice ink of paint that brings in feature additions and spectacular improvements in all fields, including some of the cosmetic changes.
 
-### Updated Terminaux to 6.0 <a href="#updated-terminaux-to-6.0" id="updated-terminaux-to-6.0"></a>
+### Updated Terminaux to 6.1 <a href="#updated-terminaux-to-6.0" id="updated-terminaux-to-6.0"></a>
 
-We've updated Terminaux to 6.0 to bring improvements. However, this doesn't come without the cost of having to deal with the breaking changes, which, in this case, is many.
+We've updated Terminaux to 6.1 to bring improvements. However, this doesn't come without the cost of having to deal with the breaking changes, which, in this case, is many.
 
-You can consult the list of breaking changes that result from upgrading to Terminaux 6.0 by pressing the below button:
+You can consult the list of breaking changes that result from upgrading to Terminaux 6.1 by pressing the below button:
 
 {% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v6.0" %}
 [API v6.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v6.0)
@@ -231,22 +231,11 @@ There are no alternatives for this.
 #### **Removed fancy console writers**
 
 ```csharp
-public static class TextDynamicWriters
 public static class TextFancyWriters
 public static class TextMiscWriters
 ```
 
 The above classes have been removed, because Terminaux 7.0 is planned to remove the old-school function-based writers, which were marked as obsolete thanks to the new cyclic writers. Those writers were in use by the above static classes.
-
-{% code title="TextWriters.cs" lineNumbers="true" %}
-```csharp
-public static void WriteListEntry(string entry, string value, KernelColorType ListKeyColor, KernelColorType ListValueColor, int indent = 0)
-public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, KernelColorType ListKeyColor, KernelColorType ListValueColor)
-public static void WriteList<T>(IEnumerable<T> List, KernelColorType ListKeyColor, KernelColorType ListValueColor)
-```
-{% endcode %}
-
-In addition to that, the above functions were removed from the `TextWriters` class for the same reason.
 
 {% hint style="info" %}
 Consult the Terminaux documentation for more information on how to use the cyclic writers [here](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-writers/cyclic-writers).
@@ -510,4 +499,44 @@ This function was just a small wrapper to get the translated version of the help
 
 {% hint style="info" %}
 You can use `Translate.DoTranslation()` against the `HelpDefinition` property to achieve the same goal.
+{% endhint %}
+
+#### Moved `WriteWrapped` to `TextDynamicWriters`
+
+{% code title="TextWriters.cs" lineNumbers="true" %}
+```csharp
+public static void WriteWrapped(string Text, bool Line, KernelColorType colorType, params object[] vars)
+public static void WriteWrapped(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+```
+{% endcode %}
+
+`TextDynamicWriters` wasn't affected in the direct upgrade from 0.1.0 or 0.1.1 to 0.1.2, because Terminaux 6.0 had deprecated the `WriteListEntry()` functions and that 6.1 had undone the deprecation due to its importance.
+
+Additionally, `WriteWrapped` has been moved to `TextDynamicWriters` and `WriteListEntry()` has been re-introduced.
+
+#### Removed changelogs kernel update type
+
+{% code title="UpdateKind.cs" lineNumbers="true" %}
+```csharp
+public enum UpdateKind
+{
+    (...)
+    Changelogs,
+}
+```
+{% endcode %}
+
+We've removed the `Changelogs` type from the update type enumeration, because we've changed how we bundle the changelogs with the application. Earlier, we used to grab the changelogs from the GitHub release section of Nitrocid KS. Now, we've made the changelogs fully offline by using embedded resources instead.
+
+{% code title="UpdateManager.cs" lineNumbers="true" %}
+```csharp
+public static KernelUpdate? FetchChangelogs()
+public static string GetVersionChangelogs()
+```
+{% endcode %}
+
+As a result, we've removed the above functions from `UpdateManager`.
+
+{% hint style="danger" %}
+We will no longer ship the `changes.chg` file with the GitHub release section starting from the next 0.1.2 release. You'll have to use versioned tags to get the file from `tools/changes.chg` instead.
 {% endhint %}

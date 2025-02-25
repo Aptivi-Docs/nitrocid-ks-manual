@@ -1,8 +1,8 @@
 ---
+icon: galaxy
 description: >-
   Other inner workings that don't fit with the inner essentials and might be
   useful for your mods
-icon: galaxy
 ---
 
 # Miscellaneous APIs
@@ -24,8 +24,6 @@ You can get the kernel version information using the following properties from t
 The `Writers` namespace of the Nitrocid-specific `ConsoleBase` namespace contains the following three writer types:
 
 * `TextWriters`: Provides you with all the normal console writers with kernel color types.
-* `TextFancyWriters`: Provides you with all the fancy writers with kernel color types.
-* `TextMiscWriters`: Provides you with all the miscellaneous writers with kernel color types.
 * `TextDynamicWriters`: Provides you with all the dynamically animated console writers with kernel color types.
 
 If you want to either plainly write text or with a custom color of your choice, consult the Terminaux guide for more information:
