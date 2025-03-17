@@ -1,6 +1,6 @@
 ---
-icon: windows
 description: How to install Nitrocid KS on Windows
+icon: windows
 ---
 
 # Windows
@@ -27,16 +27,15 @@ However, we recommend that you have the below software installed on your compute
 
 ## Installation
 
-There are several ways to install Nitrocid KS on Windows systems. We recommend installing KS using the Chocolatey package manager for simplicity.
+There are several ways to install Nitrocid KS on Windows systems. We recommend installing KS using the Chocolatey package manager or the Windows installer for simplicity.
 
 ### Method 1: Windows Installer
 
 The Windows Installer method allows you to easily install Nitrocid KS.
 
-1. Download the latest Windows Installer ZIP file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases)
-2. Unpack the ZIP archive to any folder of your choice using [7-Zip](https://7-zip.org/)
-3. Double-click on a single EXE file, and follow the instructions
-4. Go to your installation path and double-click on `Nitrocid.exe`.
+1. Download the latest Windows Installer EXE file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases)
+2. Double-click on a single EXE file, and follow the instructions
+3. Double-click on `Nitrocid KS` in your desktop.
 
 ### Method 2: Chocolatey
 
@@ -71,7 +70,7 @@ If you're a tester to such software, please follow the steps on your Windows mac
 
 ## Notice for SmartScreen
 
-SmartScreen may detect that the Nitrocid and its associated executables may not pass the SmartScreen attestation. If this happens, you'll see the below page:
+SmartScreen may detect that Nitrocid and its associated executables may not pass the SmartScreen attestation. If this happens, you'll see the below page:
 
 <figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 

@@ -1,6 +1,6 @@
 ---
-icon: windows
 description: How to upgrade Nitrocid KS on Windows
+icon: windows
 ---
 
 # Windows
@@ -15,14 +15,9 @@ If you're upgrading bleeding-edge builds, it's recommended that you uninstall th
 
 You can update Nitrocid KS using the Windows Installer method.
 
-1. Download the latest Windows Installer ZIP file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
-2. Unpack the ZIP archive to any folder of your choice
-3. Double-click on the MSI file and follow the instructions
-4. Go to your installation path and double-click on `Nitrocid.exe`.
-
-{% hint style="info" %}
-This is currently a prototype method and might change during the development cycle.
-{% endhint %}
+1. Download the latest Windows Installer EXE file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
+2. Double-click on the EXE file and follow the instructions
+3. Go to your installation path and double-click on `Nitrocid.exe`.
 
 ## Method 2: Using Chocolatey
 
