@@ -1,6 +1,6 @@
 ---
-icon: clock-rotate-left
 description: This page lists all the unsupported version series and their history.
+icon: clock-rotate-left
 ---
 
 # EOL Versions
@@ -10,6 +10,52 @@ Like all the software in the entire world, Nitrocid KS has support periods for i
 ## List of unsupported version series
 
 {% tabs %}
+{% tab title="API v3.0" %}
+This revision of the third generation API is supported until 3/11/2034.
+
+* Version v0.1.1.x series (no longer supported)
+
+| Version   | Release date | EOL date  | Security EOL date |
+| --------- | ------------ | --------- | ----------------- |
+| v0.1.1.0  | 7/23/2024    | 4/23/2025 | 4/23/2025         |
+| v0.1.1.1  | 7/24/2024    |           |                   |
+| v0.1.1.2  | 7/28/2024    |           |                   |
+| v0.1.1.3  | 8/1/2024     |           |                   |
+| v0.1.1.4  | 8/2/2024     |           |                   |
+| v0.1.1.5  | 8/5/2024     |           |                   |
+| v0.1.1.6  | 8/8/2024     |           |                   |
+| v0.1.1.7  | 8/12/2024    |           |                   |
+| v0.1.1.8  | 8/13/2024    |           |                   |
+| v0.1.1.9  | 8/14/2024    |           |                   |
+| v0.1.1.10 | 8/19/2024    |           |                   |
+| v0.1.1.11 | 8/20/2024    |           |                   |
+| v0.1.1.12 | 8/24/2024    |           |                   |
+| v0.1.1.13 | 8/29/2024    |           |                   |
+| v0.1.1.14 | 8/30/2024    |           |                   |
+| v0.1.1.15 | 8/31/2024    |           |                   |
+| v0.1.1.16 | 9/3/2024     |           |                   |
+| v0.1.1.17 | 9/10/2024    |           |                   |
+| v0.1.1.18 | 9/11/2024    |           |                   |
+| v0.1.1.19 | 9/12/2024    |           |                   |
+| v0.1.1.20 | 9/14/2024    |           |                   |
+| v0.1.1.21 | 9/15/2024    |           |                   |
+| v0.1.1.22 | 10/3/2024    |           |                   |
+| v0.1.1.23 | 10/10/2024   |           |                   |
+| v0.1.1.24 | 10/12/2024   |           |                   |
+| v0.1.1.25 | 10/17/2024   |           |                   |
+| v0.1.1.26 | 10/20/2024   |           |                   |
+| v0.1.1.27 | 12/22/2024   |           |                   |
+| v0.1.1.28 | 12/27/2024   |           |                   |
+| v0.1.1.29 | 1/3/2025     |           |                   |
+| v0.1.1.30 | 1/7/2025     |           |                   |
+| v0.1.1.31 | 1/28/2025    |           |                   |
+| v0.1.1.32 | 2/26/2025    |           |                   |
+| v0.1.1.33 | 3/24/2025    |           |                   |
+| v0.1.1.34 | 3/29/2025    |           |                   |
+| v0.1.1.35 | 4/3/2025     |           |                   |
+| v0.1.1.36 | 4/15/2025    |           |                   |
+{% endtab %}
+
 {% tab title="API v2.1" %}
 This revision is no longer supported.
 
