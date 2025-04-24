@@ -1,6 +1,6 @@
 ---
-icon: up
 description: Follow the compatibility notes when upgrading your mods to API v3.0 series
+icon: up
 ---
 
 # Upgrading to API v3.0 series
@@ -125,6 +125,14 @@ You can consult the list of breaking changes that result from upgrading Terminau
 {% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v3.0" %}
 [API v3.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v3.0)
 {% endcontent-ref %}
+
+## From 0.1.0.3 to 0.1.0.45
+
+Between 0.1.0.3 and 0.1.0.45, we've made the following breaking changes:
+
+### Incorporated all features from 0.1.1
+
+Since the 0.1.1 version series has gone out of support starting April 23rd, 2025, we've incorporated all features from there to the fourth service pack of 0.1.0. Please consult the "[From 0.1.0 to 0.1.1](./#from-0.1.0-to-0.1.1)" section to learn more.
 
 ## From 0.1.0 to 0.1.1
 
