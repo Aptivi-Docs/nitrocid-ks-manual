@@ -1,6 +1,6 @@
 ---
-icon: square-code
 description: List of available addon commands
+icon: square-code
 ---
 
 # Addon Commands List
@@ -135,6 +135,18 @@ You can use the following commands provided by the contacts addon:
 | `loadcontacts`   |                           |
 | `importcontacts` | `[-mecard] <mecard/path>` |
 | `contactinfo`    | `<contactNum>`            |
+
+### Dates
+
+You can get detailed time info, and use the timer and the stopwatch by using the following commands:
+
+| Commands      | Arguments and Switches              |
+| ------------- | ----------------------------------- |
+| `expiry`      | `[-implicit] <production> <expiry>` |
+| `gettimeinfo` | `[-now] <date>`                     |
+| `pomodoro`    |                                     |
+| `stopwatch`   |                                     |
+| `timer`       |                                     |
 
 ### Diagnostics
 
@@ -402,24 +414,6 @@ You can make your own precious and epic themes by using the following commands:
 | Commands  | Arguments and Switches |
 | --------- | ---------------------- |
 | `mktheme` | `[-tui] <themename>`   |
-
-### Time info
-
-You can get detailed time info by using the following commands:
-
-| Commands      | Arguments and Switches |
-| ------------- | ---------------------- |
-| `gettimeinfo` | `[-now] <date>`        |
-
-### Timers
-
-You can use the timer and the stopwatch using the following commands:
-
-| Commands    | Arguments and Switches |
-| ----------- | ---------------------- |
-| `pomodoro`  |                        |
-| `stopwatch` |                        |
-| `timer`     |                        |
 
 ### To-do List
 
