@@ -1,6 +1,6 @@
 ---
-icon: wrench
 description: How settings works.
+icon: wrench
 ---
 
 # Kernel Settings
@@ -86,6 +86,10 @@ Currently, the settings application uses Terminaux's interactive TUI feature. If
 {% endhint %}
 
 Selecting a section leads to the settings application listing all the available configuration options, which you can then set their individual options. It even allows you to save the settings if you like the current configuration, load the user settings, and find a settings entry for easier access.
+
+{% hint style="info" %}
+You can change the kernel settings section by either pressing `F9` in the modern settings interface or by highlighting the `Select configuration` option in the classic settings interface.
+{% endhint %}
 
 {% hint style="success" %}
 Starting from 0.1.0.5, you can easily migrate most of your kernel configuration, including your speed dial settings, from the old format that 0.0.16.0 introduced back on 2021. Just open the settings app and select "Migrate old configuration."
