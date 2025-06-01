@@ -1,6 +1,6 @@
 ---
-icon: newspaper
 description: This page lists all versions with their release notes
+icon: newspaper
 ---
 
 # Version Release Notes
@@ -9,15 +9,21 @@ Every single version of the kernel comes with many changes, including feature ad
 
 ## Current API series
 
-The current API version series all operate under API version v3.1.
+The current API version series all operate under API version v4.0.
 
-{% content-ref url="v0.1.x.x-series-1.md" %}
-[v0.1.x.x-series-1.md](v0.1.x.x-series-1.md)
+{% content-ref url="v0.1.x.x-series-2.md" %}
+[v0.1.x.x-series-2.md](v0.1.x.x-series-2.md)
 {% endcontent-ref %}
 
 ## Older supported series
 
 The older series are listed when they're still supported.
+
+### API v3.1 series
+
+{% content-ref url="v0.1.x.x-series-1.md" %}
+[v0.1.x.x-series-1.md](v0.1.x.x-series-1.md)
+{% endcontent-ref %}
 
 ### API v3.0 series
 
