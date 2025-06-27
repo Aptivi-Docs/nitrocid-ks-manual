@@ -60,6 +60,12 @@ Additionally, the time and date renderers can be used with the base calendar cla
 * `ThaiBuddhist`: `th-TH`
 * `Variant`: Your culture as specified by your kernel configuration
 
+To learn more about calendaring, refer to the Terminaux documentation:
+
+{% content-ref url="https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/" %}
+[Terminaux - Manual](https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/)
+{% endcontent-ref %}
+
 {% hint style="warning" %}
 It's important to take note of these:
 

@@ -1,6 +1,6 @@
 ---
-icon: wrench
 description: This page describes how to manage your kernel mods
+icon: wrench
 ---
 
 # Managing your Mod
@@ -22,12 +22,11 @@ The mod finalization phase gets executed as soon as the mod parser sees the file
 3. Checks the expected mod API minimum version with the kernel API version to see if there is a mismatch
    * If the checker found that the mod needs a higher API version, the mod parsing fails with the appropriate message
    * If the checker couldn't determine the minimum API version required by the kernel mod, it goes ahead, but with a warning that the mod may fail to start.
-4. Checks the mod localization file from the path: `KSMods/Localization/Mod-FileVersion/`
-5. If the mod has no name, **mod parsing fails.**
-6. Checks the mod for the version and its SemVer 2.0 compliance. **If the version is not a SemVer 2.0 compliant, or if the version is empty, mod parsing fails.**
-7. Satisfies the mod dependencies by loading them as appropriate.
-8. Calls the `script.StartMod()` function in your script
-9. Adds the mod to the mod manager
+4. If the mod has no name, **mod parsing fails.**
+5. Checks the mod for the version and its SemVer 2.0 compliance. **If the version is not a SemVer 2.0 compliant, or if the version is empty, mod parsing fails.**
+6. Satisfies the mod dependencies by loading them as appropriate.
+7. Calls the `script.StartMod()` function in your script
+8. Adds the mod to the mod manager
 
 {% hint style="info" %}
 The mod system will automatically unload the target mod's directory for assembly lookup. If, for some reason, this fails, you can manually unload their paths from the lookup using the below function:

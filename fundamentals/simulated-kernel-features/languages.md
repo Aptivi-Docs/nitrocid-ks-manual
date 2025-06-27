@@ -1,6 +1,6 @@
 ---
-icon: language
 description: Multilingual Kernel!
+icon: language
 ---
 
 # Localization
@@ -59,3 +59,11 @@ To change the simulated kernel culture using the command-line, follow these step
 {% hint style="info" %}
 Note that your account must have either the administrative permissions enabled or the settings management permission granted to be able to use this command.
 {% endhint %}
+
+## More information
+
+For more information regarding localization, you can visit the below page to take you to the LocaleStation manual:
+
+{% content-ref url="https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/bKrTzoXx2e0avHOvf94R/" %}
+[LocaleStation - Manual](https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/bKrTzoXx2e0avHOvf94R/)
+{% endcontent-ref %}

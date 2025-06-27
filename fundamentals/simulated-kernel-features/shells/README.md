@@ -21,14 +21,8 @@ This program is part of the core kernel that is programmed to not only be a stan
 
 For more information about its inner workings and how you can build your own commands and shells, consult the below page.
 
-{% content-ref url="../../../advanced-and-power-users/inner-workings/shell-structure/" %}
-[shell-structure](../../../advanced-and-power-users/inner-workings/shell-structure/)
-{% endcontent-ref %}
-
-For scripting, consult the below page.
-
-{% content-ref url="../../../advanced-and-power-users/inner-workings/shell-structure/shell-scripting.md" %}
-[shell-scripting.md](../../../advanced-and-power-users/inner-workings/shell-structure/shell-scripting.md)
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/input-reader/shells" %}
+[Shells](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/input-reader/shells)
 {% endcontent-ref %}
 
 ## Commands
@@ -48,13 +42,3 @@ You can also use `findcmds` to quickly find commands by regular expressions as d
 
 <img src="../../../.gitbook/assets/062-findcmds.png" alt="" data-size="original">
 {% endhint %}
-
-### Preface for the `-set` switch
-
-Some of the commands support the `-set` switch. This means that such commands can set a UESH variable to any value that the command sets without any interference.
-
-Your custom mods can also use this feature to set the variable. To learn more, please visit the below link:
-
-{% content-ref url="../../../advanced-and-power-users/inner-workings/shell-structure/" %}
-[shell-structure](../../../advanced-and-power-users/inner-workings/shell-structure/)
-{% endcontent-ref %}

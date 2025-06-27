@@ -19,16 +19,16 @@ To know more about how the kernel settings works, consult the below page.
 
 To learn more about how Unified Extensible SHell (UESH) works, click on the belobelow button.
 
-{% content-ref url="shell-structure/" %}
-[shell-structure](shell-structure/)
+{% content-ref url="inner-essentials/shell-structure.md" %}
+[shell-structure.md](inner-essentials/shell-structure.md)
 {% endcontent-ref %}
 
 ## Languages
 
 Do you want to know how the kernel translates languages? Click below!
 
-{% content-ref url="multilingual-kernel/" %}
-[multilingual-kernel](multilingual-kernel/)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 ## Console Input and Manipulation

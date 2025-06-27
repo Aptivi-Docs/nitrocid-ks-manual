@@ -7,10 +7,6 @@ icon: diamond
 
 Nitrocid KS offers a rich API that is open for any mod created for the current API series of Nitrocid. In order to get started, click on the buttons below to explore:
 
-{% content-ref url="../multilingual-kernel/" %}
-[multilingual-kernel](../multilingual-kernel/)
-{% endcontent-ref %}
-
 {% content-ref url="kernel-placeholders.md" %}
 [kernel-placeholders.md](kernel-placeholders.md)
 {% endcontent-ref %}
@@ -31,8 +27,8 @@ Nitrocid KS offers a rich API that is open for any mod created for the current A
 [the-users.md](the-users.md)
 {% endcontent-ref %}
 
-{% content-ref url="theme-internals.md" %}
-[theme-internals.md](theme-internals.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="nitrocid-filesystem.md" %}

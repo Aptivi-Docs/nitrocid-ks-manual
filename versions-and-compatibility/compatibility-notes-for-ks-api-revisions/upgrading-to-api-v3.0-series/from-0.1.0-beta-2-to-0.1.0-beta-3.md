@@ -174,7 +174,7 @@ This resulted in us having to adjust the entire shell system to adapt to this ki
 {% hint style="info" %}
 Your mods must now follow the new pattern of how to define new `CommandInfo` instances in the `Commands` property in your shell class, provided that you've committed the below changes. The page below explains in depth about how to define these instances.
 
-[shell-structure](../../../advanced-and-power-users/inner-workings/shell-structure/ "mention")
+[shell-structure.md](../../../advanced-and-power-users/inner-workings/inner-essentials/shell-structure.md "mention")
 
 The following parameters were changed:
 
@@ -216,7 +216,7 @@ Initially, on Beta 2, it had a very basic error code support that set a UESH var
 However, we decided to implement the following features:
 
 * Improved error codes: UESH scripts can now rely on error codes more reliably, because error codes can now be get straight from the base command implementation, `Execute()` to be specific.
-* \-set unified switch: For commands that set their output to a specific UESH variable, this switch will set that variable to the generated output, provided that the command already sets the output value, which is `ref string variableValue`.
+* -set unified switch: For commands that set their output to a specific UESH variable, this switch will set that variable to the generated output, provided that the command already sets the output value, which is `ref string variableValue`.
 
 As a result, this massive breaking change had to be done in order to implement the two abovementioned features.
 
@@ -473,8 +473,8 @@ Historically, the `Commands` list was originated when there was no meaningful wa
 
 The below link shows how to use the register/unregister functions.
 
-{% content-ref url="../../../advanced-and-power-users/inner-workings/shell-structure/" %}
-[shell-structure](../../../advanced-and-power-users/inner-workings/shell-structure/)
+{% content-ref url="../../../advanced-and-power-users/inner-workings/inner-essentials/shell-structure.md" %}
+[shell-structure.md](../../../advanced-and-power-users/inner-workings/inner-essentials/shell-structure.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}

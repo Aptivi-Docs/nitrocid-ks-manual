@@ -29,8 +29,8 @@ Select a page below to go to a feature:
 [docking.md](docking.md)
 {% endcontent-ref %}
 
-{% content-ref url="language-studio.md" %}
-[language-studio.md](language-studio.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="theme-studio.md" %}
