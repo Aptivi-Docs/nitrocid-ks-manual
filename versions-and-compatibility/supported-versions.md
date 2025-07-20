@@ -51,6 +51,8 @@ This revision of the third generation API is supported until 11/27/2025.
 | v0.1.2.17 | 6/5/2025     |            |                   |
 | v0.1.2.18 | 6/26/2025    |            |                   |
 | v0.1.2.19 | 6/27/2025    |            |                   |
+| v0.1.2.20 | 7/4/2025     |            |                   |
+| v0.1.2.21 | 7/20/2025    |            |                   |
 {% endtab %}
 
 {% tab title="API v3.0" %}
@@ -113,6 +115,8 @@ This revision of the third generation API is supported until 3/11/2034.
 | v0.1.0.52 | 6/5/2025     |           |                   |
 | v0.1.0.53 | 6/26/2025    |           |                   |
 | v0.1.0.54 | 6/27/2025    |           |                   |
+| v0.1.0.55 | 7/4/2025     |           |                   |
+| v0.1.0.56 | 7/20/2025    |           |                   |
 {% endtab %}
 {% endtabs %}
 
