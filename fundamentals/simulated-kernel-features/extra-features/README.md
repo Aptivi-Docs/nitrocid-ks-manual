@@ -72,6 +72,6 @@ Addons are program extension libraries that extend the functionality of a progra
 
 In addition, Nitrocid KS provides an addon system that loads all the kernel addons that are built with the Nitrocid project. Mods are the second kind of kernel addons that have lesser privileges, but can be made easily by you. The documentation provides you instructions on how to make your own mod (not zero-code!) using the page below:
 
-{% content-ref url="../../../advanced-and-power-users/kernel-modifications/build-your.../your-mod.md" %}
-[your-mod.md](../../../advanced-and-power-users/kernel-modifications/build-your.../your-mod.md)
+{% content-ref url="../../../advanced-and-power-users/kernel-modifications/your-mod.md" %}
+[your-mod.md](../../../advanced-and-power-users/kernel-modifications/your-mod.md)
 {% endcontent-ref %}

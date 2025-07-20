@@ -1,11 +1,11 @@
 ---
-icon: house
 description: Your homepage, your way!
+icon: house
 ---
 
 # The Nitrocid Homepage
 
-<figure><img src="../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (169).png" alt=""><figcaption></figcaption></figure>
 
 Nitrocid KS introduces you with an awesome homepage that gets started every time you log in, though you can disable it through the kernel settings. It provides you with the following elements:
 

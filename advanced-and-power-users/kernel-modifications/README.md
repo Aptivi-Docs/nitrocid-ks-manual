@@ -24,8 +24,8 @@ When building mods, you have to do the following:
 
 Deep explanation of the kernel modification management can be found in the below page:
 
-{% content-ref url="kernel-modification-management.md" %}
-[kernel-modification-management.md](kernel-modification-management.md)
+{% content-ref url="kernel-modification-management/" %}
+[kernel-modification-management](kernel-modification-management/)
 {% endcontent-ref %}
 
 ## Analyzers
@@ -40,6 +40,6 @@ You can use the mod analyzers by consulting the page below:
 
 If you'd like to build your own modifications, that's great! Click on the page below to get started.
 
-{% content-ref url="build-your.../your-mod.md" %}
-[your-mod.md](build-your.../your-mod.md)
+{% content-ref url="your-mod.md" %}
+[your-mod.md](your-mod.md)
 {% endcontent-ref %}

@@ -1,11 +1,11 @@
 ---
-icon: table-tennis-paddle-ball
 description: The original pong game
+icon: table-tennis-paddle-ball
 ---
 
 # Pong
 
-<figure><img src="../../../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (171).png" alt=""><figcaption></figcaption></figure>
 
 This game is a two-player pong game that allows you to swing the ball back and forth, making sure that you actually catch it before it reaches the left/right edges.
 

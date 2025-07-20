@@ -626,7 +626,7 @@ The manual page feature made its own return for 0.0.20, but it only works for mo
 
 To learn more about how manual pages work and how to use them for your mods, press the below link:
 
-[#manual-page-parsing](../../advanced-and-power-users/kernel-modifications/kernel-modification-management.md#manual-page-parsing "mention")
+[#manual-page-parsing](../../advanced-and-power-users/kernel-modifications/kernel-modification-management/#manual-page-parsing "mention")
 {% endhint %}
 
 ### `ListLocal()`

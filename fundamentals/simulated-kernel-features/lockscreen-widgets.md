@@ -1,11 +1,11 @@
 ---
-icon: calendar-range
 description: What are the lockscreen widgets?
+icon: calendar-range
 ---
 
 # Lockscreen Widgets
 
-<figure><img src="../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
 
 Lockscreen widgets is a modern lockscreen feature that gives you quick insights about different information, including the world clock and the news, in a full-screen format. These widgets can be found in the modern logon screen introduced in the 0.1.0 version of Nitrocid. In the lock screen, you can easily switch between the main screen and the widgets (up to 2 widgets).
 
@@ -29,7 +29,7 @@ You can configure the widgets using the settings application by executing the `s
 
 ## Building widgets
 
-In order to be able to build your widget, you must make a kernel mod that will register your widget when it starts (`AddWidget()`) and will unregister it when your mod stops (`RemoveWidget()`). Follow the instructions on how to build your mod [here](../../advanced-and-power-users/kernel-modifications/build-your.../your-mod.md) and use it as a starting point to be able to build such a mod.
+In order to be able to build your widget, you must make a kernel mod that will register your widget when it starts (`AddWidget()`) and will unregister it when your mod stops (`RemoveWidget()`). Follow the instructions on how to build your mod [here](../../advanced-and-power-users/kernel-modifications/your-mod.md) and use it as a starting point to be able to build such a mod.
 
 Afterwards, make a new class file somewhere on your mod source that will hold all your widget code, such as `MyWidget`, and make it implement both the `BaseWidget` class and the `IWidget` interface so that Nitrocid recognizes it as a widget. A minimal example for this class can be consulted below:
 

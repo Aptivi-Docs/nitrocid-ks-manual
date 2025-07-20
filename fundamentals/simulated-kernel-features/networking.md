@@ -1,6 +1,6 @@
 ---
-icon: globe-wifi
 description: Networking in general and its shells
+icon: globe-wifi
 ---
 
 # Networking
@@ -11,13 +11,13 @@ To simulate this functionality, the simulated kernel provides several features, 
 
 ### Download a file
 
-<figure><img src="../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (181).png" alt=""><figcaption></figcaption></figure>
 
 To download a file, small or large, from a computer or an Internet website, use the `get` command to download to your current working directory. Use the following execution method to download a URL: `get [-output=path] <URL>`
 
 ### Upload a file
 
-<figure><img src="../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (182).png" alt=""><figcaption></figcaption></figure>
 
 To upload a file to either a local computer or to an Internet URL, use the `put` command to do this action. Depending on the URL, you must have administrative privileges on the URL to be able to upload a file. Usage: `put <file> <URL>`.
 

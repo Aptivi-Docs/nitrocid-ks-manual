@@ -1,11 +1,11 @@
 ---
-icon: display
 description: Screensavers and their usage
+icon: display
 ---
 
 # Screensavers
 
-<figure><img src="../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (183).png" alt=""><figcaption></figcaption></figure>
 
 The screensavers were touted to be a solution against screen burn-ins in cathode ray-tube (CRT) or plasma displays. They fill the screens with either the blank screen or moving image or parts across the entire screen. They also are placed as a security measure so that when screensavers exit, the user will be required to input the password to be able to use your computer again.
 

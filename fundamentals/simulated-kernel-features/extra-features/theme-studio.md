@@ -5,7 +5,7 @@ icon: palette
 
 # Theme Studio
 
-<figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
 
 The theme studio allows you to make your own custom themes easily by letting you edit every single color type. It provides you with a fully-fledged color wheel provided by Terminaux to ensure that what you select is accurate and tailored to your needs. You can simply run this program by running the `mktheme <name>` command.
 
@@ -35,6 +35,6 @@ You can set your kernel theme to use your custom theme by executing the `themese
 
 ## Interactive TUI
 
-<figure><img src="../../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (173).png" alt=""><figcaption></figcaption></figure>
 
 The theme studio also provides you with the interactive TUI that allows you to make your theme interactively. Press <kbd>K</kbd> to get started.
