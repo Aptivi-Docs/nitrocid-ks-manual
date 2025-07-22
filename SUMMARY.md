@@ -245,6 +245,6 @@
 ***
 
 * [Project Dependencies](project-dependencies.md)
-* [Report an issue](https://github.com/Aptivi/Nitrocid/issues/new/choose)
-* [Source code](https://github.com/Aptivi/Nitrocid)
+* [Report an issue](https://gitlab.com/aptivi/main/Nitrocid/-/issues)
+* [Source code](https://gitlab.com/aptivi/main/Nitrocid)
 * [API Reference](https://aptivi.github.io/Nitrocid/)

@@ -1,6 +1,6 @@
 ---
-icon: android
 description: How to install Nitrocid KS on Android
+icon: android
 ---
 
 # Android
@@ -44,31 +44,13 @@ Once you're done, follow the steps:
    * `apt dist-upgrade`
 6. Install the .NET 8.0 runtime
    * `apt install dotnet-runtime-8.0`
-7. Install `wget` to download the latest release from [this page](https://github.com/Aptivi/NitrocidKS/releases).
+7. Install `wget` to download the latest release from [this page](https://github.com/Aptivi/Kernel-Simulator/releases)
    * `apt install wget`
-   * `wget https://github.com/Aptivi/NitrocidKS/releases/download/v0.x.x.x-beta/0.x.x.x-bin.zip`
+   * `wget https://github.com/Aptivi/Nitrocid/releases/download/v0.x.x.x/0.x.x.x-bin.zip`
 8. Install `unzip` to extract the files
    * `apt install unzip`
    * `unzip 0.x.x.x-bin.zip`
 9. Execute `dotnet Nitrocid.dll`
-
-## Bleeding-edge
-
-Bleeding-edge builds usually come from building the development branch of the kernel, and they usually contain bugs and other untested features.
-
-If you're a tester to such software, please follow the steps on your Windows machine. Please be sure that you're signed in to your GitHub account.
-
-1. Open the [canary release preparation workflow](https://github.com/Aptivi/Nitrocid/actions/workflows/release-canary.yml)
-2. Select the most recent build
-3. Scroll down to Artifacts and click on the `nks-build` button to download the ZIP file.
-4. Repeat steps 1-6 in the `Installation` section
-5. Now, use the `termux-setup-storage` command. Follow the instructions [here](https://wiki.termux.com/wiki/Termux-setup-storage).
-6. Copy the `nks-build.zip` file from `~/storage/downloads/nks-build.zip` to your home directory
-   * `cp ~/storage/downloads/nks-build.zip ~/`
-7. Still in the home directory, install unzip to extract the files
-   * `apt install unzip`
-   * `unzip nks-build.zip`
-8. Execute `dotnet Nitrocid.dll`
 
 ## Important notes
 

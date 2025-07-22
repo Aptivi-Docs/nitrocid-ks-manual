@@ -50,23 +50,10 @@ This step-by-step guide shows you how to install Nitrocid KS using the package m
 If you like to manually unpack the Nitrocid KS packages, follow these steps:
 
 1. Ensure that you have all the required software installed
-2. Download the latest release ZIP file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
+2. Download the latest release ZIP file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases)
 3. Unpack the ZIP archive to any folder of your choice using [7-Zip](https://7-zip.org/)
 4. Open your favorite terminal emulator, like ConEmu, and change the working directory to a folder containing the Nitrocid KS executable
 5. Execute `ks` or `Nitrocid.exe` to start the kernel
-
-## Bleeding-edge
-
-Bleeding-edge builds usually come from building the development branch of the kernel, and they usually contain bugs and other untested features.
-
-If you're a tester to such software, please follow the steps on your Windows machine. Please be sure that you're signed in to your GitHub account.
-
-1. Open the [canary release preparation workflow](https://github.com/Aptivi/Nitrocid/actions/workflows/release-canary.yml)
-2. Select the most recent build
-3. Scroll down to Artifacts and click on the `nks-build` button to download the ZIP file or one of the `installer-ARCH-msi` files for the installer version, where `ARCH` is either `x64` or `arm64`.
-4. Extract the file. Be sure that you have the latest version of 7-Zip or your favorite archive manager installed. After that, follow the steps:
-   1. If you've used the `nks-build` output, follow the last two steps in the [Manual unpack](windows.md#method-3-manual-unpack) section.
-   2. If you've used the installer output, follow the last two steps in the [Windows Installer](windows.md#method-1-windows-installer) section.
 
 ## Notice for SmartScreen
 
@@ -74,4 +61,4 @@ SmartScreen may detect that Nitrocid and its associated executables may not pass
 
 <figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
-Nitrocid KS will not put your PC at risk (except if you downloaded a copy from an unofficial software distributor, or from an unofficial source other than our official GitHub releases found [here](https://github.com/Aptivi/NitrocidKS/releases), our Chocolatey page found [here](https://community.chocolatey.org/packages/KS), and our NuGet page found [here](https://www.nuget.org/packages/KS/)). Click on `More Info`, then click on `Run anyways`.
+Nitrocid KS will not put your PC at risk (except if you downloaded a copy from an unofficial software distributor, or from an unofficial source other than our official releases, our Chocolatey page found [here](https://community.chocolatey.org/packages/KS), and our NuGet page found [here](https://www.nuget.org/packages/KS/)). Click on `More Info`, then click on `Run anyways`.
