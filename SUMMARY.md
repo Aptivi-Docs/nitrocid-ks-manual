@@ -74,6 +74,7 @@
 * [Simulated Kernel Features](fundamentals/simulated-kernel-features/README.md)
   * [Extra Features](fundamentals/simulated-kernel-features/extra-features/README.md)
     * [More Networking](fundamentals/simulated-kernel-features/extra-features/more-networking/README.md)
+      * [Chatbot AI](fundamentals/simulated-kernel-features/extra-features/more-networking/chatbot-ai.md)
       * [FTP Client](fundamentals/simulated-kernel-features/extra-features/more-networking/ftp-client.md)
       * [SSH Connection](fundamentals/simulated-kernel-features/extra-features/more-networking/ssh-connection.md)
       * [SFTP Client](fundamentals/simulated-kernel-features/extra-features/more-networking/sftp-client.md)
