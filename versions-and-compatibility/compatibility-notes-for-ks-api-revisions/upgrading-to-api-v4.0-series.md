@@ -202,6 +202,7 @@ Update your using clauses to point the root namespace of Nitrocid to Nitrocid.Ba
 
 #### Calendar classes moved to Terminaux
 
+{% code title="*Calendar*.cs" lineNumbers="true" %}
 ```csharp
 // Nitrocid.Base.Kernel.Time.Calendars
 public abstract class BaseCalendar : ICalendar
@@ -209,9 +210,38 @@ public static class CalendarTools
 public enum CalendarTypes
 public interface ICalendar
 ```
+{% endcode %}
 
 The calendar classes have been moved to Terminaux as we were working on porting the calendar cyclic writer to Terminaux to give the other console applications more features. Events and reminders, however, weren't moved due to them being Nitrocid-specific.
 
 {% hint style="info" %}
 Those classes might get moved again to a brand new library released later this year, which will provide more features. In case this happens, we'll update both Terminaux and Nitrocid documentations to point to that library's docs.
+{% endhint %}
+
+#### Removed `SplashClosing` from the `ISplash` interface
+
+{% code title="ISplash.cs" lineNumbers="true" %}
+```csharp
+bool SplashClosing { get; set; }
+```
+{% endcode %}
+
+{% code title="BaseSplash.cs" lineNumbers="true" %}
+```csharp
+public virtual bool SplashClosing { get; set; }
+```
+{% endcode %}
+
+Earlier, we used to allow users to override the `SplashClosing` property that sent signals to the kernel that the splash screen was closing. However, it worked only when the current splash instance declares that it's done.
+
+Unfortunately, when the kernel switches to the normal splash screen as a result of an addon or a mod being unloaded, the kernel didn't realize that the splash screen needed closing, because `SplashClosing` was false for all other splash instances except the addon-supplied one, which is no longer found. As a result, the kernel might hang on a blank screen when trying to restart it.
+
+This was a bad design, so we've fixed it by making the `SplashClosing` property in the base splash class static, while still making it available to the public. The interface definition of the same property has been removed as part of this change. This was important to fix this bug.
+
+{% hint style="info" %}
+This bug fix will be integrated to the next Nitrocid v0.1.2.x and v0.1.0.x service pack releases expected at the end of August.
+{% endhint %}
+
+{% hint style="danger" %}
+Please remove all overrides to this property.
 {% endhint %}
