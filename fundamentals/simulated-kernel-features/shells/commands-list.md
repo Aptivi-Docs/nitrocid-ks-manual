@@ -1,6 +1,6 @@
 ---
-icon: square-code
 description: List of available commands
+icon: square-code
 ---
 
 # Commands List
@@ -123,7 +123,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `rreboot`               | `[-safe\|-maintenance\|-debug] [ip] [port]`                                      |
 | `rshutdown`             | `[ip] [port]`                                                                    |
 | `saveconfig`            |                                                                                  |
-| `savescreen`            | `[-select] [saver]`                                                              |
+| `savescreen`            | `[-select\|-random] [saver]`                                                     |
 | `search`                | `<regex> <file>`                                                                 |
 | `searchword`            | `<phrase> <file>`                                                                |
 | `select`                | `<answers> <input> [title] [title2] [...]`                                       |
