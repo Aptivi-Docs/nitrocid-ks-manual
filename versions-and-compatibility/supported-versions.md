@@ -29,30 +29,7 @@ This revision of the third generation API is supported until 11/27/2025.
 
 * Version v0.1.2.x series
 
-| Version   | Release date | EOL date   | Security EOL date |
-| --------- | ------------ | ---------- | ----------------- |
-| v0.1.2.0  | 2/27/2025    | 11/27/2025 | 11/27/2025        |
-| v0.1.2.1  | 2/28/2025    |            |                   |
-| v0.1.2.2  | 3/24/2025    |            |                   |
-| v0.1.2.3  | 3/29/2025    |            |                   |
-| v0.1.2.4  | 3/31/2025    |            |                   |
-| v0.1.2.5  | 4/3/2025     |            |                   |
-| v0.1.2.6  | 4/15/2025    |            |                   |
-| v0.1.2.7  | 4/18/2025    |            |                   |
-| v0.1.2.8  | 4/24/2025    |            |                   |
-| v0.1.2.9  | 4/30/2025    |            |                   |
-| v0.1.2.10 | 5/1/2025     |            |                   |
-| v0.1.2.11 | 5/16/2025    |            |                   |
-| v0.1.2.12 | 5/17/2025    |            |                   |
-| v0.1.2.13 | 5/19/2025    |            |                   |
-| v0.1.2.14 | 5/22/2025    |            |                   |
-| v0.1.2.15 | 5/26/2025    |            |                   |
-| v0.1.2.16 | 5/26/2025    |            |                   |
-| v0.1.2.17 | 6/5/2025     |            |                   |
-| v0.1.2.18 | 6/26/2025    |            |                   |
-| v0.1.2.19 | 6/27/2025    |            |                   |
-| v0.1.2.20 | 7/4/2025     |            |                   |
-| v0.1.2.21 | 7/20/2025    |            |                   |
+<table><thead><tr><th>Version</th><th width="129.88189697265625">Release date</th><th>EOL date</th><th>Security EOL date</th></tr></thead><tbody><tr><td>v0.1.2.0</td><td>2/27/2025</td><td>11/27/2025</td><td>11/27/2025</td></tr><tr><td>v0.1.2.1</td><td>2/28/2025</td><td></td><td></td></tr><tr><td>v0.1.2.2</td><td>3/24/2025</td><td></td><td></td></tr><tr><td>v0.1.2.3</td><td>3/29/2025</td><td></td><td></td></tr><tr><td>v0.1.2.4</td><td>3/31/2025</td><td></td><td></td></tr><tr><td>v0.1.2.5</td><td>4/3/2025</td><td></td><td></td></tr><tr><td>v0.1.2.6</td><td>4/15/2025</td><td></td><td></td></tr><tr><td>v0.1.2.7</td><td>4/18/2025</td><td></td><td></td></tr><tr><td>v0.1.2.8</td><td>4/24/2025</td><td></td><td></td></tr><tr><td>v0.1.2.9</td><td>4/30/2025</td><td></td><td></td></tr><tr><td>v0.1.2.10</td><td>5/1/2025</td><td></td><td></td></tr><tr><td>v0.1.2.11</td><td>5/16/2025</td><td></td><td></td></tr><tr><td>v0.1.2.12</td><td>5/17/2025</td><td></td><td></td></tr><tr><td>v0.1.2.13</td><td>5/19/2025</td><td></td><td></td></tr><tr><td>v0.1.2.14</td><td>5/22/2025</td><td></td><td></td></tr><tr><td>v0.1.2.15</td><td>5/26/2025</td><td></td><td></td></tr><tr><td>v0.1.2.16</td><td>5/26/2025</td><td></td><td></td></tr><tr><td>v0.1.2.17</td><td>6/5/2025</td><td></td><td></td></tr><tr><td>v0.1.2.18</td><td>6/26/2025</td><td></td><td></td></tr><tr><td>v0.1.2.19</td><td>6/27/2025</td><td></td><td></td></tr><tr><td>v0.1.2.20</td><td>7/4/2025</td><td></td><td></td></tr><tr><td>v0.1.2.21</td><td>7/20/2025</td><td></td><td></td></tr><tr><td>v0.1.2.22</td><td>7/28/2025</td><td></td><td></td></tr><tr><td>v0.1.2.23</td><td>8/27/2025</td><td></td><td></td></tr><tr><td>v0.1.2.25</td><td>9/7/2025</td><td></td><td></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="API v3.0" %}
@@ -117,6 +94,10 @@ This revision of the third generation API is supported until 3/11/2034.
 | v0.1.0.54 | 6/27/2025    |           |                   |
 | v0.1.0.55 | 7/4/2025     |           |                   |
 | v0.1.0.56 | 7/20/2025    |           |                   |
+| v0.1.0.57 | 7/28/2025    |           |                   |
+| v0.1.0.58 | 8/27/2025    |           |                   |
+| v0.1.0.59 | 8/31/2025    |           |                   |
+| v0.1.0.60 | 9/6/2025     |           |                   |
 {% endtab %}
 {% endtabs %}
 
