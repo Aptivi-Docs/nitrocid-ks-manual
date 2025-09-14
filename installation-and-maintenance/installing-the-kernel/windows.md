@@ -15,15 +15,9 @@ Extra kernel add-ons may require additional hardware on your computer to work. F
 
 To run Nitrocid KS in the absolute minimum requirements, your computer needs to have the following installed:
 
-| System     | Framework                                                          | Terminal                                                  |
-| ---------- | ------------------------------------------------------------------ | --------------------------------------------------------- |
-| Windows 7+ | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | [ConEmu](https://conemu.github.io/) or Windows 10 cmd.exe |
-
-However, we recommend that you have the below software installed on your computer to get the best out of the kernel:
-
-| System      | Framework                                                          | Terminal           |
-| ----------- | ------------------------------------------------------------------ | ------------------ |
-| Windows 10+ | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | Windows 10 cmd.exe |
+| System      | Framework                                                            | Terminal                                                  |
+| ----------- | -------------------------------------------------------------------- | --------------------------------------------------------- |
+| Windows 10+ | [.NET 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) | [ConEmu](https://conemu.github.io/) or Windows 10 cmd.exe |
 
 ## Installation
 

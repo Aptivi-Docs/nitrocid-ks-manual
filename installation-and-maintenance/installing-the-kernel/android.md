@@ -42,8 +42,8 @@ Once you're done, follow the steps:
 5. Ensure that you've updated the package cache
    * `apt update`
    * `apt dist-upgrade`
-6. Install the .NET 8.0 runtime
-   * `apt install dotnet-runtime-8.0`
+6. Install the .NET 10.0 runtime
+   * `apt install dotnet-runtime-10.0`
 7. Install `wget` to download the latest release from [this page](https://github.com/Aptivi/Kernel-Simulator/releases)
    * `apt install wget`
    * `wget https://github.com/Aptivi/Nitrocid/releases/download/v0.x.x.x/0.x.x.x-bin.zip`

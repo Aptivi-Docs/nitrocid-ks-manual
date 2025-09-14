@@ -5,10 +5,6 @@ icon: apple
 
 # macOS
 
-{% hint style="warning" %}
-The installation instructions is based on pre-release version of Nitrocid KS, and the system requirements may change during the development.
-{% endhint %}
-
 Installing Nitrocid KS on macOS is pretty easy. Before performing the installation, your macOS system must meet the following requirements:
 
 {% hint style="info" %}
@@ -17,9 +13,9 @@ Extra kernel add-ons may require additional hardware on your computer to work. F
 
 To run Nitrocid KS in the absolute minimum requirements, your computer needs to have the following installed:
 
-| System                   | Framework                                                          | Terminal                                       |
-| ------------------------ | ------------------------------------------------------------------ | ---------------------------------------------- |
-| macOS Catalina or higher | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | [iTerm 2.0](https://iterm2.com/downloads.html) |
+| System                   | Framework                                                            | Terminal                                       |
+| ------------------------ | -------------------------------------------------------------------- | ---------------------------------------------- |
+| macOS Catalina or higher | [.NET 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) | [iTerm 2.0](https://iterm2.com/downloads.html) |
 
 ## Installation
 
