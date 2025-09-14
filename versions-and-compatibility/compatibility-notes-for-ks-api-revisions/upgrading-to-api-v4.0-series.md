@@ -279,3 +279,17 @@ Terminaux 7.0 has a similar functionality that allows you to change the console 
 {% hint style="info" %}
 The `OpenMainPage()` signatures have been changed to remove the `useSelection` optional parameter.
 {% endhint %}
+
+#### Terminaux wrapper initialization code removed
+
+{% code title="InputTools.cs" lineNumbers="true" %}
+```csharp
+public static void InitializeTerminauxWrappers() {}
+```
+{% endcode %}
+
+We've removed the Terminaux wrapper initialization code, because we have removed the input driver and the Nitrocid-specific console wrapper. This function was considered to be unnecessary due to a change to Terminaux 8.0.
+
+{% hint style="info" %}
+Nitrocid now uses the standard console wrapper.
+{% endhint %}
