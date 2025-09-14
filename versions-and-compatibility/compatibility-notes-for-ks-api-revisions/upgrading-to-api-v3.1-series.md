@@ -1,6 +1,6 @@
 ---
-icon: up
 description: Follow the compatibility notes when upgrading your mods to API v3.1 series
+icon: up
 ---
 
 # Upgrading to API v3.1 series
@@ -539,4 +539,42 @@ As a result, we've removed the above functions from `UpdateManager`.
 
 {% hint style="danger" %}
 We will no longer ship the `changes.chg` file with the GitHub release section starting from the next 0.1.2 release. You'll have to use versioned tags to get the file from `tools/changes.chg` instead.
+{% endhint %}
+
+## From 0.1.2 to 0.1.2 SP2 <a href="#from-0.0.24-to-0.1.0" id="from-0.0.24-to-0.1.0"></a>
+
+Nitrocid 0.1.2 SP2 was released to bring improvements to the core kernel.
+
+### Updated Terminaux to 7.0 <a href="#updated-terminaux-to-6.0" id="updated-terminaux-to-6.0"></a>
+
+We've updated Terminaux to 7.0 to bring improvements. However, this doesn't come without the cost of having to deal with the breaking changes, which, in this case, is many.
+
+You can consult the list of breaking changes that result from upgrading to Terminaux 7.0 by pressing the below button:
+
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v7.0" %}
+[API v7.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v7.0)
+{% endcontent-ref %}
+
+### Removed `SplashClosing` from the `ISplash` interface
+
+{% code title="ISplash.cs" lineNumbers="true" %}
+```csharp
+bool SplashClosing { get; set; }
+```
+{% endcode %}
+
+{% code title="BaseSplash.cs" lineNumbers="true" %}
+```csharp
+public virtual bool SplashClosing { get; set; }
+```
+{% endcode %}
+
+Earlier, we used to allow users to override the `SplashClosing` property that sent signals to the kernel that the splash screen was closing. However, it worked only when the current splash instance declares that it's done.
+
+Unfortunately, when the kernel switches to the normal splash screen as a result of an addon or a mod being unloaded, the kernel didn't realize that the splash screen needed closing, because `SplashClosing` was false for all other splash instances except the addon-supplied one, which is no longer found. As a result, the kernel might hang on a blank screen when trying to restart it.
+
+This was a bad design, so we've fixed it by making the `SplashClosing` property in the base splash class static, while still making it available to the public. The interface definition of the same property has been removed as part of this change. This was important to fix this bug.
+
+{% hint style="danger" %}
+Please remove all overrides to this property.
 {% endhint %}

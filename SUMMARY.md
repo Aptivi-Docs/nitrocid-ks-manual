@@ -213,7 +213,6 @@
       * [Encryption Drivers](advanced-and-power-users/inner-workings/inner-essentials/kernel-drivers/encryption-drivers.md)
       * [Filesystem Drivers](advanced-and-power-users/inner-workings/inner-essentials/kernel-drivers/filesystem-drivers.md)
       * [Hardware Prober Drivers](advanced-and-power-users/inner-workings/inner-essentials/kernel-drivers/hardware-prober-drivers.md)
-      * [Input Drivers](advanced-and-power-users/inner-workings/inner-essentials/kernel-drivers/input-drivers.md)
       * [Network Drivers](advanced-and-power-users/inner-workings/inner-essentials/kernel-drivers/network-drivers.md)
       * [RNG Drivers](advanced-and-power-users/inner-workings/inner-essentials/kernel-drivers/rng-drivers.md)
       * [Regular Expression Drivers](advanced-and-power-users/inner-workings/inner-essentials/kernel-drivers/regular-expression-drivers.md)

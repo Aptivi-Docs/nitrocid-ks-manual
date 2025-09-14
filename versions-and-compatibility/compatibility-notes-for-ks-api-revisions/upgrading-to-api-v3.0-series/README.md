@@ -383,3 +383,31 @@ You can consult the list of breaking changes that result from upgrading to Termi
 {% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v5.0" %}
 [API v5.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v5.0)
 {% endcontent-ref %}
+
+## From 0.1.1.13 to 0.1.1 SP5
+
+Between 0.1.1.13 and 0.1.1 SP5, we've made the following breaking changes:
+
+### Removed `SplashClosing` from the `ISplash` interface
+
+{% code title="ISplash.cs" lineNumbers="true" %}
+```csharp
+bool SplashClosing { get; set; }
+```
+{% endcode %}
+
+{% code title="BaseSplash.cs" lineNumbers="true" %}
+```csharp
+public virtual bool SplashClosing { get; set; }
+```
+{% endcode %}
+
+Earlier, we used to allow users to override the `SplashClosing` property that sent signals to the kernel that the splash screen was closing. However, it worked only when the current splash instance declares that it's done.
+
+Unfortunately, when the kernel switches to the normal splash screen as a result of an addon or a mod being unloaded, the kernel didn't realize that the splash screen needed closing, because `SplashClosing` was false for all other splash instances except the addon-supplied one, which is no longer found. As a result, the kernel might hang on a blank screen when trying to restart it.
+
+This was a bad design, so we've fixed it by making the `SplashClosing` property in the base splash class static, while still making it available to the public. The interface definition of the same property has been removed as part of this change. This was important to fix this bug.
+
+{% hint style="danger" %}
+Please remove all overrides to this property.
+{% endhint %}

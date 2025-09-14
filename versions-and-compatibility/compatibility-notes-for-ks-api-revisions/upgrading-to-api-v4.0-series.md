@@ -11,11 +11,17 @@ As API v4.0 is still in development, the breaking changes get committed and land
 
 This version gives your kernel a minor gorgeous makeover that brings in feature additions and spectacular improvements in all fields, including some of the cosmetic changes.
 
-### Updated Terminaux to 7.0 <a href="#updated-terminaux-to-6.0" id="updated-terminaux-to-6.0"></a>
+### Updated Terminaux to 8.0 <a href="#updated-terminaux-to-6.0" id="updated-terminaux-to-6.0"></a>
 
-We've updated Terminaux to 7.0 to bring improvements. However, this doesn't come without the cost of having to deal with the breaking changes, which, in this case, is many.
+We've updated Terminaux to 8.0 to bring improvements. However, this doesn't come without the cost of having to deal with the breaking changes, which, in this case, is many.
 
-You can consult the list of breaking changes that result from upgrading to Terminaux 7.0 by pressing the below button:
+You can consult the list of breaking changes that result from upgrading to Terminaux 8.0 by pressing the below button:
+
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v8.0" %}
+[API v8.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v8.0)
+{% endcontent-ref %}
+
+Also, we have upgraded to Terminaux 7.0 earlier during the tech preview development:
 
 {% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v7.0" %}
 [API v7.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v7.0)
@@ -238,10 +244,38 @@ Unfortunately, when the kernel switches to the normal splash screen as a result 
 
 This was a bad design, so we've fixed it by making the `SplashClosing` property in the base splash class static, while still making it available to the public. The interface definition of the same property has been removed as part of this change. This was important to fix this bug.
 
-{% hint style="info" %}
-This bug fix will be integrated to the next Nitrocid v0.1.2.x and v0.1.0.x service pack releases expected at the end of August.
-{% endhint %}
-
 {% hint style="danger" %}
 Please remove all overrides to this property.
+{% endhint %}
+
+#### Removed the legacy settings app
+
+{% code title="SettingsApp.cs" lineNumbers="true" %}
+```csharp
+public static void OpenMainPage(string settingsType, bool useSelection = false) {}
+public static void OpenMainPage(BaseKernelConfig? settingsType, bool useSelection = false) {}
+public static void OpenSection(string Section, SettingsEntry SettingsSection, BaseKernelConfig settingsType)
+public static void OpenKey(int KeyNumber, SettingsEntry SettingsSection, BaseKernelConfig settingsType)
+public static void VariableFinder(BaseKernelConfig configType)
+```
+{% endcode %}
+
+The legacy settings app has been finally removed, as we can't keep maintaining it anymore due to migrations and other improvements that are needed. The modern settings app is already there, and will replace the legacy settings app with the new features expected to land as development of 0.2.0 progresses.
+
+{% hint style="info" %}
+The `OpenMainPage()` signatures have been changed to remove the `useSelection` optional parameter.
+{% endhint %}
+
+#### Removed the input driver
+
+```csharp
+public abstract class BaseInputDriver : IInputDriver {}
+public interface IInputDriver : IDriver {}
+public static class InputDriverTools {}
+```
+
+Terminaux 7.0 has a similar functionality that allows you to change the console wrapper, which already covers input-related actions. Due to this change, we have to remove the driver.
+
+{% hint style="info" %}
+The `OpenMainPage()` signatures have been changed to remove the `useSelection` optional parameter.
 {% endhint %}
