@@ -34,5 +34,5 @@ The arguments are parsed each time the kernel starts up or gets rebooted. If the
 {% hint style="info" %}
 To learn more about `ProvidedArgumentsInfo`, click on the below link:
 
-[Broken link](broken-reference "mention")
+[Broken link](/broken/pages/dggmuvQKW76Uodvf67aw "mention")
 {% endhint %}

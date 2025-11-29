@@ -19,6 +19,7 @@ Splashes also contain a context to tell the splash screen that it's in a specifi
 * `Showcase`: This is used to showcase your splash screen and how well it works. Used by the `previewsplash` for best experience.
 * `StartingUp`: Used by the kernel to indicate that the kernel is starting up.
 * `ShuttingDown`: Used by the kernel to indicate that the kernel is shutting down.
+* `Rebooting`: Used by the kernel to indicate that the kernel is rebooting.
 * `Preboot`: Used by the kernel to indicate that the kernel is currently on the pre-boot stage before configuration is loaded.
 
 ## Splash Management
@@ -58,6 +59,13 @@ public static bool IsSplashRegistered(string splashName)
 {% endcode %}
 
 This function checks the list of splashes to query the splash name for its existence. If the splash exists, it returns true. Otherwise, false is returned.
+
+## Properties in splashes
+
+You can override the following properties in your splash class:
+
+* `SplashName`: Specifies the splash name (usually the same as the name of the splash class)
+* `RequiresBackground`: Specifies whether the background colors need to be enabled or not
 
 ## Showing Messages during Kernel Boot
 

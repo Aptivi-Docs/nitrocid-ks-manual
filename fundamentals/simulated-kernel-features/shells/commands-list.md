@@ -17,6 +17,11 @@ Nitrocid KS currently provides the following commands (you can see their definit
 
 | Commands                | Arguments and Switches                                                           |
 | ----------------------- | -------------------------------------------------------------------------------- |
+| `2fa`                   | `<add> <username>`                                                               |
+|                         | `<delete> <username>`                                                            |
+|                         | `<check> <username>`                                                             |
+|                         | `<setupkey> <username>`                                                          |
+|                         | `<setupqr> <username>`                                                           |
 | `addgroup`              | `<groupname>`                                                                    |
 | `adduser`               | `<username> [password]`                                                          |
 | `addusertogroup`        | `<username> <group>`                                                             |
@@ -84,6 +89,7 @@ Nitrocid KS currently provides the following commands (you can see their definit
 | `ifm`                   |                                                                                  |
 | `input`                 | `<question>`                                                                     |
 | `inputpass`             | `<question>`                                                                     |
+| `ismode`                | `[-s\|-d\|-m] [-v]`                                                              |
 | `langman`               | `<reload/load/unload> <customlangname>`                                          |
 |                         | `<list/reloadall>`                                                               |
 | `license`               |                                                                                  |

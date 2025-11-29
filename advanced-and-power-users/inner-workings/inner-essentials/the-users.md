@@ -48,6 +48,8 @@ Be honest when dealing with the return values for both `UserSelector` and `Passw
 * `false`: if the password is invalid
 {% endhint %}
 
+Login handlers don't handle the 2FA authentication for a user that has the second factor enabled, for security reasons. The login manager handles it so that users are always greeted with the 2FA code screen.
+
 ### Registering handlers
 
 You can now add or remove your custom login handlers to make your kernel use your login screen. To add your handler, you can use the `RegisterHandler()` function to add it to the list of available handlers. This allows you to customize your login screen to the one that you made.

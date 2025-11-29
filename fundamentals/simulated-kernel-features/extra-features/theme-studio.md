@@ -11,8 +11,8 @@ The theme studio allows you to make your own custom themes easily by letting you
 
 This saves you the need of manually making a JSON file containing theme data, whose specification can be found here:
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="/broken/pages/SE06eKQb7XNRARwnad79" %}
+[Broken link](/broken/pages/SE06eKQb7XNRARwnad79)
 {% endcontent-ref %}
 
 Once you're done making your own theme, the theme studio provides you with these options:

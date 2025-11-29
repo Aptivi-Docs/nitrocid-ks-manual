@@ -52,7 +52,7 @@ For the list of available commands, head to the page below:
 
 ## Interactive TUI
 
-<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 You can also interact with the files right from the interactive TUI to make things easier. You can perform operations right from the TUI without having to write down commands. For example, you can use the F1 key to copy a local/remote file to the remote/local host.
 

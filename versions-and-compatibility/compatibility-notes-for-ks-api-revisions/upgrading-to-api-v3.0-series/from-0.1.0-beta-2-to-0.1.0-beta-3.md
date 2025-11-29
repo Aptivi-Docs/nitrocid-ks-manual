@@ -1962,8 +1962,8 @@ The interactive TUI now uses the Screen feature that's available starting from 0
 
 To learn more about the Screen feature, visit the link below:
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="/broken/pages/YwGfEqweqWfUbaw5Yt9A" %}
+[Broken link](/broken/pages/YwGfEqweqWfUbaw5Yt9A)
 {% endcontent-ref %}
 
 {% hint style="warning" %}

@@ -27,8 +27,8 @@ Nitrocid KS offers a rich API that is open for any mod created for the current A
 [the-users.md](the-users.md)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="/broken/pages/SE06eKQb7XNRARwnad79" %}
+[Broken link](/broken/pages/SE06eKQb7XNRARwnad79)
 {% endcontent-ref %}
 
 {% content-ref url="nitrocid-filesystem.md" %}

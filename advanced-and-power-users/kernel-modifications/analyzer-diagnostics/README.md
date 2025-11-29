@@ -27,8 +27,7 @@ In order to install the NuGet-based analyzer for Nitrocid mods on Visual Studio,
 1. Open Visual Studio 2022 to a solution of your choice and open `Manage NuGet packages` on a project you want to analyze.
 2. Search for `Nitrocid.Analyzers`
 3. Install the package
-4.  Start working on your mod, and you'll see `NKS` analyzers.\
-
+4.  Start working on your mod, and you'll see `NKS` analyzers.<br>
 
     <figure><img src="../../../.gitbook/assets/093-modanalyzers.png" alt=""><figcaption></figcaption></figure>
 
@@ -38,8 +37,7 @@ In case you can't use NuGet-based analyzer for your mods, you can use the standa
 
 1. Open the command prompt
 2. Go to the directory where the standalone analyzer is located. Use `cd` to change the directory.
-3.  Run `dotnet Nitrocid.StandaloneAnalyzer.dll path/to/mod.sln`\
-
+3.  Run `dotnet Nitrocid.StandaloneAnalyzer.dll path/to/mod.sln`<br>
 
     <figure><img src="../../../.gitbook/assets/094-modanalyzers.png" alt=""><figcaption></figcaption></figure>
 

@@ -19,7 +19,7 @@ Extra languages are bundled as a kernel extras addon.
 
 You can set the language or the culture using the `settings` command under the `General` section. Any language changes will be saved to the configuration file.
 
-Languages usually get translated at the end of each development period of each upcoming kernel version, so it's normal to see untranslated strings in development versions. If you still see these untranslated strings in the final version, report them to us [using this page](https://github.com/Aptivi/Nitrocid/issues/new).
+Languages usually get translated at the end of each development period of each upcoming kernel version, so it's normal to see untranslated strings in development versions. If you still see these untranslated strings in the final version, report them to us.
 
 ### Through settings
 

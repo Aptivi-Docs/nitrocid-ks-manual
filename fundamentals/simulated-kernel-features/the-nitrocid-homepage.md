@@ -50,3 +50,11 @@ HomepageTools.UnregisterAction("Rush")
 {% hint style="warning" %}
 You must check to see if the action is registered or not using the `IsHomepageActionRegistered()` function, passing it the same name that you want to unregister. Attempting to unregister the action that doesn't exist causes the exception to be thrown with the type of `KernelExceptionType.Homepage`.
 {% endhint %}
+
+## Widget Canvas
+
+Widget Canvas API supports both the modern logon screen and the homepage so they extend to pages of widgets. In order to learn more about how widget canvas work, please refer to the below page:
+
+{% content-ref url="widgets/widget-canvas.md" %}
+[widget-canvas.md](widgets/widget-canvas.md)
+{% endcontent-ref %}

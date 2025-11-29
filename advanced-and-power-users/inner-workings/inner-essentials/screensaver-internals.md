@@ -1,6 +1,6 @@
 ---
-icon: desktop
 description: Your mods and your screensavers
+icon: desktop
 ---
 
 # Screensaver Internals
@@ -153,3 +153,14 @@ Some screensavers allow you to specify a next draw delay upon completion of the 
 {% hint style="warning" %}
 Screensavers that use `SleepNoBlock()` from `ThreadManager` don't get affected by the unified delay switch.
 {% endhint %}
+
+## Ambient sound effects
+
+The screensaver manager handles the ambient sound effects when this feature is turned on from the main kernel configuration. The sound effects will be played on a loop during the screensaver runtime, until you exit the screensaver using either your mouse or your keyboard. You can control the intensity of the ambient sound effects using the `AmbientSoundFxIntensity` property in the kernel main configuration class, which takes the following values in the `AmbienceFxIntensity` enum:
+
+* `Calm`: equivalent to `AudioCueType.AmbienceIdle`
+* `Normal`: equivalent to `AudioCueType.AlarmIdle`
+* `Medium`: equivalent to `AudioCueType.Ambience`
+* `Intense`: equivalent to `AudioCueType.Alarm`
+
+In the `AudioCuesTools` class, you can convert the `AmbienceFxIntensity` enum from/to the `AudioCueType` enum.

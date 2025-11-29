@@ -27,8 +27,8 @@ To learn more about how Unified Extensible SHell (UESH) works, click on the belo
 
 Do you want to know how the kernel translates languages? Click below!
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="/broken/pages/dMWNEbtbMajsMcyXE3kF" %}
+[Broken link](/broken/pages/dMWNEbtbMajsMcyXE3kF)
 {% endcontent-ref %}
 
 ## Console Input and Manipulation

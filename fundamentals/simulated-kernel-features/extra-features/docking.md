@@ -1,6 +1,6 @@
 ---
-icon: image
 description: You can now dock your screen!
+icon: image
 ---
 
 # Docking
@@ -25,6 +25,6 @@ You can dock your screen to turn it to an information center using the `dock` co
 
 Once you dock your screen, depending on the dock used, you can follow the instructions usually given by the dock mode to exit it. The screensaver won't be launched during the docking period. Docks use the widget system to render, so you can consult the page below for more information.
 
-{% content-ref url="../lockscreen-widgets.md" %}
-[lockscreen-widgets.md](../lockscreen-widgets.md)
+{% content-ref url="../widgets/" %}
+[widgets](../widgets/)
 {% endcontent-ref %}

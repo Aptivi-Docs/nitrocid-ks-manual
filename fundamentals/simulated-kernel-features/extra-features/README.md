@@ -29,8 +29,8 @@ Select a page below to go to a feature:
 [docking.md](docking.md)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="/broken/pages/m0taKYKID84nMLd7VZgW" %}
+[Broken link](/broken/pages/m0taKYKID84nMLd7VZgW)
 {% endcontent-ref %}
 
 {% content-ref url="theme-studio.md" %}
@@ -52,16 +52,13 @@ When downloading addons, consider the following points:
 
 In case the `getaddons` command didn't work properly, you'll have to resort to installing the kernel addons manually. We have packed the addons pack for each release for easy installation. To install the addons manually, follow these steps:
 
-1.  Download an `-addons.zip` file that corresponds to your kernel version from [this page](https://github.com/Aptivi/NitrocidKS/releases) and open your favorite archive manager.\
-
+1.  Download an `-addons.zip` file that corresponds to your kernel version from [this page](https://github.com/Aptivi/NitrocidKS/releases) and open your favorite archive manager.<br>
 
     <figure><img src="../../../.gitbook/assets/161-addonszip.png" alt=""><figcaption></figcaption></figure>
-2.  Make a new folder under the Nitrocid KS binary folder called `Addons`.\
-
+2.  Make a new folder under the Nitrocid KS binary folder called `Addons`.<br>
 
     <figure><img src="../../../.gitbook/assets/162-addonszip.png" alt=""><figcaption></figcaption></figure>
-3.  Extract all the folders to the `Addons` folder.\
-
+3.  Extract all the folders to the `Addons` folder.<br>
 
     <figure><img src="../../../.gitbook/assets/163-addonszip.png" alt=""><figcaption></figcaption></figure>
 4. Run Nitrocid KS and verify that the addon commands work.

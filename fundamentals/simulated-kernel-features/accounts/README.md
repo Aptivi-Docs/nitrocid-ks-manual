@@ -107,6 +107,26 @@ If you want to get information about a user without having to open the user sett
 2. Open the administration shell by executing the `admin` command
 3. Execute the `userinfo [user]` command
 
+### 2FA Authentication
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+You can enroll users into the 2FA authentication requirement using the master command, `2fa`. This master command provides the following actions:
+
+* `add`: Enrolls the user to the 2FA requirement, prompting you to enter the setup key or scan the QR code with any authenticator apps, such as Google Authenticator or Authy.
+* `delete`: Deletes the requirement of 2FA for a user.
+* `check`: Checks to see if this user has been enrolled to the 2FA requirement.
+* `setupkey`: Returns the setup key in plain text.
+* `setupqr`: Returns the QR code that can be scanned on your phone for authenticator apps.
+
+{% hint style="danger" %}
+You can't manage 2FA for users that don't have any password set, because the password in Nitrocid is the first factor, then the authentication code, which is the second factor.
+{% endhint %}
+
+Afterwards, if the user has been enrolled to the 2FA requirement, the next time the user enters their password, they'll be prompted to write the code that they can obtain through the authenticator app.
+
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
 ## User Groups
 
 User groups organize users into a group. You can learn more about it by clicking on the below button:

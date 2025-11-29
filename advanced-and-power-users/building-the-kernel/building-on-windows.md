@@ -19,18 +19,13 @@ Once you have Visual Studio installed with at least the .NET 8.0 SDK and the .NE
 1. Open Visual Studio and press `Clone Repository`
 2.  In the repository location field, write `https://github.com/Aptivi/NitrocidKS.git`
 
-    <div align="left">
-
-    <figure><img src="../../.gitbook/assets/072-vsbuild.png" alt=""><figcaption></figcaption></figure>
-
-    </div>
+    <div align="left"><figure><img src="../../.gitbook/assets/072-vsbuild.png" alt=""><figcaption></figcaption></figure></div>
 3. Press `Clone`. The clone may need to take a few minutes depending on your Internet connection.
 4. Press `Solution Explorer` » `Switch Views` and double click on `Nitrocid.sln`\
    ![](../../.gitbook/assets/073-vsbuild.png)
 5. Press `Start` or press `Build` » `Build Solution` to build\
    <img src="../../.gitbook/assets/074-vsbuild.png" alt="" data-size="original">
-6.  Navigate to the build output folder, `KSBuild`, and double click on the `Nitrocid.exe` file\
-
+6.  Navigate to the build output folder, `KSBuild`, and double click on the `Nitrocid.exe` file<br>
 
     <figure><img src="../../.gitbook/assets/075-vsbuild.png" alt=""><figcaption></figcaption></figure>
 
@@ -42,7 +37,6 @@ If you are a hardcore command-line user or if you prefer using the command-line,
 2. Execute `git clone https://github.com/Aptivi/NitrocidKS.git`
 3. Navigate to the cloned repository, `NitrocidKS`
 4. Execute `dotnet restore` and `dotnet build`
-5.  After building is done, run `dotnet run` on the `Nitrocid.csproj` file like so:\
-
+5.  After building is done, run `dotnet run` on the `Nitrocid.csproj` file like so:<br>
 
     <figure><img src="../../.gitbook/assets/076-vsbuild.png" alt=""><figcaption></figcaption></figure>

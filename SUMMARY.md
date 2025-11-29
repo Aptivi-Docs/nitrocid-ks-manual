@@ -122,11 +122,12 @@
     * [Addon Commands List](fundamentals/simulated-kernel-features/shells/addon-commands-list.md)
   * [Files and Folders](fundamentals/simulated-kernel-features/files-and-folders/README.md)
     * [Hashing and Encryption](fundamentals/simulated-kernel-features/files-and-folders/hashing-and-encryption.md)
+  * [Widgets](fundamentals/simulated-kernel-features/widgets/README.md)
+    * [Widget Canvas](fundamentals/simulated-kernel-features/widgets/widget-canvas.md)
   * [The Nitrocid Homepage](fundamentals/simulated-kernel-features/the-nitrocid-homepage.md)
   * [Networking](fundamentals/simulated-kernel-features/networking.md)
   * [Localization](fundamentals/simulated-kernel-features/languages.md)
   * [Screensavers](fundamentals/simulated-kernel-features/screensavers.md)
-  * [Lockscreen Widgets](fundamentals/simulated-kernel-features/lockscreen-widgets.md)
   * [Audio Cues](fundamentals/simulated-kernel-features/audio-cues.md)
 
 ## Advanced and Power Users
@@ -226,6 +227,7 @@
     * [Kernel Journaling](advanced-and-power-users/inner-workings/inner-essentials/kernel-journaling.md)
     * [Remote Procedure](advanced-and-power-users/inner-workings/inner-essentials/remote-procedure.md)
     * [Nitrocid Filesystem](advanced-and-power-users/inner-workings/inner-essentials/nitrocid-filesystem.md)
+    * [Widget Canvas Internals](advanced-and-power-users/inner-workings/inner-essentials/widget-canvas-internals.md)
     * [Screensaver Internals](advanced-and-power-users/inner-workings/inner-essentials/screensaver-internals.md)
     * [Splash Internals](advanced-and-power-users/inner-workings/inner-essentials/splash-internals.md)
     * [Kernel Platform](advanced-and-power-users/inner-workings/inner-essentials/kernel-platform.md)

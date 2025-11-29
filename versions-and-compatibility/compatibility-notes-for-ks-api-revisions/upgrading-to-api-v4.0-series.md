@@ -293,3 +293,68 @@ We've removed the Terminaux wrapper initialization code, because we have removed
 {% hint style="info" %}
 Nitrocid now uses the standard console wrapper.
 {% endhint %}
+
+#### Ambient screensaver sound effects intensity changed
+
+{% code title="KernelMainConfig.cs" lineNumbers="true" %}
+```csharp
+public bool EnableAmbientSoundFxIntense { get; set; }
+```
+{% endcode %}
+
+We've extended the ambient sound effects for screensavers to include four levels of ambient sound effects intensity. As a result, this property had to be replaced with the `AmbientSoundFxIntensity` using the new enum to be able to describe those levels.
+
+{% hint style="info" %}
+You can use the new `AmbientSoundFxIntensity` property to select the intensity.
+{% endhint %}
+
+#### Modern logon handler changed
+
+{% code title="KernelMainConfig.cs" lineNumbers="true" %}
+```csharp
+public bool MotdHeadlineBottom { get; set; }
+public bool EnableWidgets { get; set; }
+public string FirstWidget { get; set; }
+public string SecondWidget { get; set; }
+```
+{% endcode %}
+
+The modern logon handler has been changed to align with the latest design philosophy that Nitrocid 0.2.0 brings. While we've preserved minimalism, we felt that the implementation was limited, so we've decided to introduce the Widget Canvas API so that you can take advantage of the powerful widget canvas that renders the widgets in any configuration you want. This makes the logon handler and The Nitrocid Homepage a lot more flexible.
+
+Because we've introduced Widget Canvas API, the widget system is no longer exclusive to the login part of the base kernel, so we've changed its namespace to be relocated to the Misc part of the kernel. As a result, the widget system's namespace has been changed to `Nitrocid.Base.Misc.Widgets`.
+
+{% hint style="info" %}
+To make pages for both the login and the homepage, you can refer to the [Widget Canvas](../../fundamentals/simulated-kernel-features/widgets/widget-canvas.md) page for more information.
+{% endhint %}
+
+#### Modernized the speed dial feature
+
+{% code title="SpeedDialEntry.cs" lineNumbers="true" %}
+```csharp
+public object[] Options =>
+    options;
+```
+{% endcode %}
+
+The speed dial feature, which was currently suffering from complexity due to the `Options` property that only stored an array of objects, has been modernized by trying to reduce the complexity, while introducing common properties, such as usernames and passwords. As a result, two new properties were created: `Username` and `Password`. To take things even further, we've changed the `Options` property to return a dictionary of objects so that keys can be titled, such as `FtpEncryptionMode` for FTP.
+
+{% hint style="info" %}
+Speed dials created before 0.2.0 will have to be manually migrated during the release candidate stage. We'll work on a way to migrate the old speed dial files automatically to take advantage of the new features during the final release development.
+{% endhint %}
+
+#### Removed the Language Studio addon
+
+```csharp
+public enum KnownAddons
+{
+    (...)
+    LanguageStudio,
+    (...)
+}
+```
+
+The language studio has been removed as a result of the recent localization changes that have to do with the switch to the localization resources, further managed by ResourceLab.
+
+{% hint style="danger" %}
+Relying on the language studio is no longer needed.
+{% endhint %}
