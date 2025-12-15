@@ -1,6 +1,6 @@
 ---
-icon: compact-disc
 description: This page describes about the available methods of installation.
+icon: compact-disc
 ---
 
 # Installing the Kernel
@@ -34,11 +34,7 @@ Depending on your platform, the amount of disk space taken by KS and its runtime
 {% endcontent-ref %}
 
 {% hint style="info" %}
-If you've installed a development version of Nitrocid, you may see a warning about such versions. You can, however, hide this warning by opting out of these messages by:
-
-1. Executing the `settings` command
-2. Opening the `General` section
-3. Enabling the `Development notice acknowledged` option
+If you've installed a development version of Nitrocid, you may see a warning about such versions. There is no way to dismiss this notice, starting from v0.2.0.
 {% endhint %}
 
 {% hint style="success" %}

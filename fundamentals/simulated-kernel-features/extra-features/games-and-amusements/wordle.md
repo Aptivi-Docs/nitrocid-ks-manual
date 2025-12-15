@@ -5,7 +5,7 @@ icon: square-w
 
 # Wordle
 
-<figure><img src="../../../../.gitbook/assets/016-wordle.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.

@@ -35,7 +35,7 @@ You can consult the below page for the list of JSON editor commands.
 
 ## Interactive TUI
 
-<figure><img src="../../../../.gitbook/assets/020-jsoneditortui.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 You can also interactively edit JSON files using the powerful interactive TUI for text editing. You can consult the below page for more information about how to use it:
 

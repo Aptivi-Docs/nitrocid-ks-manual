@@ -5,7 +5,7 @@ icon: table-tennis-paddle-ball
 
 # Pong
 
-<figure><img src="../../../../.gitbook/assets/image (171).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
 This game is a two-player pong game that allows you to swing the ball back and forth, making sure that you actually catch it before it reaches the left/right edges.
 

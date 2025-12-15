@@ -5,7 +5,7 @@ icon: square-user
 
 # Contacts
 
-<figure><img src="../../../../.gitbook/assets/029-Contacts.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.
@@ -49,7 +49,7 @@ The contact application can import your contacts from the `KSContactsImport` fol
 * VCF contact files holding multiple contacts (same version, mixed versions)
 * Android contacts database file (`contacts2.db`)
 
-<figure><img src="../../../../.gitbook/assets/030-contactsmecard.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 The contact application can also import your contact through a short MeCard syntax given to you by a QR code behind it. Below is an example of a complete MeCard syntax:
 

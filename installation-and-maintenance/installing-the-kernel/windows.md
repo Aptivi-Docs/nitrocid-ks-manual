@@ -5,7 +5,7 @@ icon: windows
 
 # Windows
 
-<figure><img src="../../.gitbook/assets/001-welcome.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (186).png" alt=""><figcaption></figcaption></figure>
 
 Installing Nitrocid KS on Windows is pretty easy, but we recommend installing the simulator using the Chocolatey package manager.
 
@@ -53,6 +53,6 @@ If you like to manually unpack the Nitrocid KS packages, follow these steps:
 
 SmartScreen may detect that Nitrocid and its associated executables may not pass the SmartScreen attestation. If this happens, you'll see the below page:
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Nitrocid KS will not put your PC at risk (except if you downloaded a copy from an unofficial software distributor, or from an unofficial source other than our official releases, our Chocolatey page found [here](https://community.chocolatey.org/packages/KS), and our NuGet page found [here](https://www.nuget.org/packages/KS/)). Click on `More Info`, then click on `Run anyways`.

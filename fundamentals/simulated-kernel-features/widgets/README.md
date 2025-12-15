@@ -5,7 +5,7 @@ icon: calendar-range
 
 # Widgets
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Widgets are information containers that give you quick insights about different information, including the world clock and the news, in a full-screen format. These widgets can be found in the modern logon screen and in The Nitrocid Homepage, and you can easily switch between the main screen and the widget pages.
 

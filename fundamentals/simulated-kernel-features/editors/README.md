@@ -5,7 +5,7 @@ icon: pencil
 
 # Editors
 
-<figure><img src="../../../.gitbook/assets/Beta3-016-Editor.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
 
 Editors are made to make editing your own files easier. In the modern world, many text editors, like Visual Studio Code, are found to provide nice text editing features, such as the auto-completion which allows you to quickly write any text, the hex editor that allows you to view and edit the contents of a binary file seamlessly, and easier editing using the color coded string tokens to differentiate the string from integers, and much more.
 

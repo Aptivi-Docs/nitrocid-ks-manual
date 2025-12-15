@@ -5,7 +5,7 @@ icon: image
 
 # Docking
 
-<figure><img src="../../../.gitbook/assets/042-dock.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 When it comes to docking your laptop, your desktop, or your tablet, it becomes like an information center that shows you latest information about various things that happens in the whole world, such as the current time and date, the world clock, the latest match information about your favorite sports team, and so on.
 

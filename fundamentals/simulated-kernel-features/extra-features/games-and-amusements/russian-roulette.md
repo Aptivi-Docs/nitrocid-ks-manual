@@ -5,7 +5,7 @@ icon: slot-machine
 
 # Russian Roulette
 
-<figure><img src="../../../../.gitbook/assets/011-roulette.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.

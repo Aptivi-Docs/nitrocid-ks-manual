@@ -32,6 +32,8 @@ Trying to run any of the four functions above results in a `KernelException` if 
 
 ## Login handlers
 
+<figure><img src="../../../.gitbook/assets/image (187).png" alt=""><figcaption></figcaption></figure>
+
 Login handlers are login interfaces in which Nitrocid summons in order to commence a login process, just after all the necessary components of the kernel have finished loading. They provide three login flows:
 
 * `LoginScreen()`

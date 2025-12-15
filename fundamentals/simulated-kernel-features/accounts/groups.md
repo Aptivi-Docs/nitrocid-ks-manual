@@ -19,25 +19,25 @@ There are common operations that you can do to manage the groups and their permi
 
 ### Adding groups
 
-<figure><img src="../../../.gitbook/assets/052-addgroup.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 To add a group to the list of available groups, you can use the `addgroup` command. You need to specify a group name that will organize the user accounts based on the role and what is this group for.
 
 ### Removing groups
 
-<figure><img src="../../../.gitbook/assets/053-rmgroup.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
 You can remove a group from the list of available groups if you no longer want a specific group using the `rmgroup` command. You need to specify a group name that exists to be able to remove it.
 
 ### Adding users to a group
 
-<figure><img src="../../../.gitbook/assets/054-addusertogroup.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 You can add a user to an existing group to organize a user by using the `addusertogroup` command so that the user gets permissions from the group. You need to specify an existing user and an existing group that the user didn't join to be able to add a user to the group.
 
 ### Removing users from a group
 
-<figure><img src="../../../.gitbook/assets/055-rmuserfromgroup.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
 You can remove an unwanted user from an existing group using the `rmuserfromgroup` command so that the target user is no longer a member of that target group. You need to specify an existing user and an existing group that the user joined to be able to remove a user from the group.
 

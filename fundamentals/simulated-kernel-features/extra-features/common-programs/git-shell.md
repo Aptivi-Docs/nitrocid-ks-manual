@@ -5,7 +5,7 @@ icon: code-branch
 
 # Git Shell
 
-<figure><img src="../../../../.gitbook/assets/031-gitsh.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.

@@ -5,7 +5,7 @@ icon: calculator
 
 # Calculator
 
-<figure><img src="../../../../.gitbook/assets/028-calc.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.

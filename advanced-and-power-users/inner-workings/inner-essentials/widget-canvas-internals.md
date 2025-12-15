@@ -5,7 +5,7 @@ icon: presentation-screen
 
 # Widget Canvas Internals
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Widget Canvas provides an API that allows you to programmatically manage and render the widget canvases. All widget canvas tools are found in the `Nitrocid.Base.Misc.Widgets.Canvas` namespace, which is part of the broader Widgets namespace that contains all widget-related classes. This API provides a list of functions that allow you to manage the widget canvases, such as getting render info instances and rendering the widgets through the obtained info.
 

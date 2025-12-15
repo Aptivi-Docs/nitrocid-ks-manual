@@ -15,24 +15,22 @@ Some units can be converted easily, such as from 1 kilometer to 1000 meters for 
 
 ## CLI version
 
-<figure><img src="../../../../.gitbook/assets/Beta3-035-UnitConv.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
-The unit converter is used to easily convert the source units to different units, like centimeters to meters. It's powered by the UnitsNet library. You can consult the list of units UnitsNet supports here:
-
-{% @github-files/github-code-block url="https://github.com/angularsen/UnitsNet/tree/master/UnitsNet/GeneratedCode/Units" %}
+The unit converter is used to easily convert the source units to different units, like centimeters to meters. It's powered by the UnitsNet library.
 
 To use this program, refer to the command usages and individual explanations below.
 
 * `unitconv [-tui] <unittype> <quantity> <sourceunit> <targetunit>`
   * Converts the unit by quantity and type from the source unit to the target unit
 
-<figure><img src="../../../../.gitbook/assets/039-unitconv.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 You can use the `listunits` command to get all the available units by type.
 
 ## TUI version
 
-<figure><img src="../../../../.gitbook/assets/040-unitconvtui.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 The TUI version of unit converter allows you to more interactively convert the units. It lets you choose a unit type and a conversion form. To choose a unit type, press the `Up Arrow` and the `Down Arrow` keys to change the type. Press `TAB` to switch between selecting the unit type and the conversion form.
 

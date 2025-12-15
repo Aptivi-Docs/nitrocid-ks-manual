@@ -13,9 +13,9 @@ Extra kernel add-ons may require additional hardware on your computer to work. F
 
 To run Nitrocid KS in the absolute minimum requirements, your computer needs to have the following installed:
 
-| System                   | Framework                                                            | Terminal                                       |
-| ------------------------ | -------------------------------------------------------------------- | ---------------------------------------------- |
-| macOS Catalina or higher | [.NET 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) | [iTerm 2.0](https://iterm2.com/downloads.html) |
+| System                 | Framework                                                            | Terminal                                       |
+| ---------------------- | -------------------------------------------------------------------- | ---------------------------------------------- |
+| macOS Sonoma or higher | [.NET 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) | [iTerm 2.0](https://iterm2.com/downloads.html) |
 
 ## Installation
 

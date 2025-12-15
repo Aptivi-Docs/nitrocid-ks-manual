@@ -5,7 +5,7 @@ icon: presentation-screen
 
 # Widget Canvas
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Widget Canvas API allows you to extend both the login and the homepage by using pages of widgets to allow you to store more information, including the date and the time, the RSS feeds, images, and so on. It uses a set of JSON files that describe a single page under the following folders inside the Nitrocid KS configuration directory:
 

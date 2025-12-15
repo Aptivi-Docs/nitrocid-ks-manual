@@ -9,13 +9,13 @@ Permissions indicate what actions that your user or any of the other users are a
 
 In the simulated system, it only simulates the permission types that can be granted or denied to the users. These can be used to control the users what administrative actions they can do and what they can't. There is a permission editing facility that you can use by invoking the `perm` command. You can do two things: allow and deny. However, if the target user is the administrator (their `admin` flag being set to `true`), all of the permissions, even unlisted, will be granted.
 
-For example, the below screenshot shows that the first normal user, `johnSaunders`, can't manipulate the permissions because they don't have the permission management granted.
+For example, the below screenshot shows that the first normal user, `johnSanders`, can't manipulate the permissions because they don't have the permission management granted.
 
-<figure><img src="../../../.gitbook/assets/060-permdemo1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
-The below screenshot also shows the second non-administrative user, `sarahSantos`, being granted the permission manipulation authority, so they can use the `perm` command to edit permissions for any user.
+The below screenshot also shows the second non-administrative user, `john.d`, being granted the permission manipulation authority, so they can use the `perm` command to edit permissions for any user.
 
-<figure><img src="../../../.gitbook/assets/061-permdemo2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 
 To use this utility, choose what you want to do with the target user's permissions and follow the steps below. You can consult the permissions list under the `Advanced and Power Users` category by clicking on the below link.
 
@@ -25,7 +25,7 @@ To use this utility, choose what you want to do with the target user's permissio
 
 ### Grant permissions
 
-<figure><img src="../../../.gitbook/assets/056-permallow.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
 
 You're looking to grant a user permissions. Follow these steps:
 
@@ -40,7 +40,7 @@ Note that your account must have either the administrative permissions enabled o
 
 ### Revoke permissions
 
-<figure><img src="../../../.gitbook/assets/057-permrevoke.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 If you no longer want a user to be granted a specific permission, follow these steps:
 
@@ -55,7 +55,7 @@ Note that your account must have either the administrative permissions enabled o
 
 ### Grant a permission to a group
 
-<figure><img src="../../../.gitbook/assets/058-permgroupallow.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 You're looking to grant a user permissions. Follow these steps:
 
@@ -70,7 +70,7 @@ Note that your account must have either the administrative permissions enabled o
 
 ### Revoke a permission from a group
 
-<figure><img src="../../../.gitbook/assets/059-permgrouprevoke.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
 If you no longer want a group to be granted a specific permission, follow these steps:
 

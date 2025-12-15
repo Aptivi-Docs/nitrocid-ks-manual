@@ -5,7 +5,7 @@ icon: binary
 
 # Hex Editor
 
-<figure><img src="../../../.gitbook/assets/image (179).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
 
 You're looking for an `ed`-like hex editing experience which allows you to view and edit the binary file. This is the right place! The `edit` command infers the file type whether it's the text file, the JSON file, or the binary file. It contains many editing tools described in the below section by invoking these commands.
 
@@ -23,7 +23,7 @@ You can consult the below page for the list of hex editor commands.
 
 ## Interactive TUI
 
-<figure><img src="../../../.gitbook/assets/image (180).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
 
 In addition to the hex editor being a shell, you can switch to an alternative mode when you're in the shell by executing the `tui` command. This way, you'll get access to the fully interactive hex editor.
 
