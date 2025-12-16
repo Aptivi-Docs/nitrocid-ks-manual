@@ -71,25 +71,25 @@ You must write the context correctly, as it is case-sensitive. Trying to report 
 
 This is the full example code that registers progress handlers for two contexts and reports the progress on them until the progress reaches 100%.
 
-<pre class="language-csharp" data-title="TestProgressHandler.cs" data-line-numbers><code class="lang-csharp">using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Progress;
+<pre class="language-csharp" data-title="TestProgressHandler.cs" data-line-numbers><code class="lang-csharp">using Terminaux.Colors.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using System.Threading;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Progress;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 {
     internal class TestProgressHandler : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the progress handler");
-        public override void Run(params string[] args)
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_DESC");
+        public override void Run()
         {
             int progress = 0;
 <strong>            var handler = new ProgressHandler((num, text) =>
-</strong><strong>                TextWriters.Write($"{num}% {text}", KernelColorType.Progress)
+</strong><strong>                TextWriterColor.Write($"{num}% {text}", ThemeColorType.Progress)
 </strong><strong>            , "General");
 </strong><strong>            var handler2 = new ProgressHandler((num, text) =>
-</strong><strong>                TextWriters.Write($"{num}% {text}", KernelColorType.NeutralText)
+</strong><strong>                TextWriterColor.Write($"{num}% {text}", ThemeColorType.NeutralText)
 </strong><strong>            , "Nongeneral");
 </strong><strong>            ProgressManager.RegisterProgressHandler(handler);
 </strong><strong>            ProgressManager.RegisterProgressHandler(handler2);
@@ -97,12 +97,13 @@ namespace KS.Kernel.Debugging.Testing.Facades
             {
                 Thread.Sleep(100);
                 progress += 1;
-<strong>                ProgressManager.ReportProgress(progress, "General", Translate.DoTranslation("Initializing..."));
-</strong><strong>                ProgressManager.ReportProgress(progress, "Nongeneral", Translate.DoTranslation("Initializing..."));
+<strong>                ProgressManager.ReportProgress(progress, "General", LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_TEST"));
+</strong><strong>                ProgressManager.ReportProgress(progress, "Nongeneral", LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_TEST"));
 </strong>            }
 <strong>            ProgressManager.UnregisterProgressHandler(handler);
 </strong><strong>            ProgressManager.UnregisterProgressHandler(handler2);
 </strong>        }
     }
 }
+
 </code></pre>

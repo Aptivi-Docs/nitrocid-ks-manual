@@ -5,9 +5,9 @@ icon: desktop
 
 # Screensaver Internals
 
-<figure><img src="../../../.gitbook/assets/068-saver.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
-Since Beta 3, your mods can now control whether to register or to unregister your custom screensaver or not. However, let's explain things one by one to learn more about how your mods can interact with screensavers.
+Your mods can now control whether to register or to unregister your custom screensaver or not. However, let's explain things one by one to learn more about how your mods can interact with screensavers.
 
 ## Kernel Mods and their role
 

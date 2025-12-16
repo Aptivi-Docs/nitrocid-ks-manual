@@ -5,7 +5,7 @@ icon: droplet
 
 # Splash Internals
 
-<figure><img src="../../../.gitbook/assets/001-welcome.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (186).png" alt=""><figcaption></figcaption></figure>
 
 Splash screens are usually shown when the kernel reaches to the point that the pre-boot environment is no longer needed. Think of these splash screens as Plymouth splash screens that appear on Debian, or the Windows logo that appears when Windows starts. Nitrocid attempts to simulate the same concept.
 
@@ -157,7 +157,7 @@ SplashManager.EndSplashOut();
 
 The kernel stores a short boot log buffer for each session. You can get the boot log by going to the administrative shell and executing the `bootlog` command.
 
-<figure><img src="../../../.gitbook/assets/132-inner.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 You can also access the `LogBuffer` property in the `SplashReport` class, which is defined like this:
 

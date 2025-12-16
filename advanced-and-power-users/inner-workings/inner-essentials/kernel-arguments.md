@@ -1,11 +1,11 @@
 ---
-description: How do the kernel arguments work? And how it affects the kernel?
+description: How do the kernel arguments work? And how do they affect the kernel?
 icon: square-sliders
 ---
 
 # Kernel Arguments
 
-<figure><img src="../../../.gitbook/assets/129-inner.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
 Kernel Arguments are command-line parameters to the simulator that changes the behavior of the kernel according to the available arguments listed below:
 
@@ -26,7 +26,7 @@ Kernel Arguments are command-line parameters to the simulator that changes the b
 Each argument is provided the `ArgumentInfo` class that defines the argument and its properties.
 
 {% hint style="warning" %}
-It's been theorized that we can actually define the argument parameters using `CommandArgumentInfo`. As of Beta 1, there is one kernel argument that actually uses parameters, but you have to surround said argument with the double quotation marks `""`.
+It's been theorized that we can actually define the argument parameters using `CommandArgumentInfo`. As of v0.1.0 Beta 1, there is one kernel argument that actually uses parameters, but you have to surround said argument with the double quotation marks `""`.
 {% endhint %}
 
 The arguments are parsed each time the kernel starts up or gets rebooted. If there are any switches or argument parameters, they'll get parsed using the `ProvidedArgumentsInfo` class.
@@ -34,5 +34,5 @@ The arguments are parsed each time the kernel starts up or gets rebooted. If the
 {% hint style="info" %}
 To learn more about `ProvidedArgumentsInfo`, click on the below link:
 
-[Broken link](/broken/pages/dggmuvQKW76Uodvf67aw "mention")
+[Command-Line Arguments](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/input-reader/shells/command-line-arguments "mention")
 {% endhint %}

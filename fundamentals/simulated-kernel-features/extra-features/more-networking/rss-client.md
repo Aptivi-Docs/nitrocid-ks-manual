@@ -5,7 +5,7 @@ icon: square-rss
 
 # RSS Client
 
-<figure><img src="../../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (49) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As of 0.1.0, this feature has been moved to the kernel addons.
@@ -19,7 +19,7 @@ The simulated kernel contains the RSS client which gets updates from any RSS fee
 
 To connect to any RSS feed, get any RSS feed URL and execute the `rss` command with the URL. The usage of this command is `rss [-tui] <feed>`.
 
-<figure><img src="../../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (50) (1).png" alt=""><figcaption></figcaption></figure>
 
 If you passed the `-tui` switch, it'll open the interactive TUI to your favorite RSS feed URL listing all your articles. Here are the controls:
 

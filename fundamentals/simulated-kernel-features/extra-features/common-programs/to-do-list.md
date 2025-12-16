@@ -5,7 +5,7 @@ icon: clipboard-list-check
 
 # To-do List
 
-<figure><img src="../../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Nitrocid KS provides this feature as an addon.

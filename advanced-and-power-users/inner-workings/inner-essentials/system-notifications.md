@@ -5,7 +5,7 @@ icon: bell
 
 # System Notifications
 
-<figure><img src="../../../.gitbook/assets/141-inner.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 Nitrocid KS provides a way to show the progress from specific applications or to show the update using a feature called the notifications. The kernel handles the notifications and displays all new notifications in the upper right corner of the screen.
 

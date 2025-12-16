@@ -5,7 +5,7 @@ icon: sun-cloud
 
 # Weather
 
-<figure><img src="../../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
 
 The weather kernel addon allows you to check your city's weather forecast using either the Weather.com API (`weather`) or the OpenWeatherMap forecast API (`weather-old`). You can check the information about the current weather condition in your city, such as the state of the forecast, the wind speed, the humidity, and so on.
 

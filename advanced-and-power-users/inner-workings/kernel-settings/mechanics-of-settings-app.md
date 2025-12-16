@@ -1,6 +1,6 @@
 ---
-icon: pickaxe
 description: How the settings application works?
+icon: pickaxe
 ---
 
 # Mechanics of Settings App
@@ -24,6 +24,6 @@ Here's how the settings application works:
 
 When the user is done configuring the kernel to their needs, they'll save the kernel configuration. The app invokes the `Config.CreateConfig()` function to save the changes to the configuration file.
 
-<figure><img src="../../../.gitbook/assets/101-settings.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 The CLI version of the settings, which hosts the four commands as explained in the Kernel Settings page, uses a bunch of settings tools, including `GetSettingsKey()` that allows you to quickly get a settings key containing settings key information for a specified variable. This key is usable for useful functions, like setting a variable to a specified value that `setconfigvalue` is doing.

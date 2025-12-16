@@ -5,13 +5,14 @@ icon: volume
 
 # Audio Cues
 
-<figure><img src="../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 Audio cues allow your kernel to make different sounds for different events, including the startup and the shutdown sound. This feature uses the BassBoom library to play such short sound files embedded inside the main Nitrocid assembly in multiple platforms. The group of short sounds or audio cues is called the audio cue container, which Nitrocid internally uses to store a group of properties that regenerate stream instances from the resource manager, due to how BassBoom's [Play-n-Forget](https://app.gitbook.com/s/VEwnv6SUh5piF7crh1UN/power-users/using-basolia/playback#playn-forget) feature works.
 
 Every audio cue container represents a sound theme, which is managed by the audio cue tools class, `AudioCueTools`. This class is found in the `Nitrocid.Misc.Audio` namespace. The following themes can be chosen:
 
 * `the_mirage`: The Mirage (default)
+* `the_mirage_urban`: The Mirage (Urban)
 * `big_loss`: Big Loss
 * `great_moments`: Great Moments
 * `thousands_nights`: 00's Nights

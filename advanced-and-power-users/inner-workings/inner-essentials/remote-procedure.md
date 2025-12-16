@@ -39,6 +39,8 @@ After being translated, the RPC attempts to send the response to the target devi
 
 ## Nitrocid.Rkm
 
+<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+
 Nitrocid has a separate application that manages a Nitrocid instance that is running the RPC server without having to run the full Nitrocid executable. When an RPC server is running, the server can be interacted with in the entire network, especially the local area network. Using the port that is configurable, you can send a command to a Nitrocid RPC instance in your network, such as shutting it down and pinging it.
 
 By default, Nitrocid.Rkm runs on the default IP address, which is the loopback interface address `127.0.0.1` (also known as localhost), and the default kernel RPC port mentioned at the beginning of the page. The following switches change how Nitrocid.Rkm connects to the Nitrocid RPC host:

@@ -17,59 +17,49 @@ The kernel configuration files are stored in the below software paths (`Paths.Ap
 When the kernel starts up, different configuration files are read for different purposes. The below settings paths describe the purpose and the type of each (with all the addons).
 
 ```
-d-----          7/5/2024   4:17 PM                KSContacts
-d-----          7/5/2024   4:15 PM                KSContactsImport
-d-----          6/1/2024   4:41 PM                KSEvents
-d-----          6/1/2024   4:49 PM                KSMods
-d-----          6/1/2024   4:41 PM                KSReminders
--a----         6/20/2024   7:50 PM              2 Aliases.json
--a----         12/4/2024  11:58 PM            270 AmusementsConfig.json
--a----         12/4/2024  11:58 PM            718 AmusementsSaversConfig.json
--a----         12/4/2024  11:58 PM             38 AmusementsSplashesConfig.json
--a----         12/4/2024  11:58 PM             40 ArchiveConfig.json
--a----         12/4/2024  11:58 PM             44 BassBoomConfig.json
--a----         12/4/2024  11:58 PM             28 BassBoomSaversConfig.json
--a----         12/4/2024  11:58 PM             49 CalendarConfig.json
--a----         12/4/2024  11:58 PM              2 Consents.json
--a----         12/4/2024  11:58 PM             26 ContactsConfig.json
--a----         12/4/2024  11:58 PM             22 ExtensionHandlers.json
--a----         12/4/2024  11:58 PM          31717 ExtraSaversConfig.json
--a----         12/4/2024  11:58 PM            234 ExtraSplashesConfig.json
--a----         12/4/2024  11:58 PM             26 ForecastConfig.json
--a----         12/4/2024  11:58 PM            554 FtpConfig.json
--a----         12/4/2024  11:58 PM             36 GitConfig.json
--a----         12/4/2024  11:58 PM             42 HttpConfig.json
--a----         12/4/2024  11:58 PM            139 JsonConfig.json
--a----         6/20/2024   7:50 PM            285 KernelCustomSettings.json
--a----         7/11/2024   6:51 PM        2780957 kernelDbg-0.log
--a----         12/4/2024  11:58 PM            484 KernelDriverConfig.json
--a----         12/4/2024  11:58 PM           7632 KernelMainConfig.json
--a----         12/4/2024  11:58 PM             92 KernelSaverConfig.json
--a----         12/4/2024  11:58 PM             35 KernelSplashConfig.json
--a----         12/4/2024  11:58 PM            856 KernelWidgetsConfig.json
--a----          6/1/2024   4:42 PM          42570 KSJournal-0.json
--a----         12/4/2024  11:58 PM            512 MailConfig.json
--a----         6/20/2024   7:50 PM             48 MAL.txt
--a----         6/20/2024   7:50 PM             48 MOTD.txt
--a----         12/4/2024  11:58 PM            218 NameGenSaversConfig.json
--a----         6/11/2024   5:56 PM             24 notes.json
--a----         12/4/2024  11:58 PM            157 RssConfig.json
--a----         12/4/2024  11:58 PM            143 SftpConfig.json
--a----         12/4/2024  11:58 PM           2315 ShellHistories.json
--a----         6/22/2024   5:20 PM            260 SpeedDial.json
--a----         12/4/2024  11:58 PM             41 SqlConfig.json
--a----         12/4/2024  11:58 PM             73 SshConfig.json
--a----         12/4/2024  11:58 PM             70 StocksConfig.json
--a----         12/4/2024  11:58 PM             64 TimersConfig.json
--a----         12/4/2024  11:58 PM             23 TipsConfig.json
--a----          6/1/2024   4:41 PM              4 ToDoList.json
--a----          6/1/2024   4:41 PM              2 UserGroups.json
--a----          9/7/2024   9:51 PM            795 Users.json
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        12/16/2025   1:00 PM                HomepagePages
+d-----        12/16/2025  12:59 PM                KSEvents
+d-----        12/16/2025  12:59 PM                KSReminders
+d-----        12/16/2025   1:00 PM                LogonPages
+-a----        12/16/2025   1:00 PM            270 AmusementsConfig.json
+-a----        12/16/2025   1:00 PM            933 AmusementsSaversConfig.json
+-a----        12/16/2025   1:00 PM             38 AmusementsSplashesConfig.json
+-a----        12/16/2025   1:00 PM             45 BassBoomConfig.json
+-a----        12/16/2025   1:00 PM             28 BassBoomSaversConfig.json
+-a----        12/16/2025   1:00 PM            489 CalendarConfig.json
+-a----        12/16/2025   1:00 PM             27 ChatbotAIConfig.json
+-a----        12/16/2025   1:00 PM              2 Consents.json
+-a----        12/16/2025   1:00 PM             27 ContactsConfig.json
+-a----        12/16/2025   1:00 PM            131 DatesConfig.json
+-a----        12/16/2025   1:00 PM             22 ExtensionHandlers.json
+-a----        12/16/2025   1:00 PM          38056 ExtraSaversConfig.json
+-a----        12/16/2025   1:00 PM            273 ExtraSplashesConfig.json
+-a----        12/16/2025   1:00 PM             26 ForecastConfig.json
+-a----        12/16/2025   1:00 PM            410 KernelDriverConfig.json
+-a----        12/16/2025   1:00 PM           7527 KernelMainConfig.json
+-a----        12/16/2025   1:00 PM            144 KernelSaverConfig.json
+-a----        12/16/2025   1:00 PM             36 KernelSplashConfig.json
+-a----        12/16/2025   1:00 PM            856 KernelWidgetsConfig.json
+-a----        12/16/2025   1:00 PM              4 KSContacts.json
+-a----        12/16/2025   1:00 PM          34766 KSJournal-0.json
+-a----        12/16/2025  12:59 PM             23 MAL.txt
+-a----        12/16/2025   1:00 PM            129 ModsConfig.json
+-a----        12/16/2025  12:59 PM             27 MOTD.txt
+-a----        12/16/2025  12:59 PM              2 notes.json
+-a----        12/16/2025   1:00 PM           1640 ShellsConfig.json
+-a----        12/16/2025   1:00 PM             73 SshConfig.json
+-a----        12/16/2025   1:00 PM             54 StocksConfig.json
+-a----        12/16/2025   1:00 PM             23 TipsConfig.json
+-a----        12/16/2025  12:59 PM              4 ToDoList.json
+-a----        12/16/2025  12:59 PM              2 UserGroups.json
+-a----        12/16/2025   1:00 PM            714 Users.json
 ```
 
 ## Settings
 
-<figure><img src="../../../.gitbook/assets/101-settings.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 The kernel provides an easy-to-use tool to seamlessly configure the kernel settings. It can be easily invoked using the `settings` command. Running this command alone provides you with the normal kernel settings. The following switches will change the mode:
 
@@ -80,10 +70,6 @@ The kernel provides an easy-to-use tool to seamlessly configure the kernel setti
 * `-driver`: Lets you configure the kernel drivers
 * `-widgets`: Lets you configure the kernel widgets for the lockscreen
 * `-type=configType`: Lets you configure a custom section of the kernel settings, including your mod-defined ones.
-
-{% hint style="info" %}
-Currently, the settings application uses Terminaux's interactive TUI feature. If you still prefer the selection style to the TUI, you can pass the `-sel` switch.
-{% endhint %}
 
 Selecting a section leads to the settings application listing all the available configuration options, which you can then set their individual options. It even allows you to save the settings if you like the current configuration, load the user settings, and find a settings entry for easier access.
 
@@ -112,6 +98,8 @@ You can find more information about the mechanics of the settings application by
 {% endcontent-ref %}
 
 ## Settings on your Shell
+
+<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 Additionally, you can change the kernel settings and list them using the following available commands:
 

@@ -7,11 +7,7 @@ icon: linux
 
 In Linux systems, you can comfortably build Nitrocid KS using the command line, since it's the most lightweight solution. However, you must have the prerequisites before being able to build KS.
 
-* [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
-
-{% hint style="info" %}
-Ubuntu 23.10 Mantic Minotaur users or later can directly download .NET 8.0 SDK from the official Ubuntu repositories without having to import the Microsoft's repositories.
-{% endhint %}
+* [.NET 10.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 
 ### Using the command-line
 
@@ -21,4 +17,4 @@ If you are a hardcore command-line user or if you prefer using the command-line,
 2. Execute `git clone https://github.com/Aptivi/NitrocidKS.git`
 3. Navigate to the cloned repository, `NitrocidKS`
 4. Execute `dotnet restore` and `dotnet build`
-5. After building is done, run `dotnet run public/Nitrocid/Nitrocid.csproj`
+5. After building is done, run `dotnet run`

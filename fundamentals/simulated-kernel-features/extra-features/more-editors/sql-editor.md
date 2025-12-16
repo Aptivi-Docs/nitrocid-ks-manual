@@ -23,7 +23,7 @@ You can consult the below page for the list of SQL editor commands.
 
 ## Interactive TUI
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
 
 You can also interactively edit SQL files using the powerful interactive TUI for hex editing. You can consult the below page for more information about how to use it:
 

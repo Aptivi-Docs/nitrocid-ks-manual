@@ -88,7 +88,7 @@ For all the driver management functions, you can also use the non-generic versio
 
 ### Driver Configuration
 
-<figure><img src="../../../../.gitbook/assets/118-inner.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 The `settings -driver` application now lets you set your system-wide kernel drivers up in a completely new section called `Kernel driver settings`. It lets you configure current drivers for each supported driver type.
 

@@ -5,7 +5,7 @@ icon: book
 
 # Dictionary
 
-<figure><img src="../../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Nitrocid KS features a dictionary supplied as a separate addon to allow you to get a definition of an English word. You can define a word of your choice, as long as it's found in the back end, which is the [Free Dictionary API](https://dictionaryapi.dev/).
 

@@ -23,7 +23,7 @@ The simulated kernel attempts to simulate the three features, which can be invok
 
 ### Timer
 
-<figure><img src="../../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 The simulated kernel powers the timer feature that, by default, sets the remaining time to just one minute. The controls are:
 
@@ -35,7 +35,7 @@ You can start the application up with the `timer` command.
 
 ### Stopwatch
 
-<figure><img src="../../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 The simulated kernel also simulates the stopwatch functionality with the ability to set the laps. You can also reset the stopwatch. The controls are:
 
@@ -49,7 +49,7 @@ You can start the application up with the `stopwatch` command.
 
 ## Pomodoro
 
-<figure><img src="../../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 The Pomodoro timer is provided to you by the kernel addon to simplify the task of dividing time into break segments. The controls are:
 

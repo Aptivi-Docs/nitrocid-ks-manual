@@ -11,11 +11,11 @@ In the simulated system, it only simulates the permission types that can be gran
 
 For example, the below screenshot shows that the first normal user, `johnSanders`, can't manipulate the permissions because they don't have the permission management granted.
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (1).png" alt=""><figcaption></figcaption></figure>
 
 The below screenshot also shows the second non-administrative user, `john.d`, being granted the permission manipulation authority, so they can use the `perm` command to edit permissions for any user.
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
 
 To use this utility, choose what you want to do with the target user's permissions and follow the steps below. You can consult the permissions list under the `Advanced and Power Users` category by clicking on the below link.
 
@@ -25,7 +25,7 @@ To use this utility, choose what you want to do with the target user's permissio
 
 ### Grant permissions
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
 
 You're looking to grant a user permissions. Follow these steps:
 
@@ -40,7 +40,7 @@ Note that your account must have either the administrative permissions enabled o
 
 ### Revoke permissions
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
 
 If you no longer want a user to be granted a specific permission, follow these steps:
 
@@ -55,7 +55,7 @@ Note that your account must have either the administrative permissions enabled o
 
 ### Grant a permission to a group
 
-<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (1).png" alt=""><figcaption></figcaption></figure>
 
 You're looking to grant a user permissions. Follow these steps:
 
@@ -70,7 +70,7 @@ Note that your account must have either the administrative permissions enabled o
 
 ### Revoke a permission from a group
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
 
 If you no longer want a group to be granted a specific permission, follow these steps:
 

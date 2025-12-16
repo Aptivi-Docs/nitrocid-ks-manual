@@ -1,6 +1,6 @@
 ---
-icon: satellite-dish
 description: Debugging the kernel on LAN
+icon: satellite-dish
 ---
 
 # Remote Debugging
@@ -19,7 +19,7 @@ Once the remote debugger starts, you can connect to it using the raw TCP connect
 
 ### Windows
 
-<figure><img src="../../../.gitbook/assets/095-debug.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 You can establish a connection to the remote debugger using [PuTTY](https://putty.org/) or an equivalent software. Once you install this, fill the below forms to make a connection:
 
@@ -40,7 +40,7 @@ You should be able to see debugging messages once the connection to the remote d
 
 ## Remote debug chat
 
-<figure><img src="../../../.gitbook/assets/149-rchat.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 The chatting feature was added to the remote debugger to allow chatting with the other users debugging the same kernel to discuss what is happening in the kernel.
 

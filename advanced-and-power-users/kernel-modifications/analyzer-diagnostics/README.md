@@ -24,7 +24,7 @@ There are two types of Nitrocid analyzers as highlighted above. This section sho
 
 In order to install the NuGet-based analyzer for Nitrocid mods on Visual Studio, follow the below steps:
 
-1. Open Visual Studio 2022 to a solution of your choice and open `Manage NuGet packages` on a project you want to analyze.
+1. Open Visual Studio 2026 to a solution of your choice and open `Manage NuGet packages` on a project you want to analyze.
 2. Search for `Nitrocid.Analyzers`
 3. Install the package
 4.  Start working on your mod, and you'll see `NKS` analyzers.<br>

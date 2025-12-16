@@ -5,7 +5,7 @@ icon: presentation-screen
 
 # Widget Canvas
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 Widget Canvas API allows you to extend both the login and the homepage by using pages of widgets to allow you to store more information, including the date and the time, the RSS feeds, images, and so on. It uses a set of JSON files that describe a single page under the following folders inside the Nitrocid KS configuration directory:
 
@@ -13,6 +13,10 @@ Widget Canvas API allows you to extend both the login and the homepage by using 
 * `HomepagePages`: A directory that stores widget pages for The Nitrocid Homepage
 
 You can create a JSON file by creating it under one of the above directories, depending on the context, and make an array of widget rendering information. You can consult the below page for more information.
+
+{% content-ref url="../../../advanced-and-power-users/inner-workings/inner-essentials/widget-canvas-internals.md" %}
+[widget-canvas-internals.md](../../../advanced-and-power-users/inner-workings/inner-essentials/widget-canvas-internals.md)
+{% endcontent-ref %}
 
 {% hint style="warning" %}
 Widget canvases are only supported in the modern logon handler and in The Nitrocid Homepage. Any custom logon handlers are currently not supported with Widget Canvas API.

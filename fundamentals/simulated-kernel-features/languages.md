@@ -5,7 +5,7 @@ icon: language
 
 # Localization
 
-<figure><img src="../../.gitbook/assets/066-welcomelang.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 Localization was implemented when computers were distributed in non-English countries to aid the users in using their computers in their native language. This feature is currently supported in both Windows and Unix-based operating systems.
 
@@ -23,15 +23,19 @@ Languages usually get translated at the end of each development period of each u
 
 ### Through settings
 
-<figure><img src="../../.gitbook/assets/067-setlang.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 To change the simulated kernel language using the settings application, follow these steps:
 
 1. Log-in to the system account, `root`, or any of the administrators or users that has at least the settings management permission
-2. Execute the `settings` command, go to `General`, and go to `Language`
+2. Execute the `settings` command, go to `General`, and use TAB and ENTER to go to `Language`
 3. Select a new language, then log-out and log in again.
 
 Similarly, you can change the culture from the same menu, but go to `Culture`.
+
+{% hint style="info" %}
+Not all languages are supported. In case you select a language that is not supported, it automatically falls back to English.
+{% endhint %}
 
 {% hint style="info" %}
 Note that your account must have either the administrative permissions enabled or the settings management permission granted to be able to use this command.
@@ -39,31 +43,22 @@ Note that your account must have either the administrative permissions enabled o
 
 ### Through command-line
 
-<figure><img src="../../.gitbook/assets/156-chlang.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 To change the simulated kernel language using the command-line, follow these steps:
 
 1. Log-in to the system account, `root`, or any of the administrators or users that has at least the settings management permission
-2. Execute the `chlang` command, pointing it to the target language that you wish to set to, such as `dtc` and `ptg`.
-   1. Alternatively, if you want to specify a country, you can use the `-country` flag, but specify a valid country.
-   2. To set the language for your user, you can use the `-user` flag.
+2. Execute the `chlang` command, pointing it to the target language that you wish to set to, such as `es` and `nl`.
+   1. To set the language for your user, you can use the `-user` flag.
 3. Log-out and log in again.
 
 To change the simulated kernel culture using the command-line, follow these steps:
 
 1. Log-in to the system account, `root`, or any of the administrators or users that has at least the settings management permission
 2. Execute the `chculture` command, pointing it to the target culture that you wish to set to, such as `en-US` and `zh-CN`.
-   1. To set the language for your user, you can use the `-user` flag.
+   1. To set the culture for your user, you can use the `-user` flag.
 3. Log-out and log in again.
 
 {% hint style="info" %}
 Note that your account must have either the administrative permissions enabled or the settings management permission granted to be able to use this command.
 {% endhint %}
-
-## More information
-
-For more information regarding localization, you can visit the below page to take you to the LocaleStation manual:
-
-{% content-ref url="https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/bKrTzoXx2e0avHOvf94R/" %}
-[LocaleStation - Manual](https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/bKrTzoXx2e0avHOvf94R/)
-{% endcontent-ref %}

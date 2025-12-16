@@ -18,7 +18,7 @@ The `Logs` directory doesn't necessarily contain files that pertain to what Nitr
 
 The structure of the local debugging log is like the below picture:
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 Every line in the local debug logs follow the below structure (if debug information is available):
 

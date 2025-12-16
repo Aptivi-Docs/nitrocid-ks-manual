@@ -24,7 +24,7 @@ This method is internally called by the debug writer. If you really want to crea
 
 ## Kernel dump files
 
-<figure><img src="../../.gitbook/assets/002-improved-stacktrace-after.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 In the event that the kernel reported a kernel panic in all of the types, whether continuable or uncontinuable, the kernel dump file will be generated under the name of `dmp_date_time.txt` in the kernel configuration directory. These files assist us in debugging the severe kernel crashes in case the bug involves this event.
 
@@ -73,7 +73,7 @@ Typically, the message displays the exception type, the message, and the excepti
 
 ## Debug shell
 
-<figure><img src="../../.gitbook/assets/100-diag.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 The debug shell allows you to diagnose the kernel in depth. The following commands are available in the below page:
 
