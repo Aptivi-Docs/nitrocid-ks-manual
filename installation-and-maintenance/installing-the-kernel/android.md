@@ -5,7 +5,7 @@ icon: android
 
 # Android
 
-<figure><img src="../../.gitbook/assets/147-android.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot_20251217_134028_Termux.png" alt=""><figcaption></figcaption></figure>
 
 The tricky part is getting Nitrocid KS to run on Android phones and tablets, especially those that run the latest version of Android.
 

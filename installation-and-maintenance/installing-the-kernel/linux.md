@@ -5,7 +5,7 @@ icon: linux
 
 # Linux
 
-<figure><img src="../../.gitbook/assets/146-linux.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/screen.jpg" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 <mark style="color:blue;">**We now officially support**</mark> [<mark style="color:blue;">**Arch Linux**</mark>](https://archlinux.org/) <mark style="color:blue;">**as the distro for 64-bit (AMD + Intel and ARM) processors!**</mark>
