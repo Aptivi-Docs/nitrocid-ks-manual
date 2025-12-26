@@ -191,7 +191,13 @@ The forecast addon allows you to take a look at the current forecast across the 
 
 ### FTP Shell
 
-This shell provides you a client to the FTP servers. Here is a list of supported commands:
+This shell provides you a client to the FTP servers. You can use the following commands from MESH:
+
+| Commands | Arguments and Switches |
+| -------- | ---------------------- |
+| `ftp`    | `[server]`             |
+
+You can use the following commands in the FTP shell:
 
 | Commands    | Arguments and Switches                   |
 | ----------- | ---------------------------------------- |
@@ -257,7 +263,13 @@ Once you enter the Git shell with the provided repo path, you can access the bel
 
 ### HTTP Shell
 
-The HTTP shell allows you to interact with an HTTP server, like sending requests to it. You can use the below commands:
+The HTTP shell allows you to interact with an HTTP server, like sending requests to it. You can use the following commands from MESH:
+
+| Commands | Arguments and Switches |
+| -------- | ---------------------- |
+| `http`   |                        |
+
+You can use the following commands in the HTTP shell:
 
 | Commands     | Arguments and Switches   |
 | ------------ | ------------------------ |
@@ -278,7 +290,15 @@ The HTTP shell allows you to interact with an HTTP server, like sending requests
 
 ### JSON Shell
 
-The JSON shell allows you to easily edit JSON files. You can use the below commands:
+The JSON shell allows you to easily edit JSON files. You can use the following commands from MESH:
+
+| Commands       | Arguments and Switches |
+| -------------- | ---------------------- |
+| `jsonminify`   | `<jsonfile> <output>`  |
+| `jsonbeautify` | `<jsonfile> <output>`  |
+| `jsondiff`     | `<file1> <file2>`      |
+
+You can use the following commands in the JSON shell:
 
 | Commands       | Arguments and Switches                                            |
 | -------------- | ----------------------------------------------------------------- |
@@ -287,9 +307,6 @@ The JSON shell allows you to easily edit JSON files. You can use the below comma
 | `exitnosave`   |                                                                   |
 | `findproperty` | `[-parentproperty] <propname>`                                    |
 | `jsoninfo`     | `[-simplified] [-showvals]`                                       |
-| `jsonminify`   | `<jsonfile> <output>`                                             |
-| `jsonbeautify` | `<jsonfile> <output>`                                             |
-| `jsondiff`     | `<file1> <file2>`                                                 |
 | `print`        | `[propname]`                                                      |
 | `rm`           | `<objectPath>`                                                    |
 | `save`         | `[-b\|-m]`                                                        |
@@ -316,12 +333,21 @@ You can generate names by using the following commands:
 
 ### Mail Shell
 
-This shell allows you to check your e-mails and send them. You can use the following commands:
+This shell allows you to check your e-mails and send them. You can use the following commands from MESH:
+
+| Commands  | Arguments and Switches         |
+| --------- | ------------------------------ |
+| `mail`    | `[emailAddress]`               |
+| `popmail` | `[emailAddress]`               |
+| `ispinfo` | `[-host] <emailAddressOrHost>` |
+
+You can use the following commands in the mail shell:
 
 | Commands  | Arguments and Switches            |
 | --------- | --------------------------------- |
 | `cd`      | `<folder>`                        |
 | `detach`  |                                   |
+| `ispinfo` |                                   |
 | `lsdirs`  |                                   |
 | `list`    | `[pagenum]`                       |
 | `mkdir`   | `<foldername>`                    |
@@ -347,7 +373,13 @@ This shell allows you to send either a file or a string to one of the pastebin p
 
 ### RSS Shell
 
-You can use this shell to read your RSS feeds using the `rss` command. You can use the below commands:
+You can use this shell to read your RSS feeds using the `rss` command. You can use the following commands from MESH:
+
+| Commands | Arguments and Switches |
+| -------- | ---------------------- |
+| `rss`    | `[-tui] <feedlink>`    |
+
+You can use the following commands in the RSS shell:
 
 | Commands       | Arguments and Switches       |
 | -------------- | ---------------------------- |
@@ -364,7 +396,13 @@ You can use this shell to read your RSS feeds using the `rss` command. You can u
 
 ### SFTP Shell
 
-SFTP shell allows you to interact with the SFTP servers.
+SFTP shell allows you to interact with the SFTP servers. You can use the following commands from MESH:
+
+| Commands | Arguments and Switches |
+| -------- | ---------------------- |
+| `sftp`   | `[server]`             |
+
+You can use the following commands in the SFTP shell:
 
 | Commands | Arguments and Switches                    |
 | -------- | ----------------------------------------- |

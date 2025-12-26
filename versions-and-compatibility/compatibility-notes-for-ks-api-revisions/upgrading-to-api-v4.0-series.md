@@ -358,3 +358,27 @@ The language studio has been removed as a result of the recent localization chan
 {% hint style="danger" %}
 Relying on the language studio is no longer needed.
 {% endhint %}
+
+#### Removed extra known addons enumeration
+
+```csharp
+public enum KnownAddons
+{
+    (...)
+    ExtrasFtpShell,
+    ExtrasGitShell,
+    ExtrasHttpShell,
+    ExtrasJsonShell,
+    ExtrasMailShell,
+    ExtrasRssShell,
+    ExtrasSftpShell,
+    ExtrasSqlShell,
+    (...)
+}
+```
+
+We've migrated all those shells to one shell pack addon, and it can be accessed through `KnownAddons.AddonShellPacks`.
+
+{% hint style="warning" %}
+Use `KnownAddons.AddonShellPacks` instead of using one of the deleted enumerations.
+{% endhint %}
