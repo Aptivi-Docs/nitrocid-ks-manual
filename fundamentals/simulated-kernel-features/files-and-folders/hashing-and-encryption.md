@@ -5,7 +5,7 @@ icon: key-skeleton
 
 # Hashing and Encryption
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 When it comes to verifying the file integrity, the file hashing feature of Nitrocid KS's simulated filesystem comes into play. It features built-in file hashing techniques to allow you to check the sanity of your files. The kernel file encryption features are handled by your selected encryption kernel driver, which can be found here:
 
@@ -32,7 +32,7 @@ The following functions are available:
 
 ## Verification
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 You can also use the verification feature in both the main command-line shell and in your mod's code to allow you to check a file to see if the two hashes (calculated or not) match or not. This works under the following two conditions:
 
@@ -55,7 +55,7 @@ The following functions are available:
 
 ## Miscellaneous
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 In both the above classes, you can also access the miscellaneous hash and verification tools. The following tools can be used in your mods:
 

@@ -5,7 +5,7 @@ icon: mug-hot
 
 # Caffeine
 
-<figure><img src="../../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 If you need to be notified whether your coffee is ready after a specified time, you'll need to use this program to facilitate this task. You can use the caffeine command to provide it with either the number of seconds until your caffeine is ready or the caffeine name, which will be provided with the below table:
 

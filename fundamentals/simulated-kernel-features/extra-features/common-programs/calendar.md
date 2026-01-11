@@ -25,7 +25,7 @@ The simulated kernel provides you with the calendar management application that 
 
 ### Interactive Calendar
 
-<figure><img src="../../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The calendar can be used to show you either the current month or the selected year in the current month or the selected year and month. The interactive calendar allows you to interactively see the current day, the month, and the year. To utilize the functionality, use the following command.
 
