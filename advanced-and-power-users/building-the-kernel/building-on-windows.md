@@ -22,7 +22,7 @@ Once you have Visual Studio installed with at least the .NET 10.0 SDK and the .N
 
     <figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 3. Press `Clone`. The clone may need to take a few minutes depending on your Internet connection.
-4. Press `Solution Explorer` » `Switch Views` and double click on `Nitrocid.sln`\
+4. Press `Solution Explorer` » `Switch Views` and double click on `Nitrocid.slnx`\
    ![](<../../.gitbook/assets/image (14).png>)
 5. Press `Start` or press `Build` » `Build Solution` to build\
    ![](<../../.gitbook/assets/image (15).png>)

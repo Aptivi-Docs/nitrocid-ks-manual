@@ -24,6 +24,10 @@ To be able to use the below commands that are listed in the below section, you h
    * Usage: `setsite <host>`
 3. Now, execute any of the below request commands to interact with the server
 
+{% hint style="danger" %}
+You can ignore certificate errors by setting the `IgnoreCertificateErrors` property in the kernel settings to true, but we don't recommend that you do that, especially when it comes to untrustworthy servers, as the server you're trying to connect to might be compromised.
+{% endhint %}
+
 ## Commands
 
 To get access to the list of commands, consult the below page:

@@ -71,7 +71,7 @@ You must write the context correctly, as it is case-sensitive. Trying to report 
 
 This is the full example code that registers progress handlers for two contexts and reports the progress on them until the progress reaches 100%.
 
-<pre class="language-csharp" data-title="TestProgressHandler.cs" data-line-numbers><code class="lang-csharp">using Terminaux.Colors.Themes.Colors;
+<pre class="language-csharp" data-title="TestProgressHandler.cs" data-line-numbers><code class="lang-csharp">using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using System.Threading;
 using Nitrocid.Base.Languages;
@@ -85,13 +85,13 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             int progress = 0;
-<strong>            var handler = new ProgressHandler((num, text) =>
-</strong><strong>                TextWriterColor.Write($"{num}% {text}", ThemeColorType.Progress)
-</strong><strong>            , "General");
-</strong><strong>            var handler2 = new ProgressHandler((num, text) =>
-</strong><strong>                TextWriterColor.Write($"{num}% {text}", ThemeColorType.NeutralText)
-</strong><strong>            , "Nongeneral");
-</strong><strong>            ProgressManager.RegisterProgressHandler(handler);
+            var handler = new ProgressHandler((num, text) =>
+                TextWriterColor.Write($"{num}% {text}", ThemeColorType.Progress)
+            , "General");
+            var handler2 = new ProgressHandler((num, text) =>
+                TextWriterColor.Write($"{num}% {text}", ThemeColorType.NeutralText)
+            , "Nongeneral");
+<strong>            ProgressManager.RegisterProgressHandler(handler);
 </strong><strong>            ProgressManager.RegisterProgressHandler(handler2);
 </strong>            while (progress != 100)
             {
@@ -105,5 +105,4 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 </strong>        }
     }
 }
-
 </code></pre>

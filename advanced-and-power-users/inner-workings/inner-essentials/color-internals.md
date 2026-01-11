@@ -9,10 +9,16 @@ icon: swatchbook
 
 Nitrocid KS uses Terminaux to manipulate with the colors and configure them for the kernel to use. The kernel employs several of the color types for the kernel components, your addons, or your mods to use when writing text using the Nitrocid's console writer.
 
-Scroll down in this page to learn more about Nitrocid-specific features. For the general color tools, you may consult the Terminaux manual:
+Scroll down in this page to learn more about Nitrocid-specific features. For the general color tools, you may consult the Terminaux manual for console colors:
 
 {% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-colors" %}
 [Console Colors](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-colors)
+{% endcontent-ref %}
+
+Colorimetry is also used for more general color tools, which you can consult here:
+
+{% content-ref url="https://app.gitbook.com/s/BdESDsiuTO9fbDXLJ8HV/usage/color-sequences" %}
+[Color Sequences](https://app.gitbook.com/s/BdESDsiuTO9fbDXLJ8HV/usage/color-sequences)
 {% endcontent-ref %}
 
 ## Color types

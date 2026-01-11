@@ -5,7 +5,7 @@ icon: pen-to-square
 
 # JSON Editor
 
-<figure><img src="../../../../.gitbook/assets/019-jsoneditorcli.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 You're looking for an `ed`-like JSON editing experience which allows you to view and edit the JSON file. This is the right place! The `edit` command infers the file type whether it's the text file, the JSON file, or the binary file. It contains many editing tools described in the below section by invoking these commands.
 
@@ -35,7 +35,7 @@ You can consult the below page for the list of JSON editor commands.
 
 ## Interactive TUI
 
-<figure><img src="../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 You can also interactively edit JSON files using the powerful interactive TUI for text editing. You can consult the below page for more information about how to use it:
 

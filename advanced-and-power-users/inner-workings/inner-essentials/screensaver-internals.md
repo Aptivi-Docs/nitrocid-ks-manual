@@ -154,6 +154,29 @@ Some screensavers allow you to specify a next draw delay upon completion of the 
 Screensavers that use `SleepNoBlock()` from `ThreadManager` don't get affected by the unified delay switch.
 {% endhint %}
 
+### Controlled display
+
+In screensavers that contain for loops, you can use the `Bailing` property to make the code return immediately. This property turns true if screensaver has been interrupted by any key press, such as ENTER.
+
+{% code title="BoxStitch.cs" lineNumbers="true" %}
+```csharp
+while (!box1Done && !box2Done && !box3Done && !box4Done)
+{
+    if (ScreensaverManager.Bailing)
+        return;
+    (...)
+}
+```
+{% endcode %}
+
+{% hint style="warning" %}
+If you don't include the above conditional, your screensaver might take a long time to exit, depending on the loop. It can also sometimes cause the kernel to get stuck permanently on the screensaver.
+{% endhint %}
+
+{% hint style="danger" %}
+Never use any of the renderers that internally add to the existing screen instance, especially when it comes to infoboxes, in the screensaver code; this exposes whatever was on the screen, and it poses security and privacy risks.
+{% endhint %}
+
 ## Ambient sound effects
 
 The screensaver manager handles the ambient sound effects when this feature is turned on from the main kernel configuration. The sound effects will be played on a loop during the screensaver runtime, until you exit the screensaver using either your mouse or your keyboard. You can control the intensity of the ambient sound effects using the `AmbientSoundFxIntensity` property in the kernel main configuration class, which takes the following values in the `AmbienceFxIntensity` enum:

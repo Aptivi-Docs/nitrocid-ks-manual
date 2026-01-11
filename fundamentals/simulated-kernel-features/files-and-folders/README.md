@@ -138,6 +138,6 @@ Note that `F11` may be used in the Windows command prompt. In the Windows Termin
 
 ### File preview
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 By pressing `P`, you'll be able to preview either a binary or a text file inside an informational box. You can use `UP` and `DOWN` arrows to navigate the file by one line, `Page Up` and `Page Down` to navigate by one page, or `Q` to exit the informational box.
