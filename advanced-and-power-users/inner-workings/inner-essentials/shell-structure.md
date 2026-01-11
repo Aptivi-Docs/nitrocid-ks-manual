@@ -57,7 +57,9 @@ The error code variable, `MESHErrorCode`, holds information about the last proce
 * `2`
   * Indicates that either the real or the imaginary number is not valid (`imaginary` command)
 * `3`
-  * Indicates that the unit type is not found (`unitconv` command)
+  * Indicates that the unit type is not found (`listunits` command)
+  * Theme preview has exited by user request (`themeprev` command)
+  * Theme set has exited by user request (`themeset` command)
 * `4`
   * Indicates that the hashes don't match (`verify` command)
 * `5`
@@ -87,10 +89,6 @@ The error code variable, `MESHErrorCode`, holds information about the last proce
   * Indicates that the culture is not found (`altdate` command)
 * `17`
   * Indicates that there is no such lyric file (`playlyric` command)
-* `18`
-  * Indicates that the number of times is invalid (`repeat` command)
-* `19`
-  * Indicates that repeat can't repeat itself (`repeat` command)
 * `20`
   * Indicates that the number of columns is invalid (`wraptext` command)
 * `21`
@@ -113,12 +111,33 @@ The error code variable, `MESHErrorCode`, holds information about the last proce
   * Indicates that the music file is not found (`playsound` command)
 * `30`
   * Indicates that the MPG123 library has timed out (`playsound` command)
-  * Indicates that the music file is not specified (`musicplayer` command)
-* `31`
-  * Indicates that the music file is not found (`musicplayer` command)
 * `32`
   * Indicates that there are no caffeine alerts to abort (`caffeine` command)
 * `33`
   * Indicates that this command is not supported on Windows (`showmainbuffer` command)
 * `34`
   * Indicates that the dock is not found (`dock` command)
+* `35`
+  * Indicates that user didn't provide file or content (`pastebin` command)
+* `36`
+  * Indicates that the provider type of pastebin is not raw, http, or https (`pastebin` command)
+* `37`
+  * Indicates that pastebin has failed (`pastebin` command)
+* `38`
+  * Indicates that latitude and longitude is needed (`weather` command)
+* `39`
+  * Indicates that the path is not provided or image is not found (`preview` command)
+* `40`
+  * Indicates that the API call for AlphaVantage has failed (`stock` command)
+* `41`
+  * Indicates that there is no SQL database connection (`dbinfo` command)
+* `42`
+  * Indicates that the file stream is not open for JSON (`tui` command)
+* `43`
+  * Indicates that there is no repository (all Git commands)
+* `44`
+  * Indicates that there is no chemical substance (`element` command)
+* `45`
+  * Indicates that the expiry date info is invalid (`expiry` command)
+* `46`
+  * Indicates that the mode is not specified (`ismode` command)
