@@ -42,28 +42,10 @@ For Linux systems, a check for `/usr/share/zoneinfo` is performed, and if it doe
 
 <figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-In addition to providing the calendar command in the addon, the base Nitrocid API provides some of the calendar management APIs to make access to them easier than before. You can now get the calendar straight from the calendar type or its name using the `GetCalendar()` function from the `CalendarTools` class.
+In addition to providing the calendar command in the addon, Calendrier, which Nitrocid and Terminaux use, provides some of the calendar management APIs to make access to them easier than before. To learn more about calendaring, refer to the documentation below:
 
-{% hint style="info" %}
-Additionally, you can use the variant calendar, which uses your culture to define a calendar culture. This can be accessed by calling `GetCalendar()` with `CalendarTypes.Variant` as a type.
-{% endhint %}
-
-Additionally, the time and date renderers can be used with the base calendar class instance obtained from the above function. The following calendars can be used:
-
-* `Chinese`: `zh-CN`
-* `Gregorian`: `en-US`
-* `Hijri`: `ar`
-* `Japanese`: `ja-JP`
-* `Persian`: `fa`
-* `SaudiHijri`: `ar-SA`
-* `Taiwanese`: `zh-TW`
-* `ThaiBuddhist`: `th-TH`
-* `Variant`: Your culture as specified by your kernel configuration
-
-To learn more about calendaring, refer to the Terminaux documentation:
-
-{% content-ref url="https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/" %}
-[Terminaux - Manual](https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/)
+{% content-ref url="https://app.gitbook.com/s/bMaIp29Xf3tHDgiWo9BZ/usage/calendars" %}
+[Calendars](https://app.gitbook.com/s/bMaIp29Xf3tHDgiWo9BZ/usage/calendars)
 {% endcontent-ref %}
 
 {% hint style="warning" %}
@@ -78,6 +60,20 @@ It's important to take note of these:
 Nitrocid API provides date conversion tools that allow you to change how the date and the time are being represented. For instance, you can translate the date and the time to UNIX time and vice versa.
 
 As for the calendars, you can use the `GetDateFromCalendar()` function, provided that you have a calendar instance from the `GetCalendar()` function. Also, you can use the `GetDateFromCalendarNoCulture()` function for calendars with overridden `Calendar` property.
+
+### Date renderers API
+
+The renderers are essential if you want to get the text form of either the current date and time or the selected date and time. This is to simplify the functions that are used to do the same thing, but in the more coherent form to be able to use it like never before. The following classes are available for you to use in your mods:
+
+* `TimeDateRenderers`: This class provides general time and date renderers that use your local time zone to return a text indicating either the current time and date or the selected time and date. You can optionally specify a target date, a target culture/calendar, and a target format type.
+* `TimeDateRenderersUtc`: This class provides general time and date renderers that use UTC to return a text indicating either the current time and date or the selected time and date. You can optionally specify a target date, a target culture/calendar, and a target format type.
+* `TimeDateMiscRenderers`: This class provides miscellaneous time and date renderers, including getting a string instance of the remaining time and printing the current date and time to the console.
+
+{% hint style="info" %}
+You can also use one of the constants specified in the `TimeDateRenderConstants` class as a custom format.
+
+In some renderers, you can use the custom date and time formats, as long as they specify a valid syntax to print the date and the time. You can refer to [this documentation](https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings) for more information about how to write a valid date and time format.
+{% endhint %}
 
 ## Miscellaneous tools
 
@@ -105,17 +101,3 @@ Additionally, you can stop an alarm before it's up using a function defined belo
 public static void StopAlarm(int alarmIdx)
 public static void StopAlarm(string alarmId)
 ```
-
-### Renderers
-
-The renderers are essential if you want to get the text form of either the current date and time or the selected date and time. This is to simplify the functions that are used to do the same thing, but in the more coherent form to be able to use it like never before. The following classes are available for you to use in your mods:
-
-* `TimeDateRenderers`: This class provides general time and date renderers that use your local time zone to return a text indicating either the current time and date or the selected time and date. You can optionally specify a target date, a target culture/calendar, and a target format type.
-* `TimeDateRenderersUtc`: This class provides general time and date renderers that use UTC to return a text indicating either the current time and date or the selected time and date. You can optionally specify a target date, a target culture/calendar, and a target format type.
-* `TimeDateMiscRenderers`: This class provides miscellaneous time and date renderers, including getting a string instance of the remaining time and printing the current date and time to the console.
-
-{% hint style="info" %}
-You can also use one of the constants specified in the `TimeDateRenderConstants` class as a custom format.
-
-In some renderers, you can use the custom date and time formats, as long as they specify a valid syntax to print the date and the time. You can refer to [this documentation](https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings) for more information about how to write a valid date and time format.
-{% endhint %}
