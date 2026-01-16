@@ -11,11 +11,17 @@ As API v4.0 is still in development, the breaking changes get committed and land
 
 This version gives your kernel a minor gorgeous makeover that brings in feature additions and spectacular improvements in all fields, including some of the cosmetic changes.
 
-### Updated Terminaux to 8.0 <a href="#updated-terminaux-to-6.0" id="updated-terminaux-to-6.0"></a>
+### Updated Terminaux to 8.1 <a href="#updated-terminaux-to-6.0" id="updated-terminaux-to-6.0"></a>
 
-We've updated Terminaux to 8.0 to bring improvements. However, this doesn't come without the cost of having to deal with the breaking changes, which, in this case, is many.
+We've updated Terminaux to 8.1 to bring improvements. However, this doesn't come without the cost of having to deal with the breaking changes, which, in this case, is many.
 
-You can consult the list of breaking changes that result from upgrading to Terminaux 8.0 by pressing the below button:
+You can consult the list of breaking changes that result from upgrading to Terminaux 8.1 by pressing the below button:
+
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v8.0" %}
+[API v8.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v8.0)
+{% endcontent-ref %}
+
+Also, we have upgraded to Terminaux 8.0 earlier during the release candidate development:
 
 {% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v8.0" %}
 [API v8.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v8.0)
@@ -344,6 +350,7 @@ Speed dials created before 0.2.0 will have to be manually migrated during the re
 
 #### Removed the Language Studio addon
 
+{% code title="KnownAddons.cs" lineNumbers="true" %}
 ```csharp
 public enum KnownAddons
 {
@@ -352,6 +359,7 @@ public enum KnownAddons
     (...)
 }
 ```
+{% endcode %}
 
 The language studio has been removed as a result of the recent localization changes that have to do with the switch to the localization resources, further managed by ResourceLab.
 
@@ -361,6 +369,7 @@ Relying on the language studio is no longer needed.
 
 #### Removed extra known addons enumeration
 
+{% code title="KnownAddons.cs" lineNumbers="true" %}
 ```csharp
 public enum KnownAddons
 {
@@ -376,9 +385,46 @@ public enum KnownAddons
     (...)
 }
 ```
+{% endcode %}
 
 We've migrated all those shells to one shell pack addon, and it can be accessed through `KnownAddons.AddonShellPacks`.
 
 {% hint style="warning" %}
 Use `KnownAddons.AddonShellPacks` instead of using one of the deleted enumerations.
+{% endhint %}
+
+#### Display in hex "dumb mode" functions removed
+
+{% code title="IFilesystemDriver.cs" lineNumbers="true" %}
+```csharp
+/// <summary>
+/// Filesystem driver interface for drivers
+/// </summary>
+public interface IFilesystemDriver : IDriver
+{
+    void DisplayInHexDumbMode(long StartByte, long EndByte, byte[] FileByte);
+    void DisplayInHexDumbMode(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte);
+}
+```
+{% endcode %}
+
+{% code title="BaseFilesystemDriver.cs" lineNumbers="true" %}
+```csharp
+/// <summary>
+/// Base Filesystem driver
+/// </summary>
+public abstract class BaseFilesystemDriver : IFilesystemDriver
+{
+    public virtual void DisplayInHexDumbMode(long StartByte, long EndByte, byte[] FileByte) { }
+    public virtual void DisplayInHexDumbMode(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte) { }
+}
+```
+{% endcode %}
+
+The base filesystem driver has recently provided the `colors` argument that controls whether we need to use the color VT sequences or not. This controlled the usage of colors, and we built it on top of the "dumb mode" display that is actually a better implementation of the hex display of a file.
+
+So, we've decided to take this renderer as the candidate and replace the positioning-related code with the buffered version to take advantage of increased performance. As a result, we've merged what `DisplayInHexDumbMode()` functions did to their normal versions.
+
+{% hint style="info" %}
+You'll need to use `DisplayInHex()` to take advantage of better performance. If you used `DisplayInHex()` already, there is no need to replace this function.
 {% endhint %}
