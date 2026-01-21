@@ -28,7 +28,6 @@ Amusements addon provides you with a pack of games and amusements. You can use t
 | `solver`     |                                               |
 | `speedpress` | `[-e\|-m\|-h\|-v\|-c]`                        |
 | `wordle`     | `[-uncommon\|-common] [-orig]`                |
-| `2018`       |                                               |
 
 ### Archive shell
 
