@@ -1,6 +1,6 @@
 ---
-icon: lock-keyhole
 description: Reflecting things...
+icon: lock-keyhole
 ---
 
 # Assembly Reflection
@@ -93,3 +93,4 @@ In addition to property and field tools, the reflection feature of Nitrocid KS a
 Finally, the common reflection tools are here to help you get the most out of the reflection feature of .NET by providing you the following functions:
 
 * `IsDotnetAssemblyFile()`: This function checks to see if a path to a specific file is a .NET assembly or not. If it is a .NET assembly, it returns true with an `AssemblyName` instance containing information about your desired assembly.
+* `GetType()`: This function gets a type from different assembly contexts that were added when loading addons or mods.
