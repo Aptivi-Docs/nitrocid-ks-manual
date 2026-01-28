@@ -33,7 +33,7 @@ You're looking to create a mod for Nitrocid KS! That's great! Make sure that you
 8.  After implementation, you should see:
 
     <figure><img src="../../.gitbook/assets/image (200).png" alt=""><figcaption></figcaption></figure>
-9.  Remove all calls to `NotImplementedException` and set the minimum supported API version. You can check the API version by executing the Nitrocid executable with `--apiversion`.
+9.  Remove all calls to `NotImplementedException`, set the Version property to a SemVer 2.0-compliant version, and set the minimum supported API version. You can check the API version by executing the Nitrocid executable with `--apiversion`.
 
     <figure><img src="../../.gitbook/assets/image (201).png" alt=""><figcaption></figcaption></figure>
 10. Now, implement everything as you wish. Once you're done, follow the steps on how to create a strong name signing key and [sign your mod](https://learn.microsoft.com/en-us/dotnet/standard/assembly/sign-strong-name). Then, click on the `Build` menu and select `Build Solution`.
