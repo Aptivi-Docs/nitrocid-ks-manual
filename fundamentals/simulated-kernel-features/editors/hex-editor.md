@@ -13,15 +13,9 @@ You're looking for an `ed`-like hex editing experience which allows you to view 
 Unless you know what you're doing with the binary file, editing such file in this way will lead to data corruption or data loss in the targeted file.
 {% endhint %}
 
-## Commands
+***
 
-You can consult the below page for the list of hex editor commands.
-
-{% content-ref url="../shells/commands-list.md" %}
-[commands-list.md](../shells/commands-list.md)
-{% endcontent-ref %}
-
-## Interactive TUI
+## <mark style="color:$primary;">Interactive TUI</mark>
 
 <figure><img src="../../../.gitbook/assets/image (47) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -29,13 +23,18 @@ In addition to the hex editor being a shell, you can switch to an alternative mo
 
 The interactive hex editor works like any other interactive hex editor. However, it's just that it's different in terms of how it operates.
 
-* To exit, press `ESC`.
-* To get a list of available keybindings, press `K`.
+The currently selected byte is highlighted with the yellow color, depending on your kernel theme.
 
-The currently selected byte is highlighted with the green color, depending on your kernel theme. Here are some of the common controls:
+<details>
+
+<summary>Controls</summary>
+
+Here are some of the common controls:
 
 | Key           | Action                                                                        |
 | ------------- | ----------------------------------------------------------------------------- |
+| `ESC`         | Exits the app                                                                 |
+| `K`           | Gets a list of available keybindings                                          |
 | `F1`          | Inserts a new byte to the selected byte number.                               |
 | `F2`          | Removes a selected byte number                                                |
 | `F3`          | Replaces the currently selected byte with another byte value                  |
@@ -49,3 +48,5 @@ The currently selected byte is highlighted with the green color, depending on yo
 | `Page Down`   | Goes to the next page                                                         |
 | `Home`        | Goes to the beginning of the binary file                                      |
 | `End`         | Goes to the end of the binary file                                            |
+
+</details>

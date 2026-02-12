@@ -7,14 +7,18 @@ icon: up
 
 This page lists all the changes that have been made from 0.0.24.x to 0.1.0 Beta 1. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page where it highlights the most important changes. We have made nine milestones prior to the first beta release.
 
-## From 0.0.24.x to Milestone 1
+***
+
+## <mark style="color:$primary;">From 0.0.24.x to Milestone 1</mark>
 
 During Milestone 1's development, we have made the following breaking changes:
 
-### **Moved events to `KS.Kernel.Events`**
+<details>
+
+<summary>Moved events to <code>KS.Kernel.Events</code></summary>
 
 {% code title="Events.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Class Events
     Friend Property FiredEvents As New Dictionary(Of String, Object())
 
@@ -27,7 +31,7 @@ Public Class Events
 {% endcode %}
 
 {% code title="EventsManager.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function ListAllFiredEvents() As Dictionary(Of String, Object())
 Public Function ListAllFiredEvents(SearchTerm As String) As Dictionary(Of String, Object())
 Public Sub ClearAllFiredEvents()
@@ -40,10 +44,14 @@ All of the event-related code files are moved to `KS.Kernel.Events` to separate 
 Change the namespace declaration to refer to kernel events from `KS.Misc` to `KS.Kernel.Events`.
 {% endhint %}
 
-### **Moved `PlatformDetector` to `KS.Kernel.KernelPlatform`**
+</details>
+
+<details>
+
+<summary>Moved <code>PlatformDetector</code> to <code>KS.Kernel.KernelPlatform</code></summary>
 
 {% code title="PlatformDetector.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Module PlatformDetector
 ```
 {% endcode %}
@@ -54,10 +62,14 @@ It has come to the conclusion that `PlatformDetector` is now promoted to the Ker
 Change the namespace declaration to refer to kernel platform code from `KS.Misc` to `KS.Kernel.KernelPlatform`.
 {% endhint %}
 
-### **Separated the MOTD and MAL parsers**
+</details>
+
+<details>
+
+<summary>Separated the MOTD and MAL parsers</summary>
 
 {% code title="MOTDParse.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Enum MessageType As Integer
 ```
 {% endcode %}
@@ -69,10 +81,14 @@ MOTD and MAL parsers were unified since early versions of Nitrocid KS. However, 
 * However, if you want to use the MAL parser, use the `KS.Misc.Probers.Mal` namespace to use the `MalParse` static class methods.
 {% endhint %}
 
-### **Moved `GetTerminal*` to `KernelPlatform`**
+</details>
+
+<details>
+
+<summary>Moved <code>GetTerminal*</code> to <code>KernelPlatform</code></summary>
 
 {% code title="ConsoleExtensions.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function GetTerminalEmulator() As String
 Public Function GetTerminalType() As String
 ```
@@ -86,7 +102,11 @@ Since these usually are undefined in Windows, we put these functions to `KernelP
 Change the namespace declaration to refer to kernel terminal detection code from `KS.ConsoleBase` to `KS.Kernel.KernelPlatform`.
 {% endhint %}
 
-### **Moved shell common folders to `KS.Shell.Shells`**
+</details>
+
+<details>
+
+<summary>Moved shell common folders to <code>KS.Shell.Shells</code></summary>
 
 This is to separate the shell code for each tool from their folders to a unified namespace, `KS.Shell.Shells`. It houses every shell for every tool. This is to make creation of built-in shells easier.
 
@@ -94,10 +114,14 @@ This is to separate the shell code for each tool from their folders to a unified
 This means that `*ShellCommon` modules are moved to `KS.Shell.Shells.*` and every call to that module should be redirected to that namespace. The tools, however, stays intact.
 {% endhint %}
 
-### **Removed `MakePermanent()`**
+</details>
+
+<details>
+
+<summary>Removed <code>MakePermanent()</code></summary>
 
 {% code title="ColorTools.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub MakePermanent()
 ```
 {% endcode %}
@@ -108,20 +132,28 @@ MakePermanent used to save all the colors to kernel configuration. This function
 We advice you to cease using this function.
 {% endhint %}
 
-### **Graduated `Configuration` to `KS.Kernel`**
+</details>
+
+<details>
+
+<summary>Graduated <code>Configuration</code> to <code>KS.Kernel</code></summary>
 
 {% code title="Config.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Namespace Misc.Configuration
 ```
 {% endcode %}
 
 This configuration logic was smart enough to be graduated, since it's the core function in the kernel. It's used everywhere, including the `settings` command, which is an application that lets you adjust settings on the go.
 
-### **Graduated `FindSetting` and `CheckSettingsVariables`**
+</details>
+
+<details>
+
+<summary>Graduated <code>FindSetting</code> and <code>CheckSettingsVariables</code></summary>
 
 {% code title="SettingsApp.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function FindSetting(Pattern As String, SettingsToken As JToken) As List(Of String)
 Public Function CheckSettingsVariables() As Dictionary(Of String, Boolean)
 ```
@@ -134,13 +166,17 @@ You can find these methods in the `ConfigTools` module located in the `KS.Kernel
 
 {% code title="ConfigTools.cs" lineNumbers="true" %}
 ```csharp
-public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsToken)
-public static Dictionary<string, bool> CheckConfigVariables()
+public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsToken) { }
+public static Dictionary<string, bool> CheckConfigVariables() { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Moved power management functions to `KS.Kernel.Power`**
+</details>
+
+<details>
+
+<summary>Moved power management functions to <code>KS.Kernel.Power</code></summary>
 
 These power management functions were there in `KernelTools` since the earliest version of KS. Now, they're relocated to `KS.Kernel.Power`.
 
@@ -148,10 +184,14 @@ These power management functions were there in `KernelTools` since the earliest 
 Change the namespace declaration to refer to kernel power code from `KS.Kernel.KernelTools` to `KS.Kernel.Power`.
 {% endhint %}
 
-### **Removed `InitPaths` in favor of properties**
+</details>
+
+<details>
+
+<summary>Removed <code>InitPaths</code> in favor of properties</summary>
 
 {% code title="Paths.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub InitPaths()
 ```
 {% endcode %}
@@ -163,12 +203,16 @@ This function is not part of the public API. Reflection calls to this function w
 
 {% code title="Paths.cs" lineNumbers="true" %}
 ```csharp
-public static string GetKernelPath(KernelPathType PathType)
+public static string GetKernelPath(KernelPathType PathType) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Moved kernel update code to `Kernel.Updates`**
+</details>
+
+<details>
+
+<summary>Moved kernel update code to <code>Kernel.Updates</code></summary>
 
 These power management functions were there in `KernelTools` since the earliest version of KS. Now, they're relocated to `KS.Kernel.Updates`.
 
@@ -176,14 +220,20 @@ These power management functions were there in `KernelTools` since the earliest 
 Change the namespace declaration to refer to kernel update code from `KS.Kernel.KernelTools` to `KS.Kernel.Updates`.
 {% endhint %}
 
-## From Milestone 1 to Milestone 2
+</details>
+
+***
+
+## <mark style="color:$primary;">From Milestone 1 to Milestone 2</mark>
 
 During Milestone 2's development, we have made the following breaking changes:
 
-### **Removed `ListArgs` from `ICommand` and `IArgument`**
+<details>
+
+<summary>Removed <code>ListArgs</code> from <code>ICommand</code> and <code>IArgument</code></summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 'ICommand.vb
 Sub Execute(StringArgs As String, ListArgs As String(), ListArgsOnly As String(), ListSwitchesOnly As String())
                                   ^^^^^^^^^^^^^^^^^^^^
@@ -200,10 +250,14 @@ It seems that `ListArgs` is now no longer a reliable way to check for arguments,
 Recent changes to the shell command parsing code have allowed reliable argument and switch parsing. Use the `ListArgsOnly` and `ListSwitchesOnly` arrays to process arguments and switches.
 {% endhint %}
 
-### **Moved `GetEsc()` to `Misc.Text.CharManager`**
+</details>
+
+<details>
+
+<summary>Moved <code>GetEsc()</code> to <code>Misc.Text.CharManager</code></summary>
 
 {% code title="Color255.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function GetEsc() As Char
 ```
 {% endcode %}
@@ -211,7 +265,7 @@ Public Function GetEsc() As Char
 `GetEsc()` is now widely used for color manipulation, but we need to move it to a better place as migration to `ColorSeq` is done.
 
 {% code title="Color255.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Module Color255
 ```
 {% endcode %}
@@ -222,14 +276,20 @@ We have deleted `Color255` from `KS.ConsoleBase` as a result of this migration.
 Change the namespace declaration to refer to `GetEsc()` from `KS.ConsoleBase.Colors` to `KS.Misc.Text.CharManager`.
 {% endhint %}
 
-## From Milestone 2 to Milestone 3
+</details>
+
+***
+
+## <mark style="color:$primary;">From Milestone 2 to Milestone 3</mark>
 
 During Milestone 3's development, we have made the following breaking changes:
 
-### **Removed `FullArgumentList`**
+<details>
+
+<summary>Removed <code>FullArgumentList</code></summary>
 
 {% code title="ProvidedCommandArgumentsInfo.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public ReadOnly Property FullArgumentsList As String()
 ```
 {% endcode %}
@@ -240,7 +300,11 @@ Following the removal of `ListArgs()`, we can safely remove this property.
 Recent changes to the shell command parsing code have allowed reliable argument and switch parsing. Use the `ListArgsOnly` and `ListSwitchesOnly` arrays to process arguments and switches.
 {% endhint %}
 
-### **Removed `ConsoleWriters.*.Write*Plain` in favor of the plain writers**
+</details>
+
+<details>
+
+<summary>Removed <code>ConsoleWriters.*.Write*Plain</code> in favor of the plain writers</summary>
 
 The plain writer interfaces feel like they're a great addition to control the console writers.
 
@@ -248,7 +312,11 @@ The plain writer interfaces feel like they're a great addition to control the co
 Use the plain writers to replace the removed plain writers from the `ConsoleWriters`.
 {% endhint %}
 
-### **Updated debug and notifications namespaces**
+</details>
+
+<details>
+
+<summary>Updated debug and notifications namespaces</summary>
 
 We felt that moving debug-related functions to `KS.Kernel` would be more convenient, so we moved these functions to it. Also, we've renamed the notifications namespace.
 
@@ -260,10 +328,14 @@ The below namespaces were affected in this change:
 * `KS.Misc.Notifiers` -> `KS.Misc.Notifications`
 {% endhint %}
 
-### **Merged `ParseCmd` with `ExecuteCommand`**
+</details>
+
+<details>
+
+<summary>Merged <code>ParseCmd</code> with <code>ExecuteCommand</code></summary>
 
 {% code title="RemoteDebugCmd.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub ParseCmd(CmdString As String, SocketStreamWriter As StreamWriter, Address As String)
 ```
 {% endcode %}
@@ -274,10 +346,14 @@ It has come to the conclusion that `ParseCmd` is now very similar to `ExecuteCom
 This function wasn't part of the public KS API. We advice you to cease using this function and start declaring your remote debug command.
 {% endhint %}
 
-### **Removed `ExecuteRDAlias()`**
+</details>
+
+<details>
+
+<summary>Removed <code>ExecuteRDAlias()</code></summary>
 
 {% code title="AliasExecutor.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub ExecuteRDAlias(aliascmd As String, SocketStream As IO.StreamWriter, Address As String)
 ```
 {% endcode %}
@@ -288,14 +364,20 @@ This function was not needed to execute aliases since there has been recent impr
 This function wasn't part of the public KS API. We advice you to cease using this function.
 {% endhint %}
 
-## From Milestone 3 to Milestone 4
+</details>
+
+***
+
+## <mark style="color:$primary;">From Milestone 3 to Milestone 4</mark>
 
 During Milestone 4's development, we have made the following breaking changes:
 
-### **Renamed debug writer function names**
+<details>
+
+<summary>Renamed debug writer function names</summary>
 
 {% code title="DebugWriter.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub Wdbg(Level As DebugLevel, text As String, ParamArray vars() As Object)
 Public Sub WdbgConditional(ByRef Condition As Boolean, Level As DebugLevel, text As String, ParamArray vars() As Object)
 Public Sub WdbgDevicesOnly(Level As DebugLevel, text As String, ParamArray vars() As Object)
@@ -317,19 +399,23 @@ You can use these functions to write debugging information in your mods to the k
 
 {% code title="DebugWriter.cs" lineNumbers="true" %}
 ```csharp
-public static void WriteDebug(DebugLevel Level, string text, params object[] vars)
-public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object[] vars)
-public static void WriteDebugDevicesOnly(DebugLevel Level, string text, params object[] vars)
-public static void WriteDebugStackTraceConditional(bool Condition, Exception Ex)
-public static void WriteDebugStackTrace(Exception Ex)
+public static void WriteDebug(DebugLevel Level, string text, params object[] vars) { }
+public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object[] vars) { }
+public static void WriteDebugDevicesOnly(DebugLevel Level, string text, params object[] vars) { }
+public static void WriteDebugStackTraceConditional(bool Condition, Exception Ex) { }
+public static void WriteDebugStackTrace(Exception Ex) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Moved MAL and MOTD message to `Misc.Probers.Motd`**
+</details>
+
+<details>
+
+<summary>Moved MAL and MOTD message to <code>Misc.Probers.Motd</code></summary>
 
 {% code title="Kernel.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public MOTDMessage, MAL As String
 ```
 {% endcode %}
@@ -340,10 +426,14 @@ These have no relationship with the kernel directly.
 If you need to set the MOTD and MAL messages, you need to use the `SetMotd()` and `SetMal()` functions.
 {% endhint %}
 
-### **Moved `HostName` from Kernel to `NetworkTools`**
+</details>
+
+<details>
+
+<summary>Moved <code>HostName</code> from Kernel to <code>NetworkTools</code></summary>
 
 {% code title="Kernel.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public HostName As String
 ```
 {% endcode %}
@@ -355,16 +445,22 @@ If you need to change the hostname, you need to use the `ChangeHostname` functio
 
 {% code title="NetworkTools.cs" lineNumbers="true" %}
 ```csharp
-public static void ChangeHostname(string NewHost)
+public static void ChangeHostname(string NewHost) { }
 ```
 {% endcode %}
 {% endhint %}
 
-## From Milestone 4 to Milestone 5
+</details>
+
+***
+
+## <mark style="color:$primary;">From Milestone 4 to Milestone 5</mark>
 
 During Milestone 5's development, we have made the following breaking changes:
 
-### Renamed permissions to groups
+<details>
+
+<summary>Renamed permissions to groups</summary>
 
 {% code title="PermissionManagement.cs" lineNumbers="true" %}
 ```csharp
@@ -374,11 +470,17 @@ public static class PermissionManagement
 
 We have renamed the permissions feature to `groups` to avoid confusion. Later, it's been renamed to user flags in later development versions.
 
-## From Milestone 5 to Milestone 7
+</details>
+
+***
+
+## <mark style="color:$primary;">From Milestone 5 to Milestone 7</mark>
 
 During Milestone 7's development, we have made the following breaking changes:
 
-### **Made abstractions regarding the color management class**
+<details>
+
+<summary>Made abstractions regarding the color management class</summary>
 
 The color management used to define so many variables for just one color type. Now, it has been simplified to ease the making of the new color type. Color types are renamed to match all files that mention the color type.
 
@@ -386,20 +488,28 @@ As a result, we have removed all separate variables for each color type and merg
 
 Also, we have added `GetColor()` and `SetColor()` functions to `ColorTools` to perform operations on these color types.
 
-### **Moved `ConfigCategory` outside `Config` class**
+</details>
+
+<details>
+
+<summary>Moved <code>ConfigCategory</code> outside <code>Config</code> class</summary>
 
 {% code title="Config.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Enum ConfigCategory
 ```
 {% endcode %}
 
 We have moved `ConfigCategory` outside the Config class to better organize the enumerations relating to the configuration.
 
-### **Use `CommandArgumentInfo` in arguments**
+</details>
+
+<details>
+
+<summary>Use <code>CommandArgumentInfo</code> in arguments</summary>
 
 {% code title="ArgumentInfo.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub New(Argument As String, Type As ArgumentType, HelpDefinition As String, HelpUsage As String, ArgumentsRequired As Boolean, MinimumArguments As Integer, ArgumentBase As ArgumentExecutor, Optional Obsolete As Boolean = False, Optional AdditionalHelpAction As Action = Nothing)
 ```
 {% endcode %}
@@ -418,10 +528,14 @@ public ArgumentInfo(string Argument, string HelpDefinition, CommandArgumentInfo 
 {% endcode %}
 {% endhint %}
 
-### **Removed `SetColors` as they're no longer used**
+</details>
+
+<details>
+
+<summary>Removed <code>SetColors</code> as they're no longer used</summary>
 
 {% code title="ColorTools.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function TrySetColors(InputColor As String, LicenseColor As String, ContKernelErrorColor As String, UncontKernelErrorColor As String, HostNameShellColor As String, UserNameShellColor As String,
                              BackgroundColor As String, NeutralTextColor As String, ListEntryColor As String, ListValueColor As String, StageColor As String, ErrorColor As String, WarningColor As String,
                              OptionColor As String, BannerColor As String, NotificationTitleColor As String, NotificationDescriptionColor As String, NotificationProgressColor As String,
@@ -446,15 +560,19 @@ To set the kernel type to a specified color, use `SetColor()`.
 
 {% code title="ColorTools.cs" lineNumbers="true" %}
 ```csharp
-public static Color SetColor(KernelColorType type, Color color)
+public static Color SetColor(KernelColorType type, Color color) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Changed algorithm enum to EncryptionAlgorithms**
+</details>
+
+<details>
+
+<summary>Changed algorithm enum to <code>EncryptionAlgorithms</code></summary>
 
 {% code title="Encryption.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Enum Algorithms
 ```
 {% endcode %}
@@ -465,14 +583,20 @@ As part of an ongoing change to the encryption driver, we've changed the algorit
 Encryption driver no longer uses the `EncryptionAlgorithms` enumeration, although it now handles custom algorithms. The enumeration can't be used anymore.
 {% endhint %}
 
-## From Milestone 7 to Milestone 8
+</details>
+
+***
+
+## <mark style="color:$primary;">From Milestone 7 to Milestone 8</mark>
 
 During Milestone 8's development, we have made the following breaking changes:
 
-### **Renamed two classes related to shell**
+<details>
+
+<summary>Renamed two classes related to shell</summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 Public Class ShellInfo
 Public MustInherit Class ShellExecutor
     Implements IShell
@@ -488,10 +612,14 @@ These classes can still be called using the following names:
 * `ShellExecutor` -> `BaseShell`
 {% endhint %}
 
-### **Moved `TextLocation` to `Misc.Text`**
+</details>
+
+<details>
+
+<summary>Moved <code>TextLocation</code> to <code>Misc.Text</code></summary>
 
 {% code title="TextLocation.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Enum TextLocation
 ```
 {% endcode %}
@@ -502,10 +630,14 @@ This is a text-related enumeration of text vertical location (top, bottom). It's
 Change the namespace declaration to refer to this enumeration from `KS.Misc` to `KS.Misc.Text`.
 {% endhint %}
 
-### **Moved `GetCommands` to `CommandManager`**
+</details>
+
+<details>
+
+<summary>Moved <code>GetCommands</code> to <code>CommandManager</code></summary>
 
 {% code title="GetCommand.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function GetCommands(ShellType As ShellType) As Dictionary(Of String, CommandInfo)
 ```
 {% endcode %}
@@ -516,16 +648,20 @@ This sub is more of a command management routine than the "getting command" modu
 `GetCommands()` has been moved from `GetCommand` module to `CommandManager` module.
 {% endhint %}
 
-### **Changed the entire event system**
+</details>
+
+<details>
+
+<summary>Changed the entire event system</summary>
 
 {% code title="Events.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Class Events
 ```
 {% endcode %}
 
 {% code title="Kernel.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public ReadOnly KernelEventManager As New Events
 ```
 {% endcode %}
@@ -539,15 +675,19 @@ To fire events, you now have to use the `FireEvent` function found under the `Ev
 
 {% code title="EventsManager.cs" lineNumbers="true" %}
 ```csharp
-public static void FireEvent(EventType Event, params object[] Params)
+public static void FireEvent(EventType Event, params object[] Params) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Moved `NewLine` from `Kernel` to `CharManager`**
+</details>
+
+<details>
+
+<summary>Moved <code>NewLine</code> from <code>Kernel</code> to <code>CharManager</code></summary>
 
 {% code title="Kernel.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public ReadOnly NewLine As String
 ```
 {% endcode %}
@@ -558,7 +698,11 @@ This is actually a character management function and not a function directly to 
 This variable is now found under `KS.Misc.Text.CharManager`.
 {% endhint %}
 
-### **Moved `KS.Login` to `KS.Users.Login`**
+</details>
+
+<details>
+
+<summary>Moved <code>KS.Login</code> to <code>KS.Users.Login</code></summary>
 
 This has to do with the user management namespace, so we moved it to that namespace.
 
@@ -566,10 +710,14 @@ This has to do with the user management namespace, so we moved it to that namesp
 Change the namespace declaration to refer to this enumeration from `KS.Login` to `KS.Users.Login`.
 {% endhint %}
 
-### **Moved `Kernel[Api]Version` to `KernelTools`**
+</details>
+
+<details>
+
+<summary>Moved <code>Kernel[Api]Version</code> to <code>KernelTools</code></summary>
 
 {% code title="Kernel.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 'From 0.0.24.0
 Public ReadOnly KernelVersion As String
 ```
@@ -581,20 +729,28 @@ We didn't want the `Kernel` class to be publicly accessible, since it has been p
 To use these variables in their new location, change the reference from `Kernel` to `KernelTools`.
 {% endhint %}
 
-### **Removed `ColoredShell`**
+</details>
+
+<details>
+
+<summary>Removed <code>ColoredShell</code></summary>
 
 {% code title="Shell.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public ColoredShell As Boolean
 ```
 {% endcode %}
 
 The colors are now an essential part of KS, so we decided to take out support for uncolored shell.
 
-### **Finally condensed `TableColor`**
+</details>
+
+<details>
+
+<summary>Finally condensed <code>TableColor</code></summary>
 
 {% code title="TableColor.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, Optional SeparateRows As Boolean = True, Optional CellOptions As List(Of CellOptions) = Nothing)
 Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, Color As ConsoleColor, Optional SeparateRows As Boolean = True, Optional CellOptions As List(Of CellOptions) = Nothing)
 Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, Optional SeparateRows As Boolean = True, Optional CellOptions As List(Of CellOptions) = Nothing)
@@ -614,15 +770,19 @@ Use the new method signatures to write your table. As for the `ConsoleColor` ver
 
 {% code title="TableColor.cs" lineNumbers="true" %}
 ```csharp
-public static void WriteTable(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions> CellOptions = null)
-public static void WriteTable(string[] Headers, string[,] Rows, int Margin, KernelColorType colorTypeSeparatorForeground, KernelColorType colorTypeHeaderForeground, KernelColorType colorTypeValueForeground, KernelColorType colorTypeBackground, bool SeparateRows = true, List<CellOptions> CellOptions = null)
-public static void WriteTable(string[] Headers, string[,] Rows, int Margin, ConsoleColors SeparatorForegroundColor, ConsoleColors HeaderForegroundColor, ConsoleColors ValueForegroundColor, ConsoleColors BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null)
-public static void WriteTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null)
+public static void WriteTable(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions> CellOptions = null) { }
+public static void WriteTable(string[] Headers, string[,] Rows, int Margin, KernelColorType colorTypeSeparatorForeground, KernelColorType colorTypeHeaderForeground, KernelColorType colorTypeValueForeground, KernelColorType colorTypeBackground, bool SeparateRows = true, List<CellOptions> CellOptions = null) { }
+public static void WriteTable(string[] Headers, string[,] Rows, int Margin, ConsoleColors SeparatorForegroundColor, ConsoleColors HeaderForegroundColor, ConsoleColors ValueForegroundColor, ConsoleColors BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null) { }
+public static void WriteTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Tried to balance color support for writers**
+</details>
+
+<details>
+
+<summary>Tried to balance color support for writers</summary>
 
 Migration from `ConsoleColor` to `ConsoleColors` is complete. This means that all the writers in the `KS.Misc.*Writers` now have the `ConsoleColors` support.
 
@@ -632,7 +792,11 @@ The latest ColorSeq version, 1.0.2, will be used to make it easier to achieve.
 It's best to upgrade your `ConsoleColor` variables to `ConsoleColors` at minimum.
 {% endhint %}
 
-### Added last argument support to auto completer
+</details>
+
+<details>
+
+<summary>Added last argument support to auto completer</summary>
 
 {% code title="CommandArgumentInfo.cs" lineNumbers="true" %}
 ```csharp
@@ -646,14 +810,20 @@ We've added support for the last argument written to aid the auto completer in c
 If your command needs this feature, it's best to implement it.
 {% endhint %}
 
-## From Milestone 8 to Milestone X
+</details>
+
+***
+
+## <mark style="color:$primary;">From Milestone 8 to Milestone X</mark>
 
 During Milestone X's development, we have made the following breaking changes:
 
-### **Renamed command executor and base to reduce confusion**
+<details>
+
+<summary>Renamed command executor and base to reduce confusion</summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 Public Module GetCommand
 Public MustInherit Class CommandExecutor
     Implements ICommand
@@ -669,10 +839,14 @@ To use the new names, you have to rename the following in this order:
 * `GetCommand` -> `CommandExecutor`
 {% endhint %}
 
-### **Renamed `ConsoleSanityChecker` to `ConsoleChecker`**
+</details>
+
+<details>
+
+<summary>Renamed <code>ConsoleSanityChecker</code> to <code>ConsoleChecker</code></summary>
 
 {% code title="ConsoleSanityChecker.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Module ConsoleSanityChecker
 ```
 {% endcode %}
@@ -683,10 +857,14 @@ This class will be filled by many console checks, so renamed it according to the
 To use the methods inside the class, rename the references from `ConsoleSanityChecker` -> `ConsoleChecker`.
 {% endhint %}
 
-### **`WriteWherePlain` from `TextWriterWhereColor` renamed**
+</details>
+
+<details>
+
+<summary><code>WriteWherePlain</code> from <code>TextWriterWhereColor</code> renamed</summary>
 
 {% code title="TextWriterWhereColor.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub WriteWherePlain(msg As String, Left As Integer, Top As Integer, ParamArray vars() As Object)
 Public Sub WriteWherePlain(msg As String, Left As Integer, Top As Integer, [Return] As Boolean, ParamArray vars() As Object)
 ```
@@ -698,10 +876,14 @@ This change is necessary to fit in with the rest of the `ConsoleWriters`
 To continue using the plain writer, rename the references from `WriteWherePlain` -> `WriteWhere`.
 {% endhint %}
 
-### **Removed `Screensaver.colors`**
+</details>
+
+<details>
+
+<summary>Removed <code>Screensaver.colors</code></summary>
 
 {% code title="Screensaver.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public ReadOnly colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())
 Public ReadOnly colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())
 ```
@@ -713,10 +895,14 @@ This is to remove support for 255 colors in screensavers.
 We advice you to cease using this function.
 {% endhint %}
 
-### **Moved `KS.Network` classes to `KS.Network.Base`**
+</details>
+
+<details>
+
+<summary>Moved <code>KS.Network</code> classes to <code>KS.Network.Base</code></summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 Public Module NetworkAdapter
 Public Module NetworkAdapterPrint
 Public Module NetworkTools
@@ -729,7 +915,11 @@ These classes are believed to be the base classes for the networking. These clas
 Change the namespace declaration to refer to this enumeration from `KS.Network` to `KS.Network.Base`.
 {% endhint %}
 
-### **Condensed speed dial to `KS.Network.SpeedDial`**
+</details>
+
+<details>
+
+<summary>Condensed speed dial to <code>KS.Network.SpeedDial</code></summary>
 
 The speed dial API wasn't touched for a long time, so we decided to condense the speed dial API to a single namespace to ease the addition of the speed dial feature to all the networking shells.
 
@@ -763,10 +953,14 @@ In consequence, the speed dial format has changed.
 
 The username and FTP encryption mode is now moved to Options, which is an array of options that the networking shells use. To convert your speed dial entries, you have to manually open all FTP and SFTP speed dial JSON files and make changes to transition from the old format to the new format.
 
-### **Moved network transfer functions to `KS.Network.Base.Transfer`**
+</details>
+
+<details>
+
+<summary>Moved network transfer functions to <code>KS.Network.Base.Transfer</code></summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 Public Module NetworkTransfer
 Public Class NetworkTransferInfo
 Public Enum NetworkTransferType
@@ -779,7 +973,11 @@ We've done that to the base network classes, so why not do the same to the netwo
 Change the namespace declaration to refer to this enumeration from `KS.Network.Transfer` to `KS.Network.Base.Transfer`.
 {% endhint %}
 
-### **Kernel exception handling changed**
+</details>
+
+<details>
+
+<summary>Kernel exception handling changed</summary>
 
 We have changed the way how the kernel exception handling works. We have simplified the code, merging all the exception classes to just one enumeration to help you filter kernel exceptions matching a specific exception.
 
@@ -797,10 +995,14 @@ catch (KernelException ke) when (ke.ExceptionType == KernelExceptionType.ErrorTy
 ...where `ErrorType` is an error type obtained from the `KernelExceptionType` enumeration.
 {% endhint %}
 
-### **Changed `GetFilteredPositions` to tuple**
+</details>
+
+<details>
+
+<summary>Changed <code>GetFilteredPositions</code> to tuple</summary>
 
 {% code title="ConsoleExtensions.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub GetFilteredPositions(Text As String, ByRef Left As Integer, ByRef Top As Integer, ParamArray Vars() As Object)
 ```
 {% endcode %}
@@ -812,15 +1014,19 @@ The first tuple value in the returned value specifies the filtered X position, a
 
 {% code title="ConsoleExtensions.cs" lineNumbers="true" %}
 ```csharp
-public static (int, int) GetFilteredPositions(string Text, params object[] Vars)
+public static (int, int) GetFilteredPositions(string Text, params object[] Vars) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Internalized several kernel tools**
+</details>
+
+<details>
+
+<summary>Internalized several kernel tools</summary>
 
 {% code title="KernelTools.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub KernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, ParamArray Variables() As Object)
 Sub GeneratePanicDump(Description As String, ErrorType As KernelErrorLevel, Exc As Exception)
 Sub ResetEverything()
@@ -836,10 +1042,14 @@ These tools could be abused, so we decided to privatize these tools.
 We advice you to cease using these functions.
 {% endhint %}
 
-### **Removed `PrepareDict`**
+</details>
+
+<details>
+
+<summary>Removed <code>PrepareDict</code></summary>
 
 {% code title="Translate.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function PrepareDict(lang As String) As Dictionary(Of String, String)
 ```
 {% endcode %}
@@ -850,10 +1060,14 @@ Public Function PrepareDict(lang As String) As Dictionary(Of String, String)
 The language manager automatically does this each time your mod sets the language, so we advice you to cease using this function.
 {% endhint %}
 
-### **Removed network adapter querying**
+</details>
+
+<details>
+
+<summary>Removed network adapter querying</summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 'NetworkAdapter.vb
 Public Function IsInternetAdapter(InternetAdapter As NetworkInterface) As Boolean
 
@@ -871,32 +1085,42 @@ The network adapter querying functionality was implemented in 0.0.3. This functi
 We advice you to cease using this functionality.
 {% endhint %}
 
-### **Theme preview is no longer exclusive to theme studio**
+</details>
+
+<details>
+
+<summary>Theme preview is no longer exclusive to theme studio</summary>
 
 {% code title="ThemeStudioTools.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub PreparePreview()
 ```
 {% endcode %}
 
-The theme preview routine used to depend on the theme studio to do its job, under the name of `ThemeStudioTools.PreparePreview()`. However, because there were recent improvements to the theming system, we've finally condensed the preview routine to `ThemeTools.PreviewTheme()`. You can no longer use the old method, because it also required loading the theme information to the theme studio itself. What if it was called in a context that has no relationship with the theme studio, such as in the case of `themesel`?
+The theme preview routine used to depend on the theme studio to do its job, under the name of `ThemeStudioTools.PreparePreview()`. However, because there were recent improvements to the theming system, we've finally condensed the preview routine to `ThemeTools.PreviewTheme()`.
+
+You can no longer use the old method, because it also required loading the theme information to the theme studio itself. What if it was called in a context that has no relationship with the theme studio, such as in the case of `themesel`?
 
 {% hint style="info" %}
 You can use the new `ThemeTools.PreviewTheme()` function to preview any theme. The method signatures are written below.
 
 {% code title="ThemeTools.cs" lineNumbers="true" %}
 ```csharp
-public static void PreviewTheme(string theme)
-public static void PreviewTheme(ThemeInfo theme)
-public static void PreviewTheme(Dictionary<KernelColorType, Color> colors)
+public static void PreviewTheme(string theme) { }
+public static void PreviewTheme(ThemeInfo theme) { }
+public static void PreviewTheme(Dictionary<KernelColorType, Color> colors) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Migrated kernel arguments**
+</details>
+
+<details>
+
+<summary>Migrated kernel arguments</summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 Public Enum ArgumentType
 Public Module CommandLineArgs
 Public Module ArgumentPrompt
@@ -907,10 +1131,14 @@ We used to provide two argument channels: one for the command-line kernel argume
 
 We also had to remove the `arginj` command, one of the commands that made appearance in first-generation versions of KS.
 
-### **Removed `GetCompilerVars`**
+</details>
+
+<details>
+
+<summary>Removed <code>GetCompilerVars</code></summary>
 
 {% code title="KernelTools.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function GetCompilerVars() As String()
 ```
 {% endcode %}
@@ -921,7 +1149,11 @@ This was only useful in conditions where getting the compiler variables for dete
 We advice you to cease using this function.
 {% endhint %}
 
-### **Migrated encryptors to Kernel Drivers**
+</details>
+
+<details>
+
+<summary>Migrated encryptors to Kernel Drivers</summary>
 
 The kernel drivers are beneficial, so we decided to give the encryptors a chance to appear in kernel drivers. This caused us to remove `EncryptionAlgorithms` and `IEncryptor` and replace them with `IEncryptionDriver`, handled by the kernel driver handler.
 
@@ -930,15 +1162,19 @@ You can implement your own encryptor by registering your custom encryption drive
 
 {% code title="DriverHandler.cs" lineNumbers="true" %}
 ```csharp
-public static void RegisterDriver(DriverTypes type, IDriver driver)
+public static void RegisterDriver(DriverTypes type, IDriver driver) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Removed `TwoNewlines` argument from `WriteLicense`**
+</details>
+
+<details>
+
+<summary>Removed <code>TwoNewlines</code> argument from <code>WriteLicense</code></summary>
 
 {% code title="WelcomeMessage.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub WriteLicense(TwoNewlines As Boolean)
 ```
 {% endcode %}
@@ -949,10 +1185,14 @@ This argument was unused, so we decided to remove it from `WriteLicense()`.
 We advice you to cease using this variable.
 {% endhint %}
 
-### **Renamed `PartInfo` to `ModPartInfo`**
+</details>
+
+<details>
+
+<summary>Renamed <code>PartInfo</code> to <code>ModPartInfo</code></summary>
 
 {% code title="PartInfo.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Class PartInfo
 ```
 {% endcode %}
@@ -963,10 +1203,14 @@ Add `Mod` next to `PartInfo` to clarify which module uses this.
 To implement your new mod parts, construct the `ModPartInfo` class. For existing mod parts, rename `PartInfo` to `ModPartInfo`.
 {% endhint %}
 
-### **Manual pages moved to `Modifications`**
+</details>
+
+<details>
+
+<summary>Manual pages moved to <code>Modifications</code></summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 Public Class Manual
 Public Module PageManager
 Module PageParser
@@ -980,10 +1224,14 @@ These manual pages are used by mods to host documentation, so we moved it to `KS
 Change the namespace declaration to refer to this enumeration from `KS.ManPages` to `KS.Modifications.ManPages`.
 {% endhint %}
 
-### **Changed `Notifications` to `NotificationManager`**
+</details>
+
+<details>
+
+<summary>Changed <code>Notifications</code> to <code>NotificationManager</code></summary>
 
 {% code title="Notifications.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Module Notifications
 ```
 {% endcode %}
@@ -994,29 +1242,39 @@ We felt that both the `Notification` and `Notifications` classes are confusing f
 To use the methods inside the class, rename the references from `Notifications` -> `NotificationManager`.
 {% endhint %}
 
-### **Removed getting property value in variable**
+</details>
+
+<details>
+
+<summary>Removed getting property value in variable</summary>
 
 {% code title="PropertyManager.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function GetPropertyValueInVariable(Variable As String, [Property] As String) As Object
 Public Function GetPropertyValueInVariable(Variable As String, [Property] As String, VariableType As Type) As Object
 ```
 {% endcode %}
 
-VariableProperty is no longer used, so we decided to remove it. As a consequence, we also had to remove the `PropertyManager.GetPropertyValueInVariable()` routine.
+`VariableProperty` is no longer used, so we decided to remove it. As a consequence, we also had to remove the `PropertyManager.GetPropertyValueInVariable()` routine.
 
 {% hint style="danger" %}
 We advise you to cease using these functions.
 {% endhint %}
 
-## From Milestone X to Beta 1
+</details>
+
+***
+
+## <mark style="color:$primary;">From Milestone X to Beta 1</mark>
 
 During Beta 1's development, we have made the following breaking changes:
 
-### **Moved `ColTypes` to `KernelColorType`**
+<details>
+
+<summary>Moved <code>ColTypes</code> to <code>KernelColorType</code></summary>
 
 {% code title="ColorTools.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Enum ColTypes As Integer
 ```
 {% endcode %}
@@ -1028,15 +1286,19 @@ To continue using the kernel color type enumeration, rename the references from 
 
 {% code title="KernelColorType.cs" lineNumbers="true" %}
 ```csharp
-public enum KernelColorType
+public enum KernelColorType { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Removed `ref` from conditional debug writers**
+</details>
+
+<details>
+
+<summary>Removed <code>ref</code> from conditional debug writers</summary>
 
 {% code title="DebugWriter.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub WdbgConditional(ByRef Condition As Boolean, Level As DebugLevel, text As String, ParamArray vars() As Object)
 Public Sub WStkTrcConditional(ByRef Condition As Boolean, Ex As Exception)
 ```
@@ -1049,16 +1311,20 @@ Remove the `ref` prefix from the boolean variable that is being tested from your
 
 {% code title="DebugWriters.cs" lineNumbers="true" %}
 ```csharp
-public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object[] vars)
-public static void WriteDebugStackTraceConditional(bool Condition, Exception Ex)
+public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object[] vars) { }
+public static void WriteDebugStackTraceConditional(bool Condition, Exception Ex) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Removed `GroupManagement` (a.k.a. `PermissionManagement`)**
+</details>
+
+<details>
+
+<summary>Removed <code>GroupManagement</code> (a.k.a. <code>PermissionManagement</code>)</summary>
 
 {% code title="PermissionManagement.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Module PermissionManagement
 ```
 {% endcode %}
@@ -1077,16 +1343,20 @@ Their method signatures are written below.
 
 {% code title="PermissionsTools.cs" lineNumbers="true" %}
 ```csharp
-public static void GrantPermission(string User, PermissionTypes permissionType)
-public static void RevokePermission(string User, PermissionTypes permissionType)
+public static void GrantPermission(string User, PermissionTypes permissionType) { }
+public static void RevokePermission(string User, PermissionTypes permissionType) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Removed obsolete functions**
+</details>
+
+<details>
+
+<summary>Removed obsolete functions</summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 'Input.vb
 Public Function ReadLineUntil(ByRef Condition As Boolean) As String
 
@@ -1098,7 +1368,9 @@ Public Sub ConvertSpeedDialEntries(SpeedDialType As SpeedDialType)
 ```
 {% endcode %}
 
-`ReadLineUntil()`, `SleepNoBlock()`, and `ConvertSpeedDialEntries()` were removed for being obsolete. The first function was removed in favor of ReadLine.Reboot and TermRead, the second function was removed for the absence of our usage of `BackgroundWorker`, and the third function was removed as a result of huge improvements to the speed dial functionality that makes it incompatible with the older speed dial format.
+`ReadLineUntil()`, `SleepNoBlock()`, and `ConvertSpeedDialEntries()` were removed for being obsolete.
+
+The first function was removed in favor of ReadLine.Reboot and TermRead, the second function was removed for the absence of our usage of `BackgroundWorker`, and the third function was removed as a result of huge improvements to the speed dial functionality that makes it incompatible with the older speed dial format.
 
 {% hint style="danger" %}
 We advice you to cease using these functions.
@@ -1109,15 +1381,19 @@ To sleep without blocking, convert all your `BackgroundWorker`s to `KernelThread
 
 {% code title="ThreadManager.cs" lineNumbers="true" %}
 ```csharp
-public static void SleepNoBlock(long Time, KernelThread ThreadWork)
+public static void SleepNoBlock(long Time, KernelThread ThreadWork) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### Argument auto-completion re-implemented
+</details>
+
+<details>
+
+<summary>Argument auto-completion re-implemented</summary>
 
 {% code title="CommandArgumentInfo.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub New(HelpUsages() As String, ArgumentsRequired As Boolean, MinimumArguments As Integer, Optional AutoCompleter As Func(Of String()) = Nothing)
 ```
 {% endcode %}
@@ -1136,7 +1412,11 @@ public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool Argum
 {% endcode %}
 {% endhint %}
 
-### Converted kernel exceptions
+</details>
+
+<details>
+
+<summary>Converted kernel exceptions</summary>
 
 Previously, we've used the built-in .NET exceptions to catch appropriate exceptions based on the context of an error. Since `KernelException` was implemented as part of the first development semester of Nitrocid KS 0.1.0, we decided to throw all the exceptions to `KernelException` that dynamically provides extended information as to what's wrong, coupled together with possible suggestions and extra messages.
 
@@ -1144,10 +1424,14 @@ Previously, we've used the built-in .NET exceptions to catch appropriate excepti
 In order to throw these exceptions, you must now route all your exception handlers in your mods to target `KernelException` and check the exception type before you can take action. Converted exceptions are found in [this commit](https://github.com/Aptivi/Kernel-Simulator/commit/1d4d31cd12087659b807687d286047013a22273b).
 {% endhint %}
 
-### Removed decisive writers
+</details>
+
+<details>
+
+<summary>Removed decisive writers</summary>
 
 {% code title="Decisive.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub DecisiveWrite(CommandType As ShellType, DebugDeviceSocket As StreamWriter, Text As String, Line As Boolean, colorType As ColTypes, ParamArray vars() As Object)
 ```
 {% endcode %}
@@ -1158,10 +1442,14 @@ We used to implement the decisive writers to decide whether to use the normal co
 We advice you to cease using this function.
 {% endhint %}
 
-### Moved `PlaceParse` to `KS.Misc.Probers.Placeholder`
+</details>
+
+<details>
+
+<summary>Moved <code>PlaceParse</code> to <code>KS.Misc.Probers.Placeholder</code></summary>
 
 {% code title="PlaceParse.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Module PlaceParse
 ```
 {% endcode %}
@@ -1172,10 +1460,14 @@ This module used to statically replace all the text placeholders found within th
 The function names and the module itself are unchanged, but we just need you to change the namespace import to the abovementioned namespace.
 {% endhint %}
 
-### Removed `KernelColorType.Gray`
+</details>
+
+<details>
+
+<summary>Removed <code>KernelColorType.Gray</code></summary>
 
 {% code title="ColorTools.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 ''' <summary>
 ''' Gray color (for special purposes)
 ''' </summary>
@@ -1189,10 +1481,14 @@ This color type was used as a special color type intended to indicate that the e
 Instead of using `KernelColorType.Gray`, use the `ColorTools.GetGray()` function to get the gray color.
 {% endhint %}
 
-### Replaced `GetVariables()` with `Variables` property
+</details>
+
+<details>
+
+<summary>Replaced <code>GetVariables()</code> with <code>Variables</code> property</summary>
 
 {% code title="UESHVariables.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function GetVariables() As Dictionary(Of String, String)
 ```
 {% endcode %}
@@ -1203,10 +1499,14 @@ This function used to return a list of available UESH variables. It's been repla
 Replace all calls to `UESHVariables.GetVariables()` with `Variables`.
 {% endhint %}
 
-### Removed remote-debug-related argument from `ShowHelp()`
+</details>
+
+<details>
+
+<summary>Removed remote-debug-related argument from <code>ShowHelp()</code></summary>
 
 {% code title="HelpSystem.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub ShowHelp(command As String, CommandType As ShellType, Optional DebugDeviceSocket As StreamWriter = Nothing)
                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
@@ -1218,17 +1518,21 @@ Remote debug shell used to require the `DebugDeviceSocket` parameter to be passe
 There was no need to pass `DebugDeviceSocket` to this function anyways. If you really need to use it, make your own remote debug command with the help entry, and Nitrocid KS will take care of the rest.
 {% endhint %}
 
-### Renamed few classes
+</details>
+
+<details>
+
+<summary>Renamed few classes</summary>
 
 {% code title="TimeDate.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Namespace TimeDate
     Public Module TimeDate
 ```
 {% endcode %}
 
 {% code title="IScript.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Namespace Modifications
     Public Interface IScript
 ```
@@ -1247,3 +1551,5 @@ For the time and date functions, use the new class name, `TimeDateTools`.
 {% hint style="info" %}
 None of the methods and properties on the two above classes are changed.
 {% endhint %}
+
+</details>

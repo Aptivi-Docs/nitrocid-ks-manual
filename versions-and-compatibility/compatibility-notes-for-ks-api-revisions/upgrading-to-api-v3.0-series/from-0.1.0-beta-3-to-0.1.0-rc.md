@@ -7,11 +7,15 @@ icon: up
 
 This page lists all the changes that have been made from 0.1.0 Beta 3 to 0.1.0 RC. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page where it highlights the most important changes.
 
-## From Beta 3 to RC
+***
+
+## <mark style="color:$primary;">From Beta 3 to RC</mark>
 
 During RC's development, we have made the following breaking changes:
 
-### Removed "mod part" leftovers
+<details>
+
+<summary>Removed "mod part" leftovers</summary>
 
 {% code title="IMod.cs" lineNumbers="true" %}
 ```csharp
@@ -30,7 +34,11 @@ So, we've decided to ease the task on the mod developers by removing the mod par
 You can no longer use this function as of 0.1.0 Release Candidate.
 {% endhint %}
 
-### Changed the root namespace
+</details>
+
+<details>
+
+<summary>Changed the root namespace</summary>
 
 {% code title="All code files" lineNumbers="true" %}
 ```csharp
@@ -49,7 +57,11 @@ As a result, all mods will break due to the change to the root namespace.
 The root namespace has been changed from KS to Nitrocid, so you need to update all your usings clause to point to the new root namespace. For example, if you're referring to `KS.ConsoleBase`, you need to update it to point to `Nitrocid.ConsoleBase`.
 {% endhint %}
 
-### Custom splashes folder removed
+</details>
+
+<details>
+
+<summary>Custom splashes folder removed</summary>
 
 {% code title="PathsManagement.cs" lineNumbers="true" %}
 ```csharp
@@ -65,16 +77,20 @@ This simplification is going to be pointed out in a separate breaking change sec
 Your custom splashes are now found in the `KSMods` folder instead of the `KSSplashes` folder.
 {% endhint %}
 
-### Changed the splashes model to (un)registration model
+</details>
+
+<details>
+
+<summary>Changed the splashes model to (un)registration model</summary>
 
 ```csharp
 // Modified
-public static List<string> GetNamesOfSplashes()
+public static List<string> GetNamesOfSplashes() { }
 
 // Removed
-public static void LoadSplashes()
-public static void UnloadSplashes()
-public static ISplash GetSplashInstance(Assembly Assembly)
+public static void LoadSplashes() { }
+public static void UnloadSplashes() { }
+public static ISplash GetSplashInstance(Assembly Assembly) { }
 ```
 
 We've changed the splash loading form to use the registration and the unregistration model. This allows your splashes to be registered in the easiest method possible.
@@ -87,7 +103,11 @@ As a result, the removed APIs that are mentioned in the above code block have be
 Your mod should set the importance priority (`LoadPriority`) to `Important` to be able to load the splashes early before configuration parsing takes place.
 {% endhint %}
 
-### Mandatory mod version and name properties
+</details>
+
+<details>
+
+<summary>Mandatory mod version and name properties</summary>
 
 {% code title="IMod.cs" lineNumbers="true" %}
 ```csharp
@@ -104,109 +124,117 @@ Furthermore, we've changed the two properties to be read-only to avoid name and 
 You need to specify a valid SemVer 2.0 compliant version for your mod and your mod name in order to get loaded.
 {% endhint %}
 
-### Merged text tools to Textify
+</details>
+
+<details>
+
+<summary>Merged text tools to Textify</summary>
 
 This merger contains two changes: removals and migrations.
 
-#### Removals
+#### <mark style="color:$primary;">Removals</mark>
 
 {% code title="Removed classes and enums" lineNumbers="true" %}
 ```csharp
-public static class CharManager
-public static class TextTools
-public enum EnclosedDoubleQuotesType
+public static class CharManager { }
+public static class TextTools { }
+public enum EnclosedDoubleQuotesType { }
 ```
 {% endcode %}
 
 We've removed these two classes to avoid duplicate code that already exists in Textify for consistency.
 
-#### Migrations
+#### <mark style="color:$primary;">Migrations</mark>
 
 {% code title="Minified classes" lineNumbers="true" %}
 ```csharp
-public static class FigletTools
-public static class JsonTools
+public static class FigletTools { }
+public static class JsonTools { }
 ```
 {% endcode %}
 
 We've also minified the two above classes to their absolute minimum to only include properties and functions that are specific to Nitrocid KS.
 
-### Wrapped classes with Terminaux
+</details>
+
+<details>
+
+<summary>Wrapped classes with Terminaux</summary>
 
 Terminaux contained changes merged with the latest development branch of Nitrocid KS 0.1.0, so we've listed the following classes that got merged with Terminaux:
 
 {% code title="Classes" lineNumbers="true" %}
 ```csharp
-public class Screen
-public class ScreenPart
-public static class ScreenTools
-public static class ColorSelector
-public class InputChoiceInfo
-public static class InputChoiceTools
-public static class Input
-public enum ChoiceOutputType
-public static class ChoiceStyle
-public static class InfoBoxButtonsColor
-public static class InfoBoxColor
-public static class InfoBoxInputColor
-public static class InfoBoxProgressColor
-public static class InfoBoxSelectionColor
-public static class InfoBoxSelectionMultipleColor
-public static class InfoBoxTitledButtonsColor
-public static class InfoBoxTitledColor
-public static class InfoBoxTitledInputColor
-public static class InfoBoxTitledProgressColor
-public static class InfoBoxTitledSelectionColor
-public static class InfoBoxTitledSelectionMultipleColor
-public static class InputStyle
-public static class SelectionMultipleStyle
-public static class SelectionStyle
-public class BaseInteractiveTui : IInteractiveTui
-public interface IInteractiveTui
-public class InteractiveTuiBinding
-public static class InteractiveTuiTools
-public static class ListEntryWriterColor
-public static class ListWriterColor
-public static class TextWriterColor
-public static class TextWriterSlowColor
-public static class TextWriterWhereColor
-public static class TextWriterWhereSlowColor
-public static class TextWriterWrappedColor
-public static class BorderColor
-public static class BorderTextColor
-public static class BoxColor
-public static class BoxFrameColor
-public static class BoxFrameTextColor
-public static class CenteredFigletTextColor
-public static class CenteredTextColor
-public static class FigletColor
-public static class FigletWhereColor
-public static class PowerLineColor
-public static class ProgressBarColor
-public static class ProgressBarVerticalColor
-public static class SeparatorWriterColor
-public static class TableColor
-public static class BorderTools
-public class CellOptions
-public class PowerLineSegment
-public static class PowerLineTools
-public static class ProgressTools
-public static class LineHandleRangedWriter
-public static class LineHandleWriter
-public static class ConsoleChecker
-public static class ConsoleResizeListener
-public static class ConsoleResizeHandler
-public static class ConsoleWrapper
-public class ChoiceInputElement : IElement
-public class DynamicTextElement : IElement
-public interface IElement
-public class InputElement : IElement
-public class MaskedInputElement : IElement
-public class MultipleChoiceInputElement : IElement
-public class TextElement : IElement
-public class PresentationPage
-public static class PresentationTools
-public class Slideshow
+public class Screen { }
+public class ScreenPart { }
+public static class ScreenTools { }
+public static class ColorSelector { }
+public class InputChoiceInfo { }
+public static class InputChoiceTools { }
+public static class Input { }
+public enum ChoiceOutputType { }
+public static class ChoiceStyle { }
+public static class InfoBoxButtonsColor { }
+public static class InfoBoxColor { }
+public static class InfoBoxInputColor { }
+public static class InfoBoxProgressColor { }
+public static class InfoBoxSelectionColor { }
+public static class InfoBoxSelectionMultipleColor { }
+public static class InfoBoxTitledButtonsColor { }
+public static class InfoBoxTitledColor { }
+public static class InfoBoxTitledInputColor { }
+public static class InfoBoxTitledProgressColor { }
+public static class InfoBoxTitledSelectionColor { }
+public static class InfoBoxTitledSelectionMultipleColor { }
+public static class InputStyle { }
+public static class SelectionMultipleStyle { }
+public static class SelectionStyle { }
+public class BaseInteractiveTui : IInteractiveTui { }
+public interface IInteractiveTui { }
+public class InteractiveTuiBinding { }
+public static class InteractiveTuiTools { }
+public static class ListEntryWriterColor { }
+public static class ListWriterColor { }
+public static class TextWriterColor { }
+public static class TextWriterSlowColor { }
+public static class TextWriterWhereColor { }
+public static class TextWriterWhereSlowColor { }
+public static class TextWriterWrappedColor { }
+public static class BorderColor { }
+public static class BorderTextColor { }
+public static class BoxColor { }
+public static class BoxFrameColor { }
+public static class BoxFrameTextColor { }
+public static class CenteredFigletTextColor { }
+public static class CenteredTextColor { }
+public static class FigletColor { }
+public static class FigletWhereColor { }
+public static class PowerLineColor { }
+public static class ProgressBarColor { }
+public static class ProgressBarVerticalColor { }
+public static class SeparatorWriterColor { }
+public static class TableColor { }
+public static class BorderTools { }
+public class CellOptions { }
+public class PowerLineSegment { }
+public static class PowerLineTools { }
+public static class ProgressTools { }
+public static class LineHandleRangedWriter { }
+public static class LineHandleWriter { }
+public static class ConsoleChecker { }
+public static class ConsoleResizeListener { }
+public static class ConsoleResizeHandler { }
+public static class ConsoleWrapper { }
+public class ChoiceInputElement : IElement { }
+public class DynamicTextElement : IElement { }
+public interface IElement { }
+public class InputElement : IElement { }
+public class MaskedInputElement : IElement { }
+public class MultipleChoiceInputElement : IElement { }
+public class TextElement : IElement { }
+public class PresentationPage { }
+public static class PresentationTools { }
+public class Slideshow { }
 ```
 {% endcode %}
 
@@ -214,31 +242,31 @@ In addition to the classes, we've moved the following functions:
 
 {% code title="KernelColorTools.cs" lineNumbers="true" %}
 ```csharp
-public static void LoadBack()
-public static void LoadBack(Color ColorSequence)
-public static Color GetGray()
-public static void SetConsoleColor(Color ColorSequence, bool Background = false)
-public static bool TrySetConsoleColor(Color ColorSequence, bool Background)
-public static bool TryParseColor(string ColorSpecifier)
-public static bool TryParseColor(int ColorNum)
-public static bool TryParseColor(int R, int G, int B)
-public static Color GetRandomColor(bool selectBlack = true)
-public static Color GetRandomColor(ColorType type, bool selectBlack = true)
-public static Color GetRandomColor(ColorType type, int minColor, int maxColor, int minColorR, int maxColorR, int minColorG, int maxColorG, int minColorB, int maxColorB)
+public static void LoadBack() { }
+public static void LoadBack(Color ColorSequence) { }
+public static Color GetGray() { }
+public static void SetConsoleColor(Color ColorSequence, bool Background = false) { }
+public static bool TrySetConsoleColor(Color ColorSequence, bool Background) { }
+public static bool TryParseColor(string ColorSpecifier) { }
+public static bool TryParseColor(int ColorNum) { }
+public static bool TryParseColor(int R, int G, int B) { }
+public static Color GetRandomColor(bool selectBlack = true) { }
+public static Color GetRandomColor(ColorType type, bool selectBlack = true) { }
+public static Color GetRandomColor(ColorType type, int minColor, int maxColor, int minColorR, int maxColorR, int minColorG, int maxColorG, int minColorB, int maxColorB) { }
 ```
 {% endcode %}
 
 {% code title="ConsoleExtensions.cs" lineNumbers="true" %}
 ```csharp
-public static void ClearKeepPosition()
-public static string GetClearLineToRightSequence()
-public static void ClearLineToRight()
-public static int PercentRepeat(int CurrentNumber, int MaximumNumber, int WidthOffset)
-public static int PercentRepeatTargeted(int CurrentNumber, int MaximumNumber, int TargetWidth)
-public static string FilterVTSequences(string Text)
-public static (int, int) GetFilteredPositions(string Text, bool line, params object[] Vars)
-public static void SetTitle(string Text)
-public static void ResetAll()
+public static void ClearKeepPosition() { }
+public static string GetClearLineToRightSequence() { }
+public static void ClearLineToRight() { }
+public static int PercentRepeat(int CurrentNumber, int MaximumNumber, int WidthOffset) { }
+public static int PercentRepeatTargeted(int CurrentNumber, int MaximumNumber, int TargetWidth) { }
+public static string FilterVTSequences(string Text) { }
+public static (int, int) GetFilteredPositions(string Text, bool line, params object[] Vars) { }
+public static void SetTitle(string Text) { }
+public static void ResetAll() { }
 ```
 {% endcode %}
 
@@ -248,7 +276,11 @@ Terminaux provides all of these functions and classes. To reduce maintenance bur
 You can no longer call these functions directly from Nitrocid KS's `ConsoleBase` namespace. You must make use of Terminaux's namespaces instead.
 {% endhint %}
 
-### Separated driver config from main kernel config
+</details>
+
+<details>
+
+<summary>Separated driver config from main kernel config</summary>
 
 {% code title="KernelMainConfig.cs" lineNumbers="true" %}
 ```csharp
@@ -262,7 +294,11 @@ We've separated the driver configuration from the main kernel configuration so t
 You need to update the references to the above properties found in `KernelMainConfig` to point to `DriverConfig` instead of `MainConfig`.
 {% endhint %}
 
-### Used double-precision floats for progress handling
+</details>
+
+<details>
+
+<summary>Used double-precision floats for progress handling</summary>
 
 {% code title="ProgressHandler.cs" lineNumbers="true" %}
 ```csharp
@@ -273,9 +309,9 @@ public ProgressHandler(Action<int, string> progressAction, string context)
 
 {% code title="ProgressManager.cs" lineNumbers="true" %}
 ```csharp
-public static void ReportProgress(int progress, string context)
-public static void ReportProgress(int progress, string context, string message)
-public static void ReportProgress(int progress, string context, string message, params object[] vars)
+public static void ReportProgress(int progress, string context) { }
+public static void ReportProgress(int progress, string context, string message) { }
+public static void ReportProgress(int progress, string context, string message, params object[] vars) { }
 ```
 {% endcode %}
 
@@ -285,11 +321,15 @@ To more accurately tell whether the progress has finished or not, we're introduc
 There's no longer a need to cast a progress number to the integer when reporting progress; it already makes use of the double-precision floating-point numbers now.
 {% endhint %}
 
-### Moved MAL/MOTD parsers to `Login`
+</details>
+
+<details>
+
+<summary>Moved MAL/MOTD parsers to <code>Login</code></summary>
 
 {% code title="MalParse.cs and MotdParse.cs" lineNumbers="true" %}
 ```csharp
-namespace Nitrocid.Misc.Text.Probers.Motd
+namespace Nitrocid.Misc.Text.Probers.Motd { }
 ```
 {% endcode %}
 
@@ -299,7 +339,11 @@ Earlier, the MOTD and the MAL parsers belonged to the miscellaneous portion of t
 None of the classes have their functionality changed. You can just update the usings clause to point to `Nitrocid.Users.Login.Motd` instead of `Nitrocid.Misc.Text.Probers.Motd`.
 {% endhint %}
 
-### Removed three addons from the known addons list
+</details>
+
+<details>
+
+<summary>Removed three addons from the known addons list</summary>
 
 {% code title="KnownAddons.cs" lineNumbers="true" %}
 ```csharp
@@ -331,7 +375,11 @@ As a result of the three addons being removed at the start of the release candid
 You can no longer use these addons to perform inter-addon communication.
 {% endhint %}
 
-### Command lists, revamped
+</details>
+
+<details>
+
+<summary>Command lists, revamped</summary>
 
 {% code title="IShellInfo.cs" lineNumbers="true" %}
 ```csharp
@@ -354,22 +402,22 @@ In addition to that, the following functions had to be modified:
 
 {% code title="ModManager.cs" lineNumbers="true" %}
 ```csharp
-public static Dictionary<string, CommandInfo> ListModCommands(ShellType ShellType)
-public static Dictionary<string, CommandInfo> ListModCommands(string ShellType)
+public static Dictionary<string, CommandInfo> ListModCommands(ShellType ShellType) { }
+public static Dictionary<string, CommandInfo> ListModCommands(string ShellType) { }
 ```
 {% endcode %}
 
 {% code title="CommandManager.cs" lineNumbers="true" %}
 ```csharp
-public static bool IsCommandFound(string Command, ShellType ShellType, bool includeAliases = true)
-public static bool IsCommandFound(string Command, string ShellType, bool includeAliases = true)
-public static bool IsCommandFound(string Command, bool includeAliases = true)
-public static Dictionary<string, CommandInfo> GetCommands(ShellType ShellType, bool includeAliases = true)
-public static Dictionary<string, CommandInfo> GetCommands(string ShellType, bool includeAliases = true)
-public static Dictionary<string, CommandInfo> FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, ShellType ShellType, bool includeAliases = true)
-public static Dictionary<string, CommandInfo> FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, string ShellType, bool includeAliases = true)
-public static CommandInfo GetCommand(string Command, ShellType ShellType, bool includeAliases = true)
-public static CommandInfo GetCommand(string Command, string ShellType, bool includeAliases = true)
+public static bool IsCommandFound(string Command, ShellType ShellType, bool includeAliases = true) { }
+public static bool IsCommandFound(string Command, string ShellType, bool includeAliases = true) { }
+public static bool IsCommandFound(string Command, bool includeAliases = true) { }
+public static Dictionary<string, CommandInfo> GetCommands(ShellType ShellType, bool includeAliases = true) { }
+public static Dictionary<string, CommandInfo> GetCommands(string ShellType, bool includeAliases = true) { }
+public static Dictionary<string, CommandInfo> FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, ShellType ShellType, bool includeAliases = true) { }
+public static Dictionary<string, CommandInfo> FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, string ShellType, bool includeAliases = true) { }
+public static CommandInfo GetCommand(string Command, ShellType ShellType, bool includeAliases = true) { }
+public static CommandInfo GetCommand(string Command, string ShellType, bool includeAliases = true) { }
 ```
 {% endcode %}
 
@@ -390,15 +438,19 @@ You'll have to do the following:
     ```
 {% endhint %}
 
-### Moved network classes one level shallow
+</details>
+
+<details>
+
+<summary>Moved network classes one level shallow</summary>
 
 {% code title="Network classes" lineNumbers="true" %}
 ```csharp
-namespace Nitrocid.Network.Base.Connections
-namespace Nitrocid.Network.Base.SpeedDial
-namespace Nitrocid.Network.Base.Transfer
-namespace Nitrocid.Network.RPC
-namespace Nitrocid.Network.RSS
+namespace Nitrocid.Network.Base.Connections { }
+namespace Nitrocid.Network.Base.SpeedDial { }
+namespace Nitrocid.Network.Base.Transfer { }
+namespace Nitrocid.Network.RPC { }
+namespace Nitrocid.Network.RSS { }
 ```
 {% endcode %}
 
@@ -408,19 +460,23 @@ The network namespace needed better organization, because a lot of network-based
 This movement is done based on the fact that the network classes needed better organization. You'll have to update the following namespaces:
 
 ```csharp
-namespace Nitrocid.Network.Connections
-namespace Nitrocid.Network.SpeedDial
-namespace Nitrocid.Network.Transfer
-namespace Nitrocid.Network.Types.RPC
-namespace Nitrocid.Network.Types.RSS
+namespace Nitrocid.Network.Connections { }
+namespace Nitrocid.Network.SpeedDial { }
+namespace Nitrocid.Network.Transfer { }
+namespace Nitrocid.Network.Types.RPC { }
+namespace Nitrocid.Network.Types.RSS { }
 ```
 {% endhint %}
 
-### Added file combination to `Manipulation`
+</details>
+
+<details>
+
+<summary>Added file combination to <code>Manipulation</code></summary>
 
 {% code title="Combination.cs" lineNumbers="true" %}
 ```csharp
-public static class Combination
+public static class Combination { }
 ```
 {% endcode %}
 
@@ -434,3 +490,5 @@ In addition to that, we've removed the `Combination` class as it only contained 
 {% hint style="info" %}
 Change the references of `Combination` to `Manipulation` class when calling these functions.
 {% endhint %}
+
+</details>

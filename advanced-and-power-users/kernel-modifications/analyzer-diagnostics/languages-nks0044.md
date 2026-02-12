@@ -1,6 +1,6 @@
 ---
-icon: chart-mixed
 description: Use CultureManager.CurrentCult
+icon: chart-mixed
 ---
 
 # Languages - NKS0044
@@ -9,7 +9,9 @@ This analyzer provides the following strings:
 
 <table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>CultureInfo.CurrentUICulture</code> instead of <code>CultureManager.CurrentCulture</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>CultureManager.CurrentCulture</code> instead of <code>CultureInfo.CurrentUICulture</code></td></tr><tr><td>Description</td><td><code>CultureManager.CurrentCulture</code> gives you a current culture that is set by the kernel settings without affecting the host system.</td></tr></tbody></table>
 
-### Extended Description
+***
+
+## <mark style="color:$primary;">Extended Description</mark>
 
 This code analyzer detects the usage of `CurrentUICulture` from the `CultureInfo` class found in the `System.Globalization` namespace.
 
@@ -17,11 +19,13 @@ The `CultureInfo.CurrentUICulture` property gives you your current UI culture fo
 
 It's advisable to use the `CultureManager.CurrentCulture` property so that your mod can respect the kernel settings when it comes to cultures.
 
-### Analysis Comparison
+***
+
+## <mark style="color:$primary;">Analysis Comparison</mark>
 
 To get a brief insight about how this analyzer works, compare the two code blocks shown to you below:
 
-#### Before the fix
+### <mark style="color:$primary;">Before the fix</mark>
 
 <pre class="language-csharp" data-title="Somewhere in your mod code..." data-line-numbers><code class="lang-csharp">public static void MyFunction()
 {
@@ -29,22 +33,10 @@ To get a brief insight about how this analyzer works, compare the two code block
 </strong>}
 </code></pre>
 
-#### After the fix
+### <mark style="color:$primary;">After the fix</mark>
 
 <pre class="language-csharp" data-title="Somewhere in your mod code..." data-line-numbers><code class="lang-csharp">public static void MyFunction()
 {
 <strong>    var culture = CultureManager.CurrentCulture;
 </strong>}
 </code></pre>
-
-### Suppression
-
-You can suppress this suggestion by including it in the appropriate place, whichever is convenient.
-
-For more information about how to suppress any warning issued by the Nitrocid analyzer, visit the below page:
-
-{% embed url="https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/suppress-warnings" %}
-
-### Recommendation
-
-We recommend that every caller which use this function use the recommended abovementioned method.

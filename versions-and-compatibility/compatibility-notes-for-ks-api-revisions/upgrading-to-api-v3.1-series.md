@@ -7,11 +7,13 @@ icon: up
 
 As API v3.1 is still in development, the breaking changes get committed and land here. They describe what broke and what should be used instead.
 
-## From 0.1.1 to 0.1.2 <a href="#from-0.0.24-to-0.1.0" id="from-0.0.24-to-0.1.0"></a>
+***
+
+## <mark style="color:$primary;">From 0.1.1 to 0.1.2</mark> <a href="#from-0.0.24-to-0.1.0" id="from-0.0.24-to-0.1.0"></a>
 
 This version gives your kernel a nice ink of paint that brings in feature additions and spectacular improvements in all fields, including some of the cosmetic changes.
 
-### Updated Terminaux to 6.1 <a href="#updated-terminaux-to-6.0" id="updated-terminaux-to-6.0"></a>
+### <mark style="color:$primary;">Updated Terminaux to 6.1</mark> <a href="#updated-terminaux-to-6.0" id="updated-terminaux-to-6.0"></a>
 
 We've updated Terminaux to 6.1 to bring improvements. However, this doesn't come without the cost of having to deal with the breaking changes, which, in this case, is many.
 
@@ -21,11 +23,13 @@ You can consult the list of breaking changes that result from upgrading to Termi
 [API v6.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v6.0)
 {% endcontent-ref %}
 
-### Detailed important changes <a href="#detailed-important-changes-2" id="detailed-important-changes-2"></a>
+### <mark style="color:$primary;">Detailed important changes</mark> <a href="#detailed-important-changes-2" id="detailed-important-changes-2"></a>
 
 This section explains how to adapt the important changes to your mod code so that it works with 0.1.2 and higher. This highlights the most important changes that we have compiled for you.
 
-#### **Removed modern debug log look**
+<details>
+
+<summary>Removed modern debug log look</summary>
 
 {% code title="KernelMainConfig.cs" lineNumbers="true" %}
 ```csharp
@@ -39,7 +43,11 @@ We have removed the modern debug log look introduced in the 0.1.0 series, becaus
 It's advisable for you to stop using this feature.
 {% endhint %}
 
-#### **Removed `SplashDisplaysProgress`**
+</details>
+
+<details>
+
+<summary>Removed <code>SplashDisplaysProgress</code></summary>
 
 {% code title="BaseSplash.cs" lineNumbers="true" %}
 ```csharp
@@ -59,11 +67,15 @@ The above property has been removed, because the `SplashInfo` instance already c
 It's advisable for you to stop using this property.
 {% endhint %}
 
-#### **Removed `ConfigCategory`**
+</details>
+
+<details>
+
+<summary>Removed <code>ConfigCategory</code></summary>
 
 {% code title="ConfigCategory.cs" lineNumbers="true" %}
 ```csharp
-public enum ConfigCategory
+public enum ConfigCategory { }
 ```
 {% endcode %}
 
@@ -73,12 +85,16 @@ This enumeration went unused as the 0.1.0 configuration has been remade with spe
 A viable alternative, `GetSettingsEntries()`, can be used to get the categories from all configurations.
 {% endhint %}
 
-#### **Merged `ListLanguages()` and `ListLanguagesWithCountry()` functions**
+</details>
+
+<details>
+
+<summary>Merged <code>ListLanguages()</code> and <code>ListLanguagesWithCountry()</code> functions</summary>
 
 {% code title="LanguageManager.cs" lineNumbers="true" %}
 ```csharp
-public static Dictionary<string, LanguageInfo> ListAllLanguagesWithCountry()
-public static Dictionary<string, LanguageInfo> ListLanguagesWithCountry(string SearchTerm)
+public static Dictionary<string, LanguageInfo> ListAllLanguagesWithCountry() { }
+public static Dictionary<string, LanguageInfo> ListLanguagesWithCountry(string SearchTerm) { }
 ```
 {% endcode %}
 
@@ -88,7 +104,11 @@ The above functions have been merged with the `ListLanguages()` function and it 
 If you still want to list languages with their countries in the key, you can now move to `ListLanguages`, passing `true` to the last optional argument.
 {% endhint %}
 
-#### **Aptivestigate is used for debugger and crash handler**
+</details>
+
+<details>
+
+<summary>Aptivestigate is used for debugger and crash handler</summary>
 
 {% code title="KernelMainConfig.cs" lineNumbers="true" %}
 ```csharp
@@ -137,7 +157,11 @@ public static string DebuggingPath
 Aptivestigate will continue to get updated, despite the low frequency of updates, which is expected. It will be expanded to allow you to control the logging behavior.
 {% endhint %}
 
-#### **Screensaver properties are get-only**
+</details>
+
+<details>
+
+<summary>Screensaver properties are get-only</summary>
 
 {% code title="IScreensaver.cs" lineNumbers="true" %}
 ```csharp
@@ -159,7 +183,11 @@ The two overridable properties mentioned above have been inappropriately declare
 You should edit the overridden properties so that they don't expose the setters.
 {% endhint %}
 
-#### **Culture management is separate from the language management**
+</details>
+
+<details>
+
+<summary>Culture management is separate from the language management</summary>
 
 {% code title="KernelMainConfig.cs" lineNumbers="true" %}
 ```csharp
@@ -174,12 +202,12 @@ public string CurrentCultStr { get; set; } = "en-US";
 {% code title="CultureManager.cs" lineNumbers="true" %}
 ```csharp
 // Removed
-public static void UpdateCultureDry()
-public static void UpdateCulture()
-public static CultureInfo[] GetCulturesFromCurrentLang()
-public static List<string> GetCultureNamesFromCurrentLang()
-public static CultureInfo[]? GetCulturesFromLang(string Language)
-public static List<string>? GetCultureNamesFromLang(string Language)
+public static void UpdateCultureDry() { }
+public static void UpdateCulture() { }
+public static CultureInfo[] GetCulturesFromCurrentLang() { }
+public static List<string> GetCultureNamesFromCurrentLang() { }
+public static CultureInfo[]? GetCulturesFromLang(string Language) { }
+public static List<string>? GetCultureNamesFromLang(string Language) { }
 
 // Renamed to CurrentCulture
 public static CultureInfo CurrentCult =>
@@ -204,7 +232,7 @@ public LanguageInfo(string LangName, string FullLanguageName, bool Transliterabl
 {% code title="LanguageManager.cs" lineNumbers="true" %}
 ```csharp
 // Removed
-public static string InferLanguageFromSystem()
+public static string InferLanguageFromSystem() { }
 ```
 {% endcode %}
 
@@ -214,11 +242,15 @@ To allow users more flexibility into choosing their own culture that is recogniz
 There are no alternatives for this.
 {% endhint %}
 
-#### **Removed `WelcomeMessage` from the public API**
+</details>
+
+<details>
+
+<summary>Removed <code>WelcomeMessage</code> from the public API</summary>
 
 {% code title="WelcomeMessage.cs" lineNumbers="true" %}
 ```csharp
-public static class WelcomeMessage
+public static class WelcomeMessage { }
 ```
 {% endcode %}
 
@@ -228,11 +260,15 @@ This class was not meant to be used by the kernel mods in the first place, becau
 There are no alternatives for this.
 {% endhint %}
 
-#### **Removed fancy console writers**
+</details>
+
+<details>
+
+<summary>Removed fancy console writers</summary>
 
 ```csharp
-public static class TextFancyWriters
-public static class TextMiscWriters
+public static class TextFancyWriters { }
+public static class TextMiscWriters { }
 ```
 
 The above classes have been removed, because Terminaux 7.0 is planned to remove the old-school function-based writers, which were marked as obsolete thanks to the new cyclic writers. Those writers were in use by the above static classes.
@@ -241,18 +277,26 @@ The above classes have been removed, because Terminaux 7.0 is planned to remove 
 Consult the Terminaux documentation for more information on how to use the cyclic writers [here](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-writers/cyclic-writers).
 {% endhint %}
 
-#### **`SelectionFunctionType` changes**
+</details>
+
+<details>
+
+<summary><code>SelectionFunctionType</code> changes</summary>
 
 When using the above settings entry key, you'll need to provide the fully-qualified type name, not just a short name. This is to avoid ambiguity.
 
-**Merged filesystem operation classes**
+</details>
+
+<details>
+
+<summary>Merged filesystem operation classes</summary>
 
 {% code title="All operation classes" lineNumbers="true" %}
 ```csharp
-public static class (OperationName)
+public static class (OperationName) { }
 
 // Relocated to FilesystemTools partial class
-public static partial class FilesystemTools
+public static partial class FilesystemTools { }
 ```
 {% endcode %}
 
@@ -262,14 +306,18 @@ To avoid fragmentation in the filesystem tools, such as `Opening`, `Listing`, an
 You'll need to update your using clause to point to `Nitrocid.Files` and to update your references to such classes to point to `FilesystemTools`.
 {% endhint %}
 
-#### **`CheckConfigVariables()` simplified for `SMultivar` support**
+</details>
+
+<details>
+
+<summary><code>CheckConfigVariables()</code> simplified for <code>SMultivar</code> support</summary>
 
 {% code title="ConfigTools.cs" lineNumbers="true" %}
 ```csharp
-public static Dictionary<string, bool> CheckConfigVariables()
-public static Dictionary<string, bool> CheckConfigVariables(string configTypeName)
-public static Dictionary<string, bool> CheckConfigVariables(BaseKernelConfig? entries)
-public static Dictionary<string, bool> CheckConfigVariables(SettingsEntry[]? entries, BaseKernelConfig? config)
+public static Dictionary<string, bool> CheckConfigVariables() { }
+public static Dictionary<string, bool> CheckConfigVariables(string configTypeName) { }
+public static Dictionary<string, bool> CheckConfigVariables(BaseKernelConfig? entries) { }
+public static Dictionary<string, bool> CheckConfigVariables(SettingsEntry[]? entries, BaseKernelConfig? config) { }
 ```
 {% endcode %}
 
@@ -279,29 +327,29 @@ The above function's return value has changed to `List<bool>`. Consequently, you
 In the final version of 0.1.2, we promise to restore the original functionality, but it's going to use a tuple instead of a dictionary because of a potential of multiple settings keys, especially the `SMultivar` keys, that can hold the same name in the same configuration entry.
 {% endhint %}
 
-#### **Inter-addon and inter-mod communication updated**
+</details>
 
-We've updated the inter-addon and the inter-mod communication so that you can work with the mods and the addons with more depth. See the changes here.
+<details>
 
-#### **Added info-based reflection functions**
+<summary>Added info-based reflection functions</summary>
 
 {% code title="FieldManager.cs" lineNumbers="true" %}
 ```csharp
 // UseGeneral removed
-public static object? GetFieldValue(string Variable, Type? VariableType, bool UseGeneral = false)
+public static object? GetFieldValue(string Variable, Type? VariableType, bool UseGeneral = false) { }
 
 // Entire function removed
-public static FieldInfo? GetFieldGeneral(string Variable)
+public static FieldInfo? GetFieldGeneral(string Variable) { }
 ```
 {% endcode %}
 
 {% code title="PropertyManager.cs" lineNumbers="true" %}
 ```csharp
 // UseGeneral removed
-public static object? GetPropertyValue(string Variable, Type? VariableType, bool UseGeneral = false)
+public static object? GetPropertyValue(string Variable, Type? VariableType, bool UseGeneral = false) { }
 
 // Entire function removed
-public static PropertyInfo? GetPropertyGeneral(string Variable)
+public static PropertyInfo? GetPropertyGeneral(string Variable) { }
 ```
 {% endcode %}
 
@@ -317,7 +365,11 @@ As a consequence, we've removed the `Get*General()` functions due to internal st
 `Get*Value()` functions are already aware of the settings-related properties.
 {% endhint %}
 
-#### **Moved `Nitrocid.Modifications` to the `Nitrocid.Extras.Mods` addon**
+</details>
+
+<details>
+
+<summary>Moved <code>Nitrocid.Modifications</code> to the <code>Nitrocid.Extras.Mods</code> addon</summary>
 
 This affects all the classes except the most essential ones and the inter-mod communication class. They have been moved to this addon, so even the kernel requires the usage of the inter-addon communication in order to be able to utilize mod functions.
 
@@ -327,7 +379,11 @@ This is done to prevent the Lite version of Nitrocid KS from being able to run a
 You can use the inter-addon communication to be able to interact with this addon, since these classes remain public.
 {% endhint %}
 
-#### **`Nitrocid.LocaleGen.Core` removed**
+</details>
+
+<details>
+
+<summary><code>Nitrocid.LocaleGen.Core</code> removed</summary>
 
 This NuGet package didn't expose any public API since its inception. It was originally meant to be as a plan for 0.1.0.x to consolidate all the LocaleGen projects and their siblings into one, but it seems that it was never done as of the release of the second beta of 0.1.0.
 
@@ -337,13 +393,13 @@ Now, we've completed the work of consolidation, removing `Nitrocid.LocaleGen.Cor
 
 {% code title="DebugWriter.cs" lineNumbers="true" %}
 ```csharp
-public static void WriteDebugPrivacy(DebugLevel Level, string text, int[] SecureVarIndexes, params object?[]? vars)
-public static void WriteDebug(DebugLevel Level, string text, params object?[]? vars)
-public static void WriteDebugLogOnly(DebugLevel Level, string text, params object?[]? vars)
-public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object?[]? vars)
-public static void WriteDebugDevicesOnly(DebugLevel Level, string text, bool force, params object?[]? vars)
-public static bool WriteDebugDeviceOnly(DebugLevel Level, string text, bool force, RemoteDebugDevice device, params object?[]? vars)
-public static void WriteDebugChatsOnly(DebugLevel Level, string text, bool force, params object?[]? vars)
+public static void WriteDebugPrivacy(DebugLevel Level, string text, int[] SecureVarIndexes, params object?[]? vars) { }
+public static void WriteDebug(DebugLevel Level, string text, params object?[]? vars) { }
+public static void WriteDebugLogOnly(DebugLevel Level, string text, params object?[]? vars) { }
+public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object?[]? vars) { }
+public static void WriteDebugDevicesOnly(DebugLevel Level, string text, bool force, params object?[]? vars) { }
+public static bool WriteDebugDeviceOnly(DebugLevel Level, string text, bool force, RemoteDebugDevice device, params object?[]? vars) { }
+public static void WriteDebugChatsOnly(DebugLevel Level, string text, bool force, params object?[]? vars) { }
 ```
 {% endcode %}
 
@@ -358,11 +414,11 @@ Additionally, the nature of `params` in the last argument, along with the usage 
 Because of potential conflicts, we've decided to convert the `vars` argument to a normal parameter with the default value of `null`. This is going to break the build, as you'll have to change how you call the functions.
 
 ```csharp
-public static void Assert(bool condition, ...)
-public static void AssertNot(bool condition, ...)
-public static void AssertNull<T>(T value, ...)
-public static void AssertNotNull<T>(T value, ...)
-public static void AssertFail(string message, ...)
+public static void Assert(bool condition, ...) { }
+public static void AssertNot(bool condition, ...) { }
+public static void AssertNull<T>(T value, ...) { }
+public static void AssertNotNull<T>(T value, ...) { }
+public static void AssertFail(string message, ...) { }
 ```
 
 This also affects all the above `Assert()` functions found in the `DebugCheck` class.
@@ -375,16 +431,20 @@ DebugWriter.WriteDebug(DebugLevel.I, "Hi, {0}!", vars: ["Nitrocid KS"]);
 ```
 {% endhint %}
 
-#### **Refactored console tools**
+</details>
+
+<details>
+
+<summary>Refactored console tools</summary>
 
 {% code title="ConsoleTools.cs" lineNumbers="true" %}
 ```csharp
 public static class ConsoleTools
 {
     (...)
-    public static void ResetColors(bool useKernelColors = false)
-    public static void ResetBackground(bool useKernelColors = false)
-    public static void ResetForeground(bool useKernelColors = false)
+    public static void ResetColors(bool useKernelColors = false) { }
+    public static void ResetBackground(bool useKernelColors = false) { }
+    public static void ResetForeground(bool useKernelColors = false) { }
     (...)
 }
 ```
@@ -396,7 +456,11 @@ The above functions have been moved to the `KernelColorTools` class. Since those
 You can still use these functions in the `KernelColorTools` class.
 {% endhint %}
 
-#### **Automatic update downloads removed**
+</details>
+
+<details>
+
+<summary>Automatic update downloads removed</summary>
 
 {% code title="KernelMainConfig.cs" lineNumbers="true" %}
 ```csharp
@@ -410,11 +474,15 @@ Since we're working on improvements for Nitrocid KS to ensure that it gets updat
 It's advisable to stop using this configuration entry.
 {% endhint %}
 
-#### Removed the NTFS mitigation for the 2021 corruption
+</details>
+
+<details>
+
+<summary>Removed the NTFS mitigation for the 2021 corruption</summary>
 
 {% code title="FilesystemTools.cs" lineNumbers="true" %}
 ```csharp
-public static void ThrowOnInvalidPath(string? Path)
+public static void ThrowOnInvalidPath(string? Path) { }
 ```
 {% endcode %}
 
@@ -446,12 +514,16 @@ You can still implement this code, referring to [this commit](https://github.com
 However, some scanners may still detect your mod as "malware," so we don't recommend re-implementing this function at all.
 {% endhint %}
 
-#### Theme preview function simplified
+</details>
+
+<details>
+
+<summary>Theme preview function simplified</summary>
 
 {% code title="ThemePreviewTools.cs" lineNumbers="true" %}
 ```csharp
-public static void PreviewThemeSimple(string theme)
-public static void PreviewThemeSimple(ThemeInfo theme)
+public static void PreviewThemeSimple(string theme) { }
+public static void PreviewThemeSimple(ThemeInfo theme) { }
 ```
 {% endcode %}
 
@@ -461,11 +533,15 @@ As we've implemented the color viewer in Terminaux, we've finally removed the "s
 This is a behavioral change.
 {% endhint %}
 
-#### Base shell info generic class implemented
+</details>
+
+<details>
+
+<summary>Base shell info generic class implemented</summary>
 
 {% code title="BaseShellInfo.cs" lineNumbers="true" %}
 ```csharp
-public abstract class BaseShellInfo : IShellInfo
+public abstract class BaseShellInfo : IShellInfo { }
 ```
 {% endcode %}
 
@@ -486,7 +562,11 @@ PromptPresetBase CurrentPreset { get; }
 When inheriting the non-generic base shell class, your shell info class might hold wrong information about your shell, even if your commands are defined. Therefore, you must migrate to the generic version of the class if you want to retain your shell settings.
 {% endhint %}
 
-#### Removed unused function from `SwitchInfo`
+</details>
+
+<details>
+
+<summary>Removed unused function from <code>SwitchInfo</code></summary>
 
 {% code title="SwitchInfo.cs" lineNumbers="true" %}
 ```csharp
@@ -501,12 +581,16 @@ This function was just a small wrapper to get the translated version of the help
 You can use `Translate.DoTranslation()` against the `HelpDefinition` property to achieve the same goal.
 {% endhint %}
 
-#### Moved `WriteWrapped` to `TextDynamicWriters`
+</details>
+
+<details>
+
+<summary>Moved <code>WriteWrapped</code> to <code>TextDynamicWriters</code></summary>
 
 {% code title="TextWriters.cs" lineNumbers="true" %}
 ```csharp
-public static void WriteWrapped(string Text, bool Line, KernelColorType colorType, params object[] vars)
-public static void WriteWrapped(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+public static void WriteWrapped(string Text, bool Line, KernelColorType colorType, params object[] vars) { }
+public static void WriteWrapped(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) { }
 ```
 {% endcode %}
 
@@ -514,7 +598,11 @@ public static void WriteWrapped(string Text, bool Line, KernelColorType colorTyp
 
 Additionally, `WriteWrapped` has been moved to `TextDynamicWriters` and `WriteListEntry()` has been re-introduced.
 
-#### Removed changelogs kernel update type
+</details>
+
+<details>
+
+<summary>Removed changelogs kernel update type</summary>
 
 {% code title="UpdateKind.cs" lineNumbers="true" %}
 ```csharp
@@ -530,8 +618,8 @@ We've removed the `Changelogs` type from the update type enumeration, because we
 
 {% code title="UpdateManager.cs" lineNumbers="true" %}
 ```csharp
-public static KernelUpdate? FetchChangelogs()
-public static string GetVersionChangelogs()
+public static KernelUpdate? FetchChangelogs() { }
+public static string GetVersionChangelogs() { }
 ```
 {% endcode %}
 
@@ -541,11 +629,15 @@ As a result, we've removed the above functions from `UpdateManager`.
 We will no longer ship the `changes.chg` file with the GitHub release section starting from the next 0.1.2 release. You'll have to use versioned tags to get the file from `tools/changes.chg` instead.
 {% endhint %}
 
-## From 0.1.2 to 0.1.2 SP2 <a href="#from-0.0.24-to-0.1.0" id="from-0.0.24-to-0.1.0"></a>
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.1.2 to 0.1.2 SP2</mark> <a href="#from-0.0.24-to-0.1.0" id="from-0.0.24-to-0.1.0"></a>
 
 Nitrocid 0.1.2 SP2 was released to bring improvements to the core kernel.
 
-### Updated Terminaux to 7.0 <a href="#updated-terminaux-to-6.0" id="updated-terminaux-to-6.0"></a>
+### <mark style="color:$primary;">Updated Terminaux to 7.0</mark> <a href="#updated-terminaux-to-6.0" id="updated-terminaux-to-6.0"></a>
 
 We've updated Terminaux to 7.0 to bring improvements. However, this doesn't come without the cost of having to deal with the breaking changes, which, in this case, is many.
 
@@ -555,7 +647,13 @@ You can consult the list of breaking changes that result from upgrading to Termi
 [API v7.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v7.0)
 {% endcontent-ref %}
 
-### Removed `SplashClosing` from the `ISplash` interface
+### <mark style="color:$primary;">Detailed important changes</mark> <a href="#detailed-important-changes-2" id="detailed-important-changes-2"></a>
+
+This section explains how to adapt the important changes to your mod code so that it works with 0.1.2 SP2 and higher. This highlights the most important changes that we have compiled for you.
+
+<details>
+
+<summary>Removed <code>SplashClosing</code> from the <code>ISplash</code> interface</summary>
 
 {% code title="ISplash.cs" lineNumbers="true" %}
 ```csharp
@@ -578,3 +676,5 @@ This was a bad design, so we've fixed it by making the `SplashClosing` property 
 {% hint style="danger" %}
 Please remove all overrides to this property.
 {% endhint %}
+
+</details>

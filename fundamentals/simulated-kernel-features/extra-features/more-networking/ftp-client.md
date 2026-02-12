@@ -19,11 +19,15 @@ Various computer applications for both the connection to the FTP server and the 
 The FTP protocol in general is being replaced by SFTP, although it's kept for historical purposes. This client should be used as a last resort.
 {% endhint %}
 
-## How to connect
+***
+
+## <mark style="color:$primary;">How to connect</mark>
 
 To connect the client to the FTP server, you have two ways to initiate a connection to the server, which is connecting directly from the main shell, and connecting inside the FTP shell.
 
-### Connecting to FTP from UESH
+<details>
+
+<summary>Connecting to FTP from UESH</summary>
 
 To connect directly from UESH, please follow the steps:
 
@@ -32,7 +36,11 @@ To connect directly from UESH, please follow the steps:
 3. Select an FTP profile
 4. You're connected!
 
-### Connecting to FTP inside the FTP shell
+</details>
+
+<details>
+
+<summary>Connecting to FTP inside the FTP shell</summary>
 
 To connect to your FTP server inside the FTP shell, please follow the steps:
 
@@ -42,15 +50,11 @@ To connect to your FTP server inside the FTP shell, please follow the steps:
 4. Select an FTP profile
 5. You're connected!
 
-## Commands
+</details>
 
-For the list of available commands, head to the page below:
+***
 
-{% content-ref url="../../shells/commands-list.md" %}
-[commands-list.md](../../shells/commands-list.md)
-{% endcontent-ref %}
-
-## Interactive TUI
+## <mark style="color:$primary;">Interactive TUI</mark>
 
 To learn more about the local interactive TUI that you can use within the FTP shell, consult this page:
 

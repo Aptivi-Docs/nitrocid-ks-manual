@@ -9,17 +9,25 @@ icon: memo-pad
 
 If you want a method to have your notes saved, or if you would like to jot down your notes for something crucial or important, sensitive or not, such as your passwords, your website usernames, your server IP addresses, and so on, you'll need to use this application to create such notes.
 
+***
+
+## <mark style="color:$primary;">Usage</mark>
+
 Usage of this application can be done using the following commands:
 
-* `addnote <contents>`: Adds a note with the specified contents.
-* `removenote <noteNum>`: Removes a specific note
-* `removenotes`: Removes all notes
-* `listnotes`: Lists all notes
-* `savenotes`: Saves all notes
-* `reloadnotes`: Reloads all notes
-* `notestui`: Opens the interactive notes viewer TUI
+| Command                | Description                             |
+| ---------------------- | --------------------------------------- |
+| `addnote <contents>`   | Adds a note with the specified contents |
+| `removenote <noteNum>` | Removes a specific note                 |
+| `removenotes`          | Removes all notes                       |
+| `listnotes`            | Lists all notes                         |
+| `savenotes`            | Saves all notes                         |
+| `reloadnotes`          | Reloads all notes                       |
+| `notestui`             | Opens the interactive notes viewer TUI  |
 
-### Interactive TUI
+***
+
+## <mark style="color:$primary;">Interactive TUI</mark>
 
 <figure><img src="../../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 

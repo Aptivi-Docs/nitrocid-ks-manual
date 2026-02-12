@@ -17,12 +17,72 @@ To run Nitrocid KS in the absolute minimum requirements, your computer needs to 
 | ---------------------- | -------------------------------------------------------------------- | ---------------------------------------------- |
 | macOS Sonoma or higher | [.NET 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) | [iTerm 2.0](https://iterm2.com/downloads.html) |
 
-## Installation
+***
+
+## <mark style="color:$primary;">Installation</mark>
 
 There is one way to install Nitrocid KS on macOS systems. Follow these steps to get started:
 
-1. Ensure that you have all the required software installed
-2. Download the latest release ZIP file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases)
-3. Unpack the ZIP archive to any folder of your choice
-4. Open your favorite terminal emulator, like iTerm2, and change the working directory to a folder containing the Nitrocid KS executable
-5. Execute `dotnet Nitrocid.dll` to start the kernel
+{% stepper %}
+{% step %}
+### <mark style="color:$primary;">Check your dependencies</mark>
+
+Ensure that you have all the required software installed
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Download the latest ZIP</mark>
+
+Download the latest release ZIP file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Extract the archive</mark>
+
+Unpack the ZIP archive to any folder of your choice
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Open the terminal emulator</mark>
+
+Open your favorite terminal emulator, like iTerm2, and change the working directory to a folder containing the Nitrocid KS executable
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Execute Nitrocid on your terminal</mark>
+
+Execute `dotnet Nitrocid.dll` to start the kernel
+{% endstep %}
+{% endstepper %}
+
+***
+
+## <mark style="color:$primary;">Upgrade</mark>
+
+The only way to upgrade Nitrocid in macOS is to unpack the updated files manually. To upgrade, follow these steps:
+
+{% stepper %}
+{% step %}
+### <mark style="color:$primary;">Download the latest ZIP</mark>
+
+Download the latest release ZIP file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases).
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Extract the archive</mark>
+
+Unpack the ZIP archive to any folder of your choice
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Open the terminal emulator</mark>
+
+Open your favorite terminal emulator, like iTerm2, and change the working directory to a folder containing the Nitrocid KS executable
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Execute Nitrocid on your terminal</mark>
+
+Execute `dotnet Nitrocid.dll` to start the kernel
+{% endstep %}
+{% endstepper %}

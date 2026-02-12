@@ -7,13 +7,12 @@ icon: keyboard
 
 <figure><img src="../../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="info" %}
-As of 0.1.0, this feature has been moved to the kernel addons.
-{% endhint %}
-
 You can test yourself finding a specific key in your keyboard, but how fast can you find a key? Find out by playing this game to enter the test.
 
-## Controls
+***
 
-* `Any key`: Submit a key
-* `ESC`: Exit the game
+## <mark style="color:$primary;">Game Controls</mark>
+
+Below controls are supported:
+
+<table><thead><tr><th width="130">Keybinding</th><th>Description</th></tr></thead><tbody><tr><td><code>Any key</code> </td><td>Submits a key</td></tr><tr><td><code>ESC</code></td><td>Exits the game</td></tr></tbody></table>

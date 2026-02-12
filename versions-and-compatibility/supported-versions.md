@@ -7,7 +7,9 @@ icon: badge-check
 
 Nitrocid KS has a wide assortment of versions developed within its entire lifetime, with 0.0.1 being the very first version released on February 22, 2018. However, we can't keep supporting all the versions of the project at the same time, so we've made a table of supported version series.
 
-## List of supported version series
+***
+
+## <mark style="color:$primary;">List of supported version series</mark>
 
 This list shows how long the version series and their accompanying versions under the series are supported, with security support periods for long-term releases, which usually start with each major or minor API revision update.
 
@@ -19,17 +21,10 @@ This revision of the fourth generation API is currently under development.
 
 * Version v0.2.0.x series
 
-| Version  | Release date | EOL date | Security EOL date |
-| -------- | ------------ | -------- | ----------------- |
-| v0.2.0.0 | TBD          |          |                   |
-{% endtab %}
-
-{% tab title="API v3.1" %}
-This revision of the third generation API is supported until 2/12/2026.
-
-* Version v0.1.2.x series
-
-<table><thead><tr><th>Version</th><th width="129.88189697265625">Release date</th><th>EOL date</th><th>Security EOL date</th></tr></thead><tbody><tr><td>v0.1.2.0</td><td>2/27/2025</td><td>2/12/2026</td><td>2/12/2026</td></tr><tr><td>v0.1.2.1</td><td>2/28/2025</td><td></td><td></td></tr><tr><td>v0.1.2.2</td><td>3/24/2025</td><td></td><td></td></tr><tr><td>v0.1.2.3</td><td>3/29/2025</td><td></td><td></td></tr><tr><td>v0.1.2.4</td><td>3/31/2025</td><td></td><td></td></tr><tr><td>v0.1.2.5</td><td>4/3/2025</td><td></td><td></td></tr><tr><td>v0.1.2.6</td><td>4/15/2025</td><td></td><td></td></tr><tr><td>v0.1.2.7</td><td>4/18/2025</td><td></td><td></td></tr><tr><td>v0.1.2.8</td><td>4/24/2025</td><td></td><td></td></tr><tr><td>v0.1.2.9</td><td>4/30/2025</td><td></td><td></td></tr><tr><td>v0.1.2.10</td><td>5/1/2025</td><td></td><td></td></tr><tr><td>v0.1.2.11</td><td>5/16/2025</td><td></td><td></td></tr><tr><td>v0.1.2.12</td><td>5/17/2025</td><td></td><td></td></tr><tr><td>v0.1.2.13</td><td>5/19/2025</td><td></td><td></td></tr><tr><td>v0.1.2.14</td><td>5/22/2025</td><td></td><td></td></tr><tr><td>v0.1.2.15</td><td>5/26/2025</td><td></td><td></td></tr><tr><td>v0.1.2.16</td><td>5/26/2025</td><td></td><td></td></tr><tr><td>v0.1.2.17</td><td>6/5/2025</td><td></td><td></td></tr><tr><td>v0.1.2.18</td><td>6/26/2025</td><td></td><td></td></tr><tr><td>v0.1.2.19</td><td>6/27/2025</td><td></td><td></td></tr><tr><td>v0.1.2.20</td><td>7/4/2025</td><td></td><td></td></tr><tr><td>v0.1.2.21</td><td>7/20/2025</td><td></td><td></td></tr><tr><td>v0.1.2.22</td><td>7/28/2025</td><td></td><td></td></tr><tr><td>v0.1.2.23</td><td>8/27/2025</td><td></td><td></td></tr><tr><td>v0.1.2.25</td><td>9/7/2025</td><td></td><td></td></tr><tr><td>v0.1.2.26</td><td>9/16/2025</td><td></td><td></td></tr><tr><td>v0.1.2.27</td><td>10/28/2025</td><td></td><td></td></tr><tr><td>v0.1.2.28</td><td>11/11/2025</td><td></td><td></td></tr><tr><td>v0.1.2.30</td><td>12/17/2025</td><td></td><td></td></tr><tr><td>v0.1.2.31</td><td>12/21/2025</td><td></td><td></td></tr><tr><td>v0.1.2.32</td><td>12/31/2025</td><td></td><td></td></tr></tbody></table>
+| Version  | Release date | EOL date  | Security EOL date |
+| -------- | ------------ | --------- | ----------------- |
+| v0.2.0.0 | 2/12/2026    | 2/12/2031 | 2/12/2036         |
+| v0.2.0.1 | TBD          |           |                   |
 {% endtab %}
 
 {% tab title="API v3.0" %}
@@ -103,13 +98,7 @@ This revision of the third generation API is supported until 3/11/2034.
 | v0.1.0.64 | 12/17/2025   |           |                   |
 | v0.1.0.65 | 12/21/2025   |           |                   |
 | v0.1.0.66 | 12/31/2025   |           |                   |
+| v0.1.0.67 | 2/12/2026    |           |                   |
+| v0.1.0.68 | TBD          |           |                   |
 {% endtab %}
 {% endtabs %}
-
-## What about out-of-support versions?
-
-We have a separate page that you can access below:
-
-{% content-ref url="eol-versions.md" %}
-[eol-versions.md](eol-versions.md)
-{% endcontent-ref %}

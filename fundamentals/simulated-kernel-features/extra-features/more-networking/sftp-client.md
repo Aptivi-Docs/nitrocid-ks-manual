@@ -13,11 +13,15 @@ As of 0.1.0, this feature has been moved to the kernel addons.
 
 This protocol is a modern file transfer protocol that is implemented as part of the Secure SHell (SSH) protocol version 2.0 engineered by the Internet Engineering Task Force (IETF). It allows secure file transfers from the client to the server and from the server to the client.
 
-## How to connect
+***
+
+## <mark style="color:$primary;">How to connect</mark>
 
 To connect the client to the SFTP server, you have two ways to initiate a connection to the server, which is connecting directly from the main shell, and connecting inside the SFTP shell.
 
-### Connecting to SFTP from UESH
+<details>
+
+<summary>Connecting to SFTP from UESH</summary>
 
 To connect directly from UESH, please follow the steps:
 
@@ -25,7 +29,11 @@ To connect directly from UESH, please follow the steps:
 2. Authenticate using your username and your password or your private key
 3. You're connected!
 
-### Connecting to SFTP inside the SFTP shell
+</details>
+
+<details>
+
+<summary>Connecting to SFTP inside the SFTP shell</summary>
 
 To connect to your SFTP server inside the SFTP shell, please follow the steps:
 
@@ -34,15 +42,11 @@ To connect to your SFTP server inside the SFTP shell, please follow the steps:
 3. Authenticate using your username and your password or your private key file
 4. You're connected!
 
-## Commands
+</details>
 
-To see the available commands provided by this shell, consult this page below:
+***
 
-{% content-ref url="../../shells/commands-list.md" %}
-[commands-list.md](../../shells/commands-list.md)
-{% endcontent-ref %}
-
-## Interactive TUI
+## <mark style="color:$primary;">Interactive TUI</mark>
 
 To learn more about the local interactive TUI that you can use within the FTP shell, consult this page:
 

@@ -13,6 +13,10 @@ Nitrocid KS features a dictionary supplied as a separate addon to allow you to g
 `dictionaryapi.dev` API is licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0).
 {% endhint %}
 
+***
+
+## <mark style="color:$primary;">Usage</mark>
+
 This feature can be used by executing the `dict` command, passing it a word that you want to define, such as `hello` or `goodbye`. The dictionary command provides you with the following information:
 
 * Word
@@ -25,4 +29,6 @@ This feature can be used by executing the `dict` command, passing it a word that
 * Base synonyms
 * Base antonyms
 
+{% hint style="info" %}
 The availability of said information can vary, depending on a word and on a part of speech used in various meanings.
+{% endhint %}

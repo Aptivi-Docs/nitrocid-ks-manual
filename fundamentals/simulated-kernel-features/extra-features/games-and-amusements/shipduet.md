@@ -7,26 +7,21 @@ icon: ship
 
 <figure><img src="../../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="info" %}
-As of 0.1.0, this feature has been moved to the kernel addons.
-{% endhint %}
-
 ShipDuet is a local two-player game that fight with each other in a space setting. ShipDuet starts with two players trying to fight each other until one of them destroys the opponent's spaceship.
+
+***
+
+## <mark style="color:$primary;">Game Rules</mark>
 
 The game rules are:
 
 * The game doesn't stop until one of the players manages to destroy the opponent's spaceship.
 * If you press ESC, the game is a draw.
 
-### Controls
+***
 
-To play ShipDuet, these controls are available:
+## <mark style="color:$primary;">Game Controls</mark>
 
-* `Player 1 (left)`
-  * `Up arrow`: Moves the spaceship up
-  * `Down arrow`: Moves the spaceship down
-  * `Enter`: Shoots the bullet
-* `Player 2 (right)`
-  * `W`: Moves the spaceship up
-  * `S`: Moves the spaceship down
-  * `Space`: Shoots the bullet
+Below controls are supported:
+
+<table><thead><tr><th width="130">Keybinding</th><th>Description</th></tr></thead><tbody><tr><td><code>Up Arrow</code></td><td>Moves the spaceship up (Player 1, left)</td></tr><tr><td><code>Down Arrow</code></td><td>Moves the spaceship down (Player 1, left)</td></tr><tr><td><code>Enter</code> </td><td>Shoots (Player 1, left)</td></tr><tr><td><code>W</code></td><td>Moves the spaceship up (Player 2, right)</td></tr><tr><td><code>S</code></td><td>Moves the spaceship down (Player 2, right)</td></tr><tr><td><code>Space</code></td><td>Shoots (Player 2, right)</td></tr><tr><td><code>ESC</code></td><td>Exits the game</td></tr></tbody></table>

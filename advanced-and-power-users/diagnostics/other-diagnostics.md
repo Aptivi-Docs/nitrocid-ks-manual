@@ -7,22 +7,21 @@ icon: syringe
 
 There are various diagnostic tools that the kernel can make use of, including those listed below.
 
-## Stack Frames
+***
 
-This is internally used by the kernel debugger and the kernel exception to allow getting information about the source code that generated the call. Currently, this information is provided:
+## <mark style="color:$primary;">Stack Frames</mark>
 
-* **Method name**: The routine name that made a call to the class constructor
-* **Line number**: The line number of the method described above
-* **Column number**: The column number found within the line
-* **File name**: The file name of the class that the method situates
+This is internally used by the kernel debugger and the kernel exception to allow getting information about the source code that generated the call.
+
+Currently, this information is provided:
+
+<table><thead><tr><th width="160">Property</th><th>Description</th></tr></thead><tbody><tr><td>Method name</td><td>The routine name that made a call to the class constructor</td></tr><tr><td>Line number</td><td>The line number of the method described above</td></tr><tr><td>Column number</td><td>The column number found within the line</td></tr><tr><td>File name</td><td>The file name of the class that the method situates</td></tr></tbody></table>
 
 When the constructor is called, it generates information about the third stack frame to get the caller's method info. If the frame number is specified, it gets offset by `+1` to get info about the needed method.
 
-{% hint style="info" %}
-This method is internally called by the debug writer. If you really want to create an instance of this class, you'll have to use Reflection. The class name is `DebugStackFrame` in the `Nitrocid.Kernel.Debugging.Trace` namespace.
-{% endhint %}
+***
 
-## Kernel dump files
+## <mark style="color:$primary;">Kernel dump files</mark>
 
 <figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
@@ -52,11 +51,15 @@ The first-chance kernel errors of the above types are the first failures. During
 In case of the third failure events, you can find the event in the Application Events within the Event Viewer if running on Windows or the error directly dumped to the application on Linux.
 {% endhint %}
 
-## Kernel Exceptions
+***
+
+## <mark style="color:$primary;">Kernel Exceptions</mark>
 
 The kernel exceptions are just normal errors with a generic message intended to display extended information about the error the kernel is experiencing. The kernel exception types and their messages are typically found in this file:
 
-{% @github-files/github-code-block url="https://github.com/Aptivi/NitrocidKS/blob/main/public/Nitrocid/Kernel/Exceptions/KernelExceptionMessages.cs" %}
+<a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid.Base/Kernel/Exceptions/KernelExceptionMessages.cs" class="button primary">List of exceptions and their messages</a>
+
+### <mark style="color:$primary;">Throwing the exception</mark>
 
 To make a kernel exception, throw a new instance of `KernelException` found in the `Nitrocid.Kernel.Exceptions` namespace in one of the forms:
 
@@ -71,7 +74,9 @@ public KernelException(KernelExceptionType exceptionType, string message, Except
 
 Typically, the message displays the exception type, the message, and the exception information. As always, if you believe that it's a bug, make an issue in our GitHub repository.
 
-## Debug shell
+***
+
+## <mark style="color:$primary;">Debug shell</mark>
 
 <figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 

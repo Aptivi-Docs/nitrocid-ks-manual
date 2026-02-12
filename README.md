@@ -13,4 +13,4 @@ Nitrocid KS, Kernel Simulator back then, started on 2018 as version 0.0.1, when 
 
 Nitrocid KS has not only become more beautiful than the first version, but it has also become more flexible than before by allowing your mods to extend the kernel functionalities or to provide users with extra applications, screensavers, and more.
 
-This documentation is a manual for Nitrocid KS. It describes everything about almost all the features, some of which you can use them with your mods in order to extend your kernel. To get started, right-click on any page in the left pane.
+This documentation is a manual for Nitrocid KS. It describes everything about almost all the features, some of which you can use them with your mods in order to extend your kernel.

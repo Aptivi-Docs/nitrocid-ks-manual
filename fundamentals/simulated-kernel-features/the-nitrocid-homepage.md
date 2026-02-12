@@ -19,42 +19,41 @@ Nitrocid KS introduces you with an awesome homepage that gets started every time
 In order to show the top three RSS feeds, an RSS kernel addon must be installed, the "Headlines on login" configuration must be enabled, and the kernel must be connected to the Internet.
 {% endhint %}
 
-## Keybindings
+***
+
+## <mark style="color:$primary;">Keybindings</mark>
 
 You can navigate the application list using either the up/down arrow keys, page up/page down arrow keys, or home/end keys. You can also use your mouse to navigate the homepage, but you must enable the mouse support in order to be able to select an item using just your mouse.
 
 The keybindings shown at the bottom of the screen allow you to perform various operations, such as exiting to the shell, logging out, and executing a selected action.
 
-## Custom applications
+***
 
-Your mods can extend the application list so that your homepage becomes more useful. You can use the functions that are made available in the `HomepageTools` class under the `Nitrocid.Shell.Homepage` namespace. You can easily register your action by passing in both the application name and your function delegate to the `RegisterAction()` function. This is an example that shows you how to use this function in your mod code, assuming that you have a function that opens a game called Rush:
+## <mark style="color:$primary;">Custom applications</mark>
+
+Your mods can extend the application list so that your homepage becomes more useful. You can use the functions that are made available in the `HomepageTools` class under the `Nitrocid.Shell.Homepage` namespace.
+
+* You can easily register your action by passing in both the application name and your function delegate to the `RegisterAction()` function.
+* To unregister the action, you can use the `UnregisterAction()` function, supplying it the name of your custom action that you want to remove.
+
+{% hint style="warning" %}
+You must check to see if the action is registered or not using the `IsHomepageActionRegistered()` function, passing it the same name that you want to register. Attempting to register or unregister the action again causes the exception to be thrown with the type of `KernelExceptionType.Homepage`.
+{% endhint %}
+
+<details>
+
+<summary>Example of action registration and unregistration</summary>
+
+This is an example that shows you how to register and unregister your action in your mod code, assuming that you have a function that opens a game called Rush:
 
 {% code title="RushModEntry.cs" lineNumbers="true" %}
 ```csharp
+// Register
 HomepageTools.RegisterAction("Rush", RushGame.Start);
+
+// Unregister
+HomepageTools.UnregisterAction("Rush");
 ```
 {% endcode %}
 
-{% hint style="warning" %}
-You must check to see if the action is registered or not using the `IsHomepageActionRegistered()` function, passing it the same name that you want to register. Attempting to re-register the action causes the exception to be thrown with the type of `KernelExceptionType.Homepage`.
-{% endhint %}
-
-To unregister the action, you can use the `UnregisterAction()` function, supplying it the name of your custom action that you want to remove. This is an example that shows you how to use this function in your mod code:
-
-{% code title="RushModEntry.cs" lineNumbers="true" %}
-```csharp
-HomepageTools.UnregisterAction("Rush")
-```
-{% endcode %}
-
-{% hint style="warning" %}
-You must check to see if the action is registered or not using the `IsHomepageActionRegistered()` function, passing it the same name that you want to unregister. Attempting to unregister the action that doesn't exist causes the exception to be thrown with the type of `KernelExceptionType.Homepage`.
-{% endhint %}
-
-## Widget Canvas
-
-Widget Canvas API supports both the modern logon screen and the homepage so they extend to pages of widgets. In order to learn more about how widget canvas work, please refer to the below page:
-
-{% content-ref url="widgets/widget-canvas.md" %}
-[widget-canvas.md](widgets/widget-canvas.md)
-{% endcontent-ref %}
+</details>

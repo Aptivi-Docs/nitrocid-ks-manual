@@ -34,9 +34,10 @@
   * [v0.0.22.x series](versions-and-compatibility/version-release-notes/v0.0.22.x-series.md)
   * [v0.0.23.x series](versions-and-compatibility/version-release-notes/v0.0.23.x-series.md)
   * [v0.0.24.x series](versions-and-compatibility/version-release-notes/v0.0.24.x-series.md)
-  * [v0.1.0.x and 0.1.1.x series](versions-and-compatibility/version-release-notes/v0.1.x.x-series.md)
-  * [v0.1.2.x series](versions-and-compatibility/version-release-notes/v0.1.x.x-series-1.md)
-  * [v0.2.0.x series](versions-and-compatibility/version-release-notes/v0.1.x.x-series-2.md)
+  * [v0.1.0.x series](versions-and-compatibility/version-release-notes/v0.1.0.x-series.md)
+  * [v0.1.1.x series](versions-and-compatibility/version-release-notes/v0.1.1.x-series.md)
+  * [v0.1.2.x series](versions-and-compatibility/version-release-notes/v0.1.2.x-series.md)
+  * [v0.2.0.x series](versions-and-compatibility/version-release-notes/v0.2.0.x-series.md)
 * [Compatibility Notes for KS API Revisions](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/README.md)
   * [Upgrading to API v1.0 series](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v1.0-series.md)
   * [Upgrading to API v1.1 series](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v1.1-series.md)
@@ -55,22 +56,17 @@
 
 ## Installation and Maintenance
 
-* [Installing the Kernel](installation-and-maintenance/installing-the-kernel/README.md)
+* [Installation and Upgrade](installation-and-maintenance/installing-the-kernel/README.md)
   * [Windows](installation-and-maintenance/installing-the-kernel/windows.md)
   * [macOS](installation-and-maintenance/installing-the-kernel/macos.md)
   * [Linux](installation-and-maintenance/installing-the-kernel/linux.md)
   * [Android](installation-and-maintenance/installing-the-kernel/android.md)
-* [Upgrading the Kernel](installation-and-maintenance/upgrading-the-kernel/README.md)
-  * [Windows](installation-and-maintenance/upgrading-the-kernel/windows.md)
-  * [macOS](installation-and-maintenance/upgrading-the-kernel/macos.md)
-  * [Linux](installation-and-maintenance/upgrading-the-kernel/linux.md)
-  * [Android](installation-and-maintenance/upgrading-the-kernel/android.md)
-* [Dependency Information](installation-and-maintenance/dependency-information.md)
+* [Installation and Upgrade (Base and Core)](https://app.gitbook.com/s/Id4bob6wnHvpX4zbVVtI/csharp-libraries/installation-and-upgrade)
 
 ## Fundamentals
 
 * [What is the Kernel?](fundamentals/what-is-the-kernel.md)
-* [What is Nitrocid KS?](fundamentals/what-is-nitrocid-ks.md)
+* [What is Nitrocid?](fundamentals/what-is-nitrocid-ks.md)
 * [Simulated Kernel Features](fundamentals/simulated-kernel-features/README.md)
   * [Extra Features](fundamentals/simulated-kernel-features/extra-features/README.md)
     * [More Networking](fundamentals/simulated-kernel-features/extra-features/more-networking/README.md)
@@ -114,6 +110,7 @@
       * [To-do List](fundamentals/simulated-kernel-features/extra-features/common-programs/to-do-list.md)
       * [Unit Converter](fundamentals/simulated-kernel-features/extra-features/common-programs/unit-converter.md)
       * [Weather](fundamentals/simulated-kernel-features/extra-features/common-programs/weather.md)
+    * [Obtaining Extra Addons](fundamentals/simulated-kernel-features/extra-features/obtaining-extra-addons.md)
     * [Docking](fundamentals/simulated-kernel-features/extra-features/docking.md)
     * [Theme Studio](fundamentals/simulated-kernel-features/extra-features/theme-studio.md)
   * [Accounts](fundamentals/simulated-kernel-features/accounts/README.md)
@@ -251,7 +248,7 @@
 
 ***
 
-* [Project Dependencies](project-dependencies.md)
+* [Credits](project-dependencies.md)
 * [Report an issue](https://github.com/Aptivi/Nitrocid/issues/new)
 * [Source code](https://github.com/Aptivi/Nitrocid/)
 * [API Reference](https://aptivi.github.io/Nitrocid/)

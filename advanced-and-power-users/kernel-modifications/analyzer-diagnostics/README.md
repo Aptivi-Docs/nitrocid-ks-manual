@@ -16,11 +16,15 @@ We provide you two types of analyzers for your Nitrocid mods:
 
 In this page, we'll give you instructions on how to install such analyzers. Choose the analyzer type based on your preferences.
 
-## Installation
+***
+
+## <mark style="color:$primary;">Installation</mark>
 
 There are two types of Nitrocid analyzers as highlighted above. This section shows you how to analyze your code with either the NuGet analyzer package or the standalone analyzer. The mod analyzer package found in the release contains both the standalone analyzer and the NuGet-based analyzer.
 
-### Visual Studio
+<details>
+
+<summary>Visual Studio</summary>
 
 In order to install the NuGet-based analyzer for Nitrocid mods on Visual Studio, follow the below steps:
 
@@ -31,7 +35,11 @@ In order to install the NuGet-based analyzer for Nitrocid mods on Visual Studio,
 
     <figure><img src="../../../.gitbook/assets/093-modanalyzers.png" alt=""><figcaption></figcaption></figure>
 
-### Standalone Analyzer
+</details>
+
+<details>
+
+<summary>Standalone Analyzer</summary>
 
 In case you can't use NuGet-based analyzer for your mods, you can use the standalone analyzer. To use it, follow the steps:
 
@@ -41,15 +49,29 @@ In case you can't use NuGet-based analyzer for your mods, you can use the standa
 
     <figure><img src="../../../.gitbook/assets/094-modanalyzers.png" alt=""><figcaption></figcaption></figure>
 
-## Diagnostics
+</details>
+
+***
+
+## <mark style="color:$primary;">Suppression</mark>
+
+You can suppress this warning by including it in the appropriate place, whichever is convenient.
+
+For more information about how to suppress any warning issued by the Nitrocid analyzer, visit the below page:
+
+{% embed url="https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/suppress-warnings" %}
+
+{% hint style="info" %}
+We recommend that you avoid suppressing any of Nitrocid's analysis methods, unless you're sure that your mod behaves correctly.
+{% endhint %}
+
+***
+
+## <mark style="color:$primary;">Diagnostics</mark>
 
 The following code analyzers are shipped, with links to each page:
 
 {% tabs %}
-{% tab title="Errors" %}
-Currently, there are no analyzers which generate errors yet. However, we'll plan to add more analyzers.
-{% endtab %}
-
 {% tab title="Warnings" %}
 The following analyzers generate warnings:
 

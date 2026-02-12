@@ -9,7 +9,13 @@ icon: billboard
 
 Kernel placeholders are text variables for any piece of text that are replaced by different elements found within the kernel. They are parsed in several different areas of the kernel, the most famous example being the MOTD and the MAL messages.
 
-The probing takes place in the `PlaceParse.ProbePlaces()` function found within the `Nitrocid.Misc.Probers.Placeholder` namespace. The following types of text use this function to parse the placeholders:
+The probing takes place in the `PlaceParse.ProbePlaces()` function found within the `Nitrocid.Misc.Probers.Placeholder` namespace.
+
+<details>
+
+<summary>Types of text that support placeholders</summary>
+
+The following types of text use this function to parse the placeholders:
 
 * MOTD and MAL messages
 * Username prompt and their derivatives for each shell
@@ -25,6 +31,12 @@ The probing takes place in the `PlaceParse.ProbePlaces()` function found within 
 * Manual page contents
 * Download and upload progress for network transfers
 * Progress Clock screensaver's informational text variables
+
+</details>
+
+<details>
+
+<summary>Types of placeholders and their values</summary>
 
 These are the placeholders and what possible values are going to replace them when being parsed:
 
@@ -71,7 +83,13 @@ These are the placeholders and what possible values are going to replace them wh
 | `<termemu>`                       | Terminal emulator used (empty on Windows)                                          |
 | `<termtype>`                      | Terminal type used (empty on Windows)                                              |
 
-## Custom placeholders
+
+
+</details>
+
+***
+
+## <mark style="color:$primary;">Custom placeholders</mark>
 
 You can make your own placeholders, too, with a simple one-line function that allows you to create your custom placeholders for commands and text that use the placeholders feature, with the dynamic content represented in text that you want.
 
@@ -91,6 +109,10 @@ PlaceParse.RegisterCustomPlaceholder("colorfgtrue", (c) => new Color(c).VTSequen
 ```
 {% endhint %}
 
+<details>
+
+<summary>Verifying the placeholder registration</summary>
+
 You can verify that your placeholder is registered by calling the below function:
 
 {% code title="Verification" lineNumbers="true" %}
@@ -100,8 +122,16 @@ bool regged = PlaceParse.IsPlaceholderRegistered("<placeholder>");
 ```
 {% endcode %}
 
+</details>
+
+<details>
+
+<summary>Unregistering a placeholder</summary>
+
 If you no longer want a custom placeholder, you can remove it using the `UnregisterCustomPlaceholder()` function using the same placeholder name.
 
 {% hint style="warning" %}
 Please note that you need to surround your placeholder name with the `<` and the `>` marks, except for `RegisterCustomPlaceholder()`, so that the prober can recognize your placeholder. It throws an exception if it's not surrounded.
 {% endhint %}
+
+</details>

@@ -7,11 +7,13 @@ icon: up
 
 As API v4.0 is still in development, the breaking changes get committed and land here. They describe what broke and what should be used instead.
 
-## From 0.1.2 to 0.2.0 <a href="#from-0.0.24-to-0.1.0" id="from-0.0.24-to-0.1.0"></a>
+***
+
+## <mark style="color:$primary;">From 0.1.2 to 0.2.0</mark> <a href="#from-0.0.24-to-0.1.0" id="from-0.0.24-to-0.1.0"></a>
 
 This version gives your kernel a minor gorgeous makeover that brings in feature additions and spectacular improvements in all fields, including some of the cosmetic changes.
 
-### Updated Terminaux to 8.1 <a href="#updated-terminaux-to-6.0" id="updated-terminaux-to-6.0"></a>
+### <mark style="color:$primary;">Updated Terminaux to 8.1</mark> <a href="#updated-terminaux-to-6.0" id="updated-terminaux-to-6.0"></a>
 
 We've updated Terminaux to 8.1 to bring improvements. However, this doesn't come without the cost of having to deal with the breaking changes, which, in this case, is many.
 
@@ -33,17 +35,23 @@ Also, we have upgraded to Terminaux 7.0 earlier during the tech preview developm
 [API v7.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v7.0)
 {% endcontent-ref %}
 
-### Detailed important changes <a href="#detailed-important-changes-2" id="detailed-important-changes-2"></a>
+### <mark style="color:$primary;">Detailed important changes</mark> <a href="#detailed-important-changes-2" id="detailed-important-changes-2"></a>
 
 This section explains how to adapt the important changes to your mod code so that it works with 0.2.0 and higher. This highlights the most important changes that we have compiled for you.
 
-#### **LanguagePacks addon removed**
+<details>
+
+<summary>LanguagePacks addon removed</summary>
 
 The LanguagePacks addon has been removed due to the LocaleStation migration that happened during the Terminaux 7.0 preparation stage as part of the development plans. Terminaux 7.0 Beta 4, which has been scheduled for July 31st, 2025, has incorporated langauge tools according to the tools that LocaleStation provides.
 
 As a result, we've decided to remove the LanguagePacks addon.
 
-#### Condensed the language manager
+</details>
+
+<details>
+
+<summary>Condensed the language manager</summary>
 
 LocaleStation has been used in the whole Nitrocid kernel. We've condensed the language manager to remove all the following features:
 
@@ -69,11 +77,15 @@ As part of the condensation, we've also removed the following:
 * `public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001, string country = "")`
 * `public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, string[]? LanguageToken, string country = "")`
 
-#### Moved `KernelMain` to `Nitrocid` for the .Base migration
+</details>
+
+<details>
+
+<summary>Moved <code>KernelMain</code> to <code>Nitrocid</code> for the <code>.Base</code> migration</summary>
 
 {% code title="KernelMain.cs" lineNumbers="true" %}
 ```csharp
-public static class KernelMain
+public static class KernelMain { }
 ```
 {% endcode %}
 
@@ -83,18 +95,22 @@ We've recently moved `KernelMain` from `Nitrocid.Kernel` to `Nitrocid` to satisf
 Due to how `KernelMain` is not migrated to the .Base library, you can no longer use this class. Instead, you'll have to rely on `KernelReleaseInfo` to get the properties that you were using.
 {% endhint %}
 
-#### Argument parser code moved to Terminaux 7.0
+</details>
+
+<details>
+
+<summary>Argument parser code moved to Terminaux 7.0</summary>
 
 ```csharp
 // Nitrocid.Arguments
-public abstract class ArgumentExecutor : IArgument
-public class ArgumentInfo
-public class ArgumentParameters
-public static class ArgumentParse
-public interface IArgument
+public abstract class ArgumentExecutor : IArgument { }
+public class ArgumentInfo { }
+public class ArgumentParameters { }
+public static class ArgumentParse { }
+public interface IArgument { }
 
 // Nitrocid.Arguments.Help
-public static class ArgumentHelpPrint
+public static class ArgumentHelpPrint { }
 ```
 
 The argument parser code has been moved to Terminaux 7.0, because the functions that are inside are application-independent. The arguments themselves haven't been moved because they are specific to Nitrocid.
@@ -103,7 +119,11 @@ The argument parser code has been moved to Terminaux 7.0, because the functions 
 We are working on the documentation of the argument parser in the Terminaux documentation, so be patient.
 {% endhint %}
 
-#### Remaining shell code moved to Terminaux 7.0
+</details>
+
+<details>
+
+<summary>Remaining shell code moved to Terminaux 7.0</summary>
 
 Features such as UESH scripting and process execution have been moved to Terminaux 7.0's shell implementation to match the Nitrocid one. Furthermore, this movement has resulted in us removing all relevant shell code, except the Nitrocid-specific code.
 
@@ -113,23 +133,27 @@ The shell documentation has been moved to Terminaux 7.0. Check it out using the 
 [Shells](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/input-reader/shells "mention")
 {% endhint %}
 
-#### Removed console driver
+</details>
+
+<details>
+
+<summary>Removed console driver</summary>
 
 {% code title="BaseConsoleDriver.cs" lineNumbers="true" %}
 ```csharp
-public abstract class BaseConsoleDriver : IConsoleDriver
+public abstract class BaseConsoleDriver : IConsoleDriver { }
 ```
 {% endcode %}
 
 {% code title="ConsoleDriverTools.cs" lineNumbers="true" %}
 ```csharp
-public static class ConsoleDriverTools
+public static class ConsoleDriverTools { }
 ```
 {% endcode %}
 
 {% code title="IConsoleDriver.cs" lineNumbers="true" %}
 ```csharp
-public interface IConsoleDriver : IDriver
+public interface IConsoleDriver : IDriver { }
 ```
 {% endcode %}
 
@@ -163,21 +187,25 @@ The console driver has been removed following Terminaux's addition of the brand 
 Consult Terminaux's documentation on how to register and to set the console wrapper.
 {% endhint %}
 
-#### Moved theming system to Terminaux
+</details>
+
+<details>
+
+<summary>Moved theming system to Terminaux</summary>
 
 {% code title="Theming system" lineNumbers="true" %}
 ```csharp
 // Nitrocid.ConsoleBase.Colors
-public enum KernelColorSetErrorReasons
-public static class KernelColorTools
-public enum KernelColorType
+public enum KernelColorSetErrorReasons { }
+public static class KernelColorTools { }
+public enum KernelColorType { }
 
 // Nitrocid.ConsoleBase.Themes
-public enum ThemeCategory
-public class ThemeInfo
-public static class ThemePreviewTools
-public enum ThemeSetErrorReasons
-public static class ThemeTools
+public enum ThemeCategory { }
+public class ThemeInfo { }
+public static class ThemePreviewTools { }
+public enum ThemeSetErrorReasons { }
+public static class ThemeTools { }
 ```
 {% endcode %}
 
@@ -187,12 +215,16 @@ The theming system that Nitrocid used has been moved to Terminaux to give all ot
 Consult Terminaux's documentation on how to use the theming system.
 {% endhint %}
 
-#### Theme-based writers moved to Terminaux
+</details>
+
+<details>
+
+<summary>Theme-based writers moved to Terminaux</summary>
 
 {% code title="Text*Writers.cs" lineNumbers="true" %}
 ```csharp
-public static class TextDynamicWriters
-public static class TextWriters
+public static class TextDynamicWriters { }
+public static class TextWriters { }
 ```
 {% endcode %}
 
@@ -202,7 +234,11 @@ The text writers that use the theme color type have been moved to Terminaux, cau
 Consult Terminaux's documentation on how to write to the console.
 {% endhint %}
 
-#### All Nitrocid functions moved to Nitrocid.Base
+</details>
+
+<details>
+
+<summary>All Nitrocid functions moved to Nitrocid.Base</summary>
 
 The root namespace for all Nitrocid functions has been changed from Nitrocid to Nitrocid.Base to separate the entry point from the actual product code, since the mods use the base library as a dependency 100% of the time. Also, it was considered to be best practice to distribute NuGet packages that result from building libraries and not `.exe` files.
 
@@ -212,15 +248,19 @@ We had planned to do this during very early development of the v0.0.x series, bu
 Update your using clauses to point the root namespace of Nitrocid to Nitrocid.Base.
 {% endhint %}
 
-#### Calendar classes moved to Terminaux
+</details>
+
+<details>
+
+<summary>Calendar classes moved to Terminaux</summary>
 
 {% code title="*Calendar*.cs" lineNumbers="true" %}
 ```csharp
 // Nitrocid.Base.Kernel.Time.Calendars
-public abstract class BaseCalendar : ICalendar
-public static class CalendarTools
-public enum CalendarTypes
-public interface ICalendar
+public abstract class BaseCalendar : ICalendar { }
+public static class CalendarTools { }
+public enum CalendarTypes { }
+public interface ICalendar { }
 ```
 {% endcode %}
 
@@ -230,7 +270,11 @@ The calendar classes have been moved to Terminaux as we were working on porting 
 Those classes might get moved again to a brand new library released later this year, which will provide more features. In case this happens, we'll update both Terminaux and Nitrocid documentations to point to that library's docs.
 {% endhint %}
 
-#### Removed `SplashClosing` from the `ISplash` interface
+</details>
+
+<details>
+
+<summary>Removed <code>SplashClosing</code> from the <code>ISplash</code> interface</summary>
 
 {% code title="ISplash.cs" lineNumbers="true" %}
 ```csharp
@@ -254,15 +298,19 @@ This was a bad design, so we've fixed it by making the `SplashClosing` property 
 Please remove all overrides to this property.
 {% endhint %}
 
-#### Removed the legacy settings app
+</details>
+
+<details>
+
+<summary>Removed the legacy settings app</summary>
 
 {% code title="SettingsApp.cs" lineNumbers="true" %}
 ```csharp
-public static void OpenMainPage(string settingsType, bool useSelection = false) {}
-public static void OpenMainPage(BaseKernelConfig? settingsType, bool useSelection = false) {}
-public static void OpenSection(string Section, SettingsEntry SettingsSection, BaseKernelConfig settingsType)
-public static void OpenKey(int KeyNumber, SettingsEntry SettingsSection, BaseKernelConfig settingsType)
-public static void VariableFinder(BaseKernelConfig configType)
+public static void OpenMainPage(string settingsType, bool useSelection = false) { }
+public static void OpenMainPage(BaseKernelConfig? settingsType, bool useSelection = false) { }
+public static void OpenSection(string Section, SettingsEntry SettingsSection, BaseKernelConfig settingsType) { }
+public static void OpenKey(int KeyNumber, SettingsEntry SettingsSection, BaseKernelConfig settingsType) { }
+public static void VariableFinder(BaseKernelConfig configType) { }
 ```
 {% endcode %}
 
@@ -272,12 +320,16 @@ The legacy settings app has been finally removed, as we can't keep maintaining i
 The `OpenMainPage()` signatures have been changed to remove the `useSelection` optional parameter.
 {% endhint %}
 
-#### Removed the input driver
+</details>
+
+<details>
+
+<summary>Removed the input driver</summary>
 
 ```csharp
-public abstract class BaseInputDriver : IInputDriver {}
-public interface IInputDriver : IDriver {}
-public static class InputDriverTools {}
+public abstract class BaseInputDriver : IInputDriver { }
+public interface IInputDriver : IDriver { }
+public static class InputDriverTools { }
 ```
 
 Terminaux 7.0 has a similar functionality that allows you to change the console wrapper, which already covers input-related actions. Due to this change, we have to remove the driver.
@@ -286,11 +338,15 @@ Terminaux 7.0 has a similar functionality that allows you to change the console 
 The `OpenMainPage()` signatures have been changed to remove the `useSelection` optional parameter.
 {% endhint %}
 
-#### Terminaux wrapper initialization code removed
+</details>
+
+<details>
+
+<summary>Terminaux wrapper initialization code removed</summary>
 
 {% code title="InputTools.cs" lineNumbers="true" %}
 ```csharp
-public static void InitializeTerminauxWrappers() {}
+public static void InitializeTerminauxWrappers() { }
 ```
 {% endcode %}
 
@@ -300,7 +356,11 @@ We've removed the Terminaux wrapper initialization code, because we have removed
 Nitrocid now uses the standard console wrapper.
 {% endhint %}
 
-#### Ambient screensaver sound effects intensity changed
+</details>
+
+<details>
+
+<summary>Ambient screensaver sound effects intensity changed</summary>
 
 {% code title="KernelMainConfig.cs" lineNumbers="true" %}
 ```csharp
@@ -314,7 +374,11 @@ We've extended the ambient sound effects for screensavers to include four levels
 You can use the new `AmbientSoundFxIntensity` property to select the intensity.
 {% endhint %}
 
-#### Modern logon handler changed
+</details>
+
+<details>
+
+<summary>Modern logon handler changed</summary>
 
 {% code title="KernelMainConfig.cs" lineNumbers="true" %}
 ```csharp
@@ -333,7 +397,11 @@ Because we've introduced Widget Canvas API, the widget system is no longer exclu
 To make pages for both the login and the homepage, you can refer to the [Widget Canvas](../../fundamentals/simulated-kernel-features/widgets/widget-canvas.md) page for more information.
 {% endhint %}
 
-#### Modernized the speed dial feature
+</details>
+
+<details>
+
+<summary>Modernized the speed dial feature</summary>
 
 {% code title="SpeedDialEntry.cs" lineNumbers="true" %}
 ```csharp
@@ -348,7 +416,11 @@ The speed dial feature, which was currently suffering from complexity due to the
 Speed dials created before 0.2.0 will have to be manually migrated during the release candidate stage. We'll work on a way to migrate the old speed dial files automatically to take advantage of the new features during the final release development.
 {% endhint %}
 
-#### Removed the Language Studio addon
+</details>
+
+<details>
+
+<summary>Removed the Language Studio addon</summary>
 
 {% code title="KnownAddons.cs" lineNumbers="true" %}
 ```csharp
@@ -367,7 +439,11 @@ The language studio has been removed as a result of the recent localization chan
 Relying on the language studio is no longer needed.
 {% endhint %}
 
-#### Removed extra known addons enumeration
+</details>
+
+<details>
+
+<summary>Removed extra known addons enumeration</summary>
 
 {% code title="KnownAddons.cs" lineNumbers="true" %}
 ```csharp
@@ -393,13 +469,14 @@ We've migrated all those shells to one shell pack addon, and it can be accessed 
 Use `KnownAddons.AddonShellPacks` instead of using one of the deleted enumerations.
 {% endhint %}
 
-#### Display in hex "dumb mode" functions removed
+</details>
+
+<details>
+
+<summary>Display in hex "dumb mode" functions removed</summary>
 
 {% code title="IFilesystemDriver.cs" lineNumbers="true" %}
 ```csharp
-/// <summary>
-/// Filesystem driver interface for drivers
-/// </summary>
 public interface IFilesystemDriver : IDriver
 {
     void DisplayInHexDumbMode(long StartByte, long EndByte, byte[] FileByte);
@@ -410,9 +487,6 @@ public interface IFilesystemDriver : IDriver
 
 {% code title="BaseFilesystemDriver.cs" lineNumbers="true" %}
 ```csharp
-/// <summary>
-/// Base Filesystem driver
-/// </summary>
 public abstract class BaseFilesystemDriver : IFilesystemDriver
 {
     public virtual void DisplayInHexDumbMode(long StartByte, long EndByte, byte[] FileByte) { }
@@ -428,3 +502,17 @@ So, we've decided to take this renderer as the candidate and replace the positio
 {% hint style="info" %}
 You'll need to use `DisplayInHex()` to take advantage of better performance. If you used `DisplayInHex()` already, there is no need to replace this function.
 {% endhint %}
+
+</details>
+
+<details>
+
+<summary>Glitch simulation functions now return a string</summary>
+
+The glitch simulation functions in the screensaver addon now return a string instead of directly writing to the console. This allows more innovation in screensavers by making them return a string of a VT sequence that writes a random character with a random foreground and background color in a random position.
+
+{% hint style="info" %}
+You'll have to modify all calls to `GlitchAt()` to make them receive a string that will then become printed to the console.
+{% endhint %}
+
+</details>

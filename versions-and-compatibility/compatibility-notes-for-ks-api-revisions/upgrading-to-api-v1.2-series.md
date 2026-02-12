@@ -7,7 +7,9 @@ icon: up
 
 When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v1.2, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod. These changes will be listed starting from 0.0.12 to the last version in this API revision.
 
-## From 0.0.11 to 0.0.12
+***
+
+## <mark style="color:$primary;">From 0.0.11 to 0.0.12</mark>
 
 This version added some of the interesting features, including the built-in kernel configuration tool that still witnessed improvements to this day.
 
@@ -15,10 +17,14 @@ This version added some of the interesting features, including the built-in kern
 [v0.0.12.x-series.md](../version-release-notes/v0.0.12.x-series.md)
 {% endcontent-ref %}
 
-### **`ProbeHW()`**
+Here's a list of breaking changes:
+
+<details>
+
+<summary><code>ProbeHW()</code></summary>
 
 {% code title="HardwareProbe.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub ProbeHW()
 ```
 {% endcode %}
@@ -29,10 +35,14 @@ This function used to be a wrapper for hardware probing function which checked t
 We advice you to cease using this function, since hardware already gets probed at boot time.
 {% endhint %}
 
-### **`PreFetchNetworks` and `PostFetchNetworks` Events**
+</details>
+
+<details>
+
+<summary><code>PreFetchNetworks</code> and <code>PostFetchNetworks</code> Events</summary>
 
 {% code title="EventsAndExceptions.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 'Events
 Public Event PreFetchNetworks()
 Public Event PostFetchNetworks()
@@ -53,10 +63,14 @@ Each time the fetching network request is made, the above events get raised to n
 The new `lsnet` command currently doesn't provide these events, so we advice you to cease using these events until they're implemented again.
 {% endhint %}
 
-### **String Extensions**
+</details>
+
+<details>
+
+<summary>String Extensions</summary>
 
 {% code title="StringExtensions.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function ReplaceLastOccurrence(ByVal source As String, ByVal searchText As String, ByVal replace As String) As String
 Public Iterator Function AllIndexesOf(ByVal str As String, ByVal value As String) As IEnumerable(Of Integer)
 Public Function Truncate(ByVal str As String, ByVal threshold As Integer) As String
@@ -75,14 +89,20 @@ They were removed because Extensification was being made at that time, and they 
 To continue using these functions, we suggest that you re-implement these functions yourself.
 {% endhint %}
 
-## From 0.0.12 to 0.0.12.3
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.12 to 0.0.12.3</mark>
 
 This version brought minor improvements. However, there was an API removal.
 
-### `ListenRPC()`
+<details>
+
+<summary><code>ListenRPC()</code></summary>
 
 {% code title="RemoteProcedure.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub ListenRPC()
 ```
 {% endcode %}
@@ -90,17 +110,21 @@ Sub ListenRPC()
 This function was called by the RPC thread which started during the call to the `StartRPC()` function. `ListenRPC()` tries to set the RPC listener up and start another thread responsible for receiving all available RPC commands from all connected devices. However, it got removed as it was merged to `StartRPC()`.
 
 {% hint style="info" %}
-StartRPC() and StopRPC() are still available as viable ways of starting and stopping the remote procedure server. The below code block shows you the method signature of the two functions.
+`StartRPC()` and `StopRPC()` are still available as viable ways of starting and stopping the remote procedure server. The below code block shows you the method signature of the two functions.
 
 {% code title="RemoteProcedure.cs" lineNumbers="true" %}
 ```csharp
-public static void StartRPC()
-public static void StopRPC()
+public static void StartRPC() { }
+public static void StopRPC() { }
 ```
 {% endcode %}
 {% endhint %}
 
-## From 0.0.12.3 to 0.0.14
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.12.3 to 0.0.14</mark>
 
 This version added some more features, like the usage of Inxi.NET for the first time in the kernel and the BouncingBlock screensaver.
 
@@ -108,10 +132,14 @@ This version added some more features, like the usage of Inxi.NET for the first 
 [v0.0.14.x-series.md](../version-release-notes/v0.0.14.x-series.md)
 {% endcontent-ref %}
 
-### Hardware Classes and Routines
+Here's a list of breaking changes:
+
+<details>
+
+<summary>Hardware Classes and Routines</summary>
 
 {% code title="HardwareVars.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 'Hardware classes and their variables
 Public Class HDD
 Public Class HDD_Linux
@@ -128,7 +156,7 @@ Public Class RAM_Linux
 These above classes were used to deserialize all the hardware variables to their variables so their information can be accessed directly by mods.
 
 {% code title="HardwareProbe.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 'Probers
 Public Sub ProbeHardware()
 Public Sub ProbeHardwareLinux()
@@ -143,7 +171,7 @@ Sub PrintPartitions(ByVal Drive As Integer)
 These are the probers and the listers used by the kernel to facilitate getting information about the hardware from your computer.
 
 {% code title="" lineNumbers="true" %}
-```visual-basic
+```vb
 'CPU feature classes
 Public Class CPUFeatures_Win
 Public Module CPUFeatures_Linux
@@ -164,22 +192,26 @@ To continue using these functions and routines, use the Inxi.NET library. If you
 
 {% code title="HardwareList.cs" lineNumbers="true" %}
 ```csharp
-public static void ListHardware(string HardwareType)
+public static void ListHardware(string HardwareType) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### `DoCalc()`
+</details>
+
+<details>
+
+<summary><code>DoCalc()</code></summary>
 
 {% code title="Calc.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function DoCalc(ByVal Expression As String) As Dictionary(Of Double, Boolean)
 ```
 {% endcode %}
 
 The calculator was re-implemented with the usage of the DataTable class to aid in solving the expression. This time, it only takes the expression and calculates it using the `Compute()` method from the abovementioned class. The expression had to follow the format of the `DataTable` expression that were described in the below link.
 
-{% embed url="https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable.compute?view=net-6.0" %}
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable.compute?view=net-6.0" class="button primary">DataTable.Compute</a>
 
 It got removed again in favor of the string evaluator that was implemented in the `StringEvaluators` module, which was removed as of 0.1.0.
 
@@ -187,7 +219,11 @@ It got removed again in favor of the string evaluator that was implemented in th
 The calculator no longer uses the string evaluator, and now uses the `StringMath` library to calculate the expressions.
 {% endhint %}
 
-## From 0.0.14 to 0.0.15
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.14 to 0.0.15</mark>
 
 This version was released as the last major version in the API v1.2 series.
 
@@ -195,10 +231,14 @@ This version was released as the last major version in the API v1.2 series.
 [v0.0.15.x-series.md](../version-release-notes/v0.0.15.x-series.md)
 {% endcontent-ref %}
 
-### `PrintLog()`
+Here's a list of breaking changes:
+
+<details>
+
+<summary><code>PrintLog()</code></summary>
 
 {% code title="DebugLogPrint.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub PrintLog()
 ```
 {% endcode %}
@@ -224,3 +264,5 @@ public static void WriteList<T>(IEnumerable<T> List)
 ```
 {% endcode %}
 {% endhint %}
+
+</details>

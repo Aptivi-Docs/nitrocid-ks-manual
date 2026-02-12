@@ -11,13 +11,17 @@ When it comes to docking your laptop, your desktop, or your tablet, it becomes l
 
 Information centers tend to require no input from the user, because they generally update themselves to get the latest information in real time, usually from the Internet. Sometimes, they allow you to touch its screen to make changes to the type of information you want to show.
 
+***
+
+## <mark style="color:$primary;">Docking on Nitrocid</mark>
+
 Nitrocid KS attempts to simulate this concept by implementing the non-touch version of the information center that only gives you latest information about various things, such as the time and the date. This is accompanied by the usage of the brand-new screen feature to gain flexibility in regards to screen resizes. Its documentation can be found here to see the magic behind this feature:
 
 {% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/textual-ui/console-screen" %}
 [Console Screen](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/textual-ui/console-screen)
 {% endcontent-ref %}
 
-### How do I dock my screen?
+### <mark style="color:$primary;">How do I dock my screen?</mark>
 
 You can dock your screen to turn it to an information center using the `dock` command, giving it an ID of the dock. The following docks can be used:
 

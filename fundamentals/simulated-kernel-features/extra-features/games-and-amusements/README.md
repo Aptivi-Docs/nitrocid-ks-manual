@@ -7,70 +7,8 @@ icon: gamepad-modern
 
 <figure><img src="../../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="info" %}
-As of 0.1.0, all games have been moved to the kernel addons.
-{% endhint %}
-
 Every single operating system contain either the built-in games, such as Windows which used to provide you the games that came shipped with it, or the installable games. The games and amusements were provided to you in the simulated kernel for entertainment purposes.
 
 The simulated kernel provides you the below games. Select a game to get the complete guide.
 
-{% content-ref url="backrace.md" %}
-[backrace.md](backrace.md)
-{% endcontent-ref %}
-
-{% content-ref url="clicker.md" %}
-[clicker.md](clicker.md)
-{% endcontent-ref %}
-
-{% content-ref url="hangman.md" %}
-[hangman.md](hangman.md)
-{% endcontent-ref %}
-
-{% content-ref url="invaders.md" %}
-[invaders.md](invaders.md)
-{% endcontent-ref %}
-
-{% content-ref url="meteor.md" %}
-[meteor.md](meteor.md)
-{% endcontent-ref %}
-
-{% content-ref url="pong.md" %}
-[pong.md](pong.md)
-{% endcontent-ref %}
-
-{% content-ref url="russian-roulette.md" %}
-[russian-roulette.md](russian-roulette.md)
-{% endcontent-ref %}
-
-{% content-ref url="scoresim.md" %}
-[scoresim.md](scoresim.md)
-{% endcontent-ref %}
-
-{% content-ref url="shipduet.md" %}
-[shipduet.md](shipduet.md)
-{% endcontent-ref %}
-
-{% content-ref url="simon.md" %}
-[simon.md](simon.md)
-{% endcontent-ref %}
-
-{% content-ref url="snaker.md" %}
-[snaker.md](snaker.md)
-{% endcontent-ref %}
-
-{% content-ref url="solver.md" %}
-[solver.md](solver.md)
-{% endcontent-ref %}
-
-{% content-ref url="speedpress.md" %}
-[speedpress.md](speedpress.md)
-{% endcontent-ref %}
-
-{% content-ref url="streetrun.md" %}
-[streetrun.md](streetrun.md)
-{% endcontent-ref %}
-
-{% content-ref url="wordle.md" %}
-[wordle.md](wordle.md)
-{% endcontent-ref %}
+<table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td align="center"><h3><a href="backrace.md"><mark style="color:$primary;"><strong>BackRace</strong></mark></a></h3></td><td align="center">Choose a horse that may get to the finish line.</td><td><a href="../../../../.gitbook/assets/image (55).png">image (55).png</a></td></tr><tr><td align="center"><h3><a href="clicker.md"><mark style="color:$primary;"><strong>Clicker</strong></mark></a></h3></td><td align="center">Gain virtual money while clicking.</td><td><a href="../../../../.gitbook/assets/image (1) (1).png">image (1) (1).png</a></td></tr><tr><td align="center"><h3><a href="hangman.md"><mark style="color:$primary;"><strong>Hangman</strong></mark></a></h3></td><td align="center">Seven wrong letters, and you're hung.</td><td><a href="../../../../.gitbook/assets/image (54).png">image (54).png</a></td></tr><tr><td align="center"><h3><a href="invaders.md"><mark style="color:$primary;"><strong>Invaders</strong></mark></a></h3></td><td align="center">Eliminate the aliens before they reach you.</td><td><a href="../../../../.gitbook/assets/image (3).png">image (3).png</a></td></tr><tr><td align="center"><h3><a href="meteor.md"><mark style="color:$primary;"><strong>Meteor</strong></mark></a></h3></td><td align="center">Eliminate the meteors before they crash your spaceship.</td><td><a href="../../../../.gitbook/assets/image (53).png">image (53).png</a></td></tr><tr><td align="center"><h3><a href="pong.md"><mark style="color:$primary;"><strong>Pong</strong></mark></a></h3></td><td align="center">A simple ping-pong game with two players.</td><td><a href="../../../../.gitbook/assets/image (56).png">image (56).png</a></td></tr><tr><td align="center"><h3><a href="russian-roulette.md"><mark style="color:$primary;"><strong>Russian Roulette</strong></mark></a></h3></td><td align="center">Choose your bet. Either you win, or you lose.</td><td><a href="../../../../.gitbook/assets/image (57).png">image (57).png</a></td></tr><tr><td align="center"><h3><a href="scoresim.md"><mark style="color:$primary;"><strong>ScoreSim</strong></mark></a></h3></td><td align="center">Score simulator for sports games.</td><td><a href="../../../../.gitbook/assets/image (206).png">image (206).png</a></td></tr><tr><td align="center"><h3><a href="shipduet.md"><mark style="color:$primary;"><strong>ShipDuet</strong></mark></a></h3></td><td align="center">Who's going to destroy another spaceship?</td><td><a href="../../../../.gitbook/assets/image (58).png">image (58).png</a></td></tr><tr><td align="center"><h3><a href="simon.md"><mark style="color:$primary;"><strong>Simon</strong></mark></a></h3></td><td align="center">Simon says... Green, Red, Yellow, or Blue.</td><td><a href="../../../../.gitbook/assets/image (2).png">image (2).png</a></td></tr><tr><td align="center"><h3><a href="snaker.md"><mark style="color:$primary;"><strong>Snaker</strong></mark></a></h3></td><td align="center">A snake that moves while eating apples.</td><td><a href="../../../../.gitbook/assets/image (59).png">image (59).png</a></td></tr><tr><td align="center"><h3><a href="solver.md"><mark style="color:$primary;"><strong>Solver</strong></mark></a></h3></td><td align="center">Solve mathematical equations.</td><td><a href="../../../../.gitbook/assets/image (60).png">image (60).png</a></td></tr><tr><td align="center"><h3><a href="speedpress.md"><mark style="color:$primary;"><strong>SpeedPress</strong></mark></a></h3></td><td align="center">Try to press a key shown on your screen quickly.</td><td><a href="../../../../.gitbook/assets/image (61).png">image (61).png</a></td></tr><tr><td align="center"><h3><a href="streetrun.md"><mark style="color:$primary;"><strong>StreetRun</strong></mark></a></h3></td><td align="center">Try to avoid street traffic while running with a car.</td><td><a href="../../../../.gitbook/assets/image (2) (1).png">image (2) (1).png</a></td></tr><tr><td align="center"><h3><a href="wordle.md"><mark style="color:$primary;"><strong>Wordle</strong></mark></a></h3></td><td align="center">Try to guess a word by pressing letters</td><td><a href="../../../../.gitbook/assets/image (62).png">image (62).png</a></td></tr></tbody></table>

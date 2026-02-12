@@ -7,15 +7,19 @@ icon: up
 
 This page lists all the changes that have been made from 0.1.0 RC to 0.1.0 Final. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page where it highlights the most important changes.
 
-## From RC to 0.1.0 Final
+***
+
+## <mark style="color:$primary;">From RC to 0.1.0 Final</mark>
 
 During the final version development period, we have made the following breaking changes:
 
-### Enumerable tools moved to EnumMagic
+<details>
+
+<summary>Enumerable tools moved to EnumMagic</summary>
 
 {% code title="EnumerableTools.cs" lineNumbers="true" %}
 ```csharp
-public static class EnumerableTools
+public static class EnumerableTools { }
 ```
 {% endcode %}
 
@@ -25,7 +29,11 @@ We've moved `EnumerableTools`, which holds non-generic enumerable interface tool
 You'll need to reference EnumMagic in order to use the tools.
 {% endhint %}
 
-### Moved three hashing algorithms
+</details>
+
+<details>
+
+<summary>Moved three hashing algorithms</summary>
 
 <pre class="language-csharp" data-title="DriverHandler.cs" data-line-numbers><code class="lang-csharp">internal static Dictionary&#x3C;DriverTypes, Dictionary&#x3C;string, IDriver>> drivers = new()
 {
@@ -57,7 +65,11 @@ As a result, your mods will break if they assume that these three algorithms are
 Your mods will break only if they have been used and the three addons are not installed yet.
 {% endhint %}
 
-### Removed `SettingVariable` command flag
+</details>
+
+<details>
+
+<summary>Removed <code>SettingVariable</code> command flag</summary>
 
 {% code title="CommandFlags.cs" lineNumbers="true" %}
 ```csharp
@@ -77,11 +89,15 @@ We have introduced a new way to give your UESH commands an option to set a value
 From now on, you'll no longer be able to use the `SettingVariable` switch.
 {% endhint %}
 
-### Figlet tools class moved to Terminaux 3.0
+</details>
+
+<details>
+
+<summary>Figlet tools class moved to Terminaux 3.0</summary>
 
 {% code title="FigletTextTools.cs" lineNumbers="true" %}
 ```csharp
-public static class FigletTextTools
+public static class FigletTextTools { }
 ```
 {% endcode %}
 
@@ -93,7 +109,11 @@ As for this change, it has been moved to this version of the terminal library to
 From now, use the `Config.MainConfig.DefaultFigletFontName` property while Terminaux 3.0 gets released.
 {% endhint %}
 
-### Removed obsolete functions from 0.1.0 RC
+</details>
+
+<details>
+
+<summary>Removed obsolete functions from 0.1.0 RC</summary>
 
 {% code title="KernelThread.cs" lineNumbers="true" %}
 ```csharp
@@ -103,14 +123,14 @@ public ulong NativeThreadId
 
 {% code title="AliasManager.cs" lineNumbers="true" %}
 ```csharp
-public static void ManageAlias(string mode, ShellType Type, string AliasCmd, string DestCmd = "")
-public static void ManageAlias(string mode, string Type, string AliasCmd, string DestCmd = "")
+public static void ManageAlias(string mode, ShellType Type, string AliasCmd, string DestCmd = "") { }
+public static void ManageAlias(string mode, string Type, string AliasCmd, string DestCmd = "") { }
 ```
 {% endcode %}
 
 {% code title="UESHCommands.cs" lineNumbers="true" %}
 ```csharp
-public static class UESHCommands
+public static class UESHCommands { }
 ```
 {% endcode %}
 
@@ -130,7 +150,11 @@ Here are some tips:
 * As for the UESHCommands class, you can just use the `-set=varname` switch instead.
 {% endhint %}
 
-### Exact wording definition changed
+</details>
+
+<details>
+
+<summary>Exact wording definition changed</summary>
 
 {% code title="CommandArgumentPart.cs" lineNumbers="true" %}
 ```csharp
@@ -162,20 +186,24 @@ You'll have to turn the declaration of this variable from a simple string to an 
 ```
 {% endhint %}
 
-### Moved slow/wrapped writers to `TextDynamicWriters`
+</details>
+
+<details>
+
+<summary>Moved slow/wrapped writers to <code>TextDynamicWriters</code></summary>
 
 {% code title="TextWriters.cs" lineNumbers="true" %}
 ```csharp
-public static void WriteSlowly(string msg, bool Line, double MsEachLetter, KernelColorType colorType, params object[] vars)
-public static void WriteSlowly(string msg, bool Line, double MsEachLetter, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
-public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, KernelColorType colorType, params object[] vars)
-public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, KernelColorType colorType, params object[] vars)
-public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, KernelColorType colorType, params object[] vars)
-public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
-public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
-public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
-public static void WriteWrapped(string Text, bool Line, KernelColorType colorType, params object[] vars)
-public static void WriteWrapped(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+public static void WriteSlowly(string msg, bool Line, double MsEachLetter, KernelColorType colorType, params object[] vars) { }
+public static void WriteSlowly(string msg, bool Line, double MsEachLetter, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) { }
+public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, KernelColorType colorType, params object[] vars) { }
+public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, KernelColorType colorType, params object[] vars) { }
+public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, KernelColorType colorType, params object[] vars) { }
+public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) { }
+public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) { }
+public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) { }
+public static void WriteWrapped(string Text, bool Line, KernelColorType colorType, params object[] vars) { }
+public static void WriteWrapped(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) { }
 ```
 {% endcode %}
 
@@ -185,13 +213,17 @@ We have moved all the above writers from `TextWriters` to its own separate class
 None of the functions have been changed. You just need to update the reference to `TextWriters` to point to `TextDynamicWriters` instead.
 {% endhint %}
 
-### Unsafe start/kill shell functions internalized
+</details>
+
+<details>
+
+<summary>Unsafe start/kill shell functions internalized</summary>
 
 {% code title="ShellManager.cs" lineNumbers="true" %}
 ```csharp
-public static void StartShellForced(ShellType ShellType, params object[] ShellArgs)
-public static void StartShellForced(string ShellType, params object[] ShellArgs)
-public static void KillShellForced()
+public static void StartShellForced(ShellType ShellType, params object[] ShellArgs) { }
+public static void StartShellForced(string ShellType, params object[] ShellArgs) { }
+public static void KillShellForced() { }
 ```
 {% endcode %}
 
@@ -203,7 +235,11 @@ We took this into consideration and removed these functions from the public API 
 As of the final release of Nitrocid KS 0.1.0, you'll no longer be able to kill the shells forcefully, including the mother shell.
 {% endhint %}
 
-### `LoginScreen()` now returns a boolean value
+</details>
+
+<details>
+
+<summary><code>LoginScreen()</code> now returns a boolean value</summary>
 
 {% code title="ILoginHandler.cs" lineNumbers="true" %}
 ```csharp
@@ -213,7 +249,7 @@ void LoginScreen();
 
 {% code title="BaseLoginHandler.cs" lineNumbers="true" %}
 ```csharp
-public virtual void LoginScreen()
+public virtual void LoginScreen() { }
 ```
 {% endcode %}
 
@@ -223,7 +259,11 @@ The login handler used to check to see if any login handler has requested a syst
 If you hold this global variable, you must remove it and use the `return` clause to decide how to proceed.
 {% endhint %}
 
-### Overhauled the screensaver timeout settings
+</details>
+
+<details>
+
+<summary>Overhauled the screensaver timeout settings</summary>
 
 {% code title="KernelMainConfig.cs" lineNumbers="true" %}
 ```csharp
@@ -243,11 +283,15 @@ The screensaver timeout settings has been changed to the TimeSpan instance to ac
 Don't worry, the new implementation is smart enough to detect old configurations and to convert them (as in milliseconds) to the new format.
 {% endhint %}
 
-### Progress reporting simplified
+</details>
+
+<details>
+
+<summary>Progress reporting simplified</summary>
 
 {% code title="SplashReport.cs" lineNumbers="true" %}
 ```csharp
-public static void ReportProgress(string Text, int Progress, bool force = false, ISplash splash = null, params object[] Vars)
+public static void ReportProgress(string Text, int Progress, bool force = false, ISplash splash = null, params object[] Vars) { }
 ```
 {% endcode %}
 
@@ -262,7 +306,11 @@ You'll have to update your calls to the master `ReportProgress()` function to pr
 * Severity: The severity of the report (default is `Info`)
 {% endhint %}
 
-### Removed opting in to new color selector option
+</details>
+
+<details>
+
+<summary>Removed opting in to new color selector option</summary>
 
 {% code title="ConsoleTools.cs" lineNumbers="true" %}
 ```csharp
@@ -283,3 +331,5 @@ This will make it easier to use the brand new color selector than the old one th
 {% hint style="danger" %}
 You can no longer use this config entry. We suggest you use Terminaux's color selector feature.
 {% endhint %}
+
+</details>

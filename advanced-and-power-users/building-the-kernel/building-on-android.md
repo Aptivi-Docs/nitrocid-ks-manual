@@ -5,20 +5,46 @@ icon: android
 
 # Building on Android
 
-In Android phones and tablets with Termux installed with proot, you can comfortably build Nitrocid KS using the command line, since it's the most lightweight solution. However, you must have the prerequisites before being able to build KS.
+In Android phones and tablets with Termux installed with proot, you can comfortably build Nitrocid using the command line, since it's the most lightweight solution. However, you must have the prerequisites before being able to build Nitrocid.
 
 * [.NET 10.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 * [Termux](https://f-droid.org/en/packages/com.termux/)
 
-### Using the command-line
+{% hint style="info" %}
+It's recommended that you build the project on a powerful Android device as the building overhead may negatively impact the performance of your phone or tablet.
+{% endhint %}
 
-If you are a hardcore command-line user or if you prefer using the command-line, follow these steps to build Nitrocid KS right from the command line:
+***
 
-1. Open your terminal emulator on your work directory
-2. Execute `git clone https://github.com/Aptivi/NitrocidKS.git`
-3. Navigate to the cloned repository, `NitrocidKS`
-4. Execute `make dbg` for debug builds and `make` for release builds, or `dotnet restore` and `dotnet build`
-5. After building is done, run `dotnet run`
+## <mark style="color:$primary;">Using the command-line</mark>
+
+If you are a hardcore command-line user or if you prefer using the command-line, follow these steps to build Nitrocid right from the command line:
+
+{% stepper %}
+{% step %}
+### <mark style="color:$primary;">Open your terminal emulator</mark>
+
+Open your terminal emulator on your work directory
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Clone the repository</mark>
+
+Execute `git clone https://github.com/Aptivi/Nitrocid.git`
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Build the repository</mark>
+
+Navigate to the cloned repository, `Nitrocid`, then execute `make dbg` for debug builds and `make` for release builds, or `dotnet restore` and `dotnet build`&#x20;
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Run the project</mark>
+
+After building is done, run `dotnet run`
+{% endstep %}
+{% endstepper %}
 
 {% hint style="info" %}
 We recommend that you use `make` to build Nitrocid, since it automatically checks for .NET installation and prepares the environment

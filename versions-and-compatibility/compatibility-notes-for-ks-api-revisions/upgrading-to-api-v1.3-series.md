@@ -7,7 +7,9 @@ icon: up
 
 When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v1.3, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod. These changes will be listed starting from 0.0.16 to the last version in this API revision.
 
-## From 0.0.15 to 0.0.16
+***
+
+## <mark style="color:$primary;">From 0.0.15 to 0.0.16</mark>
 
 This version refined the kernel in various aspects, including the enhancements of the coloring system and the addition of various useful features.
 
@@ -15,10 +17,14 @@ This version refined the kernel in various aspects, including the enhancements o
 [v0.0.16.x-series.md](../version-release-notes/v0.0.16.x-series.md)
 {% endcontent-ref %}
 
-### `TemplateSet()` and `ParseCurrentTheme()`
+Here's a list of breaking changes:
+
+<details>
+
+<summary><code>TemplateSet()</code> and <code>ParseCurrentTheme()</code></summary>
 
 {% code title="Color.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub TemplateSet(ByVal theme As String)
 Public Sub ParseCurrentTheme()
 ```
@@ -35,17 +41,21 @@ The second function, `ParseCurrentTheme()`, was actually checking the kernel col
 
 {% code title="ThemeTools.cs" lineNumbers="true" %}
 ```csharp
-public static void ApplyThemeFromResources(string theme)
-public static void ApplyThemeFromFile(string ThemeFile)
-public static void SetColorsTheme(ThemeInfo ThemeInfo)
+public static void ApplyThemeFromResources(string theme) { }
+public static void ApplyThemeFromFile(string ThemeFile) { }
+public static void SetColorsTheme(ThemeInfo ThemeInfo) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### `ListDrivers()`
+</details>
+
+<details>
+
+<summary><code>ListDrivers()</code></summary>
 
 {% code title="HardwareProbe.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub ListDrivers()
 ```
 {% endcode %}
@@ -57,15 +67,19 @@ This function listed all the parsed hardware that Inxi.NET parsed. Since 0.0.16,
 
 {% code title="HardwareList.cs" lineNumbers="true" %}
 ```csharp
-public static void ListHardware(string HardwareType)
+public static void ListHardware(string HardwareType) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### `NotEnoughArgumentsException` class
+</details>
+
+<details>
+
+<summary><code>NotEnoughArgumentsException</code> class</summary>
 
 {% code title="EventsAndExceptions.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Class NotEnoughArgumentsException
 ```
 {% endcode %}
@@ -76,23 +90,27 @@ Due to how the shell worked in API 1.2 or earlier, this exception was implemente
 It's clunky to throw this exception each time insufficient arguments were provided, so we advice you to cease using this function.
 {% endhint %}
 
-### Synth system
+</details>
+
+<details>
+
+<summary>Synth system</summary>
 
 {% code title="BeepSynth.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function ProbeSynth(ByVal file As String) As Boolean
 ```
 {% endcode %}
 
 {% code title="EventsAndExceptions.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Class InvalidSynthException
 ```
 {% endcode %}
 
 Beep synth system was implemented to create your PC speaker songs using only the frequencies in hertz and lengths in milliseconds. It was removed because it was later realized that the beep method used wasn't cross-platform according to the .NET 6.0 manual as described in the below link:
 
-{% embed url="https://learn.microsoft.com/en-us/dotnet/api/system.console.beep?view=net-7.0#system-console-beep(system-int32-system-int32)" %}
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.console.beep?view=net-7.0#system-console-beep(system-int32-system-int32)" class="button primary">Console.Beep</a>
 
 As a result, the entire synth system was removed.
 
@@ -100,10 +118,14 @@ As a result, the entire synth system was removed.
 This function was deemed not to work on systems that aren't using Windows. If you want to continue using the synth system, compile the mod example that holds the source code of the system from source. If you want your mod to work in Linux, either implement your own wrapper to the beep system for your Linux kernel version, or stop using this function and start implementing visual alerts.
 {% endhint %}
 
-### `GetCultureFromLang()`
+</details>
+
+<details>
+
+<summary><code>GetCultureFromLang()</code></summary>
 
 {% code title="Translate.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function GetCultureFromLang() As String
 ```
 {% endcode %}
@@ -117,48 +139,52 @@ The same functionality made a return, but, this time, we used variables.
 ```csharp
 public static string CurrentCultStr
 public static CultureInfo CurrentCult
-public static List<CultureInfo> GetCulturesFromLang(string Language)
-public static List<string> GetCultureNamesFromCurrentLang()
-public static List<string> GetCultureNamesFromLang(string Language)
+public static List<CultureInfo> GetCulturesFromLang(string Language) { }
+public static List<string> GetCultureNamesFromCurrentLang() { }
+public static List<string> GetCultureNamesFromLang(string Language) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### Configuration Renovation
+</details>
+
+<details>
+
+<summary>Configuration Renovation</summary>
 
 We had three types of different configuration renovation that caused API removals during the development period of 0.0.16.
 
-#### User configuration renovation
+#### <mark style="color:$primary;">User configuration renovation</mark>
 
 {% code title="UserManagement.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Function GetUserEncryptedPassword(ByVal User As String)
 ```
 {% endcode %}
 
 This function first appeared at the start of API v1.2 as a private API function to get  encrypted user password.
 
-#### Alias configuration renovation
+#### <mark style="color:$primary;">Alias configuration renovation</mark>
 
 {% code title="AliasManager.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub CloseAliasesFile()
 ```
 {% endcode %}
 
 It was used as a shortcut to close the old-style alias list file.
 
-#### Central configuration renovation
+#### <mark style="color:$primary;">Central configuration renovation</mark>
 
 {% code title="Config.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function CheckForUpgrade() As Boolean
 Public Sub UpdateConfig()
 ```
 {% endcode %}
 
 {% code title="OldConfigUp.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub UpgradeConfig()
 ```
 {% endcode %}
@@ -173,10 +199,14 @@ All of the functions were removed as a result of the deprecation of the converte
 Furthermore, as of 0.1.0 Beta 1, the configuration was improved to the point that it witnessed performance improvements.
 {% endhint %}
 
-### True color writers
+</details>
+
+<details>
+
+<summary>True color writers</summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 'Normal
 Public Sub WriteTrueColor(ByVal text As Object, ByVal Line As Boolean, ByVal ColorRGBFG As RGB, ByVal ColorRGBBG As RGB, ByVal ParamArray vars() As Object)
 Public Sub WriteTrueColor(ByVal text As Object, ByVal Line As Boolean, ByVal ColorRGB As RGB, ByVal ParamArray vars() As Object)
@@ -197,10 +227,14 @@ These functions used the ancient RGB class implemented by the kernel itself to s
 You can still use `Write()` and their siblings using the Color class.
 {% endhint %}
 
-### `ParseMods()`
+</details>
+
+<details>
+
+<summary><code>ParseMods()</code></summary>
 
 {% code title="ModParser.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub ParseMods(ByVal StartStop As Boolean)
 ```
 {% endcode %}
@@ -212,18 +246,22 @@ You can still use the two separate functions in the latest kernel version series
 
 {% code title="ModManager.cs" lineNumbers="true" %}
 ```csharp
-public static void StartMods()
-public static void StopMods()
-public static void StartMod(string ModFilename)
-public static void StopMod(string ModFilename)
+public static void StartMods() { }
+public static void StopMods() { }
+public static void StartMod(string ModFilename) { }
+public static void StopMod(string ModFilename) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### `SFTPPromptForPassword()`
+</details>
+
+<details>
+
+<summary><code>SFTPPromptForPassword()</code></summary>
 
 {% code title="SFTPTools.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub SFTPPromptForPassword(ByVal user As String, ByVal Address As String, ByVal Port As Integer)
 ```
 {% endcode %}
@@ -234,7 +272,11 @@ This function was used to prompt the user for the SFTP password for the specifie
 We advice you to cease using this function.
 {% endhint %}
 
-## From 0.0.16 to 0.0.17
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.16 to 0.0.17</mark>
 
 This version was released as a small update to add minor features and general improvements.
 
@@ -242,10 +284,14 @@ This version was released as a small update to add minor features and general im
 [v0.0.17.x-series.md](../version-release-notes/v0.0.17.x-series.md)
 {% endcontent-ref %}
 
-### `InitTimesInZones()`
+Here's a list of breaking changes:
+
+<details>
+
+<summary><code>InitTimesInZones()</code></summary>
 
 {% code title="TimeZones.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub InitTimesInZones()
 ```
 {% endcode %}
@@ -256,10 +302,14 @@ This function used to populate all the available time zones from your computer t
 We advice you to cease using this function.
 {% endhint %}
 
-### `ShowTimesInZones()`
+</details>
+
+<details>
+
+<summary><code>ShowTimesInZones()</code></summary>
 
 {% code title="TimeZones.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub ShowTimesInZones(Optional ByVal zone As String = "all")
 ```
 {% endcode %}
@@ -273,14 +323,18 @@ Beware that you need to have **`tzdata`** package installed on your Linux system
 
 {% code title="TimeZones.cs" lineNumbers="true" %}
 ```csharp
-public static bool ShowTimeZone(string Zone)
-public static bool ShowTimeZones(string Zone)
-public static void ShowAllTimeZones()
+public static bool ShowTimeZone(string Zone) { }
+public static bool ShowTimeZones(string Zone) { }
+public static void ShowAllTimeZones() { }
 ```
 {% endcode %}
 {% endhint %}
 
-## From 0.0.17 to 0.0.18
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.17 to 0.0.18</mark>
 
 This version added some more features to the kernel, including the custom startup banner support.
 
@@ -288,10 +342,14 @@ This version added some more features to the kernel, including the custom startu
 [v0.0.18.x-series.md](../version-release-notes/v0.0.18.x-series.md)
 {% endcontent-ref %}
 
-### All help functions
+Here's a list of breaking changes:
+
+<details>
+
+<summary>All help functions</summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub InitHelp()
 Sub InitTShell()
 Public Sub InitSFTPHelp()
@@ -308,3 +366,5 @@ These functions were used to populate help information for all shells. However, 
 {% hint style="danger" %}
 These functions were never meant to be available to the public API in the first place. We advice you to cease using this function. The enhanced help system introduced in recent API series adapts to such changes.
 {% endhint %}
+
+</details>

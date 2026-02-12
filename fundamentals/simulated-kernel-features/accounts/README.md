@@ -11,11 +11,15 @@ Operating systems usually provide the user account functionality to allow more t
 
 The concept of accounts in the kernel is to provide the same functionality, but the simulator only simulates the user accounts, not their home paths. Like all the operating systems, the simulator can manage all the user accounts.
 
-## Manipulation
+***
 
-The operations can be performed on the users to manage them. Scroll down to the section you want.
+## <mark style="color:$primary;">Manipulation</mark>
 
-### Add user accounts
+The operations can be performed on the users to manage them. Expand a section you want.
+
+<details>
+
+<summary>Add user accounts</summary>
 
 <figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -28,11 +32,11 @@ The same thing can be simulated in Nitrocid KS. To add a new user account, follo
    * The full usage of the `adduser` command is `adduser <user> [pass] [confirmpass]`
 3. Log out of the user and log-in to the new user
 
-{% hint style="warning" %}
-Note that your account must have either the administrative permissions enabled or the user management permission granted to be able to use this command.
-{% endhint %}
+</details>
 
-### Change your password
+<details>
+
+<summary>Change your password</summary>
 
 <figure><img src="../../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -45,11 +49,11 @@ In the simulated kernel, there is a command dedicated to changing the user passw
    * The full usage of the `chpwd` command is `chpwd <Username> <UserPass> <newPass> <confirm>`
 3. Log out of the user and log-in to the new user with the new password
 
-{% hint style="warning" %}
-Note that your account must have either the administrative permissions enabled or the user management permission granted to be able to use this command.
-{% endhint %}
+</details>
 
-### Rename your user
+<details>
+
+<summary>Rename your user</summary>
 
 <figure><img src="../../../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -62,11 +66,11 @@ The simulated kernel simulates this functionality using the `chusrname` command.
    * The full usage of the `chusrname` command is `chusrname <oldUserName> <newUserName>`
 3. Log out of the user and log-in to the new user
 
-{% hint style="warning" %}
-Note that your account must have either the administrative permissions enabled or the user management permission granted to be able to use this command.
-{% endhint %}
+</details>
 
-### Remove a user
+<details>
+
+<summary>Remove a user</summary>
 
 <figure><img src="../../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -79,11 +83,11 @@ The simulated kernel simulates the user removal function. Follow these steps to 
    * The full usage of the `rmuser` command is `rmuser <Username>`
 3. Log out of the user and log-in to the new user with the new password
 
-{% hint style="warning" %}
-Note that your account must have either the administrative permissions enabled or the user management permission granted to be able to use this command.
-{% endhint %}
+</details>
 
-### List existing users
+<details>
+
+<summary>List existing users</summary>
 
 <figure><img src="../../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -93,11 +97,11 @@ If you want to get a list of available usernames that the kernel recognized, you
 2. Open the administration shell by executing the `admin` command
 3. Execute the `lsusers` command
 
-{% hint style="warning" %}
-Note that your account must have either the administrative permissions enabled or the user management permission granted to be able to use this command.
-{% endhint %}
+</details>
 
-### Get user information
+<details>
+
+<summary>Get user information</summary>
 
 <figure><img src="../../../.gitbook/assets/image (30) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -107,17 +111,23 @@ If you want to get information about a user without having to open the user sett
 2. Open the administration shell by executing the `admin` command
 3. Execute the `userinfo [user]` command
 
-### 2FA Authentication
+</details>
+
+{% hint style="warning" %}
+Note that your account must have either the administrative permissions enabled or the user management permission granted to be able to use the manipulation commands.
+{% endhint %}
+
+***
+
+## <mark style="color:$primary;">2FA Authentication</mark>
 
 <figure><img src="../../../.gitbook/assets/image (31) (1).png" alt=""><figcaption></figcaption></figure>
 
-You can enroll users into the 2FA authentication requirement using the master command, `2fa`. This master command provides the following actions:
+You can enroll users into the 2FA authentication requirement using the master command, `2fa`.
 
-* `add`: Enrolls the user to the 2FA requirement, prompting you to enter the setup key or scan the QR code with any authenticator apps, such as Google Authenticator or Authy.
-* `delete`: Deletes the requirement of 2FA for a user.
-* `check`: Checks to see if this user has been enrolled to the 2FA requirement.
-* `setupkey`: Returns the setup key in plain text.
-* `setupqr`: Returns the QR code that can be scanned on your phone for authenticator apps.
+This master command provides the following actions:
+
+<table><thead><tr><th width="109.3333740234375">Action</th><th>Description</th></tr></thead><tbody><tr><td><code>add</code></td><td>Enrolls the user to the 2FA requirement, prompting you to enter the setup key or scan the QR code with any authenticator apps, such as Google Authenticator or Authy.</td></tr><tr><td><code>delete</code></td><td>Deletes the requirement of 2FA for a user.</td></tr><tr><td><code>check</code></td><td>Checks to see if this user has been enrolled to the 2FA requirement.</td></tr><tr><td><code>setupkey</code></td><td>Returns the setup key in plain text.</td></tr><tr><td><code>setupqr</code></td><td>Returns the QR code that can be scanned on your phone for authenticator apps.</td></tr></tbody></table>
 
 {% hint style="danger" %}
 You can't manage 2FA for users that don't have any password set, because the password in Nitrocid is the first factor, then the authentication code, which is the second factor.
@@ -126,19 +136,3 @@ You can't manage 2FA for users that don't have any password set, because the pas
 Afterwards, if the user has been enrolled to the 2FA requirement, the next time the user enters their password, they'll be prompted to write the code that they can obtain through the authenticator app.
 
 <figure><img src="../../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
-
-## User Groups
-
-User groups organize users into a group. You can learn more about it by clicking on the below button:
-
-{% content-ref url="groups.md" %}
-[groups.md](groups.md)
-{% endcontent-ref %}
-
-## Permissions
-
-All users have specific permissions. To get more information about this feature, click on the link below.
-
-{% content-ref url="permissions.md" %}
-[permissions.md](permissions.md)
-{% endcontent-ref %}

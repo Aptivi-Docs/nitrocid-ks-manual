@@ -13,117 +13,153 @@ For beta versions of this series, consult the below link.
 [v0.0.6.0-beta-versions.md](v0.0.6.0-beta-versions.md)
 {% endcontent-ref %}
 
-### Version 0.0.6.0
+***
+
+## <mark style="color:$primary;">Versions</mark>
+
+Here are the versions that were released:
+
+<details>
+
+<summary>Version 0.0.6.0</summary>
 
 Nitrocid KS 0.0.6.0 was out on June 19, 2019 to finalize the initial version of the series with bug fixes. It was also the first version to have renewed the icon for the first time.
 
-#### Additions
+#### <mark style="color:$primary;">Additions</mark>
 
-* Permanent aliases
-* Added more languages such as Dutch
-* Hidden passwords for more security
+* <mark style="color:green;">Permanent aliases</mark>
+* <mark style="color:green;">Added more languages such as Dutch</mark>
+* <mark style="color:green;">Hidden passwords for more security</mark>
 
-#### Improvements
+#### <mark style="color:$primary;">Improvements</mark>
 
-* Updated dependencies
-* Log-in rewritten
-* Fixed several problems with adduser
-* Fixed reboot not clearing the screen
-* Several improvements were made
+* <mark style="color:yellow;">Updated dependencies</mark>
+* <mark style="color:yellow;">Log-in rewritten</mark>
+* <mark style="color:yellow;">Fixed several problems with adduser</mark>
+* <mark style="color:yellow;">Fixed reboot not clearing the screen</mark>
+* <mark style="color:yellow;">Several improvements were made</mark>
 
-#### Removals
+#### <mark style="color:$primary;">Removals</mark>
 
-* cdir command
+* <mark style="color:red;">cdir command</mark>
 
-### Version 0.0.6.1
+</details>
+
+<details>
+
+<summary>Version 0.0.6.1</summary>
 
 This version existed solely to prompt every user who needed to use currency converter for the CurrencyLayer API key, which was incorporated with the free currency API around June 2019. This version was out on June 21, 2019.
 
-#### Improvements
+#### <mark style="color:$primary;">Improvements</mark>
 
-* Users are now required to enter their API Key from apilayer.net to convert currencies
+* <mark style="color:yellow;">Users are now required to enter their API Key from apilayer.net to convert currencies</mark>
 
-#### Removals
+#### <mark style="color:$primary;">Removals</mark>
 
-* Removed currency information from the currency converter help command entry
+* <mark style="color:red;">Removed currency information from the currency converter help command entry</mark>
 
-### Version 0.0.6.2
+</details>
+
+<details>
+
+<summary>Version 0.0.6.2</summary>
 
 0.0.6.2 was released on June 24, 2019, to add modding using C# codefiles for the first time to the kernel. This version was named for being the first sign of slowly bringing C# support to Nitrocid KS, to eventually being C# only in API v3.0 kernels and up.
 
 It was out in several variants: the original version got released at June 24, 2019, the 0.0.6.2a version at the same date, and 0.0.6.2b version at June 25, 2019.
 
-#### Additions
+#### <mark style="color:$primary;">Additions</mark>
 
-* C# modding
-* A warning about using PC listing commands for Windows 10/11 users
-* Processor instructions (0.0.6.2a)
-* sses command to list what SSE versions your processor currently holds (0.0.6.2b)
+* <mark style="color:green;">C# modding</mark>
+* <mark style="color:green;">A warning about using PC listing commands for Windows 10/11 users</mark>
+* <mark style="color:green;">Processor instructions (0.0.6.2a)</mark>
+* <mark style="color:green;">sses command to list what SSE versions your processor currently holds (0.0.6.2b)</mark>
 
-#### Improvements
+#### <mark style="color:$primary;">Improvements</mark>
 
-* Improvements regarding the debug system
+* <mark style="color:yellow;">Improvements regarding the debug system</mark>
 
-### Version 0.0.6.3
+</details>
+
+<details>
+
+<summary>Version 0.0.6.3</summary>
 
 This update was released on June 26, 2019.
 
-#### Additions
+#### <mark style="color:$primary;">Additions</mark>
 
-* Czech language
-* A command to change language
+* <mark style="color:green;">Czech language</mark>
+* <mark style="color:green;">A command to change language</mark>
 
-#### Improvements
+#### <mark style="color:$primary;">Improvements</mark>
 
-* Messages should appear again after logging in
-* Quiet mode is now really quiet
-* Help text shouldn't show up after executes the sses command
+* <mark style="color:yellow;">Messages should appear again after logging in</mark>
+* <mark style="color:yellow;">Quiet mode is now really quiet</mark>
+* <mark style="color:yellow;">Help text shouldn't show up after executes the sses command</mark>
 
-### Version 0.0.6.4
+</details>
+
+<details>
+
+<summary>Version 0.0.6.4</summary>
 
 This version was out on June 28, 2019. It came in three variants: the original one, the 0.0.6.4a which was released on July 6, 2019, and the 0.0.6.4b which was released on July 7 of the same year.
 
-#### Additions
+#### <mark style="color:$primary;">Additions</mark>
 
-* Ubuntu theme
+* <mark style="color:green;">Ubuntu theme</mark>
 
-#### Improvements
+#### <mark style="color:$primary;">Improvements</mark>
 
-* Fixed documentation system printing a lot of new lines
-* Fixed failure when trying to change the language
-* Fixed Linux hardware probing failed even if it succeeded (0.0.6.4a)
-* Download debug symbols upon startup (0.0.6.4b)
-* Other assorted improvements
+* <mark style="color:yellow;">Fixed documentation system printing a lot of new lines</mark>
+* <mark style="color:yellow;">Fixed failure when trying to change the language</mark>
+* <mark style="color:yellow;">Fixed Linux hardware probing failed even if it succeeded (0.0.6.4a)</mark>
+* <mark style="color:yellow;">Download debug symbols upon startup (0.0.6.4b)</mark>
+* <mark style="color:yellow;">Other assorted improvements</mark>
 
-### Version 0.0.6.5
+</details>
+
+<details>
+
+<summary>Version 0.0.6.5</summary>
 
 This series has put the massive changes in each 0.0.x.5 version to stop, because this version didn't have many changes and additions. It was released on July 25, 2019.
 
-#### Additions
+#### <mark style="color:$primary;">Additions</mark>
 
-* Added network progress ETA and speed
+* <mark style="color:green;">Added network progress ETA and speed</mark>
 
-#### Improvements
+#### <mark style="color:$primary;">Improvements</mark>
 
-* Fixed bugs affecting the filesystem module
-* Updated languages
-* Localized manual pages
+* <mark style="color:yellow;">Fixed bugs affecting the filesystem module</mark>
+* <mark style="color:yellow;">Updated languages</mark>
+* <mark style="color:yellow;">Localized manual pages</mark>
 
-### Version 0.0.6.6
+</details>
+
+<details>
+
+<summary>Version 0.0.6.6</summary>
 
 This version marked the end of currency converters. It took effect on July 26, 2019 with the release of this version.
 
 We now know that the removal was reasonable following the recent inflation, as well as the inaccuracy of the currency API providers.
 
-#### Improvements
+#### <mark style="color:$primary;">Improvements</mark>
 
-* Updated the kernel manual page to add new commands
+* <mark style="color:yellow;">Updated the kernel manual page to add new commands</mark>
 
-#### Removals
+#### <mark style="color:$primary;">Removals</mark>
 
-* Removed the currency converter
+* <mark style="color:red;">Removed the currency converter</mark>
 
-## Known bugs
+</details>
+
+***
+
+## <mark style="color:$primary;">Known bugs</mark>
 
 Initial documentation for these versions have mentioned the following known bugs in the "`troubleshooting`" document: _(original wording preserved for brevity - only covers pre-2021 releases)_
 

@@ -7,11 +7,13 @@ icon: square-w
 
 <figure><img src="../../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="info" %}
-As of 0.1.0, this feature has been moved to the kernel addons.
-{% endhint %}
+You can start the game with the `wordle` command. It gives you 8 tries to guess the right word based on the amount of characters within the random word.
 
-You can start the game with the `wordle` command. It gives you 8 tries to guess the right word based on the amount of characters within the random word. The game does the following:
+***
+
+## <mark style="color:$primary;">Game Rules</mark>
+
+The game does the following:
 
 * If the written character has no match in the entire word, the box is not highlighted by any color.
 * Any written character after a wrong attempt will be highlighted as orange to give you the hint of what the word should be.
@@ -19,9 +21,10 @@ You can start the game with the `wordle` command. It gives you 8 tries to guess 
 
 If you guessed all the characters right, you win the game. If you guessed the word wrong after 8 tries, the game is over.
 
-## Controls
+***
 
-This game contains the following controls to help you play:
+## <mark style="color:$primary;">Game Controls</mark>
 
-* `Any character`: Place a character
-* `Escape`: Quits the game
+Below controls are supported:
+
+<table><thead><tr><th width="130">Keybinding</th><th>Description</th></tr></thead><tbody><tr><td><code>Any key</code> </td><td>Submits a character</td></tr><tr><td><code>ESC</code></td><td>Exits the game</td></tr></tbody></table>

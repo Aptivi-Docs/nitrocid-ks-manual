@@ -7,14 +7,18 @@ icon: up
 
 This page lists all the changes that have been made from 0.1.0 Beta 1 to 0.1.0 Beta 2. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page where it highlights the most important changes.
 
-## From Beta 1 to Beta 2
+***
+
+## <mark style="color:$primary;">From Beta 1 to Beta 2</mark>
 
 During Beta 2's development, we have made the following breaking changes:
 
-### Employed `ColorPrint.Core` for color wheel
+<details>
+
+<summary>Employed <code>ColorPrint.Core</code> for color wheel</summary>
 
 {% code title="ColorWheelOpen.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Namespace ConsoleBase.Colors
     Public Module ColorWheelOpen
 ```
@@ -26,11 +30,15 @@ The color wheel was implemented in the kernel to allow color selection. However,
 Merge your calls to the `ColorWheelOpen` class to `ColorPrint.Core` as it's easier to use and more portable than the former class.
 {% endhint %}
 
-### Removed the country-based RSS feed selector
+</details>
+
+<details>
+
+<summary>Removed the country-based RSS feed selector</summary>
 
 {% code title="RSSTools.cs" lineNumbers="true" %}
 ```csharp
-public static void OpenFeedSelector()
+public static void OpenFeedSelector() { }
 ```
 {% endcode %}
 
@@ -40,13 +48,17 @@ The feed selector used to prompt you for a country so that you can select a feed
 Its functionality will be replaced with the bookmarked feed selector. Meanwhile, it's advisable to stop using this function on your mods.
 {% endhint %}
 
-### Removed `UseCtrlCAsInput` from `ReadLine()`'s
+</details>
+
+<details>
+
+<summary>Removed <code>UseCtrlCAsInput</code> from <code>ReadLine()</code>'s</summary>
 
 {% code title="Input.cs" lineNumbers="true" %}
 ```csharp
-public static string ReadLine(bool UseCtrlCAsInput)
-public static string ReadLine(string InputText, string DefaultValue, bool UseCtrlCAsInput)
-public static string ReadLineUnsafe(string InputText, string DefaultValue, bool UseCtrlCAsInput)
+public static string ReadLine(bool UseCtrlCAsInput) { }
+public static string ReadLine(string InputText, string DefaultValue, bool UseCtrlCAsInput) { }
+public static string ReadLineUnsafe(string InputText, string DefaultValue, bool UseCtrlCAsInput) { }
 ```
 {% endcode %}
 
@@ -56,29 +68,41 @@ public static string ReadLineUnsafe(string InputText, string DefaultValue, bool 
 We advice you to cease using this variable in the above functions.
 {% endhint %}
 
-### Removed `SaveCurrDir()`
+</details>
+
+<details>
+
+<summary>Removed <code>SaveCurrDir()</code></summary>
 
 {% code title="CurrentDirectory.cs" lineNumbers="true" %}
 ```csharp
-public static void SaveCurrDir()
-public static bool TrySaveCurrDir()
+public static void SaveCurrDir() { }
+public static bool TrySaveCurrDir() { }
 ```
 {% endcode %}
 
-This function used to save the current directory value to the kernel configuration file stored in the `%LOCALAPPDATA%/KS/KernelMainConfig.json` for Windows or the `$HOME/.config/ks/KernelMainConfig.json`. Following the recent improvements in the configuration system that took place two times during 0.1.0's development, the `SaveCurrDir()` function was effectively reduced to a single call to the `Config.CreateConfig()` function, which already deals with this kind of change, rendering this function useless. As a result, we decided to remove this function as it added no value and was just an extraneous wrapper function.
+This function used to save the current directory value to the kernel configuration file stored in the `%LOCALAPPDATA%/KS/KernelMainConfig.json` for Windows or the `$HOME/.config/ks/KernelMainConfig.json`.
+
+Following the recent improvements in the configuration system that took place two times during 0.1.0's development, the `SaveCurrDir()` function was effectively reduced to a single call to the `Config.CreateConfig()` function, which already deals with this kind of change, rendering this function useless.
+
+As a result, we decided to remove this function as it added no value and was just an extraneous wrapper function.
 
 {% hint style="warning" %}
 If you want to save the current directory value in the future, please use the kernel settings application to save the configuration. Programmatically, you'll have to call the `Config.CreateConfig()` function instead of the two above functions.
 {% endhint %}
 
-### Group system and the User Management API
+</details>
+
+<details>
+
+<summary>Group system and the User Management API</summary>
 
 {% code title="UserManagement.cs" lineNumbers="true" %}
 ```csharp
-public static void LoadUserToken()
-public static JToken GetUserProperty(string User, UserProperty PropertyType)
-public static void SetUserProperty(string User, UserProperty PropertyType, JToken Value)
-public static void InitializeSystemAccount()
+public static void LoadUserToken() { }
+public static JToken GetUserProperty(string User, UserProperty PropertyType) { }
+public static void SetUserProperty(string User, UserProperty PropertyType, JToken Value) { }
+public static void InitializeSystemAccount() { }
 ```
 {% endcode %}
 
@@ -86,10 +110,7 @@ We've added a real group system to the KS.Users namespace under Groups in order 
 
 The following functions were documented:
 
-* `LoadUserToken()`: Tries to manually deserialize the user configuration JSON file to be usable with all the user management functions.
-* `InitializeSystemAccount()`: Tries to initialize a root account with a defined password from the same user token.
-* `GetUserProperty()`: Gets a user property as a JSON token, JToken, which has to be manually cast to either a string, boolean, or array of strings.
-* `SetUserProperty()`: Sets a user property, taking an uncasted JSON token that represents either a string, boolean, or array of strings.
+<table><thead><tr><th width="240.3333740234375">Function</th><th>Description</th></tr></thead><tbody><tr><td><code>LoadUserToken()</code></td><td>Tries to manually deserialize the user configuration JSON file to be usable with all the user management functions.</td></tr><tr><td><code>InitializeSystemAccount()</code></td><td>Tries to initialize a root account with a defined password from the same user token.</td></tr><tr><td><code>GetUserProperty()</code></td><td>Gets a user property as a JSON token, JToken, which has to be manually cast to either a string, boolean, or array of strings.</td></tr><tr><td><code>SetUserProperty()</code></td><td>Sets a user property, taking an uncasted JSON token that represents either a string, boolean, or array of strings.</td></tr></tbody></table>
 
 The first two functions were removed, because they were deemed to be unnecessary for a long time. A re-work to the user management API made it reasonable to remove these functions.
 
@@ -99,15 +120,19 @@ However, the last two functions were removed because it was found to be complica
 Because the user management API reached to a stage when it was re-written to simplify things, we advice you to cease using these functions.
 {% endhint %}
 
-### Initial implementation of the TUI
+</details>
+
+<details>
+
+<summary>Initial implementation of the TUI</summary>
 
 The following classes are affected:
 
 {% code lineNumbers="true" %}
 ```csharp
-public static class ContactsManagerCli
-public static class TaskManagerCli
-public static class FileManagerCli
+public static class ContactsManagerCli { }
+public static class TaskManagerCli { }
+public static class FileManagerCli { }
 ```
 {% endcode %}
 
@@ -115,7 +140,7 @@ The following functions are affected:
 
 {% code lineNumbers="true" %}
 ```csharp
-public static void OpenMain()
+public static void OpenMain() { }
 ```
 {% endcode %}
 
@@ -137,7 +162,11 @@ This removal was necessary to avoid code repetition, effectively making maintena
 If you want to open the three CLIs, refer to the above code snippet about the usage of `OpenInteractiveTui()`.
 {% endhint %}
 
-### Added warning reports to the splash interface
+</details>
+
+<details>
+
+<summary>Added warning reports to the splash interface</summary>
 
 {% code title="ISplash.cs" lineNumbers="true" %}
 ```csharp
@@ -151,7 +180,11 @@ The splash reporter used to only report the progress and the error messages duri
 Mods that implement splashes now have to implement the above function to be able to report warnings.
 {% endhint %}
 
-### Added `ReadToEndAndSeek()` to filesystem driver
+</details>
+
+<details>
+
+<summary>Added <code>ReadToEndAndSeek()</code> to filesystem driver</summary>
 
 {% code title="IFilesystemDriver.cs" lineNumbers="true" %}
 ```csharp
@@ -167,7 +200,11 @@ As part of the removal of Extensification dependency from Nitrocid KS as a resul
 Mods that implement filesystem drivers now have to implement the above function to be able to be installed on N-KS mod API 3.0.25.7 or later.
 {% endhint %}
 
-### Removed `ConsoleWrapper.WindowTop`
+</details>
+
+<details>
+
+<summary>Removed <code>ConsoleWrapper.WindowTop</code></summary>
 
 {% code title="ConsoleWrapper.cs" lineNumbers="true" %}
 ```csharp
@@ -181,7 +218,11 @@ public static int WindowTop
 We advice you to replace all instances of this function from `ConsoleWrapper` with `0`, and remove all implementations of this property from all your `Console` drivers.
 {% endhint %}
 
-### Converted string char variables to chars
+</details>
+
+<details>
+
+<summary>Converted string char variables to chars</summary>
 
 {% code lineNumbers="true" %}
 ```csharp
@@ -217,7 +258,11 @@ The following writers are also affected and are found to be using characters as 
 For mods that treat characters as strings and use one of the above classes and variables that hold only one character, you'll have to refactor the logic to treat these characters as chars. However, if you use char variables and convert them to string in either the writers or the char variables, such as `CustomLowerLeftCornerChar`, you'll no longer need to convert your char variables to strings.
 {% endhint %}
 
-### Added finding files using regular expressions
+</details>
+
+<details>
+
+<summary>Added finding files using regular expressions</summary>
 
 The following functions are added to the filesystem driver:
 
@@ -233,7 +278,11 @@ This function gets all the filesystem entries found under the specified parent d
 Mods that implement filesystem drivers now have to implement the above function to be able to use it. It's also advisable to use the regex driver in the function implementation.
 {% endhint %}
 
-### Removed configurable maintenance mode
+</details>
+
+<details>
+
+<summary>Removed configurable maintenance mode</summary>
 
 {% code title="Flags.cs" lineNumbers="true" %}
 ```csharp
@@ -241,17 +290,21 @@ public static bool Maintenance
 ```
 {% endcode %}
 
-Long ago, we used to allow users to force the kernel to maintenance mode upon setting this value right from the configuration application. However, this can be abused, so we decided to remove it as a configuration entry, but the mode itself stays. You can still run the kernel in maintenance mode by passing `maintenance` as a command line argument to Nitrocid's entry point. Refer to the below page for more information:
+Long ago, we used to allow users to force the kernel to maintenance mode upon setting this value right from the configuration application. However, this can be abused, so we decided to remove it as a configuration entry, but the mode itself stays.
 
-{% content-ref url="../../../advanced-and-power-users/inner-workings/inner-essentials/kernel-arguments.md" %}
-[kernel-arguments.md](../../../advanced-and-power-users/inner-workings/inner-essentials/kernel-arguments.md)
-{% endcontent-ref %}
+You can still run the kernel in maintenance mode by passing `maintenance` as a command line argument to Nitrocid's entry point. Refer to the below page for more information:
+
+<a href="../../../advanced-and-power-users/inner-workings/inner-essentials/kernel-arguments.md" class="button primary">Kernel Arguments</a>
 
 {% hint style="danger" %}
 We advice you to cease using this flag. Maintenance mode doesn't allow mods to load, anyways.
 {% endhint %}
 
-### Migrated two speed dial types to one JSON file
+</details>
+
+<details>
+
+<summary>Migrated two speed dial types to one JSON file</summary>
 
 {% code title="Paths.cs" lineNumbers="true" %}
 ```csharp
@@ -275,10 +328,10 @@ SFTPSpeedDial,
 
 {% code title="SpeedDialTools.cs" lineNumbers="true" %}
 ```csharp
-public static KernelPathType GetPathTypeFromSpeedDialType(SpeedDialType SpeedDialType)
-public static JObject GetTokenFromSpeedDial(SpeedDialType SpeedDialType)
-public static Dictionary<string, JToken> ListSpeedDialEntries(SpeedDialType SpeedDialType)
-public static JToken GetQuickConnectInfo(SpeedDialType SpeedDialType)
+public static KernelPathType GetPathTypeFromSpeedDialType(SpeedDialType SpeedDialType) { }
+public static JObject GetTokenFromSpeedDial(SpeedDialType SpeedDialType) { }
+public static Dictionary<string, JToken> ListSpeedDialEntries(SpeedDialType SpeedDialType) { }
+public static JToken GetQuickConnectInfo(SpeedDialType SpeedDialType) { }
 ```
 {% endcode %}
 
@@ -292,7 +345,11 @@ The commit said:
 We advice you to replace all calls to type-specific enumerations and paths with a single speed dial enumeration value, `SpeedDial`, and path, `SpeedDialPath`, respectively. Also, we advice you to use the three functions that stay, but without the type, and cease using the `GetPathTypeFromSpeedDialType()` function.
 {% endhint %}
 
-### Added support for `SwitchInfo`
+</details>
+
+<details>
+
+<summary>Added support for <code>SwitchInfo</code></summary>
 
 {% code title="CommandArgumentInfo.cs" lineNumbers="true" %}
 ```csharp
@@ -304,7 +361,7 @@ public CommandArgumentInfo(HelpUsage[] HelpUsages, bool ArgumentsRequired, int M
 
 {% code title="HelpUsage.cs" lineNumbers="true" %}
 ```csharp
-public class HelpUsage
+public class HelpUsage { }
 ```
 {% endcode %}
 
@@ -320,7 +377,6 @@ We advice you to use the below constructor to accommodate the above changes made
 ```csharp
 public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool ArgumentsRequired, int MinimumArguments, bool AcceptsSet = false, Func<string, int, char[], string[]> AutoCompleter = null)
 ```
-{% endhint %}
 
 An example is provided below:
 
@@ -337,13 +393,18 @@ An example is provided below:
 },
 ```
 {% endcode %}
+{% endhint %}
 
-### Migrated text tools
+</details>
+
+<details>
+
+<summary>Migrated text tools</summary>
 
 {% code title="Deleted classes" lineNumbers="true" %}
 ```csharp
-public static class StringManipulate
-public static class StringQuery
+public static class StringManipulate { }
+public static class StringQuery { }
 ```
 {% endcode %}
 
@@ -356,7 +417,11 @@ As `TextTools` matured with different string tools, we decided to migrate the fo
 As a result, we advice you to use the `TextTools` class to execute the above two functions. Their signatures and behavior remains unchanged. This means removing any reference to the two classes found under the `KS.Misc.Reflection` namespace.
 {% endhint %}
 
-### Moved `BannerFigletFont` to `WelcomeMessage`
+</details>
+
+<details>
+
+<summary>Moved <code>BannerFigletFont</code> to <code>WelcomeMessage</code></summary>
 
 {% code title="KernelTools.cs" lineNumbers="true" %}
 ```csharp
@@ -371,7 +436,11 @@ As this property doesn't have to do with the kernel tools, we decided to move fr
 If you want to continue using this property, we suggest that you change the `using KS.Kernel` line to replace the namespace with the `KS.Misc.Writers.MiscWriters` namespace in order to be able to reference `BannerFigletFont` under `WelcomeMessage`.
 {% endhint %}
 
-### Easier way to render info into the second pane
+</details>
+
+<details>
+
+<summary>Easier way to render info into the second pane</summary>
 
 {% code title="IInteractiveTui.cs" lineNumbers="true" %}
 ```csharp
@@ -379,7 +448,9 @@ public string RenderInfoOnSecondPane(object item)
 ```
 {% endcode %}
 
-When we first introduced the interactive TUI feature, we had to leave the entire "rendering to the second pane" logic to your interactive TUI instance. However, since this involves having to wrap the informational pane and to work out the text lengths and console positions yourself, we've placed these requirements so that it's up to the handler to handle printing the information, effectively replacing the function above with `GetInfoFromItem`.
+When we first introduced the interactive TUI feature, we had to leave the entire "rendering to the second pane" logic to your interactive TUI instance.
+
+However, since this involves having to wrap the informational pane and to work out the text lengths and console positions yourself, we've placed these requirements so that it's up to the handler to handle printing the information, effectively replacing the function above with `GetInfoFromItem`.
 
 {% hint style="info" %}
 It's now easier to render the information pane using just your text! Just form your final informational text by implementing the `GetInfoFromItem` function to return said information. The function signature is found below:
@@ -389,27 +460,37 @@ public string GetInfoFromItem(object item)
 ```
 {% endhint %}
 
-### Enhanced the screen locking feature
+</details>
+
+<details>
+
+<summary>Enhanced the screen locking feature</summary>
 
 {% code title="Login.cs" lineNumbers="true" %}
 ```csharp
-public static void ShowPasswordPrompt(string usernamerequested)
+public static void ShowPasswordPrompt(string usernamerequested) { }
 ```
 {% endcode %}
 
-The screen locking feature was malfunctioning for a long time. Unfortunately, it went under the radar, so it wasn't looked at. We've finally managed to enhance the screen locking feature by checking our heuristics. Moreover, we had to separate the `ShowPasswordPrompt` function from trying to log the user in, as this was the requirement in enhancing the screen lock, since it was used by this feature.
+The screen locking feature was malfunctioning for a long time. Unfortunately, it went under the radar, so it wasn't looked at.
+
+We've finally managed to enhance the screen locking feature by checking our heuristics. Moreover, we had to separate the `ShowPasswordPrompt` function from trying to log the user in, as this was the requirement in enhancing the screen lock, since it was used by this feature.
 
 {% hint style="info" %}
 The `ShowPasswordPrompt` function now contains a return type of `bool`, which returns `true` if the password was valid or if the user database concluded that the password was empty, and `false` if the password was invalid. The new signature is now:
 
 {% code title="Login.cs" lineNumbers="true" %}
 ```csharp
-public static bool ShowPasswordPrompt(string usernamerequested)
+public static bool ShowPasswordPrompt(string usernamerequested) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### Moved journaling related classes to `KS.Kernel.Journaling`
+</details>
+
+<details>
+
+<summary>Moved journaling related classes to <code>KS.Kernel.Journaling</code></summary>
 
 {% code title="JournalManager.cs, JournalStatus.cs" lineNumbers="true" %}
 ```csharp
@@ -423,7 +504,11 @@ We used to place all the journaling-related classes and tools to the `KS.Kernel.
 To continue using these journaling classes, you have to change the `using` statements to point to `KS.Kernel.Journaling`.
 {% endhint %}
 
-### Time and Date API enhancements
+</details>
+
+<details>
+
+<summary>Time and Date API enhancements</summary>
 
 {% code title="Old TimeDate namespace" lineNumbers="true" %}
 ```csharp
@@ -448,7 +533,11 @@ Also, some functions like `GetRemainingTimeFromNow()` have their return types ch
 To keep using these functions, you must now change the imports in relevant code files to `KS.Kernel.Time` and its ancestors to be able to use their classes. You may need to adjust your usage of the functions and/or classes so that the behavior you're expecting remains unchanged.
 {% endhint %}
 
-### Manual page parsing now uses the interactive TUI
+</details>
+
+<details>
+
+<summary>Manual page parsing now uses the interactive TUI</summary>
 
 The manual page viewer used to be so limited in features; you could only advance to the next pages of the manual and exit back to the shell. You had to specify the full manual page title after listing it with the `-list` switch.
 
@@ -456,8 +545,8 @@ The migration of the viewer to the TUI required the following changes:
 
 {% code title="PageManager.cs" lineNumbers="true" %}
 ```csharp
-public static Dictionary<string, Manual> ListAllPages()
-public static Dictionary<string, Manual> ListAllPages(string SearchTerm)
+public static Dictionary<string, Manual> ListAllPages() { }
+public static Dictionary<string, Manual> ListAllPages(string SearchTerm) { }
 ```
 {% endcode %}
 
@@ -465,8 +554,8 @@ The above functions have their return values changed to a `List<Manual>` type. I
 
 {% code title="PageManager.cs and PageParser.cs" lineNumbers="true" %}
 ```csharp
-public static void AddManualPage(string Name, Manual Page)
-public static void InitMan(string ManualFile)
+public static void AddManualPage(string Name, Manual Page) { }
+public static void InitMan(string ManualFile) { }
 ```
 {% endcode %}
 
@@ -474,7 +563,7 @@ The two above functions have changed their signature so they they take a mod nam
 
 {% code title="PageManager.cs" lineNumbers="true" %}
 ```csharp
-public static bool RemoveManualPage(string Name)
+public static bool RemoveManualPage(string Name) { }
 ```
 {% endcode %}
 
@@ -484,7 +573,11 @@ The above function has its signature changed so that instead of the manual page 
 You should adjust the changes as necessary in order for your mod to continue working.
 {% endhint %}
 
-### `ChoiceOutputType` is now standalone
+</details>
+
+<details>
+
+<summary><code>ChoiceOutputType</code> is now standalone</summary>
 
 {% code title="ChoiceStyle.cs" lineNumbers="true" %}
 ```csharp
@@ -506,7 +599,11 @@ You need to remove the ChoiceStyle reference and make it only reference the Choi
 </code></pre>
 {% endhint %}
 
-### Breaking changes following the `OpenConnectionForShell()` implementation
+</details>
+
+<details>
+
+<summary>Breaking changes following the <code>OpenConnectionForShell()</code> implementation</summary>
 
 {% code title="IShellInfo.cs" lineNumbers="true" %}
 ```csharp
@@ -514,7 +611,9 @@ bool AcceptsNetworkConnection { get; }
 ```
 {% endcode %}
 
-In order for `OpenConnectionForShell()` to be able to distinguish the shells that accept the network connections from the shells that don't, we needed to add the above property to the interface implementation of the `ShellInfo` class. The base class has been updated so that it implements the above property as false so that you don't have to override this property in the non-networked shells implemented either by Nitrocid or by your mods:
+In order for `OpenConnectionForShell()` to be able to distinguish the shells that accept the network connections from the shells that don't, we needed to add the above property to the interface implementation of the `ShellInfo` class.
+
+The base class has been updated so that it implements the above property as false so that you don't have to override this property in the non-networked shells implemented either by Nitrocid or by your mods:
 
 {% code title="BaseShellInfo.cs" lineNumbers="true" %}
 ```csharp
@@ -526,11 +625,15 @@ public virtual bool AcceptsNetworkConnection => false;
 For most shells that don't connect to any network, you don't have to override the above property. Nitrocid KS 0.1.0 with API versions lower than 3.0.25.34 are unable to use `ShellInfo` instances implemented for such versions.
 {% endhint %}
 
-### Renamed Shell to ShellManager
+</details>
+
+<details>
+
+<summary>Renamed Shell to <code>ShellManager</code></summary>
 
 {% code title="Shell.cs" lineNumbers="true" %}
 ```csharp
-public static class Shell
+public static class Shell { }
 ```
 {% endcode %}
 
@@ -542,12 +645,16 @@ However, this naming has introduced problems for us because we needed to write `
 We advice you to change the references to the `Shell` class to use the `ShellManager` class.
 {% endhint %}
 
-### `ColorTools` class renamed to `KernelColorTools`
+</details>
+
+<details>
+
+<summary><code>ColorTools</code> class renamed to <code>KernelColorTools</code></summary>
 
 {% code title="ColorTools.cs and ColorSetErrorReasons.cs" lineNumbers="true" %}
 ```csharp
-public static class ColorTools
-public enum ColorSetErrorReasons
+public static class ColorTools { }
+public enum ColorSetErrorReasons { }
 ```
 {% endcode %}
 
@@ -577,24 +684,28 @@ All calls to the kernel's `ColorTools` will now have to be called through the `K
 </code></pre>
 {% endhint %}
 
-### Namespace movements
+</details>
+
+<details>
+
+<summary>Namespace movements</summary>
 
 ```csharp
-namespace KS.Misc.Execution
-namespace KS.Misc.Threading
-namespace KS.Misc.Writers
-namespace KS.Scripting
-namespace KS.Hardware
+namespace KS.Misc.Execution { }
+namespace KS.Misc.Threading { }
+namespace KS.Misc.Writers { }
+namespace KS.Scripting { }
+namespace KS.Hardware { }
 ```
 
 To better organize these namespaces, we decided to move them to more appropriate places outlined below:
 
 ```csharp
-namespace KS.Shell.ShellBase.Commands.Execution
-namespace KS.Kernel.Threading
-namespace KS.ConsoleBase.Writers
-namespace KS.Shell.ShellBase.Scripting
-namespace KS.Kernel.Hardware
+namespace KS.Shell.ShellBase.Commands.Execution { }
+namespace KS.Kernel.Threading { }
+namespace KS.ConsoleBase.Writers { }
+namespace KS.Shell.ShellBase.Scripting { }
+namespace KS.Kernel.Hardware { }
 ```
 
 First, the `Execution` namespace had to do with executing processes, which was only being done by the shell and by the TMUX pane size detector. While it was referenced outside any shell code, we feel that it would be more appropriate to move it to the shell code.
@@ -611,14 +722,18 @@ FInally, for the hardware code, it went straight to the kernel namespace as it f
 You'll have to adjust the namespaces as indicated in the second code block that shows the new namespaces for your mod to continue working.
 {% endhint %}
 
-### Moved JSON beautifier and minifier functions to `JsonTools`
+</details>
+
+<details>
+
+<summary>Moved JSON beautifier and minifier functions to <code>JsonTools</code></summary>
 
 {% code title="JsonBeautifier.cs and JsonMinifier.cs" lineNumbers="true" %}
 ```csharp
-public static string BeautifyJson(string JsonFile)
-public static string BeautifyJsonText(string JsonText)
-public static string MinifyJson(string JsonFile)
-public static string MinifyJsonText(string JsonText)
+public static string BeautifyJson(string JsonFile) { }
+public static string BeautifyJsonText(string JsonText) { }
+public static string MinifyJson(string JsonFile) { }
+public static string MinifyJsonText(string JsonText) { }
 ```
 {% endcode %}
 
@@ -628,7 +743,11 @@ These functions used to exist in their own namespace with their own classes that
 To continue using these functions, you'll now have to change the using clause to point to the `KS.Misc.Editors.JsonShell` namespace and the class to `JsonTools`.
 {% endhint %}
 
-### Moved path lookup properties
+</details>
+
+<details>
+
+<summary>Moved path lookup properties</summary>
 
 {% code title="ShellManager.cs" lineNumbers="true" %}
 ```csharp
@@ -645,11 +764,15 @@ These path lookup properties used to exist in the shell management code, which i
 If you want to continue using these variables, we suggest you to change the class in all your references to them from `ShellManager` to `PathLookupTools`.
 {% endhint %}
 
-### Removed the field manager
+</details>
+
+<details>
+
+<summary>Removed the field manager</summary>
 
 {% code title="FieldManager.cs" lineNumbers="true" %}
 ```csharp
-public static class FieldManager
+public static class FieldManager { }
 ```
 {% endcode %}
 
@@ -673,3 +796,5 @@ With regards to the last breaking change, which was done by commit [b96a724](htt
 {% hint style="danger" %}
 We advice you to cease using this class and its functions, especially since it's useless for public fields that will either get converted to properties or get removed (if any).
 {% endhint %}
+
+</details>

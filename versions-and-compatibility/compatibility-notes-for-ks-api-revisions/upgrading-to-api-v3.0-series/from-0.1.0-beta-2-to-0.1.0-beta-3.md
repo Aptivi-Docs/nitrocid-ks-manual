@@ -7,11 +7,29 @@ icon: up
 
 This page lists all the changes that have been made from 0.1.0 Beta 2 to 0.1.0 Beta 3. For upgrading your mods from 0.0.24.x directly to the 0.1.0 series, use the main upgrade page instead.
 
-### Migrated to `ProvidedArgumentsInfo`
+***
+
+## <mark style="color:$primary;">Terminaux 2.0 migration changes</mark>
+
+Nitrocid KS 0.1.0 Beta 3 uses Terminaux 2.0 to handle color work. As a result, we need you to consult the changelogs for this version of Terminaux here:
+
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v2.0" %}
+[API v2.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v2.0)
+{% endcontent-ref %}
+
+***
+
+## <mark style="color:$primary;">Other changes</mark>
+
+The following breaking changes were made:
+
+<details>
+
+<summary>Migrated to <code>ProvidedArgumentsInfo</code></summary>
 
 ```csharp
-public class ProvidedCommandArgumentsInfo
-public class ProvidedArgumentArgumentsInfo
+public class ProvidedCommandArgumentsInfo { }
+public class ProvidedArgumentArgumentsInfo { }
 ```
 
 The first class provided information about the command arguments. It held information about user input, and it indicated whether the user input was correct or not. It worked on the UESH shell and its sub-shells either implemented by ourselves or by a custom mod. The second class, `ProvidedArgumentArgumentsInfo`, did exactly the same thing, but with one difference: it worked with kernel arguments.
@@ -25,7 +43,11 @@ However, this was considered code repetition as 95% of the parts were repeated w
 We advice you to replace all calls to `Provided*ArgumentsInfo` constructors and start using the `Parse*Arguments()` function found in `ArgumentsParser`, which does the very job of parsing commands and kernel arguments.
 {% endhint %}
 
-### Migrated TUI apps' colors to `TuiColors`
+</details>
+
+<details>
+
+<summary>Migrated TUI apps' colors to <code>TuiColors</code></summary>
 
 We used to provide users options to change each built-in TUI application's colors, like the file manager, the contacts manager, and the task manager. Sadly, we had to migrate all these configuration entries to a single configurable TUI color class, `TuiColors`.
 
@@ -33,10 +55,14 @@ We used to provide users options to change each built-in TUI application's color
 Currently, there is no plan that proposes restoring this.
 {% endhint %}
 
-### Moved `KernelErrorLevel` to `Kernel.Exceptions`
+</details>
+
+<details>
+
+<summary>Moved <code>KernelErrorLevel</code> to <code>Kernel.Exceptions</code></summary>
 
 ```csharp
-public enum KernelErrorLevel
+public enum KernelErrorLevel { }
 ```
 
 `KernelErrorLevel` was used by the kernel panic module, a group of functions that get executed when there was a kernel error, depending on the severity of the error and the state of the kernel.
@@ -47,11 +73,15 @@ Looking at the structure, we saw that it was left alone in the process of migrat
 Although the KernelErrorLevel enumeration is public, the kernel error functions are internal, so we may remove visibility from the public API at some point during the Beta 3 development.
 {% endhint %}
 
-### Aliases and usability problems
+</details>
+
+<details>
+
+<summary>Aliases and usability problems</summary>
 
 ```csharp
-public static bool AddAlias(string SourceAlias, string Destination, string Type)
-public static bool AddAlias(string SourceAlias, string Destination, ShellType Type)
+public static bool AddAlias(string SourceAlias, string Destination, string Type) { }
+public static bool AddAlias(string SourceAlias, string Destination, ShellType Type) { }
 ```
 
 Aliases were first implemented as hard-coded aliases back on 0.0.1, but it got evolved into user-configurable aliases and went well with no problems.
@@ -64,17 +94,21 @@ However, we've noticed that the alias creation logic treats the source (a comman
 We can't document these APIs as a result of this confusion until we rewrite them with care. This re-write will reduce confusion between the source and the target, and ensure that aliases are added properly and that the tests are reporting success.
 {% endhint %}
 
-### Screensaver probing changed
+</details>
+
+<details>
+
+<summary>Screensaver probing changed</summary>
 
 ```csharp
-public class CustomSaverInfo
-public static class CustomSaverParser
-public static void InitializeCustomSaverSettings()
-public static void SaveCustomSaverSettings()
-public static void AddCustomSaverToSettings()
-public static void RemoveCustomSaverFromSettings()
-public static object GetCustomSaverSettings()
-public static bool SetCustomSaverSettings()
+public class CustomSaverInfo { }
+public static class CustomSaverParser { }
+public static void InitializeCustomSaverSettings() { }
+public static void SaveCustomSaverSettings() { }
+public static void AddCustomSaverToSettings() { }
+public static void RemoveCustomSaverFromSettings() { }
+public static object GetCustomSaverSettings() { }
+public static bool SetCustomSaverSettings() { }
 Dictionary<string, object> ScreensaverSettings { get; set; }
 ```
 
@@ -99,11 +133,15 @@ In order to be able to use a screensaver provided by your mods, they must now ca
 You can check to see if your screensaver is initialized by calling the `IsScreensaverRegistered()` function.
 {% endhint %}
 
-### Screensaver management class renamed
+</details>
+
+<details>
+
+<summary>Screensaver management class renamed</summary>
 
 {% code title="Screensaver.cs" lineNumbers="true" %}
 ```csharp
-public static class Screensaver
+public static class Screensaver { }
 ```
 {% endcode %}
 
@@ -115,11 +153,15 @@ As a result of merging to C# on Milestone 2 of 0.1.0, we've decided to make fina
 We recommend that you change all references to `ScreensaverManager` when migrating from 0.1.0 Beta 2 or lower.
 {% endhint %}
 
-### SSH class renamed
+</details>
+
+<details>
+
+<summary>SSH class renamed</summary>
 
 {% code title="SSH.cs" lineNumbers="true" %}
 ```csharp
-public static class SSH
+public static class SSH { }
 ```
 {% endcode %}
 
@@ -131,20 +173,24 @@ As a result of merging to C# on Milestone 2 of 0.1.0, we've decided to make fina
 We recommend that you change all references to `SSHTools` when migrating from 0.1.0 Beta 2 or lower.
 {% endhint %}
 
-### Speed Dials and Network Connections
+</details>
+
+<details>
+
+<summary>Speed Dials and Network Connections</summary>
 
 {% code lineNumbers="true" %}
 ```csharp
 // FTPTools.cs and SFTPTools.cs
-public static void QuickConnect()
-public static void SFTPQuickConnect()
+public static void QuickConnect() { }
+public static void SFTPQuickConnect() { }
 
 // SpeedDialTools.cs
-public static void AddEntryToSpeedDial(string Address, int Port, SpeedDialType SpeedDialType, bool ThrowException = true, params object[] arguments)
-public static bool TryAddEntryToSpeedDial(string Address, int Port, SpeedDialType SpeedDialType, bool ThrowException = true, params object[] arguments)
+public static void AddEntryToSpeedDial(string Address, int Port, SpeedDialType SpeedDialType, bool ThrowException = true, params object[] arguments) { }
+public static bool TryAddEntryToSpeedDial(string Address, int Port, SpeedDialType SpeedDialType, bool ThrowException = true, params object[] arguments) { }
 
 // SpeedDialType.cs
-public enum SpeedDialType
+public enum SpeedDialType { }
 ```
 {% endcode %}
 
@@ -156,7 +202,11 @@ After Beta 2 was released, we finally took action to remove `SpeedDialType` so t
 Replace all calls to `SpeedDialType` with `NetworkConnectionType`. For custom network connection types, you can use new overloads of the two `Add` functions, which take a string representation of your custom network connection type.
 {% endhint %}
 
-### Handling multiple `CommandArgumentInfo` instances
+</details>
+
+<details>
+
+<summary>Handling multiple <code>CommandArgumentInfo</code> instances</summary>
 
 ```csharp
 // For arguments
@@ -186,12 +236,16 @@ The following parameters were changed:
   * After: `CommandArgumentInfo[] ArgArgumentInfo`
 {% endhint %}
 
-### Screensaver displayer class is no longer public
+</details>
+
+<details>
+
+<summary>Screensaver displayer class is no longer public</summary>
 
 {% code title="ScreensaverDisplayer.cs" lineNumbers="true" %}
 ```csharp
-public static class ScreensaverDisplayer
-public static void DisplayScreensaver(BaseScreensaver Screensaver)
+public static class ScreensaverDisplayer { }
+public static void DisplayScreensaver(BaseScreensaver Screensaver) { }
 ```
 {% endcode %}
 
@@ -203,11 +257,15 @@ This function was used as a thread handler, but it looks like that it can be cal
 It's recommended to cease using the above class and start using `ShowSavers()` as the only suitable alternative.
 {% endhint %}
 
-### Error codes and `-set` unified switch
+</details>
+
+<details>
+
+<summary>Error codes and <code>-set</code> unified switch</summary>
 
 {% code title="BaseCommand.cs" lineNumbers="true" %}
 ```csharp
-public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) { }
 ```
 {% endcode %}
 
@@ -226,16 +284,20 @@ Please note that there are no built-in commands which make use of the second fea
 Your mods and its commands, however, will have to adapt to the first feature by changing the signature shown at the top of this section to the below signature:
 
 ```csharp
-public virtual int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+public virtual int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue) { }
 ```
 {% endhint %}
 
-### Moved notification priority and type enumerations
+</details>
+
+<details>
+
+<summary>Moved notification priority and type enumerations</summary>
 
 {% code title="NotificationManager.cs" lineNumbers="true" %}
 ```csharp
-public enum NotifPriority
-public enum NotifType
+public enum NotifPriority { }
+public enum NotifType { }
 ```
 {% endcode %}
 
@@ -248,7 +310,11 @@ You no longer have to reference NotificationManager before one of the two above 
 * `NotifType` -> `NotificationType`
 {% endhint %}
 
-### Commands that don't accept `-set`
+</details>
+
+<details>
+
+<summary>Commands that don't accept <code>-set</code></summary>
 
 {% code title="CommandArgumentInfo.cs" lineNumbers="true" %}
 ```csharp
@@ -270,7 +336,11 @@ public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool Argum
 ```
 {% endhint %}
 
-### Used SemanVer on `KernelUpdate`
+</details>
+
+<details>
+
+<summary>Used SemanVer on <code>KernelUpdate</code></summary>
 
 {% code title="KernelUpdate.cs" lineNumbers="true" %}
 ```csharp
@@ -286,11 +356,15 @@ As a result, we no longer have to deal with conflicts, like debates about 0.1.0 
 We advice you to adjust your usage of `UpdateVersion` so that it is suitable with the `SemVer` class.
 {% endhint %}
 
-### Removed `KernelUpdateInfo`
+</details>
+
+<details>
+
+<summary>Removed <code>KernelUpdateInfo</code></summary>
 
 {% code title="KernelUpdateInfo.cs" lineNumbers="true" %}
 ```csharp
-public class KernelUpdateInfo
+public class KernelUpdateInfo { }
 ```
 {% endcode %}
 
@@ -305,36 +379,40 @@ However, `KernelUpdateInfo` was proving its redundancy regarding its functionali
 We advice you to use `KernelUpdate` instead of `KernelUpdateInfo`.
 {% endhint %}
 
-### Added `FileSystemEntry`
+</details>
+
+<details>
+
+<summary>Added <code>FileSystemEntry</code></summary>
 
 {% code title="BaseFilesystemDriver.cs (implements IFilesystemDriver)" lineNumbers="true" %}
 ```csharp
-public virtual List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false)
-public virtual void PrintDirectoryInfo(FileSystemInfo DirectoryInfo)
-public virtual void PrintDirectoryInfo(FileSystemInfo DirectoryInfo, bool ShowDirectoryDetails)
-public virtual void PrintFileInfo(FileSystemInfo FileInfo)
-public virtual void PrintFileInfo(FileSystemInfo FileInfo, bool ShowFileDetails)
-public virtual string SortSelector(FileSystemInfo FileSystemEntry, int MaxLength)
+public virtual List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false) { }
+public virtual void PrintDirectoryInfo(FileSystemInfo DirectoryInfo) { }
+public virtual void PrintDirectoryInfo(FileSystemInfo DirectoryInfo, bool ShowDirectoryDetails) { }
+public virtual void PrintFileInfo(FileSystemInfo FileInfo) { }
+public virtual void PrintFileInfo(FileSystemInfo FileInfo, bool ShowFileDetails) { }
+public virtual string SortSelector(FileSystemInfo FileSystemEntry, int MaxLength) { }
 ```
 {% endcode %}
 
 {% code title="Listing.cs" lineNumbers="true" %}
 ```csharp
-public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false)
+public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false) { }
 ```
 {% endcode %}
 
 {% code title="DirectoryInfoPrinter.cs" lineNumbers="true" %}
 ```csharp
-public static void PrintDirectoryInfo(FileSystemInfo DirectoryInfo)
-public static void PrintDirectoryInfo(FileSystemInfo DirectoryInfo, bool ShowDirectoryDetails)
+public static void PrintDirectoryInfo(FileSystemInfo DirectoryInfo) { }
+public static void PrintDirectoryInfo(FileSystemInfo DirectoryInfo, bool ShowDirectoryDetails) { }
 ```
 {% endcode %}
 
 {% code title="FileInfoPrinter.cs" lineNumbers="true" %}
 ```csharp
-public static void PrintFileInfo(FileSystemInfo FileInfo)
-public static void PrintFileInfo(FileSystemInfo FileInfo, bool ShowFileDetails)
+public static void PrintFileInfo(FileSystemInfo FileInfo) { }
+public static void PrintFileInfo(FileSystemInfo FileInfo, bool ShowFileDetails) { }
 ```
 {% endcode %}
 
@@ -346,7 +424,11 @@ As a result, we've replaced every `FileSystemInfo` instances with FileSystemEntr
 We suggest that you change how you call the above functions so that you can use an instance of `FileSystemEntry`. You can create an instance of it using the constructor.
 {% endhint %}
 
-### New way of getting a list of themes
+</details>
+
+<details>
+
+<summary>New way of getting a list of themes</summary>
 
 {% code title="ThemeTools.cs" lineNumbers="true" %}
 ```csharp
@@ -358,9 +440,9 @@ We used to resort to using the above field to get a list of available themes and
 
 Also, we didn't want to add a single theme to three different places, so we decided to just let the kernel populate the themes itself by splitting one massive resources file into three different resource files:
 
-* LanguagesResources
-* SettingsResources
-* ThemesResources
+* `LanguagesResources`
+* `SettingsResources`
+* `ThemesResources`
 
 We then make the above field private, but you can get a copy of it using the `GetInstalledThemes()` function. We've also changed the resource name of the default theme from `_Default` to `Default` as we're no longer in the Visual Basic land.
 
@@ -372,11 +454,15 @@ public static Dictionary<string, ThemeInfo> GetInstalledThemes()
 ```
 {% endhint %}
 
-### Added themes support for interactive TUI colors
+</details>
+
+<details>
+
+<summary>Added themes support for interactive TUI colors</summary>
 
 {% code title="InteractiveTuiColors.cs" lineNumbers="true" %}
 ```csharp
-public static class InteractiveTuiColors
+public static class InteractiveTuiColors { }
 ```
 {% endcode %}
 
@@ -390,12 +476,16 @@ This caused the interactive TUI to maintain color consistency with the rest of t
 You usually don't have to do anything. You can still access these base colors using the `Config.MainConfig` class. No names are changed.
 {% endhint %}
 
-### Added connection options from speed dial
+</details>
+
+<details>
+
+<summary>Added connection options from speed dial</summary>
 
 {% code title="NetworkConnectionTools.cs" lineNumbers="true" %}
 ```csharp
-public static void OpenConnectionForShell(ShellType shellType, Func<string, NetworkConnection> establisher, string address = "")
-public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection> establisher, string address = "")
+public static void OpenConnectionForShell(ShellType shellType, Func<string, NetworkConnection> establisher, string address = "") { }
+public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection> establisher, string address = "") { }
 ```
 {% endcode %}
 
@@ -410,7 +500,11 @@ public static void OpenConnectionForShell(string shellType, Func<string, Network
 ```
 {% endhint %}
 
-### Changed how event handler registration works
+</details>
+
+<details>
+
+<summary>Changed how event handler registration works</summary>
 
 {% code title="IMod.cs" lineNumbers="true" %}
 ```csharp
@@ -425,20 +519,24 @@ InitEvents can be huge because there are too many event types to handle, so we d
 We recommend merging away from `InitEvents()` to use both of the register and unregister functions that are outlined below.
 
 ```csharp
-public static void RegisterEventHandler(EventType eventType, Action<object[]> eventAction)
-public static void UnregisterEventHandler(EventType eventType, Action<object[]> eventAction)
+public static void RegisterEventHandler(EventType eventType, Action<object[]> eventAction) { }
+public static void UnregisterEventHandler(EventType eventType, Action<object[]> eventAction) { }
 ```
 
 Although your mod can contain the `InitEvents()` code because Nitrocid doesn't error out, we still advice you to follow the recommendation for your event handler code to continue working, as well as storing a list of event handlers (at least a `List<Action<object[]>>`) to be able to register and unregister them.
 {% endhint %}
 
-### Removed "background trigger"
+</details>
+
+<details>
+
+<summary>Removed "background trigger"</summary>
 
 {% code title="KernelColorTools.cs" lineNumbers="true" %}
 ```csharp
-public static void LoadBack(Color ColorSequence, bool Force = false)
-public static void SetConsoleColor(KernelColorType colorType, bool Background, bool ForceSet = false)
-public static void SetConsoleColor(Color ColorSequence, bool Background = false, bool ForceSet = false)
+public static void LoadBack(Color ColorSequence, bool Force = false) { }
+public static void SetConsoleColor(KernelColorType colorType, bool Background, bool ForceSet = false) { }
+public static void SetConsoleColor(Color ColorSequence, bool Background = false, bool ForceSet = false) { }
 ```
 {% endcode %}
 
@@ -457,7 +555,11 @@ As a result, we've removed the `Force` and the `ForceSet` variables.
 We advice you to cease using this function.
 {% endhint %}
 
-### Custom command addition changed
+</details>
+
+<details>
+
+<summary>Custom command addition changed</summary>
 
 {% code title="IMod.cs" lineNumbers="true" %}
 ```csharp
@@ -471,19 +573,17 @@ So, we decided to remove this key from the interface, making it redundant for ge
 
 Historically, the `Commands` list was originated when there was no meaningful way to customize the shell and when the command handler was not using the base command classes for each of them.
 
-The below link shows how to use the register/unregister functions.
-
-{% content-ref url="../../../advanced-and-power-users/inner-workings/inner-essentials/shell-structure.md" %}
-[shell-structure.md](../../../advanced-and-power-users/inner-workings/inner-essentials/shell-structure.md)
-{% endcontent-ref %}
-
 {% hint style="info" %}
 Mods that expect commands to be added automatically must now use the `RegisterCustomCommand*` functions on mod start and `UnregisterCustomCommand*` functions on mod shutdown. This allows you to dynamically add commands to the shells without affecting the base shell command list.
 
 However, if you want a simple migration way, don't remove the `Commands` dictionary as it's unused; just use it to get its keys (strings) and values (`CommandInfo` instances) to use `UnregisterCustomCommands()` and `RegisterCustomCommands()` in the shutdown (`StopMod()`) and the startup code (`StartMod()`), respectively.
 {% endhint %}
 
-### Added theme addons
+</details>
+
+<details>
+
+<summary>Added theme addons</summary>
 
 {% code title="ThemeInfo.cs" lineNumbers="true" %}
 ```csharp
@@ -497,16 +597,20 @@ The above `ThemeInfo` constructor was made obsolete due to all the themes migrat
 We recommend that you use the output of the `GetInstalledThemes()` function and query a theme info instance from the theme name instead.
 {% endhint %}
 
-### Improved the query API for text editor
+</details>
+
+<details>
+
+<summary>Improved the query API for text editor</summary>
 
 {% code title="TextEditTools.cs" lineNumbers="true" %}
 ```csharp
-public static Dictionary<int, Dictionary<int, string>> TextEdit_QueryChar(char Char)
-public static Dictionary<int, string> TextEdit_QueryChar(char Char, int LineNumber)
-public static Dictionary<int, Dictionary<int, string>> TextEdit_QueryWord(string Word)
-public static Dictionary<int, string> TextEdit_QueryWord(string Word, int LineNumber)
-public static Dictionary<int, Dictionary<int, string>> TextEdit_QueryWordRegex(string Word)
-public static Dictionary<int, string> TextEdit_QueryWordRegex(string Word, int LineNumber)
+public static Dictionary<int, Dictionary<int, string>> TextEdit_QueryChar(char Char) { }
+public static Dictionary<int, string> TextEdit_QueryChar(char Char, int LineNumber) { }
+public static Dictionary<int, Dictionary<int, string>> TextEdit_QueryWord(string Word) { }
+public static Dictionary<int, string> TextEdit_QueryWord(string Word, int LineNumber) { }
+public static Dictionary<int, Dictionary<int, string>> TextEdit_QueryWordRegex(string Word) { }
+public static Dictionary<int, string> TextEdit_QueryWordRegex(string Word, int LineNumber) { }
 ```
 {% endcode %}
 
@@ -516,13 +620,17 @@ The query API for the text editor has been simplified as a result of having simp
 The signatures have been changed. You can refer to the API documentation for the updated information.
 {% endhint %}
 
-### Aliases reworked
+</details>
+
+<details>
+
+<summary>Aliases reworked</summary>
 
 {% code title="AliasInfo.cs" lineNumbers="true" %}
 ```csharp
-public static void PurgeAliases()
-public static bool DoesAliasExistLocal(string TargetAlias, ShellType Type)
-public static bool DoesAliasExistLocal(string TargetAlias, string Type)
+public static void PurgeAliases() { }
+public static bool DoesAliasExistLocal(string TargetAlias, ShellType Type) { }
+public static bool DoesAliasExistLocal(string TargetAlias, string Type) { }
 ```
 {% endcode %}
 
@@ -536,7 +644,11 @@ With regards to `PurgeAliases()`, once any alias is removed, they're automatical
 With regards to `DoesAliasExistLocal()`, you can substitute calls to that function with the `DoesAliasExist()`, making changes as necessary.
 {% endhint %}
 
-### Added the signing key (a.k.a. strong name)
+</details>
+
+<details>
+
+<summary>Added the signing key (a.k.a. strong name)</summary>
 
 Nitrocid KS launched without any signing key. Originally, it was planned to come signed by us, but it didn't work. However, we used the strong naming tool to give Nitrocid KS a unique identity to avoid dependency hell.
 
@@ -546,11 +658,15 @@ It's not necessary to strong name your mods, but we recommend you to do so using
 Most of the time, you don't have to do anything to your mods, since the signing key change doesn't break any API functions. If you found that your mods no longer worked, try to update to the latest version of Nitrocid, or contact the mod vendor.
 {% endhint %}
 
-### Interactive TUI is now part of `ConsoleBase`
+</details>
+
+<details>
+
+<summary>Interactive TUI is now part of <code>ConsoleBase</code></summary>
 
 {% code title="*InteractiveTui*.cs" lineNumbers="true" %}
 ```csharp
-namespace KS.Misc.Interactive
+namespace KS.Misc.Interactive { }
 ```
 {% endcode %}
 
@@ -560,28 +676,32 @@ The interactive TUI started off as part of the `Misc` namespace found under `KS`
 Because this is a namespace move, you'll have to update the imports that point to the above namespace to point to the new namespace below:
 
 ```csharp
-namespace KS.ConsoleBase.Interactive
+namespace KS.ConsoleBase.Interactive { }
 ```
 {% endhint %}
 
-### Used Figletize
+</details>
+
+<details>
+
+<summary>Used Figletize</summary>
 
 {% code title="CenteredFigletTextColor.cs" lineNumbers="true" %}
 ```csharp
-public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, params object[] Vars)
-public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars)
-public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
-public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, ConsoleColors Color, params object[] Vars)
-public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars)
-public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, Color Color, params object[] Vars)
-public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
-public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, params object[] Vars)
-public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars)
-public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
-public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, ConsoleColors Color, params object[] Vars)
-public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars)
-public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, Color Color, params object[] Vars)
-public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, params object[] Vars) { }
+public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars) { }
+public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) { }
+public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, ConsoleColors Color, params object[] Vars) { }
+public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) { }
+public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, Color Color, params object[] Vars) { }
+public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars) { }
+public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, params object[] Vars) { }
+public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars) { }
+public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) { }
+public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, ConsoleColors Color, params object[] Vars) { }
+public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) { }
+public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, Color Color, params object[] Vars) { }
+public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars) { }
 ```
 {% endcode %}
 
@@ -597,11 +717,15 @@ You must migrate from Figgle to Figletize in order to be able to use the new fun
 Terminaux's documentation will cover the ways of migration.
 {% endhint %}
 
-### Added `CommandArgumentPart`
+</details>
+
+<details>
+
+<summary>Added <code>CommandArgumentPart</code></summary>
 
 ```csharp
-public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches)
-public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool ArgumentsRequired, int MinimumArguments, bool AcceptsSet = false, Func<string, int, char[], string[]> AutoCompleter = null)
+public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches) { }
+public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool ArgumentsRequired, int MinimumArguments, bool AcceptsSet = false, Func<string, int, char[], string[]> AutoCompleter = null) { }
 ```
 
 `CommandArgumentInfo` used to use strings and few support variables for arguments. However, there are cases where mods need more control over the argument parts, especially the auto completion part.
@@ -620,7 +744,11 @@ new CommandArgumentInfo(new[]
 ```
 {% endhint %}
 
-### Remote debug configuration handler changes
+</details>
+
+<details>
+
+<summary>Remote debug configuration handler changes</summary>
 
 {% code title="IRemoteDebugCommand.cs" lineNumbers="true" %}
 ```csharp
@@ -631,19 +759,19 @@ void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly
 {% code title="RemoteDebugTools.cs" lineNumbers="true" %}
 ```csharp
 // Removed
-public enum DeviceProperty
-public static object GetDeviceProperty(string DeviceIP, DeviceProperty DeviceProperty)
-public static void SetDeviceProperty(string DeviceIP, DeviceProperty DeviceProperty, object Value)
-public static bool TrySetDeviceProperty(string DeviceIP, DeviceProperty DeviceProperty, object Value)
-public static void AddDeviceToJson(string DeviceIP, bool ThrowException = true)
-public static bool TryAddDeviceToJson(string DeviceIP, bool ThrowException = true)
-public static void RemoveDeviceFromJson(string DeviceIP)
-public static bool TryRemoveDeviceFromJson(string DeviceIP)
+public enum DeviceProperty { }
+public static object GetDeviceProperty(string DeviceIP, DeviceProperty DeviceProperty) { }
+public static void SetDeviceProperty(string DeviceIP, DeviceProperty DeviceProperty, object Value) { }
+public static bool TrySetDeviceProperty(string DeviceIP, DeviceProperty DeviceProperty, object Value) { }
+public static void AddDeviceToJson(string DeviceIP, bool ThrowException = true) { }
+public static bool TryAddDeviceToJson(string DeviceIP, bool ThrowException = true) { }
+public static void RemoveDeviceFromJson(string DeviceIP) { }
+public static bool TryRemoveDeviceFromJson(string DeviceIP) { }
 
 // Modified
-public static void DisconnectDbgDev(string IPAddr)
-public static void AddToBlockList(string IP)
-public static string[] ListDevices()
+public static void DisconnectDbgDev(string IPAddr) { }
+public static void AddToBlockList(string IP) { }
+public static string[] ListDevices() { }
 ```
 {% endcode %}
 
@@ -657,25 +785,29 @@ void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly
 ```
 {% endhint %}
 
-### Speed dial configuration changes
+</details>
+
+<details>
+
+<summary>Speed dial configuration changes</summary>
 
 {% code title="NetworkConnectionTools.cs" lineNumbers="true" %}
 ```csharp
-public static void OpenConnectionForShell(ShellType shellType, Func<string, NetworkConnection> establisher, Func<string, JToken, NetworkConnection> speedEstablisher, string address = "")
-public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection> establisher, Func<string, JToken, NetworkConnection> speedEstablisher, string address = "")
+public static void OpenConnectionForShell(ShellType shellType, Func<string, NetworkConnection> establisher, Func<string, JToken, NetworkConnection> speedEstablisher, string address = "") { }
+public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection> establisher, Func<string, JToken, NetworkConnection> speedEstablisher, string address = "") { }
 ```
 {% endcode %}
 
 {% code title="SpeedDialTools.cs" lineNumbers="true" %}
 ```csharp
 // Removed
-public static JObject GetTokenFromSpeedDial()
-public static JToken GetQuickConnectInfo()
+public static JObject GetTokenFromSpeedDial() { }
+public static JToken GetQuickConnectInfo() { }
 
 // Modified
-public static Dictionary<string, JToken> ListSpeedDialEntries()
-public static Dictionary<string, JToken> ListSpeedDialEntriesByType(NetworkConnectionType SpeedDialType)
-public static Dictionary<string, JToken> ListSpeedDialEntriesByType(string SpeedDialType)
+public static Dictionary<string, JToken> ListSpeedDialEntries() { }
+public static Dictionary<string, JToken> ListSpeedDialEntriesByType(NetworkConnectionType SpeedDialType) { }
+public static Dictionary<string, JToken> ListSpeedDialEntriesByType(string SpeedDialType) { }
 ```
 {% endcode %}
 
@@ -685,7 +817,11 @@ The speed dial handler has undergone significant changes related to how it handl
 Because `SpeedDialEntry` is implemented, you need to use the new overloads and functions from the SpeedDialTools class when migrating from the old `JToken` approach.
 {% endhint %}
 
-### Breaking changes caused by migration to addons
+</details>
+
+<details>
+
+<summary>Breaking changes caused by migration to addons</summary>
 
 There are breaking changes that are caused by the migration of some of the optional kernel features to the addons system so that they don't bloat the base kernel up. The following applications are affected:
 
@@ -709,13 +845,17 @@ There are breaking changes that are caused by the migration of some of the optio
 Your mods will no longer be able to use their APIs, due to how these addons are isolated from the base kernel.
 {% endhint %}
 
-### Removed Figgle-related tools and writers
+</details>
+
+<details>
+
+<summary>Removed Figgle-related tools and writers</summary>
 
 {% code title="Deleted classes" lineNumbers="true" %}
 ```csharp
-public static class CenteredFigletTextColorLegacy
-public static class FigletColorLegacy
-public static class FigletWhereColorLegacy
+public static class CenteredFigletTextColorLegacy { }
+public static class FigletColorLegacy { }
+public static class FigletWhereColorLegacy { }
 ```
 {% endcode %}
 
@@ -727,10 +867,14 @@ You must migrate from Figgle to Figletize in order to be able to use the new fun
 Terminaux's documentation will cover the ways of migration.
 {% endhint %}
 
-### Moved `ShellManager` to `ShellBase.Shells`
+</details>
+
+<details>
+
+<summary>Moved <code>ShellManager</code> to <code>ShellBase.Shells</code></summary>
 
 ```csharp
-public static class ShellManager
+public static class ShellManager { }
 ```
 
 `ShellManager` used to be found on a loose `KS.Shell` namespace. However, we needed to enforce better organization of the shell management code, so we moved this class to the `ShellBase.Shells` namespace inside `KS.Shell`.
@@ -739,14 +883,18 @@ public static class ShellManager
 None of the functions are affected by this change. However, you need to change the imports to point to the `ShellBase.Shells` namespace.
 {% endhint %}
 
-### Moved `Editors` to `Files`
+</details>
+
+<details>
+
+<summary>Moved <code>Editors</code> to <code>Files</code></summary>
 
 {% code title="Affected editors" lineNumbers="true" %}
 ```csharp
-namespace KS.Misc.Editors.HexEdit
-namespace KS.Misc.Editors.JsonShell
-namespace KS.Misc.Editors.SqlEdit
-namespace KS.Misc.Editors.TextEdit
+namespace KS.Misc.Editors.HexEdit { }
+namespace KS.Misc.Editors.JsonShell { }
+namespace KS.Misc.Editors.SqlEdit { }
+namespace KS.Misc.Editors.TextEdit { }
 ```
 {% endcode %}
 
@@ -763,17 +911,21 @@ This is to acknowledge that these editors are indeed part of the filesystem edit
 None of the functions are affected, but you must change the namespace imports to the following:
 
 ```csharp
-namespace KS.Files.Editors.HexEdit
-namespace KS.Files.Editors.JsonShell
-namespace KS.Files.Editors.SqlEdit
-namespace KS.Files.Editors.TextEdit
+namespace KS.Files.Editors.HexEdit { }
+namespace KS.Files.Editors.JsonShell { }
+namespace KS.Files.Editors.SqlEdit { }
+namespace KS.Files.Editors.TextEdit { }
 ```
 {% endhint %}
 
-### Updated `LocaleGen.Core` namespaces
+</details>
+
+<details>
+
+<summary>Updated <code>LocaleGen.Core</code> namespaces</summary>
 
 ```csharp
-namespace Nitrocid.LocaleGen.Serializer
+namespace Nitrocid.LocaleGen.Serializer { }
 ```
 
 `LocaleGen.Core` is a library that generates final translation files for each built-in and custom language for Nitrocid KS to be able to use.
@@ -784,15 +936,19 @@ To clear up the organization, we've decided to update the above namespace to mat
 The new namespace for the `LocaleGen.Core` functions is:
 
 ```csharp
-namespace Nitrocid.LocaleGen.Core.Serializer
+namespace Nitrocid.LocaleGen.Core.Serializer { }
 ```
 {% endhint %}
 
-### Promoted Settings to `Kernel.Configuration`
+</details>
+
+<details>
+
+<summary>Promoted Settings to <code>Kernel.Configuration</code></summary>
 
 {% code title="SettingsApp.cs, SettingsKeyType.cs" lineNumbers="true" %}
 ```csharp
-namespace KS.Misc.Settings
+namespace KS.Misc.Settings { }
 ```
 {% endcode %}
 
@@ -804,11 +960,15 @@ The "Settings" application was meant to be a core part of the kernel, so we've m
 None of the classes are affected, but you should update your namespace imports to the below namespace:
 
 ```csharp
-namespace KS.Kernel.Configuration.Settings
+namespace KS.Kernel.Configuration.Settings { }
 ```
 {% endhint %}
 
-### Corrected the name of `Journaling` enum entry
+</details>
+
+<details>
+
+<summary>Corrected the name of <code>Journaling</code> enum entry</summary>
 
 {% code title="KernelPathType.cs" lineNumbers="true" %}
 ```csharp
@@ -836,12 +996,16 @@ We've decided to correct that by renaming the enumeration value and the property
 If you use any of the two affected objects mentioned above, change your references so that it says `Journaling`.
 {% endhint %}
 
-### Moved presentation system to `ConsoleBase`
+</details>
+
+<details>
+
+<summary>Moved presentation system to <code>ConsoleBase</code></summary>
 
 {% code title="Affected namespaces" lineNumbers="true" %}
 ```csharp
-namespace KS.Misc.Presentation
-namespace KS.Misc.Presentation.Elements
+namespace KS.Misc.Presentation { }
+namespace KS.Misc.Presentation.Elements { }
 ```
 {% endcode %}
 
@@ -851,17 +1015,23 @@ The presentation system used to be found in the Misc section of the kernel. Howe
 None of the classes are affected, but you should update your namespace imports to the below namespace:
 
 ```csharp
-namespace KS.ConsoleBase.Presentation
-namespace KS.ConsoleBase.Presentation.Elements
+namespace KS.ConsoleBase.Presentation { }
+namespace KS.ConsoleBase.Presentation.Elements { }
 ```
 {% endhint %}
 
-### Renamed `Flags` to `KernelFlags`
+</details>
+
+<details>
+
+<summary>Renamed <code>Flags</code> to <code>KernelFlags</code></summary>
 
 {% code title="Flags.cs" lineNumbers="true" %}
 ```csharp
 namespace KS.Kernel
-    public static class Flags
+{
+    public static class Flags { }
+}
 ```
 {% endcode %}
 
@@ -874,23 +1044,27 @@ None of the flags are affected. However, the following changes are made:
 * Changed the namespace to `KS.Kernel.Configuration`
 {% endhint %}
 
-### Moved argument and switch management
+</details>
+
+<details>
+
+<summary>Moved argument and switch management</summary>
 
 {% code lineNumbers="true" %}
 ```csharp
 // Migrated to KS.Shell.ShellBase.Switches
-public class SwitchInfo
-public static class SwitchManager
+public class SwitchInfo { }
+public static class SwitchManager { }
 
 // Migrated to KS.Shell.ShellBase.Commands
-public static class ProcessExecutor
+public static class ProcessExecutor { }
 
 // Migrated to KS.Shell.ShellBase.Arguments
-public static class ArgumentsParser
-public class CommandArgumentInfo
-public class CommandArgumentPart
-public static class CommandAutoCompletionList
-public class ProvidedArgumentsInfo
+public static class ArgumentsParser { }
+public class CommandArgumentInfo { }
+public class CommandArgumentPart { }
+public static class CommandAutoCompletionList { }
+public class ProvidedArgumentsInfo { }
 ```
 {% endcode %}
 
@@ -904,7 +1078,11 @@ The `KS.Shell.ShellBase.Commands` namespace kept getting bigger with each new fe
 None of the functions are affected, but you must adjust the namespace imports to the above namespaces.
 {% endhint %}
 
-### `HelpDefinition`'s setter is private
+</details>
+
+<details>
+
+<summary><code>HelpDefinition</code>'s setter is private</summary>
 
 {% code title="SwitchInfo.cs" lineNumbers="true" %}
 ```csharp
@@ -920,12 +1098,16 @@ However, with the improved shell and its command handling code, especially the i
 You can no longer use the HelpDefinition property to directly set your command description. Instead, define your command description when making your own `CommandInfo` and its associated `CommandArgumentInfo` and `SwitchInfo` instances, if any.
 {% endhint %}
 
-### Implemented original argument string and list
+</details>
+
+<details>
+
+<summary>Implemented original argument string and list</summary>
 
 {% code title="BaseCommand.cs" lineNumbers="true" %}
 ```csharp
-public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
-public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue) { }
+public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue) { }
 ```
 {% endcode %}
 
@@ -937,18 +1119,22 @@ So, we've decided to implement the first two variables again, but, this time, th
 The signature for these two functions has changed. You must change your override to match the new signature, like below:
 
 ```csharp
-public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
-public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue) { }
+public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue) { }
 ```
 {% endhint %}
 
-### Moved parsers to the `Text` namespace
+</details>
+
+<details>
+
+<summary>Moved parsers to the <code>Text</code> namespace</summary>
 
 {% code title="Affected namespaces" lineNumbers="true" %}
 ```csharp
-namespace KS.Misc.Probers.Motd
-namespace KS.Misc.Probers.Placeholder
-namespace KS.Misc.Probers.Regexp
+namespace KS.Misc.Probers.Motd { }
+namespace KS.Misc.Probers.Placeholder { }
+namespace KS.Misc.Probers.Regexp { }
 ```
 {% endcode %}
 
@@ -958,17 +1144,21 @@ These probers used to be loosely located on the `Probers` section of the `Misc` 
 These namespaces have been located to the new location. They can be respectively found on:
 
 ```csharp
-namespace KS.Misc.Text.Probers.Motd
-namespace KS.Misc.Text.Probers.Placeholder
-namespace KS.Misc.Text.Probers.Regexp
+namespace KS.Misc.Text.Probers.Motd { }
+namespace KS.Misc.Text.Probers.Placeholder { }
+namespace KS.Misc.Text.Probers.Regexp { }
 ```
 {% endhint %}
 
-### Remove leftover namespace, `UserProperty`
+</details>
+
+<details>
+
+<summary>Remove leftover namespace, <code>UserProperty</code></summary>
 
 {% code title="UserManagement.cs" lineNumbers="true" %}
 ```csharp
-public enum UserProperty
+public enum UserProperty { }
 ```
 {% endcode %}
 
@@ -994,10 +1184,14 @@ As a result, `UserProperty` was rendered useless.
 We advice you to cease using this enumeration. It's neccessary that you use more appropriate ways to get and set user properties to ensure that the mod code transition from Beta 2 or lower to Beta 3 goes smoothly.
 {% endhint %}
 
-### Moved argument tools
+</details>
+
+<details>
+
+<summary>Moved argument tools</summary>
 
 ```csharp
-namespace KS.Arguments.ArgumentBase
+namespace KS.Arguments.ArgumentBase { }
 ```
 
 We've moved the argument tools from `ArgumentBase` to reduce the complexity. Now, the argument tools are no longer one namespace level deep.
@@ -1006,15 +1200,19 @@ We've moved the argument tools from `ArgumentBase` to reduce the complexity. Now
 The argument tools are moved to the new namespace:
 
 ```csharp
-namespace KS.Arguments
+namespace KS.Arguments { }
 ```
 {% endhint %}
 
-### Removed `UserProperty`
+</details>
+
+<details>
+
+<summary>Removed <code>UserProperty</code></summary>
 
 {% code title="UserManagement.cs" lineNumbers="true" %}
 ```csharp
-public enum UserProperty
+public enum UserProperty { }
 ```
 {% endcode %}
 
@@ -1026,7 +1224,11 @@ As a result, this enum was rendered useless.
 We advice you to cease using this enumeration. Make appropriate changes with the functions that `UserManagement` provides.
 {% endhint %}
 
-### Remote debugger provides `WriteDebugDeviceOnly()`
+</details>
+
+<details>
+
+<summary>Remote debugger provides <code>WriteDebugDeviceOnly()</code></summary>
 
 {% code title="IRemoteDebugCommand.cs" lineNumbers="true" %}
 ```csharp
@@ -1046,11 +1248,15 @@ void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly
 ```
 {% endhint %}
 
-### `PromptForSetLang()` removed
+</details>
+
+<details>
+
+<summary><code>PromptForSetLang()</code> removed</summary>
 
 {% code title="LanguageManager.cs" lineNumbers="true" %}
 ```csharp
-public static void PromptForSetLang(string lang, bool Force = false, bool AlwaysTransliterated = false, bool AlwaysTranslated = false)
+public static void PromptForSetLang(string lang, bool Force = false, bool AlwaysTransliterated = false, bool AlwaysTranslated = false) { }
 ```
 {% endcode %}
 
@@ -1060,11 +1266,15 @@ In the language manager, `PromptForSetLang()` was used for prompting the user to
 It's advisable to cease using this function.
 {% endhint %}
 
-### Moved custom screensaver tools
+</details>
+
+<details>
+
+<summary>Moved custom screensaver tools</summary>
 
 {% code title="CustomSaverTools.cs" lineNumbers="true" %}
 ```csharp
-public static class CustomSaverTools
+public static class CustomSaverTools { }
 ```
 {% endcode %}
 
@@ -1077,11 +1287,15 @@ You must change your reference to all the tools found inside the above class to 
 * `UnregisterCustomScreensaver()`
 {% endhint %}
 
-### `AutoCompleter` only requires an array
+</details>
+
+<details>
+
+<summary><code>AutoCompleter</code> only requires an array</summary>
 
 {% code title="CommandAutoCompletionList.cs" lineNumbers="true" %}
 ```csharp
-public static Func<string, int, char[], string[]> GetCompletionFunction(string expression)
+public static Func<string, int, char[], string[]> GetCompletionFunction(string expression) { }
 ```
 {% endcode %}
 
@@ -1098,7 +1312,11 @@ Previously, when we used the deprecated ReadLine.Reboot library to handle autoco
 If you're not using these three parameters, the transition is easy. However, if you are using one of them, you'll need to refactor your command info code so that it matches the requirements.
 {% endhint %}
 
-### Added `CommandParameters`
+</details>
+
+<details>
+
+<summary>Added <code>CommandParameters</code></summary>
 
 {% code title="ICommand.cs" lineNumbers="true" %}
 ```csharp
@@ -1120,25 +1338,29 @@ int ExecuteDumb(CommandParameters parameters, ref string variableValue);
 ```
 {% endhint %}
 
-### Customizable settings entries
+</details>
+
+<details>
+
+<summary>Customizable settings entries</summary>
 
 This breaking change is divided to the below parts, from the oldest to the newest:
 
-#### Initial migration of settings entries
+#### <mark style="color:$primary;">Initial migration of settings entries</mark>
 
 {% code title="ConfigTools.cs" lineNumbers="true" %}
 ```csharp
-public static object GetValueFromEntry(JToken Setting, ConfigType SettingsType)
-public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsToken, ConfigType SettingsType)
+public static object GetValueFromEntry(JToken Setting, ConfigType SettingsType) { }
+public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsToken, ConfigType SettingsType) { }
 ```
 {% endcode %}
 
 {% code title="SettingsApp.cs" lineNumbers="true" %}
 ```csharp
-public static void OpenSection(string Section, JToken SettingsToken, ConfigType SettingsType)
-public static void OpenKey(string Section, int KeyNumber, JToken SettingsToken, ConfigType SettingsType)
-public static void VariableFinder(JToken SettingsToken, ConfigType SettingsType)
-private static JToken OpenSettingsResource(ConfigType SettingsType)
+public static void OpenSection(string Section, JToken SettingsToken, ConfigType SettingsType) { }
+public static void OpenKey(string Section, int KeyNumber, JToken SettingsToken, ConfigType SettingsType) { }
+public static void VariableFinder(JToken SettingsToken, ConfigType SettingsType) { }
+private static JToken OpenSettingsResource(ConfigType SettingsType) { }
 ```
 {% endcode %}
 
@@ -1153,26 +1375,26 @@ We've decided to take the first steps by converting the settings entry list embe
 Currently, it's not possible to use the above functions anymore with the built-in Nitrocid settings entries, because it relies on a private function that gives you the necessary infromation.
 {% endhint %}
 
-#### Initial support for custom settings
+#### <mark style="color:$primary;">Initial support for custom settings</mark>
 
 {% code title="ConfigTools.cs" lineNumbers="true" %}
 ```csharp
-public static object GetValueFromEntry(SettingsKey Setting, ConfigType SettingsType)
-public static List<InputChoiceInfo> FindSetting(string Pattern, SettingsEntry[] SettingsEntries, ConfigType SettingsType)
+public static object GetValueFromEntry(SettingsKey Setting, ConfigType SettingsType) { }
+public static List<InputChoiceInfo> FindSetting(string Pattern, SettingsEntry[] SettingsEntries, ConfigType SettingsType) { }
 ```
 {% endcode %}
 
 {% code title="SettingsApp.cs" lineNumbers="true" %}
 ```csharp
-public static void OpenSection(string Section, SettingsEntry SettingsSection, ConfigType SettingsType)
-public static void OpenKey(int KeyNumber, SettingsEntry SettingsSection, ConfigType SettingsType)
-public static void VariableFinder(SettingsEntry[] SettingsEntries, ConfigType SettingsType)
+public static void OpenSection(string Section, SettingsEntry SettingsSection, ConfigType SettingsType) { }
+public static void OpenKey(int KeyNumber, SettingsEntry SettingsSection, ConfigType SettingsType) { }
+public static void VariableFinder(SettingsEntry[] SettingsEntries, ConfigType SettingsType) { }
 ```
 {% endcode %}
 
 Custom settings are implemented to increase the flexibility of the kernel configuration so that your mods can now have their own settings entry list file. This means that your mods are now configurable in a way that Nitrocid's settings application can handle all your settings.
 
-#### Finalization of the custom settings
+#### <mark style="color:$primary;">Finalization of the custom settings</mark>
 
 <pre class="language-csharp" data-title="KernelPathType.cs" data-line-numbers><code class="lang-csharp">public enum KernelPathType
 {
@@ -1202,36 +1424,36 @@ public static KernelSplashConfig SplashConfig
 
 The custom settings feature has been finalized to the point that it's reached the stable stage, so we've decided to move almost all the screensaver and splash entries (from their addons) from the base Nitrocid configuration entry JSON files to their appropriate entries.
 
-#### Removed the `ConfigType` enumeration
+#### <mark style="color:$primary;">Removed the</mark> <mark style="color:$primary;"></mark><mark style="color:$primary;">`ConfigType`</mark> <mark style="color:$primary;"></mark><mark style="color:$primary;">enumeration</mark>
 
 {% code title="Config.cs" lineNumbers="true" %}
 ```csharp
-public static BaseKernelConfig GetKernelConfig(ConfigType type)
-public static void CreateConfig(ConfigType type, string ConfigPath)
-public static bool TryCreateConfig(ConfigType type, string ConfigPath)
-public static void ReadConfig(ConfigType type)
-public static void ReadConfig(ConfigType type, string ConfigPath)
-public static bool TryReadConfig(ConfigType type)
-public static bool TryReadConfig(ConfigType type, string ConfigPath)
+public static BaseKernelConfig GetKernelConfig(ConfigType type) { }
+public static void CreateConfig(ConfigType type, string ConfigPath) { }
+public static bool TryCreateConfig(ConfigType type, string ConfigPath) { }
+public static void ReadConfig(ConfigType type) { }
+public static void ReadConfig(ConfigType type, string ConfigPath) { }
+public static bool TryReadConfig(ConfigType type) { }
+public static bool TryReadConfig(ConfigType type, string ConfigPath) { }
 ```
 {% endcode %}
 
 {% code title="ConfigTools.cs" lineNumbers="true" %}
 ```csharp
-public static SettingsEntry[] OpenSettingsResource(ConfigType SettingsType)
-public static string TranslateBuiltinConfigType(ConfigType SettingsType)
+public static SettingsEntry[] OpenSettingsResource(ConfigType SettingsType) { }
+public static string TranslateBuiltinConfigType(ConfigType SettingsType) { }
 ```
 {% endcode %}
 
 {% code title="ConfigType.cs" lineNumbers="true" %}
 ```csharp
-public enum ConfigType
+public enum ConfigType { }
 ```
 {% endcode %}
 
 {% code title="SettingsApp.cs" lineNumbers="true" %}
 ```csharp
-public static void OpenMainPage(ConfigType SettingsType)
+public static void OpenMainPage(ConfigType SettingsType) { }
 ```
 {% endcode %}
 
@@ -1245,11 +1467,15 @@ This configuration system overhaul is massive, so we recommend that you:
 * Migrate your "custom settings app" for your mods (if implemented) to use Nitrocid's settings handler by registering and unregistering your settings classes as per guidance.
 {% endhint %}
 
-### Help system refactors
+</details>
+
+<details>
+
+<summary>Help system refactors</summary>
 
 {% code title="HelpSystem.cs" lineNumbers="true" %}
 ```csharp
-public static class HelpSystem
+public static class HelpSystem { }
 ```
 {% endcode %}
 
@@ -1259,12 +1485,16 @@ The help system code has been moved to its own namespace, because it has nothing
 This class has been moved to the `HelpPrint` class in the `KS.Shell.ShellBase.Help` namespace.
 {% endhint %}
 
-### Moved several filesystem classes
+</details>
+
+<details>
+
+<summary>Moved several filesystem classes</summary>
 
 ```csharp
-namespace KS.Files.Print
-namespace KS.Files.Querying
-namespace KS.Files.Read
+namespace KS.Files.Print { }
+namespace KS.Files.Querying { }
+namespace KS.Files.Read { }
 ```
 
 Several of the filesystem classes were moved to more appropriate places so that we can ensure better organization related to the filesystem namespace.
@@ -1279,21 +1509,25 @@ Also, the reading class name was changed to `Reading` and its namespace changed 
 Additionally, the `ReadToEndAndSeek()` function was moved to the Reading class, causing the `StreamRead` class to be removed.
 {% endhint %}
 
-### Conflicting write overloads reduced
+</details>
+
+<details>
+
+<summary>Conflicting write overloads reduced</summary>
 
 {% code title="TextWriterColor.cs and all similar writers" lineNumbers="true" %}
 ```csharp
-public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorType, params object[] vars)
-public static void Write(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
-public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
-public static void Write(string Text, bool Line, ConsoleColors color, params object[] vars)
-public static void Write(string Text, bool Line, bool Highlight, ConsoleColors color, params object[] vars)
-public static void Write(string Text, bool Line, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
-public static void Write(string Text, bool Line, bool Highlight, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
-public static void Write(string Text, bool Line, Color color, params object[] vars)
-public static void Write(string Text, bool Line, bool Highlight, Color color, params object[] vars)
-public static void Write(string Text, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars)
-public static void Write(string Text, bool Line, bool Highlight, Color ForegroundColor, Color BackgroundColor, params object[] vars)
+public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorType, params object[] vars) { }
+public static void Write(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) { }
+public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) { }
+public static void Write(string Text, bool Line, ConsoleColors color, params object[] vars) { }
+public static void Write(string Text, bool Line, bool Highlight, ConsoleColors color, params object[] vars) { }
+public static void Write(string Text, bool Line, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) { }
+public static void Write(string Text, bool Line, bool Highlight, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) { }
+public static void Write(string Text, bool Line, Color color, params object[] vars) { }
+public static void Write(string Text, bool Line, bool Highlight, Color color, params object[] vars) { }
+public static void Write(string Text, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars) { }
+public static void Write(string Text, bool Line, bool Highlight, Color ForegroundColor, Color BackgroundColor, params object[] vars) { }
 ```
 {% endcode %}
 
@@ -1312,7 +1546,11 @@ So, we've decided to rename function names that take colors to these variants:
 You no longer need to override the `vars` value using the above method. Instead, you can replace these calls with one of the above functions, based on the color type.
 {% endhint %}
 
-### Moved hardware probe tools to the driver
+</details>
+
+<details>
+
+<summary>Moved hardware probe tools to the driver</summary>
 
 {% code title="Config and Flags" lineNumbers="true" %}
 ```csharp
@@ -1326,7 +1564,7 @@ public static bool FullHardwareProbe
 
 {% code title="Probe tools" lineNumbers="true" %}
 ```csharp
-public static void ListHardware(string HardwareType)
+public static void ListHardware(string HardwareType) { }
 // where HardwareType is a type other than the supported types by the hardware prober driver
 ```
 {% endcode %}
@@ -1341,12 +1579,16 @@ Unfortunately, full hardware probing has been removed.
 `ListHardware`'s behavior has changed so that it only gets information about supported hardware types.
 {% endhint %}
 
-### New `ThemeInfo` by theme name removed
+</details>
+
+<details>
+
+<summary>New <code>ThemeInfo</code> by theme name removed</summary>
 
 {% code title="ThemeInfo.cs" lineNumbers="true" %}
 ```csharp
 [Obsolete("Theme addons can't use this. It's only useful for getting the default theme.")]
-public ThemeInfo(string ThemeResourceName)
+public ThemeInfo(string ThemeResourceName) { }
 ```
 {% endcode %}
 
@@ -1358,13 +1600,17 @@ Additionally, it can't handle addon themes, because Nitrocid isn't supposed to a
 We advice you not to use this constructor to create new `ThemeInfo` instances.
 {% endhint %}
 
-### Improved support for multiple `ArgInfos`
+</details>
+
+<details>
+
+<summary>Improved support for multiple <code>ArgInfos</code></summary>
 
 {% code title="ArgumentsParser.cs" lineNumbers="true" %}
 ```csharp
-public static ProvidedArgumentsInfo ParseShellCommandArguments(string CommandText, ShellType CommandType)
-public static ProvidedArgumentsInfo ParseShellCommandArguments(string CommandText, string CommandType)
-public static ProvidedArgumentsInfo ParseArgumentArguments(string ArgumentText)
+public static ProvidedArgumentsInfo ParseShellCommandArguments(string CommandText, ShellType CommandType) { }
+public static ProvidedArgumentsInfo ParseShellCommandArguments(string CommandText, string CommandType) { }
+public static ProvidedArgumentsInfo ParseArgumentArguments(string ArgumentText) { }
 ```
 {% endcode %}
 
@@ -1376,15 +1622,19 @@ We've decided to improve support for multiple argument information instances by 
 For the most part, you don't need to call these functions, unless you're explicitly using them for some reason; `CommandParameters parameters` is more than enough.
 {% endhint %}
 
-### Initial configuration for presets
+</details>
+
+<details>
+
+<summary>Initial configuration for presets</summary>
 
 {% code title="PromptPresetManager.cs" lineNumbers="true" %}
 ```csharp
-public static void SetPresetDry(string PresetName, ShellType ShellType, bool ThrowOnNotFound = true)
-public static void SetPresetDry(string PresetName, string ShellType, bool ThrowOnNotFound = true)
-public static void PromptForPresets()
-public static void PromptForPresets(ShellType shellType)
-public static void PromptForPresets(string shellType)
+public static void SetPresetDry(string PresetName, ShellType ShellType, bool ThrowOnNotFound = true) { }
+public static void SetPresetDry(string PresetName, string ShellType, bool ThrowOnNotFound = true) { }
+public static void PromptForPresets() { }
+public static void PromptForPresets(ShellType shellType) { }
+public static void PromptForPresets(string shellType) { }
 ```
 {% endcode %}
 
@@ -1396,11 +1646,15 @@ Earlier, the preset manager would only save changes for the built-in Nitrocid sh
 The `SPreset` settings has changed so that it would align with the set preset. `SetPresetDry()` has been removed, because we've made `SetPreset()` dry.
 {% endhint %}
 
-### KernelFlags removed
+</details>
+
+<details>
+
+<summary><code>KernelFlags</code> removed</summary>
 
 {% code title="KernelFlags.cs" lineNumbers="true" %}
 ```csharp
-public class KernelFlags
+public class KernelFlags { }
 ```
 {% endcode %}
 
@@ -1418,11 +1672,15 @@ The full list is being populated soon, due to current network-wide problems that
 Once the full list is populated, follow this list to be able to migrate from `KernelFlags`.
 {% endhint %}
 
-### Changes to the time zone API
+</details>
+
+<details>
+
+<summary>Changes to the time zone API</summary>
 
 {% code title="TimeZones.cs" lineNumbers="true" %}
 ```csharp
-public static Dictionary<string, DateTime> GetTimeZones()
+public static Dictionary<string, DateTime> GetTimeZones() { }
 ```
 {% endcode %}
 
@@ -1437,17 +1695,21 @@ So, we've decided to split this function to two functions:
 We advice you to use one of these functions, depending on whether you want time zone names or current times.
 {% endhint %}
 
-### Renamed two classes
+</details>
+
+<details>
+
+<summary>Renamed two classes</summary>
 
 {% code title="Presentation.cs" lineNumbers="true" %}
 ```csharp
-public class Presentation
+public class Presentation { }
 ```
 {% endcode %}
 
 {% code title="Filesystem.cs" lineNumbers="true" %}
 ```csharp
-public static class Filesystem
+public static class Filesystem { }
 ```
 {% endcode %}
 
@@ -1462,7 +1724,11 @@ The below classes have been renamed:
 * `Filesystem` -> `FilesystemTools`
 {% endhint %}
 
-### Used separate settings entry for default figlet font
+</details>
+
+<details>
+
+<summary>Used separate settings entry for default figlet font</summary>
 
 {% code title="WelcomeMessage.cs" lineNumbers="true" %}
 ```csharp
@@ -1476,17 +1742,21 @@ public string BannerFigletFont
 ```
 {% endcode %}
 
-BannerFigletFont was used by literally one feature, which is an old feature. However, we wanted to increase the customizability of this feature, so we've decided to implement a new settings entry for the default figlet font to replace the two above properties.
+`BannerFigletFont` was used by literally one feature, which is an old feature. However, we wanted to increase the customizability of this feature, so we've decided to implement a new settings entry for the default figlet font to replace the two above properties.
 
 {% hint style="info" %}
 This settings entry still represents the name, so you just need to change from `BannerFigletFont` to `TextTools.DefaultFigletFontName`
 {% endhint %}
 
-### Refactored the arguments help system
+</details>
+
+<details>
+
+<summary>Refactored the arguments help system</summary>
 
 {% code title="ArgumentHelpSystem.cs" lineNumbers="true" %}
 ```csharp
-public static class ArgumentHelpSystem
+public static class ArgumentHelpSystem { }
 ```
 {% endcode %}
 
@@ -1498,11 +1768,15 @@ The printing tools, however, stay internal until Beta 3 gets released after enou
 None of the functions found inside the class have been affected. It's just that you have to update the class name to `ArgumentHelpPrint` and the imports to `KS.Arguments.Help`.
 {% endhint %}
 
-### Refactored the remote debug help system
+</details>
+
+<details>
+
+<summary>Refactored the remote debug help system</summary>
 
 {% code title="RemoteDebugHelpSystem.cs" lineNumbers="true" %}
 ```csharp
-public static class RemoteDebugHelpSystem
+public static class RemoteDebugHelpSystem { }
 ```
 {% endcode %}
 
@@ -1514,7 +1788,11 @@ The printing tools, however, stay internal until Beta 3 gets released after enou
 None of the functions found inside the class have been affected. It's just that you have to update the class name to `RemoteDebugHelpPrint` and the imports to `KS.Kernel.Debugging.RemoteDebug.Command.Help`.
 {% endhint %}
 
-### No prefixing for editor functions
+</details>
+
+<details>
+
+<summary>No prefixing for editor functions</summary>
 
 When text and file editors were implemented, we had to prefix every command and function with the editor type prefix, separated by the underscore character and the actual function name, such as `JsonShell_OpenJsonFile()`.
 
@@ -1526,12 +1804,16 @@ Since we've moved to using namespaces and to using C# as the language used for t
 You can invoke the editor functions by removing the prefix, such as `JsonShell_OpenJsonFile()` being just `OpenJsonFile()` from `JsonTools`.
 {% endhint %}
 
-### Moved `ShellStart` and `ShellTypeManager` functions
+</details>
+
+<details>
+
+<summary>Moved <code>ShellStart</code> and <code>ShellTypeManager</code> functions</summary>
 
 {% code title="ShellStart.cs" lineNumbers="true" %}
 ```csharp
-public static class ShellStart
-public static class ShellTypeManager
+public static class ShellStart { }
+public static class ShellTypeManager { }
 ```
 {% endcode %}
 
@@ -1541,7 +1823,11 @@ We're aiming for simplicity and stability across the Nitrocid API, so we've move
 None of the functions or their signatures are changed. Update all the references to `ShellStart` and `ShellTypeManager` to `ShellManager`.
 {% endhint %}
 
-### Help helpers are now turned to methods in argument info
+</details>
+
+<details>
+
+<summary>Help helpers are now turned to methods in argument info</summary>
 
 {% code title="ArgumentInfo.cs" lineNumbers="true" %}
 ```csharp
@@ -1555,7 +1841,7 @@ Earlier, we used to have a property in `ArgumentInfo`, called `AdditionalHelpAct
 Because we've implemented the `arghelp` command to the administrative shell, and we wanted to stay consistent in terms of performance, we've decided to replace the `AdditionalHelpAction` property with the `HelpHelper()` function that is overridable from the base argument executor class, `ArgumentExecutor`.
 
 {% hint style="info" %}
-If you want additional help to be displayed, move the additional help action code to the HelpHelper() block, assuming that you've overridden it like below:
+If you want additional help to be displayed, move the additional help action code to the `HelpHelper()` block, assuming that you've overridden it like below:
 
 ```csharp
 public override void HelpHelper() =>
@@ -1563,7 +1849,11 @@ public override void HelpHelper() =>
 ```
 {% endhint %}
 
-### Implemented `NotificationProgressState`
+</details>
+
+<details>
+
+<summary>Implemented <code>NotificationProgressState</code></summary>
 
 {% code title="Notification.cs" lineNumbers="true" %}
 ```csharp
@@ -1579,7 +1869,11 @@ As a result, we need to implement the `NotificationProgressState` enumeration to
 If you want the progress notification to indicate failure, you'll have to set the `ProgressState` property value to `NotificationProgressState.Failure`.
 {% endhint %}
 
-### Auto completer gains access to the list of last arguments
+</details>
+
+<details>
+
+<summary>Auto completer gains access to the list of last arguments</summary>
 
 {% code title="CommandArgumentPart.cs" lineNumbers="true" %}
 ```csharp
@@ -1602,11 +1896,15 @@ We had to change the auto completer part to `Func<string[], string[]>` in order 
 Change the auto completer definitions in your `CommandArgumentPart` instances to hold the new function signature. This new function signature holds information about the last passed arguments.
 {% endhint %}
 
-### Process execution moved
+</details>
+
+<details>
+
+<summary>Process execution moved</summary>
 
 {% code title="ProcessExecutor.cs" lineNumbers="true" %}
 ```csharp
-public static class ProcessExecutor
+public static class ProcessExecutor { }
 ```
 {% endcode %}
 
@@ -1614,7 +1912,7 @@ The `ProcessExecutor` was located in the following namespace:
 
 {% code title="ProcessExecutor.cs" lineNumbers="true" %}
 ```csharp
-namespace KS.Shell.ShellBase.Commands
+namespace KS.Shell.ShellBase.Commands { }
 ```
 {% endcode %}
 
@@ -1628,11 +1926,15 @@ The `ProcessExecutor` class can now be called by importing the below namespace:
 * `KS.Shell.ShellBase.Commands.ProcessExecution`
 {% endhint %}
 
-### Moved `KernelTools`' properties to `KernelMain`
+</details>
+
+<details>
+
+<summary>Moved <code>KernelTools</code>' properties to <code>KernelMain</code></summary>
 
 {% code title="KernelTools.cs" lineNumbers="true" %}
 ```csharp
-public static class KernelTools
+public static class KernelTools { }
 ```
 {% endcode %}
 
@@ -1644,7 +1946,11 @@ As a result, we've moved the `KernelVersion` and the `KernelApiVersion` properti
 You can still access the two properties, though they're now re-located to the `KernelMain` class in the `KS.Kernel` namespace.
 {% endhint %}
 
-### `Out` Property Removed
+</details>
+
+<details>
+
+<summary><code>Out</code> Property Removed</summary>
 
 {% code title="ConsoleWrapper.cs" lineNumbers="true" %}
 ```csharp
@@ -1662,11 +1968,15 @@ As a result, for safety, we've decided to remove this property. The next breakin
 We advice you to stop using this property.
 {% endhint %}
 
-### Moved `SpeedDial` to Network Base
+</details>
+
+<details>
+
+<summary>Moved <code>SpeedDial</code> to Network Base</summary>
 
 {% code title="SpeedDial*.cs" lineNumbers="true" %}
 ```csharp
-namespace KS.Network.SpeedDial
+namespace KS.Network.SpeedDial { }
 ```
 {% endcode %}
 
@@ -1676,7 +1986,11 @@ This speed dial namespace menioned above was moved to the network base namespace
 None of the speed dial classes (or any of their associated functions) have been changed. It's just that you have to update your usings so that it points to the `KS.Network.Base.SpeedDial` namespace.
 {% endhint %}
 
-### Events and reminders config changes
+</details>
+
+<details>
+
+<summary>Events and reminders config changes</summary>
 
 When it comes to the events and the reminders feature in the Calendars addon, you may notice that their configuration file formats have changed from the XML representation of said events or reminders to the JSON representation.
 
@@ -1689,7 +2003,11 @@ As a result, you'll have to manually change your configuration files related to 
 Until tests are done, there are no clear instructions as to how to convert these configuration files. Be patient as they'll come soon.
 {% endhint %}
 
-### Removed command type from `CommandInfo`
+</details>
+
+<details>
+
+<summary>Removed command type from <code>CommandInfo</code></summary>
 
 {% code title="CommandInfo.cs" lineNumbers="true" %}
 ```csharp
@@ -1709,11 +2027,15 @@ This was planned a long time ago, but it didn't really occur to us that such a c
 Just remove all references to the shell type in the second argument in your `CommandInfo` definitions, and you're good to go. Then, use `RegisterCustomCommand()` or its siblings to register them to your custom shell or one of the Nitrocid shells, such as `Shell`.
 {% endhint %}
 
-### Removed `ListModsStartingWith()`
+</details>
+
+<details>
+
+<summary>Removed <code>ListModsStartingWith()</code></summary>
 
 {% code title="ModManager.cs" lineNumbers="true" %}
 ```csharp
-public static Dictionary<string, ModInfo> ListModsStartingWith(string SearchTerm)
+public static Dictionary<string, ModInfo> ListModsStartingWith(string SearchTerm) { }
 ```
 {% endcode %}
 
@@ -1723,11 +2045,15 @@ We've removed this function, because it was made only to help the UESH auto comp
 If you really want this function, you can re-implement it using [this link](https://github.com/Aptivi/NitrocidKS/commit/a79faa58481e72a92cb46ca67bd1a6551853c909) as a reference.
 {% endhint %}
 
-### Placeholder management handles arguments
+</details>
+
+<details>
+
+<summary>Placeholder management handles arguments</summary>
 
 {% code title="PlaceParse.cs" lineNumbers="true" %}
 ```csharp
-public static void RegisterCustomPlaceholder(string placeholder, Func<string> placeholderAction)
+public static void RegisterCustomPlaceholder(string placeholder, Func<string> placeholderAction) { }
 ```
 {% endcode %}
 
@@ -1737,16 +2063,20 @@ The placeholder management used to be rigid when it came to parsing advanced pla
 You must change your code so that the placeholder actions pass the first argument, if necessary. Example is provided in the placeholders page.
 
 ```csharp
-public static void RegisterCustomPlaceholder(string placeholder, Func<string, string> placeholderAction)
+public static void RegisterCustomPlaceholder(string placeholder, Func<string, string> placeholderAction) { }
 ```
 {% endhint %}
 
-### Language information class overhauled
+</details>
+
+<details>
+
+<summary>Language information class overhauled</summary>
 
 {% code title="CultureManager.cs" lineNumbers="true" %}
 ```csharp
-public static List<CultureInfo> GetCulturesFromCurrentLang()
-public static List<CultureInfo> GetCulturesFromLang(string Language)
+public static List<CultureInfo> GetCulturesFromCurrentLang() { }
+public static List<CultureInfo> GetCulturesFromLang(string Language) { }
 ```
 {% endcode %}
 
@@ -1772,7 +2102,11 @@ We've recently converted these read-only fields to properties so that consistenc
 The return value for these functions have changed to `CultureInfo[]`, so you need to make necessary changes.
 {% endhint %}
 
-### Moved some shells to their own individual addons
+</details>
+
+<details>
+
+<summary>Moved some shells to their own individual addons</summary>
 
 {% code title="ShellType.cs" lineNumbers="true" %}
 ```csharp
@@ -1807,12 +2141,16 @@ This means that your mods can't directly access them, their settings, and their 
 The base network is not going to be moved to the addons, but expect its namespace to be updated soon.
 {% endhint %}
 
-### Inter-mod communication updates
+</details>
+
+<details>
+
+<summary>Inter-mod communication updates</summary>
 
 {% code title="ModManager.cs" lineNumbers="true" %}
 ```csharp
-public static object ExecuteCustomModFunction(string modName, string functionName)
-public static object ExecuteCustomModFunction(string modName, string functionName, params object[] parameters)
+public static object ExecuteCustomModFunction(string modName, string functionName) { }
+public static object ExecuteCustomModFunction(string modName, string functionName, params object[] parameters) { }
 ```
 {% endcode %}
 
@@ -1824,26 +2162,30 @@ The creation of the `InterModTools` class is to organize all the inter-mod commu
 To continue using `ExecuteCustomModFunction()`, change the reference from `ModManager` to `InterModTools`.
 {% endhint %}
 
-### Separated the input info box to its own class
+</details>
+
+<details>
+
+<summary>Separated the input info box to its own class</summary>
 
 {% code title="InfoBoxColor.cs" lineNumbers="true" %}
 ```csharp
-public static string WriteInfoBoxPlainInput(string text, params object[] vars)
-public static string WriteInfoBoxPlainInput(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
-public static string WriteInfoBoxInput(string text, params object[] vars)
-public static string WriteInfoBoxInputKernelColor(string text, KernelColorType InfoBoxColor, params object[] vars)
-public static string WriteInfoBoxInputKernelColor(string text, KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars)
-public static string WriteInfoBoxInputColor(string text, ConsoleColors InfoBoxColor, params object[] vars)
-public static string WriteInfoBoxInputColorBack(string text, ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars)
-public static string WriteInfoBoxInputColor(string text, Color InfoBoxColor, params object[] vars)
-public static string WriteInfoBoxInputColorBack(string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars)
-public static string WriteInfoBoxInput(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
-public static string WriteInfoBoxInputKernelColor(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, KernelColorType InfoBoxColor, params object[] vars)
-public static string WriteInfoBoxInputKernelColor(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars)
-public static string WriteInfoBoxInputColor(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, Color InfoBoxColor, params object[] vars)
-public static string WriteInfoBoxInputColorBack(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, Color InfoBoxColor, Color BackgroundColor, params object[] vars)
-public static string WriteInfoBoxInputColor(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, ConsoleColors InfoBoxColor, params object[] vars)
-public static string WriteInfoBoxInputColorBack(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars)
+public static string WriteInfoBoxPlainInput(string text, params object[] vars) { }
+public static string WriteInfoBoxPlainInput(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) { }
+public static string WriteInfoBoxInput(string text, params object[] vars) { }
+public static string WriteInfoBoxInputKernelColor(string text, KernelColorType InfoBoxColor, params object[] vars) { }
+public static string WriteInfoBoxInputKernelColor(string text, KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars) { }
+public static string WriteInfoBoxInputColor(string text, ConsoleColors InfoBoxColor, params object[] vars) { }
+public static string WriteInfoBoxInputColorBack(string text, ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars) { }
+public static string WriteInfoBoxInputColor(string text, Color InfoBoxColor, params object[] vars) { }
+public static string WriteInfoBoxInputColorBack(string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars) { }
+public static string WriteInfoBoxInput(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) { }
+public static string WriteInfoBoxInputKernelColor(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, KernelColorType InfoBoxColor, params object[] vars) { }
+public static string WriteInfoBoxInputKernelColor(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars) { }
+public static string WriteInfoBoxInputColor(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, Color InfoBoxColor, params object[] vars) { }
+public static string WriteInfoBoxInputColorBack(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, Color InfoBoxColor, Color BackgroundColor, params object[] vars) { }
+public static string WriteInfoBoxInputColor(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, ConsoleColors InfoBoxColor, params object[] vars) { }
+public static string WriteInfoBoxInputColorBack(string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars) { }
 ```
 {% endcode %}
 
@@ -1853,7 +2195,11 @@ The input version of the informational box used to reside on the same class as t
 None of the functions were altered during the move. You must change the reference to `InfoBoxColor` so that it points to `InfoBoxInputColor` instead.
 {% endhint %}
 
-### Kernel no longer caches background and foreground colors
+</details>
+
+<details>
+
+<summary>Kernel no longer caches background and foreground colors</summary>
 
 {% code title="KernelColorTools.cs" lineNumbers="true" %}
 ```csharp
@@ -1884,11 +2230,15 @@ Also, to promote the usage of the modern ways to set the background and the fore
 You must replace both wrappers with `SetConsoleColor()` prior to writing text plainly. Otherwise, usage of the built-in console writers is more appropriate and easier.
 {% endhint %}
 
-### Number sorting tools moved
+</details>
+
+<details>
+
+<summary>Number sorting tools moved</summary>
 
 {% code title="SortingDriver.cs" lineNumbers="true" %}
 ```csharp
-public static class SortingDriver
+public static class SortingDriver { }
 ```
 {% endcode %}
 
@@ -1902,12 +2252,16 @@ We've created `ArrayTools` to put all the useful functions for arrays in one cla
 None of the functions are changed. You must change the `ArrayTools` references to point to `SortingDriver` instead.
 {% endhint %}
 
-### New ways of manipulating objects in the JSON shell
+</details>
+
+<details>
+
+<summary>New ways of manipulating objects in the JSON shell</summary>
 
 {% code title="JsonTools.cs" lineNumbers="true" %}
 ```csharp
-public static JToken GetProperty(string Property)
-public static JToken GetPropertySafe(string ParentProperty, string Property)
+public static JToken GetProperty(string Property) { }
+public static JToken GetPropertySafe(string ParentProperty, string Property) { }
 ```
 {% endcode %}
 
@@ -1919,11 +2273,15 @@ The solution was to implement brand new functions, `Add()`, `Set()`, and `Remove
 The old `Add()` and `Remove()` functions were made obsolete as a result of the malleability of the three new functions. It's recommended to use the new functions.
 {% endhint %}
 
-### Infobox classes moved to `Inputs`
+</details>
+
+<details>
+
+<summary>Infobox classes moved to <code>Inputs</code></summary>
 
 {% code title="InfoBox*.cs" lineNumbers="true" %}
 ```csharp
-namespace KS.ConsoleBase.Writers.FancyWriters
+namespace KS.ConsoleBase.Writers.FancyWriters { }
 ```
 {% endcode %}
 
@@ -1935,7 +2293,11 @@ To clear up the confusion, we've decided to move all the info box classes to the
 None of the classes and their functions were affected, but you must change the imports clause to point to the new namespace, `KS.ConsoleBase.Inputs.Styles`.
 {% endhint %}
 
-### Removal of delta-based refresh in the interactive TUI
+</details>
+
+<details>
+
+<summary>Removal of delta-based refresh in the interactive TUI</summary>
 
 {% code title="BaseInteractiveTui.cs" lineNumbers="true" %}
 ```csharp
@@ -1952,7 +2314,7 @@ public bool FastRefresh { get; }
 
 {% code title="InteractiveTuiTools.cs" lineNumbers="true" %}
 ```csharp
-public static void ForceRefreshSelection()
+public static void ForceRefreshSelection() { }
 ```
 {% endcode %}
 
@@ -1960,17 +2322,15 @@ The interactive TUI came with the built-in refresh mode that was, at the time, s
 
 The interactive TUI now uses the Screen feature that's available starting from 0.1.0 Beta 3, which means that the delta-based search has to be eliminated in favor of the speed improvements that the Screen feature brings, along with the malleability regarding the console resizes.
 
-To learn more about the Screen feature, visit the link below:
-
-{% content-ref url="/broken/pages/YwGfEqweqWfUbaw5Yt9A" %}
-[Broken link](/broken/pages/YwGfEqweqWfUbaw5Yt9A)
-{% endcontent-ref %}
-
 {% hint style="warning" %}
 Remove all calls and overrides to the above removed functions, because they no longer exist. The interactive TUI now internally uses the Screen feature, which means that it has not only become faster, but it has become more resilient when it comes to console resizes.
 {% endhint %}
 
-### Adaptive hex and text editor TUIs
+</details>
+
+<details>
+
+<summary>Adaptive hex and text editor TUIs</summary>
 
 {% code title="HexEditorBinding.cs" lineNumbers="true" %}
 ```csharp
@@ -2002,11 +2362,15 @@ public Func<List<string>, List<string>> Action { get; }
 ```
 {% endhint %}
 
-### Renamed `CloseTextFile()` in `JsonTools`
+</details>
+
+<details>
+
+<summary>Renamed <code>CloseTextFile()</code> in <code>JsonTools</code></summary>
 
 {% code title="JsonTools.cs" lineNumbers="true" %}
 ```csharp
-public static bool CloseTextFile()
+public static bool CloseTextFile() { }
 ```
 {% endcode %}
 
@@ -2016,13 +2380,18 @@ This was a development overlook when we were implementing the JSON shell tools. 
 This function's name has changed to the above name. Its behavior is not changed. You should update all references to the `CloseTextFile()` function to point to the new name.
 {% endhint %}
 
-### Remote chat tools renamed
+</details>
+
+<details>
+
+<summary>Remote chat tools renamed</summary>
 
 {% code title="RemoteChat.cs" lineNumbers="true" %}
 ```csharp
 namespace KS.Kernel.Debugging.RemoteDebug
 {
-    public static class RemoteChat
+    public static class RemoteChat { }
+}
 ```
 {% endcode %}
 
@@ -2036,11 +2405,15 @@ Its namespace needed updating, but the problem was that the class was named in t
 This change breaks all mods that target version `3.0.25.307` or lower. You need to update the namespace imports to `KS.Kernel.Debugging.RemoteDebug.RemoteChat` and the class references to `RemoteChatTools`.
 {% endhint %}
 
-### JSON and SQL shell became separate addons!
+</details>
+
+<details>
+
+<summary>JSON and SQL shell became separate addons!</summary>
 
 {% code title="JsonTools.cs" lineNumbers="true" %}
 ```csharp
-public static class JsonTools
+public static class JsonTools { }
 ```
 {% endcode %}
 
@@ -2052,7 +2425,11 @@ However, we felt that this class needed a movement because of the separation, so
 You can still use the JSON beautification and minification tools if you update the imports to point to the `KS.Misc.Text` namespace.
 {% endhint %}
 
-### Screen and Splashes
+</details>
+
+<details>
+
+<summary>Screen and Splashes</summary>
 
 {% code title="ISplash.cs" lineNumbers="true" %}
 ```csharp
@@ -2067,12 +2444,12 @@ void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, para
 
 {% code title="BaseSplash.cs" lineNumbers="true" %}
 ```csharp
-public virtual void Opening(SplashContext context)
-public virtual void Display(SplashContext context)
-public virtual void Closing(SplashContext context)
-public virtual void Report(int Progress, string ProgressReport, params object[] Vars)
-public virtual void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
-public virtual void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
+public virtual void Opening(SplashContext context) { }
+public virtual void Display(SplashContext context) { }
+public virtual void Closing(SplashContext context) { }
+public virtual void Report(int Progress, string ProgressReport, params object[] Vars) { }
+public virtual void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) { }
+public virtual void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) { }
 ```
 {% endcode %}
 
@@ -2084,22 +2461,26 @@ The screen feature that was introduced in Nitrocid KS 0.1.0 Beta 3 allowed us to
 The splash code must update their overrides to use the new signatures:
 
 ```csharp
-public virtual string Opening(SplashContext context)
-public virtual string Display(SplashContext context)
-public virtual string Closing(SplashContext context, out bool delayRequired)
-public virtual string Report(int Progress, string ProgressReport, params object[] Vars)
-public virtual string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
-public virtual string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
+public virtual string Opening(SplashContext context) { }
+public virtual string Display(SplashContext context) { }
+public virtual string Closing(SplashContext context, out bool delayRequired) { }
+public virtual string Report(int Progress, string ProgressReport, params object[] Vars) { }
+public virtual string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) { }
+public virtual string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) { }
 ```
 
 Afterwards, you must update the code in all of the overrides (if any) so that it builds a string full of VT sequences and text to print to the console. For example, the [Welcome splash screen](https://github.com/Aptivi/NitrocidKS/commit/6e05dcf86e3706265afaf4220b1a28d991c9df05#diff-bf50d9b8737e56449d43e3d0a56e42174f24e498bd0cbc6b7c2e6eca2578dbad) has been adjusted to use this feature.
 {% endhint %}
 
-### Implemented `ArgumentParameters`
+</details>
+
+<details>
+
+<summary>Implemented <code>ArgumentParameters</code></summary>
 
 {% code title="ArgumentExecutor.cs" lineNumbers="true" %}
 ```csharp
-public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) { }
 ```
 {% endcode %}
 
@@ -2115,7 +2496,7 @@ The `ArgumentParameters` class was implemented to group the variables intended t
 The `Execute()` signature has been changed, so you need to update all your inherited argument classes to hold the new signature:
 
 ```csharp
-public override void Execute(ArgumentParameters parameters)
+public override void Execute(ArgumentParameters parameters) { }
 ```
 
 Implemented by:
@@ -2125,7 +2506,11 @@ void Execute(ArgumentParameters parameters);
 ```
 {% endhint %}
 
-### Implemented `RemoteDebugCommandParameters`
+</details>
+
+<details>
+
+<summary>Implemented <code>RemoteDebugCommandParameters</code></summary>
 
 {% code title="IRemoteDebugCommand.cs" lineNumbers="true" %}
 ```csharp
@@ -2135,7 +2520,7 @@ void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly
 
 {% code title="RemoteDebugBaseCommand.cs" lineNumbers="true" %}
 ```csharp
-public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device)
+public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device) { }
 ```
 {% endcode %}
 
@@ -2145,7 +2530,7 @@ The `RemoteDebugCommandParameters` class was implemented to group the variables 
 The `Execute()` signature has been changed, so you need to update all your inherited remote debug command classes to hold the new signature:
 
 ```csharp
-public override void Execute(RemoteDebugCommandParameters parameters, RemoteDebugDevice device)
+public override void Execute(RemoteDebugCommandParameters parameters, RemoteDebugDevice device) { }
 ```
 
 Implemented by:
@@ -2155,11 +2540,15 @@ void Execute(RemoteDebugCommandParameters parameters, RemoteDebugDevice device);
 ```
 {% endhint %}
 
-### Moved `KernelPathType` to `Files.Paths`
+</details>
+
+<details>
+
+<summary>Moved <code>KernelPathType</code> to <code>Files.Paths</code></summary>
 
 {% code title="KernelPathType.cs" lineNumbers="true" %}
 ```csharp
-public enum KernelPathType
+public enum KernelPathType { }
 ```
 {% endcode %}
 
@@ -2176,11 +2565,15 @@ For calls to `Paths`, you need to reference it again under the new class name, `
 For the rest of the classes, you need to update the namespace imports to `Files.Paths`.
 {% endhint %}
 
-### Moved input modes to their own namespaces
+</details>
+
+<details>
+
+<summary>Moved input modes to their own namespaces</summary>
 
 ```csharp
 // Choice*, InfoBox*, and Selection*
-namespace KS.ConsoleBase.Inputs.Styles
+namespace KS.ConsoleBase.Inputs.Styles { }
 ```
 
 The three input modes have been moved to their own namespaces, because we wanted to organize the `KS.ConsoleBase.Inputs.Styles` namespace to be clean in case we add more input modes.
@@ -2202,11 +2595,15 @@ The following three input modes are affected:
 The above input modes have been moved to the above namespaces, so you need to update your namespace imports to reference the above namespaces.
 {% endhint %}
 
-### Moved advanced diagnostics to its own addon
+</details>
+
+<details>
+
+<summary>Moved advanced diagnostics to its own addon</summary>
 
 {% code title="ThreadManager.cs" lineNumbers="true" %}
 ```csharp
-public static Dictionary<string, string[]> GetThreadBacktraces()
+public static Dictionary<string, string[]> GetThreadBacktraces() { }
 ```
 {% endcode %}
 
@@ -2220,7 +2617,11 @@ This function has not been removed, but it has been modified to call the same fu
 When your mod calls this function, be sure to handle an extra case where it returns an empty dictionary.
 {% endhint %}
 
-### SpecProbe updated to 1.2.0
+</details>
+
+<details>
+
+<summary>SpecProbe updated to 1.2.0</summary>
 
 {% hint style="info" %}
 This is not exactly an API-related breaking change, but this is a breaking change for Windows users. Linux and macOS are not affected.
@@ -2230,13 +2631,17 @@ When SpecProbe was updated to 1.2.0, it contained a re-written hard disk prober 
 
 However, this re-written hard disk prober requires administrative rights, because it calls [`DeviceIoControl()`](https://learn.microsoft.com/en-us/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol), which is considered a powerful function for device I/O controls, such as getting drive geometry, getting drive partition table information, and so on. That function was used to directly talk to your drive for such information, which is why it requires administrator rights.
 
-**As a result, Nitrocid KS 0.1.0 Beta 3 will start requiring administrative privileges, starting from commit** [**`dda1d6d`**](https://github.com/Aptivi/NitrocidKS/commit/dda1d6d1d7209682c30b9b93d053056fad40cdfa)**. However, the final version won't ask for administrative privileges unless you explicitly tell it to reboot to the elevated mode on Windows systems.**
+As a result, Nitrocid KS 0.1.0 Beta 3 will start requiring administrative privileges, starting from commit [`dda1d6d`](https://github.com/Aptivi/NitrocidKS/commit/dda1d6d1d7209682c30b9b93d053056fad40cdfa). However, the final version won't ask for administrative privileges unless you explicitly tell it to reboot to the elevated mode on Windows systems.
 
-### Renamed `RemovePostfix()` to `RemoveSuffix()`
+</details>
+
+<details>
+
+<summary>Renamed <code>RemovePostfix()</code> to <code>RemoveSuffix()</code></summary>
 
 {% code title="TextTools.cs" lineNumbers="true" %}
 ```csharp
-public static string RemovePostfix(this string text, string postfix)
+public static string RemovePostfix(this string text, string postfix) { }
 ```
 {% endcode %}
 
@@ -2246,7 +2651,11 @@ It has been recently discovered that "postfix" is less understandable than "suff
 The functionality of this function wasn't changed while renaming this function.
 {% endhint %}
 
-### Removed hidden commands
+</details>
+
+<details>
+
+<summary>Removed hidden commands</summary>
 
 {% code title="CommandFlags.cs" lineNumbers="true" %}
 ```csharp
@@ -2266,7 +2675,11 @@ We've decided to remove this feature for this reason.
 We advice you to stop using this feature.
 {% endhint %}
 
-### Removed mod parts
+</details>
+
+<details>
+
+<summary>Removed mod parts</summary>
 
 {% code title="ModInfo.cs" lineNumbers="true" %}
 ```csharp
@@ -2276,7 +2689,7 @@ internal Dictionary<string, ModPartInfo> ModParts { get; set; }
 
 {% code title="ModPartInfo.cs" lineNumbers="true" %}
 ```csharp
-public class ModPartInfo
+public class ModPartInfo { }
 ```
 {% endcode %}
 
@@ -2292,11 +2705,15 @@ As a result, we've decided to finally remove the mod parts as their role has bee
 This only breaks your mod manager code as it only changes the kernel mod information class and not the mod interface itself. Your mods should still work properly.
 {% endhint %}
 
-### Moved permissions to `Security`
+</details>
+
+<details>
+
+<summary>Moved permissions to <code>Security</code></summary>
 
 {% code title="PermissionsTools.cs" lineNumbers="true" %}
 ```csharp
-namespace KS.Users.Permissions
+namespace KS.Users.Permissions { }
 ```
 {% endcode %}
 
@@ -2306,7 +2723,11 @@ The user permissions feature was implemented as a way to control what users can 
 None of the functions have been changed as a result of this move. You just need to update your imports to `KS.Security.Permissions`.
 {% endhint %}
 
-### Notification handling changes
+</details>
+
+<details>
+
+<summary>Notification handling changes</summary>
 
 Progress notification's handling has changed, because we no longer look for the progress percentage. We only look for the state now to accurately reflect the success or the failure.
 
@@ -2318,11 +2739,15 @@ Notif.ProgressState = NotificationProgressState.Success;
 ```
 {% endhint %}
 
-### Improved custom language loading functions
+</details>
+
+<details>
+
+<summary>Improved custom language loading functions</summary>
 
 {% code title="LanguageManager.cs" lineNumbers="true" %}
 ```csharp
-public static void InstallCustomLanguage(string LanguageName, bool ThrowOnAlreadyInstalled = true)
+public static void InstallCustomLanguage(string LanguageName, bool ThrowOnAlreadyInstalled = true) { }
 ```
 {% endcode %}
 
@@ -2334,13 +2759,17 @@ By taking care of it, we'd agreed that we'd change the `InstallCustomLanguage()`
 If you still want to use the language name, you need to change the function so that it calls its `...ByName()` sibling instead of the primary one, which now takes the path.
 {% endhint %}
 
-### Moved `KernelColorType` versions of writers
+</details>
+
+<details>
+
+<summary>Moved <code>KernelColorType</code> versions of writers</summary>
 
 {% code title="All console writers" lineNumbers="true" %}
 ```csharp
-public static void WriteKernelColor(string Text, KernelColorType colorType, params object[] vars)
-public static void WriteKernelColor(string Text, bool Line, KernelColorType colorType, params object[] vars)
-public static void WriteKernelColor(string Text, bool Line, bool Highlight, KernelColorType colorType, params object[] vars)
+public static void WriteKernelColor(string Text, KernelColorType colorType, params object[] vars) { }
+public static void WriteKernelColor(string Text, bool Line, KernelColorType colorType, params object[] vars) { }
+public static void WriteKernelColor(string Text, bool Line, bool Highlight, KernelColorType colorType, params object[] vars) { }
 (...)
 ```
 {% endcode %}
@@ -2361,10 +2790,4 @@ If you wish to use the above `KernelColorType`-based writers, you need to change
 * `ListWriterColor.WriteList` -> `TextWriters.WriteList`
 {% endhint %}
 
-### Terminaux 2.0 migration changes
-
-Nitrocid KS 0.1.0 Beta 3 uses Terminaux 2.0 to handle color work. As a result, we need you to consult the changelogs for this version of Terminaux here:
-
-{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v2.0" %}
-[API v2.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v2.0)
-{% endcontent-ref %}
+</details>

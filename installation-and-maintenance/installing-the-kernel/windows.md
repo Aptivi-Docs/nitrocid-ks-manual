@@ -19,11 +19,15 @@ To run Nitrocid KS in the absolute minimum requirements, your computer needs to 
 | ----------- | -------------------------------------------------------------------- | --------------------------------------------------------- |
 | Windows 10+ | [.NET 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) | [ConEmu](https://conemu.github.io/) or Windows 10 cmd.exe |
 
-## Installation
+***
+
+## <mark style="color:$primary;">Installation</mark>
 
 There are several ways to install Nitrocid KS on Windows systems. We recommend installing KS using the Chocolatey package manager or the Windows installer for simplicity.
 
-### Method 1: Windows Installer
+<details>
+
+<summary>Method 1: Using Windows Installer</summary>
 
 The Windows Installer method allows you to easily install Nitrocid KS.
 
@@ -31,7 +35,11 @@ The Windows Installer method allows you to easily install Nitrocid KS.
 2. Double-click on a single EXE file, and follow the instructions
 3. Double-click on `Nitrocid KS` in your desktop.
 
-### Method 2: Chocolatey
+</details>
+
+<details>
+
+<summary>Method 2: Using Chocolatey</summary>
 
 This step-by-step guide shows you how to install Nitrocid KS using the package manager, [Chocolatey](https://chocolatey.org/install), assuming that you already have it on your system.
 
@@ -39,7 +47,11 @@ This step-by-step guide shows you how to install Nitrocid KS using the package m
 2. Open your favorite terminal emulator, like ConEmu, and execute the following command: `choco install ks`
 3. Start Nitrocid KS using `ks`
 
-### Method 3: Manual unpack
+</details>
+
+<details>
+
+<summary>Method 3: Manually unpacking</summary>
 
 If you like to manually unpack the Nitrocid KS packages, follow these steps:
 
@@ -49,10 +61,48 @@ If you like to manually unpack the Nitrocid KS packages, follow these steps:
 4. Open your favorite terminal emulator, like ConEmu, and change the working directory to a folder containing the Nitrocid KS executable
 5. Execute `ks` or `Nitrocid.exe` to start the kernel
 
-## Notice for SmartScreen
+</details>
 
-SmartScreen may detect that Nitrocid and its associated executables may not pass the SmartScreen attestation. If this happens, you'll see the below page:
+***
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+## <mark style="color:$primary;">Upgrade</mark>
 
-Nitrocid KS will not put your PC at risk (except if you downloaded a copy from an unofficial software distributor, or from an unofficial source other than our official releases, our Chocolatey page found [here](https://community.chocolatey.org/packages/KS), and our NuGet page found [here](https://www.nuget.org/packages/KS/)). Click on `More Info`, then click on `Run anyways`.
+Upgrading Nitrocid on Windows is pretty simple, depending on the way you've installed it. To upgrade it, choose a method.
+
+<details>
+
+<summary>Method 1: Using Windows Installer</summary>
+
+You can update Nitrocid KS using the Windows Installer method.
+
+1. Download the latest Windows Installer EXE file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases)
+2. Double-click on the EXE file and follow the instructions
+3. Go to your installation path and double-click on `Nitrocid.exe`.
+
+</details>
+
+<details>
+
+<summary>Method 2: Using Chocolatey</summary>
+
+Any updates to the KS Chocolatey package can be done using a built-in Chocolatey command. To update the kernel, follow these steps:
+
+1. Open your favorite terminal emulator, like ConEmu
+2. Run `choco upgrade ks`
+3. Once the upgrade is done, run KS like you normally would
+
+</details>
+
+<details>
+
+<summary>Method 3: Manually unpacking</summary>
+
+Nitrocid KS can also be manually updated in case the automatic updater failed to update. To update the kernel, perform the same steps as in installing KS. Run the executable to upgrade your kernel configuration files to the latest.
+
+1. Ensure that you have all the required software installed
+2. Download the latest release ZIP file from [this page](https://github.com/Aptivi/Kernel-Simulator/releases)
+3. Unpack the ZIP archive to any folder of your choice
+4. Open your favorite terminal emulator, like ConEmu, and change the working directory to a folder containing the Nitrocid KS executable
+5. Execute `ks` or `Nitrocid.exe` to start the kernel
+
+</details>

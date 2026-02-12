@@ -7,9 +7,9 @@ icon: up
 
 When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v2.1, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod.
 
-The following changes were listed sequentially as development went on.
+***
 
-## From 0.0.23 to 0.0.24
+## <mark style="color:$primary;">From 0.0.23 to 0.0.24</mark>
 
 This version was released to make groundbreaking additions and improvements.
 
@@ -17,17 +17,21 @@ This version was released to make groundbreaking additions and improvements.
 [v0.0.24.x-series.md](../version-release-notes/v0.0.24.x-series.md)
 {% endcontent-ref %}
 
-### **Removed support for `ICustomSaver`**
+Here's a list of breaking changes:
+
+<details>
+
+<summary>Removed support for <code>ICustomSaver</code></summary>
 
 {% code title="ICustomSaver.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 <Obsolete("This custom screensaver interface is obsolete. Use IScreensaver and BaseScreensaver instead.")>
 Public Interface ICustomSaver
 ```
 {% endcode %}
 
 {% code title="CustomSaverCompiler.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub CompileCustom(file As String)
 ```
 {% endcode %}
@@ -42,10 +46,14 @@ All new screensavers should use the `BaseScreensaver` class. All existing screen
 As for the parser, it has been reimplemented to take only the screensaver DLL files.
 {% endhint %}
 
-### **Removed support for `PerformCmd()`**
+</details>
+
+<details>
+
+<summary>Removed support for <code>PerformCmd()</code></summary>
 
 {% code title="IScript.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub PerformCmd(Command As CommandInfo, Optional Args As String = "")
 ```
 {% endcode %}
@@ -57,17 +65,21 @@ Sub PerformCmd(Command As CommandInfo, Optional Args As String = "")
 
 {% code title="BaseCommand.cs" lineNumbers="true" %}
 ```csharp
-public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Restructured the filesystem API**
+</details>
+
+<details>
+
+<summary>Restructured the filesystem API</summary>
 
 Filesystem module was a _**god class**_, so we decided to consolidate it to their own separate files to accomodate with the upcoming changes. However, you need to use their own namespace (for example, if you want to copy a file, import `KS.Files.Operations`) to be able to use them.
 
 {% code title="Filesystem.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function SetSizeParseMode(Enable As Boolean) As Boolean
 ```
 {% endcode %}
@@ -94,10 +106,14 @@ The base `Filesystem` module will stay so that path neutralization and invalid p
 Choose one of the above namespaces to select the kind of filesystem operation you're going to do. However, these namespaces were written at the time of the change commit date, so the API documentation always gets up-to-date.
 {% endhint %}
 
-### **Separated `ConsoleColors` enumeration**
+</details>
+
+<details>
+
+<summary>Separated <code>ConsoleColors</code> enumeration</summary>
 
 {% code title="Color255.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Enum ConsoleColors As Integer
 ```
 {% endcode %}
@@ -108,16 +124,20 @@ This enumeration used to hold all the 255 console colors and their names for eas
 You can still use this enumeration in the Terminaux library.
 {% endhint %}
 
-### **Removed `KS.Misc.Dictionary` to substitute with Dictify**
+</details>
+
+<details>
+
+<summary>Removed <code>KS.Misc.Dictionary</code> to substitute with Dictify</summary>
 
 {% code title="DictionaryManager.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function GetWordInfo(Word As String) As DictionaryWord
 ```
 {% endcode %}
 
 {% code title="DictionaryWord.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Class DictionaryWord
 ```
 {% endcode %}
@@ -128,7 +148,11 @@ As Dictify got released, we decided to remove these functions and use them from 
 You can still use these functions using the Dictify library.
 {% endhint %}
 
-### **Moved APIs to their own namespace**
+</details>
+
+<details>
+
+<summary>Moved APIs to their own namespace</summary>
 
 We have moved the below APIs to the below namespaces as they keep getting expanded:
 
@@ -136,10 +160,14 @@ We have moved the below APIs to the below namespaces as they keep getting expand
 * Color console APIs -> `KS.ConsoleBase.Themes`
 * Input console APIs -> `KS.ConsoleBase.Inputs`
 
-### **Removed the progress and its report positions from `SplashInfo`**
+</details>
+
+<details>
+
+<summary>Removed the progress and its report positions from <code>SplashInfo</code></summary>
 
 {% code title="SplashInfo.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public ReadOnly Property ProgressWritePositionX As Integer
 Public ReadOnly Property ProgressWritePositionY As Integer
 Public ReadOnly Property ProgressReportWritePositionX As Integer
@@ -153,10 +181,14 @@ These four progress position variables were used to indicate where the splash ma
 We advice you to assign these variables in your splash code instead of using these fields.
 {% endhint %}
 
-### **Replaced `CommandPromptWrite()`**
+</details>
+
+<details>
+
+<summary>Replaced <code>CommandPromptWrite()</code></summary>
 
 {% code title="UESHShell.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub CommandPromptWrite()
 ```
 {% endcode %}
@@ -168,13 +200,17 @@ Your shell should use the `PromptPresetBase` class to define your own shell prom
 
 {% code title="PromptPresetManager.cs" lineNumbers="true" %}
 ```csharp
-public static void WriteShellPrompt(ShellType ShellType)
-public static void WriteShellPrompt(string ShellType)
+public static void WriteShellPrompt(ShellType ShellType) { }
+public static void WriteShellPrompt(string ShellType) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Organized the `ShellBase` namespaces**
+</details>
+
+<details>
+
+<summary>Organized the <code>ShellBase</code> namespaces</summary>
 
 The shell base has been divided to three types:
 
@@ -186,10 +222,14 @@ The shell base has been divided to three types:
 Use the above namespaces if you want to perform operations in your own custom shell.
 {% endhint %}
 
-### **Changed progress bar writer module name**
+</details>
+
+<details>
+
+<summary>Changed progress bar writer module name</summary>
 
 {% code title="ProgressColor.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Module ProgressColor
 ```
 {% endcode %}
@@ -199,3 +239,5 @@ We didn't want to cause confusion between `ProgressColor` in the `FancyWriters` 
 {% hint style="info" %}
 To utilize the progress bar writers, you need to use the `KS.Misc.Writers.FancyWriters` namespace and use the `ProgressBarColor` class methods.
 {% endhint %}
+
+</details>

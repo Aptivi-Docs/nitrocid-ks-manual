@@ -11,25 +11,33 @@ The network tools allow you to perform basic network operations that Nitrocid KS
 [networking.md](../../../fundamentals/simulated-kernel-features/networking.md)
 {% endcontent-ref %}
 
+***
+
+## <mark style="color:$primary;">Properties and functions</mark>
+
 The networking tools provide you various properties and functions that can be useful for your kernel mods.
 
-## Properties
+### <mark style="color:$primary;">Properties</mark>
 
 These properties can be used by your kernel mods:
 
-* `HostName`: The kernel host name
-* `DownloadRetries`: The number of retries for a download operation
-* `UploadRetries`: The number of retries for an upload operation
-* `PingTimeout`: The ping timeout specified in milliseconds
-* `NetworkAvailable`: Specifies whether the network is available or not
-* `InternetAvailable`: Specifies whether the Internet connection is available or not
-* `ShowProgress`: Shows the progress bar while downloading using the normal network transfer functions
+| Property            | Description                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| `HostName`          | The kernel host name                                                                 |
+| `DownloadRetries`   | The number of retries for a download operation                                       |
+| `UploadRetries`     | The number of retries for an upload operation                                        |
+| `PingTimeout`       | The ping timeout specified in milliseconds                                           |
+| `NetworkAvailable`  | Specifies whether the network is available or not                                    |
+| `InternetAvailable` | Specifies whether the Internet connection is available or not                        |
+| `ShowProgress`      | Shows the progress bar while downloading using the normal network transfer functions |
 
-## Functions
+### <mark style="color:$primary;">Functions</mark>
 
 There are several base networking functions that are useful for your mods, such as pinging a server from either an IP address or an associated hostname.
 
-### Pinging a Server
+<details>
+
+<summary>Pinging a Server</summary>
 
 <figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
@@ -37,10 +45,10 @@ You can ping a server using the `PingAddress()` function, which contains several
 
 {% code title="NetworkTools.cs" lineNumbers="true" %}
 ```csharp
-public static PingReply PingAddress(string Address, PingOptions options = null)
-public static PingReply PingAddress(string Address, int Timeout, PingOptions options = null)
-public static PingReply PingAddress(string Address, int Timeout, string text, PingOptions options = null)
-public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer, PingOptions options = null)
+public static PingReply PingAddress(string Address, PingOptions options = null) { }
+public static PingReply PingAddress(string Address, int Timeout, PingOptions options = null) { }
+public static PingReply PingAddress(string Address, int Timeout, string text, PingOptions options = null) { }
+public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer, PingOptions options = null) { }
 ```
 {% endcode %}
 
@@ -51,17 +59,25 @@ These functions provide you with different options:
 * The third version has the same features as the second version, with an ability to specify a custom text
 * The fourth version has the same features as the second version, with an ability to specify a byte buffer representing data
 
-### Changing the kernel hostname
+</details>
+
+<details>
+
+<summary>Changing the kernel hostname</summary>
 
 You can change the kernel hostname using the `ChangeHostname()` function, but that won't change your computer's hostname; it only affects the simulated kernel.
 
 {% code title="NetworkTools.cs" lineNumbers="true" %}
 ```csharp
-public static void ChangeHostname(string NewHost)
+public static void ChangeHostname(string NewHost) { }
 ```
 {% endcode %}
 
-### Getting a file name from the URL
+</details>
+
+<details>
+
+<summary>Getting a file name from the URL</summary>
 
 The base networking class contains a function that allows you to get a file name right from the URL. This makes getting a file name from the URL easier as it strips the URL to the last element that usually represents the file name, such as `index.html`, and also strips the query strings (those beginning with `?` that represent arguments delimited with `&`).
 
@@ -69,16 +85,22 @@ As a result, this function returns a file name taken from the URL. You can acces
 
 {% code title="NetworkTools.cs" lineNumbers="true" %}
 ```csharp
-public static string GetFilenameFromUrl(string Url)
+public static string GetFilenameFromUrl(string Url) { }
 ```
 {% endcode %}
 
-### Getting online devices
+</details>
+
+<details>
+
+<summary>Getting online devices</summary>
 
 For online devices, you can scan your whole network by pinging each individual machine with fast network pinging. There is a function dedicated to getting online devices, called `GetOnlineDevicesInNetwork()`.
 
 {% code title="NetworkTools.cs" lineNumbers="true" %}
 ```csharp
-public static IPAddress[] GetOnlineDevicesInNetwork()
+public static IPAddress[] GetOnlineDevicesInNetwork() { }
 ```
 {% endcode %}
+
+</details>

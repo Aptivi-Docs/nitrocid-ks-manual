@@ -15,22 +15,18 @@ RDF Site Summary or Really Simple Syndication (RSS) is a web feed that allows us
 
 The simulated kernel contains the RSS client which gets updates from any RSS feed, as well as list and read the feeds. It automatically synchronizes the feed every set interval. The default interval for the refresh is 1 minute.
 
-## Connecting to a feed
+***
+
+## <mark style="color:$primary;">Connecting to a feed</mark>
 
 To connect to any RSS feed, get any RSS feed URL and execute the `rss` command with the URL. The usage of this command is `rss [-tui] <feed>`.
+
+***
+
+## <mark style="color:$primary;">RSS feed interactive TUI</mark>
 
 <figure><img src="../../../../.gitbook/assets/image (50) (1).png" alt=""><figcaption></figcaption></figure>
 
 If you passed the `-tui` switch, it'll open the interactive TUI to your favorite RSS feed URL listing all your articles. Here are the controls:
 
-* `F1`: Shows you more information about the article that you're reading
-* `F2`: Opens your web browser to the article
-* `F3`: Refreshes the list of articles for new updates
-
-## Commands
-
-These below commands can be found by consulting the below page:
-
-{% content-ref url="../../shells/addon-commands-list.md" %}
-[addon-commands-list.md](../../shells/addon-commands-list.md)
-{% endcontent-ref %}
+<table><thead><tr><th width="129.99993896484375">Keybinding</th><th>Description</th></tr></thead><tbody><tr><td><code>F1</code></td><td>Shows you more information about the article that you're reading</td></tr><tr><td><code>F2</code></td><td>Opens your web browser to the article</td></tr><tr><td><code>F3</code></td><td>Refreshes the list of articles for new updates</td></tr></tbody></table>

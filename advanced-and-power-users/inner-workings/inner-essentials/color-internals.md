@@ -21,7 +21,9 @@ Colorimetry is also used for more general color tools, which you can consult her
 [Color Sequences](https://app.gitbook.com/s/BdESDsiuTO9fbDXLJ8HV/usage/color-sequences)
 {% endcontent-ref %}
 
-## Color types
+***
+
+## <mark style="color:$primary;">Color types</mark>
 
 Nitrocid KS provides you with the following color types to help you make an inspiring theme with nice colors for each type:
 
@@ -39,25 +41,19 @@ Nitrocid KS provides you with the following color types to help you make an insp
 | `MediumPriorityBorder`    | Medium priority notification border color                   |
 | `HighPriorityBorder`      | High priority notification border color                     |
 
-## Color selector
+***
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
-
-The color selector is an interactive TUI that allows you to seamlessly select your favorite color, while getting information about it in the main screen, such as the converted color models, the color levels, and more.
-
-To get information about how to use it, you can find it in the Terminaux manual page:
-
-{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/input-reader/other-input/color-wheel" %}
-[Color Wheel](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/input-reader/other-input/color-wheel)
-{% endcontent-ref %}
-
-## Color conversion
+## <mark style="color:$primary;">Color conversion</mark>
 
 <figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 Your theme files can also support any specifier, as long as the specifier is supported by Terminaux. For a quick reminder, Terminaux supports the true-color specifiers, alongside the color name or the color number, if you intend to use another color model to select colors.
 
-The commands provided by the color conversion Extras addon help you convert from a color model, such as RGB, to another color model, such as CMYK.
+The commands provided by the color conversion addon help you convert from a color model, such as RGB, to another color model, such as CMYK.
+
+<details>
+
+<summary><code>KernelColorConversionTools</code> class </summary>
 
 `KernelColorConversionTools` provides you all possible conversion methods to convert a color model to another color model to generate appropriate color specifiers converted to the target unit to create new `Color` instances for your mod's appearance.
 
@@ -65,3 +61,5 @@ For example, if you have Cyan, Magenta, and Yellow values and you want a hex cod
 
 * `ConvertFromCmykToHex(int C, int M, int Y, int K)`
 * `ConvertFromCmykToHex(string CMYKSequence)`
+
+</details>

@@ -7,13 +7,15 @@ icon: hourglass-end
 
 The progress handlers allow you to handle how you want to notify that there is progress going on. For long operations that are split to short operations, such as showing what files are being copied for every single file, you can use this facility to register and unregister your progress handlers.
 
-When registration is complete, you should be notified about the progress of an operation, depending on how you defined the progress handling action.
+***
+
+## <mark style="color:$primary;">Registering and unregistering progress handlers</mark>
 
 Every progress handler can be created using the following constructor:
 
 {% code title="ProgressHandler.cs" lineNumbers="true" %}
 ```csharp
-public ProgressHandler(Action<double, string> progressAction, string context)
+public ProgressHandler(Action<double, string> progressAction, string context) { }
 ```
 {% endcode %}
 
@@ -21,10 +23,16 @@ The progress handler manager allows you to register and unregister your progress
 
 {% code title="ProgressManager.cs" lineNumbers="true" %}
 ```csharp
-public static void RegisterProgressHandler(ProgressHandler handler)
-public static void UnregisterProgressHandler(ProgressHandler handler)
+public static void RegisterProgressHandler(ProgressHandler handler) { }
+public static void UnregisterProgressHandler(ProgressHandler handler) { }
 ```
 {% endcode %}
+
+<details>
+
+<summary>Registering the handler</summary>
+
+When registration is complete, you should be notified about the progress of an operation, depending on how you defined the progress handling action.
 
 For example, this is the bit of code needed to register your progress handler.
 
@@ -37,6 +45,12 @@ ProgressManager.RegisterProgressHandler(handler);
 ```
 {% endcode %}
 
+</details>
+
+<details>
+
+<summary>Unregistering the handler</summary>
+
 This is the bit of code to unregister your handler, given that you've kept the handler handy:
 
 {% code title="Example code" lineNumbers="true" %}
@@ -45,17 +59,25 @@ ProgressManager.UnregisterProgressHandler(handler);
 ```
 {% endcode %}
 
+</details>
+
+<details>
+
+<summary>Reporting the progress</summary>
+
 After you register the handler, you can report the progress using the same context using one of the following functions:
 
 ```csharp
-public static void ReportProgress(double progress, string context)
-public static void ReportProgress(double progress, string context, string message)
-public static void ReportProgress(double progress, string context, string message, params object[] vars)
+public static void ReportProgress(double progress, string context) { }
+public static void ReportProgress(double progress, string context, string message) { }
+public static void ReportProgress(double progress, string context, string message, params object[] vars) { }
 ```
 
 Any call to one of these `ReportProgress()` functions with the correct context that is handled will follow it the progress indicator showing on your screen, or any other progress action, depending on how you're handling the progress.
 
-For example, this is the simplest method to report the progress, assuming that this is reported inside a long operation loop:
+### <mark style="color:$primary;">Example</mark>
+
+This is the simplest method to report the progress, assuming that this is reported inside a long operation loop:
 
 {% code title="Example code" lineNumbers="true" %}
 ```csharp
@@ -67,11 +89,15 @@ ProgressManager.ReportProgress(progress, "General", Translate.DoTranslation("Ini
 You must write the context correctly, as it is case-sensitive. Trying to report a progress on a non-existent context will simply do nothing.
 {% endhint %}
 
-## Full example code
+</details>
+
+***
+
+## <mark style="color:$primary;">Full example code</mark>
 
 This is the full example code that registers progress handlers for two contexts and reports the progress on them until the progress reaches 100%.
 
-<pre class="language-csharp" data-title="TestProgressHandler.cs" data-line-numbers><code class="lang-csharp">using Terminaux.Themes.Colors;
+<pre class="language-csharp" data-title="TestProgressHandler.cs" data-line-numbers data-expandable="true"><code class="lang-csharp">using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using System.Threading;
 using Nitrocid.Base.Languages;

@@ -11,9 +11,12 @@ In .NET Framework, there is a function that gives your assembly a strong signatu
 While the modern .NET does not use strict assembly loading if you have strongly named your assembly, Nitrocid KS, in its default setting, disallows loading unsigned mods. It's recommended to strongly name your mods with your strong naming key. You can generate one using [SN.exe](https://learn.microsoft.com/en-us/dotnet/framework/tools/sn-exe-strong-name-tool).
 {% endhint %}
 
+***
+
+## <mark style="color:$primary;">`AssemblySigning`</mark> <mark style="color:$primary;"></mark><mark style="color:$primary;">class</mark>
+
 In the `Signing` part of the `Security` namespace, there is an assembly signing tools class, called `AssemblySigning`, that allows you access to various tools that are used for assembly signing, including checking to see if a given assembly is signed.
 
 This class gives you these tools:
 
-* `PublicKeyToken()`: It takes either a loaded assembly, an assembly name instance, or a path to a valid assembly to get a public key token.
-* `IsStronglySigned()`: This takes the three above items and returns true if a given assembly is signed.
+<table><thead><tr><th width="190">Function</th><th>Description</th></tr></thead><tbody><tr><td><code>PublicKeyToken()</code></td><td>It takes either a loaded assembly, an assembly name instance, or a path to a valid assembly to get a public key token.</td></tr><tr><td><code>IsStronglySigned()</code></td><td>This takes the three above items and returns true if a given assembly is signed.</td></tr></tbody></table>

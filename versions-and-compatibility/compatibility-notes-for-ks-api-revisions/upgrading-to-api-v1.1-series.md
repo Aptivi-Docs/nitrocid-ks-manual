@@ -7,7 +7,9 @@ icon: up
 
 When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v1.1, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod. These changes will be listed starting from 0.0.8 to the last version in this API revision.
 
-## From 0.0.7 to 0.0.8
+***
+
+## <mark style="color:$primary;">From 0.0.7 to 0.0.8</mark>
 
 This version brought many awesome changes, including the addition of screensavers and SSH.
 
@@ -15,10 +17,14 @@ This version brought many awesome changes, including the addition of screensaver
 [v0.0.8.x-series.md](../version-release-notes/v0.0.8.x-series.md)
 {% endcontent-ref %}
 
-### **`CheckSSEs()`**
+Here's a list of breaking changes:
+
+<details>
+
+<summary><code>CheckSSEs()</code></summary>
 
 {% code title="CPUFeatures.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub CheckSSEs()
 ```
 {% endcode %}
@@ -29,10 +35,14 @@ This function was used to get information about your processor's support of the 
 You can use Inxi.NET's CPU Flags property to get advantage of this feature.
 {% endhint %}
 
-### Directory Structure Initialization
+</details>
+
+<details>
+
+<summary>Directory Structure Initialization</summary>
 
 {% code title="Filesystem.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub InitStructure()
 Private Sub UACNoticeShow()
 ```
@@ -44,7 +54,11 @@ According to the debug logs inside the function, it was meant to make a list of 
 We advice you to cease using this function, since it's classed as abusive.
 {% endhint %}
 
-## From 0.0.8 to 0.0.10
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.8 to 0.0.10</mark>
 
 This release brings a vast amount of improvements, but there is one API removal which is pinpointed below.
 
@@ -52,10 +66,14 @@ This release brings a vast amount of improvements, but there is one API removal 
 [v0.0.10.x-series.md](../version-release-notes/v0.0.10.x-series.md)
 {% endcontent-ref %}
 
-### `DisconnectDbgDevCmd()`
+Here's a list of breaking changes:
+
+<details>
+
+<summary><code>DisconnectDbgDevCmd()</code></summary>
 
 {% code title="RemoteDebugger.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub DisconnectDbgDevCmd(ByVal IPAddr As String)
 ```
 {% endcode %}
@@ -67,12 +85,16 @@ Alternatively, you can use the same function in the latest kernel version. `Disc
 
 {% code title="RemoteDebugTools.cs" lineNumbers="true" %}
 ```csharp
-public static void DisconnectDbgDev(string IPAddr)
+public static void DisconnectDbgDev(string IPAddr) { }
 ```
 {% endcode %}
 {% endhint %}
 
-## From 0.0.10 to 0.0.11
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.10 to 0.0.11</mark>
 
 This kernel version series added new features, like the text editor.
 
@@ -80,10 +102,14 @@ This kernel version series added new features, like the text editor.
 [v0.0.11.x-series.md](../version-release-notes/v0.0.11.x-series.md)
 {% endcontent-ref %}
 
-### `InitFS()`
+Here's a list of breaking changes:
+
+<details>
+
+<summary><code>InitFS()</code></summary>
 
 {% code title="Filesystem.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub InitFS()
 ```
 {% endcode %}
@@ -94,10 +120,14 @@ This function used to call the filesystem structure population which was removed
 We advice you to cease using this function.
 {% endhint %}
 
-### `FTPNotEnoughArgumentsException` class
+</details>
+
+<details>
+
+<summary><code>FTPNotEnoughArgumentsException</code> class</summary>
 
 {% code title="EventsAndExceptions.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Class FTPNotEnoughArgumentsException
 ```
 {% endcode %}
@@ -108,10 +138,14 @@ This exception used to be thrown when the user didn't provide enough arguments f
 Since this exception got removed twice, we advice you to cease using this class.
 {% endhint %}
 
-### `JsonNullException` class
+</details>
+
+<details>
+
+<summary><code>JsonNullException</code> class</summary>
 
 {% code title="EventsAndExceptions.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Class JsonNullException
 ```
 {% endcode %}
@@ -122,10 +156,14 @@ This function was thrown each time the currency converter, which was removed in 
 We advice you to cease using this class.
 {% endhint %}
 
-### `TruncatedManpageException` class
+</details>
+
+<details>
+
+<summary><code>TruncatedManpageException</code> class</summary>
 
 {% code title="EventsAndExceptions.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Class TruncatedManpageException
 ```
 {% endcode %}
@@ -136,10 +174,14 @@ This exception used to be thrown when the manual page handler detected that the 
 `InvalidManpage` returned after the manual page parser and viewer returned.
 {% endhint %}
 
-### `Speak()`
+</details>
+
+<details>
+
+<summary><code>Speak()</code></summary>
 
 {% code title="VoiceManagement.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub Speak(ByVal Text As String)
 ```
 {% endcode %}
@@ -150,6 +192,4 @@ It was also tried with NAudio in earlier milestones of the version to no avail b
 
 Therefore, we decided to remove the entire synthesizer from the kernel as the simulator was no longer biased to Windows systems.
 
-{% hint style="danger" %}
-Unless there is a specialized sound library that is cross-platform, we advice you to cease using this function.
-{% endhint %}
+</details>

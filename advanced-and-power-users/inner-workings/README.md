@@ -5,36 +5,8 @@ icon: hammer
 
 # Inner Workings
 
-Discovering how the kernel and its components work is great, because it actually increases your knowledge of the kernel. We've prepared various pages for different features, which will be explained below:
+Discovering how the kernel and its components work is great, because it actually increases your knowledge of the kernel.
 
-## Kernel Settings
+We've prepared various pages for different features, which will be explained below:
 
-To know more about how the kernel settings works, consult the below page.
-
-{% content-ref url="kernel-settings/" %}
-[kernel-settings](kernel-settings/)
-{% endcontent-ref %}
-
-## Shell
-
-To learn more about how Unified Extensible SHell (UESH) works, click on the belobelow button.
-
-{% content-ref url="inner-essentials/shell-structure.md" %}
-[shell-structure.md](inner-essentials/shell-structure.md)
-{% endcontent-ref %}
-
-## Console Input and Manipulation
-
-Nitrocid KS provides console input and manipulation functions through Terminaux. Click below to get started!
-
-{% content-ref url="https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/" %}
-[Terminaux - Manual](https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/G0KrE9Uk2AiblqjWtpAo/)
-{% endcontent-ref %}
-
-## Inner Essentials
-
-For other internal workings, consult the below page to get started.
-
-{% content-ref url="inner-essentials/" %}
-[inner-essentials](inner-essentials/)
-{% endcontent-ref %}
+<table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td align="center"><h3><a href="kernel-settings/"><mark style="color:$primary;"><strong>Kernel Settings</strong></mark></a></h3></td><td align="center">You can learn more about how the kernel settings works.</td><td><a href="../../.gitbook/assets/1000069367.png">1000069367.png</a></td></tr><tr><td align="center"><h3><a href="inner-essentials/"><mark style="color:$primary;"><strong>Inner Essentials</strong></mark></a></h3></td><td align="center">You can learn more about the inner workings of essentials here.</td><td><a href="../../.gitbook/assets/1000069367.png">1000069367.png</a></td></tr><tr><td align="center"><h3><a href="miscellaneous-apis.md"><mark style="color:$primary;"><strong>Misc APIs</strong></mark></a></h3></td><td align="center">You can learn more about the remaining APIs here.</td><td><a href="../../.gitbook/assets/1000069367.png">1000069367.png</a></td></tr></tbody></table>

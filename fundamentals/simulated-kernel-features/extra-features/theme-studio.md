@@ -15,6 +15,10 @@ This saves you the need of manually making a JSON file containing theme data, wh
 [Console Themes](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/console-tools/console-themes)
 {% endcontent-ref %}
 
+***
+
+## <mark style="color:$primary;">Available options</mark>
+
 Once you're done making your own theme, the theme studio provides you with these options:
 
 * `Save Theme to Current Directory`: Saves the theme file to the current directory
@@ -33,7 +37,9 @@ Once you're done with the theme, the theme studio doesn't automatically save you
 You can set your kernel theme to use your custom theme by executing the `themeset` command with the path to your theme JSON file as the first argument, such as `themeset Colorful.json`.
 {% endhint %}
 
-## Interactive TUI
+***
+
+## <mark style="color:$primary;">Interactive TUI</mark>
 
 <figure><img src="../../../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
 

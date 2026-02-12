@@ -11,6 +11,10 @@ The screensavers were touted to be a solution against screen burn-ins in cathode
 
 The first screensaver that blanked the screen after three minutes of inactivity on the original IBM PCs, `scrnsave`, was created on 1983 by John Socha. Since then, improvements were made to make modern screensavers than just blanking the screen, to the point that the screensavers earned 3D support in modern times.
 
+***
+
+## <mark style="color:$primary;">Screensavers in Nitrocid</mark>
+
 The simulated kernel attempts to simulate this functionality in its complete state. You can even customize most built-in screensavers using the built-in `settings` application found in the kernel, though you have to pass the `-saver` switch to it.
 
 {% hint style="danger" %}
@@ -23,7 +27,11 @@ If you don't want to be warned of this everytime you run such screensaver, you c
 **Please note that the random screensaver will not emit this warning, despite having this option turned off.**
 {% endhint %}
 
-### Setting the screensaver
+Expand a section to get started.
+
+<details>
+
+<summary>Setting the screensaver</summary>
 
 <figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
@@ -31,7 +39,7 @@ If you don't want to be warned of this everytime you run such screensaver, you c
 Extra screensavers are bundled as a screensaver pack addon.
 {% endhint %}
 
-To set the screensaver to your favorite screensaver, use the `setsaver` command. Since this command is an administrative command, you either need to use an administrator account or use an account that has been granted the administrative command permissions.
+To set the screensaver to your favorite screensaver, use the `setsaver` command.
 
 1. Log-in to the system account, root, or any of the administrators or users that has at least the strict command running permissions
 2. Execute the `setsaver` command to set the default kernel screensaver
@@ -42,21 +50,33 @@ To set the screensaver to your favorite screensaver, use the `setsaver` command.
 Note that your account must have either the administrative permissions enabled or the strict command running permission granted to be able to use this command.
 {% endhint %}
 
-### Saving your screen
+</details>
+
+<details>
+
+<summary>Saving your screen</summary>
 
 To save your screen using your default screensaver or any other screensaver, you need to use the `savescreen` command to launch the screensaver.
 
-### Locking your screen
+</details>
+
+<details>
+
+<summary>Locking your screen</summary>
 
 To lock your screen in the simulated kernel, you need to use the `lockscreen` command to launch the screensaver. Once you press any key, you need to enter your user password before you're able to access the shell again.
 
 {% hint style="info" %}
-As of 0.1.0 Beta 3, you can enable or disable automatic screen locking by going to the kernel settings > Screensaver and enabling or disabling the `Enable Screensaver Timeout` setting.
+You can enable or disable automatic screen locking by going to the kernel settings > Screensaver and enabling or disabling the `Enable Screensaver Timeout` setting.
 
 If you have this option enabled, you can set the timeout in the format of `DDD.HH:MM:SS.NNN`, or `HH:MM:SS` in the simplest form.
 {% endhint %}
 
-### Reloading your custom screensaver
+</details>
+
+<details>
+
+<summary>Reloading your custom screensaver</summary>
 
 To reload your custom screensaver, you need to reload the mod that registered your screensaver.
 
@@ -66,3 +86,5 @@ To reload your custom screensaver, you need to reload the mod that registered yo
 {% hint style="info" %}
 Note that your account must have either the administrative permissions enabled or the strict command running permission granted to be able to use this command.
 {% endhint %}
+
+</details>

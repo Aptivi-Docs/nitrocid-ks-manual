@@ -1,6 +1,6 @@
 ---
-icon: sliders
 description: You can add your own custom settings, too!
+icon: sliders
 ---
 
 # Custom Settings
@@ -9,28 +9,21 @@ description: You can add your own custom settings, too!
 
 Customized settings give you an ability to leverage the built-in settings application provided by the Nitrocid base system to customize your mod's behavior. These settings are saved to your kernel configuration directory as JSON files under the class names for easy recognition.
 
-In your mod, you can register and unregister your custom settings using the following functions from the `ConfigTools` class:
+***
 
-* `RegisterCustomSetting(BaseKernelConfig kernelConfig)`
-* `UnregisterCustomSetting(string setting)`
-
-{% hint style="info" %}
-Beware that your base kernel configuration class must contain valid entries in your list of entries under the JSON representation.
-
-You can use the below function to convert your JSON settings entries to their usable ones:
-
-```csharp
-public static SettingsEntry[] GetSettingsEntries(string entriesText)
-```
-{% endhint %}
-
-### Defining custom settings
+## <mark style="color:$primary;">Defining custom settings</mark>
 
 Before you continue, you must first understand the settings format and take a quick look at it here:
 
 {% content-ref url="settings-format.md" %}
 [settings-format.md](settings-format.md)
 {% endcontent-ref %}
+
+Here's how you can define the custom settings.
+
+{% stepper %}
+{% step %}
+### <mark style="color:$primary;">Make a custom settings class</mark>
 
 The first thing that your custom kernel settings requires is that you need to have a class (for example, let's assume that your custom settings class name is `OxygenSettings`) that is derived from both the `BaseKernelConfig` class and the `IKernelConfig` interface.
 
@@ -42,10 +35,16 @@ internal class OxygenSettings : BaseKernelConfig, IKernelConfig
 }
 ```
 {% endcode %}
+{% endstep %}
 
-This class **must** override the `SettingsEntries` property from the base class so that it can understand your custom settings entries and how they're defined. The easiest way to override it is to just let this property return an array from `SettingsEntries` using the `GetSettingsEntries` function, pointing it at your variable containing your JSON representation of the settings entries, as demonstrated in the below example:
+{% step %}
+### <mark style="color:$primary;">Override the settings entries property</mark>
 
-<pre class="language-csharp" data-title="OxygenSettings.cs" data-line-numbers><code class="lang-csharp">internal class OxygenSettings : BaseKernelConfig, IKernelConfig
+This class **must** override the `SettingsEntries` property from the base class so that it can understand your custom settings entries and how they're defined.
+
+The easiest way to override it is to just let this property return an array from `SettingsEntries` using the `GetSettingsEntries` function, pointing it at your variable containing your JSON representation of the settings entries, as demonstrated in the below example:
+
+<pre class="language-csharp" data-title="OxygenSettings.cs" data-line-numbers data-expandable="true"><code class="lang-csharp">internal class OxygenSettings : BaseKernelConfig, IKernelConfig
 {
     // Your JSON representation about your settings entries
 <strong>    private readonly string _entriesJson =
@@ -159,6 +158,24 @@ This class **must** override the `SettingsEntries` property from the base class 
 </strong>}
 </code></pre>
 
+{% hint style="info" %}
+Beware that your base kernel configuration class must contain valid entries in your list of entries under the JSON representation.
+
+You can use the below function to convert your JSON settings entries to their usable ones:
+
+```csharp
+public static SettingsEntry[] GetSettingsEntries(string entriesText) { }
+```
+
+You can also embed your settings JSON content if it became too big using the Resources feature, which you can learn more about how to add a file to your project resources and use it [here](https://learn.microsoft.com/en-us/dotnet/core/extensions/create-resource-files).
+
+You don't have to save a copy of your `customSettings` variable, since it gets added to the custom settings list that the kernel configuration tool supervises.
+{% endhint %}
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Register your configuration class</mark>
+
 After that, you must register your configuration class by just two lines somewhere in your mod initialization code:
 
 {% code title="MyModInit.cs" lineNumbers="true" %}
@@ -167,28 +184,26 @@ var customSettings = new OxygenSettings();
 ConfigTools.RegisterCustomSetting(customSettings);
 ```
 {% endcode %}
+{% endstep %}
+{% endstepper %}
 
-{% hint style="info" %}
-You can also embed your settings JSON content if it became too big using the Resources feature, which you can learn more about how to add a file to your project resources and use it [here](https://learn.microsoft.com/en-us/dotnet/core/extensions/create-resource-files).
-
-You don't have to save a copy of your `customSettings` variable, since it gets added to the custom settings list that the kernel configuration tool supervises.
+{% hint style="danger" %}
+Once your mod registers a settings instance, it can never be unloaded due to a current limitation affecting serialization and deserialization of JSON files.
 {% endhint %}
 
-You can also unregister your custom settings by putting the `UnregisterCustomSetting()` function somewhere in your mod stop function like this:
+***
 
-{% code title="MyModStop.cs" lineNumbers="true" %}
-```csharp
-ConfigTools.UnregisterCustomSetting(nameof(OxygenSettings));
-```
-{% endcode %}
+## <mark style="color:$primary;">Additional tools</mark>
 
-{% hint style="info" %}
-You don't have to do all the guesswork to figure out how to get your custom configuration name. All you have to do is to point the above function to the name of your configuration class using the `nameof` function.
-{% endhint %}
+After you register your own custom settings, you can now use the following tools:
 
-### Using your own custom settings
+<details>
 
-To use your own custom settings, you'll have to get a settings instance from `GetKernelConfig()` before being able to get the updated settings instance containing your configured settings, even if you have a new instance of your custom settings. You can easily wrap it to a property like this:
+<summary>Using your own custom settings</summary>
+
+To use your own custom settings, you'll have to get a settings instance from `GetKernelConfig()` before being able to get the updated settings instance containing your configured settings, even if you have a new instance of your custom settings.
+
+You can easily wrap it to a property like this:
 
 {% code title="Mod.cs" lineNumbers="true" %}
 ```csharp
@@ -197,7 +212,9 @@ internal static BaseKernelConfig Configuration =>
 ```
 {% endcode %}
 
-You can then get a value from your desired settings key. For example, if you want to get a value of a string configuration defined earlier, called `CustomString`, you can get the value of this key like this:
+You can then get a value from your desired settings key.
+
+For example, if you want to get a value of a string configuration defined earlier, called `CustomString`, you can get the value of this key like this:
 
 {% code title="Mod.cs" lineNumbers="true" %}
 ```csharp
@@ -210,7 +227,11 @@ string value = (string)ConfigTools.GetValueFromEntry(key, Configuration);
 If you used this method against your newly-created instance of your custom settings (the `customSettings` variable) instead of the above property, calls to `GetValueFromEntry()` would not return the configured results changed by the settings command.
 {% endhint %}
 
-### Testing your own custom settings
+</details>
+
+<details>
+
+<summary>Testing your own custom settings</summary>
 
 To test your own custom settings to check to see if it works or not, make sure that you've registered your custom settings upon starting your mod. Invoking the help usage of the `settings` command (`help settings`) is enough to list all of your kernel settings (built-in and custom).
 
@@ -228,7 +249,11 @@ If **any** of the kernel configuration entries is invalid, the configuration too
 **The variable names are case-sensitive.**
 {% endhint %}
 
-### Fallback configuration
+</details>
+
+<details>
+
+<summary>Fallback configuration</summary>
 
 You can generate a configuration instance that contains all fallback values that are determined by the constructor of all settings properties. You can provide either a configuration class as a generic type argument, or a config type name, using the `GetFallbackKernelConfig()` function.
 
@@ -240,3 +265,23 @@ To demonstrate that, you can use either of the following:
 {% hint style="warning" %}
 Some of the kernel settings may store the current settings, even if the fallback instances are generated. Settings for your mods should not rely on external variables when possible.
 {% endhint %}
+
+</details>
+
+<details>
+
+<summary>Unregistering your own custom settings</summary>
+
+You can unregister your custom settings by putting the `UnregisterCustomSetting()` function somewhere in your mod stop function like this:
+
+{% code title="MyModStop.cs" lineNumbers="true" %}
+```csharp
+ConfigTools.UnregisterCustomSetting(nameof(OxygenSettings));
+```
+{% endcode %}
+
+{% hint style="info" %}
+You don't have to do all the guesswork to figure out how to get your custom configuration name. All you have to do is to point the above function to the name of your configuration class using the `nameof` function.
+{% endhint %}
+
+</details>

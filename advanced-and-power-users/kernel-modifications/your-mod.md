@@ -9,45 +9,111 @@ icon: vial
 
 You're looking to create a mod for Nitrocid KS! That's great! Make sure that you have Visual Studio installed. Follow the steps to create your first mod.
 
-1.  Press `Create a new project` on Visual Studio homepage
+{% stepper %}
+{% step %}
+### <mark style="color:$primary;">Create a new project</mark>
 
-    <figure><img src="../../.gitbook/assets/image (193).png" alt=""><figcaption></figcaption></figure>
-2.  Find `Class Library` and double-click it
+Press `Create a new project` on Visual Studio homepage
 
-    <figure><img src="../../.gitbook/assets/image (194).png" alt=""><figcaption></figcaption></figure>
-3.  Write your mod name, like in our example, `MyFirstMod`.
+<figure><img src="../../.gitbook/assets/image (193).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
 
-    <figure><img src="../../.gitbook/assets/image (195).png" alt=""><figcaption></figcaption></figure>
-4.  Make sure that `.NET 8.0` is used. Press `Create`.
+{% step %}
+### <mark style="color:$primary;">Create a class library</mark>
 
-    <figure><img src="../../.gitbook/assets/image (196).png" alt=""><figcaption></figcaption></figure>
-5.  Right-click on `Dependencies` -> `Manage NuGet Packages`, find `Nitrocid.Base`, and install it.
+Find `Class Library` and double-click it
 
-    <figure><img src="../../.gitbook/assets/image (197).png" alt=""><figcaption></figcaption></figure>
-6.  Once the package is installed, go to the `Class1.cs` source file
+<figure><img src="../../.gitbook/assets/image (194).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
 
-    <figure><img src="../../.gitbook/assets/image (198).png" alt=""><figcaption></figcaption></figure>
-7.  Write next to the class file `: IMod` and import the required namespace by `using Nitrocid.Base.Kernel.Extensions;`. You should see errors indicating that you have to implement the methods.
+{% step %}
+### <mark style="color:$primary;">Name your mod</mark>
 
-    <figure><img src="../../.gitbook/assets/image (199).png" alt=""><figcaption></figcaption></figure>
-8.  After implementation, you should see:
+Write your mod name, like in our example, `MyFirstMod`.
 
-    <figure><img src="../../.gitbook/assets/image (200).png" alt=""><figcaption></figcaption></figure>
-9.  Remove all calls to `NotImplementedException`, set the Version property to a SemVer 2.0-compliant version, and set the minimum supported API version. You can check the API version by executing the Nitrocid executable with `--apiversion`.
+<figure><img src="../../.gitbook/assets/image (195).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
 
-    <figure><img src="../../.gitbook/assets/image (201).png" alt=""><figcaption></figcaption></figure>
-10. Now, implement everything as you wish. Once you're done, follow the steps on how to create a strong name signing key and [sign your mod](https://learn.microsoft.com/en-us/dotnet/standard/assembly/sign-strong-name). Then, click on the `Build` menu and select `Build Solution`.
+{% step %}
+### <mark style="color:$primary;">Use the supported framework</mark>
 
-    <figure><img src="../../.gitbook/assets/image (202).png" alt=""><figcaption></figcaption></figure>
-11. Once the solution is built, open the file explorer to the solution directory by right-clicking on the solution and selecting `Open Folder in File Explorer`.
+Make sure that `.NET 10.0` is used. Press `Create`.
 
-    <figure><img src="../../.gitbook/assets/image (203).png" alt=""><figcaption></figcaption></figure>
-12. Navigate to the output directory and copy the `.dll` file to `KSMods` under the `%localappdata%/KS` folder.
+<figure><img src="../../.gitbook/assets/image (196).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
 
-    <figure><img src="../../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
-13. Open Nitrocid KS to test your mod. Ensure that `modman list` lists your mod.
+{% step %}
+### <mark style="color:$primary;">Install</mark> <mark style="color:$primary;"></mark><mark style="color:$primary;">`Nitrocid.Base`</mark>
 
-    <figure><img src="../../.gitbook/assets/image (205).png" alt=""><figcaption></figcaption></figure>
+Right-click on `Dependencies` -> `Manage NuGet Packages`, find `Nitrocid.Base`, and install it.
+
+<figure><img src="../../.gitbook/assets/image (197).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### Open the class file
+
+Once the package is installed, go to the `Class1.cs` source file
+
+<figure><img src="../../.gitbook/assets/image (198).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Prepare the class</mark>
+
+Write next to the class file `: IMod` and import the required namespace by `using Nitrocid.Base.Kernel.Extensions;`. You should see errors indicating that you have to implement the methods.
+
+<figure><img src="../../.gitbook/assets/image (199).png" alt=""><figcaption></figcaption></figure>
+
+After implementation, you should see:
+
+<figure><img src="../../.gitbook/assets/image (200).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Configure your mod</mark>
+
+Remove all calls to `NotImplementedException`, set the Version property to a SemVer 2.0-compliant version, and set the minimum supported API version.
+
+<figure><img src="../../.gitbook/assets/image (201).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+You can check the API version by executing the Nitrocid executable with `--apiversion`.
+{% endhint %}
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Build your mod once done</mark>
+
+Now, implement everything as you wish. Once you're done, follow the steps on how to create a strong name signing key and [sign your mod](https://learn.microsoft.com/en-us/dotnet/standard/assembly/sign-strong-name). Then, click on the `Build` menu and select `Build Solution`.
+
+<figure><img src="../../.gitbook/assets/image (202).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Open the output folder</mark>
+
+Once the solution is built, open the file explorer to the solution directory by right-clicking on the solution and selecting `Open Folder in File Explorer`.
+
+<figure><img src="../../.gitbook/assets/image (203).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Copy the mod</mark>
+
+Navigate to the output directory and copy the `.dll` file to `KSMods` under the `%localappdata%/KS` folder.
+
+<figure><img src="../../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### <mark style="color:$primary;">Test your mod</mark>
+
+Open Nitrocid KS to test your mod. Ensure that `modman list` lists your mod.
+
+<figure><img src="../../.gitbook/assets/image (205).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+{% endstepper %}
 
 {% hint style="info" %}
 You will have to turn on kernel modifications from the kernel settings. Navigate to `General > Start kernel modifications on boot` and turn it on.
@@ -55,7 +121,9 @@ You will have to turn on kernel modifications from the kernel settings. Navigate
 You can also make use of the [`KSTemplates`](https://github.com/Aptivi/KSTemplates) repository, which can be installed to Visual Studio using the `dotnet new install path/to/KS.Templates.nupkg` command. It installs both C# and Visual Basic templates for your mods.
 {% endhint %}
 
-## Bleeding-edge builds
+***
+
+## <mark style="color:$primary;">Bleeding-edge builds</mark>
 
 Bleeding-edge NuGet builds are available in our organization's GitHub Package Registry. In order to use such builds, you'll need to consult the <mark style="color:green;">**Installing canary NuGet packages**</mark> section of the below page:
 

@@ -5,19 +5,22 @@ icon: box-taped
 
 # Archive
 
-<figure><img src="../../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-Nitrocid KS provides this feature as an addon.
-{% endhint %}
+<figure><img src="../../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The archive shell allows you to manipulate with many archive files supported by the backend library that the archive shell relies on. You can edit archive files to pack or extract files and folders to/from the archive from/to your local directory.
+
+***
+
+## <mark style="color:$primary;">Usage</mark>
 
 You can interact with the archive files by opening the archive shell to point to a file. This can be achieved using the `archive <path>` command.
 
 You can consult the available commands using the `help` command.
 
-{% hint style="info" %}
+***
+
+## <mark style="color:$primary;">Supported formats</mark>
+
 The following formats are currently supported by the backend library and the archive shell, maintaining the 1:1 relationship:
 
 * RAR files
@@ -25,12 +28,3 @@ The following formats are currently supported by the backend library and the arc
 * GZIP files
 * TAR files
 * 7Z files
-{% endhint %}
-
-### Available commands
-
-You can consult the below page for the list of available commands.
-
-{% content-ref url="../../shells/commands-list.md" %}
-[commands-list.md](../../shells/commands-list.md)
-{% endcontent-ref %}

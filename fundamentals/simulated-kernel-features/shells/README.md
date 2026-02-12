@@ -13,11 +13,11 @@ In Linux systems, the shell is initiated with the help of both the log-in handle
 
 Each shell contain their own built-in commands and their usage and purpose that are hard-coded to the shell, and they're usually not distributed in a binary form. External commands are just programs or scripts that you would execute, but found in your system drive or any of the drives.
 
-In the simulated kernel, the kernel initialization system only runs one shell, which is Unified Extensible SHell (UESH), that runs more like a shell manager. This shell manager calls for the main shell to be executed the moment the user logs on.
+***
 
-## Unified Extensible SHell (UESH)
+## <mark style="color:$primary;">Unified Extensible SHell (UESH)</mark>
 
-This program is part of the core kernel that is programmed to not only be a standalone shell, but also be an extensible shell manager that actually executes built-in and custom shells, supervise the shell's behavior, and manage the shell stack. It provides you an ability to be able to implement your commands for any built-in shells and build your own shell that actually contains your own built-in commands.
+In the simulated kernel, the kernel initialization system only runs one shell, which is Unified Extensible SHell (UESH), that Terminaux's shell manager, MESH, runs. This shell manager allows you to manage commands and shells.
 
 For more information about its inner workings and how you can build your own commands and shells, consult the below page.
 
@@ -25,9 +25,11 @@ For more information about its inner workings and how you can build your own com
 [Shells](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/usage/input-reader/shells)
 {% endcontent-ref %}
 
-## Commands
+***
 
-All of the shells contain their own commands that you can review on either the help command list (depending on the mode used, such as -addon for addon commands) or the below page (just for Nitrocid shells, base shell, and Addon commands):
+## <mark style="color:$primary;">Commands</mark>
+
+All of the shells contain their own commands that you can review on either the help command list (depending on the mode used, such as `-addon` for addon commands) or the below page (just for Nitrocid shells, base shell, and Addon commands):
 
 {% content-ref url="commands-list.md" %}
 [commands-list.md](commands-list.md)

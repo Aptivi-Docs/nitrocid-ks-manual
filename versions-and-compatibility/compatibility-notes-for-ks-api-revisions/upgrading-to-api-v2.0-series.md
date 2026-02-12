@@ -7,9 +7,9 @@ icon: up
 
 When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v2.0, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod. These changes will be listed starting from 0.0.20 to the last version in this API revision.
 
-The following changes were listed sequentially as development went on.
+***
 
-## From 0.0.18 to 0.0.20
+## <mark style="color:$primary;">From 0.0.18 to 0.0.20</mark>
 
 This version was released to make groundbreaking additions and improvements.
 
@@ -17,10 +17,14 @@ This version was released to make groundbreaking additions and improvements.
 [v0.0.20.x-series.md](../version-release-notes/v0.0.20.x-series.md)
 {% endcontent-ref %}
 
-### **Unified help system to support every shell**
+Here's a list of breaking changes:
+
+<details>
+
+<summary>Unified help system to support every shell</summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub TestShowHelp(Optional ByVal command As String = "")
 Public Sub SFTPShowHelp(Optional ByVal command As String = "")
 Public Sub RDebugShowHelp(ByVal command As String, ByVal DeviceStream As StreamWriter)
@@ -41,19 +45,23 @@ You can use the `ShowHelp()` function to utilize the feature. The below method s
 
 {% code title="HelpSystem.cs" lineNumbers="true" %}
 ```csharp
-public static void ShowHelp()
-public static void ShowHelp(ShellType CommandType)
-public static void ShowHelp(string command)
-public static void ShowHelp(string command, ShellType CommandType)
-public static void ShowHelp(string command, string CommandType)
+public static void ShowHelp() { }
+public static void ShowHelp(ShellType CommandType) { }
+public static void ShowHelp(string command) { }
+public static void ShowHelp(string command, ShellType CommandType) { }
+public static void ShowHelp(string command, string CommandType) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Improved naming of injected commands**
+</details>
+
+<details>
+
+<summary>Improved naming of injected commands</summary>
 
 {% code title="ArgumentParse.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public argcommands As String
 Public argcmds() As String
 ```
@@ -65,10 +73,14 @@ The kernel argument parser used to host these two variables; the first one was t
 The kernel arguments were later removed, leaving only the command-line arguments. We suggest you to cease using this function.
 {% endhint %}
 
-### Prefixed the FTP shell variables with "Ftp"
+</details>
+
+<details>
+
+<summary>Prefixed the FTP shell variables with "Ftp"</summary>
 
 {% code title="FTPShell.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public connected As Boolean = False
 Private initialized As Boolean = False
 Public currDirect As String 'Current Local Directory
@@ -95,10 +107,14 @@ Each of these variables were given the `Ftp` prefix.
 The variables were moved to `FtpShellCommon` module.
 {% endhint %}
 
-### Relocated `Client(S)FTP` to their `Shell.vb` files
+</details>
+
+<details>
+
+<summary>Relocated <code>Client(S)FTP</code> to their <code>Shell.vb</code> files</summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 'FTP client on FTPGetCommand.vb
 Public ClientFTP As FtpClient
 
@@ -123,10 +139,14 @@ public static NetworkConnection ClientSFTP
 {% endcode %}
 {% endhint %}
 
-### **Reworked on how to create notifications**
+</details>
+
+<details>
+
+<summary>Reworked on how to create notifications</summary>
 
 {% code title="Notifications.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function NotifyCreate(ByVal Title As String, ByVal Desc As String, ByVal Priority As NotifPriority, ByVal Type As NotifType) As Notification
 Public Class Notification
 ```
@@ -144,10 +164,14 @@ public Notification(string Title, string Desc, NotificationManager.NotifPriority
 {% endcode %}
 {% endhint %}
 
-### Made getting kernel paths more secure
+</details>
+
+<details>
+
+<summary>Made getting kernel paths more secure</summary>
 
 {% code title="KernelTools.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public paths As New Dictionary(Of String, String)
 ```
 {% endcode %}
@@ -159,15 +183,19 @@ In the current version, only the `GetKernelPath()` function can be used.
 
 {% code title="Paths.cs" lineNumbers="true" %}
 ```csharp
-public static string GetKernelPath(KernelPathType PathType)
+public static string GetKernelPath(KernelPathType PathType) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Debug now uses the `DebugLevel` enumerator**
+</details>
+
+<details>
+
+<summary>Debug now uses the <code>DebugLevel</code> enumerator</summary>
 
 {% code title="DebugWriters.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub Wdbg(ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
 Public Sub WdbgConditional(ByRef Condition As Boolean, ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
 Public Sub WdbgDevicesOnly(ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
@@ -181,17 +209,21 @@ The debugger still uses the debug error level using the enumeration mentioned ab
 
 {% code title="DebugWriter.cs" lineNumbers="true" %}
 ```csharp
-public static void WriteDebug(DebugLevel Level, string text, params object[] vars)
-public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object[] vars)
-public static void WriteDebugDevicesOnly(DebugLevel Level, string text, params object[] vars)
+public static void WriteDebug(DebugLevel Level, string text, params object[] vars) { }
+public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object[] vars) { }
+public static void WriteDebugDevicesOnly(DebugLevel Level, string text, params object[] vars) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### Rewritten the command handler
+</details>
+
+<details>
+
+<summary>Rewritten the command handler</summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 'Found in FTPGetCommand.vb
 Public Sub ExecuteCommand(ByVal requestedCommand As String)
 
@@ -202,7 +234,7 @@ Public Sub ExecuteCommand(ByVal requestedCommand As String)
 
 These two functions were implemented separately for FTP and SFTP shells, because at the time of the development, the main shell command executor wasn't ready to support shells other than the main UESH shell.
 
-```visual-basic
+```vb
 Public SFTPStartCommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "SFTP Command Thread"}
 Public RSSCommandThread As New Thread(AddressOf RSSParseCommand) With {.Name = "RSS Shell Command Thread"}
 Public MailStartCommandThread As New Thread(AddressOf Mail_ExecuteCommand) With {.Name = "Mail Command Thread"}
@@ -210,7 +242,7 @@ Public FTPStartCommandThread As New Thread(AddressOf ExecuteCommand) With {.Name
 Public TextEdit_CommandThread As New Thread(AddressOf TextEdit_ParseCommand) With {.Name = "Text Edit Command Thread"}
 Public ZipShell_CommandThread As New Thread(AddressOf ZipShell_ParseCommand) With {.Name = "ZIP Shell Command Thread"}
 Public TStartCommandThread As New Thread(AddressOf TParseCommand) With {.Name = "Test Shell Command Thread"}
-Public StartCommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "Shell Command Thread"
+Public StartCommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "Shell Command Thread"}
 ```
 
 These threads were used to handle shell execution.
@@ -222,19 +254,23 @@ The command executors can be invoked by using the `GetLine()` method for your ow
 
 {% code title="Shell.cs" lineNumbers="true" %}
 ```csharp
-public static void GetLine()
-public static void GetLine(string FullCommand)
-public static void GetLine(string FullCommand, string OutputPath = "")
-public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell)
-public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true)
+public static void GetLine() { }
+public static void GetLine(string FullCommand) { }
+public static void GetLine(string FullCommand, string OutputPath = "") { }
+public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell) { }
+public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### Moved platform detection methods to PlatformDetector
+</details>
+
+<details>
+
+<summary>Moved platform detection methods to <code>PlatformDetector</code></summary>
 
 {% code title="Kernel.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function IsOnWindows() As Boolean
 Public Function IsOnUnix() As Boolean
 Public Function IsOnMacOS() As Boolean
@@ -247,10 +283,14 @@ These functions were used to detect the platform configuration. For easier acces
 You can still access these functions, though they're now moved to `KernelPlatform`.
 {% endhint %}
 
-### **Split `ICustomSaver` to separate codefile**
+</details>
+
+<details>
+
+<summary>Split <code>ICustomSaver</code> to separate codefile</summary>
 
 {% code title="Screensaver.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Interface ICustomSaver
 ```
 {% endcode %}
@@ -267,10 +307,14 @@ public interface IScreensaver
 {% endcode %}
 {% endhint %}
 
-### **Renamed variables in public API**
+</details>
+
+<details>
+
+<summary>Renamed variables in public API</summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 'Screensaver.vb
 Public defSaverName As String
 Public CSvrdb As New Dictionary(Of String, ICustomSaver)
@@ -356,10 +400,14 @@ These variables were used for different purposes. They've been renamed to the fo
 Some of these flags were remade to properties in the latest kernel API, and some of them were removed.
 {% endhint %}
 
-### **Made some cleanups regarding MOTD parser**
+</details>
+
+<details>
+
+<summary>Made some cleanups regarding MOTD parser</summary>
 
 {% code title="MOTDParse.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public MOTDStreamR As IO.StreamReader
 Public MOTDStreamW As IO.StreamWriter
 Public Sub ReadMOTDFromFile(ByVal MType As MessageType)
@@ -373,17 +421,21 @@ The `ReadMotd()` function was still available, but it has been separated to `Rea
 
 ```csharp
 // MotdParse.cs
-public static void ReadMotd()
+public static void ReadMotd() { }
 
 // MalParse.cs
-public static void ReadMal()
+public static void ReadMal() { }
 ```
 {% endhint %}
 
-### Split `GetConnectionInfo`
+</details>
+
+<details>
+
+<summary>Split <code>GetConnectionInfo</code></summary>
 
 {% code title="SSH.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function GetConnectionInfo(ByVal Address As String, ByVal Port As Integer, ByVal Username As String) As ConnectionInfo
 ```
 {% endcode %}
@@ -395,16 +447,20 @@ These functions can be used to construct SSH connection information.
 
 {% code title="SSH.cs" lineNumbers="true" %}
 ```csharp
-public static ConnectionInfo GetConnectionInfo(string Address, int Port, string Username, List<AuthenticationMethod> AuthMethods)
-public static ConnectionInfo PromptConnectionInfo(string Address, int Port, string Username)
+public static ConnectionInfo GetConnectionInfo(string Address, int Port, string Username, List<AuthenticationMethod> AuthMethods) { }
+public static ConnectionInfo PromptConnectionInfo(string Address, int Port, string Username) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Changed how mail listing works**
+</details>
+
+<details>
+
+<summary>Changed how mail listing works</summary>
 
 {% code title="MailManager.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function MailListMessages(ByVal PageNum As Integer) As String
 ```
 {% endcode %}
@@ -416,16 +472,20 @@ This function is still available. They can be used with these method signatures.
 
 {% code title="MailManager.cs" lineNumbers="true" %}
 ```csharp
-public static void MailListMessages(int PageNum)
-public static void MailListMessages(int PageNum, int MessagesInPage)
+public static void MailListMessages(int PageNum) { }
+public static void MailListMessages(int PageNum, int MessagesInPage) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Changed how reading contents API works**
+</details>
+
+<details>
+
+<summary>Changed how reading contents API works</summary>
 
 {% code title="Filesystem.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub ReadContents(ByVal filename As String)
 ```
 {% endcode %}
@@ -437,18 +497,22 @@ Their method signatures are shown below.
 
 {% code title="FileRead.cs" lineNumbers="true" %}
 ```csharp
-public static string[] ReadContents(string filename)
-public static void PrintContents(string filename)
-public static void PrintContents(string filename, bool PrintLineNumbers, bool ForcePlain = false)
-public static void DisplayInHex(long StartByte, long EndByte, byte[] FileByte)
+public static string[] ReadContents(string filename) { }
+public static void PrintContents(string filename) { }
+public static void PrintContents(string filename, bool PrintLineNumbers, bool ForcePlain = false) { }
+public static void DisplayInHex(long StartByte, long EndByte, byte[] FileByte) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### Removed `NotifyCreate()`
+</details>
+
+<details>
+
+<summary>Removed <code>NotifyCreate()</code></summary>
 
 {% code title="Notifications.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function NotifyCreate(ByVal Title As String, ByVal Desc As String, ByVal Priority As NotifPriority, ByVal Type As NotifType) As Notification
 ```
 {% endcode %}
@@ -465,10 +529,14 @@ public Notification(string Title, string Desc, NotificationManager.NotifPriority
 {% endcode %}
 {% endhint %}
 
-### **Split the theme-related tools from `ColorTools`**
+</details>
+
+<details>
+
+<summary>Split the theme-related tools from <code>ColorTools</code></summary>
 
 {% code title="ColorTools.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public colorTemplates As New Dictionary(Of String, ThemeInfo)
 Public Sub ApplyThemeFromResources(ByVal theme As String)
 Public Sub ApplyThemeFromFile(ByVal ThemeFile As String)
@@ -485,17 +553,21 @@ In the current API revision, you can apply your theme using the following functi
 
 {% code title="ThemeTools.cs" lineNumbers="true" %}
 ```csharp
-public static void ApplyThemeFromResources(string theme)
-public static void ApplyThemeFromFile(string ThemeFile)
-public static void SetColorsTheme(ThemeInfo ThemeInfo)
+public static void ApplyThemeFromResources(string theme) { }
+public static void ApplyThemeFromFile(string ThemeFile) { }
+public static void SetColorsTheme(ThemeInfo ThemeInfo) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Implemented help helpers for commands and arguments**
+</details>
+
+<details>
+
+<summary>Implemented help helpers for commands and arguments</summary>
 
 {% code title="CommandInfo.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub New(ByVal Command As String, ByVal Type As ShellCommandType, ByVal HelpDefinition As String, ByVal ArgumentsRequired As Boolean, ByVal MinimumArguments As Integer, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False)
 ```
 {% endcode %}
@@ -511,14 +583,18 @@ public CommandInfo(string Command, ShellType Type, string HelpDefinition, Comman
 public CommandInfo(string Command, string Type, string HelpDefinition, CommandArgumentInfo CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
 
 // BaseCommand.cs
-public virtual void HelpHelper()
+public virtual void HelpHelper() { }
 ```
 {% endhint %}
 
-### **Enumerized the reasons for the three events**
+</details>
+
+<details>
+
+<summary>Enumerized the reasons for the three events</summary>
 
 {% code title="Events.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Event LoginError(ByVal Username As String, ByVal Reason As String)
 Public Event ThemeSetError(ByVal Theme As String, ByVal Reason As String)
 Public Event ColorSetError(ByVal Reason As String)
@@ -536,15 +612,19 @@ The event system has been heavily redesigned in the latest API so that you can u
 
 {% code title="EventsManager.cs" lineNumbers="true" %}
 ```csharp
-public static void FireEvent(EventType Event, params object[] Params)
+public static void FireEvent(EventType Event, params object[] Params) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Split the custom screensaver code**
+</details>
+
+<details>
+
+<summary>Split the custom screensaver code</summary>
 
 {% code title="Screensaver.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub CompileCustom(ByVal file As String)
 Function GenSaver(ByVal PLang As String, ByVal code As String) As ICustomSaver
 Public Sub InitializeCustomSaverSettings()
@@ -565,10 +645,14 @@ The custom screensaver code were located alongside the screensaver management co
 The custom screensaver compilation functions were remade as we've migrated to DLL-only modding and screensaver code.
 {% endhint %}
 
-### **Moved few variables regarding mods**
+</details>
+
+<details>
+
+<summary>Moved few variables regarding mods</summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 'ModParser.vb
 Public Interface IScript
 Public scripts As New Dictionary(Of String, ModInfo)
@@ -588,10 +672,14 @@ These variables were used to manage your mods. However, the following changes oc
 The variables were remade so they're now secure. The `IScript` interface is essential for your mods.
 {% endhint %}
 
-### **Cleaned some flags up**
+</details>
+
+<details>
+
+<summary>Cleaned some flags up</summary>
 
 {% code title="Flags.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public StopPanicAndGoToDoublePanic As Boolean
 Public instanceChecked As Boolean
 ```
@@ -599,15 +687,17 @@ Public instanceChecked As Boolean
 
 These variables were accidentally exposed to the public API, so we decided to make them internally available so mods can't assign values to them.
 
-### **Unified the overloads for writing functions**
+</details>
+
+<details>
+
+<summary>Unified the overloads for writing functions</summary>
 
 The `W()` function, their `C` and `C16` siblings, and their sister functions (such as `WriteSlowlyC()`, etc.) were made to separate the overloads for color level support. However, they've been unified to one master function containing overloads for each color level.
 
 Also, these functions had their one-letter functions changed to Write so that the one-letter function names were no longer confusing, though we had to choose that because the codebase was using Visual Basic that imported the `Microsoft.VisualBasic.FileSystem` module that contained the Write function. Their documentation are still available below:
 
-{% embed url="https://learn.microsoft.com/en-us/dotnet/api/microsoft.visualbasic.filesystem?view=netframework-4.8" %}
-
-{% embed url="https://learn.microsoft.com/en-us/dotnet/api/microsoft.visualbasic.filesystem.write?view=netframework-4.8" %}
+<a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.visualbasic.filesystem?view=netframework-4.8" class="button primary">FileSystem</a><a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.visualbasic.filesystem.write?view=netframework-4.8" class="button primary">FileSystem.Write</a>
 
 These caused many problems to the point that we needed to edit many source files to try to bypass the `FileSystem` module.
 
@@ -619,10 +709,14 @@ Your mods might break if any of them uses the console writing functions from KS,
 When writing such functions, you'll discover that the arguments parsing is stricter than the previous, due to how we've implemented the message argument. Make explicit casts to get the same behavior as the previous versions.
 {% endhint %}
 
-### **Actually removed `AliasType`**
+</details>
+
+<details>
+
+<summary>Actually removed <code>AliasType</code></summary>
 
 {% code title="AliasManager.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Enum AliasType
 ```
 {% endcode %}
@@ -633,10 +727,14 @@ This enumeration used to host all the shell types, but it was later found out th
 We advice you to cease using this function.
 {% endhint %}
 
-### **Reworked on the fetch kernel update API**
+</details>
+
+<details>
+
+<summary>Reworked on the fetch kernel update API</summary>
 
 {% code title="KernelTools.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function FetchKernelUpdates() As List(Of String)
 ```
 {% endcode %}
@@ -648,15 +746,19 @@ The `FetchKernelUpdates` is still available as a usable method that mods can use
 
 {% code title="UpdateManager.cs" lineNumbers="true" %}
 ```csharp
-public static KernelUpdate FetchKernelUpdates()
+public static KernelUpdate FetchKernelUpdates() { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Removed the RGB class**
+</details>
+
+<details>
+
+<summary>Removed the RGB class</summary>
 
 {% code title="RGB.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Class RGB
 ```
 {% endcode %}
@@ -667,10 +769,14 @@ This class used to hold the red, green, and blue variables, but it was later fou
 The `Color` class is available in the Terminaux library that Nitrocid KS uses.
 {% endhint %}
 
-### **Increased security of the "scripts" variable**
+</details>
+
+<details>
+
+<summary>Increased security of the "scripts" variable</summary>
 
 {% code title="ModParser.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public scripts As New Dictionary(Of String, ModInfo)
 ```
 {% endcode %}
@@ -682,16 +788,20 @@ If you really want to list the mods using this dictionary, consider using the fu
 
 {% code title="ModManager.cs" lineNumbers="true" %}
 ```csharp
-public static Dictionary<string, ModInfo> ListMods()
-public static Dictionary<string, ModInfo> ListMods(string SearchTerm)
+public static Dictionary<string, ModInfo> ListMods() { }
+public static Dictionary<string, ModInfo> ListMods(string SearchTerm) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **`[G|S]etConfig*` functions and subs are now obsolete**
+</details>
+
+<details>
+
+<summary><code>[G|S]etConfig*</code> functions and subs are now obsolete</summary>
 
 {% code title="" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub SetConfigValue(ByVal Variable As String, ByVal VariableValue As Object)
 Public Function GetConfigValue(ByVal Variable As String) As Object
 ```
@@ -703,10 +813,14 @@ These functions were exclusively used by the settings applications to set and ge
 The three functions still exist, but relocated in the `FieldManager` and `PropertyManager` classes.
 {% endhint %}
 
-### **Made `IShell` and shell stacks to handle shells**
+</details>
+
+<details>
+
+<summary>Made <code>IShell</code> and shell stacks to handle shells</summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 'All common shell files and InitializeShell() functions and their derivatives were removed.
 Sub InitTShell()
 Public Sub InitializeShell()
@@ -725,10 +839,14 @@ As part of the shell rewrite, we decided to make `IShell` and shell stacks to ha
 To implement your shell in your mod, use the `IShell` interface.
 {% endhint %}
 
-### **Cleaned up `GetLine()` so strcommand is first**
+</details>
+
+<details>
+
+<summary>Cleaned up <code>GetLine()</code> so <code>strcommand</code> is first</summary>
 
 {% code title="Shell.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub GetLine(ByVal ArgsMode As Boolean, ByVal strcommand As String, Optional ByVal IsInvokedByKernelArgument As Boolean = False, Optional ByVal OutputPath As String = "")
 ```
 {% endcode %}
@@ -740,19 +858,23 @@ Public Sub GetLine(ByVal ArgsMode As Boolean, ByVal strcommand As String, Option
 
 {% code title="Shell.cs" lineNumbers="true" %}
 ```csharp
-public static void GetLine()
-public static void GetLine(string FullCommand)
-public static void GetLine(string FullCommand, string OutputPath = "")
-public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell)
-public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true)
+public static void GetLine() { }
+public static void GetLine(string FullCommand) { }
+public static void GetLine(string FullCommand, string OutputPath = "") { }
+public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell) { }
+public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Renamed `ShellCommandType` to `ShellType`**
+</details>
+
+<details>
+
+<summary>Renamed <code>ShellCommandType</code> to <code>ShellType</code></summary>
 
 {% code title="CommandInfo.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Enum ShellCommandType
 ```
 {% endcode %}
@@ -764,17 +886,21 @@ For built-in shells, you can use the `ShellType` enumeration in functions that t
 
 ```csharp
 // ShellType.cs
-public enum ShellType
+public enum ShellType { }
 
 // ShellTypeManager.cs
-public static void RegisterShell(string ShellType, BaseShellInfo ShellTypeInfo)
+public static void RegisterShell(string ShellType, BaseShellInfo ShellTypeInfo) { }
 ```
 {% endhint %}
 
-### **Moved all the `GetLine()` functions for all shells to the master `GetLine()`**
+</details>
+
+<details>
+
+<summary>Moved all the <code>GetLine()</code> functions for all shells to the master <code>GetLine()</code></summary>
 
 {% code lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub SFTPGetLine()
 Public Sub FTPGetLine()
 ```
@@ -787,19 +913,23 @@ All the `GetLine()` functions were moved to the master GetLine as it has witness
 
 {% code title="Shell.cs" lineNumbers="true" %}
 ```csharp
-public static void GetLine()
-public static void GetLine(string FullCommand)
-public static void GetLine(string FullCommand, string OutputPath = "")
-public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell)
-public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true)
+public static void GetLine() { }
+public static void GetLine(string FullCommand) { }
+public static void GetLine(string FullCommand, string OutputPath = "") { }
+public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell) { }
+public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Moved `GetTerminalEmulator()` to `ConsoleExtensions`**
+</details>
+
+<details>
+
+<summary>Moved <code>GetTerminalEmulator()</code> to <code>ConsoleExtensions</code></summary>
 
 {% code title="KernelTools.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function GetTerminalEmulator() As String
 ```
 {% endcode %}
@@ -811,15 +941,19 @@ This function was used to check the sanity of the terminal emulator for Linux sy
 
 {% code title="KernelPlatform.cs" lineNumbers="true" %}
 ```csharp
-public static string GetTerminalEmulator()
+public static string GetTerminalEmulator() { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Split the exceptions to separate codefiles**
+</details>
+
+<details>
+
+<summary>Split the exceptions to separate codefiles</summary>
 
 {% code title="Exceptions.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Class Exceptions
     Public Class NullUsersException
     Public Class AliasInvalidOperationException
@@ -844,17 +978,25 @@ public KernelException(KernelExceptionType exceptionType, string message, Except
 {% endcode %}
 {% endhint %}
 
-### **Renamed new line field to `NewLine` from `vbNewLine`**
+</details>
+
+<details>
+
+<summary>Renamed new line field to <code>NewLine</code> from <code>vbNewLine</code></summary>
 
 {% code title="Kernel.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public ReadOnly vbNewLine As String
 ```
 {% endcode %}
 
 `vbNewLine` sounded like it came from Visual Basic 6.0 (not .NET), a COM-based Windows-only language which we'll never support, and because of the below namespace changes that causes `Microsoft.VisualBasic` namespace to break things related to `vbNewLine`, we decided to change it to just `NewLine`.
 
-### **Namespaced the entire codebase**
+</details>
+
+<details>
+
+<summary>Namespaced the entire codebase</summary>
 
 To further organize the codebase, we decided to namespace each one of them based on the folders in the source code. This way, we'd have the following namespaces:
 
@@ -945,10 +1087,14 @@ To further organize the codebase, we decided to namespace each one of them based
 New namespaces get created and/or changed each major release of the kernel, so the list above is only relevant at the time the change was committed. The API reference will always display all the available namespaces.
 {% endhint %}
 
-### **Removed built-in string evaluators**
+</details>
+
+<details>
+
+<summary>Removed built-in string evaluators</summary>
 
 {% code title="StringEvaluators.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function Evaluate(ByVal Var As String) As Object
 Public Function EvaluateFast(ByVal Var As String, ByVal VarType As Type) As Object
 ```
@@ -960,7 +1106,11 @@ The built-in string evaluators were used for the calculator functionality in the
 We advice you to cease using this function.
 {% endhint %}
 
-## From 0.0.20 to 0.0.21
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.20 to 0.0.21</mark>
 
 This version was a minor update to 0.0.20.0.
 
@@ -968,10 +1118,14 @@ This version was a minor update to 0.0.20.0.
 [v0.0.21.x-series.md](../version-release-notes/v0.0.21.x-series.md)
 {% endcontent-ref %}
 
-### **Consolidated the obsolete functions**
+Here's a list of breaking changes:
+
+<details>
+
+<summary>Consolidated the obsolete functions</summary>
 
 {% code title="SettingsApp.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function FindSetting(Pattern As String, Screensaver As Boolean) As List(Of String)
 
 <Obsolete("Use SetValue(String, Object) instead.")>
@@ -999,12 +1153,16 @@ They're removed as a result of the migration of these functions.
 
 {% code title="ConfigTools.cs" lineNumbers="true" %}
 ```csharp
-public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsToken)
+public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsToken) { }
 ```
 {% endcode %}
 {% endhint %}
 
-## From 0.0.21 to 0.0.22
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.21 to 0.0.22</mark>
 
 This version was a great update to the API v2.0 series, because it added Android support to KS!
 
@@ -1012,10 +1170,14 @@ This version was a great update to the API v2.0 series, because it added Android
 [v0.0.22.x-series.md](../version-release-notes/v0.0.22.x-series.md)
 {% endcontent-ref %}
 
-### **Separated properties code to `PropertyManager`**
+Here's a list of breaking changes:
+
+<details>
+
+<summary>Separated properties code to <code>PropertyManager</code></summary>
 
 {% code title="FieldManager.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function GetPropertyValueInVariable(Variable As String, [Property] As String) As Object
 Public Function GetPropertyValueInVariable(Variable As String, [Property] As String, VariableType As Type) As Object
 Public Function GetProperties(VariableType As Type) As Dictionary(Of String, Object)
@@ -1030,24 +1192,32 @@ These functions have been renamed to shorter names and used cached expressions t
 
 {% code title="PropertyManager.cs" lineNumbers="true" %}
 ```csharp
-public static object GetPropertyValue(string Variable)
-public static object GetPropertyValue(string Variable, Type VariableType)
-public static Dictionary<string, object> GetProperties(Type VariableType)
-public static Dictionary<string, Type> GetPropertiesNoEvaluation(Type VariableType)
+public static object GetPropertyValue(string Variable) { }
+public static object GetPropertyValue(string Variable, Type VariableType) { }
+public static Dictionary<string, object> GetProperties(Type VariableType) { }
+public static Dictionary<string, Type> GetPropertiesNoEvaluation(Type VariableType) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Events and reminders format**
+</details>
+
+<details>
+
+<summary>Events and reminders format</summary>
 
 Events and reminders file formats have been changed from binary file to XML files as `BinarySerializer` was being deprecated because of it being vulnerable to attacks as describes in the below documentation link:
 
-{% embed url="https://learn.microsoft.com/en-us/dotnet/standard/serialization/binaryformatter-security-guide#binaryformatter-security-vulnerabilities" %}
+<a href="https://learn.microsoft.com/en-us/dotnet/standard/serialization/binaryformatter-security-guide#binaryformatter-security-vulnerabilities" class="button primary">Deserialization risks</a>
 
-### **Deprecation of `IScript.PerformCmd()`**
+</details>
+
+<details>
+
+<summary>Deprecation of <code>IScript.PerformCmd()</code></summary>
 
 {% code title="IScript.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub PerformCmd(Command As CommandInfo, Optional Args As String = "")
 ```
 {% endcode %}
@@ -1059,15 +1229,19 @@ As we implemented the fully-fledged `CommandBase.Execute()` function which does 
 
 {% code title="BaseCommand.cs" lineNumbers="true" %}
 ```csharp
-public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### **Removed `ReadLineLong()`**
+</details>
+
+<details>
+
+<summary>Removed <code>ReadLineLong()</code></summary>
 
 {% code title="Input.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function ReadLineLong() As String
 ```
 {% endcode %}
@@ -1079,15 +1253,19 @@ Long inputs are supported by the `Input.ReadLine` function that has several meth
 
 {% code title="Input.cs" lineNumbers="true" %}
 ```csharp
-public static string ReadLine()
-public static string ReadLine(bool UseCtrlCAsInput)
-public static string ReadLine(string InputText, string DefaultValue)
-public static string ReadLine(string InputText, string DefaultValue, bool UseCtrlCAsInput)
+public static string ReadLine() { }
+public static string ReadLine(bool UseCtrlCAsInput) { }
+public static string ReadLine(string InputText, string DefaultValue) { }
+public static string ReadLine(string InputText, string DefaultValue, bool UseCtrlCAsInput) { }
 ```
 {% endcode %}
 {% endhint %}
 
-## From 0.0.22 to 0.0.23
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.22 to 0.0.23</mark>
 
 This version was the last version from the API v2.0 series.
 
@@ -1095,10 +1273,16 @@ This version was the last version from the API v2.0 series.
 [v0.0.23.x-series.md](../version-release-notes/v0.0.23.x-series.md)
 {% endcontent-ref %}
 
-### **Deprecation of `ICustomSaver`**
+Here's a list of breaking changes:
+
+<details>
+
+<summary>Deprecation of <code>ICustomSaver</code></summary>
 
 As we've implemented `BaseScreensaver` to better handle screensavers, we decided to deprecate `ICustomSaver` in favor of the new screensaver model. This would merge all kernel threads of individual screensavers to one master screensaver thread.
 
 {% hint style="info" %}
 All new screensavers should use the `BaseScreensaver` class. All existing screensavers should migrate from `ICustomSaver` to `BaseScreensaver`.
 {% endhint %}
+
+</details>

@@ -13,21 +13,27 @@ Nitrocid KS provides you with reflection tools to make using it easier for mods 
 * Integer manipulation
 * Common reflection tools
 
-This feature of Nitrocid KS is essential in cases where the default .NET implementation doesn't implement features that are not normally available for all the supported frameworks, such as array randomization that isn't available until .NET 8.0. This feature can also be used in future versions of Nitrocid KS to emulate features that have been implemented in future .NET versions and to do unusual tricks with various types, such as swapping two integers.
+This feature of Nitrocid KS is essential in cases where the default .NET implementation doesn't implement features that are not normally available for all the supported frameworks, such as array randomization that isn't available until .NET 8.0.
 
-## Array manipulation
+This feature can also be used in future versions of Nitrocid KS to emulate features that have been implemented in future .NET versions and to do unusual tricks with various types, such as swapping two integers.
 
-The reflection part of Nitrocid KS contains tools that allow you to manipulate with the arrays, such as sorting and randomizing array elements. Here are the following functions that you can use:
+The following reflection tools are available:
 
-* `RandomizeArray()`: Randomizes the array using the [Schwartzian's transform](http://en.wikipedia.org/wiki/Schwartzian_transform) formula.
-* `RandomizeArraySystem()`: Randomizes the array using .NET 8.0's [Random.Shared.Shuffle()](https://learn.microsoft.com/en-us/dotnet/api/system.random.shuffle) function.
-* `SortNumbers()`: Sorts the numbers using one of the sorting algorithms implemented by your array sorting drivers.
+<details>
 
-{% hint style="info" %}
-Some features use the kernel driver tools, which you can learn more about it [here](kernel-drivers/sorting-drivers.md). `SortNumbers()` also allows you to use the sorting driver name as a shortcut to getting the sorting driver yourself.
-{% endhint %}
+<summary>Array manipulation</summary>
 
-## Assembly lookup management
+The reflection part of Nitrocid KS contains tools that allow you to manipulate with the arrays, such as sorting and randomizing array elements.
+
+Here are the following functions that you can use:
+
+<table><thead><tr><th width="219.66668701171875"></th><th>Description</th></tr></thead><tbody><tr><td><code>RandomizeArray()</code></td><td>Randomizes the array using the <a href="http://en.wikipedia.org/wiki/Schwartzian_transform">Schwartzian's transform</a> formula.</td></tr><tr><td><code>RandomizeArraySystem()</code></td><td>Randomizes the array using .NET 8.0's <a href="https://learn.microsoft.com/en-us/dotnet/api/system.random.shuffle">Random.Shared.Shuffle()</a> function.</td></tr><tr><td><code>SortNumbers()</code></td><td>Sorts the numbers using one of the sorting algorithms implemented by your array sorting drivers.</td></tr></tbody></table>
+
+</details>
+
+<details>
+
+<summary>Assembly lookup management</summary>
 
 Nitrocid KS contains the assembly lookup tools to manage how the kernel will load the assemblies specified in the search paths that `AssemblyLookup` manages. It allows you to add and to remove a path to/from the lookup path list using the following functions:
 
@@ -40,7 +46,11 @@ To load an assembly from the search paths, such as your mod dependencies, Nitroc
 In case Nitrocid attempts to load an old mod that depends on the old name of the application, `Kernel Simulator`, it'll give you an error saying that the mod is too old to be loadable. Therefore, mod loading will fail. If you're experiencing this in one of your mods and believe that this is the reason, contact the mod publisher for details about how to get the latest version.
 {% endhint %}
 
-## Integer tools
+</details>
+
+<details>
+
+<summary>Integer tools</summary>
 
 The `Reflection` part of the kernel contains a class, `IntegerTools`, that consists of useful integer tools from short numbers to 128-bit integer numbers to double-precision numbers, like converting literal file sizes in bytes to their human formats.
 
@@ -51,7 +61,11 @@ In addition to that, we've also placed useful extensions, such as converting the
 * `ToNumber()`
 * `ToHex()`
 
-### File size conversion
+</details>
+
+<details>
+
+<summary>File size conversion</summary>
 
 `SizeString()` extension functions can be used when importing the `Reflection` namespace. This allows you to easily convert the file sizes from bytes to their human-readable format.
 
@@ -66,7 +80,11 @@ string humanized = bytes.SizeString();
 You can't use this function for enormous sizes, like 1 zettabytes, because of the limitation of the long integers. However, you shouldn't worry about this situation, since this is used generally for file sizes, and a single file in the world hasn't reached this size yet.
 {% endhint %}
 
-## Properties and Fields
+</details>
+
+<details>
+
+<summary>Properties and Fields</summary>
 
 The `Reflection` part of the Nitrocid API provides you with options to access public properties and fields that are declared in the public classes dynamically.
 
@@ -80,17 +98,26 @@ In addition to the functions available in the above two classes, you can get all
 * `GetAllProperties()`
 * `GetAllPropertiesNoEvaluation()`
 
-## Method tools
+</details>
 
-In addition to property and field tools, the reflection feature of Nitrocid KS also allows you to manage methods and invoke them by their name or by their `MethodBase` instance. This set of tools allows you to do the following:
+<details>
 
-* `GetMethod()`: This function allows you to get a public method from either one of the Nitrocid kernel types or a specific type inside and outside Nitrocid.
-* `InvokeMethod()`: This function allows you to invoke a non-static method, provided that you already have an object that is of a specific type that implements the public method.
-* `InvokeMethodStatic()`: This function allows you to invoke a public static method.
+<summary>Method tools</summary>
 
-## Common reflection tools
+In addition to property and field tools, the reflection feature of Nitrocid KS also allows you to manage methods and invoke them by their name or by their `MethodBase` instance.
 
-Finally, the common reflection tools are here to help you get the most out of the reflection feature of .NET by providing you the following functions:
+This set of tools allows you to do the following:
 
-* `IsDotnetAssemblyFile()`: This function checks to see if a path to a specific file is a .NET assembly or not. If it is a .NET assembly, it returns true with an `AssemblyName` instance containing information about your desired assembly.
-* `GetType()`: This function gets a type from different assembly contexts that were added when loading addons or mods.
+<table><thead><tr><th width="199.66668701171875">Function</th><th>Description</th></tr></thead><tbody><tr><td><code>GetMethod()</code></td><td>This function allows you to get a public method from either one of the Nitrocid kernel types or a specific type inside and outside Nitrocid.</td></tr><tr><td><code>InvokeMethod()</code></td><td>This function allows you to invoke a non-static method, provided that you already have an object that is of a specific type that implements the public method.</td></tr><tr><td><code>InvokeMethodStatic()</code></td><td>This function allows you to invoke a public static method.</td></tr></tbody></table>
+
+</details>
+
+<details>
+
+<summary>Common reflection tools</summary>
+
+The common reflection tools are here to help you get the most out of the reflection feature of .NET by providing you the following functions:
+
+<table><thead><tr><th width="219.66668701171875">Function</th><th>Description</th></tr></thead><tbody><tr><td><code>IsDotnetAssemblyFile()</code></td><td>This function checks to see if a path to a specific file is a .NET assembly or not.<br><br>If it is a .NET assembly, it returns true with an <code>AssemblyName</code> instance containing information about your desired assembly.</td></tr><tr><td><code>GetType()</code></td><td>This function gets a type from different assembly contexts that were added when loading addons or mods.</td></tr></tbody></table>
+
+</details>

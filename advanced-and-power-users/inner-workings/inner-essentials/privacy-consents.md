@@ -7,12 +7,13 @@ icon: user-lock
 
 For controlled access to parts of your system, like your files, we've introduced privacy consents feature which allows you to choose whether to allow a certain operation to be done to your files, data, etc. This increases privacy, especially when apps try to abuse privacy-sensitive features to do something malignant.
 
+<details>
+
+<summary>Privacy permissions</summary>
+
 Nitrocid defines these permissions to require your consent before continuing the operation:
 
-* `FilesystemRead`
-  * An application or mod tries to read from a file
-* `FilesystemWrite`
-  * An application or mod tries to write to a file
+<table><thead><tr><th width="159.6666259765625">Permission</th><th>Description</th></tr></thead><tbody><tr><td><code>FilesystemRead</code></td><td>An application or mod tries to read from a file</td></tr><tr><td><code>FilesystemWrite</code></td><td>An application or mod tries to write to a file</td></tr></tbody></table>
 
 {% hint style="info" %}
 Please note that your consent is required only for above accesses that are done through the Nitrocid API for each user.
@@ -22,6 +23,12 @@ If you're a mod developer and care about privacy of your users, use the Nitrocid
 If the user declines the consent, an exception will be thrown to the caller, depending on how a particular Nitrocid API function is coded.
 {% endhint %}
 
+</details>
+
+<details>
+
+<summary>Asking for consent</summary>
+
 In your mod code, you can ask for consent using the below function:
 
 ```csharp
@@ -29,3 +36,5 @@ public static bool ConsentPermission(ConsentedPermissionType consentType)
 ```
 
 This is useful if you want your mod to not ask you for your consent in the middle of its operation, but rather when it starts. Additionally, you can ask for consent in the mod's introductory screen, just like apps built for Android Marshmallow or higher.
+
+</details>

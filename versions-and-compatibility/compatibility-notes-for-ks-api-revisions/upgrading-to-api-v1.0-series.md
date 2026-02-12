@@ -7,7 +7,9 @@ icon: up
 
 When upgrading your modification from the target of the later version of Nitrocid KS that declares itself to be from the API v1.0, you must make necessary changes to be able to use your mod in a Nitrocid KS version which you use to test your mod. These changes will be listed starting from 0.0.4 to the last version in this API revision.
 
-## From 0.0.1 to 0.0.4
+***
+
+## <mark style="color:$primary;">From 0.0.1 to 0.0.4</mark>
 
 Although this version is the first version which supported the kernel modification feature, these below functions are removed for reasons stated below each function.
 
@@ -15,10 +17,14 @@ Although this version is the first version which supported the kernel modificati
 [v0.0.4.x-series.md](../version-release-notes/v0.0.4.x-series.md)
 {% endcontent-ref %}
 
-### `ResetTimeDate()`
+Here's a list of breaking changes:
+
+<details>
+
+<summary><code>ResetTimeDate()</code></summary>
 
 {% code title="TimeDate.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub ResetTimeDate()
 ```
 {% endcode %}
@@ -29,10 +35,14 @@ This function first appeared in 0.0.3 as part of the changes that happened betwe
 We advice you to cease using this function.
 {% endhint %}
 
-### `permissionEdit()`
+</details>
+
+<details>
+
+<summary><code>permissionEdit()</code></summary>
 
 {% code title="Groups.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub permissionEdit(ByVal username As String, ByVal type As String, ByVal allowed As Boolean)
 ```
 {% endcode %}
@@ -43,15 +53,19 @@ This function first appeared with the initial debut of the group system. However
 The new permission system is here, and you can make use of it to grant and deny users a specific permission. Their method signatures are written below:
 
 ```csharp
-public static void GrantPermission(string User, PermissionTypes permissionType)
-public static void RevokePermission(string User, PermissionTypes permissionType)
+public static void GrantPermission(string User, PermissionTypes permissionType) { }
+public static void RevokePermission(string User, PermissionTypes permissionType) { }
 ```
 {% endhint %}
 
-### `ProbeBIOS()`
+</details>
+
+<details>
+
+<summary><code>ProbeBIOS()</code></summary>
 
 {% code title="HardwareProbe.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub ProbeBIOS(Optional ByVal QuietBIOS As Boolean = False)
 ```
 {% endcode %}
@@ -62,14 +76,20 @@ This function was added to "simplify" silencing the messages being seen when the
 We advice you to cease using this function.
 {% endhint %}
 
-## From 0.0.4 to 0.0.4.5
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.4 to 0.0.4.5</mark>
 
 This version incorporated a few changes to the kernel, including the below API changes that may impact your mods.
 
-### `ShowTimeQuiet()`
+<details>
+
+<summary><code>ShowTimeQuiet()</code></summary>
 
 {% code title="TimeDate.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub ShowTimeQuiet()
 ```
 {% endcode %}
@@ -80,7 +100,11 @@ This function was created back in 0.0.2 to wrap the conditional execution of `Sh
 Latest generations of Nitrocid KS offer better quiet mode, which functions more dynamically than the implementation on the first-generation versions. We advice you to cease using this function.
 {% endhint %}
 
-## From 0.0.4.5 to 0.0.5
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.4.5 to 0.0.5</mark>
 
 This kernel version incorporated changes to the kernel, such as these API changes that occurred:
 
@@ -92,10 +116,14 @@ This kernel version incorporated changes to the kernel, such as these API change
 [v0.0.5.x-series](../version-release-notes/v0.0.5.x-series/)
 {% endcontent-ref %}
 
-### `DiscoSystem()`
+Here's a list of breaking changes:
+
+<details>
+
+<summary><code>DiscoSystem()</code></summary>
 
 {% code title="GetCommand.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub DiscoSystem(Optional ByVal BlackWhite As Boolean = False)
 ```
 {% endcode %}
@@ -106,10 +134,14 @@ The very first screensaver ever implemented in the very first version of Nitroci
 This screensaver was later implemented in later versions of Nitrocid KS as one of the genuine screensavers under the name of Disco. We still advice you to stop using this function.
 {% endhint %}
 
-### `BeepFreq()` and `BeepSystem()`
+</details>
+
+<details>
+
+<summary><code>BeepFreq()</code> and <code>BeepSystem()</code></summary>
 
 {% code title="Beep.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub BeepFreq()
 Sub BeepSystem()
 ```
@@ -123,10 +155,14 @@ Though the `beep` command returned without frequency and time support in later r
 The reason that the `beep` command returned without the beeping customizability is that because it's not cross-platform.
 {% endhint %}
 
-### `CheckNetworkKernel()`, `CheckNetworkCommand()`, and `PingTargetKernel()`
+</details>
+
+<details>
+
+<summary><code>CheckNetworkKernel()</code>, <code>CheckNetworkCommand()</code>, and <code>PingTargetKernel()</code></summary>
 
 {% code title="Network.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub CheckNetworkKernel()
 Sub CheckNetworkCommand()
 Sub PingTargetKernel(ByVal Address As String)
@@ -140,17 +176,21 @@ This function was returned much later as a cross-platform method to ping network
 
 {% code title="NetworkTools.cs" lineNumbers="true" %}
 ```csharp
-public static PingReply PingAddress(string Address)
-public static PingReply PingAddress(string Address, int Timeout)
-public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer)
+public static PingReply PingAddress(string Address) { }
+public static PingReply PingAddress(string Address, int Timeout) { }
+public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### `panicPrompt()`
+</details>
+
+<details>
+
+<summary><code>panicPrompt()</code></summary>
 
 {% code title="PanicSim.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub panicPrompt()
 ```
 {% endcode %}
@@ -161,10 +201,14 @@ This was implemented as the normal command that you can easily run from the shel
 This function was later re-implemented as a test facade, which, along with the entire kernel testing system, is only available in debug builds of the kernel. Either way, we've internalized the function responsible for the kernel error.
 {% endhint %}
 
-### `changeName()`
+</details>
+
+<details>
+
+<summary><code>changeName()</code></summary>
 
 {% code title="UserManagement.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub changeName()
 ```
 {% endcode %}
@@ -176,15 +220,19 @@ This function made its own return under `ChangeUsername()` in the same module. T
 
 {% code title="UserManagement.cs" lineNumbers="true" %}
 ```csharp
-public static void ChangeUsername(string OldName, string Username)
+public static void ChangeUsername(string OldName, string Username) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### `changePassword()` and `changePasswordPrompt()`
+</details>
+
+<details>
+
+<summary><code>changePassword()</code> and <code>changePasswordPrompt()</code></summary>
 
 {% code title="UserManagement.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub changePassword()
 Sub changePasswordPrompt(ByVal usernamerequestedChange As String)
 ```
@@ -197,15 +245,19 @@ Password changing is returned in later versions of the kernel starting with 0.0.
 
 {% code title="UserManagement.cs" lineNumbers="true" %}
 ```csharp
-public static void ChangePassword(string Target, string CurrentPass, string NewPass)
+public static void ChangePassword(string Target, string CurrentPass, string NewPass) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### `removeUser()`
+</details>
+
+<details>
+
+<summary><code>removeUser()</code></summary>
 
 {% code title="UserManagement.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub removeUser()
 ```
 {% endcode %}
@@ -217,15 +269,19 @@ This function was later returned. The below code block shows you the method sign
 
 {% code title="UserManagement.cs" lineNumbers="true" %}
 ```csharp
-public static void RemoveUser(string user)
+public static void RemoveUser(string user) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### `addUser()` and `newPassword()`
+</details>
+
+<details>
+
+<summary><code>addUser()</code> and <code>newPassword()</code></summary>
 
 {% code title="UserManagement.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub addUser()
 Sub newPassword(ByVal user As String)
 ```
@@ -238,15 +294,19 @@ The first function used to prompt you for the new user, which, after being provi
 
 {% code title="UserManagement.cs" lineNumbers="true" %}
 ```csharp
-public static void AddUser(string newUser, string newPassword = "")
+public static void AddUser(string newUser, string newPassword = "") { }
 ```
 {% endcode %}
 {% endhint %}
 
-### `UseDefaults()`, `SetColorSteps()`, and `advanceStep()`
+</details>
+
+<details>
+
+<summary><code>UseDefaults()</code>, <code>SetColorSteps()</code>, and <code>advanceStep()</code></summary>
 
 {% code title="ColorSet.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub UseDefaults()
 Sub SetColorSteps()
 Sub advanceStep()
@@ -262,17 +322,21 @@ We advice you to use `PopulateColorsDefault()` implemented in 0.1.0 Beta 1 as an
 
 {% code title="ColorTools.cs" lineNumbers="true" %}
 ```csharp
-public static void SetConsoleColor(KernelColorType colorType)
-public static void SetConsoleColor(KernelColorType colorType, bool Background, bool ForceSet = false)
-public static void SetConsoleColor(Color ColorSequence, bool Background = false, bool ForceSet = false)
+public static void SetConsoleColor(KernelColorType colorType) { }
+public static void SetConsoleColor(KernelColorType colorType, bool Background, bool ForceSet = false) { }
+public static void SetConsoleColor(Color ColorSequence, bool Background = false, bool ForceSet = false) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### `TemplatePrompt()`
+</details>
+
+<details>
+
+<summary><code>TemplatePrompt()</code></summary>
 
 {% code title="TemplateSet.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub TemplatePrompt()
 ```
 {% endcode %}
@@ -284,21 +348,27 @@ Use `SetColorsTheme()`, `ApplyThemeFromFile()`, or `ApplyThemeFromResources()` a
 
 {% code title="ThemeTools.cs" lineNumbers="true" %}
 ```csharp
-public static void SetColorsTheme(ThemeInfo ThemeInfo)
-public static void ApplyThemeFromFile(string ThemeFile)
-public static void ApplyThemeFromResources(string theme)
+public static void SetColorsTheme(ThemeInfo ThemeInfo) { }
+public static void ApplyThemeFromFile(string ThemeFile) { }
+public static void ApplyThemeFromResources(string theme) { }
 ```
 {% endcode %}
 {% endhint %}
 
-## From 0.0.5 to 0.0.5.1
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.5 to 0.0.5.1</mark>
 
 This release was a minor release to the 0.0.5.x series.
 
-### `permissionPrompt()` and `permissionEditingPrompt()`
+<details>
+
+<summary><code>permissionPrompt()</code> and <code>permissionEditingPrompt()</code></summary>
 
 {% code title="Groups.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub permissionPrompt()
 Sub permissionEditingPrompt()
 ```
@@ -310,7 +380,11 @@ The first function served as the prompt for adding and removing groups for users
 The new permission system replaces the two functions with more API-friendly functions that can be found in the `PermissionsTools` class. However, if you're referring to actual user groups, you may want to take a look at the `GroupManagement` class instead.
 {% endhint %}
 
-## From 0.0.5.1 to 0.0.6
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.5.1 to 0.0.6</mark>
 
 0.0.6 brought several features, including the API changes described below:
 
@@ -322,10 +396,14 @@ The new permission system replaces the two functions with more API-friendly func
 [v0.0.6.x-series](../version-release-notes/v0.0.6.x-series/)
 {% endcontent-ref %}
 
-### `initializeMainUsers()`
+Here's a list of breaking changes:
+
+<details>
+
+<summary><code>initializeMainUsers()</code></summary>
 
 {% code title="UserManagement.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub initializeMainUsers()
 ```
 {% endcode %}
@@ -338,10 +416,14 @@ The 2021 analysis said that it was removed as it's no longer needed, but it poin
 Even though this function returned in later versions of the kernel as `InitializeSystemAccount()` in 0.0.12, we advice you to cease using this function.
 {% endhint %}
 
-### `ReadLineWithNewLine()`
+</details>
+
+<details>
+
+<summary><code>ReadLineWithNewLine()</code></summary>
 
 {% code title="StreamReaderExtensions.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function ReadLineWithNewLine(ByVal reader As StreamReader) As String
 ```
 {% endcode %}
@@ -352,10 +434,14 @@ This StreamReader extension used to read one line ending in the new line charact
 We advice you to cease using this function. The codebase to implement this function is still found in the archived Extensification repository, but we advice you to re-implement this functionality yourself.
 {% endhint %}
 
-### `ReadyPath_MOD()`
+</details>
+
+<details>
+
+<summary><code>ReadyPath_MOD()</code></summary>
 
 {% code title="ModParser.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub ReadyPath_MOD()
 ```
 {% endcode %}
@@ -367,16 +453,20 @@ If you want to get a path to your mod directory, use the `ModsPath` property fou
 
 {% code title="Paths.cs" lineNumbers="true" %}
 ```csharp
-public static string ModsPath
-public static string GetKernelPath(KernelPathType PathType)
+public static string ModsPath { get; set; }
+public static string GetKernelPath(KernelPathType PathType) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### `ProbeGPU()`, `Hddinfo()`, `Cpuinfo()`,  `SysMemory()`, and `BiosInformation()`
+</details>
+
+<details>
+
+<summary><code>ProbeGPU()</code>, <code>Hddinfo()</code>, <code>Cpuinfo()</code>,  <code>SysMemory()</code>, and <code>BiosInformation()</code></summary>
 
 {% code title="HardwareProbe.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub ProbeGPU(Optional ByVal KernelMode As Boolean = True, Optional ByVal QuietMode As Boolean = False)
 Public Sub Hddinfo(Optional ByVal QuietMode As Boolean = False)
 Public Sub Cpuinfo()
@@ -392,15 +482,19 @@ These hardware parsing functions used to probe information about your computer's
 
 {% code title="HardwareList.cs" lineNumbers="true" %}
 ```csharp
-public static void ListHardware(string HardwareType)
+public static void ListHardware(string HardwareType) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### `PreWriteToDebugger`, `PostWriteToDebugger`, `PreWriteToConsole`, and `PostWriteToConsole` events
+</details>
+
+<details>
+
+<summary><code>PreWriteToDebugger</code>, <code>PostWriteToDebugger</code>, <code>PreWriteToConsole</code>, and <code>PostWriteToConsole</code> events</summary>
 
 {% code title="EventsAndExceptions.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 ' Events
 <Obsolete> Public Event PreWriteToDebugger() 'Writing event - Deprecated
 <Obsolete> Public Event PostWriteToDebugger() 'Writing event - Deprecated
@@ -432,10 +526,14 @@ Our main issue was that performing this operation caused us to significantly slo
 There is no alternative to these events, so we recommend you to avoid using these events in your mods if possible. This is an upgrade block for your mods until you follow our advice.
 {% endhint %}
 
-### `ResetUsers()`
+</details>
+
+<details>
+
+<summary><code>ResetUsers()</code></summary>
 
 {% code title="UserManagement.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub resetUsers()
 ```
 {% endcode %}
@@ -446,10 +544,14 @@ This function used to reset every variable related to user management, including
 We advice you to cease using this function.
 {% endhint %}
 
-### `GetAllCurrencies()`
+</details>
+
+<details>
+
+<summary><code>GetAllCurrencies()</code></summary>
 
 {% code title="unitConv.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Function GetAllCurrencies() As List(Of currencyInfo)
 ```
 {% endcode %}
@@ -460,10 +562,14 @@ This function used to list all the currencies of all the countries supported by 
 We no longer support currency conversions as part of the current state of the economy, including the recent inflations. We advice you to cease using this feature if possible.
 {% endhint %}
 
-### `CurrencyConvert()`
+</details>
+
+<details>
+
+<summary><code>CurrencyConvert()</code></summary>
 
 {% code title="unitConv.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Sub CurrencyConvert(ByVal src3UPchars As String, ByVal dest3UPchars As String, ByVal value As Double)
 ```
 {% endcode %}
@@ -474,7 +580,11 @@ This function used to query the aforementioned API to convert the value from the
 We no longer support currency conversions as part of the current state of the economy, including the recent inflations. We advice you to cease using this feature if possible.
 {% endhint %}
 
-## From 0.0.6 to 0.0.7
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.6 to 0.0.7</mark>
 
 This version series is the last version group for Nitrocid KS API v1.0, which incorporated many changes, such as the addition of languages. In contrast, the following APIs are removed:
 
@@ -486,9 +596,13 @@ This version series is the last version group for Nitrocid KS API v1.0, which in
 [v0.0.7.x-series](../version-release-notes/v0.0.7.x-series/)
 {% endcontent-ref %}
 
-### `ExpressionCalculate()`
+Here's a list of breaking changes:
 
-```visual-basic
+<details>
+
+<summary><code>ExpressionCalculate()</code></summary>
+
+```vb
 'stdCalc.vb
 Public Sub expressionCalculate(ByVal ParamArray exps() As String)
 
@@ -498,7 +612,7 @@ Public Sub expressionCalculate(ByVal sciMode As Boolean, ByVal ParamArray exps()
 
 For the standard calculator, it calculates all the expressions that consist of just numbers and operators and prints their results to the console. It takes the expression list and lists all numbers and operators in their separate lists and combines them to the final expression string to be computed by the DataTable class which can be found by clicking below:
 
-{% embed url="https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable.compute?view=net-6.0" %}
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable.compute?view=net-6.0" class="button primary">DataTable.Compute</a>
 
 In the other hand, the scientific calculator does the same thing, but also checks to see if it's running in sin-cos-tan mode (also wrongly named as scientific mode).
 
@@ -508,10 +622,14 @@ These functions were removed because their support for expressions are extremely
 This function later returned with the usage of `StringMath` in the later kernel versions. Before the migration, in 0.0.12, it has returned under `DoCalc()`.
 {% endhint %}
 
-### `Converter()`
+</details>
+
+<details>
+
+<summary><code>Converter()</code></summary>
 
 {% code title="unitConv.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub Converter(ByVal sourceUnit As String, ByVal targetUnit As String, ByVal value As Object)
 ```
 {% endcode %}
@@ -522,10 +640,14 @@ This converter used to take both the source unit and the target unit to convert 
 It was later returned with the usage of `Units.NET` library.
 {% endhint %}
 
-### `Wln()`
+</details>
+
+<details>
+
+<summary><code>Wln()</code></summary>
 
 {% code title="TextWriterColor.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub Wln(ByVal text As Object, ByVal colorType As String, ByVal ParamArray vars() As Object)
 ```
 {% endcode %}
@@ -536,24 +658,32 @@ This function was implemented to create a separate version of `W()` (now `Write(
 Use the `lines` boolean parameter to make `Write()` make a new line after it writes down the needed text.
 {% endhint %}
 
-### `ReadImportantConfig()`
+</details>
+
+<details>
+
+<summary><code>ReadImportantConfig()</code></summary>
 
 {% code title="Config.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub readImportantConfig()
 ```
 {% endcode %}
 
-ThThis function was used by the config initialization routine to read configuration entries that were deemed as important. This, however, was merged to the main config reader where it was given substantial updates before eventually getting removed in 0.1.0 as part of the new config reader and writer.
+This function was used by the config initialization routine to read configuration entries that were deemed as important. This, however, was merged to the main config reader where it was given substantial updates before eventually getting removed in 0.1.0 as part of the new config reader and writer.
 
 {% hint style="danger" %}
 We advice you to cease using this function.
 {% endhint %}
 
-### `GenModCS()`
+</details>
+
+<details>
+
+<summary><code>GenModCS()</code></summary>
 
 {% code title="ModParser.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Private Function GenModCS(ByVal code As String) As IScript 'For C# Mods
 ```
 {% endcode %}
@@ -564,17 +694,21 @@ The modding system first saw support for C# in 0.0.6.2, so this function was imp
 This function was not part of the public API, but listed here according to the 2021 analysis. The modification system in the latest series now supports .DLL files, but withdraws support for a single .cs and .vb mods.
 {% endhint %}
 
-### Manual Page API
+</details>
+
+<details>
+
+<summary>Manual Page API</summary>
 
 {% code title="Manual.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 ' Manual class
 Public Class Manual
 ```
 {% endcode %}
 
 {% code title="PageParser.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 'Initializes manual pages
 Sub InitMan()
 
@@ -608,7 +742,7 @@ Public Sub Sanity_EXTERNAL(ByVal title As String)
 {% endcode %}
 
 {% code title="PageViewer.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 'Preview the manual page
 Public Sub ViewPage(ByVal title As String)
 
@@ -623,16 +757,16 @@ The parser, however, works well. We recently had time issues with translating pr
 
 {% hint style="info" %}
 The manual page feature made its own return for 0.0.20, but it only works for mods and not the actual user guide for Nitrocid KS, which is what you're reading here.
-
-To learn more about how manual pages work and how to use them for your mods, press the below link:
-
-[#manual-page-parsing](../../advanced-and-power-users/kernel-modifications/kernel-modification-management/#manual-page-parsing "mention")
 {% endhint %}
 
-### `ListLocal()`
+</details>
+
+<details>
+
+<summary><code>ListLocal()</code></summary>
 
 {% code title="FTPGetCommand.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub ListLocal(ByVal dir As String)
 ```
 {% endcode %}
@@ -644,20 +778,24 @@ We advise you to cease using this function, and start using the `List()` functio
 
 ```csharp
 // Get a list of files and directories straight to the terminal
-public static void List(string folder)
-public static void List(string folder, bool Sort)
-public static void List(string folder, bool ShowFileDetails, bool SuppressUnauthorizedMessage)
-public static void List(string folder, bool ShowFileDetails, bool SuppressUnauthorizedMessage, bool Sort, bool Recursive = false)
+public static void List(string folder) { }
+public static void List(string folder, bool Sort) { }
+public static void List(string folder, bool ShowFileDetails, bool SuppressUnauthorizedMessage) { }
+public static void List(string folder, bool ShowFileDetails, bool SuppressUnauthorizedMessage, bool Sort, bool Recursive = false) { }
 
 // Get a list of files and directories and manipulate them programmatically
-public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false)
+public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false) { }
 ```
 {% endhint %}
 
-### `PingTarget()`
+</details>
+
+<details>
+
+<summary><code>PingTarget()</code></summary>
 
 {% code title="NetworkTools.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub PingTarget(ByVal Address As String, Optional ByVal repeatTimes As Int16 = 3)
 ```
 {% endcode %}
@@ -669,17 +807,21 @@ This function was returned much later as a cross-platform method to ping network
 
 {% code title="NetworkTools.cs" lineNumbers="true" %}
 ```csharp
-public static PingReply PingAddress(string Address)
-public static PingReply PingAddress(string Address, int Timeout)
-public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer)
+public static PingReply PingAddress(string Address) { }
+public static PingReply PingAddress(string Address, int Timeout) { }
+public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer) { }
 ```
 {% endcode %}
 {% endhint %}
 
-### Network Listing API
+</details>
+
+<details>
+
+<summary>Network Listing API</summary>
 
 {% code title="NetworkTools.vb" lineNumbers="true" %}
-```visual-basic
+```vb
 Public Sub ListOnlineAndOfflineHosts()
 Public Sub ListHostsInNetwork()
 Public Sub GetNetworkComputers()
@@ -689,9 +831,7 @@ Public Sub ListHostsInTree()
 
 These four functions were made to list all the computers in the LAN. The first one lists all the offline and online hosts by taking cached computer list, the second and the fourth one lists all the online computers either by listing them or by putting them under the tree-based diagram, and the third function actually uses SAMBA 1.0, which is highly insecure considering that there are many security vulnerabilities regarding this version of SAMBA which is linked below.
 
-{% embed url="https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=smbv1" %}
-All SAMBA 1.0 vulnerabilities
-{% endembed %}
+<a href="https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=smbv1" class="button primary">All Samba 1.0 vulnerabilities</a>
 
 As a consequence, we decided to remove the whole API, making the kernel non-dependent on SAMBA 1.0.
 
@@ -700,7 +840,9 @@ It was later returned in 0.1.0 pre-beta, but it doesn't use the insecure SAMBA 1
 
 {% code title="NetworkTools.cs" lineNumbers="true" %}
 ```csharp
-public static IPAddress[] GetOnlineDevicesInNetwork()
+public static IPAddress[] GetOnlineDevicesInNetwork() { }
 ```
 {% endcode %}
 {% endhint %}
+
+</details>

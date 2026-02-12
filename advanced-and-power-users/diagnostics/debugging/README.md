@@ -7,17 +7,13 @@ icon: microscope
 
 # Debugging
 
-In-kernel debugging is a kernel facility that allows you to analyze the kernel components without using Visual Studio. This can be activated by passing `debug` to the kernel executable. This method has two ways.
-
-## Locally
+In-kernel debugging is a kernel facility that allows you to analyze the kernel components without using Visual Studio. This can be activated by passing `debug` to the kernel executable. This method has two ways: locally, and remotely.
 
 To get started debugging locally, press the below button
 
 {% content-ref url="local-debugging.md" %}
 [local-debugging.md](local-debugging.md)
 {% endcontent-ref %}
-
-## Remotely
 
 To get started debugging remotely, press the below button
 

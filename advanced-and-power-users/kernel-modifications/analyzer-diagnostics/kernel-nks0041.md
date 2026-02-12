@@ -9,7 +9,9 @@ This analyzer provides the following strings:
 
 <table><thead><tr><th width="174">Context</th><th>String</th></tr></thead><tbody><tr><td>Error List</td><td>Caller uses <code>RuntimeInformation.IsOSPlatform(OSPlatform.OSX)</code> instead of <code>KernelPlatform.IsOnMacOS()</code></td></tr><tr><td>Suggestion Box</td><td>Use <code>KernelPlatform.IsOnMacOS()</code> instead of <code>RuntimeInformation.IsOSPlatform(OSPlatform.OSX)</code></td></tr><tr><td>Description</td><td><code>KernelPlatform.IsOnMacOS()</code> is more readable and less verbose than <code>RuntimeInformation.IsOSPlatform(OSPlatform.OSX)</code>.</td></tr></tbody></table>
 
-### Extended Description
+***
+
+## <mark style="color:$primary;">Extended Description</mark>
 
 This code analyzer detects the usage of `IsOSPlatform` from the `RuntimeInformation` class found in the `System.Runtime.InteropServices` namespace.
 
@@ -17,11 +19,13 @@ This code analyzer detects the usage of `IsOSPlatform` from the `RuntimeInformat
 
 As a result, `KernelPlatform` implements a handful of platform detection functions to allow you to more accurately detect your platform. Also, it simplifies the complicated platform checking statements to its simpler equivalent.
 
-### Analysis Comparison
+***
+
+## <mark style="color:$primary;">Analysis Comparison</mark>
 
 To get a brief insight about how this analyzer works, compare the two code blocks shown to you below:
 
-#### Before the fix
+### <mark style="color:$primary;">Before the fix</mark>
 
 <pre class="language-csharp" data-title="Somewhere in your mod code..." data-line-numbers><code class="lang-csharp">public static void MyFunction()
 {
@@ -29,22 +33,10 @@ To get a brief insight about how this analyzer works, compare the two code block
 </strong>}
 </code></pre>
 
-#### After the fix
+### <mark style="color:$primary;">After the fix</mark>
 
 <pre class="language-csharp" data-title="Somewhere in your mod code..." data-line-numbers><code class="lang-csharp">public static void MyFunction()
 {
 <strong>    string value = KernelPlatform.IsOnMacOS();
 </strong>}
 </code></pre>
-
-### Suppression
-
-You can suppress this suggestion by including it in the appropriate place, whichever is convenient.
-
-For more information about how to suppress any warning issued by the Nitrocid analyzer, visit the below page:
-
-{% embed url="https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/suppress-warnings" %}
-
-### Recommendation
-
-We recommend that every caller which use this function use the recommended abovementioned method.

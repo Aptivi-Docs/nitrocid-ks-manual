@@ -23,19 +23,23 @@ When upgrading your mods to API v3.0, consider these:
 The explanation about these changes can be found at the bottom of this page.
 {% endhint %}
 
-## From 0.0.24 to 0.1.0
+***
+
+## <mark style="color:$primary;">From 0.0.24 to 0.1.0</mark>
 
 This version is a futuristic magic that brings in many feature additions and spectacular improvements in all fields, including cosmetic changes.
 
-{% content-ref url="../../version-release-notes/v0.1.x.x-series.md" %}
-[v0.1.x.x-series.md](../../version-release-notes/v0.1.x.x-series.md)
+{% content-ref url="../../version-release-notes/v0.1.0.x-series.md" %}
+[v0.1.0.x-series.md](../../version-release-notes/v0.1.0.x-series.md)
 {% endcontent-ref %}
 
-### Detailed important changes
+### <mark style="color:$primary;">Detailed important changes</mark>
 
 This section explains how to adapt the important changes to your mod code so that it works with 0.1.0 and higher. This highlights the most important changes that we have compiled for you.
 
-#### Old configuration styles
+<details>
+
+<summary>Old configuration styles</summary>
 
 The following configuration files (incomplete list) have been changed entirely from 0.0.24.x to at least 0.1.0 to better fit the requirements of having the clean home directory (i.e. moved from the user profile directory to the local application data directory):
 
@@ -60,7 +64,11 @@ This is intentionally done to make the configuration reader and the writer faste
 You can learn more about why we've made these changes, as well as a list of commits that may explain more, [here](from-0.1.0-beta-1-to-0.1.0-beta-2.md#removed-the-field-manager).
 {% endhint %}
 
-#### Removal of .NET Framework 4.8 support
+</details>
+
+<details>
+
+<summary>Removal of .NET Framework 4.8 support</summary>
 
 After 0.0.24.x, you'll notice that we no longer ship a version that is compatible with the .NET Framework 4.8 that is pre-installed in the latest versions of Windows. This is because we have started using features that are exclusive to the modern .NET, and Nitrocid KS 0.1.0 and above currently uses .NET 8.0 as the minimum version needed to run. As such, we've decided to change the requirements according to this change.
 
@@ -70,7 +78,11 @@ Please consider using .NET 8.0 instead to continue using Nitrocid KS. This is to
 
 Fortunately, we still maintain the 0.0.24.x version, which still supports .NET Framework 4.8. This version will be supported until the full .NET Framework 4.8 deprecation, which will not happen until further notice.
 
-#### Significant improvements to your mods
+</details>
+
+<details>
+
+<summary>Significant improvements to your mods</summary>
 
 Starting from 0.1.0, we've significantly made improvements as to how your mods start. Your mods have become more powerful than before, and we're still working on it to ensure that they get more control over how Nitrocid and its addons work. As part of this significant improvement effort that happened during the entire development cycle of this version, we had to do the following important changes to ensure that your mods have the highest quality possible:
 
@@ -82,11 +94,11 @@ Starting from 0.1.0, we've significantly made improvements as to how your mods s
 
 For instructions on how to strongly name your mods, you can consult the below page to perform this operation.
 
-{% content-ref url="../../../advanced-and-power-users/inner-workings/inner-essentials/assembly-signing.md" %}
-[assembly-signing.md](../../../advanced-and-power-users/inner-workings/inner-essentials/assembly-signing.md)
-{% endcontent-ref %}
+<a href="../../../advanced-and-power-users/inner-workings/inner-essentials/assembly-signing.md" class="button primary">Assembly signing</a>
 
-### Other breaking changes
+</details>
+
+### <mark style="color:$primary;">Other breaking changes</mark>
 
 We have highlighted the most important breaking changes for your kernel mods. Now, for the other breaking changes, you'll need to adapt the changed from 0.0.24.x to 0.1.0 using the guides that are explained in the below pages:
 
@@ -112,62 +124,76 @@ We have highlighted the most important breaking changes for your kernel mods. No
 
 The below sections specify the post-0.1.0 releases.
 
-## From 0.1.0.0 to 0.1.0.3
+***
+
+## <mark style="color:$primary;">From 0.1.0.0 to 0.1.0.3</mark>
 
 Between 0.1.0.0 and 0.1.0.3, we've made the following breaking changes:
 
-### Updated Terminaux to 3.3.0.1
+<details>
+
+<summary>Updated Terminaux to 3.3.0.1</summary>
 
 We've updated Terminaux to 3.3.0.1 to fix a bug related to the selection style crashing when pressing ESC. In consequence, because the fix was released after the 3.3.0 release, we had to increase the mod API version to `3.0.25.439`.
 
 You can consult the list of breaking changes that result from upgrading Terminaux 3.2.0 to 3.3.0 by pressing the below button:
 
-{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v3.0" %}
-[API v3.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v3.0)
-{% endcontent-ref %}
+<a href="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v3.0" class="button primary">API v3.0</a>
 
-## From 0.1.0.3 to 0.1.0.45
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.1.0.3 to 0.1.0.45</mark>
 
 Between 0.1.0.3 and 0.1.0.45, we've made the following breaking changes:
 
-### Incorporated all features from 0.1.1
+<details>
+
+<summary>Incorporated all features from 0.1.1</summary>
 
 Since the 0.1.1 version series has gone out of support starting April 23rd, 2025, we've incorporated all features from there to the fourth service pack of 0.1.0. Please consult the "[From 0.1.0 to 0.1.1](./#from-0.1.0-to-0.1.1)" section to learn more.
 
-## From 0.1.0 to 0.1.1
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.1.0 to 0.1.1</mark>
 
 This version is another futuristic magic that brings in feature additions and spectacular improvements. This version is built on top of the 0.1.0 codebase to provide you with the most gorgeous features ever introduced.
 
-{% content-ref url="../../version-release-notes/v0.1.x.x-series.md" %}
-[v0.1.x.x-series.md](../../version-release-notes/v0.1.x.x-series.md)
+{% content-ref url="../../version-release-notes/v0.1.0.x-series.md" %}
+[v0.1.0.x-series.md](../../version-release-notes/v0.1.0.x-series.md)
 {% endcontent-ref %}
 
-### Detailed important changes
+### <mark style="color:$primary;">Detailed important changes</mark>
 
 This section explains how to adapt the important changes to your mod code so that it works with 0.1.1 and higher. This highlights the most important changes that we have compiled for you.
 
-#### Usage of Terminaux 4.x and VisualCard 1.x
+<details>
 
-Nitrocid has been updated to use Terminaux 4.x and VisualCard 1.x. This is to bring in tons of amazing new features from both the libraries that aim to provide you with the best user and developer experience. You'll need to consult their own manual page for more information about how to adapt your Nitrocid mods to align with the latest breaking changes. VisualCard's breaking changes page is at the top button, and Terminaux's breaking changes page is at the bottom button.
+<summary>Usage of Terminaux 4.x and VisualCard 1.x</summary>
 
-{% content-ref url="https://app.gitbook.com/s/bEvVwD4FK7bX7p8XtIPH/breaking-changes" %}
-[Breaking Changes](https://app.gitbook.com/s/bEvVwD4FK7bX7p8XtIPH/breaking-changes)
-{% endcontent-ref %}
+Nitrocid has been updated to use Terminaux 4.x and VisualCard 1.x. This is to bring in tons of amazing new features from both the libraries that aim to provide you with the best user and developer experience. You'll need to consult their own manual page for more information about how to adapt your Nitrocid mods to align with the latest breaking changes.
 
-{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes" %}
-[Breaking changes](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes)
-{% endcontent-ref %}
+VisualCard's breaking changes page is at the top button, and Terminaux's breaking changes page is at the bottom button.
 
-#### Color requirement functions condensed
+<a href="https://app.gitbook.com/s/bEvVwD4FK7bX7p8XtIPH/breaking-changes" class="button primary">Breaking changes for VisualCard 1.x</a><a href="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v4.0" class="button primary">Breaking changes for Terminaux 4.x</a>
+
+</details>
+
+<details>
+
+<summary>Color requirement functions condensed</summary>
 
 {% code title="ThemeTools.cs" lineNumbers="true" %}
 ```csharp
-public static bool Is255ColorsRequired(string theme)
-public static bool Is255ColorsRequired(ThemeInfo theme)
-public static bool Is255ColorsRequired(Dictionary<KernelColorType, Color> colors)
-public static bool IsTrueColorRequired(string theme)
-public static bool IsTrueColorRequired(ThemeInfo theme)
-public static bool IsTrueColorRequired(Dictionary<KernelColorType, Color> colors)
+public static bool Is255ColorsRequired(string theme) { }
+public static bool Is255ColorsRequired(ThemeInfo theme) { }
+public static bool Is255ColorsRequired(Dictionary<KernelColorType, Color> colors) { }
+public static bool IsTrueColorRequired(string theme) { }
+public static bool IsTrueColorRequired(ThemeInfo theme) { }
+public static bool IsTrueColorRequired(Dictionary<KernelColorType, Color> colors) { }
 ```
 {% endcode %}
 
@@ -177,11 +203,15 @@ The color requirement functions have been condensed so that it becomes easier to
 The `MinimumTypeRequired()` function has been implemented to simplify the color requirement detection functions. The signatures are basically the same, but you need to also provide the color type that you want to check at the end of the function.
 {% endhint %}
 
-#### `AlarmEntry` implementation
+</details>
+
+<details>
+
+<summary><code>AlarmEntry</code> implementation</summary>
 
 {% code title="AlarmTools.cs" lineNumbers="true" %}
 ```csharp
-public static KeyValuePair<(string, string), DateTime> GetAlarmFromId(string alarmId)
+public static KeyValuePair<(string, string), DateTime> GetAlarmFromId(string alarmId) { }
 ```
 {% endcode %}
 
@@ -191,11 +221,15 @@ To more easily manage the alarm instances, we had to implement the `AlarmEntry` 
 Most of the time, you won't need to make any changes to how you call the functions. You just need to be aware of the fact that `GetAlarmFromId()` now returns a `KeyValuePair<string, AlarmEntry>`.
 {% endhint %}
 
-#### Removed references to GRILO
+</details>
+
+<details>
+
+<summary>Removed references to GRILO</summary>
 
 {% code title="KernelPlatform.cs" lineNumbers="true" %}
 ```csharp
-public static bool IsRunningFromGrilo()
+public static bool IsRunningFromGrilo() { }
 ```
 {% endcode %}
 
@@ -205,7 +239,11 @@ As GRILO is being sunset due to the implementation of the bootloader and the ker
 We advise you to cease using this function. Your bootable apps now need to reference Nitrocid and become a kernel mod in order to work again as a bootable app.
 {% endhint %}
 
-#### Access to the part options
+</details>
+
+<details>
+
+<summary>Access to the part options</summary>
 
 {% code title="CommandArgumentPart.cs" lineNumbers="true" %}
 ```csharp
@@ -221,11 +259,15 @@ We needed to add support for argument descriptions, which would show up in the c
 The constructors are not affected; one of it has been provided an extra optional argument that specifies the unlocalized argument description.
 {% endhint %}
 
-#### Base screensaver configuration implementation changed
+</details>
+
+<details>
+
+<summary>Base screensaver configuration implementation changed</summary>
 
 {% code title="MatrixBleed.cs" lineNumbers="true" %}
 ```csharp
-public static class MatrixBleedSettings
+public static class MatrixBleedSettings { }
 ```
 {% endcode %}
 
@@ -242,7 +284,11 @@ For consistency and ease of maintenance, we've decided to remove this proxying, 
 Use the screensaver settings instance directly using the `SaverConfig` property in the `Config` class.
 {% endhint %}
 
-#### VSIX analyzers no longer shipped
+</details>
+
+<details>
+
+<summary>VSIX analyzers no longer shipped</summary>
 
 We're no longer shipping the VSIX version of the Nitrocid analyzers because of low interest. Additionally, this version of the analyzers only worked in the full Visual Studio installation, which is only applicable for Windows systems. Moreover, the Community version of Visual Studio and all the other .NET IDEs, such as Rider, can't use this extension, and will have to rely on the NuGet package for analyzers.
 
@@ -252,11 +298,15 @@ Starting from 0.1.1, we've switched the distribution from VSIX to NuGet to be ab
 You are required to remove the VSIX version to be able to use the NuGet version of the analyzers, because they conflict with each other.
 {% endhint %}
 
-#### Moved JSON tools to Textify
+</details>
+
+<details>
+
+<summary>Moved JSON tools to Textify</summary>
 
 {% code title="JsonTextTools.cs" lineNumbers="true" %}
 ```csharp
-public static class JsonTextTools
+public static class JsonTextTools { }
 ```
 {% endcode %}
 
@@ -266,7 +316,11 @@ We've moved this class to Textify and made sure that all of the functions that u
 Change the function references to point to `JsonTools` instead of `JsonTextTools`.
 {% endhint %}
 
-#### Removed a RetroKS path property
+</details>
+
+<details>
+
+<summary>Removed a RetroKS path property</summary>
 
 {% code title="PathsManagement.cs" lineNumbers="true" %}
 ```csharp
@@ -280,18 +334,22 @@ We've removed a leftover that was spotted during the analysis of the paths durin
 We advice you to stop using this property.
 {% endhint %}
 
-#### Centered writer breaking changes
+</details>
+
+<details>
+
+<summary>Centered writer breaking changes</summary>
 
 {% code title="TextFancyWriters.cs" lineNumbers="true" %}
 ```csharp
-public static void WriteCentered(int top, string Text, KernelColorType ColTypes, params object[] Vars)
-public static void WriteCentered(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
-public static void WriteCentered(string Text, KernelColorType ColTypes, params object[] Vars)
-public static void WriteCentered(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
-public static void WriteCenteredOneLine(int top, string Text, KernelColorType ColTypes, params object[] Vars)
-public static void WriteCenteredOneLine(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
-public static void WriteCenteredOneLine(string Text, KernelColorType ColTypes, params object[] Vars)
-public static void WriteCenteredOneLine(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
+public static void WriteCentered(int top, string Text, KernelColorType ColTypes, params object[] Vars) { }
+public static void WriteCentered(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) { }
+public static void WriteCentered(string Text, KernelColorType ColTypes, params object[] Vars) { }
+public static void WriteCentered(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) { }
+public static void WriteCenteredOneLine(int top, string Text, KernelColorType ColTypes, params object[] Vars) { }
+public static void WriteCenteredOneLine(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) { }
+public static void WriteCenteredOneLine(string Text, KernelColorType ColTypes, params object[] Vars) { }
+public static void WriteCenteredOneLine(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) { }
 ```
 {% endcode %}
 
@@ -301,7 +359,11 @@ Terminaux 4.2.0 and later have introduced a breaking change that involves how th
 You'll need to rewrite how you call these functions so that you either pass a single object array like this: `Vars: vars`, or specify the margin values. You can always default to zeroes, and then you can pass the variables as if nothing happened.
 {% endhint %}
 
-#### Symmetric and asymmetric encoding drivers separated
+</details>
+
+<details>
+
+<summary>Symmetric and asymmetric encoding drivers separated</summary>
 
 {% code title="IEncodingDriver.cs" lineNumbers="true" %}
 ```csharp
@@ -325,7 +387,11 @@ You should change the driver type to match the symmetry type of your encoding al
 * asymmetric, you need to remove the three overrides (`IsSymmetric`, `Key`, and `Iv`) and change the implementation so that your driver implements `BaseEncodingAsymmetricDriver` and `IEncodingAsymmetricDriver`.
 {% endhint %}
 
-#### Removed "HDD Uncleaner"
+</details>
+
+<details>
+
+<summary>Removed "HDD Uncleaner"</summary>
 
 {% code title="KnownAddons.cs" lineNumbers="true" %}
 ```csharp
@@ -342,7 +408,11 @@ We've removed an addon that provided you with an amusement app that simulated ho
 It's advisable to stop using this enumeration value, but the auto generator may override this enumerator's value with another addon.
 {% endhint %}
 
-#### Removed config property wrappers
+</details>
+
+<details>
+
+<summary>Removed config property wrappers</summary>
 
 As seen in [this commit](https://github.com/Aptivi/NitrocidKS/commit/e96c4559cf3b20079fc1f960579738fa81e522fd), we've decided to remove the configuration property wrappers as a result of the improvements that were witnessed in the configuration system during the development of the 0.1.0 version.
 
@@ -350,7 +420,11 @@ As seen in [this commit](https://github.com/Aptivi/NitrocidKS/commit/e96c4559cf3
 It's advised to use the `Config.MainConfig` instance to point to the required configuration properties that have their wrappers deleted.
 {% endhint %}
 
-#### Removed time/date corner
+</details>
+
+<details>
+
+<summary>Removed time/date corner</summary>
 
 {% code title="KernelMainConfig.cs" lineNumbers="true" %}
 ```csharp
@@ -360,7 +434,7 @@ public bool CornerTimeDate { get; set; }
 
 {% code title="TimeDateTopRight.cs" lineNumbers="true" %}
 ```csharp
-public static class TimeDateTopRight
+public static class TimeDateTopRight { }
 ```
 {% endcode %}
 
@@ -370,25 +444,35 @@ The time/date corner that was initially introduced in the 0.0.4.5 version of Nit
 It's advisable for you to stop using this feature.
 {% endhint %}
 
-## From 0.1.1.0 to 0.1.1.13
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.1.1.0 to 0.1.1.13</mark>
 
 Between 0.1.1.0 and 0.1.1.13, we've made the following breaking changes:
 
-### Updated Terminaux to 5.0
+<details>
+
+<summary>Updated Terminaux to 5.0</summary>
 
 We've updated Terminaux to 5.0 to bring improvements. However, this doesn't come without the cost of having to deal with the breaking changes, which, in this case, is many.
 
 You can consult the list of breaking changes that result from upgrading to Terminaux 5.0 by pressing the below button:
 
-{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v5.0" %}
-[API v5.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v5.0)
-{% endcontent-ref %}
+<a href="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v5.0" class="button primary">API v5.0</a>
 
-## From 0.1.1.13 to 0.1.1 SP5
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.1.1.13 to 0.1.1 SP5</mark>
 
 Between 0.1.1.13 and 0.1.1 SP5, we've made the following breaking changes:
 
-### Removed `SplashClosing` from the `ISplash` interface
+<details>
+
+<summary>Removed <code>SplashClosing</code> from the <code>ISplash</code> interface</summary>
 
 {% code title="ISplash.cs" lineNumbers="true" %}
 ```csharp
@@ -411,3 +495,5 @@ This was a bad design, so we've fixed it by making the `SplashClosing` property 
 {% hint style="danger" %}
 Please remove all overrides to this property.
 {% endhint %}
+
+</details>
