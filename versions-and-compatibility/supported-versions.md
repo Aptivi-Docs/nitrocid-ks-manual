@@ -24,7 +24,8 @@ This revision of the fourth generation API is currently under development.
 | Version  | Release date | EOL date  | Security EOL date |
 | -------- | ------------ | --------- | ----------------- |
 | v0.2.0.0 | 2/12/2026    | 2/12/2031 | 2/12/2036         |
-| v0.2.0.1 | TBD          |           |                   |
+| v0.2.0.1 | 2/14/2026    |           |                   |
+| v0.2.0.2 | TBD          |           |                   |
 {% endtab %}
 
 {% tab title="API v3.0" %}
