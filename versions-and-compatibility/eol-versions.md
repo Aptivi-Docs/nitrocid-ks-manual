@@ -17,7 +17,9 @@ If you're running one of these versions found, consider upgrading your Nitrocid 
 
 This list shows a list of unsupported version series.
 
-_All dates are in MM/DD/YYYY._
+{% hint style="info" %}
+All dates are in `MM/DD/YYYY`.
+{% endhint %}
 
 ### <mark style="color:$primary;">API v3.x</mark>
 

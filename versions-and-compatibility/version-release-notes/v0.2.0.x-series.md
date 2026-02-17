@@ -72,10 +72,14 @@ The following changes have been made:
 
 <details>
 
-<summary>Version 0.2.0.2 (unreleased)</summary>
+<summary>Version 0.2.0.2</summary>
 
 The following changes have been made:
 
-* <mark style="color:yellow;">???</mark>
+* <mark style="color:yellow;">Fixed crashes when running winelevate</mark>
+* <mark style="color:yellow;">Fixed input not being recognized in some TUI apps on Linux</mark>
+* <mark style="color:yellow;">Fixed hardware listing errors on Linux</mark>
+* <mark style="color:yellow;">Fixed various appearance issues</mark>
+* <mark style="color:yellow;">General improvements</mark>
 
 </details>

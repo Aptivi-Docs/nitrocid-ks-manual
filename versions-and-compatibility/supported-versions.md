@@ -13,7 +13,9 @@ Nitrocid KS has a wide assortment of versions developed within its entire lifeti
 
 This list shows how long the version series and their accompanying versions under the series are supported, with security support periods for long-term releases, which usually start with each major or minor API revision update.
 
-_All dates are in MM/DD/YYYY._
+{% hint style="info" %}
+All dates are in `MM/DD/YYYY`.
+{% endhint %}
 
 {% tabs %}
 {% tab title="API v4.0" %}
@@ -25,7 +27,7 @@ This revision of the fourth generation API is currently under development.
 | -------- | ------------ | --------- | ----------------- |
 | v0.2.0.0 | 2/12/2026    | 2/12/2031 | 2/12/2036         |
 | v0.2.0.1 | 2/14/2026    |           |                   |
-| v0.2.0.2 | TBD          |           |                   |
+| v0.2.0.2 | 2/17/2026    |           |                   |
 {% endtab %}
 
 {% tab title="API v3.0" %}
@@ -100,6 +102,7 @@ This revision of the third generation API is supported until 3/11/2034.
 | v0.1.0.65 | 12/21/2025   |           |                   |
 | v0.1.0.66 | 12/31/2025   |           |                   |
 | v0.1.0.67 | 2/12/2026    |           |                   |
-| v0.1.0.68 | TBD          |           |                   |
+| v0.1.0.68 | 2/14/2026    |           |                   |
+| v0.1.0.69 | 2/17/2026    |           |                   |
 {% endtab %}
 {% endtabs %}
