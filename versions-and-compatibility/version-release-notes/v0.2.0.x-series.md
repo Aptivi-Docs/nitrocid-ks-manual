@@ -83,3 +83,23 @@ The following changes have been made:
 * <mark style="color:yellow;">General improvements</mark>
 
 </details>
+
+<details>
+
+<summary>Version 0.2.0.3</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Fixed ImageMagick security vulnerabilities</mark>
+
+</details>
+
+<details>
+
+<summary>Version 0.2.0.4</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Fixed MailKit security vulnerabilities</mark>
+
+</details>
