@@ -103,3 +103,24 @@ The following changes have been made:
 * <mark style="color:yellow;">Fixed MailKit security vulnerabilities</mark>
 
 </details>
+
+<details>
+
+<summary>Version 0.2.0.5</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Fixed ImageMagick security vulnerabilities</mark>
+
+</details>
+
+<details>
+
+<summary>Version 0.2.0.6</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Updated Terminaux</mark>
+* <mark style="color:yellow;">Utilized Colorimetry</mark>
+
+</details>

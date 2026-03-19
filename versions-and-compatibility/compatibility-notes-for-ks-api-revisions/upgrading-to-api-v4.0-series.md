@@ -516,3 +516,19 @@ You'll have to modify all calls to `GlitchAt()` to make them receive a string th
 {% endhint %}
 
 </details>
+
+***
+
+## <mark style="color:$primary;">From 0.2.0.0 to 0.2.0.6</mark> <a href="#from-0.0.24-to-0.1.0" id="from-0.0.24-to-0.1.0"></a>
+
+This version is built on top of 0.2.0 to finish migrating the color tools to Colorimetry.
+
+### <mark style="color:$primary;">Updated Terminaux to 8.2</mark> <a href="#updated-terminaux-to-6.0" id="updated-terminaux-to-6.0"></a>
+
+We've updated Terminaux to 8.2 to bring improvements. However, this doesn't come without the cost of having to deal with the breaking changes.
+
+You can consult the list of breaking changes that result from upgrading to Terminaux 8.2 by pressing the below button:
+
+{% content-ref url="https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v8.0" %}
+[API v8.0](https://app.gitbook.com/s/G0KrE9Uk2AiblqjWtpAo/breaking-changes/api-v8.0)
+{% endcontent-ref %}
