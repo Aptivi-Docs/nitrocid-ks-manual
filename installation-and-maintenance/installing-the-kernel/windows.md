@@ -27,7 +27,19 @@ There are several ways to install Nitrocid KS on Windows systems. We recommend i
 
 <details>
 
-<summary>Method 1: Using Windows Installer</summary>
+<summary>Method 1: Using WinGet</summary>
+
+This step-by-step guide shows you how to install Nitrocid KS using the package manager, [WinGet](https://learn.microsoft.com/en-us/windows/package-manager/winget/#install-winget), assuming that you already have it on your system.
+
+1. Ensure that WinGet is installed to your system PATH
+2. Open your favorite terminal emulator, like ConEmu, and execute the following command: `winget install --id Aptivi.Nitrocid.0.2.0.x --source winget`
+3. Double-click on `Nitrocid KS` in your desktop.
+
+</details>
+
+<details>
+
+<summary>Method 2: Using Windows Installer</summary>
 
 The Windows Installer method allows you to easily install Nitrocid KS.
 
@@ -39,7 +51,7 @@ The Windows Installer method allows you to easily install Nitrocid KS.
 
 <details>
 
-<summary>Method 2: Using Chocolatey</summary>
+<summary>Method 3: Using Chocolatey</summary>
 
 This step-by-step guide shows you how to install Nitrocid KS using the package manager, [Chocolatey](https://chocolatey.org/install), assuming that you already have it on your system.
 
@@ -51,7 +63,7 @@ This step-by-step guide shows you how to install Nitrocid KS using the package m
 
 <details>
 
-<summary>Method 3: Manually unpacking</summary>
+<summary>Method 4: Manually unpacking</summary>
 
 If you like to manually unpack the Nitrocid KS packages, follow these steps:
 
@@ -71,7 +83,19 @@ Upgrading Nitrocid on Windows is pretty simple, depending on the way you've inst
 
 <details>
 
-<summary>Method 1: Using Windows Installer</summary>
+<summary>Method 1: Using WinGet</summary>
+
+Any updates to the KS Chocolatey package can be done using a built-in WinGet command. To update the kernel, follow these steps:
+
+1. Open your favorite terminal emulator, like ConEmu
+2. Run `choco upgrade Aptivi.Nitrocid.0.2.0.x`
+3. Once the upgrade is done, run KS like you normally would
+
+</details>
+
+<details>
+
+<summary>Method 2: Using Windows Installer</summary>
 
 You can update Nitrocid KS using the Windows Installer method.
 
@@ -83,7 +107,7 @@ You can update Nitrocid KS using the Windows Installer method.
 
 <details>
 
-<summary>Method 2: Using Chocolatey</summary>
+<summary>Method 3: Using Chocolatey</summary>
 
 Any updates to the KS Chocolatey package can be done using a built-in Chocolatey command. To update the kernel, follow these steps:
 
@@ -95,7 +119,7 @@ Any updates to the KS Chocolatey package can be done using a built-in Chocolatey
 
 <details>
 
-<summary>Method 3: Manually unpacking</summary>
+<summary>Method 4: Manually unpacking</summary>
 
 Nitrocid KS can also be manually updated in case the automatic updater failed to update. To update the kernel, perform the same steps as in installing KS. Run the executable to upgrade your kernel configuration files to the latest.
 
