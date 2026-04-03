@@ -88,7 +88,7 @@ Upgrading Nitrocid on Windows is pretty simple, depending on the way you've inst
 Any updates to the KS Chocolatey package can be done using a built-in WinGet command. To update the kernel, follow these steps:
 
 1. Open your favorite terminal emulator, like ConEmu
-2. Run `choco upgrade Aptivi.Nitrocid.0.2.0.x`
+2. Run `winget upgrade Aptivi.Nitrocid.0.2.0.x`
 3. Once the upgrade is done, run KS like you normally would
 
 </details>
