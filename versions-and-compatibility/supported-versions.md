@@ -32,6 +32,7 @@ This revision of the fourth generation API is currently under development.
 | v0.2.0.4 | 3/8/2026     |           |                   |
 | v0.2.0.5 | 3/13/2026    |           |                   |
 | v0.2.0.6 | 3/19/2026    |           |                   |
+| v0.2.0.7 | 4/1/2026     |           |                   |
 {% endtab %}
 
 {% tab title="API v3.0" %}
