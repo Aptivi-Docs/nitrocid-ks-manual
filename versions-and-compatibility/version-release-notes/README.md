@@ -25,10 +25,6 @@ The older series are listed when they're still supported.
 
 ### <mark style="color:$primary;">API v3.0 series</mark>
 
-{% content-ref url="v0.1.1.x-series.md" %}
-[v0.1.1.x-series.md](v0.1.1.x-series.md)
-{% endcontent-ref %}
-
 {% content-ref url="v0.1.0.x-series.md" %}
 [v0.1.0.x-series.md](v0.1.0.x-series.md)
 {% endcontent-ref %}
@@ -43,6 +39,12 @@ Here is a list of the deprecated older version series through the lifetime of Ni
 
 {% content-ref url="v0.1.2.x-series.md" %}
 [v0.1.2.x-series.md](v0.1.2.x-series.md)
+{% endcontent-ref %}
+
+### <mark style="color:$primary;">API v3.0 series</mark>
+
+{% content-ref url="v0.1.1.x-series.md" %}
+[v0.1.1.x-series.md](v0.1.1.x-series.md)
 {% endcontent-ref %}
 
 ### <mark style="color:$primary;">API v2.1 series</mark>
