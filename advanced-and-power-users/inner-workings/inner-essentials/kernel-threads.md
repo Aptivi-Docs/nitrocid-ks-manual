@@ -5,7 +5,11 @@ icon: phone
 
 # Kernel Threads
 
-Threads are a great way to asynchronously do things in your mod! They play a huge role on preventing the block from happening on the main thread. Single-threaded aplications usually get blocked by long operations, but threads solve this problem.
+{% hint style="info" %}
+Future Nitrocid versions will use **Threadify** to manage kernel threads. This is going to be a breaking change that will be done starting from v0.2.1, v0.2.0.8, and v0.1.0.75.
+{% endhint %}
+
+Threads are a great way to asynchronously do things in your mod! They play a huge role on preventing the block from happening on the main thread. Single-threaded applications usually get blocked by long operations, but threads solve this problem.
 
 ***
 
