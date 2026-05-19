@@ -59,6 +59,7 @@
 * [Installation and Upgrade](installation-and-maintenance/installing-the-kernel/README.md)
   * [Windows](installation-and-maintenance/installing-the-kernel/windows.md)
   * [macOS](installation-and-maintenance/installing-the-kernel/macos.md)
+  * [FreeBSD](installation-and-maintenance/installing-the-kernel/freebsd.md)
   * [Linux](installation-and-maintenance/installing-the-kernel/linux.md)
   * [Android](installation-and-maintenance/installing-the-kernel/android.md)
 * [Installation and Upgrade (Base and Core)](https://app.gitbook.com/s/Id4bob6wnHvpX4zbVVtI/csharp-libraries/installation-and-upgrade)
