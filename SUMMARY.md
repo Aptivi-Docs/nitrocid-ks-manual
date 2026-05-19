@@ -138,6 +138,7 @@
 * [Building the Kernel](advanced-and-power-users/building-the-kernel/README.md)
   * [Building on Windows](advanced-and-power-users/building-the-kernel/building-on-windows.md)
   * [Building on macOS](advanced-and-power-users/building-the-kernel/building-on-macos.md)
+  * [Building on FreeBSD](advanced-and-power-users/building-the-kernel/building-on-freebsd.md)
   * [Building on Linux](advanced-and-power-users/building-the-kernel/building-on-linux.md)
   * [Building on Android](advanced-and-power-users/building-the-kernel/building-on-android.md)
 * [Kernel Modifications](advanced-and-power-users/kernel-modifications/README.md)

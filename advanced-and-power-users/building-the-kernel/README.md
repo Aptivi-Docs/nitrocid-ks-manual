@@ -19,6 +19,10 @@ Building Nitrocid on your computer is great, since this software is already open
 [building-on-linux.md](building-on-linux.md)
 {% endcontent-ref %}
 
+{% content-ref url="building-on-freebsd.md" %}
+[building-on-freebsd.md](building-on-freebsd.md)
+{% endcontent-ref %}
+
 {% content-ref url="building-on-android.md" %}
 [building-on-android.md](building-on-android.md)
 {% endcontent-ref %}

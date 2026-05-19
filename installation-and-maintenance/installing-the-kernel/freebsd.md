@@ -13,9 +13,9 @@ Extra kernel add-ons may require additional hardware on your computer to work. F
 
 To run Nitrocid KS in the absolute minimum requirements, your computer needs to have the following installed:
 
-| System                 | Framework                                                            | Terminal                      |
-| ---------------------- | -------------------------------------------------------------------- | ----------------------------- |
-| FreeBSD 15.0 or higher | [.NET 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) | Konsole, GNOME Terminal, etc. |
+| System                 | Framework                                                                     | Terminal                      |
+| ---------------------- | ----------------------------------------------------------------------------- | ----------------------------- |
+| FreeBSD 15.0 or higher | [.NET 10.0](https://github.com/sec/dotnet-core-freebsd-source-build/releases) | Konsole, GNOME Terminal, etc. |
 
 ***
 
