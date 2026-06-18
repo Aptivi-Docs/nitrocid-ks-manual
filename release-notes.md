@@ -1,0 +1,178 @@
+---
+description: Giving your kernel even more ink of paint!
+icon: newspaper
+---
+
+# Release notes
+
+<figure><img src=".gitbook/assets/image (186) (1).png" alt=""><figcaption></figcaption></figure>
+
+This kernel version series gives your kernel a bit of a makeover in several aspects, especially the API that got massively changed in terms of console rendering, again. It is built on API v4.0, which means that mods that depend on API v3.1 or lower won't work with this version or higher.
+
+{% hint style="info" %}
+You can check out more detailed changelogs using the `changes` command. Quick overview of the changes can be found in the [Releases](https://github.com/Aptivi/NitrocidKS/releases) page.
+{% endhint %}
+
+***
+
+## <mark style="color:$primary;">Version 0.2.0.x series</mark>
+
+This series started with API version v4.0.28.55 for the final version of Nitrocid KS 0.2.0, which was released on February 12th, 2026. The pre-release versions of Nitrocid 0.2.0 were:
+
+* [Tech Preview](https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/bqO9tg9yMTlpVGZ6xEOk/) - API v4.0.28.18 - August 20th, 2025
+* [Release Candidate](https://app.gitbook.com/o/fj052nYlsxW9IdL3bsZj/s/AQ7s8zxhhCvO5TZuMXKz/) - API v4.0.28.44 - December 25th, 2025
+
+Here's a list of versions that were released:
+
+<details>
+
+<summary>Version 0.2.0.0</summary>
+
+The following changes have been made:
+
+* <mark style="color:green;">Added new screensavers</mark>
+* <mark style="color:green;">Added new commands</mark>
+* <mark style="color:green;">Added new themes</mark>
+* <mark style="color:green;">Added new screensavers</mark>
+* <mark style="color:green;">Added new games</mark>
+* <mark style="color:green;">Added new widgets</mark>
+* <mark style="color:green;">Added Chatbot AI</mark>
+* <mark style="color:green;">Added two-factor authentication for Nitrocid users</mark>
+* <mark style="color:green;">Added Widget Canvas JSON</mark>
+* <mark style="color:green;">Added configurable modern logon screen</mark>
+* <mark style="color:green;">Added configurable Nitrocid homepage</mark>
+* <mark style="color:green;">Added ambient sound FX intensity</mark>
+* <mark style="color:green;">Added single-pane file manager TUI</mark>
+* <mark style="color:green;">Added contact editing feature</mark>
+* <mark style="color:green;">Added new RPC commands</mark>
+* <mark style="color:green;">Added new Nitrocid application: Nitrocid.Rkm</mark>
+* <mark style="color:yellow;">Updated to Terminaux 8.1</mark>
+* <mark style="color:yellow;">Attractive new look</mark>
+* <mark style="color:yellow;">Delegated navigation sounds to Terminaux</mark>
+* <mark style="color:yellow;">Improved configuration verification</mark>
+* <mark style="color:yellow;">Improved language management</mark>
+* <mark style="color:yellow;">Addons and mods are split into two separate folders: important and extras</mark>
+* <mark style="color:yellow;">Build system improvements</mark>
+* <mark style="color:yellow;">General improvements and bug fixes</mark>
+* <mark style="color:red;">Removed Nitrocid-specific console writers</mark>
+* <mark style="color:red;">Removed duplicate code</mark>
+* <mark style="color:red;">Removed the legacy settings app</mark>
+
+</details>
+
+<details>
+
+<summary>Version 0.2.0.1</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">General improvements</mark>
+
+</details>
+
+<details>
+
+<summary>Version 0.2.0.2</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Fixed crashes when running winelevate</mark>
+* <mark style="color:yellow;">Fixed input not being recognized in some TUI apps on Linux</mark>
+* <mark style="color:yellow;">Fixed hardware listing errors on Linux</mark>
+* <mark style="color:yellow;">Fixed various appearance issues</mark>
+* <mark style="color:yellow;">General improvements</mark>
+
+</details>
+
+<details>
+
+<summary>Version 0.2.0.3</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Fixed ImageMagick security vulnerabilities</mark>
+
+</details>
+
+<details>
+
+<summary>Version 0.2.0.4</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Fixed MailKit security vulnerabilities</mark>
+
+</details>
+
+<details>
+
+<summary>Version 0.2.0.5</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Fixed ImageMagick security vulnerabilities</mark>
+
+</details>
+
+<details>
+
+<summary>Version 0.2.0.6</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Updated Terminaux</mark>
+* <mark style="color:yellow;">Utilized Colorimetry</mark>
+
+</details>
+
+<details>
+
+<summary>Version 0.2.0.7</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Updated Terminaux</mark>
+
+</details>
+
+<details>
+
+<summary>Version 0.2.0.8 (Service Pack 1)</summary>
+
+The following changes have been made:
+
+* <mark style="color:green;">Added FreeBSD support</mark>
+* <mark style="color:yellow;">General improvements and bug fixes</mark>
+
+</details>
+
+<details>
+
+<summary>Version 0.2.0.9</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Updated ImageMagick</mark>
+
+</details>
+
+<details>
+
+<summary>Version 0.2.0.10</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Improved the Windows installer modularity</mark>
+* <mark style="color:yellow;">General improvements and bug fixes</mark>
+
+</details>
+
+<details>
+
+<summary>Version 0.2.0.11</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Fixed missing localization for mail shell</mark>
+
+</details>

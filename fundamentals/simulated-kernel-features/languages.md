@@ -1,0 +1,84 @@
+---
+description: Multilingual Kernel!
+icon: language
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/yhORwVwuIgJMLsQRqN3S/fundamentals/simulated-kernel-features/languages
+---
+
+# Localization
+
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+
+Localization was implemented when computers were distributed in non-English countries to aid the users in using their computers in their native language. This feature is currently supported in both Windows and Unix-based operating systems.
+
+However, Linux boot messages don't get localized unless the localization is set, which is done in the middle of the boot process. This simulator attempts to localize the boot messages in the start of the process.
+
+***
+
+## <mark style="color:$primary;">Setting language or culture</mark>
+
+You can set the language or the culture using the `settings` command under the `General` section. Any language changes will be saved to the configuration file.
+
+{% hint style="info" %}
+Languages usually get translated at the end of each development period of each upcoming kernel version, so it's normal to see untranslated strings in development versions. If you still see these untranslated strings in the final version, report them to us.
+{% endhint %}
+
+Expand a section to get started.
+
+<details>
+
+<summary>Through settings</summary>
+
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+To change the simulated kernel language using the settings application, follow these steps:
+
+1. Log-in to the system account, `root`, or any of the administrators or users that has at least the settings management permission
+2. Execute the `settings` command, go to `General`, and use TAB and ENTER to go to `Language`
+3. Select a new language, then log-out and log in again.
+
+Similarly, you can change the culture from the same menu, but go to `Culture`.
+
+{% hint style="info" %}
+Not all languages are supported. In case you select a language that is not supported, it automatically falls back to English.
+{% endhint %}
+
+{% hint style="info" %}
+Note that your account must have either the administrative permissions enabled or the settings management permission granted to be able to use this command.
+{% endhint %}
+
+</details>
+
+<details>
+
+<summary>Through command-line</summary>
+
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+If you don't want to use the Settings TUI, you can also do it using the command-line from the main shell.
+
+{% hint style="info" %}
+Note that your account must have either the administrative permissions enabled or the settings management permission granted to be able to use this command.
+{% endhint %}
+
+#### <mark style="color:$primary;">Changing the language</mark>
+
+To change the simulated kernel language using the command-line, follow these steps:
+
+1. Log-in to the system account, `root`, or any of the administrators or users that has at least the settings management permission
+2. Execute the `chlang` command, pointing it to the target language that you wish to set to, such as `es` and `nl`.
+   1. To set the language for your user, you can use the `-user` flag.
+3. Log-out and log in again.
+
+#### <mark style="color:$primary;">Changing the culture</mark>
+
+To change the simulated kernel culture using the command-line, follow these steps:
+
+1. Log-in to the system account, `root`, or any of the administrators or users that has at least the settings management permission
+2. Execute the `chculture` command, pointing it to the target culture that you wish to set to, such as `en-US` and `zh-CN`.
+   1. To set the culture for your user, you can use the `-user` flag.
+3. Log-out and log in again.
+
+</details>
