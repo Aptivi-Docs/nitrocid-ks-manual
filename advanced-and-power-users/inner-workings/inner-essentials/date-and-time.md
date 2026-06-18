@@ -1,0 +1,136 @@
+---
+description: Date and time tools
+icon: clock-three
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/yhORwVwuIgJMLsQRqN3S/advanced-and-power-users/inner-workings/inner-essentials/date-and-time
+---
+
+# Date and Time
+
+Nitrocid KS provides an API that allows you to perform date and time operations, like rendering them to a string instance, managing time zones, and starting alarms. This feature is found under the `Nitrocid.Kernel.Time` namespace, as this feature is crucial for the kernel to be able to tell the current date (today) and the current time (now).
+
+The tools let you perform from the simplest operations, such as getting the current date and time, to the most complex operations, such as converting date and time to other formats, such as the Unix time.
+
+***
+
+## <mark style="color:$primary;">Time tools</mark>
+
+The base time/date tools allow you to perform general time and date operations, such as getting remaining time from either the current moment or from the selected moment.
+
+These functions allow you to perform this operation easily:
+
+<table><thead><tr><th width="239.99993896484375">Function</th><th>Description</th></tr></thead><tbody><tr><td><code>GetRemainingTimeFromNow()</code></td><td>Returns a <code>TimeSpan</code> instance that indicates the remaining time from the current moment to the specified amount of milliseconds.</td></tr><tr><td><code>GetRemainingTimeFrom()</code></td><td>Returns a <code>TimeSpan</code> instance that indicates the remaining time from the specified moment to the specified amount of milliseconds.</td></tr></tbody></table>
+
+Not only these tools are readily available for you to use, but you can also use this class to get the current date and time in both the local time (`KernelDateTime`) and the UTC time zone (`KernelDateTimeUtc`).
+
+<details>
+
+<summary>Time zones</summary>
+
+<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+
+Nitrocid KS provides a built-in time zone API that allows you to get information about a time zone and convert the time to the equivalent time using the specific time zone. This API is found in the `TimeZones` class.
+
+{% hint style="info" %}
+If the kernel-wide time zone is enabled, the current kernel time and date changes, depending on your selected kernel-wide time zone. Otherwise, the kernel uses the operating system time and date.
+{% endhint %}
+
+One of the functions that the above class implements is `GetZoneTimeString()` and its sibling functions, `GetZoneTimeTimeString()` and `GetZoneTimeDateString()`.
+
+* The first function returns the full date and time using the specified time zone.
+* The second function returns the time using the specified time zone.
+* The third function returns the date using the specified time zone.
+
+{% hint style="info" %}
+For Linux systems, a check for `/usr/share/zoneinfo` is performed, and if it doesn't exist, you'll be prompted to install `tzdata` from your Linux distribution's repository. See the [dependency page](/broken/pages/stzKxZHhGmxVQTDMsZNg) for more information about how to install this package to your system.
+{% endhint %}
+
+</details>
+
+<details>
+
+<summary>Calendar management API</summary>
+
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+In addition to providing the calendar command in the addon, Calendrier, which Nitrocid and Terminaux use, provides some of the calendar management APIs to make access to them easier than before.
+
+To learn more about calendaring, refer to the documentation below:
+
+<a href="https://app.gitbook.com/s/bMaIp29Xf3tHDgiWo9BZ/usage/calendars" class="button primary">Calendars</a>
+
+{% hint style="warning" %}
+It's important to take note of these:
+
+* While the events can be configured to be a yearly event, such as the Nitrocid KS release anniversary, such events have to be created by hand until the event commands are updated.
+* Although it looks like that you can make your own custom calendar, there are no available methods to register your own calendar. We'll work on it in the next Nitrocid release. For now, use your newly-created instance of your calendar.
+{% endhint %}
+
+</details>
+
+<details>
+
+<summary>Date conversion API</summary>
+
+Nitrocid API provides date conversion tools that allow you to change how the date and the time are being represented. For instance, you can translate the date and the time to UNIX time and vice versa.
+
+As for the calendars, you can use the `GetDateFromCalendar()` function, provided that you have a calendar instance from the `GetCalendar()` function. Also, you can use the `GetDateFromCalendarNoCulture()` function for calendars with overridden `Calendar` property.
+
+</details>
+
+<details>
+
+<summary>Date renderers API</summary>
+
+The renderers are essential if you want to get the text form of either the current date and time or the selected date and time. This is to simplify the functions that are used to do the same thing, but in the more coherent form to be able to use it like never before.
+
+The following classes are available for you to use in your mods:
+
+<table><thead><tr><th width="210.333251953125">Class</th><th>Description</th></tr></thead><tbody><tr><td><code>TimeDateRenderers</code></td><td>This class provides general time and date renderers that use your local time zone to return a text indicating either the current time and date or the selected time and date.<br><br>You can optionally specify a target date, a target culture/calendar, and a target format type.</td></tr><tr><td><code>TimeDateRenderersUtc</code></td><td>This class provides general time and date renderers that use UTC to return a text indicating either the current time and date or the selected time and date.<br><br>You can optionally specify a target date, a target culture/calendar, and a target format type.</td></tr><tr><td><code>TimeDateMiscRenderers</code></td><td>This class provides miscellaneous time and date renderers, including getting a string instance of the remaining time and printing the current date and time to the console.</td></tr></tbody></table>
+
+{% hint style="info" %}
+You can also use one of the constants specified in the `TimeDateRenderConstants` class as a custom format.
+
+In some renderers, you can use the custom date and time formats, as long as they specify a valid syntax to print the date and the time. You can refer to [this documentation](https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings) for more information about how to write a valid date and time format.
+{% endhint %}
+
+</details>
+
+***
+
+## <mark style="color:$primary;">Miscellaneous tools</mark>
+
+In addition to the above time tools, there are some of the features that use the date and time feature as an essential recipe for their implementation.
+
+<details>
+
+<summary>Alarms</summary>
+
+<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+
+When it comes to alarms, they are useful to alarm you for something at a specified time. This service and its tools can be accessed via the `AlarmTools` class.
+
+```csharp
+public static class AlarmTools { }
+```
+
+<mark style="color:$primary;">**Starting an alarm**</mark>
+
+You can start an alarm using the `StartAlarm()` function that lets you specify your alarm ID, your alarm name, and your alarm interval in seconds.
+
+```csharp
+public static void StartAlarm(string alarmId, string alarmName, int alarmValue) { }
+```
+
+<mark style="color:$primary;">**Stopping an alarm**</mark>
+
+Additionally, you can stop an alarm before it's up using a function defined below:
+
+```csharp
+public static void StopAlarm(int alarmIdx) { }
+public static void StopAlarm(string alarmId) { }
+```
+
+</details>
