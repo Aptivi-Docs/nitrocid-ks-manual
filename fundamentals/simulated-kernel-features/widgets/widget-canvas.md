@@ -5,7 +5,7 @@ icon: presentation-screen
 
 # Widget Canvas
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 Widget Canvas API allows you to extend both the login and the homepage by using pages of widgets to allow you to store more information, including the date and the time, the RSS feeds, images, and so on.
 

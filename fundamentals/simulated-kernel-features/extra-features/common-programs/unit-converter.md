@@ -13,7 +13,7 @@ Some units can be converted easily, such as from 1 kilometer to 1000 meters for 
 
 ## <mark style="color:$primary;">CLI version</mark>
 
-<figure><img src="../../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
 
 The unit converter is used to easily convert the source units to different units, like centimeters to meters. It's powered by the UnitsNet library.
 
@@ -30,7 +30,7 @@ To use this program, refer to the command usages and individual explanations bel
 
 ## <mark style="color:$primary;">TUI version</mark>
 
-<figure><img src="../../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
 
 The TUI version of unit converter allows you to more interactively convert the units. It lets you choose a unit type and a conversion form.
 

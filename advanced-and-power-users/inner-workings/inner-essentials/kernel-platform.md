@@ -5,7 +5,7 @@ icon: computer
 
 # Kernel Platform
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
 
 Sometimes, your mod may contain code that only works on certain platforms. For example, your mod may intentionally call an external unmanaged library's function to do something not normally done in the .NET world using P/Invokes. However, native libraries need to be compiled for the target machines.
 
@@ -14,7 +14,7 @@ Or, you may want to change the behavior of your mod by platform or by how the ke
 {% hint style="info" %}
 You can check your kernel version and your host RID by going to `settings` and pressing <kbd>F7</kbd> for `System information`.
 
-<img src="../../../.gitbook/assets/image (37).png" alt="" data-size="original">
+<img src="../../../.gitbook/assets/image (47).png" alt="" data-size="original">
 {% endhint %}
 
 ***

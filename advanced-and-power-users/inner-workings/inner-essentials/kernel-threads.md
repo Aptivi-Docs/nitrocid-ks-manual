@@ -157,7 +157,7 @@ When called, they contain valuable information about the time information, depen
 
 ## <mark style="color:$primary;">Task manager</mark>
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 The task manager can be called by `taskman` in the normal shell. It allows you to list both the Nitrocid KS threads and the unmanaged operating system threads, and it provides you with their information.
 
@@ -199,7 +199,7 @@ The below information are shown:
 
 #### <mark style="color:$primary;">Unmanaged OS threads</mark>
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 The below information are shown:
 

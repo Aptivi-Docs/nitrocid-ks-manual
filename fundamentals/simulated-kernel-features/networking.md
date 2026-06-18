@@ -17,7 +17,7 @@ To simulate this functionality, the simulated kernel provides several features, 
 
 <summary>Download a file</summary>
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 To download a file, small or large, from a computer or an Internet website, use the `get` command to download to your current working directory.
 
@@ -29,7 +29,7 @@ Use the following execution method to download: `get [-output=path] <URL>`
 
 <summary>Upload a file</summary>
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 To upload a file to either a local computer or to an Internet URL, use the `put` command to do this action. Depending on the URL, you must have administrative privileges on the URL to be able to upload a file.
 

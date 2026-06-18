@@ -5,7 +5,7 @@ icon: language
 
 # Localization
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 Localization was implemented when computers were distributed in non-English countries to aid the users in using their computers in their native language. This feature is currently supported in both Windows and Unix-based operating systems.
 
@@ -27,7 +27,7 @@ Expand a section to get started.
 
 <summary>Through settings</summary>
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 To change the simulated kernel language using the settings application, follow these steps:
 
@@ -51,7 +51,7 @@ Note that your account must have either the administrative permissions enabled o
 
 <summary>Through command-line</summary>
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 If you don't want to use the Settings TUI, you can also do it using the command-line from the main shell.
 

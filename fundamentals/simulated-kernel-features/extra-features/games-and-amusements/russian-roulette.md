@@ -5,7 +5,7 @@ icon: slot-machine
 
 # Russian Roulette
 
-<figure><img src="../../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
 
 Russian Roulette tests your luck by letting you select your bet whether it's `True` (T) or `False` (F). If you're lucky, you're a winner! Else, you're a loser.
 

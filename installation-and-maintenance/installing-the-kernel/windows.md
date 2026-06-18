@@ -5,7 +5,7 @@ icon: windows
 
 # Windows
 
-<figure><img src="../../.gitbook/assets/image (186).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (316).png" alt=""><figcaption></figcaption></figure>
 
 Installing Nitrocid on Windows is pretty easy, but we recommend installing the simulator using the Chocolatey package manager.
 

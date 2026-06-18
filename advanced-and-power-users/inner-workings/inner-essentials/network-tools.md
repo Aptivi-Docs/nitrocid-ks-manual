@@ -39,7 +39,7 @@ There are several base networking functions that are useful for your mods, such 
 
 <summary>Pinging a Server</summary>
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
 
 You can ping a server using the `PingAddress()` function, which contains several versions of the function that provide you different options:
 

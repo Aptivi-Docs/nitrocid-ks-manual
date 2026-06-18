@@ -15,7 +15,7 @@ To get started, expand a section below.
 
 <summary>Timer</summary>
 
-<figure><img src="../../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
 
 The timer counts down from the set time, usually minutes, to zero to set the target time. Once the time is up, the timer rings. It's used to limit the time in any action that should be done by humans.
 
@@ -41,7 +41,7 @@ You can start the application up with the `timer` command.
 
 <summary>Stopwatch</summary>
 
-<figure><img src="../../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
 
 The most famous example of a stopwatch is the stop clock, which is used in sports to measure the time between the start of the game and the current time. Additionally, some stopwatches provide the laps system, which is useful for sports game that contains the laps, like racing or running.
 
@@ -63,7 +63,7 @@ You can start the application up with the `stopwatch` command.
 
 <summary>Pomodoro</summary>
 
-<figure><img src="../../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
 
 The pomodoro timer allows you to set a 20 to 50-minute work job for a long work, set short breaks until you complete the four pomodori, then take a long break (20 to 30-minute break). This is effective in letting you work more efficiently.
 

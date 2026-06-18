@@ -5,7 +5,7 @@ icon: square-w
 
 # Wordle
 
-<figure><img src="../../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (124).png" alt=""><figcaption></figcaption></figure>
 
 You can start the game with the `wordle` command. It gives you 8 tries to guess the right word based on the amount of characters within the random word.
 

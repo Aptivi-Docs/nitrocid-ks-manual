@@ -5,7 +5,7 @@ icon: envelope
 
 # Mail Client
 
-<figure><img src="../../../../.gitbook/assets/image (52) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
 
 E-mails are used to send messages electronically to different contacts using the Internet. The IMAP servers are there to manage the messages and receive them, while the SMTP servers are there to handle sending both unencrypted and encrypted messages to a recipient. These servers are authenticated by the e-mail address and its associated password.
 

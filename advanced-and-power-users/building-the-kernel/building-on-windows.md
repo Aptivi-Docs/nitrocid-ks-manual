@@ -32,7 +32,7 @@ Open Visual Studio and press `Clone Repository`
 
 In the repository location field, write `https://github.com/Aptivi/Nitrocid.git`
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -46,7 +46,7 @@ Press `Clone`. The clone may need to take a few minutes depending on your Intern
 
 Press `Solution Explorer` » `Switch Views` and double click on `Nitrocid.slnx`
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -54,7 +54,7 @@ Press `Solution Explorer` » `Switch Views` and double click on `Nitrocid.slnx`
 
 Press `F6` on your keyboard, or press `Build` » `Build Solution` to build
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -62,7 +62,7 @@ Press `F6` on your keyboard, or press `Build` » `Build Solution` to build
 
 Navigate to the build output folder, `KSBuild`, and double click on the `Nitrocid.exe` file
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 {% endstepper %}
 

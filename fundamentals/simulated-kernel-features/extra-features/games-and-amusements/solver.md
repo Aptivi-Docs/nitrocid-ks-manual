@@ -5,7 +5,7 @@ icon: input-numeric
 
 # Solver
 
-<figure><img src="../../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
 
 Can you solve the printed mathematical expressions on time? Test your speed in solving the exercises ranging from low to high difficulty.
 

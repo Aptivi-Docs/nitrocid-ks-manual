@@ -5,7 +5,7 @@ icon: pickaxe
 
 # Mechanics of Settings App
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 The Settings application displays all the available sections on the first page and the available configuration options inside it on the second page. But, how?
 

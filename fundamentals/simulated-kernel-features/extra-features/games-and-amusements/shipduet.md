@@ -5,7 +5,7 @@ icon: ship
 
 # ShipDuet
 
-<figure><img src="../../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
 
 ShipDuet is a local two-player game that fight with each other in a space setting. ShipDuet starts with two players trying to fight each other until one of them destroys the opponent's spaceship.
 

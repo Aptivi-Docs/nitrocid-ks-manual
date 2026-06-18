@@ -5,7 +5,7 @@ icon: volume
 
 # Audio Cues
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 Audio cues allow your kernel to make different sounds for different events, including the startup and the shutdown sound. This feature uses the BassBoom library to play such short sound files embedded inside the main Nitrocid assembly in multiple platforms.
 

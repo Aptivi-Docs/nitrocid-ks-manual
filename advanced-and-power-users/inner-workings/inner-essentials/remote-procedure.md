@@ -37,7 +37,7 @@ After being translated, the RPC attempts to send the response to the target devi
 
 ## <mark style="color:$primary;">Nitrocid.Rkm</mark>
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 
 Nitrocid has a separate application that manages a Nitrocid instance that is running the RPC server without having to run the full Nitrocid executable. When an RPC server is running, the server can be interacted with in the entire network, especially the local area network. Using the port that is configurable, you can send a command to a Nitrocid RPC instance in your network, such as shutting it down and pinging it.
 

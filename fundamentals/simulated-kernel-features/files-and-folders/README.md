@@ -5,7 +5,7 @@ icon: folder-open
 
 # Files and Folders
 
-<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
 Files and folders are created to organize your documents, photos, music, videos, and other types of files. They are useful for many purposes, like organizing your archives, your albums, your backups, your personal files, and other types.
 
@@ -21,7 +21,7 @@ To see how it works, consult the below page to take you to the inner workings of
 
 ## <mark style="color:$primary;">Interactive file manager</mark>
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
 
 This interactive TUI is a powerful file manager that allows you to view what's inside the folders, as well as performing operations, like copying, moving, or deleting, on files and folders, just like [Total Commander](https://www.ghisler.com/index.htm) or [Midnight Commander](https://midnight-commander.org/).
 
@@ -88,7 +88,7 @@ To remove files or folders from the directory in the current pane, you can press
 
 In the interactive file manager, you can navigate the whole storage device by going to desired folders, such as your source code directory located in a secondary hard drive. If you press `ENTER` on a directory, you'll open it, allowing you to see its contents. Pressing `F4` causes you to go back one level up - that is, going back to the previous directory.
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
 
 However, if you want to select a directory to navigate to by selecting a directory, you can press `F6` to open up another interactive TUI that allows you to navigate to folders and select the desired folder. Pressing `Spacebar` on a folder causes you to select a folder that you want to open.
 
@@ -104,7 +104,7 @@ If you selected a folder and pressed `ESC` to exit the selector, the interactive
 
 <summary>File or folder information</summary>
 
-<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
 
 You can get information about either a file or a folder that you have selected in the current pane by pressing the `F5` key. For directories, you'll be able to get the following information:
 
@@ -117,7 +117,7 @@ You can get information about either a file or a folder that you have selected i
 * `Attributes`
 * `Parent directory`
 
-<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
 
 However, if you press `F5` on a selected file, you'll be able to get the following information:
 
@@ -164,7 +164,7 @@ You can also easily make a new folder by pressing `F10` to allow you to write a 
 
 <summary>Hash information</summary>
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
 
 By pressing `F11`, you can get a hash representation of a selected file under an algorithm that you select, assuming that this algorithm exists in the encryption driver manager that you can learn more about here:
 
@@ -182,7 +182,7 @@ Note that `F11` may be used in the Windows command prompt. In the Windows Termin
 
 <summary>File preview</summary>
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 By pressing `P`, you'll be able to preview either a binary or a text file inside an informational box.
 

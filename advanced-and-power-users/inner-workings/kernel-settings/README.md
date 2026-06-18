@@ -73,7 +73,7 @@ d-----        12/16/2025   1:00 PM                LogonPages
 
 ## <mark style="color:$primary;">Settings</mark>
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 The kernel provides an easy-to-use tool to seamlessly configure the kernel settings. It can be easily invoked using the `settings` command. Running this command alone provides you with the normal kernel settings.
 
@@ -115,7 +115,7 @@ You can change the kernel settings section by either pressing `F9` in the modern
 
 <summary>Settings on your shell</summary>
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
 This feature is useful for your UESH scripts and for your quick shortcut to change your settings.
 

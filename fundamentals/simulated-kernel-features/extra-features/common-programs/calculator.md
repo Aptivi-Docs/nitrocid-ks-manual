@@ -5,7 +5,7 @@ icon: calculator
 
 # Calculator
 
-<figure><img src="../../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
 
 The calculator is used to perform arithmetic operations, ranging from the simplest operations to the most complex ones, powered by the StringMath library.
 

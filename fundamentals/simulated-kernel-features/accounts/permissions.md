@@ -25,7 +25,7 @@ For example, consider the following cases:
 
 The below screenshot shows that the first normal user, `johnSanders`, can't manipulate the permissions because they don't have the permission management granted.
 
-<figure><img src="../../../.gitbook/assets/image (39) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -35,7 +35,7 @@ The below screenshot shows that the first normal user, `johnSanders`, can't mani
 
 The below screenshot also shows the second non-administrative user, `john.d`, being granted the permission manipulation authority, so they can use the `perm` command to edit permissions for any user.
 
-<figure><img src="../../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -57,7 +57,7 @@ There are common operations that you can do to manage the permissions.
 
 <summary>Grant permissions</summary>
 
-<figure><img src="../../../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
 
 You're looking to grant a user permissions. Follow these steps:
 
@@ -72,7 +72,7 @@ You're looking to grant a user permissions. Follow these steps:
 
 <summary>Revoke permissions</summary>
 
-<figure><img src="../../../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
 
 If you no longer want a user to be granted a specific permission, follow these steps:
 
@@ -87,7 +87,7 @@ If you no longer want a user to be granted a specific permission, follow these s
 
 <summary>Grant a permission to a group</summary>
 
-<figure><img src="../../../.gitbook/assets/image (41) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
 
 You're looking to grant a user permissions. Follow these steps:
 
@@ -102,7 +102,7 @@ You're looking to grant a user permissions. Follow these steps:
 
 <summary>Revoke a permission from a group</summary>
 
-<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
 
 If you no longer want a group to be granted a specific permission, follow these steps:
 

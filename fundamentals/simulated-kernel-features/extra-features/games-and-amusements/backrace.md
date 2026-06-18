@@ -5,7 +5,7 @@ icon: horse
 
 # BackRace
 
-<figure><img src="../../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (117).png" alt=""><figcaption></figcaption></figure>
 
 BackRace is a game that lets you choose which horse do you think it's going to the finish line first. It doesn't have points or anything; just a simple win and loss game.
 

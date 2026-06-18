@@ -5,7 +5,7 @@ icon: keyboard
 
 # SpeedPress
 
-<figure><img src="../../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure>
 
 You can test yourself finding a specific key in your keyboard, but how fast can you find a key? Find out by playing this game to enter the test.
 

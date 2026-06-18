@@ -64,7 +64,7 @@ This is my mod documentation, which hosts the documentation and technical inform
 
 ## <mark style="color:$primary;">Manual page viewer</mark>
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 The manual page viewer can be invoked with the `modmanual` command, which takes an argument that should be a valid kernel mod name.
 

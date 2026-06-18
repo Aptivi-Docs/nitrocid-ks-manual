@@ -5,7 +5,7 @@ icon: square-sliders
 
 # Kernel Arguments
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 Kernel Arguments are command-line parameters to the simulator that changes the behavior of the kernel.
 

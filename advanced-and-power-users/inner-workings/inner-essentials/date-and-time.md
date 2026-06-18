@@ -25,7 +25,7 @@ Not only these tools are readily available for you to use, but you can also use 
 
 <summary>Time zones</summary>
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
 
 Nitrocid KS provides a built-in time zone API that allows you to get information about a time zone and convert the time to the equivalent time using the specific time zone. This API is found in the `TimeZones` class.
 
@@ -49,7 +49,7 @@ For Linux systems, a check for `/usr/share/zoneinfo` is performed, and if it doe
 
 <summary>Calendar management API</summary>
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
 
 In addition to providing the calendar command in the addon, Calendrier, which Nitrocid and Terminaux use, provides some of the calendar management APIs to make access to them easier than before.
 
@@ -104,7 +104,7 @@ In addition to the above time tools, there are some of the features that use the
 
 <summary>Alarms</summary>
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
 
 When it comes to alarms, they are useful to alarm you for something at a specified time. This service and its tools can be accessed via the `AlarmTools` class.
 

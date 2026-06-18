@@ -23,7 +23,7 @@ Once the remote debugger starts, you can connect to it using the raw TCP connect
 
 <summary>Windows</summary>
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 You can establish a connection to the remote debugger using [PuTTY](https://putty.org/) or an equivalent software. Once you install this, fill the below forms to make a connection:
 
@@ -52,7 +52,7 @@ You should be able to see debugging messages once the connection to the remote d
 
 ## <mark style="color:$primary;">Remote debug chat</mark>
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
 The chatting feature was added to the remote debugger to allow chatting with the other users debugging the same kernel to discuss what is happening in the kernel.
 

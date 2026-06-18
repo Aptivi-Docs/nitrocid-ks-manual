@@ -5,7 +5,7 @@ icon: square-user
 
 # Contacts
 
-<figure><img src="../../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
 
 The contacts application lets you list your contacts that are imported from the contacts folder found under the `KSContactsImport` folder. It shows you basic information about your contacts.
 
@@ -54,7 +54,7 @@ To import MeCard contacts, expand the below section.
 
 <summary>Importing MeCard contacts</summary>
 
-<figure><img src="../../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
 
 The contact application can also import your contact through a short MeCard syntax given to you by a QR code behind it. Below is an example of a complete MeCard syntax:
 
@@ -90,6 +90,6 @@ You can edit a contact by pressing `F11` and making changes to the following con
 
 To learn more about how VisualCard works, consult the below link named `How it works` and it'll take you to the VisualCard manual.
 
-{% content-ref url="https://app.gitbook.com/s/bEvVwD4FK7bX7p8XtIPH/usage/how-it-works" %}
-[How it works](https://app.gitbook.com/s/bEvVwD4FK7bX7p8XtIPH/usage/how-it-works)
+{% content-ref url="/broken/spaces/bEvVwD4FK7bX7p8XtIPH/pages/UEP2jyIGnNkT4AwTzb2b" %}
+[Broken link](/broken/spaces/bEvVwD4FK7bX7p8XtIPH/pages/UEP2jyIGnNkT4AwTzb2b)
 {% endcontent-ref %}

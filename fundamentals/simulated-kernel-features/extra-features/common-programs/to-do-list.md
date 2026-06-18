@@ -5,7 +5,7 @@ icon: clipboard-list-check
 
 # To-do List
 
-<figure><img src="../../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
 
 This program serves as your checkbook to track your tasks. They help you organize your everyday tasks and plans, like plans for the next release of your project, grocery lists, and so on. They also help keep track of things that you need or plan to do.
 

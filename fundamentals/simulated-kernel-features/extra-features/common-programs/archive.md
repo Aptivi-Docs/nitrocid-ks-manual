@@ -5,7 +5,7 @@ icon: box-taped
 
 # Archive
 
-<figure><img src="../../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
 
 The archive shell allows you to manipulate with many archive files supported by the backend library that the archive shell relies on. You can edit archive files to pack or extract files and folders to/from the archive from/to your local directory.
 

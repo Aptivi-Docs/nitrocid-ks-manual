@@ -5,7 +5,7 @@ icon: display-chart-up-circle-dollar
 
 # Stocks
 
-<figure><img src="../../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 Stocks is a 0.1.1 extra feature that allows you to see the most accurate simple stock price analysis of a company that is registered in the NASDAQ database. The interactive TUI that shows you the hourly stock information can be run by executing the "`stock`" command that allows you to check the current stock prices. You can optionally run this command with the company symbol.
 

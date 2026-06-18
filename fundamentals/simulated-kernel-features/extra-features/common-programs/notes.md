@@ -5,7 +5,7 @@ icon: memo-pad
 
 # Notes
 
-<figure><img src="../../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
 
 If you want a method to have your notes saved, or if you would like to jot down your notes for something crucial or important, sensitive or not, such as your passwords, your website usernames, your server IP addresses, and so on, you'll need to use this application to create such notes.
 
@@ -29,7 +29,7 @@ Usage of this application can be done using the following commands:
 
 ## <mark style="color:$primary;">Interactive TUI</mark>
 
-<figure><img src="../../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
 
 You can also interactively view all your notes using the `notestui` command so that you can read all your notes with more comfort, using the built-in interactive TUI features provided by Terminaux.
 

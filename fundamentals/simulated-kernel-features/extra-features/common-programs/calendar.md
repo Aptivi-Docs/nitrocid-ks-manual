@@ -13,7 +13,7 @@ The simulated kernel provides you with the calendar management application that 
 
 ## <mark style="color:$primary;">Interactive Calendar</mark>
 
-<figure><img src="../../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
 
 The calendar can be used to show you either the current month or the selected year in the current month or the selected year and month. The interactive calendar allows you to interactively see the current day, the month, and the year.
 
@@ -52,7 +52,7 @@ The following days are highlighted in this way:
 
 ## <mark style="color:$primary;">Events</mark>
 
-<figure><img src="../../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
 
 If there is a particular event that will happen in the future, you can use this subcommand to manage your events.
 
@@ -77,7 +77,7 @@ To utilize the functionality, use the following command.
 
 ## <mark style="color:$primary;">Reminders</mark>
 
-<figure><img src="../../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
 
 If you would like to be reminded about something in the future, you can use this subcommand to manage your reminders.
 
