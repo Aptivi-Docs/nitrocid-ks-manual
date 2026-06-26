@@ -9,6 +9,16 @@ Every single version of the kernel comes with many changes, including feature ad
 
 ***
 
+## <mark style="color:$primary;">Upcoming API series</mark>
+
+The below API series is currently under development.
+
+{% content-ref url="v0.2.0.x-series-1.md" %}
+[v0.2.0.x-series-1.md](v0.2.0.x-series-1.md)
+{% endcontent-ref %}
+
+***
+
 ## <mark style="color:$primary;">Current API series</mark>
 
 The current API version series all operate under API version v4.0.

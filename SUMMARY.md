@@ -38,6 +38,7 @@
   * [v0.1.1.x series](versions-and-compatibility/version-release-notes/v0.1.1.x-series.md)
   * [v0.1.2.x series](versions-and-compatibility/version-release-notes/v0.1.2.x-series.md)
   * [v0.2.0.x series](versions-and-compatibility/version-release-notes/v0.2.0.x-series.md)
+  * [v0.2.1.x series](versions-and-compatibility/version-release-notes/v0.2.0.x-series-1.md)
 * [Compatibility Notes for KS API Revisions](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/README.md)
   * [Upgrading to API v1.0 series](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v1.0-series.md)
   * [Upgrading to API v1.1 series](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v1.1-series.md)
@@ -53,6 +54,7 @@
     * [From 0.1.0 RC to 0.1.0 Final](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v3.0-series/from-0.1.0-rc-to-0.1.0-final.md)
   * [Upgrading to API v3.1 series](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v3.1-series.md)
   * [Upgrading to API v4.0 series](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v4.0-series.md)
+  * [Upgrading to API v4.1 series](versions-and-compatibility/compatibility-notes-for-ks-api-revisions/upgrading-to-api-v4.1-series.md)
 
 ## Installation and Maintenance
 

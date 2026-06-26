@@ -7,16 +7,16 @@ icon: thumbs-up
 
 Every single API revision comes with their own breaking changes. In order to provide you a satisfying mod development experience, we have to document all the breaking changes that occurred between API revisions and versions inside them.
 
-Looking to upgrade your existing mods from the API that you initially targeted to the latest, which is currently v4.0? We've got you covered! Follow these instructions listed by selecting an initial API target.
+Looking to upgrade your existing mods from the API that you initially targeted to the latest, which is currently v4.1? We've got you covered! Follow these instructions listed by selecting an initial API target.
 
 ***
 
 ## <mark style="color:$primary;">Upgrading to the current series</mark>
 
-The current breaking changes for the current revision, which is v4.0, are listed in the page below:
+The current breaking changes for the current revision, which is v4.1, are listed in the page below:
 
-{% content-ref url="upgrading-to-api-v4.0-series.md" %}
-[upgrading-to-api-v4.0-series.md](upgrading-to-api-v4.0-series.md)
+{% content-ref url="upgrading-to-api-v4.1-series.md" %}
+[upgrading-to-api-v4.1-series.md](upgrading-to-api-v4.1-series.md)
 {% endcontent-ref %}
 
 If there is a new API revision, we'll link the last API revision here.
@@ -104,5 +104,15 @@ To upgrade to API v3.0 series, consult this page here.
 To upgrade to API v3.1 series, consult this page here.
 
 <a href="upgrading-to-api-v3.1-series.md" class="button primary">Upgrading to API v3.1 series</a>
+
+</details>
+
+<details>
+
+<summary>Versions from the 0.2.0.x series</summary>
+
+To upgrade to API v4.0 series, consult this page here.
+
+<a href="upgrading-to-api-v4.0-series.md" class="button primary">Upgrading to API v4.0 series</a>
 
 </details>

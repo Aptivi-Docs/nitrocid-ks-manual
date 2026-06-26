@@ -18,6 +18,16 @@ All dates are in `MM/DD/YYYY`.
 {% endhint %}
 
 {% tabs %}
+{% tab title="API v4.1" %}
+This revision of the fourth generation API is currently under development.
+
+* Version v0.2.1.x series
+
+| Version  | Release date | EOL date | Security EOL date |
+| -------- | ------------ | -------- | ----------------- |
+| v0.2.1.0 | October 2026 | TBD      | TBD               |
+{% endtab %}
+
 {% tab title="API v4.0" %}
 This revision of the fourth generation API is currently under development.
 
@@ -37,6 +47,8 @@ This revision of the fourth generation API is currently under development.
 | v0.2.0.9  | 5/19/2026    |           |                   |
 | v0.2.0.10 | 6/11/2026    |           |                   |
 | v0.2.0.11 | 6/14/2026    |           |                   |
+| v0.2.0.12 | 6/22/2026    |           |                   |
+| v0.2.0.13 | 6/26/2026    |           |                   |
 {% endtab %}
 
 {% tab title="API v3.0" %}
@@ -122,5 +134,7 @@ This revision of the third generation API is supported until 3/11/2034.
 | v0.1.0.76 | 5/19/2026    |           |                   |
 | v0.1.0.77 | 6/11/2026    |           |                   |
 | v0.1.0.78 | 6/14/2026    |           |                   |
+| v0.1.0.79 | 6/22/2026    |           |                   |
+| v0.1.0.80 | 6/26/2026    |           |                   |
 {% endtab %}
 {% endtabs %}
