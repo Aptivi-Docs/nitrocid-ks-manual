@@ -176,3 +176,23 @@ The following changes have been made:
 * <mark style="color:yellow;">Fixed missing localization for mail shell</mark>
 
 </details>
+
+<details>
+
+<summary>Version 0.2.0.12</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Fixed console resize listener not restarting on kernel restart</mark>
+
+</details>
+
+<details>
+
+<summary>Version 0.2.0.13</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">Updated SQL and Cryptography's XML libraries to fix security issues</mark>
+
+</details>
