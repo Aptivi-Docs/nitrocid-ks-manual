@@ -136,5 +136,6 @@ This revision of the third generation API is supported until 3/11/2034.
 | v0.1.0.78 | 6/14/2026    |           |                   |
 | v0.1.0.79 | 6/22/2026    |           |                   |
 | v0.1.0.80 | 6/27/2026    |           |                   |
+| v0.1.0.81 | 6/27/2026    |           |                   |
 {% endtab %}
 {% endtabs %}
