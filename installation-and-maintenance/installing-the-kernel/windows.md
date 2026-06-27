@@ -49,6 +49,10 @@ You can now exclude the Nitrocid addons during installation by changing the appr
 
 ### Method 3: Chocolatey
 
+{% hint style="info" %}
+We are currently unable to push new versions of Nitrocid to Chocolatey due to technical problems, so we have temporarily paused rolling out new packages.
+{% endhint %}
+
 This step-by-step guide shows you how to install Nitrocid using the package manager, [Chocolatey](https://chocolatey.org/install), assuming that you already have it on your system.
 
 1. Ensure that Chocolatey is installed to your system PATH

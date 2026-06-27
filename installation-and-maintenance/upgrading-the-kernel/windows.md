@@ -37,6 +37,10 @@ You can now exclude the Nitrocid addons during installation by changing the appr
 
 ## Method 3: Using Chocolatey
 
+{% hint style="info" %}
+We are currently unable to push new versions of Nitrocid to Chocolatey due to technical problems, so we have temporarily paused rolling out new packages.
+{% endhint %}
+
 Any updates to the Nitrocid Chocolatey package can be done using a built-in Chocolatey command. To update the kernel, follow these steps:
 
 1. Open your favorite terminal emulator, like ConEmu
