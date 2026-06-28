@@ -15,15 +15,13 @@ Localization was implemented when computers were distributed in non-English coun
 
 However, Linux boot messages don't get localized unless the localization is set, which is done in the middle of the boot process. This simulator attempts to localize the boot messages in the start of the process.
 
-{% hint style="info" %}
-Extra languages are bundled as a kernel extras addon.
-{% endhint %}
-
 ## Setting language or culture
 
 You can set the language or the culture using the `settings` command under the `General` section. Any language changes will be saved to the configuration file.
 
-Languages usually get translated at the end of each development period of each upcoming kernel version, so it's normal to see untranslated strings in development versions. If you still see these untranslated strings in the final version, report them to us [using this page](https://github.com/Aptivi/Nitrocid/issues/new).
+{% hint style="info" %}
+Languages usually get translated at the end of each development period of each upcoming kernel version, so it's normal to see untranslated strings in development versions. If you still see these untranslated strings in the final version, report them to us.
+{% endhint %}
 
 ### Through settings
 
@@ -48,9 +46,8 @@ Note that your account must have either the administrative permissions enabled o
 To change the simulated kernel language using the command-line, follow these steps:
 
 1. Log-in to the system account, `root`, or any of the administrators or users that has at least the settings management permission
-2. Execute the `chlang` command, pointing it to the target language that you wish to set to, such as `dtc` and `ptg`.
-   1. Alternatively, if you want to specify a country, you can use the `-country` flag, but specify a valid country.
-   2. To set the language for your user, you can use the `-user` flag.
+2. Execute the `chlang` command, pointing it to the target language that you wish to set to, such as `es` and `nl`.
+   1. To set the language for your user, you can use the `-user` flag.
 3. Log-out and log in again.
 
 To change the simulated kernel culture using the command-line, follow these steps:

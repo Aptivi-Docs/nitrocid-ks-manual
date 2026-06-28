@@ -50,8 +50,8 @@ In order to be able to use the language studio, you'll need a folder with a text
 
 You can learn more about how to make this folder with this structure by going to the translation internals here:
 
-{% content-ref url="../../../advanced-and-power-users/inner-workings/multilingual-kernel/custom-languages.md" %}
-[custom-languages.md](../../../advanced-and-power-users/inner-workings/multilingual-kernel/custom-languages.md)
+{% content-ref url="/broken/pages/K45lXVeI6cXvtMyhxtX0" %}
+[Broken link](/broken/pages/K45lXVeI6cXvtMyhxtX0)
 {% endcontent-ref %}
 
 Once you point `mklang` to a directory containing these files, you'll be taken to a screen that allows you to select an English string to be translated. You can select one of them by moving up or down and pressing `ENTER`. Then, you'll be provided with a list of languages and their translations like below:

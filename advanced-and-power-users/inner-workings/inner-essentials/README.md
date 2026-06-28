@@ -11,8 +11,8 @@ metaLinks:
 
 Nitrocid KS offers a rich API that is open for any mod created for the current API series of Nitrocid. In order to get started, click on the buttons below to explore:
 
-{% content-ref url="../multilingual-kernel/" %}
-[multilingual-kernel](../multilingual-kernel/)
+{% content-ref url="/broken/pages/g7IgpWmpWveCoOiM0d8s" %}
+[Broken link](/broken/pages/g7IgpWmpWveCoOiM0d8s)
 {% endcontent-ref %}
 
 {% content-ref url="kernel-placeholders.md" %}
