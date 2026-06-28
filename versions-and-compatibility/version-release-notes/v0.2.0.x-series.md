@@ -196,3 +196,13 @@ The following changes have been made:
 * <mark style="color:yellow;">Updated SQL and Cryptography's XML libraries to fix security issues</mark>
 
 </details>
+
+<details>
+
+<summary>Version 0.2.0.14</summary>
+
+The following changes have been made:
+
+* <mark style="color:yellow;">General improvements and bug fixes</mark>
+
+</details>

@@ -158,6 +158,22 @@ Since the 0.1.1 version series has gone out of support starting April 23rd, 2025
 
 ***
 
+## <mark style="color:$primary;">From 0.1.0.45 to 0.1.0.81</mark>
+
+Between 0.1.0.45 and 0.1.0.81, we've made the following breaking changes:
+
+<details>
+
+<summary>Localization system improved</summary>
+
+Please consult both pages for more information:
+
+<a href="../upgrading-to-api-v3.1-series.md#from-0.0.24-to-0.1.0" class="button primary">Changes to 0.1.2</a><a href="../upgrading-to-api-v4.0-series.md#from-0.0.24-to-0.1.0" class="button primary">Changes to 0.2.0</a>
+
+</details>
+
+***
+
 ## <mark style="color:$primary;">From 0.1.0 to 0.1.1</mark>
 
 This version is another futuristic magic that brings in feature additions and spectacular improvements. This version is built on top of the 0.1.0 codebase to provide you with the most gorgeous features ever introduced.
