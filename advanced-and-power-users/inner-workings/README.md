@@ -27,14 +27,6 @@ To learn more about how Unified Extensible SHell (UESH) works, click on the belo
 [shell-structure.md](inner-essentials/shell-structure.md)
 {% endcontent-ref %}
 
-## Languages
-
-Do you want to know how the kernel translates languages? Click below!
-
-{% content-ref url="/broken/pages/g7IgpWmpWveCoOiM0d8s" %}
-[Broken link](/broken/pages/g7IgpWmpWveCoOiM0d8s)
-{% endcontent-ref %}
-
 ## Console Input and Manipulation
 
 Nitrocid KS provides console input and manipulation functions through Terminaux. Click below to get started!
