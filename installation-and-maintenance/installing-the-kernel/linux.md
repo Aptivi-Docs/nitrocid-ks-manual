@@ -184,7 +184,7 @@ You can choose between the version series that you want to upgrade in the output
 {% endhint %}
 
 {% hint style="danger" %}
-This only applies to Ubuntu and its derivatives. However, we only support the vanilla Ubuntu distribution. <mark style="color:red;">**Don't try this method on**</mark> [<mark style="color:red;">**Debian**</mark>](https://wiki.debian.org/DontBreakDebian#Don.27t_make_a_FrankenDebian)<mark style="color:red;">**.**</mark>
+This only applies to Ubuntu and its derivatives. However, we only support the vanilla Ubuntu distribution, and we only support Ubuntu versions that are supported. Please note that this method won't work when you're using an unsupported version of Ubuntu. <mark style="color:red;">**Don't try this method on**</mark> [<mark style="color:red;">**Debian**</mark>](https://wiki.debian.org/DontBreakDebian#Don.27t_make_a_FrankenDebian)<mark style="color:red;">**.**</mark>
 {% endhint %}
 
 </details>
